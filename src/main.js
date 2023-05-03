@@ -4,7 +4,7 @@ import './ojs-plot.js'
 import * as Plot from "@observablehq/plot";
 
 import sharedStyles from './styles.css?inline';
-const numbers = [1, 3, 2];
+const numbers = [Math.random(), Math.random()];
 
 const rectYchart = document.querySelector('#rect-plot');
 rectYchart.appStyles = sharedStyles;
@@ -19,7 +19,7 @@ rectYchart.chartOptions = {
 
 const regenButton = document.querySelector("#regen")
 regenButton.onClick = async () => {
-	const numbers = await webR.evalRRaw(`sample(100, 20)`, "number[]")
+	const numbers = [Math.random(), Math.random()];
 	rectYchart.chartOptions = {
 		style: {
 			color: "var(--plot-primary)",
