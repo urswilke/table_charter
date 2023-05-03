@@ -12,7 +12,6 @@ async function plot_histogramm() {
 		.filter(x => x.RowSubtitle === "abs")
 		.filter(x => !remove_vals.includes(x.RowTitle))
 		.filter(x => !remove_vals.includes(x.ColTitle))
-	const numbers = [Math.random(), Math.random()];
 	rectYchart.chartOptions = {
 		// style: {
 		// 	color: "var(--plot-primary)",
@@ -25,7 +24,6 @@ async function plot_histogramm() {
 			Plot.barY(data, {x: "RowTitle", y: "Value", fill: "ColTitle"})
 		]
 	}
-	
 }
 
 
@@ -43,4 +41,4 @@ const regenButton = document.querySelector("#regen")
 regenButton.onClick = plot_histogramm;
 
 
-console.log(sheet_table);
+// console.log(sheet_table);
