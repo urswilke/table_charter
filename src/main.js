@@ -1,19 +1,10 @@
-import './status-message.js'
 import "./action-button.js"
 import './ojs-plot.js'
 
 import * as Plot from "@observablehq/plot";
 
 import sharedStyles from './styles.css?inline';
-
-let webrMessage = document.getElementById("webr-status");
-webrMessage.text = ""
-
-import { webR } from './r.js'
-
-const numbers = await webR.evalRRaw(`sample(100, 20)`, "number[]")
-
-webrMessage.text = "WebR Loaded!"
+const numbers = [1, 3, 2];
 
 const rectYchart = document.querySelector('#rect-plot');
 rectYchart.appStyles = sharedStyles;
