@@ -14,7 +14,8 @@ async function plot_histogramm() {
 		// 	color: "var(--plot-primary)",
 		// },
 		color: {
-			type: "categorical"
+			type: "categorical",
+			legend: true
 		},
 		marks: [
 			Plot.barY(data, {x: "RowTitle", y: "Value", fill: "ColTitle"})
