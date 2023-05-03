@@ -7,7 +7,11 @@ import * as Plot from "@observablehq/plot";
 import sharedStyles from './styles.css?inline';
 
 async function plot_histogramm() {
-	const data = sheet_table.filter(x => x.RowSubtitle === "abs")
+	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
+	const data = sheet_table
+		.filter(x => x.RowSubtitle === "abs")
+		.filter(x => !remove_vals.includes(x.RowTitle))
+		.filter(x => !remove_vals.includes(x.ColTitle))
 	const numbers = [Math.random(), Math.random()];
 	rectYchart.chartOptions = {
 		// style: {
