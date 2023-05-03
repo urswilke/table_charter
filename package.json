@@ -19,6 +19,7 @@
     "@r-wasm/webr": "^0.1.1",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "exceljs": "^4.3.0",
     "lit": "^2.6.1",
     "rollup": "^3.20.2",
     "rollup-plugin-esbuild": "^5.0.0",

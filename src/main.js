@@ -1,5 +1,6 @@
 import "./action-button.js"
 import './ojs-plot.js'
+import {read_xlsx} from './readExcel.js'
 
 import * as Plot from "@observablehq/plot";
 
@@ -29,3 +30,10 @@ regenButton.onClick = async () => {
 		]
 	}
 }
+
+
+const filePath = 'Mappe1.xlsx';
+const sheet = "Daten";
+
+const sheet_table = await read_xlsx(filePath, sheet);
+console.log(sheet_table);
