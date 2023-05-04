@@ -1,6 +1,7 @@
 import "./action-button.js"
 import './ojs-plot.js'
 import {read_xlsx} from './readExcel.js'
+import './tableBookData.js'
 
 import * as Plot from "@observablehq/plot";
 
@@ -33,6 +34,9 @@ const filePath = 'Mappe1.xlsx';
 const sheet = "Daten";
 
 const sheet_table = await read_xlsx(filePath, sheet);
+const table_book_data = document.querySelector('#rect-plot')
+// table_book_data.data = sheet_table
+console.log(table_book_data)
 
 plot_histogramm()
 
