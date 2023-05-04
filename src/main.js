@@ -13,7 +13,7 @@ async function plot_histogramm() {
 		.filter(x => x.RowSubtitle === "abs")
 		.filter(x => !remove_vals.includes(x.RowTitle))
 		.filter(x => !remove_vals.includes(x.ColTitle))
-	rectYchart.chartOptions = {
+	barChart.chartOptions = {
 		// style: {
 		// 	color: "var(--plot-primary)",
 		// },
@@ -28,8 +28,8 @@ async function plot_histogramm() {
 }
 
 
-const rectYchart = document.querySelector('#rect-plot');
-rectYchart.appStyles = sharedStyles;
+const barChart = document.querySelector('#rect-plot');
+barChart.appStyles = sharedStyles;
 const filePath = 'Mappe1.xlsx';
 const sheet = "Daten";
 
