@@ -16,11 +16,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "exceljs": "^4.3.0",
-    "lit": "^2.6.1"
+    "lit": "^2.7.4",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "devDependencies": {
-    "@observablehq/plot": "^0.6.4",
-    "vite": "^4.2.0"
+    "@observablehq/plot": "^0.6.6",
+    "vite": "^4.3.5"
   }
 }
