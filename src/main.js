@@ -12,9 +12,11 @@ var xlsx_data;
 let table_book_data;
 
 function plot_histogramm() {
+    let abs_or_perc = document.getElementById("abs-or-percent").value;
+
 	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
 	const data = xlsx_data
-		.filter(x => x.RowSubtitle === "abs")
+		.filter(x => x.RowSubtitle === abs_or_perc)
 		.filter(x => !remove_vals.includes(x.RowTitle))
 		.filter(x => !remove_vals.includes(x.ColTitle));
 	barChart.chartOptions = {
