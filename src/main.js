@@ -9,6 +9,7 @@ import sharedStyles from './styles.css?inline';
 
 
 var xlsx_data;
+let table_book_data;
 
 function plot_histogramm() {
 	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
@@ -30,7 +31,18 @@ function plot_histogramm() {
 	}
 }
 
-
+function extract_tables_data(xlsx_data) {
+    let tab_indices = [...new Set(xlsx_data.map((d) => d.TabNo))];
+    let tab_titles = [...new Set(xlsx_data.map((d) => d.TabTitel1))];
+    let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle))];
+    let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
+    return {
+        tab_indices,
+        tab_titles,
+        col_titles,
+        col_subtitles
+    }
+}
 const barChart = document.querySelector('#rect-plot');
 barChart.appStyles = sharedStyles;
 const filePath = 'Mappe1.xlsx';
@@ -40,13 +52,13 @@ const sheet = "Daten";
 async function upload_xlsx(e) {
     xlsx_data = await xlsx_to_json_array(e);
     console.log(xlsx_data)
+    table_book_data = extract_tables_data(xlsx_data)
+    console.log(table_book_data)
     plot_histogramm()
-  }
+}
 document.getElementById("file-upload").addEventListener('change', upload_xlsx);
 
 
-const table_book_data = document.querySelector('#rect-plot')
-console.log(table_book_data)
 
 
 const regenButton = document.querySelector("#regen")
