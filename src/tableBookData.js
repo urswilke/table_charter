@@ -1,6 +1,5 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
-import {read_xlsx} from './readExcel.js'
 
 import sharedStyles from './components.css?inline';
 
