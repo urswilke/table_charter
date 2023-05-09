@@ -72,6 +72,7 @@ export class TableBookData extends LitElement {
 		return when(isEmpty(this.params),
 			() => html`<div></div>`,
 			() => html`
+				<label for="tab-selection">Select question:</label>
 				<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
 					${this.params.tab_titles.map(
 						(col) => html`
@@ -79,6 +80,7 @@ export class TableBookData extends LitElement {
 						`
 					)}
 				</select>
+				<label for="header-selection">Select header:</label>
 				<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
 					${this.params.col_titles.map(
 						(col) => html`
@@ -86,6 +88,7 @@ export class TableBookData extends LitElement {
 						`
 					)}
 				</select>
+				<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
 				<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
 					<option value="abs">abs</option>
 					<option value="in %">in %</option>
