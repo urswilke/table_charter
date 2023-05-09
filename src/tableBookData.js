@@ -16,18 +16,38 @@ export class TableBookData extends LitElement {
 	constructor() {
 
 		super()
-        this.data = [];
+		// https://lit.dev/docs/components/properties/#accessors-custom
+		this._data = [];
         this.params = {};
         this.choices = {};
 	}
 
+
 	set data(val) {
-		let oldVal = this.data;
-		this.requestUpdate('data', oldVal);
+		let oldVal = this._data;
+		this._data = val;
 		this.params = extract_tables_book_params(val);
 		this.choices = isEmpty(this.params) ? {} : init_choices(this.params);
+		this.requestUpdate('data', oldVal);
+	}
+	get data() { return this._data; }
+
+	sel_data() {
+		return this.data
+		.filter(x => x.RowSubtitle === this.choices.abs_or_perc)
+		.filter(x => this.choices.tab_titles.includes(x.TabTitel1))
+		.filter(x => !this.choices.remove_vals.includes(x.RowTitle))
+		.filter(x => !this.choices.remove_vals.includes(x.ColTitle));
 	}
 
+	// https://lit.dev/docs/composition/component-composition/#passing-data-across-the-tree
+	get _abs_or_perc() {
+		return this.renderRoot?.querySelector('#abs-or-percent') ?? null;
+	}
+	_update_abs_or_perc() {
+		this.choices.abs_or_perc = this._abs_or_perc.value;
+	}
+	
 	
 	render() {
 
@@ -37,6 +57,11 @@ export class TableBookData extends LitElement {
 		return when(isEmpty(this.params),
 			() => html`<div></div>`,
 			() => html`
+				<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
+					<option value="abs">abs</option>
+					<option value="in %">in %</option>
+				</select>
+	
 				<div>
 					<select id="RowSel">
 						${this.params.tab_titles.map(
@@ -90,11 +115,16 @@ function extract_tables_book_params(xlsx_data) {
     let tab_titles = [...new Set(xlsx_data.map((d) => d.TabTitel1))];
     let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle).filter((d) => d !== "GESAMT"))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
+	let abs_or_perc = ["abs", "in %"];
+	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
+
     return {
         tab_indices,
         tab_titles,
         col_titles,
-        col_subtitles
+        col_subtitles,
+		abs_or_perc,
+		remove_vals
     }
 }
 

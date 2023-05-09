@@ -12,13 +12,7 @@ var xlsx_data;
 const tb_data = document.querySelector("#table-book-data")
 
 function plot_histogramm() {
-    let abs_or_perc = document.getElementById("abs-or-percent").value;
-
-	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
-	const data = xlsx_data
-		.filter(x => x.RowSubtitle === abs_or_perc)
-		.filter(x => !remove_vals.includes(x.RowTitle))
-		.filter(x => !remove_vals.includes(x.ColTitle));
+	const data = tb_data.sel_data()
 	barChart.chartOptions = {
 		// style: {
 		// 	color: "var(--plot-primary)",
