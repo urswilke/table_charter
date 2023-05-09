@@ -34,18 +34,33 @@ export class TableBookData extends LitElement {
 
 	sel_data() {
 		return this.data
-		.filter(x => x.RowSubtitle === this.choices.abs_or_perc)
-		.filter(x => this.choices.tab_titles.includes(x.TabTitel1))
-		.filter(x => !this.choices.remove_vals.includes(x.RowTitle))
-		.filter(x => !this.choices.remove_vals.includes(x.ColTitle));
+			.filter(x => x.TabTitel1 === this.choices.tab_titles)
+			.filter(x => x.RowSubtitle === this.choices.abs_or_perc)
+			.filter(x => x.ColTitle === this.choices.col_titles)
+			// .filter(x => this.choices.tab_titles.includes(x.TabTitel1))
+			.filter(x => !this.choices.remove_vals.includes(x.RowTitle))
+			.filter(x => !this.choices.remove_vals.includes(x.ColTitle));
 	}
 
 	// https://lit.dev/docs/composition/component-composition/#passing-data-across-the-tree
 	get _abs_or_perc() {
 		return this.renderRoot?.querySelector('#abs-or-percent') ?? null;
 	}
+	get _header() {
+		return this.renderRoot?.querySelector('#header-selection') ?? null;
+	}
+	get _tab() {
+		return this.renderRoot?.querySelector('#tab-selection') ?? null;
+	}
 	_update_abs_or_perc() {
 		this.choices.abs_or_perc = this._abs_or_perc.value;
+	}
+	
+	_update_header() {
+		this.choices.col_titles = this._header.value;
+	}
+	_update_tab() {
+		this.choices.tab_titles = this._tab.value;
 	}
 	
 	
@@ -57,21 +72,25 @@ export class TableBookData extends LitElement {
 		return when(isEmpty(this.params),
 			() => html`<div></div>`,
 			() => html`
+				<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
+					${this.params.tab_titles.map(
+						(col) => html`
+							<option value="${col}">${col}</option>
+						`
+					)}
+				</select>
+				<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
+					${this.params.col_titles.map(
+						(col) => html`
+							<option value="${col}">${col}</option>
+						`
+					)}
+				</select>
 				<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
 					<option value="abs">abs</option>
 					<option value="in %">in %</option>
 				</select>
-	
-				<div>
-					<select id="RowSel">
-						${this.params.tab_titles.map(
-							(col, i) => html`
-								<option value="${col}">${col}</option>
-							`
-						)}
-					</select>
-				</div>
-			`);
+		`);
 
 	}
 

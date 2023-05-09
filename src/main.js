@@ -22,7 +22,7 @@ function plot_histogramm() {
 			legend: true
 		},
 		marks: [
-			Plot.barY(data, {x: "RowTitle", y: "Value", fill: "ColTitle"})
+			Plot.barY(data, {x: "ColSubtitle", y: "Value", fill: "RowTitle"})
 		]
 	}
 }
