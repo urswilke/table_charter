@@ -41,8 +41,8 @@ const sheet = "Daten";
 // helper function to assign value to a global variable:
 async function upload_xlsx(e) {
     xlsx_data = await xlsx_to_json_array(e);
-    console.log(xlsx_data)
     tb_data.data = xlsx_data
+    console.log(tb_data)
     plot_histogramm()
 }
 document.getElementById("file-upload").addEventListener('change', upload_xlsx);

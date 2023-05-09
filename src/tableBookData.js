@@ -10,6 +10,7 @@ export class TableBookData extends LitElement {
 	static properties = {
 		data: { type: Array },
 		params: { type: Object },
+		choices: { type: Object },
 		};
 
 	constructor() {
@@ -17,12 +18,14 @@ export class TableBookData extends LitElement {
 		super()
         this.data = [];
         this.params = {};
+        this.choices = {};
 	}
 
 	set data(val) {
 		let oldVal = this.data;
 		this.requestUpdate('data', oldVal);
 		this.params = extract_tables_book_params(val);
+		this.choices = isEmpty(this.params) ? {} : init_choices(this.params);
 	}
 
 	
@@ -95,6 +98,15 @@ function extract_tables_book_params(xlsx_data) {
     }
 }
 
-
+// https://stackoverflow.com/a/14810722
+const objectMap = (obj, fn) =>
+	Object.fromEntries(
+		Object.entries(obj).map(
+			([k, v], i) => [k, fn(v, k, i)]
+		)
+)
+function init_choices(params) {
+	return objectMap(params, v => v[0]);
+}
 
 window.customElements.define('table-book-data', TableBookData)
