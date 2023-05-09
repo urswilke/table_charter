@@ -155,7 +155,9 @@ const objectMap = (obj, fn) =>
 		)
 )
 function init_choices(params) {
-	return objectMap(params, v => v[0]);
+	const res = objectMap(params, v => v[0]);
+	res['remove_vals'] = params['remove_vals']
+	return res;
 }
 
 window.customElements.define('table-book-data', TableBookData)
