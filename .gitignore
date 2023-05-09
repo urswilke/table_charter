@@ -26,6 +26,7 @@ build
 
 #my modifications:
 *.xlsx
+*.xlsm
 .~lock.*
 
 
