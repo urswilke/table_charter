@@ -9,8 +9,7 @@ import sharedStyles from './styles.css?inline';
 
 
 var xlsx_data;
-let table_book_data;
-const tbp = document.querySelector("#table-book-params")
+const tb_data = document.querySelector("#table-book-data")
 
 function plot_histogramm() {
     let abs_or_perc = document.getElementById("abs-or-percent").value;
@@ -34,18 +33,6 @@ function plot_histogramm() {
 	}
 }
 
-function extract_tables_data(xlsx_data) {
-    let tab_indices = [...new Set(xlsx_data.map((d) => d.TabNo))];
-    let tab_titles = [...new Set(xlsx_data.map((d) => d.TabTitel1))];
-    let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle))];
-    let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
-    return {
-        tab_indices,
-        tab_titles,
-        col_titles,
-        col_subtitles
-    }
-}
 const barChart = document.querySelector('#rect-plot');
 barChart.appStyles = sharedStyles;
 const filePath = 'Mappe1.xlsx';
@@ -55,9 +42,7 @@ const sheet = "Daten";
 async function upload_xlsx(e) {
     xlsx_data = await xlsx_to_json_array(e);
     console.log(xlsx_data)
-    table_book_data = extract_tables_data(xlsx_data)
-    tbp.data = table_book_data
-    console.log(tbp.data)
+    tb_data.data = xlsx_data
     plot_histogramm()
 }
 document.getElementById("file-upload").addEventListener('change', upload_xlsx);
