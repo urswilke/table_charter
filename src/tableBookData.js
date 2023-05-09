@@ -23,17 +23,19 @@ export class TableBookData extends LitElement {
 		inspect && console.log("render")
 		inspect && console.log(this)
 
-		return html`
-		<div>
-			<select id="RowSel">
-				${this.data.tab_titles.map(
-					(col, i) => html`
-						<option value="${col}">${col}</option>
-					`
-				)}
-			</select>
-		</div>
-	`;
+		return when(isEmpty(this.data),
+			() => html`<div></div>`,
+			() => html`
+				<div>
+					<select id="RowSel">
+						${this.data.tab_titles.map(
+							(col, i) => html`
+								<option value="${col}">${col}</option>
+							`
+						)}
+					</select>
+				</div>
+			`);
 
 	}
 
@@ -63,6 +65,11 @@ export class TableBookData extends LitElement {
 		`
 	];
 
+}
+
+// https://stackoverflow.com/a/679937
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
 }
 
 window.customElements.define('table-book-data', TableBookData)
