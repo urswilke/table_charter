@@ -10,6 +10,7 @@ import sharedStyles from './styles.css?inline';
 
 var xlsx_data;
 let table_book_data;
+const tbp = document.querySelector("#table-book-params")
 
 function plot_histogramm() {
     let abs_or_perc = document.getElementById("abs-or-percent").value;
@@ -55,7 +56,8 @@ async function upload_xlsx(e) {
     xlsx_data = await xlsx_to_json_array(e);
     console.log(xlsx_data)
     table_book_data = extract_tables_data(xlsx_data)
-    console.log(table_book_data)
+    tbp.data = table_book_data
+    console.log(tbp.data)
     plot_histogramm()
 }
 document.getElementById("file-upload").addEventListener('change', upload_xlsx);
