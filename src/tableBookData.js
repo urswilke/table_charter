@@ -88,7 +88,7 @@ function extract_tables_book_params(xlsx_data) {
 	}
     let tab_indices = [...new Set(xlsx_data.map((d) => d.TabNo))];
     let tab_titles = [...new Set(xlsx_data.map((d) => d.TabTitel1))];
-    let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle))];
+    let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle).filter((d) => d !== "GESAMT"))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
     return {
         tab_indices,
