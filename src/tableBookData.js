@@ -102,7 +102,7 @@ export class TableBookData extends LitElement {
 		unsafeCSS(sharedStyles),
 		css`
 			:host {
-				display: flex;
+				// display: flex;
 				background-color: var(--light-plot-background, "white")
 			}
 			:host[dark] {
