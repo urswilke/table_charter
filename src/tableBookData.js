@@ -34,7 +34,7 @@ export class TableBookData extends LitElement {
 
 	sel_data() {
 		return this.data
-			.filter(x => x.TabTitel1 === this.choices.tab_titles)
+			.filter(x => concat_tab_titles(x) === this.choices.tab_titles)
 			.filter(x => x.RowSubtitle === this.choices.abs_or_perc)
 			.filter(x => x.ColTitle === this.choices.col_titles)
 			// .filter(x => this.choices.tab_titles.includes(x.TabTitel1))
@@ -134,7 +134,7 @@ function extract_tables_book_params(xlsx_data) {
 		return {};
 	}
     let tab_indices = [...new Set(xlsx_data.map((d) => d.TabNo))];
-    let tab_titles = [...new Set(xlsx_data.map((d) => d.TabTitel1))];
+    let tab_titles = [...new Set(xlsx_data.map(concat_tab_titles))];
     let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle).filter((d) => d !== "GESAMT"))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
 	let abs_or_perc = ["abs", "in %"];
@@ -148,6 +148,14 @@ function extract_tables_book_params(xlsx_data) {
 		abs_or_perc,
 		remove_vals
     }
+}
+
+function concat_tab_titles(obj) {
+	return [obj.TabTitel1, obj.TabTitel2, obj.TabTitel3]
+		// remove undefined elements
+		// https://stackoverflow.com/a/46125317
+		.filter(item => item)
+		.join(" - ");
 }
 
 // https://stackoverflow.com/a/14810722
