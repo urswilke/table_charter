@@ -17,8 +17,14 @@ export function gen_plot_options(data) {
 			legend: true
 		},
 		marks: [
-			Plot.barY(data, {x: "ColSubtitle", y: "Value", fill: "RowTitle"}),
-			// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
+			Plot.barY(
+				data, 
+				// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
+				Plot.groupX(
+					{y: "sum"},
+					{x: "ColSubtitle", y: "Value", fill: "RowTitle"}
+				)
+			),
 			Plot.textY(
 				data,
 				Plot.stackY(
