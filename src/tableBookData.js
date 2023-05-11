@@ -150,8 +150,9 @@ function extract_tables_book_params(xlsx_data) {
     }
 }
 
-function concat_tab_titles(obj) {
-	return [obj.TabTitel1, obj.TabTitel2, obj.TabTitel3]
+export function concat_tab_titles(obj) {
+	// TODO: do not use redundant tab titles in input data from Excel!
+	return [...new Set([obj.TabTitel1, obj.TabTitel2, obj.TabTitel3])]
 		// remove undefined elements
 		// https://stackoverflow.com/a/46125317
 		.filter(item => item)
