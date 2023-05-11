@@ -1,5 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
+import { gen_plot_options } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
@@ -28,6 +29,9 @@ export class OJSPlot extends LitElement {
 			this.chartOptions = e.detail.value.chartOptions;
 		});
 
+	}
+	updatePlotOptions(data) {
+		this.chartOptions = gen_plot_options(data)
 	}
 
 	render() {
@@ -94,5 +98,7 @@ export class OJSPlot extends LitElement {
 	];
 
 }
+
+
 
 window.customElements.define('ojs-plot', OJSPlot)
