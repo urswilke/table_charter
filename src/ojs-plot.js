@@ -1,6 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 import { gen_plot_options } from './gen_plot_types.js'
+import { concat_tab_titles } from './tableBookData.js'
 
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
@@ -31,7 +32,9 @@ export class OJSPlot extends LitElement {
 
 	}
 	updatePlotOptions(data) {
+		inspect && console.log(data)
 		this.chartOptions = gen_plot_options(data)
+		this.chartTitle = concat_tab_titles(data[0])
 	}
 
 	render() {
