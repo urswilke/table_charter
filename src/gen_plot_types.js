@@ -1,6 +1,24 @@
 import * as Plot from "@observablehq/plot";
 
 export function gen_plot_options(data) {
+	if (data.length === 0) {
+		return {};
+	}
+	let tab_type = data[0].TabType;
+	switch (tab_type) {
+		case "CAT":
+			return gen_plot_options_cat(data);
+	
+		case "MW":
+			return gen_plot_options_mw(data);
+	
+			default:
+			alert("Table type " + tab_type + " not implemented.")
+			break;
+	}
+}
+
+function gen_plot_options_cat(data) {
 	const x_order = [...new Set(data.map((x) => x.ColSubtitle))];
 	const fill_order = [...new Set(data.map((x) => x.RowTitle))];
 	return {
@@ -42,6 +60,21 @@ export function gen_plot_options(data) {
 					)
 				)
 			)
+		]
+	};
+}
+function gen_plot_options_mw(data) {
+	return {
+		y: {
+			domain: [...new Set(data.map((x) => x.ColSubtitle))],
+		},
+		color: {
+			type: "categorical",
+			domain: [...new Set(data.map((x) => x.RowTitle))],
+			legend: true
+		},
+		marks: [
+			Plot.lineY(data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
 		]
 	};
 }
