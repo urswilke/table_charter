@@ -13,7 +13,7 @@ const tb_data = document.querySelector("#table-book-data")
 
 function plot_histogramm() {
 	const data = tb_data.sel_data()
-	barChart.chartOptions = {
+	plotObj.chartOptions = {
 		// style: {
 		// 	color: "var(--plot-primary)",
 		// },
@@ -34,8 +34,8 @@ function plot_histogramm() {
 	}
 }
 
-const barChart = document.querySelector('#rect-plot');
-barChart.appStyles = sharedStyles;
+const plotObj = document.querySelector('#plot-element');
+plotObj.appStyles = sharedStyles;
 const filePath = 'Mappe1.xlsx';
 const sheet = "Daten";
 
