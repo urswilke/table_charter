@@ -6,12 +6,14 @@ import { concat_tab_titles } from './tableBookData.js'
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
 
-const inspect = false // set to true for some console.log msgs
+const inspect = true // set to true for some console.log msgs
 
 export class OJSPlot extends LitElement {
 
 	static properties = {
 		id: { type: String },
+		data: { type: Array },
+		params: { type: Object },
 		appStyles: { type: String },
 		chartTitle: { type: String },
 		chartOptions: { type: Object },
@@ -21,6 +23,8 @@ export class OJSPlot extends LitElement {
 
 		super()
 		
+		this._data = [];
+        this.params = {};
 		this.chart = null
 		this.appStyles = ''
 
@@ -31,10 +35,28 @@ export class OJSPlot extends LitElement {
 		});
 
 	}
-	updatePlotOptions(data) {
-		inspect && console.log(data)
-		this.chartOptions = gen_plot_options(data)
-		this.chartTitle = concat_tab_titles(data[0])
+
+	get _abs_or_perc() {
+		return this.renderRoot?.querySelector('#abs-or-percent') ?? null;
+	}
+	_update_abs_or_perc() {
+		console.log(this)
+		this.params.abs_or_perc = this._abs_or_perc.value;
+	}
+
+	set data(val) {
+		let oldVal = this._data;
+		this._data = val;
+		this.params.abs_or_perc = [...new Set(this.data.map(x => x.RowSubtitle))][0];
+		// this.params = extract_tables_book_params(val);
+		// this.choices = isEmpty(this.params) ? {} : init_choices(this.params);
+		this.requestUpdate('data', oldVal);
+	}
+	get data() { return this._data; }
+	updatePlotOptions() {
+		inspect && console.log(this.data)
+		this.chartOptions = gen_plot_options(this.data)
+		this.chartTitle = concat_tab_titles(this.data[0])
 	}
 
 	render() {
@@ -48,7 +70,12 @@ export class OJSPlot extends LitElement {
 			() => html`<div>
 			<h3 class="primary">${this.chartTitle}</h3>
 			${renderedPlot}
-			</div>`
+			<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
+			<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.params.abs_or_perc}">
+				<option value="abs">abs</option>
+				<option value="in %">in %</option>
+			</select>
+		</div>`
 		)
 
 	}

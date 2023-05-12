@@ -18,7 +18,8 @@ document.getElementById("file-upload").addEventListener('change', upload_xlsx);
 
 function plot_histogramm() {
 	const data = tb_data.sel_data()
-	plotObj.updatePlotOptions(data)
+	plotObj.data = data
+	plotObj.updatePlotOptions()
 }
 
 const plotObj = document.querySelector('#plot-element');
