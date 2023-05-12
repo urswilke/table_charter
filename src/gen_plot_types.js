@@ -1,6 +1,8 @@
 import * as Plot from "@observablehq/plot";
 
 export function gen_plot_options(data) {
+	const x_order = [...new Set(data.map((x) => x.ColSubtitle))];
+	const fill_order = [...new Set(data.map((x) => x.RowTitle))];
 	return {
 		// style: {
 		// 	color: "var(--plot-primary)",
@@ -9,11 +11,11 @@ export function gen_plot_options(data) {
 		// https://observablehq.com/@ee2dev/sorting-with-plot-a-collection-of-plot-examples#cell-102
 		// https://stackoverflow.com/a/14438954
 		x: {
-			domain: [...new Set(data.map((x) => x.ColSubtitle))],
+			domain: x_order,
 		},
 		color: {
 			type: "categorical",
-			domain: [...new Set(data.map((x) => x.RowTitle))],
+			domain: fill_order,
 			legend: true
 		},
 		marks: [
@@ -22,7 +24,7 @@ export function gen_plot_options(data) {
 				// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
 				Plot.groupX(
 					{y: "sum"},
-					{x: "ColSubtitle", y: "Value", fill: "RowTitle"}
+					{x: "ColSubtitle", y: "Value", fill: "RowTitle", order: fill_order}
 				)
 			),
 			Plot.textY(
@@ -35,6 +37,7 @@ export function gen_plot_options(data) {
 							y: "Value",
 							z: "RowTitle",
 							text: (d) => (d.Value == 0 ? null : d.Value.toFixed(0)),
+							order: fill_order
 						}
 					)
 				)
