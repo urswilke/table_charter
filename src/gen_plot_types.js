@@ -1,15 +1,15 @@
 import * as Plot from "@observablehq/plot";
 
 export function gen_plot_options(data) {
+	// use ordered sequence of unique values:
+	// https://observablehq.com/@ee2dev/sorting-with-plot-a-collection-of-plot-examples#cell-102
+	// https://stackoverflow.com/a/14438954
 	const x_order = [...new Set(data.map((x) => x.ColSubtitle))];
 	const fill_order = [...new Set(data.map((x) => x.RowTitle))];
 	return {
 		// style: {
 		// 	color: "var(--plot-primary)",
 		// },
-		// use ordered sequence of unique values:
-		// https://observablehq.com/@ee2dev/sorting-with-plot-a-collection-of-plot-examples#cell-102
-		// https://stackoverflow.com/a/14438954
 		x: {
 			domain: x_order,
 		},

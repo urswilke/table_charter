@@ -3,7 +3,7 @@ import { when } from 'lit/directives/when.js';
 
 import sharedStyles from './components.css?inline';
 
-const inspect = true // set to true for some console.log msgs
+const inspect = false // set to true for some console.log msgs
 
 export class TableBookData extends LitElement {
 

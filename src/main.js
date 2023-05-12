@@ -3,8 +3,6 @@ import './ojs-plot.js'
 import { xlsx_to_json_array } from './readExcel.js'
 import './tableBookData.js'
 
-import * as Plot from "@observablehq/plot";
-
 import sharedStyles from './styles.css?inline';
 
 
@@ -18,10 +16,7 @@ function plot_histogramm() {
 
 const plotObj = document.querySelector('#plot-element');
 plotObj.appStyles = sharedStyles;
-const filePath = 'Mappe1.xlsx';
-const sheet = "Daten";
 
-// helper function to assign value to a global variable:
 async function upload_xlsx(e) {
     xlsx_data = await xlsx_to_json_array(e);
     tb_data.data = xlsx_data
@@ -29,9 +24,6 @@ async function upload_xlsx(e) {
     plot_histogramm()
 }
 document.getElementById("file-upload").addEventListener('change', upload_xlsx);
-
-
-
 
 const regenButton = document.querySelector("#regen")
 regenButton.onClick = plot_histogramm;
