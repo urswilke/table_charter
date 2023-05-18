@@ -17,6 +17,9 @@ export class TableCharter extends LitElement {
 
     }
 
+    // https://lit.dev/docs/composition/component-composition/#passing-data-up-and-down-the-tree
+    // good example here:
+    // https://stackoverflow.com/a/72402114
 	render() {
 		return html`
             <table-book-data @update-data="${this.update_plot_data}"></table-book-data>
