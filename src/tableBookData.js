@@ -8,18 +8,13 @@ const inspect = true // set to true for some console.log msgs
 export class TableBookData extends LitElement {
 
 	static properties = {
-		data: { type: Array },
-		params: { type: Object },
-		choices: { type: Object },
-		};
+	};
 
 	constructor() {
 
 		super()
 		// https://lit.dev/docs/components/properties/#accessors-custom
 		this._data = [];
-        this.params = {};
-        this.choices = {};
 	}
 
 
