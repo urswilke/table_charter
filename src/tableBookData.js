@@ -67,6 +67,11 @@ export class TableBookData extends LitElement {
 			@change=${async function(e) {
 				this.data = await xlsx_to_json_array(e)
 			}}/>
+			<action-button id="regen2" class="orange" label="Update chart"
+			@click=${function(e) {
+				console.log(this.sel_data())
+			}}
+			></action-button>
 			${when(
 				!this.hasOwnProperty("params"),
 				() => html`<div></div>`,
