@@ -119,7 +119,7 @@ export class TableBookData extends LitElement {
 								`
 							)}
 						</select>
-						<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
+						<label for="abs-or-percent">Select row type:</label>
 						<select id="abs-or-percent" @change=${this._update_row_type} value="${this.choices.row_type}">
 							${this.params.row_type.map(
 								(col) => html`
