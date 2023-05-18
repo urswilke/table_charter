@@ -11,10 +11,7 @@ export class TableBookData extends LitElement {
 	};
 
 	constructor() {
-
 		super()
-		// https://lit.dev/docs/components/properties/#accessors-custom
-		this._data = [];
 	}
 
 
