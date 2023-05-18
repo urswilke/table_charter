@@ -9,6 +9,7 @@ const inspect = true // set to true for some console.log msgs
 export class TableBookData extends LitElement {
 
 	static properties = {
+        plot_data: { type: Array },
 	};
 
 	constructor() {
@@ -47,13 +48,16 @@ export class TableBookData extends LitElement {
 	}
 	_update_abs_or_perc() {
 		this.choices.abs_or_perc = this._abs_or_perc.value;
+		this.update_data()
 	}
 	
 	_update_header() {
 		this.choices.col_titles = this._header.value;
+		this.update_data()
 	}
 	_update_tab() {
 		this.choices.tab_titles = this._tab.value;
+		this.update_data()
 	}
 	update_data() {
 		const plot_data = this.sel_data();
@@ -75,9 +79,8 @@ export class TableBookData extends LitElement {
 			<input type="file" id="table-book-upload" accept=".xlsx, .xlsm"
 			@change=${async function(e) {
 				this.data = await xlsx_to_json_array(e)
-				// this.update_data()
+				this.update_data()
 			}}/>
-			<button id="regen2" class="orange" @click="${this.update_data}">update</button>
 			${when(
 				!this.hasOwnProperty("params"),
 				() => html`<div></div>`,
