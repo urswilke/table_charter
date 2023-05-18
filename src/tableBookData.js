@@ -27,7 +27,7 @@ export class TableBookData extends LitElement {
 		let oldVal = this._data;
 		this._data = val;
 		this.params = extract_tables_book_params(val);
-		this.choices = isEmpty(this.params) ? {} : init_choices(this.params);
+		this.choices = !this.hasOwnProperty("params") ? {} : init_choices(this.params);
 		this.requestUpdate('data', oldVal);
 	}
 	get data() { return this._data; }
@@ -69,7 +69,7 @@ export class TableBookData extends LitElement {
 		inspect && console.log("render")
 		inspect && console.log(this)
 
-		return when(isEmpty(this.params),
+		return when(!this.hasOwnProperty("params"),
 			() => html`<div></div>`,
 			() => html`
 				<label for="tab-selection">Select question:</label>
@@ -125,10 +125,6 @@ export class TableBookData extends LitElement {
 
 }
 
-// https://stackoverflow.com/a/679937
-function isEmpty(obj) {
-    return Object.keys(obj).length === 0;
-}
 function extract_tables_book_params(xlsx_data) {
 	if (xlsx_data.length === 0) {
 		return {};
