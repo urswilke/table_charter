@@ -2,6 +2,7 @@ import "./action-button.js"
 import './ojs-plot.js'
 import { xlsx_to_json_array } from './readExcel.js'
 import './tableBookData.js'
+import './tableCharter.js'
 
 import * as Plot from "@observablehq/plot";
 

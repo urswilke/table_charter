@@ -1,5 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
+import { xlsx_to_json_array } from './readExcel.js'
 
 import sharedStyles from './components.css?inline';
 
@@ -61,32 +62,38 @@ export class TableBookData extends LitElement {
 		inspect && console.log("render")
 		inspect && console.log(this)
 
-		return when(!this.hasOwnProperty("params"),
-			() => html`<div></div>`,
-			() => html`
-				<label for="tab-selection">Select question:</label>
-				<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
-					${this.params.tab_titles.map(
-						(col) => html`
-							<option value="${col}">${col}</option>
-						`
-					)}
-				</select>
-				<label for="header-selection">Select header:</label>
-				<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
-					${this.params.col_titles.map(
-						(col) => html`
-							<option value="${col}">${col}</option>
-						`
-					)}
-				</select>
-				<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
-				<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
-					<option value="abs">abs</option>
-					<option value="in %">in %</option>
-				</select>
-		`);
-
+		return html`
+			<input type="file" id="table-book-upload" accept=".xlsx, .xlsm"
+			@change=${async function(e) {
+				this.data = await xlsx_to_json_array(e)
+			}}/>
+			${when(
+				!this.hasOwnProperty("params"),
+				() => html`<div></div>`,
+				() => html`
+					<label for="tab-selection">Select question:</label>
+						<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
+							${this.params.tab_titles.map(
+								(col) => html`
+									<option value="${col}">${col}</option>
+								`
+							)}
+						</select>
+						<label for="header-selection">Select header:</label>
+						<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
+							${this.params.col_titles.map(
+								(col) => html`
+									<option value="${col}">${col}</option>
+								`
+							)}
+						</select>
+						<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
+						<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
+							<option value="abs">abs</option>
+							<option value="in %">in %</option>
+						</select>
+				`
+			)}`;
 	}
 
 	static styles = [
