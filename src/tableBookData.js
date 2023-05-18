@@ -61,7 +61,7 @@ export class TableBookData extends LitElement {
 	update_data() {
 		const plot_data = this.sel_data();
 		const options = {
-			detail: {data: [...plot_data]},
+			detail: {data: plot_data},
 			bubbles: true,
 			composed: true,
 		};
