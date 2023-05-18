@@ -9,6 +9,12 @@ export function gen_plot_options(data) {
 		case "CAT":
 			return gen_plot_options_cat(data);
 	
+		case "MCG":
+			return gen_plot_options_cat(data);
+	
+		case "MDG":
+			return gen_plot_options_cat(data);
+	
 		case "MW":
 			return gen_plot_options_mw(data);
 	
