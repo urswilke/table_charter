@@ -11,6 +11,7 @@ const inspect = false // set to true for some console.log msgs
 export class OJSPlot extends LitElement {
 
 	static properties = {
+		plot_data: {type: Array},
 		id: { type: String },
 		appStyles: { type: String },
 		chartTitle: { type: String },
@@ -31,10 +32,10 @@ export class OJSPlot extends LitElement {
 		});
 
 	}
-	updatePlotOptions(data) {
-		inspect && console.log(data)
-		this.chartOptions = gen_plot_options(data)
-		this.chartTitle = concat_tab_titles(data[0])
+	set plot_data(val) {
+		// this.plot_data = val;
+		this.chartOptions = gen_plot_options(val)
+		this.chartTitle = val.length > 0 ? concat_tab_titles(val[0]) : ""
 	}
 
 	render() {

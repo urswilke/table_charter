@@ -26,7 +26,7 @@ export class TableCharter extends LitElement {
 	render() {
 		return html`
             <table-book-data @update-data="${this.update_plot_data}"></table-book-data>
-            <ojs-plot .chartOptions=${gen_plot_options(this.plot_data)}></ojs-plot>
+            <ojs-plot .plot_data=${this.plot_data}></ojs-plot>
 		`;
 
 	}
