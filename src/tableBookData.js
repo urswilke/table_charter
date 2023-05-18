@@ -55,7 +55,16 @@ export class TableBookData extends LitElement {
 	_update_tab() {
 		this.choices.tab_titles = this._tab.value;
 	}
+	update_data() {
+		const plot_data = this.sel_data();
+		const options = {
+			detail: {data: [...plot_data]},
+			bubbles: true,
+			composed: true,
+		};
+		this.dispatchEvent(new CustomEvent('update-data', options));
 	
+	}
 	
 	render() {
 
@@ -66,12 +75,9 @@ export class TableBookData extends LitElement {
 			<input type="file" id="table-book-upload" accept=".xlsx, .xlsm"
 			@change=${async function(e) {
 				this.data = await xlsx_to_json_array(e)
+				// this.update_data()
 			}}/>
-			<action-button id="regen2" class="orange" label="Update chart"
-			@click=${function(e) {
-				console.log(this.sel_data())
-			}}
-			></action-button>
+			<button id="regen2" class="orange" @click="${this.update_data}">update</button>
 			${when(
 				!this.hasOwnProperty("params"),
 				() => html`<div></div>`,

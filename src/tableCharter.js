@@ -13,15 +13,19 @@ export class TableCharter extends LitElement {
 
 	constructor() {
 		super()
+        this.plot_data = [];
 	}
+    update_plot_data(e) {
+        // console.log(e.detail)
+        this.plot_data = e.detail.data;
+
+    }
 
 	render() {
-		return when(!this.hasOwnProperty("params"),
-			() => html`<div></div>`,
-			() => html`
-				<table-book-data id="table-book-data"></table-book-data>
-				<ojs-plot id="plot-element"></ojs-plot>
-		`);
+		return html`
+            <table-book-data @update-data="${this.update_plot_data}"></table-book-data>
+            <ojs-plot></ojs-plot>
+		`;
 
 	}
 }
