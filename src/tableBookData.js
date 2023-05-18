@@ -1,5 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
+import { xlsx_to_json_array } from './readExcel.js'
 
 import sharedStyles from './components.css?inline';
 
@@ -8,18 +9,11 @@ const inspect = true // set to true for some console.log msgs
 export class TableBookData extends LitElement {
 
 	static properties = {
-		data: { type: Array },
-		params: { type: Object },
-		choices: { type: Object },
-		};
+        plot_data: { type: Array },
+	};
 
 	constructor() {
-
 		super()
-		// https://lit.dev/docs/components/properties/#accessors-custom
-		this._data = [];
-        this.params = {};
-        this.choices = {};
 	}
 
 
@@ -27,7 +21,7 @@ export class TableBookData extends LitElement {
 		let oldVal = this._data;
 		this._data = val;
 		this.params = extract_tables_book_params(val);
-		this.choices = isEmpty(this.params) ? {} : init_choices(this.params);
+		this.choices = !this.hasOwnProperty("params") ? {} : init_choices(this.params);
 		this.requestUpdate('data', oldVal);
 	}
 	get data() { return this._data; }
@@ -42,7 +36,6 @@ export class TableBookData extends LitElement {
 			.filter(x => !this.choices.remove_vals.includes(x.ColTitle));
 	}
 
-	// https://lit.dev/docs/composition/component-composition/#passing-data-across-the-tree
 	get _abs_or_perc() {
 		return this.renderRoot?.querySelector('#abs-or-percent') ?? null;
 	}
@@ -54,47 +47,66 @@ export class TableBookData extends LitElement {
 	}
 	_update_abs_or_perc() {
 		this.choices.abs_or_perc = this._abs_or_perc.value;
+		this.update_data()
 	}
 	
 	_update_header() {
 		this.choices.col_titles = this._header.value;
+		this.update_data()
 	}
 	_update_tab() {
 		this.choices.tab_titles = this._tab.value;
+		this.update_data()
 	}
+	update_data() {
+		const plot_data = this.sel_data();
+		const options = {
+			detail: {data: [...plot_data]},
+			bubbles: true,
+			composed: true,
+		};
+		this.dispatchEvent(new CustomEvent('update-data', options));
 	
+	}
 	
 	render() {
 
 		inspect && console.log("render")
 		inspect && console.log(this)
 
-		return when(isEmpty(this.params),
-			() => html`<div></div>`,
-			() => html`
-				<label for="tab-selection">Select question:</label>
-				<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
-					${this.params.tab_titles.map(
-						(col) => html`
-							<option value="${col}">${col}</option>
-						`
-					)}
-				</select>
-				<label for="header-selection">Select header:</label>
-				<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
-					${this.params.col_titles.map(
-						(col) => html`
-							<option value="${col}">${col}</option>
-						`
-					)}
-				</select>
-				<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
-				<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
-					<option value="abs">abs</option>
-					<option value="in %">in %</option>
-				</select>
-		`);
-
+		return html`
+			<input type="file" id="table-book-upload" accept=".xlsx, .xlsm"
+			@change=${async function(e) {
+				this.data = await xlsx_to_json_array(e)
+				this.update_data()
+			}}/>
+			${when(
+				!this.hasOwnProperty("params"),
+				() => html`<div></div>`,
+				() => html`
+					<label for="tab-selection">Select question:</label>
+						<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
+							${this.params.tab_titles.map(
+								(col) => html`
+									<option value="${col}">${col}</option>
+								`
+							)}
+						</select>
+						<label for="header-selection">Select header:</label>
+						<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
+							${this.params.col_titles.map(
+								(col) => html`
+									<option value="${col}">${col}</option>
+								`
+							)}
+						</select>
+						<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
+						<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
+							<option value="abs">abs</option>
+							<option value="in %">in %</option>
+						</select>
+				`
+			)}`;
 	}
 
 	static styles = [
@@ -125,10 +137,6 @@ export class TableBookData extends LitElement {
 
 }
 
-// https://stackoverflow.com/a/679937
-function isEmpty(obj) {
-    return Object.keys(obj).length === 0;
-}
 function extract_tables_book_params(xlsx_data) {
 	if (xlsx_data.length === 0) {
 		return {};
