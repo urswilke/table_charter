@@ -10,10 +10,14 @@ export class TableBookData extends LitElement {
 
 	static properties = {
         plot_data: { type: Array },
+        params: { type: Array },
+        choices: { type: Array },
 	};
 
 	constructor() {
 		super()
+		this.params = {};
+		this.choices = {};
 	}
 
 
@@ -21,22 +25,36 @@ export class TableBookData extends LitElement {
 		let oldVal = this._data;
 		this._data = val;
 		this.params = extract_tables_book_params(val);
-		this.choices = !this.hasOwnProperty("params") ? {} : init_choices(this.params);
+		this.choices = init_choices(this.params);
 		this.requestUpdate('data', oldVal);
 	}
 	get data() { return this._data; }
 
-	sel_data() {
-		return this.data
+	set_question_data() {
+		this.question_data = this.data
 			.filter(x => concat_tab_titles(x) === this.choices.tab_titles)
-			.filter(x => x.RowSubtitle === this.choices.abs_or_perc)
-			.filter(x => x.ColTitle === this.choices.col_titles)
+			.filter(x => x.ColTitle === this.choices.col_titles);
+
+	}
+	set_plot_data() {
+		this.set_question_data()
+		let rowtype_choices = [...new Set(this.question_data.map((d) => d.RowSubtitle))];
+		this.params.row_type = rowtype_choices
+		// when switching tables:
+		// - keep row type choice, if also existing in the next,
+		// - otherwise, choose the "first" in the array
+		// TODO: no idea, why it doesn't choose the first???
+		if (!this.params.row_type.includes(this.choices.row_type)) {
+			this.choices.row_type = this.params.row_type[0];
+		}
+		this.plot_data = this.question_data
+			.filter(x => x.RowSubtitle === this.choices.row_type)
 			// .filter(x => this.choices.tab_titles.includes(x.TabTitel1))
 			.filter(x => !this.choices.remove_vals.includes(x.RowTitle))
 			.filter(x => !this.choices.remove_vals.includes(x.ColTitle));
 	}
 
-	get _abs_or_perc() {
+	get _row_type() {
 		return this.renderRoot?.querySelector('#abs-or-percent') ?? null;
 	}
 	get _header() {
@@ -45,8 +63,8 @@ export class TableBookData extends LitElement {
 	get _tab() {
 		return this.renderRoot?.querySelector('#tab-selection') ?? null;
 	}
-	_update_abs_or_perc() {
-		this.choices.abs_or_perc = this._abs_or_perc.value;
+	_update_row_type() {
+		this.choices.row_type = this._row_type.value;
 		this.update_data()
 	}
 	
@@ -59,12 +77,13 @@ export class TableBookData extends LitElement {
 		this.update_data()
 	}
 	update_data() {
-		const plot_data = this.sel_data();
+		this.set_plot_data();
 		const options = {
-			detail: {data: plot_data},
+			detail: {data: [...this.plot_data]},
 			bubbles: true,
 			composed: true,
 		};
+
 		this.dispatchEvent(new CustomEvent('update-data', options));
 	
 	}
@@ -81,7 +100,7 @@ export class TableBookData extends LitElement {
 				this.update_data()
 			}}/>
 			${when(
-				!this.hasOwnProperty("params"),
+				isEmpty(this.params),
 				() => html`<div></div>`,
 				() => html`
 					<label for="tab-selection">Select question:</label>
@@ -101,9 +120,12 @@ export class TableBookData extends LitElement {
 							)}
 						</select>
 						<label for="abs-or-percent">Choose whether to use absolute or percent values:</label>
-						<select id="abs-or-percent" @change=${this._update_abs_or_perc} value="${this.choices.abs_or_perc}">
-							<option value="abs">abs</option>
-							<option value="in %">in %</option>
+						<select id="abs-or-percent" @change=${this._update_row_type} value="${this.choices.row_type}">
+							${this.params.row_type.map(
+								(col) => html`
+									<option value="${col}">${col}</option>
+								`
+							)}
 						</select>
 				`
 			)}`;
@@ -145,7 +167,7 @@ function extract_tables_book_params(xlsx_data) {
     let tab_titles = [...new Set(xlsx_data.map(concat_tab_titles))];
     let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle).filter((d) => d !== "GESAMT"))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
-	let abs_or_perc = ["abs", "in %"];
+	let row_type = ["abs", "in %"];
 	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
 
     return {
@@ -153,9 +175,13 @@ function extract_tables_book_params(xlsx_data) {
         tab_titles,
         col_titles,
         col_subtitles,
-		abs_or_perc,
+		row_type,
 		remove_vals
     }
+}
+// https://stackoverflow.com/a/679937
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
 }
 
 export function concat_tab_titles(obj) {
