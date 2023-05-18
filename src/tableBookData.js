@@ -36,7 +36,6 @@ export class TableBookData extends LitElement {
 			.filter(x => !this.choices.remove_vals.includes(x.ColTitle));
 	}
 
-	// https://lit.dev/docs/composition/component-composition/#passing-data-across-the-tree
 	get _abs_or_perc() {
 		return this.renderRoot?.querySelector('#abs-or-percent') ?? null;
 	}

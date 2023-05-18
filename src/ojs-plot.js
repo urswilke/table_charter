@@ -25,18 +25,13 @@ export class OJSPlot extends LitElement {
 		this.chart = null
 		this.appStyles = ''
 
-		this.addEventListener('chartUpdated', (e) => {
-			inspect && console.log("connectedCallback event listener")
-			this.chartTitle = e.detail.value.chartTitle;
-			this.chartOptions = e.detail.value.chartOptions;
-		});
-
 	}
+
 	set plot_data(val) {
-		// this.plot_data = val;
 		this.chartOptions = gen_plot_options(val)
 		this.chartTitle = val.length > 0 ? concat_tab_titles(val[0]) : ""
 	}
+
 
 	render() {
 
@@ -53,28 +48,6 @@ export class OJSPlot extends LitElement {
 		)
 
 	}
-
-	performUpdate() {
-
-		super.performUpdate();
-
-		const options = {
-			detail: {
-				value: {
-					chartTitle: this.chartTitle,
-					chartOptions: this.chartOptions,
-				}
-			},
-			bubbles: true,
-			composed: true,
-		};
-
-		inspect && console.log("performUpdate dispatching event")
-		this.dispatchEvent(new CustomEvent(`chartUpdated`, options));
-		inspect && console.log("performUpdate event dispatched")
-
-	}
-
 	static styles = [
 		unsafeCSS(this.appStyles),
 		unsafeCSS(sharedStyles),

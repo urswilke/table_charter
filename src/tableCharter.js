@@ -1,10 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
-import { when } from 'lit/directives/when.js';
 import './ojs-plot.js'
 import './tableBookData.js'
-
-
-const inspect = true // set to true for some console.log msgs
 
 export class TableCharter extends LitElement {
 
@@ -17,7 +13,6 @@ export class TableCharter extends LitElement {
         this.plot_data = [];
 	}
     update_plot_data(e) {
-        // console.log(e.detail)
         this.plot_data = e.detail.data;
 
     }
