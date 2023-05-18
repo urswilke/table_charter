@@ -2,7 +2,6 @@ import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 import './ojs-plot.js'
 import './tableBookData.js'
-import { gen_plot_options } from './gen_plot_types.js'
 
 
 const inspect = true // set to true for some console.log msgs
