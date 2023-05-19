@@ -12,9 +12,9 @@ export class TableCharter extends LitElement {
 		super()
         this.plot_data = [];
 	}
+
     update_plot_data(e) {
         this.plot_data = e.detail.data;
-
     }
 
     // https://lit.dev/docs/composition/component-composition/#passing-data-up-and-down-the-tree
