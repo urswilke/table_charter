@@ -102,7 +102,7 @@ export class TableBookData extends LitElement {
 				isEmpty(this.params),
 				() => html`<div></div>`,
 				() => html`
-					<label for="tab-selection">Select question:</label>
+					<label">Select question:</label>
 						<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
 							${this.params.tab_titles.map(
 								(col) => html`
@@ -110,7 +110,7 @@ export class TableBookData extends LitElement {
 								`
 							)}
 						</select>
-						<label for="header-selection">Select header:</label>
+						<label">Select header:</label>
 						<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
 							${this.params.col_titles.map(
 								(col) => html`
@@ -118,7 +118,7 @@ export class TableBookData extends LitElement {
 								`
 							)}
 						</select>
-						<label for="rowtype-selection">Select row type:</label>
+						<label">Select row type:</label>
 						<select id="rowtype-selection" @change=${this._update_row_type} value="${this.choices.row_type}">
 							${this.params.row_type.map(
 								(col) => html`
