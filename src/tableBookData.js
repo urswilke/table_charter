@@ -10,8 +10,8 @@ export class TableBookData extends LitElement {
 
 	static properties = {
         plot_data: { type: Array },
-        params: { type: Array },
-        choices: { type: Array },
+        params: { type: Object },
+        choices: { type: Object },
 	};
 
 	constructor() {
