@@ -81,6 +81,7 @@ function gen_plot_options_mw(data) {
 		},
 		marks: [
 			Plot.lineY(data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
+			Plot.dot(data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
 		]
 	};
 }
