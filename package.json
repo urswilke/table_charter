@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "web-test-runner test/**/*.test.js --node-resolve",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,6 +22,8 @@
   },
   "devDependencies": {
     "@observablehq/plot": "^0.6.6",
+    "@web/dev-server-legacy": "^2.0.0",
+    "@web/test-runner": "^0.16.1",
     "vite": "^4.3.5"
   }
 }
