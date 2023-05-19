@@ -44,7 +44,7 @@ export class TableBookData extends LitElement {
 		// - otherwise, choose the "first" in the array
 		if (!this.params.row_type.includes(this.choices.row_type)) {
 			this.choices.row_type = this.params.row_type[0];
-			this.renderRoot.querySelector('#abs-or-percent').value = this.choices.row_type;
+			this.renderRoot.querySelector('#rowtype-selection').value = this.choices.row_type;
 		}
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
@@ -54,7 +54,7 @@ export class TableBookData extends LitElement {
 	}
 
 	get _row_type() {
-		return this.renderRoot?.querySelector('#abs-or-percent') ?? null;
+		return this.renderRoot?.querySelector('#rowtype-selection') ?? null;
 	}
 	get _header() {
 		return this.renderRoot?.querySelector('#header-selection') ?? null;
@@ -118,8 +118,8 @@ export class TableBookData extends LitElement {
 								`
 							)}
 						</select>
-						<label for="abs-or-percent">Select row type:</label>
-						<select id="abs-or-percent" @change=${this._update_row_type} value="${this.choices.row_type}">
+						<label for="rowtype-selection">Select row type:</label>
+						<select id="rowtype-selection" @change=${this._update_row_type} value="${this.choices.row_type}">
 							${this.params.row_type.map(
 								(col) => html`
 									<option value="${col}">${col}</option>
