@@ -42,7 +42,6 @@ export class TableBookData extends LitElement {
 		// when switching tables:
 		// - keep row type choice, if also existing in the next,
 		// - otherwise, choose the "first" in the array
-		// TODO: no idea, why it doesn't choose the first???
 		if (!this.params.row_type.includes(this.choices.row_type)) {
 			this.choices.row_type = this.params.row_type[0];
 			this.renderRoot.querySelector('#abs-or-percent').value = this.choices.row_type;
