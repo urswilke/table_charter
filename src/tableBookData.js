@@ -90,7 +90,7 @@ export class TableBookData extends LitElement {
 	
 	render() {
 
-		inspect && console.log("render")
+		inspect && console.log("rendering table-book-data")
 		inspect && console.log(this)
 
 		return html`
