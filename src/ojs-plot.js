@@ -29,7 +29,7 @@ export class OJSPlot extends LitElement {
 
 	set plot_data(val) {
 		this.chartOptions = gen_plot_options(val)
-		this.chartTitle = val.length > 0 ? concat_tab_titles(val[0]) : ""
+		this.chartTitle = val.length > 0 ? concat_tab_titles(val[0], "\n") : ""
 	}
 
 
@@ -42,7 +42,7 @@ export class OJSPlot extends LitElement {
 		return when(this.chartOptions === null,
 			() => html`<div></div>`,
 			() => html`<div>
-			<h3 class="primary">${this.chartTitle}</h3>
+			<h3 class="primary multi-line-header">${this.chartTitle}</h3>
 			${renderedPlot}
 			</div>`
 		)
@@ -52,6 +52,9 @@ export class OJSPlot extends LitElement {
 		unsafeCSS(this.appStyles),
 		unsafeCSS(sharedStyles),
 		css`
+			.multi-line-header {
+				white-space: pre-wrap;
+			}
 			:host {
 				display: flex;
 				background-color: var(--light-plot-background, "white")

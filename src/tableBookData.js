@@ -163,7 +163,7 @@ function extract_tables_book_params(xlsx_data) {
 		return {};
 	}
     let tab_indices = [...new Set(xlsx_data.map((d) => d.TabNo))];
-    let tab_titles = [...new Set(xlsx_data.map(concat_tab_titles))];
+    let tab_titles = [...new Set(xlsx_data.map(d => concat_tab_titles(d)))];
     let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle).filter((d) => d !== "GESAMT"))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
 	let row_type = ["abs", "in %"];
@@ -183,13 +183,13 @@ function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 
-export function concat_tab_titles(obj) {
+export function concat_tab_titles(obj, sep = " - ") {
 	// TODO: do not use redundant tab titles in input data from Excel!
 	return [...new Set([obj.TabTitel1, obj.TabTitel2, obj.TabTitel3])]
 		// remove undefined elements
 		// https://stackoverflow.com/a/46125317
 		.filter(item => item)
-		.join(" - ");
+		.join(sep);
 }
 
 // https://stackoverflow.com/a/14810722
