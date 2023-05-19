@@ -18,17 +18,16 @@ export class TableBookData extends LitElement {
 		super()
 		this.params = {};
 		this.choices = {};
+		this.data = [];
 	}
 
 
-	set data(val) {
-		let oldVal = this._data;
-		this._data = val;
-		this.params = extract_tables_book_params(val);
+	init_tablebook_data(data) {
+		this.data = data;
+		this.params = extract_tables_book_params(data);
 		this.choices = init_choices(this.params);
-		this.requestUpdate('data', oldVal);
+		this.update_data()
 	}
-	get data() { return this._data; }
 
 	set_question_data() {
 		this.question_data = this.data
@@ -46,6 +45,7 @@ export class TableBookData extends LitElement {
 		// TODO: no idea, why it doesn't choose the first???
 		if (!this.params.row_type.includes(this.choices.row_type)) {
 			this.choices.row_type = this.params.row_type[0];
+			this.renderRoot.querySelector('#abs-or-percent').value = this.choices.row_type;
 		}
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
@@ -96,8 +96,8 @@ export class TableBookData extends LitElement {
 		return html`
 			<input type="file" id="table-book-upload" accept=".xlsx, .xlsm"
 			@change=${async function(e) {
-				this.data = await xlsx_to_json_array(e)
-				this.update_data()
+				let data = await xlsx_to_json_array(e)
+				this.init_tablebook_data(data)
 			}}/>
 			${when(
 				isEmpty(this.params),
