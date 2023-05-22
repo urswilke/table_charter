@@ -36,6 +36,7 @@ function gen_plot_options_cat(data) {
 		// https://stackoverflow.com/a/14438954
 		x: {
 			domain: x_order,
+			label: null
 		},
 		color: {
 			type: "categorical",
