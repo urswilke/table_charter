@@ -47,10 +47,14 @@ export class TableBookData extends LitElement {
 		}
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
+			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
 	}
 
 	get _row_type() {
 		return this.renderRoot?.querySelector('#rowtype-selection') ?? null;
+	}
+	get _hide_rows() {
+		return this.renderRoot?.querySelector('#hide_rows-selection') ?? null;
 	}
 	get _header() {
 		return this.renderRoot?.querySelector('#header-selection') ?? null;
@@ -63,8 +67,12 @@ export class TableBookData extends LitElement {
 		this.update_data()
 	}
 	
+	_update_hide_rows() {
+		this.choices.hide_rows = [...this._hide_rows.options].filter(option => option.selected).map(option => option.value)
+		this.update_data()
+	}
+	
 	_update_header() {
-		// this.choices.col_titles = this._header.value;
 		this.choices.col_titles = [...this._header.options].filter(option => option.selected).map(option => option.value)
 		this.update_data()
 	}
@@ -99,7 +107,7 @@ export class TableBookData extends LitElement {
 				isEmpty(this.params),
 				() => html`<div></div>`,
 				() => html`
-					<label">Select question:</label>
+					<label>Select question:</label>
 						<select id="tab-selection" @change=${this._update_tab} .value="${this.choices.tab_titles}">
 							${this.params.tab_titles.map(
 								(col) => html`
@@ -107,22 +115,33 @@ export class TableBookData extends LitElement {
 								`
 							)}
 						</select>
-						<label">Select header:</label>
+						<label>Select header:</label>
 						<select id="header-selection" multiple @change=${this._update_header}>
 							${this.params.col_titles.map(
 								(col) => html`
 									<option 
-										${this.choices.col_titles.includes(col) ? "selected" : ""}
+										?selected=${this.choices.col_titles.includes(col)}
 										value="${col}"
 									>${col}</option>
 								`
 							)}
 						</select>
-						<label">Select row type:</label>
+						<label>Select row type:</label>
 						<select id="rowtype-selection" @change=${this._update_row_type} .value="${this.choices.row_type}">
 							${this.params.row_type.map(
 								(col) => html`
 									<option value="${col}">${col}</option>
+								`
+							)}
+						</select>
+						<label>Select rows to hide:</label>
+						<select id="hide_rows-selection" multiple @change=${this._update_hide_rows}>
+							${this.params.hide_rows.map(
+								(col) => html`
+									<option 
+										?selected=${this.choices.hide_rows.includes(col)}
+										value="${col}"
+									>${col}</option>
 								`
 							)}
 						</select>
@@ -132,6 +151,12 @@ export class TableBookData extends LitElement {
 
 	static styles = [
 		unsafeCSS(sharedStyles),
+		// TODO: find a way to overwrite the selected options' color defined in styles.css -> :root -> background!
+		// css`
+		// 	select[multiple]:focus option:checked {
+		// 		background: red linear-gradient(gray,gray);
+		// 	}
+		// `
 	];
 
 }
@@ -145,7 +170,7 @@ function extract_tables_book_params(xlsx_data) {
     let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
 	let row_type = ["abs", "in %"];
-	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
+	let hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
 
     return {
         tab_indices,
@@ -153,7 +178,7 @@ function extract_tables_book_params(xlsx_data) {
         col_titles,
         col_subtitles,
 		row_type,
-		remove_vals
+		hide_rows
     }
 }
 // https://stackoverflow.com/a/679937
@@ -179,6 +204,7 @@ const objectMap = (obj, fn) =>
 )
 function init_choices(params) {
 	const res = objectMap(params, v => v[0]);
+	res['hide_rows'] = params['hide_rows']
 	return res;
 }
 
