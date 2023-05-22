@@ -32,7 +32,7 @@ export class TableBookData extends LitElement {
 	set_question_data() {
 		this.question_data = this.data
 			.filter(x => concat_tab_titles(x) === this.choices.tab_titles)
-			.filter(x => x.ColTitle === this.choices.col_titles);
+			.filter(x => this.choices.col_titles.includes(x.ColTitle));
 
 	}
 	set_plot_data() {
@@ -64,7 +64,8 @@ export class TableBookData extends LitElement {
 	}
 	
 	_update_header() {
-		this.choices.col_titles = this._header.value;
+		// this.choices.col_titles = this._header.value;
+		this.choices.col_titles = [...this._header.options].filter(option => option.selected).map(option => option.value)
 		this.update_data()
 	}
 	_update_tab() {
@@ -107,10 +108,13 @@ export class TableBookData extends LitElement {
 							)}
 						</select>
 						<label">Select header:</label>
-						<select id="header-selection" @change=${this._update_header} .value="${this.choices.col_titles}">
+						<select id="header-selection" multiple @change=${this._update_header}>
 							${this.params.col_titles.map(
 								(col) => html`
-									<option value="${col}">${col}</option>
+									<option 
+										${this.choices.col_titles.includes(col) ? "selected" : ""}
+										value="${col}"
+									>${col}</option>
 								`
 							)}
 						</select>
@@ -138,7 +142,7 @@ function extract_tables_book_params(xlsx_data) {
 	}
     let tab_indices = [...new Set(xlsx_data.map((d) => d.TabNo))];
     let tab_titles = [...new Set(xlsx_data.map(d => concat_tab_titles(d)))];
-    let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle).filter((d) => d !== "GESAMT"))];
+    let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
 	let row_type = ["abs", "in %"];
 	let remove_vals = ["GESAMT", "GÜLTIGE FÄLLE"];
