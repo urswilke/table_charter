@@ -29,7 +29,7 @@ export class OJSPlot extends LitElement {
 
 	set plot_data(val) {
 		this.chartOptions = gen_plot_options(val)
-		this.chartTitle = val.length > 0 ? concat_tab_titles(val[0], "\n") : ""
+		this.chartTitle = !!val.plot_data ? concat_tab_titles(val.plot_data[0], "\n") : ""
 	}
 
 

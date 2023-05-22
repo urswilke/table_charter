@@ -4,7 +4,7 @@ export function gen_plot_options(data) {
 	if (data.length === 0) {
 		return {};
 	}
-	let tab_type = data[0].TabType;
+	let tab_type = data.plot_data[0].TabType;
 	switch (tab_type) {
 		case "CAT":
 			return gen_plot_options_cat(data);
@@ -25,8 +25,8 @@ export function gen_plot_options(data) {
 }
 
 function gen_plot_options_cat(data) {
-	const x_order = [...new Set(data.map((x) => x.ColSubtitle))];
-	const fill_order = [...new Set(data.map((x) => x.RowTitle))];
+	const x_order = [...new Set(data.plot_data.map((x) => x.ColSubtitle))];
+	const fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle))];
 	return {
 		// style: {
 		// 	color: "var(--plot-primary)",
@@ -45,7 +45,7 @@ function gen_plot_options_cat(data) {
 		},
 		marks: [
 			Plot.barY(
-				data, 
+				data.plot_data, 
 				// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
 				Plot.groupX(
 					{y: "sum"},
@@ -53,7 +53,7 @@ function gen_plot_options_cat(data) {
 				)
 			),
 			Plot.textY(
-				data,
+				data.plot_data,
 				Plot.stackY(
 					Plot.groupX(
 						{ y: "sum", text: "first" },
@@ -73,16 +73,16 @@ function gen_plot_options_cat(data) {
 function gen_plot_options_mw(data) {
 	return {
 		y: {
-			domain: [...new Set(data.map((x) => x.ColSubtitle))],
+			domain: [...new Set(data.plot_data.map((x) => x.ColSubtitle))],
 		},
 		color: {
 			type: "categorical",
-			domain: [...new Set(data.map((x) => x.RowTitle))],
+			domain: [...new Set(data.plot_data.map((x) => x.RowTitle))],
 			legend: true
 		},
 		marks: [
-			Plot.lineY(data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
-			Plot.dot(data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
+			Plot.lineY(data.plot_data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
+			Plot.dot(data.plot_data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
 		]
 	};
 }
