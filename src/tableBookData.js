@@ -47,9 +47,6 @@ export class TableBookData extends LitElement {
 		}
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
-			// .filter(x => this.choices.tab_titles.includes(x.TabTitel1))
-			.filter(x => !this.choices.remove_vals.includes(x.RowTitle))
-			.filter(x => !this.choices.remove_vals.includes(x.ColTitle));
 	}
 
 	get _row_type() {
@@ -178,7 +175,6 @@ const objectMap = (obj, fn) =>
 )
 function init_choices(params) {
 	const res = objectMap(params, v => v[0]);
-	res['remove_vals'] = params['remove_vals']
 	return res;
 }
 
