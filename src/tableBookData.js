@@ -62,6 +62,9 @@ export class TableBookData extends LitElement {
 	get _tab() {
 		return this.renderRoot?.querySelector('#tab-selection') ?? null;
 	}
+	get _color_scale() {
+		return this.renderRoot?.querySelector('#color_scale-selection') ?? null;
+	}
 	_update_row_type() {
 		this.choices.row_type = this._row_type.value;
 		this.update_data()
@@ -78,6 +81,10 @@ export class TableBookData extends LitElement {
 	}
 	_update_tab() {
 		this.choices.tab_titles = this._tab.value;
+		this.update_data()
+	}
+	_update_color_scale() {
+		this.choices.color_scale = this._color_scale.value;
 		this.update_data()
 	}
 	update_data() {
@@ -148,6 +155,14 @@ export class TableBookData extends LitElement {
 								`
 							)}
 						</select>
+						<label>Select color scale:</label>
+						<select id="color_scale-selection" @change=${this._update_color_scale}>
+						${this.params.color_scale.map(
+							(col) => html`
+								<option value="${col}">${col}</option>
+							`
+						)}
+					</select>
 				`
 			)}`;
 	}
@@ -174,6 +189,7 @@ function extract_tables_book_params(xlsx_data) {
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
 	let row_type = ["abs", "in %"];
 	let hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
+	let color_scale = ["categorical", "linear"];
 
     return {
         tab_indices,
@@ -181,7 +197,8 @@ function extract_tables_book_params(xlsx_data) {
         col_titles,
         col_subtitles,
 		row_type,
-		hide_rows
+		hide_rows,
+		color_scale
     }
 }
 // https://stackoverflow.com/a/679937

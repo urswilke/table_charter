@@ -39,7 +39,7 @@ function gen_plot_options_cat(data) {
 			label: null
 		},
 		color: {
-			type: "categorical",
+			type: data.choices.color_scale,
 			domain: fill_order,
 			legend: true
 		},
@@ -76,7 +76,7 @@ function gen_plot_options_mw(data) {
 			domain: [...new Set(data.plot_data.map((x) => x.ColSubtitle))],
 		},
 		color: {
-			type: "categorical",
+			type: data.choices.color_scale,
 			domain: [...new Set(data.plot_data.map((x) => x.RowTitle))],
 			legend: true
 		},
