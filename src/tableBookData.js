@@ -44,7 +44,6 @@ export class TableBookData extends LitElement {
 		// - otherwise, choose the "first" in the array
 		if (!this.params.row_type.includes(this.choices.row_type)) {
 			this.choices.row_type = this.params.row_type[0];
-			this.renderRoot.querySelector('#rowtype-selection').value = this.choices.row_type;
 		}
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
@@ -103,7 +102,7 @@ export class TableBookData extends LitElement {
 				() => html`<div></div>`,
 				() => html`
 					<label">Select question:</label>
-						<select id="tab-selection" @change=${this._update_tab} value="${this.choices.tab_titles}">
+						<select id="tab-selection" @change=${this._update_tab} .value="${this.choices.tab_titles}">
 							${this.params.tab_titles.map(
 								(col) => html`
 									<option value="${col}">${col}</option>
@@ -111,7 +110,7 @@ export class TableBookData extends LitElement {
 							)}
 						</select>
 						<label">Select header:</label>
-						<select id="header-selection" @change=${this._update_header} value="${this.choices.col_titles}">
+						<select id="header-selection" @change=${this._update_header} .value="${this.choices.col_titles}">
 							${this.params.col_titles.map(
 								(col) => html`
 									<option value="${col}">${col}</option>
@@ -119,7 +118,7 @@ export class TableBookData extends LitElement {
 							)}
 						</select>
 						<label">Select row type:</label>
-						<select id="rowtype-selection" @change=${this._update_row_type} value="${this.choices.row_type}">
+						<select id="rowtype-selection" @change=${this._update_row_type} .value="${this.choices.row_type}">
 							${this.params.row_type.map(
 								(col) => html`
 									<option value="${col}">${col}</option>
