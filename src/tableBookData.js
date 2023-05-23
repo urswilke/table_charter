@@ -26,7 +26,9 @@ export class TableBookData extends LitElement {
 		this.data = data;
 		this.params = extract_tables_book_params(data);
 		this.choices = init_choices(this.params);
-		this.update_data()
+		this.set_question_data()
+		this.set_plot_data();
+		this.send_update_plot_data_event()
 	}
 
 	set_question_data() {
@@ -35,17 +37,19 @@ export class TableBookData extends LitElement {
 			.filter(x => this.choices.col_titles.includes(x.ColTitle));
 
 	}
-	set_plot_data() {
-		this.set_question_data()
+	set_rowtype_choices() {
 		let rowtype_choices = [...new Set(this.question_data.map((d) => d.RowSubtitle))];
 		rowtype_choices = move_second_to_first(rowtype_choices)
 		this.params.row_type = rowtype_choices
 		// when switching tables:
 		// - keep row type choice, if also existing in the next,
 		// - otherwise, choose the "first" in the array
-		if (!this.params.row_type.includes(this.choices.row_type)) {
-			this.choices.row_type = this.params.row_type[0];
-		}
+		// if (!this.params.row_type.includes(this.choices.row_type)) {
+			this.choices.row_type = rowtype_choices[0];
+		// }
+
+	}
+	set_plot_data() {
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
 			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
@@ -68,28 +72,34 @@ export class TableBookData extends LitElement {
 	}
 	_update_row_type() {
 		this.choices.row_type = this._row_type.value;
-		this.update_data()
+		this.set_plot_data();
+		this.send_update_plot_data_event()
 	}
 	
 	_update_hide_rows() {
 		this.choices.hide_rows = [...this._hide_rows.options].filter(option => option.selected).map(option => option.value)
-		this.update_data()
+		this.set_plot_data();
+		this.send_update_plot_data_event()
 	}
 	
 	_update_header() {
 		this.choices.col_titles = [...this._header.options].filter(option => option.selected).map(option => option.value)
-		this.update_data()
+		this.set_question_data()
+		this.set_plot_data();
+		this.send_update_plot_data_event()
 	}
 	_update_tab() {
 		this.choices.tab_titles = this._tab.value;
-		this.update_data()
+		this.set_question_data()
+		this.set_rowtype_choices()
+		this.set_plot_data()
+		this.send_update_plot_data_event()
 	}
 	_update_color_scale() {
 		this.choices.color_scale = this._color_scale.value;
-		this.update_data()
+		this.send_update_plot_data_event()
 	}
-	update_data() {
-		this.set_plot_data();
+	send_update_plot_data_event() {
 		const options = {
 			detail: {data: {
 				plot_data: this.plot_data,
