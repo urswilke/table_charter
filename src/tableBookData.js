@@ -132,7 +132,7 @@ export class TableBookData extends LitElement {
 						<select id="tab-selection" @change=${this._update_tab} .value="${this.choices.tab_titles}">
 							${this.params.tab_titles.map(
 								(col) => html`
-									<option value="${col}">${col}</option>
+									<option value="${col}" title=${col}>${col}</option>
 								`
 							)}
 						</select>
