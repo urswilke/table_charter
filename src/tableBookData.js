@@ -180,12 +180,11 @@ export class TableBookData extends LitElement {
 
 	static styles = [
 		unsafeCSS(sharedStyles),
-		// TODO: find a way to overwrite the selected options' color defined in styles.css -> :root -> background!
-		// css`
-		// 	select[multiple]:focus option:checked {
-		// 		background: red linear-gradient(gray,gray);
-		// 	}
-		// `
+		css`
+		option:checked {
+			background: red linear-gradient(#333,#333);
+		}
+	`
 	];
 
 }
