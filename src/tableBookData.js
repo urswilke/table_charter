@@ -38,6 +38,7 @@ export class TableBookData extends LitElement {
 	set_plot_data() {
 		this.set_question_data()
 		let rowtype_choices = [...new Set(this.question_data.map((d) => d.RowSubtitle))];
+		rowtype_choices = move_second_to_first(rowtype_choices)
 		this.params.row_type = rowtype_choices
 		// when switching tables:
 		// - keep row type choice, if also existing in the next,
@@ -187,7 +188,8 @@ function extract_tables_book_params(xlsx_data) {
     let tab_titles = [...new Set(xlsx_data.map(d => concat_tab_titles(d)))];
     let col_titles = [...new Set(xlsx_data.map((d) => d.ColTitle))];
     let col_subtitles = [...new Set(xlsx_data.map((d) => d.ColSubtitle))];
-	let row_type = ["abs", "in %"];
+    let row_type = [...new Set(xlsx_data.map((d) => d.RowSubtitle))]
+	row_type = move_second_to_first(row_type);
 	let hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
 	let color_scale = ["categorical", "linear"];
 
@@ -226,6 +228,11 @@ function init_choices(params) {
 	const res = objectMap(params, v => v[0]);
 	res['hide_rows'] = params['hide_rows']
 	return res;
+}
+
+function move_second_to_first(row_type) {
+	row_type.unshift(row_type.splice(1, 1)[0]);
+	return [...row_type];
 }
 
 window.customElements.define('table-book-data', TableBookData)
