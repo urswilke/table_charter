@@ -20,7 +20,10 @@ export class TableBookData extends LitElement {
 		this.choices = {};
 		this.data = [];
 	}
-
+	async load_data(e) {
+		let data = await xlsx_to_json_array(e)
+		this.init_tablebook_data(data)
+	}
 
 	init_tablebook_data(data) {
 		this.data = data;
@@ -120,10 +123,8 @@ export class TableBookData extends LitElement {
 
 		return html`
 			<input type="file" id="table-book-upload" accept=".xlsx, .xlsm"
-			@change=${async function(e) {
-				let data = await xlsx_to_json_array(e)
-				this.init_tablebook_data(data)
-			}}/>
+				@change=${this.load_data}
+			/>
 			${when(
 				isEmpty(this.params),
 				() => html`<div></div>`,
