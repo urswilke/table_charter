@@ -134,7 +134,7 @@ export class TableBookData extends LitElement {
 	update_header(e) {
 		this.choices.col_titles = e.detail.data.chosen_header;
 		this.send_update_plot_data_event()
-		console.log('hallo')
+		inspect && console.log(this.choices.col_titles)
 	}
 
 	render() {

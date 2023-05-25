@@ -11,13 +11,14 @@ export class ColumnSelector extends LitElement {
         this.all_headers = ["a", "b"]
         this.chosen_header = ["b"]
     }
-	// get chosen_header() {
-	// 	return this.renderRoot?.querySelector('#header-selection') ?? null;
-	// }
+	get _chosen_header() {
+		return this.renderRoot?.querySelector('#header-selector') ?? null;
+	}
     
 
     _update_header() {
-		// let chosen_header = [...this.chosen_header.options].filter(option => option.selected).map(option => option.value)
+		this.chosen_header = [...this._chosen_header.options].filter(option => option.selected).map(option => option.value)
+         
         const options = {
 			detail: {
 				data: {
@@ -27,7 +28,6 @@ export class ColumnSelector extends LitElement {
 			bubbles: true,
 			composed: true,
 		};
-        console.log(this.chosen_header)
 		this.dispatchEvent(new CustomEvent('update-header', options));
     }
 
@@ -35,7 +35,7 @@ export class ColumnSelector extends LitElement {
         return html`
         <label>Select header:</label>
         <div>
-            <select id="header-selection" multiple @change=${this._update_header}>
+            <select id="header-selector" multiple @change=${this._update_header}>
                 ${this.all_headers.map(
                     (col) => html`
                         <option 
