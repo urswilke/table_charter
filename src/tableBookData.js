@@ -2,6 +2,7 @@ import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 import { xlsx_to_json_array } from './readExcel.js'
 import './header_selector.js'
+import './question_selector.js'
 
 import sharedStyles from './components.css?inline';
 
@@ -112,7 +113,7 @@ export class TableBookData extends LitElement {
 
 	}
 
-	update_header(e) {
+	_on_header_update(e) {
 		this.choices.col_titles = e.detail.data.chosen_header;
 		inspect && console.log(this.choices.col_titles)
 		this.set_question_data()
@@ -147,8 +148,7 @@ export class TableBookData extends LitElement {
 					<label>Select question:</label>
 					<question-selector @update-question="${this._on_question_update}" .all_questions=${this.params.tab_titles} .chosen_question=${this.choices.tab_titles}></question-selector>
 
-						<label>Select header:</label>
-                        <column-selector @update-header="${this.update_header}" .all_headers=${this.params.col_titles} .chosen_header=${this.choices.col_titles}></column-selector>
+					<column-selector @update-header="${this._on_header_update}" .all_headers=${this.params.col_titles} .chosen_header=${this.choices.col_titles}></column-selector>
 						<label>Select row type:</label>
 						<select id="rowtype-selection" @change=${this._update_row_type} .value="${this.choices.row_type}">
 							${this.params.row_type.map(
