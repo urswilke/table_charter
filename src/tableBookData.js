@@ -239,6 +239,7 @@ const objectMap = (obj, fn) =>
 function init_choices(params) {
 	const res = objectMap(params, v => v[0]);
 	res['hide_rows'] = params['hide_rows']
+	res['col_titles'] = params['col_titles'].slice(0, 2	);
 	return res;
 }
 
