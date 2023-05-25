@@ -25,6 +25,7 @@ export class TableBookData extends LitElement {
 		this.set_params();
 		this.choices = init_choices(this.params);
 		this.set_plot_data();
+		this.send_update_plot_data_event()
 	}
 
 	set_params() {
@@ -32,8 +33,10 @@ export class TableBookData extends LitElement {
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		this.params.tab_titles = [...new Set(this.data.map(d => concat_tab_titles(d)))];
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
-		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColSubtitle))];
+		// TODO: clean up this messss!!!!
+		this.choices = init_choices(this.params);
 		this.set_question_data()
+		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColSubtitle))];
 		this.params.row_type = swapElements([...new Set(this.data.map((d) => d.RowSubtitle))], 0, 1)
 		this.params.hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
 		this.params.color_scale = ["categorical", "linear"];
