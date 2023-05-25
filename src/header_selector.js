@@ -2,15 +2,10 @@ import { LitElement, html } from 'lit';
 
 export class ColumnSelector extends LitElement {
     static properties = {
-		all_headers: { type: Array },
+		// all_headers: { type: Array },
 		chosen_header: { type: Array },
 	};
 
-    constructor() {
-        super()
-        this.all_headers = ["a", "b"]
-        this.chosen_header = ["b"]
-    }
 	get _chosen_header() {
 		return this.renderRoot?.querySelector('#header-selector') ?? null;
 	}
