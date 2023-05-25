@@ -9,19 +9,16 @@ export class QuestionSelector extends LitElement {
 	get _chosen_question() {
 		return this.renderRoot?.querySelector('#question-selector') ?? null;
 	}
-    
 
     _update_question() {
 		this.chosen_question = this._chosen_question.value
          
         const options = {
-			detail: {
-				data: {
-					chosen_question: this.chosen_question,
-				}
-			},
-			bubbles: true,
-			composed: true,
+            detail: {
+                chosen_question: this.chosen_question,
+            },
+            bubbles: true,
+            composed: true,
 		};
 		this.dispatchEvent(new CustomEvent('update-question', options));
     }

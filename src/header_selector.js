@@ -16,9 +16,7 @@ export class ColumnSelector extends LitElement {
          
         const options = {
 			detail: {
-				data: {
-					chosen_header: this.chosen_header,
-				}
+				chosen_header: this.chosen_header,
 			},
 			bubbles: true,
 			composed: true,
