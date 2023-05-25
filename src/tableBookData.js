@@ -77,9 +77,6 @@ export class TableBookData extends LitElement {
 	get _hide_rows() {
 		return this.renderRoot?.querySelector('#hide_rows-selection') ?? null;
 	}
-	get _header() {
-		return this.renderRoot?.querySelector('#header-selection') ?? null;
-	}
 	get _tab() {
 		return this.renderRoot?.querySelector('#tab-selection') ?? null;
 	}
@@ -98,12 +95,6 @@ export class TableBookData extends LitElement {
 		this.send_update_plot_data_event()
 	}
 
-	_update_header() {
-		this.choices.col_titles = [...this._header.options].filter(option => option.selected).map(option => option.value)
-		this.set_question_data()
-		this.set_plot_data();
-		this.send_update_plot_data_event()
-	}
 	_update_tab() {
 		this.choices.tab_titles = this._tab.value;
 		this.set_question_data()
@@ -165,18 +156,8 @@ export class TableBookData extends LitElement {
 			)}
 						</select>
 
-                        <column-selector @update-header="${this.update_header}" .all_headers=${this.params.col_titles} .chosen_header=${this.choices.col_titles}></column-selector>
 						<label>Select header:</label>
-						<select id="header-selection" multiple @change=${this._update_header}>
-							${this.params.col_titles.map(
-				                (col) => html`
-									<option 
-										?selected=${this.choices.col_titles.includes(col)}
-										value="${col}"
-									>${col}</option>
-								`
-			)}
-						</select>
+                        <column-selector @update-header="${this.update_header}" .all_headers=${this.params.col_titles} .chosen_header=${this.choices.col_titles}></column-selector>
 						<label>Select row type:</label>
 						<select id="rowtype-selection" @change=${this._update_row_type} .value="${this.choices.row_type}">
 							${this.params.row_type.map(
