@@ -77,9 +77,6 @@ export class TableBookData extends LitElement {
 	get _hide_rows() {
 		return this.renderRoot?.querySelector('#hide_rows-selection') ?? null;
 	}
-	get _tab() {
-		return this.renderRoot?.querySelector('#tab-selection') ?? null;
-	}
 	get _color_scale() {
 		return this.renderRoot?.querySelector('#color_scale-selection') ?? null;
 	}
@@ -95,13 +92,6 @@ export class TableBookData extends LitElement {
 		this.send_update_plot_data_event()
 	}
 
-	_update_tab() {
-		this.choices.tab_titles = this._tab.value;
-		this.set_question_data()
-		this.set_rowtype_choices()
-		this.set_plot_data()
-		this.send_update_plot_data_event()
-	}
 	_update_color_scale() {
 		this.choices.color_scale = this._color_scale.value;
 		this.send_update_plot_data_event()
@@ -130,6 +120,14 @@ export class TableBookData extends LitElement {
 		this.set_plot_data()
 		this.send_update_plot_data_event()
 	}
+	_on_question_update(e) {
+		this.choices.tab_titles = e.detail.data.chosen_question;
+		inspect && console.log(this.choices.tab_titles)
+		this.set_question_data()
+		this.set_rowtype_choices()
+		this.set_plot_data()
+		this.send_update_plot_data_event()
+	}
 
 	render() {
 
@@ -147,13 +145,7 @@ export class TableBookData extends LitElement {
 			() => html`<div></div>`,
 			() => html`
 					<label>Select question:</label>
-						<select id="tab-selection" @change=${this._update_tab} .value="${this.choices.tab_titles}">
-							${this.params.tab_titles.map(
-				                (col) => html`
-									<option value="${col}" title=${col}>${col}</option>
-								`
-			)}
-						</select>
+					<question-selector @update-question="${this._on_question_update}" .all_questions=${this.params.tab_titles} .chosen_question=${this.choices.tab_titles}></question-selector>
 
 						<label>Select header:</label>
                         <column-selector @update-header="${this.update_header}" .all_headers=${this.params.col_titles} .chosen_header=${this.choices.col_titles}></column-selector>
