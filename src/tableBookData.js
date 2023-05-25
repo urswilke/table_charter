@@ -1,6 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 import { xlsx_to_json_array } from './readExcel.js'
+import './header_selector.js'
 
 import sharedStyles from './components.css?inline';
 
@@ -130,6 +131,12 @@ export class TableBookData extends LitElement {
 
 	}
 
+	update_header(e) {
+		this.choices.col_titles = e.detail.data.chosen_header;
+		this.send_update_plot_data_event()
+		console.log('hallo')
+	}
+
 	render() {
 
 		inspect && console.log("rendering table-book-data")
@@ -153,6 +160,8 @@ export class TableBookData extends LitElement {
 								`
 			)}
 						</select>
+
+                        <column-selector @update-header="${this.update_header}" .all_headers=${this.params.col_titles} .chosen_header=${this.choices.col_titles}></column-selector>
 						<label>Select header:</label>
 						<select id="header-selection" multiple @change=${this._update_header}>
 							${this.params.col_titles.map(

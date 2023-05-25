@@ -1,0 +1,52 @@
+import { LitElement, html } from 'lit';
+
+export class ColumnSelector extends LitElement {
+    static properties = {
+		all_headers: { type: Array },
+		chosen_header: { type: Array },
+	};
+
+    constructor() {
+        super()
+        this.all_headers = ["a", "b"]
+        this.chosen_header = ["b"]
+    }
+	// get chosen_header() {
+	// 	return this.renderRoot?.querySelector('#header-selection') ?? null;
+	// }
+    
+
+    _update_header() {
+		// let chosen_header = [...this.chosen_header.options].filter(option => option.selected).map(option => option.value)
+        const options = {
+			detail: {
+				data: {
+					chosen_header: this.chosen_header,
+				}
+			},
+			bubbles: true,
+			composed: true,
+		};
+        console.log(this.chosen_header)
+		this.dispatchEvent(new CustomEvent('update-header', options));
+    }
+
+    render() {
+        return html`
+        <label>Select header:</label>
+        <div>
+            <select id="header-selection" multiple @change=${this._update_header}>
+                ${this.all_headers.map(
+                    (col) => html`
+                        <option 
+                            ?selected=${this.chosen_header.includes(col)}
+                            value="${col}"
+                        >${col}</option>
+                    `
+                )}
+            </select>
+        </div>
+        `;
+    }
+}
+customElements.define('column-selector', ColumnSelector);
