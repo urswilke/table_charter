@@ -137,7 +137,7 @@ export class TableBookData extends LitElement {
 
 		return html`
 			<input type="file" id="table-book-upload" accept=".xlsx, .xlsm"
-			@change=${async function(e) {
+			@change=${async function (e) {
 				let data = await xlsx_to_json_array(e)
 				this.init_tablebook_data(data)
 			}}/>
