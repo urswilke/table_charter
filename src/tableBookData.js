@@ -148,7 +148,7 @@ export class TableBookData extends LitElement {
 					<label>Select question:</label>
 						<select id="tab-selection" @change=${this._update_tab} .value="${this.choices.tab_titles}">
 							${this.params.tab_titles.map(
-				(col) => html`
+				                (col) => html`
 									<option value="${col}" title=${col}>${col}</option>
 								`
 			)}
@@ -156,7 +156,7 @@ export class TableBookData extends LitElement {
 						<label>Select header:</label>
 						<select id="header-selection" multiple @change=${this._update_header}>
 							${this.params.col_titles.map(
-				(col) => html`
+				                (col) => html`
 									<option 
 										?selected=${this.choices.col_titles.includes(col)}
 										value="${col}"
@@ -167,7 +167,7 @@ export class TableBookData extends LitElement {
 						<label>Select row type:</label>
 						<select id="rowtype-selection" @change=${this._update_row_type} .value="${this.choices.row_type}">
 							${this.params.row_type.map(
-				(col) => html`
+				                (col) => html`
 									<option value="${col}">${col}</option>
 								`
 			)}
@@ -175,7 +175,7 @@ export class TableBookData extends LitElement {
 						<label>Select rows to hide:</label>
 						<select id="hide_rows-selection" multiple @change=${this._update_hide_rows}>
 							${this.params.hide_rows.map(
-				(col) => html`
+				                (col) => html`
 									<option 
 										?selected=${this.choices.hide_rows.includes(col)}
 										value="${col}"
@@ -186,7 +186,7 @@ export class TableBookData extends LitElement {
 						<label>Select color scale:</label>
 						<select id="color_scale-selection" @change=${this._update_color_scale}>
 						${this.params.color_scale.map(
-				(col) => html`
+				                (col) => html`
 								<option value="${col}">${col}</option>
 							`
 			)}
