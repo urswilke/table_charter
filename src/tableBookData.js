@@ -5,6 +5,7 @@ import './question_selector.js'
 import './header_selector.js'
 import './rowtype_selector.js'
 import './hide_rows_selector.js'
+import './colorscale_selector.js'
 
 import sharedStyles from './components.css?inline';
 
@@ -62,14 +63,6 @@ export class TableBookData extends LitElement {
 			.filter(x => x.RowSubtitle === this.choices.row_type)
 			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
 	}
-	get _color_scale() {
-		return this.renderRoot?.querySelector('#color_scale-selection') ?? null;
-	}
-
-	_update_color_scale() {
-		this.choices.color_scale = this._color_scale.value;
-		this.send_update_plot_data_event()
-	}
 	send_update_plot_data_event() {
 		const options = {
 			detail: {
@@ -111,6 +104,10 @@ export class TableBookData extends LitElement {
 		this.choices.hide_rows = e.detail.chosen_hide_rows;
 		inspect && console.log(this.choices.col_titles)
 		// this.set_question_data()
+		this.send_update_plot_data_event()
+	}
+	_on_colorscale_update(e) {
+		this.choices.color_scale = e.detail.chosen_colorscale;
 		this.set_plot_data()
 		this.send_update_plot_data_event()
 	}
@@ -130,18 +127,11 @@ export class TableBookData extends LitElement {
 			isEmpty(this.params),
 			() => html`<div></div>`,
 			() => html`
-					<question-selector 	@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}></question-selector>
-					<column-selector 	@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	</column-selector>
-					<rowtype-selector 	@update-rowtype="${this._on_rowtype_update}" 		.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	</rowtype-selector>
-					<hide_rows-selector @update-hide_rows="${this._on_hide_rows_update}" 	.all_hide_rows=${this.params.hide_rows} 	.chosen_hide_rows=${this.choices.hide_rows}></hide_rows-selector>
-						<label>Select color scale:</label>
-						<select id="color_scale-selection" @change=${this._update_color_scale}>
-						${this.params.color_scale.map(
-				                (col) => html`
-								<option value="${col}">${col}</option>
-							`
-			)}
-					</select>
+					<question-selector 		@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}>   </question-selector>
+					<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   </column-selector>
+					<rowtype-selector 		@update-rowtype="${this._on_rowtype_update}" 		.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	   </rowtype-selector>
+					<hide_rows-selector 	@update-hide_rows="${this._on_hide_rows_update}" 	.all_hide_rows=${this.params.hide_rows} 	.chosen_hide_rows=${this.choices.hide_rows}>   </hide_rows-selector>
+					<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}></colorscale-selector>
 				`
 		)}`;
 	}
