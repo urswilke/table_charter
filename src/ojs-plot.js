@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 import { gen_plot_options } from './gen_plot_types.js'
-import { concat_tab_titles } from './tableBookData.js'
+import { concat_tab_titles } from './utils.js'
 
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
@@ -29,7 +29,7 @@ export class OJSPlot extends LitElement {
 
 	set plot_data(val) {
 		this.chartOptions = gen_plot_options(val)
-		this.chartTitle = val.length > 0 ? concat_tab_titles(val[0], "\n") : ""
+		this.chartTitle = !!val.plot_data ? concat_tab_titles(val.plot_data[0], "\n") : ""
 	}
 
 

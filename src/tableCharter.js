@@ -1,6 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import './ojs-plot.js'
-import './tableBookData.js'
+import './tableDataSelector.js'
 
 export class TableCharter extends LitElement {
 
@@ -22,7 +22,7 @@ export class TableCharter extends LitElement {
     // https://stackoverflow.com/a/72402114
 	render() {
 		return html`
-            <table-book-data @update-data="${this.update_plot_data}"></table-book-data>
+            <table-data-selector @update-data="${this.update_plot_data}"></table-data-selector>
             <ojs-plot .plot_data=${this.plot_data}></ojs-plot>
 		`;
 

@@ -1,0 +1,41 @@
+import { LitElement, html } from 'lit';
+
+export class ColorscaleSelector extends LitElement {
+    static properties = {
+		// all_colorscales: { type: Array },
+		chosen_colorscale: { type: String },
+	};
+
+	get _chosen_colorscale() {
+		return this.renderRoot?.querySelector('#colorscale-selector') ?? null;
+	}
+
+    _update_colorscale() {
+		this.chosen_colorscale = this._chosen_colorscale.value
+         
+        const options = {
+            detail: {
+                chosen_colorscale: this.chosen_colorscale,
+            },
+            bubbles: true,
+            composed: true,
+		};
+		this.dispatchEvent(new CustomEvent('update-colorscale', options));
+    }
+
+    render() {
+        return html`
+        <label>Select colorscale:</label>
+        <div>
+            <select id="colorscale-selector" @change=${this._update_colorscale} .value="${this.chosen_colorscale}">
+                ${this.all_colorscales.map(
+                    (col) => html`
+                        <option value="${col}" title=${col}>${col}</option>
+                    `
+                )}
+            </select>
+        </div>
+        `;
+    }
+}
+customElements.define('colorscale-selector', ColorscaleSelector);
