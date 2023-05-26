@@ -35,7 +35,7 @@ export class TableDataSelector extends LitElement {
 		this.params.tab_titles = [...new Set(this.data.map(d => concat_tab_titles(d)))];
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
 		this.choices.tab_titles = this.params.tab_titles[0]
-		this.choices.col_titles = this.params.col_titles[0]
+		this.choices.col_titles = this.params.col_titles.slice(0, 2)
 		this.set_question_data()
 		this.set_rowtype_choices()
 		this.params.hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
