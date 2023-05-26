@@ -27,21 +27,24 @@ export class TableBookData extends LitElement {
 	}
 	async init_tablebook_data(data) {
 		this.data = data;
-		this.set_params();
-		this.choices = init_choices(this.params);
+		this.init_params();
 		this._update_plot_data()
 	}
 
-	set_params() {
+	init_params() {
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		this.params.tab_titles = [...new Set(this.data.map(d => concat_tab_titles(d)))];
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
-		// TODO: clean up this messss!!!!
-		this.choices = init_choices(this.params);
+		this.choices.tab_titles = this.params.tab_titles[0]
+		this.choices.col_titles = this.params.col_titles[0]
 		this.set_question_data()
-		this.params.row_type = swapElements([...new Set(this.question_data.map((d) => d.RowSubtitle))], 0, 1)
+		this.set_rowtype_choices()
 		this.params.hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
 		this.params.color_scale = ["categorical", "linear"];
+		this.choices.row_type = this.params.row_type[0]
+		this.choices.hide_rows = this.params.hide_rows
+		this.choices.color_scale = this.params.color_scale[0]
+
 	}
 
 	set_question_data() {
@@ -160,12 +163,6 @@ const objectMap = (obj, fn) =>
 			([k, v], i) => [k, fn(v, k, i)]
 		)
 	)
-function init_choices(params) {
-	const res = objectMap(params, v => v[0]);
-	res['hide_rows'] = params['hide_rows']
-	res['col_titles'] = params['col_titles'].slice(0, 2	);
-	return res;
-}
 
 function swapElements(array, source, dest) {
 	return source === dest
