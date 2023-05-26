@@ -81,25 +81,21 @@ export class TableBookData extends LitElement {
 
 	_on_header_update(e) {
 		this.choices.col_titles = e.detail.chosen_header;
-		inspect && console.log(this.choices.col_titles)
 		this.set_question_data()
 		this._update_plot_data()
 	}
 	_on_question_update(e) {
 		this.choices.tab_titles = e.detail.chosen_question;
-		inspect && console.log(this.choices.tab_titles)
 		this.set_question_data()
 		this.set_rowtype_choices()
 		this._update_plot_data()
 	}
 	_on_rowtype_update(e) {
 		this.choices.row_type = e.detail.chosen_rowtype;
-		inspect && console.log(this.choices.row_type)
 		this._update_plot_data()
 	}
 	_on_hide_rows_update(e) {
 		this.choices.hide_rows = e.detail.chosen_hide_rows;
-		inspect && console.log(this.choices.col_titles)
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
@@ -156,23 +152,11 @@ export function concat_tab_titles(obj, sep = " - ") {
 		.join(sep);
 }
 
-// https://stackoverflow.com/a/14810722
-const objectMap = (obj, fn) =>
-	Object.fromEntries(
-		Object.entries(obj).map(
-			([k, v], i) => [k, fn(v, k, i)]
-		)
-	)
-
 function swapElements(array, source, dest) {
 	return source === dest
 		? array : array.map((item, index) => index === source
 			? array[dest] : index === dest
 				? array[source] : item);
-}
-function move_second_to_first(row_type) {
-	row_type.unshift(row_type.splice(1, 1)[0]);
-	return [...row_type];
 }
 
 window.customElements.define('table-book-data', TableBookData)
