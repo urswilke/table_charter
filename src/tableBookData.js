@@ -29,8 +29,7 @@ export class TableBookData extends LitElement {
 		this.data = data;
 		this.set_params();
 		this.choices = init_choices(this.params);
-		this.set_plot_data();
-		this.send_update_plot_data_event()
+		this._update_plot_data()
 	}
 
 	set_params() {
@@ -58,12 +57,10 @@ export class TableBookData extends LitElement {
 		)
 		this.choices.row_type = this.params.row_type[0];
 	}
-	set_plot_data() {
+	_update_plot_data() {
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
 			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
-	}
-	send_update_plot_data_event() {
 		const options = {
 			detail: {
 				data: {
@@ -83,33 +80,28 @@ export class TableBookData extends LitElement {
 		this.choices.col_titles = e.detail.chosen_header;
 		inspect && console.log(this.choices.col_titles)
 		this.set_question_data()
-		this.set_plot_data()
-		this.send_update_plot_data_event()
+		this._update_plot_data()
 	}
 	_on_question_update(e) {
 		this.choices.tab_titles = e.detail.chosen_question;
 		inspect && console.log(this.choices.tab_titles)
 		this.set_question_data()
 		this.set_rowtype_choices()
-		this.set_plot_data()
-		this.send_update_plot_data_event()
+		this._update_plot_data()
 	}
 	_on_rowtype_update(e) {
 		this.choices.row_type = e.detail.chosen_rowtype;
 		inspect && console.log(this.choices.row_type)
-		this.set_plot_data()
-		this.send_update_plot_data_event()
+		this._update_plot_data()
 	}
 	_on_hide_rows_update(e) {
 		this.choices.hide_rows = e.detail.chosen_hide_rows;
 		inspect && console.log(this.choices.col_titles)
-		this.set_plot_data()
-		this.send_update_plot_data_event()
+		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
 		this.choices.color_scale = e.detail.chosen_colorscale;
-		this.set_plot_data()
-		this.send_update_plot_data_event()
+		this._update_plot_data()
 	}
 
 	render() {
