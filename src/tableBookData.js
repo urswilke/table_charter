@@ -25,6 +25,8 @@ export class TableBookData extends LitElement {
 		this.choices = {};
 		this.data = [];
 	}
+
+	// Initialization:
 	async init_tablebook_data(data) {
 		this.data = data;
 		this.init_params();
@@ -47,6 +49,7 @@ export class TableBookData extends LitElement {
 
 	}
 
+	// Helper:
 	set_question_data() {
 		this.question_data = this.data
 			.filter(x => concat_tab_titles(x) === this.choices.tab_titles)
@@ -60,6 +63,8 @@ export class TableBookData extends LitElement {
 		)
 		this.choices.row_type = this.params.row_type[0];
 	}
+
+	// Talk to parent:
 	_update_plot_data() {
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
@@ -79,6 +84,7 @@ export class TableBookData extends LitElement {
 
 	}
 
+	// Listen to children:
 	_on_header_update(e) {
 		this.choices.col_titles = e.detail.chosen_header;
 		this.set_question_data()
