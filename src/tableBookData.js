@@ -4,6 +4,7 @@ import { xlsx_to_json_array } from './readExcel.js'
 import './question_selector.js'
 import './header_selector.js'
 import './rowtype_selector.js'
+import './hide_rows_selector.js'
 
 import sharedStyles from './components.css?inline';
 
@@ -61,17 +62,8 @@ export class TableBookData extends LitElement {
 			.filter(x => x.RowSubtitle === this.choices.row_type)
 			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
 	}
-	get _hide_rows() {
-		return this.renderRoot?.querySelector('#hide_rows-selection') ?? null;
-	}
 	get _color_scale() {
 		return this.renderRoot?.querySelector('#color_scale-selection') ?? null;
-	}
-
-	_update_hide_rows() {
-		this.choices.hide_rows = [...this._hide_rows.options].filter(option => option.selected).map(option => option.value)
-		this.set_plot_data();
-		this.send_update_plot_data_event()
 	}
 
 	_update_color_scale() {
@@ -115,6 +107,13 @@ export class TableBookData extends LitElement {
 		this.set_plot_data()
 		this.send_update_plot_data_event()
 	}
+	_on_hide_rows_update(e) {
+		this.choices.hide_rows = e.detail.chosen_hide_rows;
+		inspect && console.log(this.choices.col_titles)
+		// this.set_question_data()
+		this.set_plot_data()
+		this.send_update_plot_data_event()
+	}
 
 	render() {
 
@@ -131,20 +130,10 @@ export class TableBookData extends LitElement {
 			isEmpty(this.params),
 			() => html`<div></div>`,
 			() => html`
-					<question-selector 	@update-question="${this._on_question_update}" 	.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}></question-selector>
-					<column-selector 	@update-header="${this._on_header_update}" 		.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	</column-selector>
-					<rowtype-selector 	@update-rowtype="${this._on_rowtype_update}" 	.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	</rowtype-selector>
-						<label>Select rows to hide:</label>
-						<select id="hide_rows-selection" multiple @change=${this._update_hide_rows}>
-							${this.params.hide_rows.map(
-				                (col) => html`
-									<option 
-										?selected=${this.choices.hide_rows.includes(col)}
-										value="${col}"
-									>${col}</option>
-								`
-			)}
-						</select>
+					<question-selector 	@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}></question-selector>
+					<column-selector 	@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	</column-selector>
+					<rowtype-selector 	@update-rowtype="${this._on_rowtype_update}" 		.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	</rowtype-selector>
+					<hide_rows-selector @update-hide_rows="${this._on_hide_rows_update}" 	.all_hide_rows=${this.params.hide_rows} 	.chosen_hide_rows=${this.choices.hide_rows}></hide_rows-selector>
 						<label>Select color scale:</label>
 						<select id="color_scale-selection" @change=${this._update_color_scale}>
 						${this.params.color_scale.map(
