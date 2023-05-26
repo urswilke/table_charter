@@ -1,11 +1,11 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 import { xlsx_to_json_array } from './readExcel.js'
-import './question_selector.js'
-import './header_selector.js'
-import './rowtype_selector.js'
-import './hide_rows_selector.js'
-import './colorscale_selector.js'
+import './selectors/question_selector.js'
+import './selectors/header_selector.js'
+import './selectors/rowtype_selector.js'
+import './selectors/hide_rows_selector.js'
+import './selectors/colorscale_selector.js'
 
 import sharedStyles from './components.css?inline';
 
