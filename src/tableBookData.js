@@ -27,7 +27,7 @@ export class TableBookData extends LitElement {
 	}
 
 	// Initialization:
-	async init_tablebook_data(data) {
+	init_tablebook_data(data) {
 		this.data = data;
 		this.init_params();
 		this._update_plot_data()
