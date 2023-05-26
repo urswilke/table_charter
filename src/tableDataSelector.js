@@ -36,7 +36,7 @@ export class TableDataSelector extends LitElement {
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
 		this.choices.tab_titles = this.params.tab_titles[0]
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
-		this.set_question_data()
+		this.set_subtables_data()
 		this.set_rowtype_choices()
 		this.params.hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
 		this.params.color_scale = ["categorical", "linear"];
@@ -47,14 +47,14 @@ export class TableDataSelector extends LitElement {
 	}
 
 	// Helper:
-	set_question_data() {
-		this.question_data = this.data
+	set_subtables_data() {
+		this.subtables_data = this.data
 			.filter(x => concat_tab_titles(x) === this.choices.tab_titles)
 			.filter(x => this.choices.col_titles.includes(x.ColTitle));
 
 	}
 	set_rowtype_choices() {
-		let row_type = [...new Set(this.question_data.map((d) => d.RowSubtitle))];
+		let row_type = [...new Set(this.subtables_data.map((d) => d.RowSubtitle))];
 		// swap first 2 elements:
 		// https://stackoverflow.com/a/872317
 		[row_type[0], row_type[1]] = [row_type[1], row_type[0]];
@@ -64,7 +64,7 @@ export class TableDataSelector extends LitElement {
 
 	// Talk to parent:
 	_update_plot_data() {
-		this.plot_data = this.question_data
+		this.plot_data = this.subtables_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
 			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
 		const options = {
@@ -85,12 +85,12 @@ export class TableDataSelector extends LitElement {
 	// Listen to children:
 	_on_header_update(e) {
 		this.choices.col_titles = e.detail.chosen_header;
-		this.set_question_data()
+		this.set_subtables_data()
 		this._update_plot_data()
 	}
 	_on_question_update(e) {
 		this.choices.tab_titles = e.detail.chosen_question;
-		this.set_question_data()
+		this.set_subtables_data()
 		this.set_rowtype_choices()
 		this._update_plot_data()
 	}
