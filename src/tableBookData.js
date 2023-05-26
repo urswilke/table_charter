@@ -139,11 +139,6 @@ export class TableBookData extends LitElement {
 
 }
 
-// https://stackoverflow.com/a/679937
-function isEmpty(obj) {
-	return Object.keys(obj).length === 0;
-}
-
 export function concat_tab_titles(obj, sep = " - ") {
 	// TODO: do not use redundant tab titles in input data from Excel!
 	return [...new Set([obj.TabTitel1, obj.TabTitel2, obj.TabTitel3])]
