@@ -52,10 +52,11 @@ export class TableBookData extends LitElement {
 
 	}
 	set_rowtype_choices() {
-		this.params.row_type = swapElements(
-			[...new Set(this.question_data.map((d) => d.RowSubtitle))],
-			0, 1
-		)
+		let row_type = [...new Set(this.question_data.map((d) => d.RowSubtitle))];
+		// swap first 2 elements:
+		// https://stackoverflow.com/a/872317
+		[row_type[0], row_type[1]] = [row_type[1], row_type[0]];
+		this.params.row_type = [...row_type];
 		this.choices.row_type = this.params.row_type[0];
 	}
 
@@ -146,13 +147,6 @@ export function concat_tab_titles(obj, sep = " - ") {
 		// https://stackoverflow.com/a/46125317
 		.filter(item => item)
 		.join(sep);
-}
-
-function swapElements(array, source, dest) {
-	return source === dest
-		? array : array.map((item, index) => index === source
-			? array[dest] : index === dest
-				? array[source] : item);
 }
 
 window.customElements.define('table-book-data', TableBookData)
