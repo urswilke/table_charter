@@ -13,7 +13,7 @@ import sharedStyles from './components.css?inline';
 
 const inspect = true // set to true for some console.log msgs
 
-export class TableBookData extends LitElement {
+export class TableDataSelector extends LitElement {
 
 	static properties = {
 		plot_data: { type: Array },
@@ -143,4 +143,4 @@ export class TableBookData extends LitElement {
 
 }
 
-window.customElements.define('table-book-data', TableBookData)
+window.customElements.define('table-data-selector', TableDataSelector)
