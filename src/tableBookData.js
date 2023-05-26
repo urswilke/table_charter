@@ -19,13 +19,6 @@ export class TableBookData extends LitElement {
 		choices: { type: Object },
 	};
 
-	constructor() {
-		super()
-		this.params = {};
-		this.choices = {};
-		this.data = [];
-	}
-
 	// Initialization:
 	init_tablebook_data(data) {
 		this.data = data;
@@ -34,6 +27,8 @@ export class TableBookData extends LitElement {
 	}
 
 	init_params() {
+		this.params = {};
+		this.choices = {};
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		this.params.tab_titles = [...new Set(this.data.map(d => concat_tab_titles(d)))];
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
@@ -121,7 +116,7 @@ export class TableBookData extends LitElement {
 				this.init_tablebook_data(data)
 			}}/>
 			${when(
-			isEmpty(this.params),
+			this.params === undefined,
 			() => html`<div></div>`,
 			() => html`
 					<question-selector 		@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}>   </question-selector>
