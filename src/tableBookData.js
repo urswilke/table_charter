@@ -32,20 +32,15 @@ export class TableBookData extends LitElement {
 	}
 
 	set_params() {
-		this.params = {};
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		this.params.tab_titles = [...new Set(this.data.map(d => concat_tab_titles(d)))];
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
 		// TODO: clean up this messss!!!!
 		this.choices = init_choices(this.params);
 		this.set_question_data()
-		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColSubtitle))];
-		this.params.row_type = swapElements([...new Set(this.data.map((d) => d.RowSubtitle))], 0, 1)
+		this.params.row_type = swapElements([...new Set(this.question_data.map((d) => d.RowSubtitle))], 0, 1)
 		this.params.hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
 		this.params.color_scale = ["categorical", "linear"];
-
-		// this.params = extract_tables_book_params(data);
-
 	}
 
 	set_question_data() {
@@ -59,33 +54,18 @@ export class TableBookData extends LitElement {
 			[...new Set(this.question_data.map((d) => d.RowSubtitle))],
 			0, 1
 		)
-		// when switching tables:
-		// - keep row type choice, if also existing in the next,
-		// - otherwise, choose the "first" in the array
-		// if (!this.params.row_type.includes(this.choices.row_type)) {
 		this.choices.row_type = this.params.row_type[0];
-		// }
-
 	}
 	set_plot_data() {
 		this.plot_data = this.question_data
 			.filter(x => x.RowSubtitle === this.choices.row_type)
 			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
 	}
-
-	get _row_type() {
-		return this.renderRoot?.querySelector('#rowtype-selection') ?? null;
-	}
 	get _hide_rows() {
 		return this.renderRoot?.querySelector('#hide_rows-selection') ?? null;
 	}
 	get _color_scale() {
 		return this.renderRoot?.querySelector('#color_scale-selection') ?? null;
-	}
-	_update_row_type() {
-		this.choices.row_type = this._row_type.value;
-		this.set_plot_data();
-		this.send_update_plot_data_event()
 	}
 
 	_update_hide_rows() {
@@ -132,7 +112,6 @@ export class TableBookData extends LitElement {
 	_on_rowtype_update(e) {
 		this.choices.row_type = e.detail.chosen_rowtype;
 		inspect && console.log(this.choices.row_type)
-		// this.set_rowtype_choices()
 		this.set_plot_data()
 		this.send_update_plot_data_event()
 	}
@@ -152,10 +131,9 @@ export class TableBookData extends LitElement {
 			isEmpty(this.params),
 			() => html`<div></div>`,
 			() => html`
-					<question-selector @update-question="${this._on_question_update}" .all_questions=${this.params.tab_titles} .chosen_question=${this.choices.tab_titles}></question-selector>
-
-					<column-selector @update-header="${this._on_header_update}" .all_headers=${this.params.col_titles} .chosen_header=${this.choices.col_titles}></column-selector>
-					<rowtype-selector @update-rowtype="${this._on_rowtype_update}" .all_rowtypes=${this.params.row_type} .chosen_rowtype=${this.choices.row_type}></rowtype-selector>
+					<question-selector 	@update-question="${this._on_question_update}" 	.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}></question-selector>
+					<column-selector 	@update-header="${this._on_header_update}" 		.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	</column-selector>
+					<rowtype-selector 	@update-rowtype="${this._on_rowtype_update}" 	.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	</rowtype-selector>
 						<label>Select rows to hide:</label>
 						<select id="hide_rows-selection" multiple @change=${this._update_hide_rows}>
 							${this.params.hide_rows.map(
