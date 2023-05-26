@@ -32,7 +32,7 @@ export class RowtypeSelector extends LitElement {
         return html`
         <label>Select rowtype:</label>
         <div>
-            <select id="rowtype-selector" @change=${this._update_rowtype} .value="${this.chosen_rowtype}>
+                <select id="rowtype-selector" @change=${this._update_rowtype} .value=${this.chosen_rowtype}>
                 ${this.all_rowtypes.map(
                     (col) => html`
                         <option value="${col}" title=${col}>${col}</option>
