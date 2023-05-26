@@ -1,6 +1,8 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
-import { xlsx_to_json_array } from './readExcel.js'
+
+import { concat_tab_titles, xlsx_to_json_array } from './utils.js'
+
 import './selectors/question_selector.js'
 import './selectors/header_selector.js'
 import './selectors/rowtype_selector.js'
@@ -117,16 +119,17 @@ export class TableBookData extends LitElement {
 				this.init_tablebook_data(data)
 			}}/>
 			${when(
-			this.params === undefined,
-			() => html`<div></div>`,
-			() => html`
-					<question-selector 		@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}>   </question-selector>
-					<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   </column-selector>
-					<rowtype-selector 		@update-rowtype="${this._on_rowtype_update}" 		.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	   </rowtype-selector>
-					<hide_rows-selector 	@update-hide_rows="${this._on_hide_rows_update}" 	.all_hide_rows=${this.params.hide_rows} 	.chosen_hide_rows=${this.choices.hide_rows}>   </hide_rows-selector>
-					<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}></colorscale-selector>
-				`
-		)}`;
+				this.params === undefined,
+				() => html`<div></div>`,
+				() => html`
+						<question-selector 		@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}>   </question-selector>
+						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   </column-selector>
+						<rowtype-selector 		@update-rowtype="${this._on_rowtype_update}" 		.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	   </rowtype-selector>
+						<hide_rows-selector 	@update-hide_rows="${this._on_hide_rows_update}" 	.all_hide_rows=${this.params.hide_rows} 	.chosen_hide_rows=${this.choices.hide_rows}>   </hide_rows-selector>
+						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}></colorscale-selector>
+					`
+			)}
+		`;
 	}
 
 	static styles = [
@@ -138,15 +141,6 @@ export class TableBookData extends LitElement {
 	`
 	];
 
-}
-
-export function concat_tab_titles(obj, sep = " - ") {
-	// TODO: do not use redundant tab titles in input data from Excel!
-	return [...new Set([obj.TabTitel1, obj.TabTitel2, obj.TabTitel3])]
-		// remove undefined elements
-		// https://stackoverflow.com/a/46125317
-		.filter(item => item)
-		.join(sep);
 }
 
 window.customElements.define('table-book-data', TableBookData)
