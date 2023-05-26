@@ -103,7 +103,7 @@ export class TableBookData extends LitElement {
 	_on_hide_rows_update(e) {
 		this.choices.hide_rows = e.detail.chosen_hide_rows;
 		inspect && console.log(this.choices.col_titles)
-		// this.set_question_data()
+		this.set_plot_data()
 		this.send_update_plot_data_event()
 	}
 	_on_colorscale_update(e) {
