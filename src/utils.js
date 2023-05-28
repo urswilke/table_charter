@@ -17,3 +17,14 @@ export function concat_tab_titles(obj, sep = " - ") {
 		.join(sep);
 }
 
+// from here: https://stackoverflow.com/a/64456745
+// licenses under:
+// https://creativecommons.org/licenses/by-sa/4.0/
+export function numberToLetters(num) {
+    let letters = ''
+    while (num >= 0) {
+        letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[num % 26] + letters
+        num = Math.floor(num / 26) - 1
+    }
+    return letters
+}
