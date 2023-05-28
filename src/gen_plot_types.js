@@ -38,6 +38,9 @@ function gen_plot_options_cat(data) {
 			domain: x_order,
 			label: null
 		},
+		y: {
+			label: null,
+		},
 		color: {
 			type: data.choices.color_scale,
 			domain: fill_order,
@@ -73,6 +76,7 @@ function gen_plot_options_cat(data) {
 function gen_plot_options_mw(data) {
 	return {
 		y: {
+			label: null,
 			domain: [...new Set(data.plot_data.map((x) => x.ColSubtitle))],
 		},
 		color: {
