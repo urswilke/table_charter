@@ -63,8 +63,11 @@ export class TableDataSelector extends LitElement {
 				!x.RowType.includes("Abs")
 			)
 		;
-		this.params.hide_rows = [...new Set(this.rowtype_data.map((d) => d.RowType.replace(/\|.*/, '')))];
-		this.choices.hide_rows = this.params.hide_rows;
+		this.params.hide_rows = [...new Set(this.rowtype_data.map((d) => d.RowType.replace(/\|.*/, '')))]
+
+		if (!this.choices.hide_rows || !this.choices.hide_rows.every(val => this.params.hide_rows.includes(val))) {
+			this.choices.hide_rows = this.params.hide_rows;
+		}
 		
 		this.sel_rowtype_detail_data()
 		}
