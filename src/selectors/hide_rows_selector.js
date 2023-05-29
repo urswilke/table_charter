@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit';
 
 export class HideRowsSelector extends LitElement {
     static properties = {
-		// all_hide_rows: { type: Array },
+		all_hide_rows: { type: Array },
 		chosen_hide_rows: { type: Array },
 	};
 

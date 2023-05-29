@@ -36,37 +36,48 @@ export class TableDataSelector extends LitElement {
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
 		this.choices.tab_titles = this.params.tab_titles[0]
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
-		this.set_subtables_data()
-		this.set_rowtype_choices()
-		this.params.hide_rows = ["GESAMT", "GÜLTIGE FÄLLE"];
+		this.params.row_type = ["%", "abs"];
+		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "linear"];
-		this.choices.row_type = this.params.row_type[0]
-		this.choices.hide_rows = this.params.hide_rows
-		this.choices.color_scale = this.params.color_scale[0]
-
+		this.sel_question_data()
 	}
 
 	// Helper:
-	set_subtables_data() {
-		this.subtables_data = this.data
-			.filter(x => concat_tab_titles(x) === this.choices.tab_titles)
+	sel_question_data() {
+		this.question_data = this.data
+			.filter(x => concat_tab_titles(x) === this.choices.tab_titles);
+	
+		this.sel_header_data()
+	}
+	sel_header_data() {
+		this.header_data = this.question_data
 			.filter(x => this.choices.col_titles.includes(x.ColTitle));
 
+		this.sel_rowtype_data()
+}
+	sel_rowtype_data() {
+		this.rowtype_data = this.header_data
+			.filter(x => 
+				this.choices.row_type === "abs" ? 
+				x.RowType.includes("Abs") : 
+				!x.RowType.includes("Abs")
+			)
+		;
+		this.params.hide_rows = [...new Set(this.rowtype_data.map((d) => d.RowType.replace(/\|.*/, '')))];
+		this.choices.hide_rows = this.params.hide_rows;
+		
+		this.sel_rowtype_detail_data()
+		}
+	sel_rowtype_detail_data() {
+		this.plot_data = this.rowtype_data
+			// https://stackoverflow.com/a/59329231:	
+			.filter(x => (
+				this.choices.hide_rows.some(pattern => x.RowType.replace(/\|.*/, '').startsWith(pattern))
+			))
 	}
-	set_rowtype_choices() {
-		let row_type = [...new Set(this.subtables_data.map((d) => d.RowSubtitle))];
-		// swap first 2 elements:
-		// https://stackoverflow.com/a/872317
-		[row_type[0], row_type[1]] = [row_type[1], row_type[0]];
-		this.params.row_type = [...row_type];
-		this.choices.row_type = this.params.row_type[0];
-	}
-
+	
 	// Talk to parent:
 	_update_plot_data() {
-		this.plot_data = this.subtables_data
-			.filter(x => x.RowSubtitle === this.choices.row_type)
-			.filter(x => !this.choices.hide_rows.includes(x.RowTitle))
 		const options = {
 			detail: {
 				data: {
@@ -85,21 +96,22 @@ export class TableDataSelector extends LitElement {
 	// Listen to children:
 	_on_header_update(e) {
 		this.choices.col_titles = e.detail.chosen_header;
-		this.set_subtables_data()
+		this.sel_header_data()
 		this._update_plot_data()
 	}
 	_on_question_update(e) {
 		this.choices.tab_titles = e.detail.chosen_question;
-		this.set_subtables_data()
-		this.set_rowtype_choices()
+		this.sel_question_data()
 		this._update_plot_data()
 	}
 	_on_rowtype_update(e) {
 		this.choices.row_type = e.detail.chosen_rowtype;
+		this.sel_rowtype_data()
 		this._update_plot_data()
 	}
 	_on_hide_rows_update(e) {
 		this.choices.hide_rows = e.detail.chosen_hide_rows;
+		this.sel_rowtype_detail_data()
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
