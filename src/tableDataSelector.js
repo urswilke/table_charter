@@ -36,7 +36,7 @@ export class TableDataSelector extends LitElement {
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
 		this.choices.tab_titles = this.params.tab_titles[0]
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
-		this.params.row_type = ["%", "abs"];
+		this.params.row_type = ["%", "counts"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "linear"];
 		this.sel_question_data()
@@ -58,7 +58,7 @@ export class TableDataSelector extends LitElement {
 	sel_num_type_data() {
 		this.num_type_data = this.header_data
 			.filter(x => 
-				this.choices.row_type === "abs" ? 
+				this.choices.row_type === "counts" ? 
 				x.RowType.includes("Abs") : 
 				!x.RowType.includes("Abs")
 			)

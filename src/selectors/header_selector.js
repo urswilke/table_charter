@@ -26,7 +26,7 @@ export class ColumnSelector extends LitElement {
 
     render() {
         return html`
-        <label>Select header:</label>
+        <label>Select header(s):</label>
         <div>
             <select id="header-selector" multiple @change=${this._update_header}>
                 ${this.all_headers.map(
