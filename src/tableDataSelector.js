@@ -6,7 +6,7 @@ import { concat_tab_titles, xlsx_to_json_array } from './utils.js'
 import './selectors/question_selector.js'
 import './selectors/header_selector.js'
 import './selectors/rowtype_selector.js'
-import './selectors/hide_rows_selector.js'
+import './selectors/row_types_selector.js'
 import './selectors/colorscale_selector.js'
 
 import sharedStyles from './components.css?inline';
@@ -63,10 +63,10 @@ export class TableDataSelector extends LitElement {
 				!x.RowType.includes("Abs")
 			)
 		;
-		this.params.hide_rows = [...new Set(this.rowtype_data.map((d) => d.RowType.replace(/\|.*/, '')))]
+		this.params.row_types = [...new Set(this.rowtype_data.map((d) => d.RowType.replace(/\|.*/, '')))]
 
-		if (!this.choices.hide_rows || !this.choices.hide_rows.every(val => this.params.hide_rows.includes(val))) {
-			this.choices.hide_rows = this.params.hide_rows;
+		if (!this.choices.row_types || !this.choices.row_types.every(val => this.params.row_types.includes(val))) {
+			this.choices.row_types = this.params.row_types;
 		}
 		
 		this.sel_rowtype_detail_data()
@@ -75,7 +75,7 @@ export class TableDataSelector extends LitElement {
 		this.plot_data = this.rowtype_data
 			// https://stackoverflow.com/a/59329231:	
 			.filter(x => (
-				this.choices.hide_rows.some(pattern => x.RowType.replace(/\|.*/, '').startsWith(pattern))
+				this.choices.row_types.some(pattern => x.RowType.replace(/\|.*/, '').startsWith(pattern))
 			))
 	}
 	
@@ -112,8 +112,8 @@ export class TableDataSelector extends LitElement {
 		this.sel_rowtype_data()
 		this._update_plot_data()
 	}
-	_on_hide_rows_update(e) {
-		this.choices.hide_rows = e.detail.chosen_hide_rows;
+	_on_row_types_update(e) {
+		this.choices.row_types = e.detail.chosen_row_types;
 		this.sel_rowtype_detail_data()
 		this._update_plot_data()
 	}
@@ -140,7 +140,7 @@ export class TableDataSelector extends LitElement {
 						<question-selector 		@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}>   </question-selector>
 						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   </column-selector>
 						<rowtype-selector 		@update-rowtype="${this._on_rowtype_update}" 		.all_rowtypes=${this.params.row_type} 		.chosen_rowtype=${this.choices.row_type}>	   </rowtype-selector>
-						<hide_rows-selector 	@update-hide_rows="${this._on_hide_rows_update}" 	.all_hide_rows=${this.params.hide_rows} 	.chosen_hide_rows=${this.choices.hide_rows}>   </hide_rows-selector>
+						<row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   </row_types-selector>
 						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}></colorscale-selector>
 					`
 			)}
