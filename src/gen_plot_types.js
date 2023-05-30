@@ -90,7 +90,7 @@ function gen_plot_options_cat(data) {
 						fill: "orange",
 						// https://talk.observablehq.com/t/plot-tooltips-available/6583/5:
 						stroke: "transparent",
-						strokeWidth: 100,
+						strokeWidth: 500,
 						title: (d) => [
 							`Q: ${d.TabTitel1}`, 
 							`row: ${d.RowTitle}`, 
@@ -123,10 +123,9 @@ function gen_plot_options_mw(data) {
 				Plot.pointer({
 					y: "ColSubtitle", 
 					x: "Value", 
-					fill: "RowTitle",
-					stroke: "orange",
-					strokeWidth: 2,
-					r: 6,
+					fill: "orange",
+					stroke: "transparent",
+					r: 7,
 					title: (d) => [
 						`Q: ${d.TabTitel1}`, 
 						`row: ${d.RowTitle}`, 
