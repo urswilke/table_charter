@@ -22,6 +22,8 @@ export class TableCharter extends LitElement {
     // https://stackoverflow.com/a/72402114
 	render() {
 		return html`
+            <div class="column0">
+            </div>
             <div class="column1">
                 <table-data-selector @update-data="${this.update_plot_data}"></table-data-selector>
             </div>
@@ -39,6 +41,11 @@ export class TableCharter extends LitElement {
             }
             
             /* Create two equal columns that floats next to each other */
+            .column0 {
+                float: left;
+                width: 5%;
+                padding: 10px;
+            }
             .column1 {
                 float: left;
                 width: 40%;
@@ -46,7 +53,7 @@ export class TableCharter extends LitElement {
             }
             .column2 {
                 float: left;
-                width: 60%;
+                width: 55%;
                 padding: 10px;
             }
             
