@@ -20,7 +20,7 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "devDependencies": {
-    "@observablehq/plot": "^0.6.6",
+    "@observablehq/plot": "^0.6.7",
     "vite": "^4.3.5"
   }
 }

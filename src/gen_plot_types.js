@@ -52,7 +52,14 @@ function gen_plot_options_cat(data) {
 				// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
 				Plot.groupX(
 					{y: "sum"},
-					{x: "ColSubtitle", y: "Value", fill: "RowTitle", order: fill_order}
+					{
+						x: "ColSubtitle", 
+						y: "Value", 
+						fill: "RowTitle",
+						order: fill_order, 
+						// another way to add tooltips:
+						//  tip: true,
+					}
 				)
 			),
 			Plot.textY(
@@ -69,7 +76,31 @@ function gen_plot_options_cat(data) {
 						}
 					)
 				)
-			)
+			),
+			Plot.barY(
+				data.plot_data, 
+				Plot.groupX(
+					{y: "sum"},
+					Plot.pointer({
+						x: "ColSubtitle", 
+						y: "Value",
+						z: "RowTitle",
+						stroke: "white",
+						order: fill_order,
+						fill: "orange",
+						// https://talk.observablehq.com/t/plot-tooltips-available/6583/5:
+						stroke: "transparent",
+						strokeWidth: 100,
+						title: (d) => [
+							`Q: ${d.TabTitel1}`, 
+							`row: ${d.RowTitle}`, 
+							`head: ${d.ColTitle}`, 
+							`col: ${d.ColSubtitle}`, 
+							`val: ${d.Value.toFixed(1)}`,
+						].join("\n")
+					})
+				)
+			),
 		]
 	};
 }
@@ -87,6 +118,24 @@ function gen_plot_options_mw(data) {
 		marks: [
 			Plot.lineY(data.plot_data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
 			Plot.dot(data.plot_data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
+			Plot.dot(
+				data.plot_data, 
+				Plot.pointer({
+					y: "ColSubtitle", 
+					x: "Value", 
+					fill: "RowTitle",
+					stroke: "orange",
+					strokeWidth: 2,
+					r: 6,
+					title: (d) => [
+						`Q: ${d.TabTitel1}`, 
+						`row: ${d.RowTitle}`, 
+						`head: ${d.ColTitle}`, 
+						`col: ${d.ColSubtitle}`, 
+						`val: ${d.Value.toFixed(1)}`,
+					].join("\n")
+				}),
+			),
 		]
 	};
 }
