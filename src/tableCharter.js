@@ -22,11 +22,43 @@ export class TableCharter extends LitElement {
     // https://stackoverflow.com/a/72402114
 	render() {
 		return html`
-            <table-data-selector @update-data="${this.update_plot_data}"></table-data-selector>
-            <ojs-plot .plot_data=${this.plot_data}></ojs-plot>
+            <div class="column1">
+                <table-data-selector @update-data="${this.update_plot_data}"></table-data-selector>
+            </div>
+            <div class="column2">
+                <ojs-plot .plot_data=${this.plot_data}></ojs-plot>
+            </div>
 		`;
 
 	}
+
+    static styles = [
+        css`
+            * {
+                box-sizing: border-box;
+            }
+            
+            /* Create two equal columns that floats next to each other */
+            .column1 {
+                float: left;
+                width: 40%;
+                padding: 10px;
+            }
+            .column2 {
+                float: left;
+                width: 60%;
+                padding: 10px;
+            }
+            
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        `
+
+    ]
 }
 
 window.customElements.define('table-charter', TableCharter)
