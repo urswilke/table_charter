@@ -42,7 +42,7 @@ export class OJSPlot extends LitElement {
 		return when(this.chartOptions === null,
 			() => html`<div></div>`,
 			() => html`<div>
-			<h3 class="primary multi-line-header">${this.chartTitle}</h3>
+			<h4 class="primary multi-line-header">${this.chartTitle}</h4>
 			${renderedPlot}
 			</div>`
 		)
