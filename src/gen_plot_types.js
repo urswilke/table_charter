@@ -107,6 +107,9 @@ function gen_plot_options_cat(data) {
 function gen_plot_options_mw(data) {
 	return {
 		marginLeft: 150,
+		x: {
+			label: null,
+		},
 		y: {
 			label: null,
 			domain: [...new Set(data.plot_data.map((x) => x.ColSubtitle))],
