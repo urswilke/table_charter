@@ -127,7 +127,7 @@ function gen_plot_options_mw(data) {
 				Plot.pointer({
 					y: "ColSubtitle", 
 					x: "Value", 
-					fill: "orange",
+					fill: "RowTitle",
 					stroke: "transparent",
 					r: 7,
 					title: (d) => [
