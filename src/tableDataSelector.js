@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 
-import { concat_tab_titles, xlsx_to_json_array } from './utils.js'
+import { xlsx_to_json_array } from './utils.js'
 
 import './selectors/question_selector.js'
 import './selectors/header_selector.js'
@@ -32,8 +32,8 @@ export class TableDataSelector extends LitElement {
 		this.params = {};
 		this.choices = {};
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
-		this.params.tab_titles = [...new Set(this.data.map(d => concat_tab_titles(d)))];
-		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle))];
+		this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
+		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
 		this.choices.tab_titles = this.params.tab_titles[0]
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
 		this.params.row_type = ["%", "counts"];
@@ -45,13 +45,13 @@ export class TableDataSelector extends LitElement {
 	// Helper:
 	sel_question_data() {
 		this.question_data = this.data
-			.filter(x => concat_tab_titles(x) === this.choices.tab_titles);
+			.filter(x => x.TabTitle === this.choices.tab_titles);
 	
 		this.sel_header_data()
 	}
 	sel_header_data() {
 		this.header_data = this.question_data
-			.filter(x => this.choices.col_titles.includes(x.ColTitle));
+			.filter(x => this.choices.col_titles.includes(x.ColTitle1));
 
 		this.sel_num_type_data()
 }
@@ -59,11 +59,11 @@ export class TableDataSelector extends LitElement {
 		this.num_type_data = this.header_data
 			.filter(x => 
 				this.choices.row_type === "counts" ? 
-				x.RowType.includes("Abs") : 
-				!x.RowType.includes("Abs")
+				x.RowAbsPercent == "Abs" : 
+				x.RowAbsPercent != "Abs"
 			)
 		;
-		this.params.row_types = [...new Set(this.num_type_data.map((d) => d.RowType.replace(/\|.*/, '')))]
+		this.params.row_types = [...new Set(this.num_type_data.map((d) => d.RowContent))]
 
 		if (!this.choices.row_types || !this.choices.row_types.every(val => this.params.row_types.includes(val))) {
 			this.choices.row_types = this.params.row_types.filter( ( el ) => !["Valid", "Total"].includes( el ) );;
@@ -75,7 +75,7 @@ export class TableDataSelector extends LitElement {
 		this.plot_data = this.num_type_data
 			// https://stackoverflow.com/a/59329231:	
 			.filter(x => (
-				this.choices.row_types.some(pattern => x.RowType.replace(/\|.*/, '').startsWith(pattern))
+				this.choices.row_types.some(pattern => x.RowContent.startsWith(pattern))
 			))
 	}
 	
