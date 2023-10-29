@@ -25,8 +25,8 @@ export function gen_plot_options(data) {
 }
 
 function gen_plot_options_cat(data) {
-	const x_order = [...new Set(data.plot_data.map((x) => x.ColSubtitle))];
-	const fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle))];
+	const x_order = [...new Set(data.plot_data.map((x) => x.ColTitle2))];
+	const fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle1))];
 	return {
 		// style: {
 		// 	color: "var(--plot-primary)",
@@ -53,9 +53,9 @@ function gen_plot_options_cat(data) {
 				Plot.groupX(
 					{y: "sum"},
 					{
-						x: "ColSubtitle", 
+						x: "ColTitle2", 
 						y: "Value", 
-						fill: "RowTitle",
+						fill: "RowTitle1",
 						order: fill_order, 
 						// another way to add tooltips:
 						//  tip: true,
@@ -68,9 +68,9 @@ function gen_plot_options_cat(data) {
 					Plot.groupX(
 						{ y: "sum", text: "first" },
 						{
-							x: "ColSubtitle",
+							x: "ColTitle2",
 							y: "Value",
-							z: "RowTitle",
+							z: "RowTitle1",
 							text: (d) => (d.Value == 0 ? null : d.Value.toFixed(0)),
 							order: fill_order
 						}
@@ -82,9 +82,9 @@ function gen_plot_options_cat(data) {
 				Plot.groupX(
 					{y: "sum"},
 					Plot.pointer({
-						x: "ColSubtitle", 
+						x: "ColTitle2", 
 						y: "Value",
-						z: "RowTitle",
+						z: "RowTitle1",
 						stroke: "white",
 						order: fill_order,
 						fill: "orange",
@@ -92,10 +92,10 @@ function gen_plot_options_cat(data) {
 						stroke: "transparent",
 						strokeWidth: 500,
 						title: (d) => [
-							`Q: ${d.TabTitel1}`, 
-							`row: ${d.RowTitle}`, 
-							`head: ${d.ColTitle}`, 
-							`col: ${d.ColSubtitle}`, 
+							`Q: ${d.TabTitle}`, 
+							`row: ${d.RowTitle1}`, 
+							`head: ${d.ColTitle1}`, 
+							`col: ${d.ColTitle2}`, 
 							`val: ${d.Value.toFixed(1)}`,
 						].join("\n")
 					})
@@ -112,29 +112,29 @@ function gen_plot_options_mw(data) {
 		},
 		y: {
 			label: null,
-			domain: [...new Set(data.plot_data.map((x) => x.ColSubtitle))],
+			domain: [...new Set(data.plot_data.map((x) => x.ColTitle2))],
 		},
 		color: {
 			type: data.choices.color_scale,
-			domain: [...new Set(data.plot_data.map((x) => x.RowTitle))],
+			domain: [...new Set(data.plot_data.map((x) => x.RowTitle1))],
 			legend: true
 		},
 		marks: [
-			Plot.lineY(data.plot_data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
-			Plot.dot(data.plot_data, {y: "ColSubtitle", x: "Value", stroke: "RowTitle"}),
+			Plot.lineY(data.plot_data, {y: "ColTitle2", x: "Value", stroke: "RowTitle1"}),
+			Plot.dot(data.plot_data, {y: "ColTitle2", x: "Value", stroke: "RowTitle1"}),
 			Plot.dot(
 				data.plot_data, 
 				Plot.pointer({
-					y: "ColSubtitle", 
+					y: "ColTitle2", 
 					x: "Value", 
-					fill: "RowTitle",
+					fill: "RowTitle1",
 					stroke: "transparent",
 					r: 7,
 					title: (d) => [
-						`Q: ${d.TabTitel1}`, 
-						`row: ${d.RowTitle}`, 
-						`head: ${d.ColTitle}`, 
-						`col: ${d.ColSubtitle}`, 
+						`Q: ${d.TabTitle}`, 
+						`row: ${d.RowTitle1}`, 
+						`head: ${d.ColTitle1}`, 
+						`col: ${d.ColTitle2}`, 
 						`val: ${d.Value.toFixed(1)}`,
 					].join("\n")
 				}),
