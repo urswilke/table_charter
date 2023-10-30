@@ -75,7 +75,7 @@ export class TableDataSelector extends LitElement {
 		this.plot_data = this.num_type_data
 			// https://stackoverflow.com/a/59329231:	
 			.filter(x => (
-				this.choices.row_types.some(pattern => x.RowContent.startsWith(pattern))
+				this.choices.row_types.some(pattern => x.RowContent === pattern)
 			))
 	}
 	
