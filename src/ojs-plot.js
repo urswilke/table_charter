@@ -28,7 +28,7 @@ export class OJSPlot extends LitElement {
 
 	set plot_data(val) {
 		this.chartOptions = gen_plot_options(val)
-		this.chartTitle = !!val.plot_data ? val.plot_data[0].TabTitle: ""
+		this.chartTitle = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabTitle: ""
 	}
 
 

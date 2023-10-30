@@ -65,7 +65,7 @@ export class TableDataSelector extends LitElement {
 		;
 		this.params.row_types = [...new Set(this.num_type_data.map((d) => d.RowContent))]
 
-		if (!this.choices.row_types || !this.choices.row_types.every(val => this.params.row_types.includes(val))) {
+		if (!this.choices.row_types || !this.choices.row_types.every(val => this.params.row_types.includes(val)) || this.choices.row_types.length === 0) {
 			this.choices.row_types = this.params.row_types.filter( ( el ) => !["Valid", "Total"].includes( el ) );;
 		}
 		
