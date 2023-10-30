@@ -24,6 +24,7 @@ export function gen_plot_options(data) {
 	}
 }
 
+// TODO: find better solution for ... [x.ColTitle1, x.ColTitle2].join('\n') ...
 function gen_plot_options_cat(data) {
 	const x_order = [...new Set(data.plot_data.map((x) => [x.ColTitle1, x.ColTitle2].join('\n')))];
 	const fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle1))];
