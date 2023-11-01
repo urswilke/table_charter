@@ -9,13 +9,9 @@ beforeAll(async () => {
 })
 
 async function xl_path_to_file(filename) {
-    const wb = XLSX.read(filename);
-    const ext = filename.slice(filename.lastIndexOf(".") + 1);
-    const u8 = XLSX.write(wb, { bookType: ext, type: "buffer" });
-    const parts = [ u8 ]; 
-    const file = new File(parts, filename, { type: "application/vnd.ms-excel" });
-    console.log(u8)
-    return file;
+    // doesnt work because of: https://stackoverflow.com/a/49139119   
+    const workbook = XLSX.readFile(filename);
+    return workbook;
 }
 
 await describe('000', async () => {
@@ -36,3 +32,4 @@ await describe('000', async () => {
         console.log(user)
         user.upload(fu2, file)
     })
+})
