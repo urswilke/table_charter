@@ -26,6 +26,7 @@ build
 
 #my modifications:
 *.xlsx
+test.json
 !test_part.xlsx
 *.xlsm
 .~lock.*
