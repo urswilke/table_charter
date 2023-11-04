@@ -8,11 +8,6 @@ beforeAll(async () => {
     document.body.appendChild(tc);
 })
 
-async function xl_path_to_file(filename) {
-    // doesnt work because of: https://stackoverflow.com/a/49139119   
-    const workbook = XLSX.readFile(filename);
-    return workbook;
-}
 
 await describe('000', async () => {
     const fu = document.body.querySelector('table-charter')
@@ -27,9 +22,17 @@ await describe('000', async () => {
 
     test('table-book-upload element found', async () => {
         const user = userEvent.setup()
-        const file = await xl_path_to_file('/home/gspusi/javascript/table_charter/Mappe1.xlsx')
-        console.log(file)
-        console.log(user)
-        user.upload(fu2, file)
+        const tc2 = document.createElement("ojs-plot");
+        const dropdown = screen.getByTestId('town') as HTMLSelectElement;
+
+        // var file = JSON.parse('test.json');
+        // const tc2 = document.body.querySelector('table-charter')
+        console.log(tc2)
+        tc2.plot_data = data;
+        const ojsp = document.body.querySelector('ojs-plot')
+        // const file = await xl_path_to_file('/home/gspusi/javascript/table_charter/Mappe1.xlsx')
+        console.log(tc2.plot_data[0])
+        console.log(ojsp)
+        // user.upload(fu2, file)
     })
 })
