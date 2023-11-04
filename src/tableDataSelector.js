@@ -10,6 +10,7 @@ import './selectors/row_types_selector.js'
 import './selectors/colorscale_selector.js'
 
 import sharedStyles from './components.css?inline';
+import data from './example.json' assert {type: 'json'};
 
 const inspect = true // set to true for some console.log msgs
 
@@ -28,7 +29,12 @@ export class TableDataSelector extends LitElement {
 		this.init_params();
 		this._update_plot_data()
 	}
-
+	
+	// not in constructor cause need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized..:
+	connectedCallback() {
+		super.connectedCallback()
+		this.init_tablebook_data(data);
+	  }
 	prep_data() {
 		this.data = this.data.map((x) => ({
 			...x, 
