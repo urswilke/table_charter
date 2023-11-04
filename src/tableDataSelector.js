@@ -12,7 +12,7 @@ import './selectors/colorscale_selector.js'
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
 
-const inspect = true // set to true for some console.log msgs
+const inspect = false // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
 
