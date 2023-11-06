@@ -1,6 +1,6 @@
 {
-  "name": "table-charter",
   "private": true,
+  "name": "table-charter",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/main.es.js",
@@ -13,7 +13,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "web-test-runner",
+    "test:watch": "web-test-runner --watch"
   },
   "dependencies": {
     "lit": "^3.0.1",
@@ -21,6 +23,8 @@
   },
   "devDependencies": {
     "@observablehq/plot": "^0.6.11",
+    "@open-wc/testing": "^3.1.6",
+    "@web/test-runner": "^0.14.0",
     "vite": "^4.5.0"
   }
 }
