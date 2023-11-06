@@ -14,7 +14,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "wtr test/**/*.test.js --node-resolve --playwright --browsers chromium firefox"
+    "test": "wtr test/**/*.test.js"
   },
   "dependencies": {
     "lit": "^3.0.1",
@@ -23,6 +23,8 @@
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@observablehq/plot": "^0.6.11",
+    "@open-wc/testing": "^3.2.2",
+    "@web/dev-server-legacy": "^1.0.3",
     "@web/test-runner": "^0.18.0",
     "@web/test-runner-playwright": "^0.11.0",
     "vite": "^4.5.0"
