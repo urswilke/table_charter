@@ -14,7 +14,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "web-test-runner",
+    "test": "wtr test/**/*.test.js --node-resolve --playwright --browsers chromium firefox",
     "test:watch": "web-test-runner --watch"
   },
   "dependencies": {
