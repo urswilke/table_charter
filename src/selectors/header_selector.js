@@ -1,5 +1,4 @@
-import { LitElement, html, css, unsafeCSS } from 'lit';
-import sharedStyles from './../components.css?inline';
+import { LitElement, html } from 'lit';
 
 export class ColumnSelector extends LitElement {
     static properties = {
@@ -42,14 +41,5 @@ export class ColumnSelector extends LitElement {
         </div>
         `;
     }
-
-	static styles = [
-		unsafeCSS(sharedStyles),
-		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
-	];
 }
 customElements.define('column-selector', ColumnSelector);

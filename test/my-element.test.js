@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import {MyElement} from '../src/my-element.js';
+// import {MyElement} from '../src/my-element.js';
 import {fixture, assert, expect} from '@open-wc/testing';
 import {html} from 'lit';
-// import { TableCharter } from '../src/tableCharter.js';
+import { TableCharter } from '../src/tableCharter.js';
 // import { OJSPlot } from '../src/ojs-plot.js';
 describe('TableCharter', () => {
   it('has a default title "Hey there" and counter 5', async () => {

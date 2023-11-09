@@ -1,4 +1,4 @@
-import { LitElement, css, html, unsafeCSS } from 'lit'
+import { LitElement, html } from 'lit'
 import { when } from 'lit/directives/when.js';
 
 import { xlsx_to_json_array } from './utils.js'
@@ -9,7 +9,6 @@ import './selectors/num_type_selector.js'
 import './selectors/row_types_selector.js'
 import './selectors/colorscale_selector.js'
 
-import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
 
 const inspect = false // set to true for some console.log msgs
@@ -163,16 +162,6 @@ export class TableDataSelector extends LitElement {
 			)}
 		`;
 	}
-
-	static styles = [
-		unsafeCSS(sharedStyles),
-		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
-	];
-
 }
 
 window.customElements.define('table-data-selector', TableDataSelector)
