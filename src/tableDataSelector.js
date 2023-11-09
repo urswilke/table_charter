@@ -3,11 +3,11 @@ import { when } from 'lit/directives/when.js';
 
 import { xlsx_to_json_array } from './utils.js'
 
-import './selectors/question_selector.js'
-import './selectors/header_selector.js'
-import './selectors/num_type_selector.js'
-import './selectors/row_types_selector.js'
-import './selectors/colorscale_selector.js'
+import './question_selector.js'
+import './header_selector.js'
+import './num_type_selector.js'
+import './row_types_selector.js'
+import './colorscale_selector.js'
 
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};

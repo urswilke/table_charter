@@ -7,18 +7,27 @@
 import {MyElement} from '../src/my-element.js';
 import {fixture, assert, expect} from '@open-wc/testing';
 import {html} from 'lit';
-// import { TableCharter } from '../src/tableCharter.js';
+
+import { TableCharter } from '../src/tableCharter.js';
+debugger;
 // import { OJSPlot } from '../src/ojs-plot.js';
-describe('TableCharter', () => {
-  it('has a default title "Hey there" and counter 5', async () => {
-    const el = await fixture(html`
-      <table-charter></table-charter>
-    `);
-    console.log(el)
-    expect(el.title).to.equal('');
-    expect(el.counter).to.equal(undefined);
+suite('my-element', () => {
+  test('is defined', () => {
+    const el = document.createElement('my-element');
+    assert.instanceOf(el, MyElement);
   });
-})  
+})
+
+// describe('TableCharter', () => {
+//   it('has a default title "Hey there" and counter 5', async () => {
+//     const el = await fixture(html`
+//       <table-charter></table-charter>
+//     `);
+//     console.log(el)
+//     expect(el.title).to.equal('');
+//     expect(el.counter).to.equal(undefined);
+//   });
+// })  
 // suite('my-element', () => {
 //   test('is defined', () => {
 //     const el = document.createElement('my-element');

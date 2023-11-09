@@ -1,5 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
-import sharedStyles from './../components.css?inline';
+import sharedStyles from './components.css?inline';
 
 export class RowtypeSelector extends LitElement {
     static properties = {
