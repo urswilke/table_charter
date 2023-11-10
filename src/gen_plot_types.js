@@ -74,10 +74,10 @@ class CatOptions {
 			Plot.textY.apply(null, [data, options]) :
 			Plot.textX.apply(null, [data, options])
 	}
-	stacker(options, xy) {
-		return xy === "y" ?
-			Plot.stackY.apply(null, [options]) :
-			Plot.stackX.apply(null, [options])
+	stacker() {
+		return this.xy === "y" ?
+			Plot.stackY(this.text_opts) :
+			Plot.stackX(this.text_opts)
 	}
 	bar_plotter(data, options, xy) {
 		return xy === "y" ?
@@ -103,10 +103,7 @@ class CatOptions {
 				),
 				texter(
 					this.data.plot_data,
-					stacker(
-						this.text_opts,
-						this.xy
-					),
+					this.stacker(),
 					this.xy
 				),
 			]
