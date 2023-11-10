@@ -78,30 +78,6 @@ function gen_plot_options_cat(data) {
 					)
 				)
 			),
-			Plot.barY(
-				data.plot_data, 
-				Plot.groupX(
-					{y: "sum"},
-					Plot.pointer({
-						x: "ColTitle2", 
-						y: "Value",
-						z: "RowTitle1",
-						stroke: "white",
-						order: fill_order,
-						fill: "orange",
-						// https://talk.observablehq.com/t/plot-tooltips-available/6583/5:
-						stroke: "transparent",
-						strokeWidth: 500,
-						title: (x) => [
-							`Q: ${x.TabTitle}`, 
-							`row: ${x.RowTitle1}`, 
-							`head: ${x.ColTitle1}`, 
-							`col: ${x.ColTitle2}`, 
-							`val: ${x.Value.toFixed(1)}`,
-						].join("\n")
-					})
-				)
-			),
 		]
 	};
 }
