@@ -13,7 +13,7 @@ import './selectors/xy_selector.js'
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
 
-const inspect = false // set to true for some console.log msgs
+const inspect = true // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
 
@@ -49,7 +49,7 @@ export class TableDataSelector extends LitElement {
 	init_params() {
 		this.params = {};
 		this.choices = {};
-		this.choices.xy = "x"
+		this.choices.xy = "y"
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
