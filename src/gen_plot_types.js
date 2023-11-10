@@ -79,10 +79,10 @@ class CatOptions {
 			Plot.stackY(this.text_opts) :
 			Plot.stackX(this.text_opts)
 	}
-	bar_plotter(data, options, xy) {
-		return xy === "y" ?
-			Plot.barY.apply(null, [data, options]) :
-			Plot.barX.apply(null, [data, options])
+	bar_plotter() {
+		return this.xy === "y" ?
+			Plot.barY(this.data, this.bar_opts) :
+			Plot.barX(this.data, this.bar_opts)
 	}
 	opts() {
 		const x = {
@@ -95,12 +95,7 @@ class CatOptions {
 				legend: true
 			},
 			marks: [
-				bar_plotter(
-					this.data.plot_data,
-					// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
-					this.bar_opts,
-					this.xy
-				),
+				this.bar_plotter(),
 				this.texter(),
 			]
 		};
