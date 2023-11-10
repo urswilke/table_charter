@@ -69,10 +69,10 @@ class CatOptions {
 			Plot.groupX(this.bar_opts, this.text_opts) :
 			Plot.groupY(this.bar_opts, this.text_opts)
 	}
-	texter(data, options, xy) {
-		return xy === "y" ?
-			Plot.textY.apply(null, [data, options]) :
-			Plot.textX.apply(null, [data, options])
+	texter() {
+		return this.xy === "y" ?
+			Plot.textY(this.data, this.stacker()) :
+			Plot.textX(this.data, this.stacker())
 	}
 	stacker() {
 		return this.xy === "y" ?
@@ -101,11 +101,7 @@ class CatOptions {
 					this.bar_opts,
 					this.xy
 				),
-				texter(
-					this.data.plot_data,
-					this.stacker(),
-					this.xy
-				),
+				this.texter(),
 			]
 		};
 		x[this.yx] = ({
