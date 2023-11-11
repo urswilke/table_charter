@@ -52,8 +52,9 @@ class CatOptions {
 		o2[this.xy] = "Value"
 		o2[this.yx] = (x) => ([x.ColTitle1, x.ColTitle2].join('\n'))
 
-		const res = grouper(o1, o2, this.xy)
-		return res
+		return this.xy === "y" ?
+			Plot.groupX(o1, o2) :
+			Plot.groupY(o1, o2)
 	}
 	get_text_options() {
 		const o2 = this.bar_opts
@@ -106,11 +107,11 @@ class CatOptions {
 		return x
 	}
 }
-function grouper(o1, o2, xy) {
-	return xy === "y" ?
-		Plot.groupX(o1, o2) :
-		Plot.groupY(o1, o2)
-}
+// function grouper(o1, o2, xy) {
+// 	return xy === "y" ?
+// 		Plot.groupX(o1, o2) :
+// 		Plot.groupY(o1, o2)
+// }
 // function texter(data, options, xy) {
 // 	return xy === "y" ?
 // 		Plot.textY.apply(null, [data, options]) :
