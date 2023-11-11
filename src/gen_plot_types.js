@@ -52,7 +52,7 @@ class CatOptions {
 		o2[this.xy] = "Value"
 		o2[this.yx] = (x) => ([x.ColTitle1, x.ColTitle2].join('\n'))
 
-		const res = grouper()
+		const res = grouper(o1, o2, this.xy)
 		return res
 	}
 	get_text_options() {
@@ -64,11 +64,11 @@ class CatOptions {
 		delete o2["tip"];
 		return o2
 	}
-	grouper() {
-		return this.xy === "y" ?
-			Plot.groupX(this.bar_opts, this.text_opts) :
-			Plot.groupY(this.bar_opts, this.text_opts)
-	}
+	// grouper() {
+	// 	return this.xy === "y" ?
+	// 		Plot.groupX(this.bar_opts, this.text_opts) :
+	// 		Plot.groupY(this.bar_opts, this.text_opts)
+	// }
 	texter() {
 		return this.xy === "y" ?
 			Plot.textY(this.data, this.stacker()) :
@@ -111,21 +111,21 @@ function grouper(o1, o2, xy) {
 		Plot.groupX(o1, o2) :
 		Plot.groupY(o1, o2)
 }
-function texter(data, options, xy) {
-	return xy === "y" ?
-		Plot.textY.apply(null, [data, options]) :
-		Plot.textX.apply(null, [data, options])
-}
-function stacker(options, xy) {
-	return xy === "y" ?
-		Plot.stackY.apply(null, [options]) :
-		Plot.stackX.apply(null, [options])
-}
-function bar_plotter(data, options, xy) {
-	return xy === "y" ?
-		Plot.barY.apply(null, [data, options]) :
-		Plot.barX.apply(null, [data, options])
-}
+// function texter(data, options, xy) {
+// 	return xy === "y" ?
+// 		Plot.textY.apply(null, [data, options]) :
+// 		Plot.textX.apply(null, [data, options])
+// }
+// function stacker(options, xy) {
+// 	return xy === "y" ?
+// 		Plot.stackY.apply(null, [options]) :
+// 		Plot.stackX.apply(null, [options])
+// }
+// function bar_plotter(data, options, xy) {
+// 	return xy === "y" ?
+// 		Plot.barY.apply(null, [data, options]) :
+// 		Plot.barX.apply(null, [data, options])
+// }
 
 
 function gen_plot_options_mw(data) {
