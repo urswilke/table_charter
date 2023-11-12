@@ -18,115 +18,93 @@ export function gen_plot_options(data) {
 		case "MW":
 			return gen_plot_options_mw(data);
 	
-			default:
+		default:
 			alert("Table type " + tab_type + " not implemented.")
 			break;
 	}
 }
 
-// TODO: find better solution for ... [x.ColTitle1, x.ColTitle2].join('\n') ...
 function gen_plot_options_cat(data) {
-	return new CatOptions(data).opts()
+    const x_order = [...new Set(data.plot_data.map((x) => [x.ColTitle1, x.ColTitle2].join('\n')))];
+    const fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle1))];
+    const x1 = data.choices.xy
+    const x2 = x1 === "x" ? "y" : "x"
+	const group_ 	= x1 === "y" ? Plot.groupX  : Plot.groupY
+    const text_ 	= x1 === "y" ? Plot.textY   : Plot.textX
+    const stack_ 	= x1 === "y" ? Plot.stackY  : Plot.stackX
+    const bar_      = x1 === "y" ? Plot.barY 	: Plot.barX
+    
+  
+    function get_bar_options() {
+        const o1 = {}
+        o1[x1] = "sum"
+        const o2 = {
+            fill: "RowTitle1",
+            order: fill_order,
+            tip: true,
+        }
+    
+        o2[x1] = "Value"
+        o2[x2] = (x) => ([x.ColTitle1, x.ColTitle2].join('\n'))
+    
+        const res = group_(
+            o1,
+            o2
+        )
+        return res
+    }
+    
+    function get_text_options() {
+        const o2 = get_bar_options(x1)
+        o2[x1]["text"] = "first"
+        o2[x2]["text"] = (x) => (x.Value == 0 ? null : x.Value.toFixed(0))
+        o2["z"] = o2["fill"];
+        delete o2["fill"];
+        delete o2["tip"];
+        return o2
+    }
+
+
+
+
+    const res = {
+		marginLeft: x1 === "y" ? 40 : 120,
+        color: {
+            // type: "nominal",
+            domain: fill_order,
+            legend: true
+        },
+        marks: [
+            bar_(
+                data.plot_data,
+                // https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
+                get_bar_options()
+            ),
+            text_(
+                data.plot_data,
+                stack_(
+					get_text_options()
+				)
+            ),
+        ]
+    };
+    res[x2] = ({
+        domain: x_order,
+        label: null
+    })
+	res[x1] = {
+		label: null,
+	}
+	return res
 }
 
-class CatOptions {
-	constructor(data) {
-		this.data = data;
-		this.x_order = [...new Set(data.plot_data.map((x) => [x.ColTitle1, x.ColTitle2].join('\n')))];
-		this.fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle1))];
-		this.xy = data.choices.xy
-		this.yx = this.xy === "x" ? "y" : "x"
-		// this.bar_opts = this.get_bar_options()
-		// this.text_opts = this.get_text_options()
-	}
-	get_bar_options() {
-		const o1 = {}
-		o1[this.xy] = "sum"
-		const o2 = {
-			fill: "RowTitle1",
-			order: this.fill_order,
-			// another way to add tooltips:
-			tip: true,
-		}
 
-		o2[this.xy] = "Value"
-		o2[this.yx] = (x) => ([x.ColTitle1, x.ColTitle2].join('\n'))
 
-		return this.xy === "y" ?
-			Plot.groupX(o1, o2) :
-			Plot.groupY(o1, o2)
-	}
-	get_text_options() {
-		const o2 = this.get_bar_options()
-		o2[this.xy]["text"] = "first"
-		o2[this.yx]["text"] = (x) => (x.Value == 0 ? null : x.Value.toFixed(0))
-		o2["z"] = o2["fill"];
-		delete o2["fill"];
-		delete o2["tip"];
-		return o2
-	}
-	// group_() {
-	// 	return this.xy === "y" ?
-	// 		Plot.groupX(this.get_bar_options(), this.get_text_options()) :
-	// 		Plot.groupY(this.get_bar_options(), this.get_text_options())
-	// }
-	text_() {
-		return this.xy === "y" ?
-			Plot.textY(this.data, this.stack_()) :
-			Plot.textX(this.data, this.stack_())
-	}
-	stack_() {
-		return this.xy === "y" ?
-			Plot.stackY(this.data, this.get_text_options()) :
-			Plot.stackX(this.data, this.get_text_options())
-	}
-	bar_() {
-		return this.xy === "y" ?
-			Plot.barY(this.data, this.get_bar_options()) :
-			Plot.barX(this.data, this.get_bar_options())
-	}
-	opts() {
-		const x = {
-			// y: {
-			// 	label: null,
-			// },
-			color: {
-				type: this.data.choices.color_scale,
-				domain: this.fill_order,
-				legend: true
-			},
-			marks: [
-				this.bar_(),
-				this.text_(),
-			]
-		};
-		x[this.yx] = ({
-			domain: this.x_order,
-			label: null
-		})
-		return x
-	}
-}
-// function group_(o1, o2, xy) {
-// 	return xy === "y" ?
-// 		Plot.groupX(o1, o2) :
-// 		Plot.groupY(o1, o2)
-// }
-// function text_(data, options, xy) {
-// 	return xy === "y" ?
-// 		Plot.textY.apply(null, [data, options]) :
-// 		Plot.textX.apply(null, [data, options])
-// }
-// function stack_(options, xy) {
-// 	return xy === "y" ?
-// 		Plot.stackY.apply(null, [options]) :
-// 		Plot.stackX.apply(null, [options])
-// }
-// function bar_(data, options, xy) {
-// 	return xy === "y" ?
-// 		Plot.barY.apply(null, [data, options]) :
-// 		Plot.barX.apply(null, [data, options])
-// }
+
+
+
+
+
 
 
 function gen_plot_options_mw(data) {
