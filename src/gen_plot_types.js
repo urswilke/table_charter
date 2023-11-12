@@ -36,8 +36,8 @@ class CatOptions {
 		this.fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle1))];
 		this.xy = data.choices.xy
 		this.yx = this.xy === "x" ? "y" : "x"
-		this.bar_opts = this.get_bar_options()
-		this.text_opts = this.get_text_options()
+		// this.bar_opts = this.get_bar_options()
+		// this.text_opts = this.get_text_options()
 	}
 	get_bar_options() {
 		const o1 = {}
@@ -57,7 +57,7 @@ class CatOptions {
 			Plot.groupY(o1, o2)
 	}
 	get_text_options() {
-		const o2 = this.bar_opts
+		const o2 = this.get_bar_options()
 		o2[this.xy]["text"] = "first"
 		o2[this.yx]["text"] = (x) => (x.Value == 0 ? null : x.Value.toFixed(0))
 		o2["z"] = o2["fill"];
@@ -65,25 +65,25 @@ class CatOptions {
 		delete o2["tip"];
 		return o2
 	}
-	// grouper() {
+	// group_() {
 	// 	return this.xy === "y" ?
-	// 		Plot.groupX(this.bar_opts, this.text_opts) :
-	// 		Plot.groupY(this.bar_opts, this.text_opts)
+	// 		Plot.groupX(this.get_bar_options(), this.get_text_options()) :
+	// 		Plot.groupY(this.get_bar_options(), this.get_text_options())
 	// }
-	texter() {
+	text_() {
 		return this.xy === "y" ?
-			Plot.textY(this.data, this.stacker()) :
-			Plot.textX(this.data, this.stacker())
+			Plot.textY(this.data, this.stack_()) :
+			Plot.textX(this.data, this.stack_())
 	}
-	stacker() {
+	stack_() {
 		return this.xy === "y" ?
-			Plot.stackY(this.data, this.text_opts) :
-			Plot.stackX(this.data, this.text_opts)
+			Plot.stackY(this.data, this.get_text_options()) :
+			Plot.stackX(this.data, this.get_text_options())
 	}
-	bar_plotter() {
+	bar_() {
 		return this.xy === "y" ?
-			Plot.barY(this.data, this.bar_opts) :
-			Plot.barX(this.data, this.bar_opts)
+			Plot.barY(this.data, this.get_bar_options()) :
+			Plot.barX(this.data, this.get_bar_options())
 	}
 	opts() {
 		const x = {
@@ -96,8 +96,8 @@ class CatOptions {
 				legend: true
 			},
 			marks: [
-				this.bar_plotter(),
-				this.texter(),
+				this.bar_(),
+				this.text_(),
 			]
 		};
 		x[this.yx] = ({
@@ -107,22 +107,22 @@ class CatOptions {
 		return x
 	}
 }
-// function grouper(o1, o2, xy) {
+// function group_(o1, o2, xy) {
 // 	return xy === "y" ?
 // 		Plot.groupX(o1, o2) :
 // 		Plot.groupY(o1, o2)
 // }
-// function texter(data, options, xy) {
+// function text_(data, options, xy) {
 // 	return xy === "y" ?
 // 		Plot.textY.apply(null, [data, options]) :
 // 		Plot.textX.apply(null, [data, options])
 // }
-// function stacker(options, xy) {
+// function stack_(options, xy) {
 // 	return xy === "y" ?
 // 		Plot.stackY.apply(null, [options]) :
 // 		Plot.stackX.apply(null, [options])
 // }
-// function bar_plotter(data, options, xy) {
+// function bar_(data, options, xy) {
 // 	return xy === "y" ?
 // 		Plot.barY.apply(null, [data, options]) :
 // 		Plot.barX.apply(null, [data, options])
