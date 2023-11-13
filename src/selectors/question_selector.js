@@ -3,7 +3,7 @@ import sharedStyles from './../components.css?inline';
 
 export class QuestionSelector extends LitElement {
     static properties = {
-		// all_questions: { type: Array },
+		all_questions: { type: Array },
 		chosen_question: { type: String },
 	};
 

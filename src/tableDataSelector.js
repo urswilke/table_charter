@@ -8,11 +8,12 @@ import './selectors/header_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/row_types_selector.js'
 import './selectors/colorscale_selector.js'
+import './selectors/xy_selector.js'
 
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
 
-const inspect = false // set to true for some console.log msgs
+const inspect = true // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
 
@@ -48,10 +49,13 @@ export class TableDataSelector extends LitElement {
 	init_params() {
 		this.params = {};
 		this.choices = {};
+		this.choices.xy = "x"
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
+		this.params.tab_nos = this.params.tab_titles.map((_, i) => i)
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
 		this.choices.tab_titles = this.params.tab_titles[0]
+		this.choices.tab_nos = 1
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
 		this.params.row_type = ["%", "counts"];
 		this.choices.row_type = this.params.row_type[0];
@@ -62,7 +66,7 @@ export class TableDataSelector extends LitElement {
 	// Helper:
 	sel_question_data() {
 		this.question_data = this.data
-			.filter(x => x.TabTitle === this.choices.tab_titles);
+			.filter(x => Number(x.TabNo) === this.choices.tab_nos);
 	
 		this.sel_header_data()
 	}
@@ -121,6 +125,8 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_question_update(e) {
 		this.choices.tab_titles = e.detail.chosen_question;
+		// for this to work properly, it needs TabNo in the data to be an ascending sequence of 1, 2, ..., N:
+		this.choices.tab_nos = this.params.tab_titles.indexOf(this.choices.tab_titles) + 1
 		this.sel_question_data()
 		this._update_plot_data()
 	}
@@ -136,6 +142,10 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_colorscale_update(e) {
 		this.choices.color_scale = e.detail.chosen_colorscale;
+		this._update_plot_data()
+	}
+	_on_xy_update(e) {
+		this.choices.xy = e.detail.chosen_xy;
 		this._update_plot_data()
 	}
 
@@ -154,11 +164,12 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
-						<question-selector 		@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}>   </question-selector>
-						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   </column-selector>
-						<num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 		.chosen_num_type=${this.choices.row_type}>	   </num_type-selector>
-						<row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   </row_types-selector>
-						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}></colorscale-selector>
+						<question-selector 		@update-question="${this._on_question_update}" 		.all_questions=${this.params.tab_titles} 	.chosen_question=${this.choices.tab_titles}>   	</question-selector>
+						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   	</column-selector>
+						<num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 		.chosen_num_type=${this.choices.row_type}>	   	</num_type-selector>
+						<row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   	</row_types-selector>
+						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}>	</colorscale-selector>
+						<xy-selector 	  		@update-xy="${this._on_xy_update}" 					 											.chosen_xy=${this.choices.xy}>				   	</xy-selector>
 					`
 			)}
 		`;

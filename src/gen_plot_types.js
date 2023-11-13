@@ -4,6 +4,7 @@ export function gen_plot_options(data) {
 	if (data.length === 0 || data.plot_data.length === 0) {
 		return {};
 	}
+	data["op"] = prep_options(data)
 	let tab_type = data.plot_data[0].TabType;
 	switch (tab_type) {
 		case "CAT":
@@ -18,136 +19,166 @@ export function gen_plot_options(data) {
 		case "MW":
 			return gen_plot_options_mw(data);
 	
-			default:
+		default:
 			alert("Table type " + tab_type + " not implemented.")
 			break;
 	}
 }
 
-// TODO: find better solution for ... [x.ColTitle1, x.ColTitle2].join('\n') ...
+function prep_options(data) {
+	const x2 = data.choices.xy
+    const x1 = x2 === "x" ? "y" : "x"
+	const label_joiner = x1 === 'y' ? '\n' : ' '
+	const label_joiner2 = x2 === 'y' ? '\n' : ' '
+	const col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(label_joiner)
+    const row_lab_fun = (x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(label_joiner2);
+    // const row_lab_fun = (x) => x.RowValue;
+	const color_order = [...new Set(data.plot_data.map(row_lab_fun))];
+	const x_order = [...new Set(data.plot_data.map(col_lab_fun))];
+	
+	const plot_opts = {}
+	plot_opts[x2] = col_lab_fun
+	plot_opts[x1] =  "Value"
+	const x1_opts = {
+		label: null,
+	}
+	const x2_opts = {
+        domain: x_order,
+        label: null
+    }
+
+	return {
+		x2,
+		x1,
+		label_joiner,
+		label_joiner2,
+		col_lab_fun,
+		row_lab_fun,
+		color_order,
+		x_order,
+		plot_opts,
+		x1_opts,
+		x2_opts,
+	}
+}
+
 function gen_plot_options_cat(data) {
-	const x_order = [...new Set(data.plot_data.map((x) => [x.ColTitle1, x.ColTitle2].join('\n')))];
-	const fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle1))];
-	return {
-		// style: {
-		// 	color: "var(--plot-primary)",
-		// },
-		// use ordered sequence of unique values:
-		// https://observablehq.com/@ee2dev/sorting-with-plot-a-collection-of-plot-examples#cell-102
-		// https://stackoverflow.com/a/14438954
-		x: {
-			domain: x_order,
-			label: null
-		},
-		y: {
-			label: null,
-		},
-		color: {
-			type: data.choices.color_scale,
-			domain: fill_order,
-			legend: true
-		},
-		marks: [
-			Plot.barY(
-				data.plot_data, 
-				// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
-				Plot.groupX(
-					{y: "sum"},
-					{
-						x: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-						y: "Value", 
-						fill: "RowTitle1",
-						order: fill_order, 
-						// another way to add tooltips:
-						//  tip: true,
-					}
-				)
-			),
-			Plot.textY(
-				data.plot_data,
-				Plot.stackY(
-					Plot.groupX(
-						{ y: "sum", text: "first" },
-						{
-							x: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-							y: "Value",
-							z: "RowTitle1",
-							text: (x) => (x.Value == 0 ? null : x.Value.toFixed(0)),
-							order: fill_order
-						}
-					)
-				)
-			),
-			Plot.barY(
-				data.plot_data, 
-				Plot.groupX(
-					{y: "sum"},
-					Plot.pointer({
-						x: "ColTitle2", 
-						y: "Value",
-						z: "RowTitle1",
-						stroke: "white",
-						order: fill_order,
-						fill: "orange",
-						// https://talk.observablehq.com/t/plot-tooltips-available/6583/5:
-						stroke: "transparent",
-						strokeWidth: 500,
-						title: (x) => [
-							`Q: ${x.TabTitle}`, 
-							`row: ${x.RowTitle1}`, 
-							`head: ${x.ColTitle1}`, 
-							`col: ${x.ColTitle2}`, 
-							`val: ${x.Value.toFixed(1)}`,
-						].join("\n")
-					})
-				)
-			),
-		]
-	};
+	const { 
+		x2: x2,
+		x1: x1,
+		// label_joiner: label_joiner,
+		// label_joiner2: label_joiner2,
+		// col_lab_fun: col_lab_fun,
+		row_lab_fun: row_lab_fun,
+		color_order: color_order,
+		x_order: x_order,
+		plot_opts: plot_opts,
+		x1_opts: x1_opts,
+		x2_opts: x2_opts,
+	} = data.op
+
+	const group_ 	= x1 === "y" ? Plot.groupX  : Plot.groupY
+    const text_ 	= x1 === "y" ? Plot.textY   : Plot.textX
+    const stack_ 	= x1 === "y" ? Plot.stackY  : Plot.stackX
+    const bar_      = x1 === "y" ? Plot.barY 	: Plot.barX
+    
+	const group_args1 = {text: "first"}
+	group_args1[x1] = "sum"
+	// const group_args2 = {...group_args1, text: "first"}
+	const group_args2_bar = {
+		...plot_opts,
+		fill: row_lab_fun,
+		order: color_order,
+		// tip: true,
+	}
+	const group_args2_text = {
+		...plot_opts,
+		text: (x) => (x.Value == 0 ? null : x.Value.toFixed(0)),
+		z: row_lab_fun,
+		order: color_order,
+		title: tooltip_fun
+	}
+	const bar_opts = group_(group_args1, group_args2_bar)
+	const text_opts = group_(group_args1, group_args2_text)
+  
+
+    const res = {
+		marginLeft: x1 === "y" ? 40 : 120,
+        color: {
+			// TODO: fix linear color scale with using "RowValue"
+			// type: data.choices.color_scale,
+            domain: color_order,
+            legend: true
+        },
+        marks: [
+            bar_(data.plot_data, bar_opts),
+			// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
+            text_(data.plot_data, stack_(text_opts)),
+			// x1 === "y" ? Plot.axisX({textAnchor: "start"}) : null
+        ]
+    };
+    res[x2] = x2_opts
+	res[x1] = x1_opts
+	return res
 }
+
 function gen_plot_options_mw(data) {
-	return {
-		marginLeft: 150,
-		x: {
-			label: null,
-		},
-		y: {
-			label: null,
-			domain: [...new Set(data.plot_data.map((x) => [x.ColTitle1, x.ColTitle2].join('\n')))],
-		},
+	const { 
+		x2: x2,
+		x1: x1,
+		// label_joiner: label_joiner,
+		// label_joiner2: label_joiner2,
+		// col_lab_fun: col_lab_fun,
+		row_lab_fun: row_lab_fun,
+		color_order: color_order,
+		x_order: x_order,
+		plot_opts: plot_opts,
+		x1_opts: x1_opts,
+		x2_opts: x2_opts
+	} = data.op
+
+	let line_opts = {
+		...plot_opts,
+		stroke: row_lab_fun
+	}
+
+	let dot_opts = {
+		...line_opts,
+		fill: row_lab_fun,
+		stroke: "transparent",
+		r: 7,
+		title: tooltip_fun
+	}
+
+	
+	const res = {
+		marginLeft: x2 === "x" ? 40 : 160,
 		color: {
 			type: data.choices.color_scale,
-			domain: [...new Set(data.plot_data.map((x) => x.RowTitle1))],
+			domain: color_order,
 			legend: true
 		},
 		marks: [
-			Plot.lineY(data.plot_data, {
-				y: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-				x: "Value", 
-				stroke: "RowTitle1"
-			}),
-			Plot.dot(data.plot_data, {
-				y: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-				x: "Value", 
-				stroke: "RowTitle1"
-			}),
-			Plot.dot(
-				data.plot_data, 
-				Plot.pointer({
-					y: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-					x: "Value", 
-					fill: "RowTitle1",
-					stroke: "transparent",
-					r: 7,
-					title: (x) => [
-						`Q: ${x.TabTitle}`, 
-						`row: ${x.RowTitle1}`, 
-						`head: ${x.ColTitle1}`, 
-						`col: ${x.ColTitle2}`, 
-						`val: ${x.Value.toFixed(1)}`,
-					].join("\n")
-				}),
-			),
+			Plot.lineY(data.plot_data, line_opts),
+			Plot.dot(data.plot_data, dot_opts),
+			// x2 === "x" ? Plot.axisX({textAnchor: "start"}) : null
 		]
 	};
+	res[x1] = x1_opts
+	res[x2] = x2_opts
+
+	return res
 }
+
+const tooltip_fun = (x) => [
+	`Q: ${x.TabTitle}`, 
+	`row1: ${x.RowTitle1}`, 
+	// only write row2 if differing from row1:
+	x.RowTitle1 === x.RowTitle2 ? 
+		null : 
+		`row2: ${x.RowTitle2}`, 
+	`rowval: ${x.RowValue}`,
+	`head: ${x.ColTitle1}`, 
+	`col: ${x.ColTitle2}`, 
+	`val: ${x.Value.toFixed(1)}`,
+].join("\n")
