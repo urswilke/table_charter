@@ -25,10 +25,14 @@ export function gen_plot_options(data) {
 }
 
 function gen_plot_options_cat(data) {
-    const x_order = [...new Set(data.plot_data.map((x) => [x.ColTitle1, x.ColTitle2].join('\n')))];
-    const fill_order = [...new Set(data.plot_data.map((x) => x.RowTitle1))];
-    const x1 = data.choices.xy
-    const x2 = x1 === "x" ? "y" : "x"
+    const x2 = data.choices.xy
+    const x1 = x2 === "x" ? "y" : "x"
+	const label_joiner = x1 === 'y' ? '\n' : ' '
+	const label_joiner2 = x2 === 'y' ? '\n' : ' '
+	const col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(label_joiner)
+    const row_lab_fun = (x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(label_joiner2);
+	const color_order = [...new Set(data.plot_data.map(row_lab_fun))];
+	const x_order = [...new Set(data.plot_data.map(col_lab_fun))];
 	const group_ 	= x1 === "y" ? Plot.groupX  : Plot.groupY
     const text_ 	= x1 === "y" ? Plot.textY   : Plot.textX
     const stack_ 	= x1 === "y" ? Plot.stackY  : Plot.stackX
@@ -39,13 +43,13 @@ function gen_plot_options_cat(data) {
         const o1 = {}
         o1[x1] = "sum"
         const o2 = {
-            fill: "RowTitle1",
-            order: fill_order,
+            fill: row_lab_fun,
+            order: color_order,
             tip: true,
         }
     
         o2[x1] = "Value"
-        o2[x2] = (x) => ([x.ColTitle1, x.ColTitle2].join('\n'))
+        o2[x2] = col_lab_fun
     
         const res = group_(
             o1,
@@ -71,7 +75,7 @@ function gen_plot_options_cat(data) {
 		marginLeft: x1 === "y" ? 40 : 120,
         color: {
             // type: "nominal",
-            domain: fill_order,
+            domain: color_order,
             legend: true
         },
         marks: [
