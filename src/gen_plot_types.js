@@ -108,48 +108,57 @@ function gen_plot_options_cat(data) {
 
 
 function gen_plot_options_mw(data) {
-	return {
-		marginLeft: 150,
-		x: {
-			label: null,
-		},
-		y: {
-			label: null,
-			domain: [...new Set(data.plot_data.map((x) => [x.ColTitle1, x.ColTitle2].join('\n')))],
-		},
+	const x1 = data.choices.xy
+    const x2 = x1 === "x" ? "y" : "x"
+	const label_joiner = x1 === 'x' ? '\n' : ' '
+	const col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(label_joiner)
+    const row_lab_fun = (x) => x.RowTitle1;
+	const color_order = [...new Set(data.plot_data.map(row_lab_fun))];
+
+	let line_opts = {
+		stroke: row_lab_fun
+	}
+	line_opts[x1] = col_lab_fun
+	line_opts[x2] =  "Value"
+	let dot_opts1 = {
+		stroke: row_lab_fun
+	}
+	dot_opts1[x1] = col_lab_fun
+	dot_opts1[x2] =  "Value"
+	
+	let dot_opts2 = dot_opts1
+	dot_opts2["fill"] = row_lab_fun,
+	dot_opts2["stroke"] = "transparent",
+	dot_opts2["r"] = 7,
+	dot_opts2["title"] = (x) => [
+		`Q: ${x.TabTitle}`, 
+		`row: ${x.RowTitle1}`, 
+		`head: ${x.ColTitle1}`, 
+		`col: ${x.ColTitle2}`, 
+		`val: ${x.Value.toFixed(1)}`,
+	].join("\n")
+
+	
+	const res = {
+		marginLeft: x1 === "x" ? 40 : 160,
 		color: {
 			type: data.choices.color_scale,
-			domain: [...new Set(data.plot_data.map((x) => x.RowTitle1))],
+			domain: color_order,
 			legend: true
 		},
 		marks: [
-			Plot.lineY(data.plot_data, {
-				y: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-				x: "Value", 
-				stroke: "RowTitle1"
-			}),
-			Plot.dot(data.plot_data, {
-				y: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-				x: "Value", 
-				stroke: "RowTitle1"
-			}),
-			Plot.dot(
-				data.plot_data, 
-				Plot.pointer({
-					y: (x) => ([x.ColTitle1, x.ColTitle2].join('\n')),
-					x: "Value", 
-					fill: "RowTitle1",
-					stroke: "transparent",
-					r: 7,
-					title: (x) => [
-						`Q: ${x.TabTitle}`, 
-						`row: ${x.RowTitle1}`, 
-						`head: ${x.ColTitle1}`, 
-						`col: ${x.ColTitle2}`, 
-						`val: ${x.Value.toFixed(1)}`,
-					].join("\n")
-				}),
-			),
+			Plot.lineY(data.plot_data, line_opts),
+			Plot.dot(data.plot_data, dot_opts1),
+			Plot.dot(data.plot_data, dot_opts2),
 		]
 	};
+	res[x2] = {
+		label: null,
+	} 
+	res[x1] = {
+		label: null,
+		domain: [...new Set(data.plot_data.map(col_lab_fun))],
+	}
+
+	return res
 }
