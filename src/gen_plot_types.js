@@ -32,6 +32,7 @@ function prep_options(data) {
 	const label_joiner2 = x2 === 'y' ? '\n' : ' '
 	const col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(label_joiner)
     const row_lab_fun = (x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(label_joiner2);
+    // const row_lab_fun = (x) => x.RowValue;
 	const color_order = [...new Set(data.plot_data.map(row_lab_fun))];
 	const x_order = [...new Set(data.plot_data.map(col_lab_fun))];
 	
@@ -104,7 +105,8 @@ function gen_plot_options_cat(data) {
     const res = {
 		marginLeft: x1 === "y" ? 40 : 120,
         color: {
-            // type: "nominal",
+			// TODO: fix linear color scale with using "RowValue"
+			// type: data.choices.color_scale,
             domain: color_order,
             legend: true
         },
@@ -175,6 +177,7 @@ const tooltip_fun = (x) => [
 	x.RowTitle1 === x.RowTitle2 ? 
 		null : 
 		`row2: ${x.RowTitle2}`, 
+	`rowval: ${x.RowValue}`,
 	`head: ${x.ColTitle1}`, 
 	`col: ${x.ColTitle2}`, 
 	`val: ${x.Value.toFixed(1)}`,
