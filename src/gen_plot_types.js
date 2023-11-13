@@ -33,8 +33,8 @@ function prep_options(data) {
 	const col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(label_joiner)
     const row_lab_fun = (x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(label_joiner2);
     // const row_lab_fun = (x) => x.RowValue;
-	const color_order = [...new Set(data.plot_data.map(row_lab_fun))];
-	const x_order = [...new Set(data.plot_data.map(col_lab_fun))];
+	const color_order = [...new Set(data.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(row_lab_fun))];
+	const x_order = [...new Set(data.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(col_lab_fun))];
 	
 	const plot_opts = {}
 	plot_opts[x2] = col_lab_fun
