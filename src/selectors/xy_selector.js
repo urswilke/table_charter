@@ -27,7 +27,7 @@ export class XYSelector extends LitElement {
     render() {
         return html`
         <div>
-            <button @click=${this._update_xy} value="y">Flip x & y axis</button>
+            <button @click=${this._update_xy} value="x">Flip x & y axis</button>
         </div>
         `;
     }
