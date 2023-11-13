@@ -52,8 +52,10 @@ export class TableDataSelector extends LitElement {
 		this.choices.xy = "y"
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
+		this.params.tab_nos = this.params.tab_titles.map((_, i) => i)
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
 		this.choices.tab_titles = this.params.tab_titles[0]
+		this.choices.tab_nos = 1
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
 		this.params.row_type = ["%", "counts"];
 		this.choices.row_type = this.params.row_type[0];
@@ -64,7 +66,7 @@ export class TableDataSelector extends LitElement {
 	// Helper:
 	sel_question_data() {
 		this.question_data = this.data
-			.filter(x => x.TabTitle === this.choices.tab_titles);
+			.filter(x => Number(x.TabNo) === this.choices.tab_nos);
 	
 		this.sel_header_data()
 	}
@@ -123,6 +125,8 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_question_update(e) {
 		this.choices.tab_titles = e.detail.chosen_question;
+		// for this to work properly, it needs TabNo in the data to be an ascending sequence of 1, 2, ..., N:
+		this.choices.tab_nos = this.params.tab_titles.indexOf(this.choices.tab_titles) + 1
 		this.sel_question_data()
 		this._update_plot_data()
 	}
