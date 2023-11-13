@@ -123,13 +123,13 @@ function gen_plot_options_mw(data) {
 	let line_opts = {
 		stroke: row_lab_fun
 	}
-	line_opts[x1] = col_lab_fun
-	line_opts[x2] =  "Value"
+	line_opts[x2] = col_lab_fun
+	line_opts[x1] =  "Value"
 	let dot_opts1 = {
 		stroke: row_lab_fun
 	}
-	dot_opts1[x1] = col_lab_fun
-	dot_opts1[x2] =  "Value"
+	dot_opts1[x2] = col_lab_fun
+	dot_opts1[x1] =  "Value"
 	
 	let dot_opts2 = dot_opts1
 	dot_opts2["fill"] = row_lab_fun,
@@ -145,7 +145,7 @@ function gen_plot_options_mw(data) {
 
 	
 	const res = {
-		marginLeft: x1 === "x" ? 40 : 160,
+		marginLeft: x2 === "x" ? 40 : 160,
 		color: {
 			type: data.choices.color_scale,
 			domain: color_order,
@@ -155,13 +155,13 @@ function gen_plot_options_mw(data) {
 			Plot.lineY(data.plot_data, line_opts),
 			Plot.dot(data.plot_data, dot_opts1),
 			Plot.dot(data.plot_data, dot_opts2),
-			// x1 === "x" ? Plot.axisX({textAnchor: "start"}) : null
+			// x2 === "x" ? Plot.axisX({textAnchor: "start"}) : null
 		]
 	};
-	res[x2] = {
+	res[x1] = {
 		label: null,
 	} 
-	res[x1] = {
+	res[x2] = {
 		label: null,
 		domain: [...new Set(data.plot_data.map(col_lab_fun))],
 	}
