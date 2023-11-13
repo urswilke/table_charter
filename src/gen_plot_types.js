@@ -90,6 +90,7 @@ function gen_plot_options_cat(data) {
 					get_text_options()
 				)
             ),
+			// x1 === "y" ? Plot.axisX({textAnchor: "start"}) : null
         ]
     };
     res[x2] = ({
@@ -154,6 +155,7 @@ function gen_plot_options_mw(data) {
 			Plot.lineY(data.plot_data, line_opts),
 			Plot.dot(data.plot_data, dot_opts1),
 			Plot.dot(data.plot_data, dot_opts2),
+			// x1 === "x" ? Plot.axisX({textAnchor: "start"}) : null
 		]
 	};
 	res[x2] = {
