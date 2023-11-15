@@ -1,6 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 import { gen_plot_options } from './gen_plot_types.js'
+import { saveAs } from 'file-saver';
 
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
@@ -31,7 +32,21 @@ export class OJSPlot extends LitElement {
 		this.chartTitle = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabTitle: ""
 	}
 
-
+	save_svg(){
+		// fetch('path/../assets/chart.css')
+		// .then(response => response.text())
+		// .then(text => {
+		var svg_data = this.renderRoot?.querySelector("svg").innerHTML ?? null;   
+		var head = '<svg title="graph" version="1.1" xmlns="http://www.w3.org/2000/svg">'
+		// var style = "<style>" + text + "</style>"
+		var full_svg = head + svg_data + "</svg>"
+		var blob = new Blob([full_svg], {type: "image/svg+xml"});  
+		saveAs(blob, "graph.svg");
+		// })
+	};
+	
+	
+	
 	render() {
 
 		inspect && console.log("render")
@@ -43,7 +58,10 @@ export class OJSPlot extends LitElement {
 			() => html`<div>
 			<h4 class="primary multi-line-header">${this.chartTitle}</h4>
 			${renderedPlot}
-			</div>`
+			</div>
+			<button @click=${this.save_svg}>Save svg</button>
+
+			`
 		)
 
 	}
@@ -77,7 +95,5 @@ export class OJSPlot extends LitElement {
 	];
 
 }
-
-
 
 window.customElements.define('ojs-plot', OJSPlot)
