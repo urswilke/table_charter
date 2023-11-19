@@ -185,9 +185,17 @@ export class TableDataSelector extends LitElement {
 				() => html`
 						<question-selector 		@update-question="${this._on_question_update}" 		.all_tab_nos=${this.params.tab_nos} 		.chosen_tab_no=${this.choices.tab_nos} .all_questions=${this.params.tab_titles}></question-selector>
 						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   									</column-selector>
-						<num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 		.chosen_num_type=${this.choices.row_type}>	   									</num_type-selector>
-						<row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   									</row_types-selector>
-						<rows-selector 			@update-rows="${this._on_rows_update}" 				.all_rows=${this.params.rows}				.chosen_rows=${this.choices.rows}>   											</rows-selector>
+						<table>
+							<tr>
+								<th>abs / %</th>
+								<th>row types</th>
+								<th>rows</th>
+
+							</tr>
+							<th><num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 		.chosen_num_type=${this.choices.row_type}>	   									</num_type-selector></th>
+							<th><row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   									</row_types-selector></th>
+							<th><rows-selector 			@update-rows="${this._on_rows_update}" 				.all_rows=${this.params.rows}				.chosen_rows=${this.choices.rows}>   											</rows-selector></th>
+						</table>
 						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}>									</colorscale-selector>
 						<xy-selector 	  		@update-xy="${this._on_xy_update}" 					 											.chosen_xy=${this.choices.xy}>				   									</xy-selector>
 					`
@@ -198,6 +206,9 @@ export class TableDataSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
+		th {
+			vertical-align: top;
+		}
 		option:checked {
 			background: red linear-gradient(#333,#333);
 		}

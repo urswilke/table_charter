@@ -27,7 +27,6 @@ export class HideRowsSelector extends LitElement {
 
     render() {
         return html`
-        <label>Select rows:</label>
         <div>
             <select id="rows-selector" multiple @change=${this._update_rows}>
                 ${this.all_rows.map(
