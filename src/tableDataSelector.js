@@ -7,6 +7,7 @@ import './selectors/question_selector.js'
 import './selectors/header_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/row_types_selector.js'
+import './selectors/rows_selector.js'
 import './selectors/colorscale_selector.js'
 import './selectors/xy_selector.js'
 
@@ -78,7 +79,7 @@ export class TableDataSelector extends LitElement {
 			.filter(x => this.choices.col_titles.includes(x.ColTitle1));
 
 		this.sel_num_type_data()
-}
+	}
 	sel_num_type_data() {
 		this.num_type_data = this.header_data
 			.filter(x => 
@@ -96,11 +97,21 @@ export class TableDataSelector extends LitElement {
 		this.sel_num_type_detail_data()
 		}
 	sel_num_type_detail_data() {
-		this.plot_data = this.num_type_data
+		this.num_type_detail_data = this.num_type_data
 			// https://stackoverflow.com/a/59329231:	
 			.filter(x => (
 				this.choices.row_types.some(pattern => x.RowContent === pattern)
 			))
+		this.params.rows = this.choices.rows = [...new Set(this.num_type_detail_data.map((d) => d.RowTitle1))]
+		this.sel_rows_data()
+	}
+
+	sel_rows_data() {
+		this.row_data = this.num_type_detail_data
+			.filter(x => (
+				this.choices.rows.some(pattern => x.RowTitle1 === pattern)
+			))
+		this.plot_data = this.row_data
 	}
 	
 	// Talk to parent:
@@ -143,6 +154,11 @@ export class TableDataSelector extends LitElement {
 		this.sel_num_type_detail_data()
 		this._update_plot_data()
 	}
+	_on_rows_update(e) {
+		this.choices.rows = e.detail.chosen_rows;
+		this.sel_rows_data()
+		this._update_plot_data()
+	}
 	_on_colorscale_update(e) {
 		this.choices.color_scale = e.detail.chosen_colorscale;
 		this._update_plot_data()
@@ -171,6 +187,7 @@ export class TableDataSelector extends LitElement {
 						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   									</column-selector>
 						<num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 		.chosen_num_type=${this.choices.row_type}>	   									</num_type-selector>
 						<row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   									</row_types-selector>
+						<rows-selector 			@update-rows="${this._on_rows_update}" 				.all_rows=${this.params.rows}				.chosen_rows=${this.choices.rows}>   											</rows-selector>
 						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}>									</colorscale-selector>
 						<xy-selector 	  		@update-xy="${this._on_xy_update}" 					 											.chosen_xy=${this.choices.xy}>				   									</xy-selector>
 					`
