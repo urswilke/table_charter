@@ -5,6 +5,7 @@ import { xlsx_to_json_array, unique_tab_title_by_key } from './utils.js'
 
 import './selectors/question_selector.js'
 import './selectors/header_selector.js'
+import './selectors/subheader_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/row_types_selector.js'
 import './selectors/colorscale_selector.js'
@@ -57,6 +58,8 @@ export class TableDataSelector extends LitElement {
 		this.params.tab_titles = unique_tab_title_by_key(this.data, 'TabNo');
 		this.params.tab_nos = this.params.tab_titles.map((_, i) => i)
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
+		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColTitle2 || d.ColTitle1))];
+		this.choices.col_subtitles = this.params.col_subtitles;
 		this.choices.tab_titles = this.params.tab_titles[0]
 		this.choices.tab_nos = 0
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
@@ -77,10 +80,16 @@ export class TableDataSelector extends LitElement {
 		this.header_data = this.question_data
 			.filter(x => this.choices.col_titles.includes(x.ColTitle1));
 
+		this.sel_subheader_data()
+	}
+	sel_subheader_data() {
+		this.subheader_data = this.header_data
+			.filter(x => this.choices.col_subtitles.includes(x.ColTitle2 || x.ColTitle1));
+
 		this.sel_num_type_data()
-}
+	}
 	sel_num_type_data() {
-		this.num_type_data = this.header_data
+		this.num_type_data = this.subheader_data
 			.filter(x => 
 				this.choices.row_type === "counts" ? 
 				x.RowAbsPercent == "Abs" : 
@@ -126,6 +135,11 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 		this._update_plot_data()
 	}
+	_on_subheader_update(e) {
+		this.choices.col_subtitles = e.detail.chosen_subheader;
+		this.sel_subheader_data()
+		this._update_plot_data()
+	}
 	_on_question_update(e) {
 		this.choices.tab_titles = this.params.tab_titles[e.detail.chosen_tab_no];
 		// for this to work properly, it needs TabNo in the data to be an ascending sequence of 1, 2, ..., N:
@@ -169,6 +183,7 @@ export class TableDataSelector extends LitElement {
 				() => html`
 						<question-selector 		@update-question="${this._on_question_update}" 		.all_tab_nos=${this.params.tab_nos} 		.chosen_tab_no=${this.choices.tab_nos} .all_questions=${this.params.tab_titles}></question-selector>
 						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   									</column-selector>
+						<subcolumn-selector 	@update-subheader="${this._on_subheader_update}"	.all_subheader=${this.params.col_subtitles}	.chosen_subheader=${this.choices.col_subtitles}>	   							</subcolumn-selector>
 						<num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 		.chosen_num_type=${this.choices.row_type}>	   									</num_type-selector>
 						<row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   									</row_types-selector>
 						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}>									</colorscale-selector>
