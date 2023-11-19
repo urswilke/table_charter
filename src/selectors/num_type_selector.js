@@ -27,7 +27,6 @@ export class RowtypeSelector extends LitElement {
 
     render() {
         return  html`
-            <label>Show counts or percentages?</label>
             <div>
                 <select id="num_type-selector" @change=${this._update_num_type} .value=${this.chosen_num_type}>
                     ${this.all_num_types.map(

@@ -3,36 +3,36 @@ import sharedStyles from './../components.css?inline';
 
 export class HideRowsSelector extends LitElement {
     static properties = {
-		all_row_types: { type: Array },
-		chosen_row_types: { type: Array },
+		all_rows: { type: Array },
+		chosen_rows: { type: Array },
 	};
 
-	get _chosen_row_types() {
-		return this.renderRoot?.querySelector('#row_types-selector') ?? null;
+	get _chosen_rows() {
+		return this.renderRoot?.querySelector('#rows-selector') ?? null;
 	}
     
 
-    _update_row_types() {
-		this.chosen_row_types = [...this._chosen_row_types.options].filter(option => option.selected).map(option => option.value)
+    _update_rows() {
+		this.chosen_rows = [...this._chosen_rows.options].filter(option => option.selected).map(option => option.value)
          
         const options = {
 			detail: {
-				chosen_row_types: this.chosen_row_types,
+				chosen_rows: this.chosen_rows,
 			},
 			bubbles: true,
 			composed: true,
 		};
-		this.dispatchEvent(new CustomEvent('update-row_types', options));
+		this.dispatchEvent(new CustomEvent('update-rows', options));
     }
 
     render() {
         return html`
         <div>
-            <select id="row_types-selector" multiple @change=${this._update_row_types}>
-                ${this.all_row_types.map(
+            <select id="rows-selector" multiple @change=${this._update_rows}>
+                ${this.all_rows.map(
                     (col) => html`
                         <option 
-                            ?selected=${this.chosen_row_types.includes(col)}
+                            ?selected=${this.chosen_rows.includes(col)}
                             value="${col}"
                         >${col}</option>
                     `
@@ -51,4 +51,4 @@ export class HideRowsSelector extends LitElement {
 	`
 	];
 }
-customElements.define('row_types-selector', HideRowsSelector);
+customElements.define('rows-selector', HideRowsSelector);
