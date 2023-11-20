@@ -31,7 +31,7 @@ export class RowtypeSelector extends LitElement {
                 <select id="num_type-selector" @change=${this._update_num_type} .value=${this.chosen_num_type}>
                     ${this.all_num_types.map(
                         (col) => html`
-                            <option .value="${col}" title=${col}>${col}</option>
+                            <option title=${col}>${col}</option>
                         `
                     )}
                 </select>

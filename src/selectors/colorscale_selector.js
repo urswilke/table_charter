@@ -31,7 +31,7 @@ export class ColorscaleSelector extends LitElement {
             <select id="colorscale-selector" @change=${this._update_colorscale} .value="${this.chosen_colorscale}">
                 ${this.all_colorscales.map(
                     (col) => html`
-                        <option value="${col}" title=${col}>${col}</option>
+                        <option title=${col}>${col}</option>
                     `
                 )}
             </select>

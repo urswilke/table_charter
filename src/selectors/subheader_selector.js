@@ -33,7 +33,6 @@ export class SubcolumnSelector extends LitElement {
                     (col) => html`
                         <option 
                             .selected=${this.chosen_subheader.includes(col)}
-                            value="${col}"
                         >${col}</option>
                     `
                 )}

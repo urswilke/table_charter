@@ -33,7 +33,6 @@ export class ColumnSelector extends LitElement {
                     (col) => html`
                         <option 
                             .selected=${this.chosen_header.includes(col)}
-                            value="${col}"
                         >${col}</option>
                     `
                 )}
