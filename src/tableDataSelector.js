@@ -37,7 +37,7 @@ export class TableDataSelector extends LitElement {
 	connectedCallback() {
 		super.connectedCallback()
 		this.init_tablebook_data(data);
-	  }
+	}
 	prep_data() {
 		this.data = this.data.map((x) => ({
 			...x, 
@@ -55,6 +55,8 @@ export class TableDataSelector extends LitElement {
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		// this.params.tab_titles = [...new Set(this.data.map(d => ({TabNo: d.TabNo, TabTitle: d.TabTitle})))].map(d => d.TabTitle);
 		// this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
+		this.params.rows = []
+		this.choices.rows = this.params.rows
 		
 		this.params.tab_titles = unique_tab_title_by_key(this.data, 'TabNo');
 		this.params.tab_nos = this.params.tab_titles.map((_, i) => i)
@@ -81,6 +83,8 @@ export class TableDataSelector extends LitElement {
 		this.header_data = this.question_data
 			.filter(x => this.choices.col_titles.includes(x.ColTitle1));
 
+		this.params.col_subtitles = [...new Set(this.header_data.map((d) => d.ColTitle2 || d.ColTitle1))]
+		this.choices.col_subtitles = [...this.params.col_subtitles];
 		this.sel_subheader_data()
 	}
 	sel_subheader_data() {
@@ -197,22 +201,32 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
-						<question-selector 		@update-question="${this._on_question_update}" 		.all_tab_nos=${this.params.tab_nos} 		.chosen_tab_no=${this.choices.tab_nos} .all_questions=${this.params.tab_titles}></question-selector>
-						<column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 		.chosen_header=${this.choices.col_titles}>	   									</column-selector>
-						<subcolumn-selector 	@update-subheader="${this._on_subheader_update}"	.all_subheader=${this.params.col_subtitles}	.chosen_subheader=${this.choices.col_subtitles}>	   							</subcolumn-selector>
-						<table>
-							<tr>
-								<th>abs / %</th>
-								<th>row types</th>
-								<th>rows</th>
-							</tr>
-							<th><num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 		.chosen_num_type=${this.choices.row_type}>	   									</num_type-selector></th>
-							<th><row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 	.chosen_row_types=${this.choices.row_types}>   									</row_types-selector></th>
-							<th><rows-selector 			@update-rows="${this._on_rows_update}" 				.all_rows=${this.params.rows}				.chosen_rows=${this.choices.rows}>   											</rows-selector></th>
-						</table>
-						<colorscale-selector 	@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}	.chosen_colorscale=${this.choices.color_scale}>									</colorscale-selector>
-						<xy-selector 	  		@update-xy="${this._on_xy_update}" 					 											.chosen_xy=${this.choices.xy}>				   									</xy-selector>
-					`
+					<question-selector 					@update-question="${this._on_question_update}" 		.all_tab_nos=${this.params.tab_nos} 			.chosen_tab_no=${this.choices.tab_nos} .all_questions=${this.params.tab_titles}></question-selector>
+					<table>
+						<tr>
+							<th>header</th>
+							<th>sub-header</th>
+						</tr>
+						<tr>
+							<th><column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 			.chosen_header=${this.choices.col_titles}>	   									</column-selector></th>
+							<th><subcolumn-selector 	@update-subheader="${this._on_subheader_update}"	.all_subheaders=${this.params.col_subtitles}	.chosen_subheader=${this.choices.col_subtitles}>	   							</subcolumn-selector></th>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<th>abs / %</th>
+							<th>row types</th>
+							<th>rows</th>
+						</tr>
+						<tr>
+							<th><num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 			.chosen_num_type=${this.choices.row_type}>	   									</num_type-selector></th>
+							<th><row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 		.chosen_row_types=${this.choices.row_types}>   									</row_types-selector></th>
+							<th><rows-selector 			@update-rows="${this._on_rows_update}" 				.all_rows=${this.params.rows}					.chosen_rows=${this.choices.rows}>   											</rows-selector></th>
+						</tr>
+					</table>
+					<colorscale-selector 				@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}		.chosen_colorscale=${this.choices.color_scale}>									</colorscale-selector>
+					<xy-selector 	  					@update-xy="${this._on_xy_update}" 					 												.chosen_xy=${this.choices.xy}>				   									</xy-selector>
+				`
 			)}
 		`;
 	}

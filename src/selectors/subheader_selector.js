@@ -27,13 +27,12 @@ export class SubcolumnSelector extends LitElement {
 
     render() {
         return html`
-        <label>Select subheader(s):</label>
         <div>
             <select id="subheader-selector" multiple @change=${this._update_subheader}>
-                ${this.all_subheader.map(
+                ${this.all_subheaders.map(
                     (col) => html`
                         <option 
-                            ?selected=${this.chosen_subheader.includes(col)}
+                            .selected=${this.chosen_subheader.includes(col)}
                             value="${col}"
                         >${col}</option>
                     `

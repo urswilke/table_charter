@@ -27,13 +27,12 @@ export class ColumnSelector extends LitElement {
 
     render() {
         return html`
-        <label>Select header(s):</label>
         <div>
             <select id="header-selector" multiple @change=${this._update_header}>
                 ${this.all_headers.map(
                     (col) => html`
                         <option 
-                            ?selected=${this.chosen_header.includes(col)}
+                            .selected=${this.chosen_header.includes(col)}
                             value="${col}"
                         >${col}</option>
                     `

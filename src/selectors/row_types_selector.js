@@ -32,7 +32,7 @@ export class HideRowsSelector extends LitElement {
                 ${this.all_row_types.map(
                     (col) => html`
                         <option 
-                            ?selected=${this.chosen_row_types.includes(col)}
+                            .selected=${this.chosen_row_types.includes(col)}
                             value="${col}"
                         >${col}</option>
                     `
