@@ -31,7 +31,9 @@ function prep_options(data) {
 	const label_joiner = x1 === 'y' ? '\n' : ' '
 	const label_joiner2 = x2 === 'y' ? '\n' : ' '
 	const col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(label_joiner)
-    const row_lab_fun = (x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(label_joiner2);
+    const row_lab_fun = data.color_scale === "categorical" ? 
+		(x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(label_joiner2) :
+		(x) => x.RowValue;
     // const row_lab_fun = (x) => x.RowValue;
 	const color_order = [...new Set(data.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(row_lab_fun))];
 	const x_order = [...new Set(data.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(col_lab_fun))];
@@ -105,8 +107,7 @@ function gen_plot_options_cat(data) {
     const res = {
 		marginLeft: x1 === "y" ? 40 : 120,
         color: {
-			// TODO: fix linear color scale with using "RowValue"
-			// type: data.choices.color_scale,
+			type: data.color_scale,
             domain: color_order,
             legend: true
         },
@@ -154,7 +155,7 @@ function gen_plot_options_mw(data) {
 	const res = {
 		marginLeft: x2 === "x" ? 40 : 160,
 		color: {
-			type: data.choices.color_scale,
+			type: data.color_scale,
 			domain: color_order,
 			legend: true
 		},
@@ -171,7 +172,7 @@ function gen_plot_options_mw(data) {
 }
 
 const tooltip_fun = (x) => [
-	`Q: ${x.TabTitle}`, 
+	// `Q: ${x.TabTitle}`, 
 	`row1: ${x.RowTitle1}`, 
 	// only write row2 if differing from row1:
 	x.RowTitle1 === x.RowTitle2 ? 

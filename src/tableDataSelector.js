@@ -23,6 +23,7 @@ export class TableDataSelector extends LitElement {
 		plot_data: { type: Array },
 		params: { type: Object },
 		choices: { type: Object },
+		color_scale: { type: String },
 	};
 
 	// Initialization:
@@ -69,6 +70,11 @@ export class TableDataSelector extends LitElement {
 		this.params.row_type = ["%", "counts"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "linear"];
+		// needs to be extra reactive property (not in choices), 
+		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
+		// when it's reset in sel_question_data():
+		this.color_scale = this.params.color_scale[0];
+		this.choices.color_scale = this.params.color_scale[0];
 		this.sel_question_data()
 	}
 
@@ -76,6 +82,11 @@ export class TableDataSelector extends LitElement {
 	sel_question_data() {
 		this.question_data = this.data
 			.filter(x => Number(x.TabNo) === this.choices.tab_nos + 1);
+		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
+		this.choices.colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType) 
+		if (this.choices.colorscale_disabled) {
+			this.color_scale = "categorical"
+		}
 	
 		this.sel_header_data()
 	}
@@ -133,7 +144,8 @@ export class TableDataSelector extends LitElement {
 			detail: {
 				data: {
 					plot_data: this.plot_data,
-					choices: this.choices
+					choices: this.choices,
+					color_scale: this.color_scale
 				}
 			},
 			bubbles: true,
@@ -178,7 +190,7 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
-		this.choices.color_scale = e.detail.chosen_colorscale;
+		this.color_scale = e.detail.chosen_colorscale;
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
@@ -201,15 +213,28 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
-					<question-selector 					@update-question="${this._on_question_update}" 		.all_tab_nos=${this.params.tab_nos} 			.chosen_tab_no=${this.choices.tab_nos} .all_questions=${this.params.tab_titles}></question-selector>
+					<question-selector 					
+						@update-question="${this._on_question_update}" 		
+						.all_tab_nos=${this.params.tab_nos} 			
+						.chosen_tab_no=${this.choices.tab_nos} 
+						.all_questions=${this.params.tab_titles}>
+					</question-selector>
 					<table>
 						<tr>
 							<th>header</th>
 							<th>sub-header</th>
 						</tr>
 						<tr>
-							<th><column-selector 		@update-header="${this._on_header_update}" 			.all_headers=${this.params.col_titles} 			.chosen_header=${this.choices.col_titles}>	   									</column-selector></th>
-							<th><subcolumn-selector 	@update-subheader="${this._on_subheader_update}"	.all_subheaders=${this.params.col_subtitles}	.chosen_subheader=${this.choices.col_subtitles}>	   							</subcolumn-selector></th>
+							<th><column-selector 		
+								@update-header="${this._on_header_update}" 		
+								.all_headers=${this.params.col_titles}
+								.chosen_header=${this.choices.col_titles}>	   																
+							</column-selector></th>
+							<th><subcolumn-selector 	
+								@update-subheader="${this._on_subheader_update}"	
+								.all_subheaders=${this.params.col_subtitles}	
+								.chosen_subheader=${this.choices.col_subtitles}>	
+							</subcolumn-selector></th>
 						</tr>
 					</table>
 					<table>
@@ -219,13 +244,33 @@ export class TableDataSelector extends LitElement {
 							<th>rows</th>
 						</tr>
 						<tr>
-							<th><num_type-selector 		@update-num_type="${this._on_num_type_update}" 		.all_num_types=${this.params.row_type} 			.chosen_num_type=${this.choices.row_type}>	   									</num_type-selector></th>
-							<th><row_types-selector 	@update-row_types="${this._on_row_types_update}" 	.all_row_types=${this.params.row_types} 		.chosen_row_types=${this.choices.row_types}>   									</row_types-selector></th>
-							<th><rows-selector 			@update-rows="${this._on_rows_update}" 				.all_rows=${this.params.rows}					.chosen_rows=${this.choices.rows}>   											</rows-selector></th>
+							<th><num_type-selector 		
+								@update-num_type="${this._on_num_type_update}"
+								.all_num_types=${this.params.row_type}
+								.chosen_num_type=${this.choices.row_type}>
+							</num_type-selector></th>
+							<th><row_types-selector 	
+								@update-row_types="${this._on_row_types_update}" 	
+								.all_row_types=${this.params.row_types}
+								.chosen_row_types=${this.choices.row_types}>
+							</row_types-selector></th>
+							<th><rows-selector 			
+								@update-rows="${this._on_rows_update}"
+								.all_rows=${this.params.rows}
+								.chosen_rows=${this.choices.rows}>
+							</rows-selector></th>
 						</tr>
 					</table>
-					<colorscale-selector 				@update-colorscale="${this._on_colorscale_update}" 	.all_colorscales=${this.params.color_scale}		.chosen_colorscale=${this.choices.color_scale}>									</colorscale-selector>
-					<xy-selector 	  					@update-xy="${this._on_xy_update}" 					 												.chosen_xy=${this.choices.xy}>				   									</xy-selector>
+					<colorscale-selector 				
+						@update-colorscale="${this._on_colorscale_update}" 	
+						.all_colorscales=${this.params.color_scale}	
+						.chosen_colorscale=${this.color_scale} 
+						.colorscale_disabled=${this.choices.colorscale_disabled}>
+					</colorscale-selector>
+					<xy-selector 	  					
+						@update-xy="${this._on_xy_update}"
+						.chosen_xy=${this.choices.xy}>
+					</xy-selector>
 				`
 			)}
 		`;

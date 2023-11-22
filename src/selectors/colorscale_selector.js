@@ -5,6 +5,7 @@ export class ColorscaleSelector extends LitElement {
     static properties = {
 		// all_colorscales: { type: Array },
 		chosen_colorscale: { type: String },
+		colorscale_disabled: { type: Boolean },
 	};
 
 	get _chosen_colorscale() {
@@ -28,12 +29,12 @@ export class ColorscaleSelector extends LitElement {
         return html`
         <label>Select colorscale:</label>
         <div>
-            <select id="colorscale-selector" @change=${this._update_colorscale} .value="${this.chosen_colorscale}">
-                ${this.all_colorscales.map(
-                    (col) => html`
-                        <option title=${col}>${col}</option>
-                    `
-                )}
+            <select id="colorscale-selector" @change=${this._update_colorscale} ?disabled=${this.colorscale_disabled}>
+                ${this.all_colorscales.map((col) => html`
+                    <option .selected=${this.chosen_colorscale === col}>
+                        ${col}
+                    </option>
+                `)}
             </select>
         </div>
         `;
