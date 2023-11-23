@@ -130,6 +130,9 @@ export class TableDataSelector extends LitElement {
 				this.choices.row_types.some(pattern => x.RowContent === pattern)
 			))
 		this.params.rows = this.choices.rows = [...new Set(this.num_type_detail_data.map((d) => d.RowTitle1))]
+		if (this.choices.row_types == "Summary") {
+			this.choices.rows = [this.params.rows[0]]
+		}
 		this.sel_rows_data()
 	}
 
