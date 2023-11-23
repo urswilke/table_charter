@@ -1,5 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
+import { buttonStyles } from '../utils.js'
 
 export class HideRowsSelector extends LitElement {
     static properties = {
@@ -43,11 +44,7 @@ export class HideRowsSelector extends LitElement {
 
 	static styles = [
 		unsafeCSS(sharedStyles),
-		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
+		buttonStyles,
 	];
 }
 customElements.define('rows-selector', HideRowsSelector);
