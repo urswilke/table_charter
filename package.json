@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "lit": "^3.0.1",
+    "lodash": "^4.17.21",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "devDependencies": {

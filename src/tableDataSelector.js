@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 
-import { xlsx_to_json_array, unique_tab_title_by_key } from './utils.js'
+import { xlsx_to_json_array, unique_tab_title_by_key, distinct } from './utils.js'
 
 import './selectors/question_selector.js'
 import './selectors/header_selector.js'
@@ -138,7 +138,20 @@ export class TableDataSelector extends LitElement {
 			.filter(x => (
 				this.choices.rows.some(pattern => x.RowTitle1 === pattern)
 			))
-		this.plot_data = this.row_data
+
+			// TODO: this overwrites the keeping of settings when the next chosen table has the same parameters as before...:
+			const df_row_tit_val = distinct(this.row_data, ["RowTitle1", "RowValue"])
+			const n_numeric_rowtitles = df_row_tit_val.reduce(
+				(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))), 
+				0
+			)
+			if (n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & this.choices.row_types == "Detail") {
+				this.color_scale = "linear"
+			} else {
+				this.color_scale = "categorical"
+			}
+
+			this.plot_data = this.row_data
 	}
 	
 	// Talk to parent:
