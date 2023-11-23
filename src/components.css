@@ -1,4 +1,4 @@
-@import url('bonsai.min.css');
+@import url('tachyons.min.css');
 
 :host ojs-plot {
 	--light-plot-background: white;
