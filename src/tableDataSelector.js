@@ -148,7 +148,7 @@ export class TableDataSelector extends LitElement {
 				(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))), 
 				0
 			)
-			if (n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & this.choices.row_types == "Detail") {
+			if (df_row_tit_val.length >=5 & n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & this.choices.row_types == "Detail") {
 				this.color_scale = "linear"
 			} else {
 				this.color_scale = "categorical"
