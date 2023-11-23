@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import * as _ from 'lodash';
+import * as ld from 'lodash';
 import * as XLSX from "xlsx";
 
 export async function xlsx_to_json_array(e) {
@@ -30,8 +30,8 @@ export const unique_tab_title_by_key = (array = [], key = '') => {
   };
   
 export function distinct(arr, X) {
-    return _(arr.map(o => (_.pick(o, X))))
-      .uniqWith(_.isEqual)
+    return ld(arr.map(o => (ld.pick(o, X))))
+      .uniqWith(ld.isEqual)
       .value();
 }
   
