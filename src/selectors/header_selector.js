@@ -46,10 +46,10 @@ export class ColumnSelector extends LitElement {
 		unsafeCSS(sharedStyles),
 		buttonStyles,
 		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
+			option:checked {
+				background: red linear-gradient(#333,#333);
+			}
+		`
 	];
 }
 customElements.define('column-selector', ColumnSelector);

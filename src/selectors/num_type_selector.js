@@ -41,11 +41,6 @@ export class RowtypeSelector extends LitElement {
 
 	static styles = [
 		unsafeCSS(sharedStyles),
-		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
 	];
 }
 customElements.define('num_type-selector', RowtypeSelector);

@@ -43,13 +43,10 @@ export class QuestionSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
-        select {
-            max-width: 100%;
-        }
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
+            select {
+                max-width: 100%;
+            }
+        `
 	];
 }
 customElements.define('question-selector', QuestionSelector);

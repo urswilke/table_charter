@@ -300,16 +300,16 @@ export class TableDataSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
-		table {
-            max-width: 100%;
-		}
-		th {
-			vertical-align: top;
-		}
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
+			table {
+				max-width: 100%;
+			}
+			th {
+				vertical-align: top;
+			}
+			option:checked {
+				background: red linear-gradient(#333,#333);
+			}
+		`
 	];
 
 }
