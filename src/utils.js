@@ -13,26 +13,26 @@ export async function xlsx_to_json_array(e) {
 // inspired from here: https://stackoverflow.com/a/77400725
 export const unique_tab_title_by_key = (array = [], key = '') => {
     if (!key) {
-      return array;
+        return array;
     }
   
     const mapping = {};
     const result = [];
   
     for (const item of array) {
-      if (!mapping[item[key]]) {
-        result.push(item.TabTitle);
-        mapping[item[key]] = true;
-      }
+        if (!mapping[item[key]]) {
+            result.push(item.TabTitle);
+            mapping[item[key]] = true;
+        }
     }
   
     return result;
   };
   
 export function distinct(arr, X) {
-  return _(arr.map(o => (_.pick(o, X))))
-    .uniqWith(_.isEqual)
-    .value();
+    return _(arr.map(o => (_.pick(o, X))))
+      .uniqWith(_.isEqual)
+      .value();
 }
   
 export const buttonStyles = css`
