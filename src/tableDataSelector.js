@@ -232,12 +232,14 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
-					<question-selector 					
-						@update-question="${this._on_question_update}" 		
-						.all_tab_nos=${this.params.tab_nos} 			
-						.chosen_tab_no=${this.choices.tab_nos} 
-						.all_questions=${this.params.tab_titles}>
-					</question-selector>
+					<div>
+						<question-selector 					
+							@update-question="${this._on_question_update}" 		
+							.all_tab_nos=${this.params.tab_nos} 			
+							.chosen_tab_no=${this.choices.tab_nos} 
+							.all_questions=${this.params.tab_titles}>
+						</question-selector>
+					</div>
 					<table>
 						<tr>
 							<th>header</th>
@@ -298,6 +300,9 @@ export class TableDataSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
+		table {
+            max-width: 100%;
+		}
 		th {
 			vertical-align: top;
 		}

@@ -27,7 +27,7 @@ export class ColorscaleSelector extends LitElement {
 
     render() {
         return html`
-        <label>Select colorscale:</label>
+        <label>colorscale</label>
         <div>
             <select id="colorscale-selector" @change=${this._update_colorscale} ?disabled=${this.colorscale_disabled}>
                 ${this.all_colorscales.map((col) => html`

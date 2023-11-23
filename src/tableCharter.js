@@ -48,12 +48,12 @@ export class TableCharter extends LitElement {
             }
             .column1 {
                 float: left;
-                width: 40%;
+                width: 30%;
                 padding: 10px;
             }
             .column2 {
                 float: left;
-                width: 55%;
+                width: 65%;
                 padding: 10px;
             }
             
