@@ -1,5 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
+import { buttonStyles } from '../utils.js'
 
 export class SubcolumnSelector extends LitElement {
     static properties = {
@@ -43,11 +44,12 @@ export class SubcolumnSelector extends LitElement {
 
 	static styles = [
 		unsafeCSS(sharedStyles),
+		buttonStyles,
 		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
+			option:checked {
+				background: red linear-gradient(#333,#333);
+			}
+		`
 	];
 }
 customElements.define('subcolumn-selector', SubcolumnSelector);

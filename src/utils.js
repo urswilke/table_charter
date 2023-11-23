@@ -1,3 +1,4 @@
+import { css } from 'lit'
 import * as _ from 'lodash';
 import * as XLSX from "xlsx";
 
@@ -28,9 +29,19 @@ export const unique_tab_title_by_key = (array = [], key = '') => {
     return result;
   };
   
-  export function distinct(arr, X) {
-    return _(arr.map(o => (_.pick(o, X))))
-      .uniqWith(_.isEqual)
-      .value();
-  }
+export function distinct(arr, X) {
+  return _(arr.map(o => (_.pick(o, X))))
+    .uniqWith(_.isEqual)
+    .value();
+}
   
+export const buttonStyles = css`
+    select[multiple] option:checked {
+        background: grey linear-gradient(40deg, grey 0%, #bbb 100%);
+        color: --primary
+    }
+    select {
+        border-radius:5px;
+    }
+
+`;

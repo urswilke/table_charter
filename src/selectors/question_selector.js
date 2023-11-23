@@ -27,7 +27,7 @@ export class QuestionSelector extends LitElement {
 
     render() {
         return html`
-        <label>Select question:</label>
+        <label>question</label>
         <div>
             <select id="question-selector" @change=${this._update_question} .value="${this.chosen_tab_no}">
                 ${this.all_tab_nos.map(
@@ -43,10 +43,10 @@ export class QuestionSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
-	`
+            select {
+                max-width: 100%;
+            }
+        `
 	];
 }
 customElements.define('question-selector', QuestionSelector);
