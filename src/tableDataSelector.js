@@ -107,10 +107,7 @@ export class TableDataSelector extends LitElement {
 		this.sel_subheader_data()
 	}
 	sel_subheader_data() {
-		this.subheader_data = this.header_data
-			.filter(x => 
-				[... new Set(this.params.arr_col_titles.filter(x => x.selected).map(x => x.ColTitle2 || x.ColTitle1))]
-					.includes(x.ColTitle2 || x.ColTitle1));
+		this.subheader_data = filter_sel_headers(this.header_data, this.params.arr_col_titles)
 
 		this.sel_num_type_data()
 	}
@@ -322,3 +319,11 @@ export class TableDataSelector extends LitElement {
 }
 
 window.customElements.define('table-data-selector', TableDataSelector)
+
+function filter_sel_headers(data, arr_col_titles) {
+	const res = data.filter(x => 
+		[... new Set(arr_col_titles.filter(x => x.selected).map(x => x.ColTitle2 || x.ColTitle1))]
+			.includes(x.ColTitle2 || x.ColTitle1)
+	);
+	return res;
+}
