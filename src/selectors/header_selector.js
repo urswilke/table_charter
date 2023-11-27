@@ -37,9 +37,9 @@ export class ColumnSelector extends LitElement {
         <div>
             <select id="header-selector" multiple @change=${this._update_header}>
                 ${distinct(this.arr_col_titles, ["ColTitle1", "selected"]).map((x) => html`
-					<option 
-						.selected=${x.selected}
-					>${x.ColTitle1}</option>
+					<option .selected=${x.selected}>
+						${x.ColTitle1}
+					</option>
 				`)}
             </select>
         </div>
