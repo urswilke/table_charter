@@ -4,8 +4,7 @@ import { buttonStyles } from '../utils.js'
 
 export class SubcolumnSelector extends LitElement {
     static properties = {
-		all_subheaders: { type: Array },
-		chosen_subheader: { type: Array },
+		arr_col_titles: { type: Array },
 	};
 
 	get _chosen_subheader() {
@@ -14,11 +13,15 @@ export class SubcolumnSelector extends LitElement {
     
 
     _update_subheader() {
-		this.chosen_subheader = [...this._chosen_subheader.options].filter(option => option.selected).map(option => option.value)
-         
+		const selected_lgl = [...this._chosen_subheader.options]
+			.map(option => option.selected)
+		this.arr_col_titles = this.arr_col_titles.map((x, i) => 
+			({...x, selected: selected_lgl[i]})
+		)
+			  
         const options = {
 			detail: {
-				chosen_subheader: this.chosen_subheader,
+				arr_col_titles: this.arr_col_titles,
 			},
 			bubbles: true,
 			composed: true,
@@ -30,11 +33,11 @@ export class SubcolumnSelector extends LitElement {
         return html`
         <div>
             <select id="subheader-selector" multiple @change=${this._update_subheader}>
-                ${this.all_subheaders.map(
-                    (col) => html`
+                ${this.arr_col_titles.map(
+                    (x) => html`
                         <option 
-                            .selected=${this.chosen_subheader.includes(col)}
-                        >${col}</option>
+                            .selected=${x.selected}
+                        >${x.ColTitle2 || x.ColTitle1}</option>
                     `
                 )}
             </select>

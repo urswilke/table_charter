@@ -1,11 +1,10 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
-import { buttonStyles } from '../utils.js'
+import { buttonStyles, distinct } from '../utils.js'
 
 export class ColumnSelector extends LitElement {
     static properties = {
-		// all_headers: { type: Array },
-		chosen_header: { type: Array },
+		arr_col_titles: { type: Array },
 	};
 
 	get _chosen_header() {
@@ -14,11 +13,18 @@ export class ColumnSelector extends LitElement {
     
 
     _update_header() {
-		this.chosen_header = [...this._chosen_header.options].filter(option => option.selected).map(option => option.value)
+		const headers = [...this._chosen_header.options]
+			.filter(option => option.selected)
+			.map(option => option.value)
+			this.arr_col_titles = this.arr_col_titles.map(x => 
+				headers.includes(x.ColTitle1) 
+				? {...x, selected: true} 
+				: {...x, selected: false}
+			)
          
         const options = {
 			detail: {
-				chosen_header: this.chosen_header,
+				arr_col_titles: this.arr_col_titles,
 			},
 			bubbles: true,
 			composed: true,
@@ -27,16 +33,24 @@ export class ColumnSelector extends LitElement {
     }
 
     render() {
+		// generate array of objects containing:
+		// * ColTitle1, & 
+		// * selected: (all sub-headers of this header are selected)
+		const arr = distinct(this.arr_col_titles, ["ColTitle1", "selected"]);
+		const obj = Object.groupBy(arr, ({ ColTitle1 }) => ColTitle1);
+		const arr_selected = Object.keys( obj )
+			.map(i => ({
+				ColTitle1: i, 
+				selected: obj[i].length === 1 && obj[i][0].selected
+			}));
         return html`
         <div>
             <select id="header-selector" multiple @change=${this._update_header}>
-                ${this.all_headers.map(
-                    (col) => html`
-                        <option 
-                            .selected=${this.chosen_header.includes(col)}
-                        >${col}</option>
-                    `
-                )}
+                ${arr_selected.map((x) => html`
+					<option .selected=${x.selected}>
+						${x.ColTitle1}
+					</option>
+				`)}
             </select>
         </div>
         `;
