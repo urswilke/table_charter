@@ -4,8 +4,7 @@ import sharedStyles from './../components.css?inline';
 export class QuestionSelector extends LitElement {
     static properties = {
 		all_questions: { type: Array },
-		all_tab_nos: { type: Array },
-		chosen_tab_no: { type: Number },
+		chosen_tab_no: { type: String },
 	};
 
 	get _chosen_tab_no() {
@@ -17,7 +16,7 @@ export class QuestionSelector extends LitElement {
          
         const options = {
             detail: {
-                chosen_tab_no: Number(this.chosen_tab_no),
+                chosen_tab_no: this.chosen_tab_no,
             },
             bubbles: true,
             composed: true,
@@ -30,9 +29,9 @@ export class QuestionSelector extends LitElement {
         <label>question</label>
         <div>
             <select id="question-selector" @change=${this._update_question} .value="${this.chosen_tab_no}">
-                ${this.all_tab_nos.map(
-                    (col) => html`
-                        <option value="${col}">${this.all_questions[col]}</option>
+                ${this.all_questions.map(
+                    (x) => html`
+                        <option value="${x.TabNo}">${x.TabTitle}</option>
                     `
                 )}
             </select>

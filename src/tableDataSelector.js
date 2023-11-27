@@ -59,13 +59,12 @@ export class TableDataSelector extends LitElement {
 		this.params.rows = []
 		this.choices.rows = this.params.rows
 		
-		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]).map(x => x.TabTitle);
-		this.params.tab_nos = this.params.tab_titles.map((_, i) => i)
+		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
 		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColTitle2 || d.ColTitle1))];
 		this.choices.col_subtitles = this.params.col_subtitles;
-		this.choices.tab_titles = this.params.tab_titles[0]
-		this.choices.tab_nos = 0
+		this.choices.tab_titles = this.params.tab_titles[0].TabTitle
+		this.choices.tab_nos = this.params.tab_titles[0].TabNo
 		this.choices.col_titles = this.params.col_titles.slice(0, 2)
 		this.params.row_type = ["%", "counts"];
 		this.choices.row_type = this.params.row_type[0];
@@ -81,7 +80,7 @@ export class TableDataSelector extends LitElement {
 	// Helper:
 	sel_question_data() {
 		this.question_data = this.data
-			.filter(x => Number(x.TabNo) === this.choices.tab_nos + 1);
+			.filter(x => Number(x.TabNo) == this.choices.tab_nos);
 		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
 		this.choices.colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType) 
 		if (this.choices.colorscale_disabled) {
@@ -235,7 +234,6 @@ export class TableDataSelector extends LitElement {
 					<div>
 						<question-selector 					
 							@update-question="${this._on_question_update}" 		
-							.all_tab_nos=${this.params.tab_nos} 			
 							.chosen_tab_no=${this.choices.tab_nos} 
 							.all_questions=${this.params.tab_titles}>
 						</question-selector>
