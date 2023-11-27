@@ -33,10 +33,12 @@ export class ColumnSelector extends LitElement {
     }
 
     render() {
+		// TODO: change for when sub-headers are also dealt with arr_col_titles!
+		const arr = distinct(this.arr_col_titles, ["ColTitle1", "selected"])
         return html`
         <div>
             <select id="header-selector" multiple @change=${this._update_header}>
-                ${distinct(this.arr_col_titles, ["ColTitle1", "selected"]).map((x) => html`
+                ${arr.map((x) => html`
 					<option .selected=${x.selected}>
 						${x.ColTitle1}
 					</option>
