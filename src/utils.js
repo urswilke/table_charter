@@ -10,24 +10,6 @@ export async function xlsx_to_json_array(e) {
     return XLSX.utils.sheet_to_json(wb.Sheets["Daten"]);
 }
 
-// inspired from here: https://stackoverflow.com/a/77400725
-export const unique_tab_title_by_key = (array = [], key = '') => {
-    if (!key) {
-        return array;
-    }
-  
-    const mapping = {};
-    const result = [];
-  
-    for (const item of array) {
-        if (!mapping[item[key]]) {
-            result.push(item.TabTitle);
-            mapping[item[key]] = true;
-        }
-    }
-  
-    return result;
-  };
   
 export function distinct(arr, X) {
     return chain(arr.map(o => (pick(o, X))))
@@ -43,5 +25,4 @@ export const buttonStyles = css`
     select {
         border-radius:5px;
     }
-
 `;

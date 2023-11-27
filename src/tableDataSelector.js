@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 
-import { xlsx_to_json_array, unique_tab_title_by_key, distinct } from './utils.js'
+import { xlsx_to_json_array, distinct } from './utils.js'
 
 import './selectors/question_selector.js'
 import './selectors/header_selector.js'
@@ -59,7 +59,7 @@ export class TableDataSelector extends LitElement {
 		this.params.rows = []
 		this.choices.rows = this.params.rows
 		
-		this.params.tab_titles = unique_tab_title_by_key(this.data, 'TabNo');
+		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]).map(x => x.TabTitle);
 		this.params.tab_nos = this.params.tab_titles.map((_, i) => i)
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
 		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColTitle2 || d.ColTitle1))];
