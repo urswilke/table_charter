@@ -72,12 +72,8 @@ export class TableDataSelector extends LitElement {
 			? { ...p, selected: true }
 			: { ...p, selected: false }
 		);
-		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
-		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColTitle2 || d.ColTitle1))];
-		this.choices.col_subtitles = this.params.col_subtitles;
 		this.choices.tab_titles = this.params.tab_titles[0].TabTitle
 		this.choices.tab_nos = this.params.tab_titles[0].TabNo
-		this.choices.col_titles = this.params.col_titles.slice(0, 2)
 		this.params.row_type = ["%", "counts"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "linear"];
@@ -108,13 +104,13 @@ export class TableDataSelector extends LitElement {
 					.includes(x.ColTitle1)
 			);
 
-		this.params.col_subtitles = [...new Set(this.header_data.map((d) => d.ColTitle2 || d.ColTitle1))]
-		this.choices.col_subtitles = [...this.params.col_subtitles];
 		this.sel_subheader_data()
 	}
 	sel_subheader_data() {
 		this.subheader_data = this.header_data
-			.filter(x => this.choices.col_subtitles.includes(x.ColTitle2 || x.ColTitle1));
+			.filter(x => 
+				[... new Set(this.params.arr_col_titles.filter(x => x.selected).map(x => x.ColTitle2 || x.ColTitle1))]
+					.includes(x.ColTitle2 || x.ColTitle1));
 
 		this.sel_num_type_data()
 	}
@@ -196,7 +192,7 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_subheader_update(e) {
-		this.choices.col_subtitles = e.detail.chosen_subheader;
+		this.params.arr_col_titles = e.detail.arr_col_titles;
 		this.sel_subheader_data()
 		this._update_plot_data()
 	}
@@ -265,8 +261,7 @@ export class TableDataSelector extends LitElement {
 							</column-selector></th>
 							<th><subcolumn-selector 	
 								@update-subheader="${this._on_subheader_update}"	
-								.all_subheaders=${this.params.col_subtitles}	
-								.chosen_subheader=${this.choices.col_subtitles}>	
+								.arr_col_titles = ${this.params.arr_col_titles}>	
 							</subcolumn-selector></th>
 						</tr>
 					</table>
