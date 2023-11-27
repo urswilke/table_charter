@@ -98,16 +98,7 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 	}
 	sel_header_data() {
-		this.header_data = this.question_data
-			.filter(x => 
-				[... new Set(this.params.arr_col_titles.filter(x => x.selected).map(x => x.ColTitle1))]
-					.includes(x.ColTitle1)
-			);
-
-		this.sel_subheader_data()
-	}
-	sel_subheader_data() {
-		this.subheader_data = filter_sel_headers(this.header_data, this.params.arr_col_titles)
+		this.subheader_data = filter_sel_headers(this.question_data, this.params.arr_col_titles)
 
 		this.sel_num_type_data()
 	}
@@ -188,11 +179,6 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 		this._update_plot_data()
 	}
-	_on_subheader_update(e) {
-		this.params.arr_col_titles = e.detail.arr_col_titles;
-		this.sel_subheader_data()
-		this._update_plot_data()
-	}
 	_on_question_update(e) {
 		this.choices.tab_titles = this.params.tab_titles[e.detail.chosen_tab_no];
 		// for this to work properly, it needs TabNo in the data to be an ascending sequence of 1, 2, ..., N:
@@ -257,7 +243,7 @@ export class TableDataSelector extends LitElement {
 								.arr_col_titles=${this.params.arr_col_titles}>	   																
 							</column-selector></th>
 							<th><subcolumn-selector 	
-								@update-subheader="${this._on_subheader_update}"	
+								@update-subheader="${this._on_header_update}"	
 								.arr_col_titles = ${this.params.arr_col_titles}>	
 							</subcolumn-selector></th>
 						</tr>
@@ -321,9 +307,12 @@ export class TableDataSelector extends LitElement {
 window.customElements.define('table-data-selector', TableDataSelector)
 
 function filter_sel_headers(data, arr_col_titles) {
+	const arr_sel = arr_col_titles.filter(x => x.selected);
+	const col_fun2 = x => x.ColTitle2 || x.ColTitle1
+	const col_fun1 = x => x.ColTitle1
 	const res = data.filter(x => 
-		[... new Set(arr_col_titles.filter(x => x.selected).map(x => x.ColTitle2 || x.ColTitle1))]
-			.includes(x.ColTitle2 || x.ColTitle1)
+		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &
+		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
 	);
 	return res;
 }
