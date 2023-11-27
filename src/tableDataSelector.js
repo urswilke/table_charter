@@ -60,6 +60,18 @@ export class TableDataSelector extends LitElement {
 		this.choices.rows = this.params.rows
 		
 		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
+		
+		const arr = distinct(
+			this.data,
+			// TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
+			["ColNo", "HeadNo", "ColTitle1", "ColTitle2"]
+		);
+		const first_two_titles = [... new Set(arr.map(x => x.ColTitle1))].slice(0, 2);
+		this.params.arr_col_titles = arr.map(p =>
+			first_two_titles.includes(p.ColTitle1)
+			? { ...p, selected: true }
+			: { ...p, selected: false }
+		);
 		this.params.col_titles = [...new Set(this.data.map((d) => d.ColTitle1))];
 		this.params.col_subtitles = [...new Set(this.data.map((d) => d.ColTitle2 || d.ColTitle1))];
 		this.choices.col_subtitles = this.params.col_subtitles;
@@ -91,7 +103,10 @@ export class TableDataSelector extends LitElement {
 	}
 	sel_header_data() {
 		this.header_data = this.question_data
-			.filter(x => this.choices.col_titles.includes(x.ColTitle1));
+			.filter(x => 
+				[... new Set(this.params.arr_col_titles.filter(x => x.selected).map(x => x.ColTitle1))]
+					.includes(x.ColTitle1)
+			);
 
 		this.params.col_subtitles = [...new Set(this.header_data.map((d) => d.ColTitle2 || d.ColTitle1))]
 		this.choices.col_subtitles = [...this.params.col_subtitles];
@@ -176,7 +191,7 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.choices.col_titles = e.detail.chosen_header;
+		this.params.arr_col_titles = e.detail.arr_col_titles;
 		this.sel_header_data()
 		this._update_plot_data()
 	}
@@ -246,8 +261,7 @@ export class TableDataSelector extends LitElement {
 						<tr>
 							<th><column-selector 		
 								@update-header="${this._on_header_update}" 		
-								.all_headers=${this.params.col_titles}
-								.chosen_header=${this.choices.col_titles}>	   																
+								.arr_col_titles=${this.params.arr_col_titles}>	   																
 							</column-selector></th>
 							<th><subcolumn-selector 	
 								@update-subheader="${this._on_subheader_update}"	
