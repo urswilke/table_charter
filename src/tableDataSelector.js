@@ -53,7 +53,7 @@ export class TableDataSelector extends LitElement {
 		this.params.header_table = gen_header_table(this.data)
 		this.choices.tab_titles = this.params.tab_titles[0].TabTitle
 		this.choices.tab_nos = this.params.tab_titles[0].TabNo
-		this.params.row_type = ["%", "counts"];
+		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "linear"];
 		// needs to be extra reactive property (not in choices), 
@@ -84,7 +84,7 @@ export class TableDataSelector extends LitElement {
 	sel_num_type_data() {
 		this.num_type_data = this.header_data
 			.filter(x => 
-				this.choices.row_type === "counts" ? 
+				this.choices.row_type === "n" ? 
 				x.RowAbsPercent == "Abs" : 
 				x.RowAbsPercent != "Abs"
 			)
@@ -225,7 +225,7 @@ export class TableDataSelector extends LitElement {
 					</table>
 					<table>
 						<tr>
-							<th>abs / %</th>
+							<th>% / n</th>
 							<th>row types</th>
 							<th>rows</th>
 						</tr>
