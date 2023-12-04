@@ -4,7 +4,7 @@ import { buttonStyles, distinct } from '../utils.js'
 
 export class ColumnSelector extends LitElement {
     static properties = {
-		arr_col_titles: { type: Array },
+		header_table: { type: Array },
 	};
 
 	get _chosen_header() {
@@ -19,7 +19,7 @@ export class ColumnSelector extends LitElement {
 		const headers = [...this._chosen_header.options]
 			.filter(option => option.selected)
 			.map(option => option.value)
-		this.arr_col_titles = this.arr_col_titles.map(x => 
+		this.header_table = this.header_table.map(x => 
 				headers.includes(x.ColTitle1) 
 				? {...x, selected: true} 
 				: {...x, selected: false}
@@ -30,7 +30,7 @@ export class ColumnSelector extends LitElement {
     _update_subheader() {
 		const selected_lgl = [...this._chosen_subheader.options]
 			.map(option => option.selected)
-		this.arr_col_titles = this.arr_col_titles.map((x, i) => 
+		this.header_table = this.header_table.map((x, i) => 
 			({...x, selected: selected_lgl[i]})
 		)
 			  
@@ -40,7 +40,7 @@ export class ColumnSelector extends LitElement {
 	_send_update_event() {
 		const options = {
 			detail: {
-				arr_col_titles: this.arr_col_titles,
+				header_table: this.header_table,
 			},
 			bubbles: true,
 			composed: true,
@@ -52,7 +52,7 @@ export class ColumnSelector extends LitElement {
 		// generate array of objects containing:
 		// * ColTitle1, & 
 		// * selected: (all sub-headers of this header are selected)
-		const arr = distinct(this.arr_col_titles, ["ColTitle1", "selected"]);
+		const arr = distinct(this.header_table, ["ColTitle1", "selected"]);
 		const obj = Object.groupBy(arr, ({ ColTitle1 }) => ColTitle1);
 		const arr_selected = Object.keys( obj )
 			.map(i => ({
@@ -71,7 +71,7 @@ export class ColumnSelector extends LitElement {
         </div>
         <div>
             <select id="subheader-selector" multiple @change=${this._update_subheader}>
-                ${this.arr_col_titles.map(
+                ${this.header_table.map(
                     (x) => html`
                         <option .selected=${x.selected}>
 							${x.ColTitle2 || x.ColTitle1}

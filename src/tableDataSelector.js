@@ -56,7 +56,7 @@ export class TableDataSelector extends LitElement {
 			["ColNo", "HeadNo", "ColTitle1", "ColTitle2"]
 		);
 		const first_two_titles = [... new Set(arr.map(x => x.ColTitle1))].slice(0, 2);
-		this.params.arr_col_titles = arr.map(p =>
+		this.params.header_table = arr.map(p =>
 			first_two_titles.includes(p.ColTitle1)
 			? { ...p, selected: true }
 			: { ...p, selected: false }
@@ -87,7 +87,7 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 	}
 	sel_header_data() {
-		this.header_data = filter_sel_headers(this.question_data, this.params.arr_col_titles)
+		this.header_data = filter_sel_headers(this.question_data, this.params.header_table)
 
 		this.sel_num_type_data()
 	}
@@ -164,7 +164,7 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.params.arr_col_titles = e.detail.arr_col_titles;
+		this.params.header_table = e.detail.header_table;
 		this.sel_header_data()
 		this._update_plot_data()
 	}
@@ -229,7 +229,7 @@ export class TableDataSelector extends LitElement {
 						<tr>
 							<th><column-selector 		
 								@update-header="${this._on_header_update}" 		
-								.arr_col_titles=${this.params.arr_col_titles}>	   																
+								.header_table=${this.params.header_table}>	   																
 							</column-selector></th>
 						</tr>
 					</table>
@@ -291,8 +291,8 @@ export class TableDataSelector extends LitElement {
 
 window.customElements.define('table-data-selector', TableDataSelector)
 
-function filter_sel_headers(data, arr_col_titles) {
-	const arr_sel = arr_col_titles.filter(x => x.selected);
+function filter_sel_headers(data, header_table) {
+	const arr_sel = header_table.filter(x => x.selected);
 	const col_fun2 = x => x.ColTitle2 || x.ColTitle1
 	const col_fun1 = x => x.ColTitle1
 	const res = data.filter(x => 
