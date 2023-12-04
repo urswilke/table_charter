@@ -50,17 +50,7 @@ export class TableDataSelector extends LitElement {
 		
 		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
 		
-		const arr = distinct(
-			this.data,
-			// TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-			["ColNo", "HeadNo", "ColTitle1", "ColTitle2"]
-		);
-		const first_two_titles = [... new Set(arr.map(x => x.ColTitle1))].slice(0, 2);
-		this.params.header_table = arr.map(p =>
-			first_two_titles.includes(p.ColTitle1)
-			? { ...p, selected: true }
-			: { ...p, selected: false }
-		);
+		this.params.header_table = gen_header_table(this.data)
 		this.choices.tab_titles = this.params.tab_titles[0].TabTitle
 		this.choices.tab_nos = this.params.tab_titles[0].TabNo
 		this.params.row_type = ["%", "counts"];
@@ -290,6 +280,20 @@ export class TableDataSelector extends LitElement {
 }
 
 window.customElements.define('table-data-selector', TableDataSelector)
+
+function gen_header_table(data) {
+	const arr = distinct(
+		data,
+		// TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
+		["ColNo", "HeadNo", "ColTitle1", "ColTitle2"]
+	);
+	const first_two_titles = [... new Set(arr.map(x => x.ColTitle1))].slice(0, 2);
+	return arr.map(p =>
+		first_two_titles.includes(p.ColTitle1)
+		? { ...p, selected: true }
+		: { ...p, selected: false }
+	);
+}
 
 function filter_sel_headers(data, header_table) {
 	const arr_sel = header_table.filter(x => x.selected);
