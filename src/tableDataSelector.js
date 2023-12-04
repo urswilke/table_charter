@@ -28,7 +28,6 @@ export class TableDataSelector extends LitElement {
 	// Initialization:
 	init_tablebook_data(data) {
 		this.data = data;
-		this.prep_data();
 		this.init_params();
 		this._update_plot_data()
 	}
@@ -37,15 +36,6 @@ export class TableDataSelector extends LitElement {
 	connectedCallback() {
 		super.connectedCallback()
 		this.init_tablebook_data(data);
-	}
-	prep_data() {
-		this.data = this.data.map((x) => ({
-			...x, 
-			coti_lab: [x.ColTitle1, x.ColTitle2].join("\n"),
-			coti: x.ColTitle1 + " - " + x.ColTitle2,
-			roti_lab: [x.RowTitle1, x.RowTitle2].join("\n"),
-			roti: x.RowTitle1 + " - " + x.RowTitle2,
-		}))
 	}
 
 	init_params() {
