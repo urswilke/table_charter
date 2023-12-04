@@ -5,7 +5,16 @@ import { buttonStyles, distinct } from '../utils.js'
 export class MultiSelector extends LitElement {
     static properties = {
 		prop_table: { type: Array },
+		// parent_string: { type: String },
+		// parent_fun: { type: Function },
+		// children_fun: { type: Function }
 	};
+    constructor() {
+        super()
+        // this.parent_string = "ColTitle1"
+        this.parent_fun = (x) => x[this.parent_string]
+        // this.children_fun = (x) => x.ColTitle2 || x.ColTitle1
+    }
 
 	get _chosen_parents() {
 		return this.renderRoot?.querySelector('#parents-selector') ?? null;
@@ -20,7 +29,7 @@ export class MultiSelector extends LitElement {
 			.filter(option => option.selected)
 			.map(option => option.value)
 		this.prop_table = this.prop_table.map(x => 
-            parent_strings.includes(x.ColTitle1) 
+            parent_strings.includes(this.parent_fun(x)) 
             ? {...x, selected: true} 
             : {...x, selected: false}
         )
@@ -45,32 +54,35 @@ export class MultiSelector extends LitElement {
 			bubbles: true,
 			composed: true,
 		};
-		this.dispatchEvent(new CustomEvent('update-parents', options));
+		this.dispatchEvent(new CustomEvent('update-multi-select', options));
 	}
 
     render() {
-		const arr = distinct(this.prop_table, ["ColTitle1", "selected"]);
-		const obj = Object.groupBy(arr, ({ ColTitle1 }) => ColTitle1);
+		const arr = distinct(this.prop_table, [this.parent_string, "selected"]);
+		const obj = Object.groupBy(arr, this.parent_fun);
 		const arr_selected = Object.keys( obj )
 			.map(i => ({
-				ColTitle1: i, 
+                // https://stackoverflow.com/a/40699412
+				[this.parent_string]: i, 
 				selected: obj[i].length === 1 && obj[i][0].selected
 			}));
         return html`
-        <div>
-            <select id="parents-selector" multiple @change=${this._update_parents}>
+        <div class= "subselect">
+			<label for="mainsel">${this.mainsel_text}</label>
+            <select id="parents-selector" class="mainsel" multiple @change=${this._update_parents}>
                 ${arr_selected.map((x) => html`
 					<option .selected=${x.selected}>
-						${x.ColTitle1}
+						${this.parent_fun(x)}
 					</option>
 				`)}
             </select>
-        </div>
-        <div>
-            <select id="children-selector" multiple @change=${this._update_children}>
+		</div>
+		<div class= "subselect">
+			<label for="subsel">${this.subsel_text}</label>
+            <select id="children-selector" class="subsel" multiple @change=${this._update_children}>
                 ${this.prop_table.map((x) => html`
                     <option .selected=${x.selected}>
-                        ${x.ColTitle2 || x.ColTitle1}
+                        ${this.children_fun(x)}
                     </option>
 				`)}
             </select>
@@ -84,6 +96,13 @@ export class MultiSelector extends LitElement {
 		css`
 			option:checked {
 				background: red linear-gradient(#333,#333);
+			}
+			div.subselect {
+				float: left;
+				/* flex-direction: row; */
+			}
+			label {
+				display: block;
 			}
 		`
 	];

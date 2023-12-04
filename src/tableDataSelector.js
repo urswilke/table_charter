@@ -4,7 +4,7 @@ import { when } from 'lit/directives/when.js';
 import { xlsx_to_json_array, distinct } from './utils.js'
 
 import './selectors/question_selector.js'
-import './selectors/header_selector.js'
+import './selectors/multi_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/row_types_selector.js'
 import './selectors/rows_selector.js'
@@ -154,7 +154,7 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.params.header_table = e.detail.header_table;
+		this.params.header_table = e.detail.prop_table;
 		this.sel_header_data()
 		this._update_plot_data()
 	}
@@ -211,42 +211,31 @@ export class TableDataSelector extends LitElement {
 							.all_questions=${this.params.tab_titles}>
 						</question-selector>
 					</div>
-					<table>
-						<tr>
-							<th>header</th>
-							<th>sub-header</th>
-						</tr>
-						<tr>
-							<th><column-selector 		
-								@update-header="${this._on_header_update}" 		
-								.header_table=${this.params.header_table}>	   																
-							</column-selector></th>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<th>% / n</th>
-							<th>row types</th>
-							<th>rows</th>
-						</tr>
-						<tr>
-							<th><num_type-selector 		
-								@update-num_type="${this._on_num_type_update}"
-								.all_num_types=${this.params.row_type}
-								.chosen_num_type=${this.choices.row_type}>
-							</num_type-selector></th>
-							<th><row_types-selector 	
-								@update-row_types="${this._on_row_types_update}" 	
-								.all_row_types=${this.params.row_types}
-								.chosen_row_types=${this.choices.row_types}>
-							</row_types-selector></th>
-							<th><rows-selector 			
-								@update-rows="${this._on_rows_update}"
-								.all_rows=${this.params.rows}
-								.chosen_rows=${this.choices.rows}>
-							</rows-selector></th>
-						</tr>
-					</table>
+					<multi-selector 		
+						.mainsel_text = ${"header"}
+						.subsel_text = ${"sub-header"}
+						.parent_string = ${"ColTitle1"}
+						.children_fun = ${(x) => x.ColTitle2 || x.ColTitle1}
+						@update-multi-select="${this._on_header_update}" 		
+						.prop_table=${this.params.header_table}>	   																
+					</multi-selector>
+					<!-- https://stackoverflow.com/a/2062264 -->
+					<span class="clear"></span>
+					<num_type-selector 		
+						@update-num_type="${this._on_num_type_update}"
+						.all_num_types=${this.params.row_type}
+						.chosen_num_type=${this.choices.row_type}>
+					</num_type-selector>
+					<row_types-selector 	
+						@update-row_types="${this._on_row_types_update}" 	
+						.all_row_types=${this.params.row_types}
+						.chosen_row_types=${this.choices.row_types}>
+					</row_types-selector>
+					<rows-selector 			
+						@update-rows="${this._on_rows_update}"
+						.all_rows=${this.params.rows}
+						.chosen_rows=${this.choices.rows}>
+					</rows-selector>
 					<colorscale-selector 				
 						@update-colorscale="${this._on_colorscale_update}" 	
 						.all_colorscales=${this.params.color_scale}	
@@ -265,12 +254,7 @@ export class TableDataSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
-			table {
-				max-width: 100%;
-			}
-			th {
-				vertical-align: top;
-			}
+			span.clear { clear: left; display: block; }
 			option:checked {
 				background: red linear-gradient(#333,#333);
 			}
