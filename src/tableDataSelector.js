@@ -119,19 +119,19 @@ export class TableDataSelector extends LitElement {
 				this.choices.rows.some(pattern => x.RowTitle1 === pattern)
 			))
 
-			// TODO: this overwrites the keeping of settings when the next chosen table has the same parameters as before...:
-			const df_row_tit_val = distinct(this.row_data, ["RowTitle1", "RowValue"])
-			const n_numeric_rowtitles = df_row_tit_val.reduce(
-				(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))), 
-				0
-			)
-			if (df_row_tit_val.length >=5 & n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & this.choices.row_types == "Detail") {
-				this.color_scale = "linear"
-			} else {
-				this.color_scale = "categorical"
-			}
+		// TODO: this overwrites the keeping of settings when the next chosen table has the same parameters as before...:
+		const df_row_tit_val = distinct(this.row_data, ["RowTitle1", "RowValue"])
+		const n_numeric_rowtitles = df_row_tit_val.reduce(
+			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))), 
+			0
+		)
+		if (df_row_tit_val.length >=5 & n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & this.choices.row_types == "Detail") {
+			this.color_scale = "linear"
+		} else {
+			this.color_scale = "categorical"
+		}
 
-			this.plot_data = this.row_data
+		this.plot_data = this.row_data
 	}
 	
 	// Talk to parent:
