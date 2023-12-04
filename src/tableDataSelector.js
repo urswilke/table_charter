@@ -5,7 +5,6 @@ import { xlsx_to_json_array, distinct } from './utils.js'
 
 import './selectors/question_selector.js'
 import './selectors/header_selector.js'
-import './selectors/subheader_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/row_types_selector.js'
 import './selectors/rows_selector.js'
@@ -98,12 +97,12 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 	}
 	sel_header_data() {
-		this.subheader_data = filter_sel_headers(this.question_data, this.params.arr_col_titles)
+		this.header_data = filter_sel_headers(this.question_data, this.params.arr_col_titles)
 
 		this.sel_num_type_data()
 	}
 	sel_num_type_data() {
-		this.num_type_data = this.subheader_data
+		this.num_type_data = this.header_data
 			.filter(x => 
 				this.choices.row_type === "counts" ? 
 				x.RowAbsPercent == "Abs" : 
@@ -242,10 +241,6 @@ export class TableDataSelector extends LitElement {
 								@update-header="${this._on_header_update}" 		
 								.arr_col_titles=${this.params.arr_col_titles}>	   																
 							</column-selector></th>
-							<th><subcolumn-selector 	
-								@update-subheader="${this._on_header_update}"	
-								.arr_col_titles = ${this.params.arr_col_titles}>	
-							</subcolumn-selector></th>
 						</tr>
 					</table>
 					<table>
