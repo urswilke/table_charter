@@ -35,11 +35,10 @@ export class SubcolumnSelector extends LitElement {
             <select id="subheader-selector" multiple @change=${this._update_subheader}>
                 ${this.arr_col_titles.map(
                     (x) => html`
-                        <option 
-                            .selected=${x.selected}
-                        >${x.ColTitle2 || x.ColTitle1}</option>
-                    `
-                )}
+                        <option .selected=${x.selected}>
+							${x.ColTitle2 || x.ColTitle1}
+						</option>
+				`)}
             </select>
         </div>
         `;
