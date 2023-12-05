@@ -34,7 +34,7 @@ export class MultiSelector extends LitElement {
             : {...x, selected: false}
         )
         
-        this._send_update_event()
+        this._send_update_event("parents")
     }
     _update_children() {
 		const selected_lgl = [...this._chosen_children.options]
@@ -43,13 +43,14 @@ export class MultiSelector extends LitElement {
 			({...x, selected: selected_lgl[i]})
 		)
 			  
-		this._send_update_event()
+		this._send_update_event("children")
     }
 
-	_send_update_event() {
+	_send_update_event(from) {
 		const options = {
 			detail: {
 				prop_table: this.prop_table,
+				from: from
 			},
 			bubbles: true,
 			composed: true,

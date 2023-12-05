@@ -6,8 +6,6 @@ import { xlsx_to_json_array, distinct } from './utils.js'
 import './selectors/question_selector.js'
 import './selectors/multi_selector.js'
 import './selectors/num_type_selector.js'
-import './selectors/row_types_selector.js'
-import './selectors/rows_selector.js'
 import './selectors/colorscale_selector.js'
 import './selectors/xy_selector.js'
 
@@ -45,8 +43,6 @@ export class TableDataSelector extends LitElement {
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		// this.params.tab_titles = [...new Set(this.data.map(d => ({TabNo: d.TabNo, TabTitle: d.TabTitle})))].map(d => d.TabTitle);
 		// this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
-		this.params.rows = []
-		this.choices.rows = this.params.rows
 		
 		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
 		
@@ -89,49 +85,29 @@ export class TableDataSelector extends LitElement {
 				x.RowAbsPercent != "Abs"
 			)
 		;
-		this.params.row_types = [...new Set(this.num_type_data.map((d) => d.RowContent))]
-
-		if (!this.choices.row_types || !this.choices.row_types.every(val => this.params.row_types.includes(val)) || this.choices.row_types.length === 0) {
-			this.choices.row_types = this.params.row_types.filter( ( el ) => !["Valid", "Total"].includes( el ) );
-		}
-		if (this.choices.row_types.includes("Detail")) {
-			this.choices.row_types = ["Detail"]
-		}
+		this.params.row_table = gen_row_table(this.num_type_data)
 		
-		this.sel_num_type_detail_data()
-		}
-	sel_num_type_detail_data() {
-		this.num_type_detail_data = this.num_type_data
-			// https://stackoverflow.com/a/59329231:	
-			.filter(x => (
-				this.choices.row_types.some(pattern => x.RowContent === pattern)
-			))
-		this.params.rows = this.choices.rows = [...new Set(this.num_type_detail_data.map((d) => d.RowTitle1))]
-		if (this.choices.row_types == "Summary") {
-			this.choices.rows = [this.params.rows[0]]
-		}
 		this.sel_rows_data()
 	}
-
 	sel_rows_data() {
-		this.row_data = this.num_type_detail_data
-			.filter(x => (
-				this.choices.rows.some(pattern => x.RowTitle1 === pattern)
-			))
-
-		// TODO: this overwrites the keeping of settings when the next chosen table has the same parameters as before...:
-		const df_row_tit_val = distinct(this.row_data, ["RowTitle1", "RowValue"])
+		this.rows_data = filter_sel_rows(this.num_type_data, this.params.row_table)
+		
+		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowValue"])
 		const n_numeric_rowtitles = df_row_tit_val.reduce(
-			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))), 
+			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))),
 			0
 		)
-		if (df_row_tit_val.length >=5 & n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & this.choices.row_types == "Detail") {
+		if (
+			df_row_tit_val.length >= 5 & 
+			n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & 
+			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
+		) {
 			this.color_scale = "linear"
 		} else {
 			this.color_scale = "categorical"
 		}
 
-		this.plot_data = this.row_data
+		this.plot_data = this.rows_data
 	}
 	
 	// Talk to parent:
@@ -170,13 +146,23 @@ export class TableDataSelector extends LitElement {
 		this.sel_num_type_data()
 		this._update_plot_data()
 	}
-	_on_row_types_update(e) {
-		this.choices.row_types = e.detail.chosen_row_types;
-		this.sel_num_type_detail_data()
-		this._update_plot_data()
-	}
 	_on_rows_update(e) {
-		this.choices.rows = e.detail.chosen_rows;
+		this.params.row_table = e.detail.prop_table;
+		
+		const arr_selected = this.params.row_table.filter(x => x.selected)
+		if (
+			e.detail.from === "parents" && 
+			[... new Set(arr_selected.map(x => x.RowContent))] == "Summary"
+		) {
+			const summary_titles = [... new Set(arr_selected.map(x => x.RowTitle1))]
+			this.params.row_table = this.params.row_table.map(p =>
+				p.RowTitle1 === summary_titles[0]
+				? { ...p, selected: true }
+				: { ...p, selected: false }
+			)
+			console.log(1)
+		}
+		
 		this.sel_rows_data()
 		this._update_plot_data()
 	}
@@ -226,16 +212,16 @@ export class TableDataSelector extends LitElement {
 						.all_num_types=${this.params.row_type}
 						.chosen_num_type=${this.choices.row_type}>
 					</num_type-selector>
-					<row_types-selector 	
-						@update-row_types="${this._on_row_types_update}" 	
-						.all_row_types=${this.params.row_types}
-						.chosen_row_types=${this.choices.row_types}>
-					</row_types-selector>
-					<rows-selector 			
-						@update-rows="${this._on_rows_update}"
-						.all_rows=${this.params.rows}
-						.chosen_rows=${this.choices.rows}>
-					</rows-selector>
+					<span class="clear"></span>
+					<multi-selector 		
+						.mainsel_text = ${"row type(s)"}
+						.subsel_text = ${"row(s)"}
+						.parent_string = ${"RowContent"}
+						.children_fun = ${(x) => x.RowTitle1}
+						@update-multi-select="${this._on_rows_update}" 		
+						.prop_table=${this.params.row_table}>	   																
+					</multi-selector>
+					<span class="clear"></span>
 					<colorscale-selector 				
 						@update-colorscale="${this._on_colorscale_update}" 	
 						.all_colorscales=${this.params.color_scale}	
@@ -279,10 +265,39 @@ function gen_header_table(data) {
 	);
 }
 
+function gen_row_table(data) {
+	const arr = distinct(data, ["RowContent", "RowTitle1"])
+	const row_contents = [... new Set(arr.map(x => x.RowContent))];
+	var types_to_take;
+	if (row_contents.includes("Detail")) {
+		types_to_take = ["Detail"]
+	} else if (row_contents.includes("Summary")) {
+		types_to_take = ["Summary"]
+	} else {
+		// setdiff:
+		types_to_take = row_contents.filter(x => !["Valid", "Total"].includes(x));
+	}
+	return arr.map(p =>
+		types_to_take.includes(p.RowContent)
+		? { ...p, selected: true }
+		: { ...p, selected: false }
+	);
+}
+
 function filter_sel_headers(data, header_table) {
 	const arr_sel = header_table.filter(x => x.selected);
 	const col_fun2 = x => x.ColTitle2 || x.ColTitle1
 	const col_fun1 = x => x.ColTitle1
+	const res = data.filter(x => 
+		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &
+		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
+	);
+	return res;
+}
+function filter_sel_rows(data, header_table) {
+	const arr_sel = header_table.filter(x => x.selected);
+	const col_fun2 = x => x.RowTitle1
+	const col_fun1 = x => x.RowContent
 	const res = data.filter(x => 
 		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &
 		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
