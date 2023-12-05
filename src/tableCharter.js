@@ -57,12 +57,6 @@ export class TableCharter extends LitElement {
                 padding: 10px;
             }
             
-            /* Clear floats after the columns */
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
         `
 
     ]

@@ -4,11 +4,8 @@ import { when } from 'lit/directives/when.js';
 import { xlsx_to_json_array, distinct } from './utils.js'
 
 import './selectors/question_selector.js'
-import './selectors/header_selector.js'
-import './selectors/subheader_selector.js'
+import './selectors/multi_selector.js'
 import './selectors/num_type_selector.js'
-import './selectors/row_types_selector.js'
-import './selectors/rows_selector.js'
 import './selectors/colorscale_selector.js'
 import './selectors/xy_selector.js'
 
@@ -29,7 +26,6 @@ export class TableDataSelector extends LitElement {
 	// Initialization:
 	init_tablebook_data(data) {
 		this.data = data;
-		this.prep_data();
 		this.init_params();
 		this._update_plot_data()
 	}
@@ -39,15 +35,6 @@ export class TableDataSelector extends LitElement {
 		super.connectedCallback()
 		this.init_tablebook_data(data);
 	}
-	prep_data() {
-		this.data = this.data.map((x) => ({
-			...x, 
-			coti_lab: [x.ColTitle1, x.ColTitle2].join("\n"),
-			coti: x.ColTitle1 + " - " + x.ColTitle2,
-			roti_lab: [x.RowTitle1, x.RowTitle2].join("\n"),
-			roti: x.RowTitle1 + " - " + x.RowTitle2,
-		}))
-	}
 
 	init_params() {
 		this.params = {};
@@ -56,25 +43,13 @@ export class TableDataSelector extends LitElement {
 		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
 		// this.params.tab_titles = [...new Set(this.data.map(d => ({TabNo: d.TabNo, TabTitle: d.TabTitle})))].map(d => d.TabTitle);
 		// this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
-		this.params.rows = []
-		this.choices.rows = this.params.rows
 		
 		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
 		
-		const arr = distinct(
-			this.data,
-			// TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-			["ColNo", "HeadNo", "ColTitle1", "ColTitle2"]
-		);
-		const first_two_titles = [... new Set(arr.map(x => x.ColTitle1))].slice(0, 2);
-		this.params.arr_col_titles = arr.map(p =>
-			first_two_titles.includes(p.ColTitle1)
-			? { ...p, selected: true }
-			: { ...p, selected: false }
-		);
+		this.params.header_table = gen_header_table(this.data)
 		this.choices.tab_titles = this.params.tab_titles[0].TabTitle
 		this.choices.tab_nos = this.params.tab_titles[0].TabNo
-		this.params.row_type = ["%", "counts"];
+		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "linear"];
 		// needs to be extra reactive property (not in choices), 
@@ -98,61 +73,41 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 	}
 	sel_header_data() {
-		this.subheader_data = filter_sel_headers(this.question_data, this.params.arr_col_titles)
+		this.header_data = filter_sel_headers(this.question_data, this.params.header_table)
 
 		this.sel_num_type_data()
 	}
 	sel_num_type_data() {
-		this.num_type_data = this.subheader_data
+		this.num_type_data = this.header_data
 			.filter(x => 
-				this.choices.row_type === "counts" ? 
+				this.choices.row_type === "n" ? 
 				x.RowAbsPercent == "Abs" : 
 				x.RowAbsPercent != "Abs"
 			)
 		;
-		this.params.row_types = [...new Set(this.num_type_data.map((d) => d.RowContent))]
-
-		if (!this.choices.row_types || !this.choices.row_types.every(val => this.params.row_types.includes(val)) || this.choices.row_types.length === 0) {
-			this.choices.row_types = this.params.row_types.filter( ( el ) => !["Valid", "Total"].includes( el ) );
-		}
-		if (this.choices.row_types.includes("Detail")) {
-			this.choices.row_types = ["Detail"]
-		}
+		this.params.row_table = gen_row_table(this.num_type_data)
 		
-		this.sel_num_type_detail_data()
-		}
-	sel_num_type_detail_data() {
-		this.num_type_detail_data = this.num_type_data
-			// https://stackoverflow.com/a/59329231:	
-			.filter(x => (
-				this.choices.row_types.some(pattern => x.RowContent === pattern)
-			))
-		this.params.rows = this.choices.rows = [...new Set(this.num_type_detail_data.map((d) => d.RowTitle1))]
-		if (this.choices.row_types == "Summary") {
-			this.choices.rows = [this.params.rows[0]]
-		}
 		this.sel_rows_data()
 	}
-
 	sel_rows_data() {
-		this.row_data = this.num_type_detail_data
-			.filter(x => (
-				this.choices.rows.some(pattern => x.RowTitle1 === pattern)
-			))
+		this.rows_data = filter_sel_rows(this.num_type_data, this.params.row_table)
+		
+		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowValue"])
+		const n_numeric_rowtitles = df_row_tit_val.reduce(
+			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))),
+			0
+		)
+		if (
+			df_row_tit_val.length >= 5 & 
+			n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & 
+			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
+		) {
+			this.color_scale = "linear"
+		} else {
+			this.color_scale = "categorical"
+		}
 
-			// TODO: this overwrites the keeping of settings when the next chosen table has the same parameters as before...:
-			const df_row_tit_val = distinct(this.row_data, ["RowTitle1", "RowValue"])
-			const n_numeric_rowtitles = df_row_tit_val.reduce(
-				(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))), 
-				0
-			)
-			if (df_row_tit_val.length >=5 & n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & this.choices.row_types == "Detail") {
-				this.color_scale = "linear"
-			} else {
-				this.color_scale = "categorical"
-			}
-
-			this.plot_data = this.row_data
+		this.plot_data = this.rows_data
 	}
 	
 	// Talk to parent:
@@ -175,7 +130,7 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.params.arr_col_titles = e.detail.arr_col_titles;
+		this.params.header_table = e.detail.prop_table;
 		this.sel_header_data()
 		this._update_plot_data()
 	}
@@ -191,13 +146,23 @@ export class TableDataSelector extends LitElement {
 		this.sel_num_type_data()
 		this._update_plot_data()
 	}
-	_on_row_types_update(e) {
-		this.choices.row_types = e.detail.chosen_row_types;
-		this.sel_num_type_detail_data()
-		this._update_plot_data()
-	}
 	_on_rows_update(e) {
-		this.choices.rows = e.detail.chosen_rows;
+		this.params.row_table = e.detail.prop_table;
+		
+		const arr_selected = this.params.row_table.filter(x => x.selected)
+		if (
+			e.detail.from === "parents" && 
+			[... new Set(arr_selected.map(x => x.RowContent))] == "Summary"
+		) {
+			const summary_titles = [... new Set(arr_selected.map(x => x.RowTitle1))]
+			this.params.row_table = this.params.row_table.map(p =>
+				p.RowTitle1 === summary_titles[0]
+				? { ...p, selected: true }
+				: { ...p, selected: false }
+			)
+			console.log(1)
+		}
+		
 		this.sel_rows_data()
 		this._update_plot_data()
 	}
@@ -232,46 +197,31 @@ export class TableDataSelector extends LitElement {
 							.all_questions=${this.params.tab_titles}>
 						</question-selector>
 					</div>
-					<table>
-						<tr>
-							<th>header</th>
-							<th>sub-header</th>
-						</tr>
-						<tr>
-							<th><column-selector 		
-								@update-header="${this._on_header_update}" 		
-								.arr_col_titles=${this.params.arr_col_titles}>	   																
-							</column-selector></th>
-							<th><subcolumn-selector 	
-								@update-subheader="${this._on_header_update}"	
-								.arr_col_titles = ${this.params.arr_col_titles}>	
-							</subcolumn-selector></th>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<th>abs / %</th>
-							<th>row types</th>
-							<th>rows</th>
-						</tr>
-						<tr>
-							<th><num_type-selector 		
-								@update-num_type="${this._on_num_type_update}"
-								.all_num_types=${this.params.row_type}
-								.chosen_num_type=${this.choices.row_type}>
-							</num_type-selector></th>
-							<th><row_types-selector 	
-								@update-row_types="${this._on_row_types_update}" 	
-								.all_row_types=${this.params.row_types}
-								.chosen_row_types=${this.choices.row_types}>
-							</row_types-selector></th>
-							<th><rows-selector 			
-								@update-rows="${this._on_rows_update}"
-								.all_rows=${this.params.rows}
-								.chosen_rows=${this.choices.rows}>
-							</rows-selector></th>
-						</tr>
-					</table>
+					<multi-selector 		
+						.mainsel_text = ${"header"}
+						.subsel_text = ${"sub-header"}
+						.parent_string = ${"ColTitle1"}
+						.children_fun = ${(x) => x.ColTitle2 || x.ColTitle1}
+						@update-multi-select="${this._on_header_update}" 		
+						.prop_table=${this.params.header_table}>	   																
+					</multi-selector>
+					<!-- https://stackoverflow.com/a/2062264 -->
+					<span class="clear"></span>
+					<num_type-selector 		
+						@update-num_type="${this._on_num_type_update}"
+						.all_num_types=${this.params.row_type}
+						.chosen_num_type=${this.choices.row_type}>
+					</num_type-selector>
+					<span class="clear"></span>
+					<multi-selector 		
+						.mainsel_text = ${"row type(s)"}
+						.subsel_text = ${"row(s)"}
+						.parent_string = ${"RowContent"}
+						.children_fun = ${(x) => x.RowTitle1}
+						@update-multi-select="${this._on_rows_update}" 		
+						.prop_table=${this.params.row_table}>	   																
+					</multi-selector>
+					<span class="clear"></span>
 					<colorscale-selector 				
 						@update-colorscale="${this._on_colorscale_update}" 	
 						.all_colorscales=${this.params.color_scale}	
@@ -290,12 +240,7 @@ export class TableDataSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
-			table {
-				max-width: 100%;
-			}
-			th {
-				vertical-align: top;
-			}
+			span.clear { clear: left; display: block; }
 			option:checked {
 				background: red linear-gradient(#333,#333);
 			}
@@ -306,10 +251,53 @@ export class TableDataSelector extends LitElement {
 
 window.customElements.define('table-data-selector', TableDataSelector)
 
-function filter_sel_headers(data, arr_col_titles) {
-	const arr_sel = arr_col_titles.filter(x => x.selected);
+function gen_header_table(data) {
+	const arr = distinct(
+		data,
+		// TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
+		["ColNo", "HeadNo", "ColTitle1", "ColTitle2"]
+	);
+	const first_two_titles = [... new Set(arr.map(x => x.ColTitle1))].slice(0, 2);
+	return arr.map(p =>
+		first_two_titles.includes(p.ColTitle1)
+		? { ...p, selected: true }
+		: { ...p, selected: false }
+	);
+}
+
+function gen_row_table(data) {
+	const arr = distinct(data, ["RowContent", "RowTitle1"])
+	const row_contents = [... new Set(arr.map(x => x.RowContent))];
+	var types_to_take;
+	if (row_contents.includes("Detail")) {
+		types_to_take = ["Detail"]
+	} else if (row_contents.includes("Summary")) {
+		types_to_take = ["Summary"]
+	} else {
+		// setdiff:
+		types_to_take = row_contents.filter(x => !["Valid", "Total"].includes(x));
+	}
+	return arr.map(p =>
+		types_to_take.includes(p.RowContent)
+		? { ...p, selected: true }
+		: { ...p, selected: false }
+	);
+}
+
+function filter_sel_headers(data, header_table) {
+	const arr_sel = header_table.filter(x => x.selected);
 	const col_fun2 = x => x.ColTitle2 || x.ColTitle1
 	const col_fun1 = x => x.ColTitle1
+	const res = data.filter(x => 
+		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &
+		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
+	);
+	return res;
+}
+function filter_sel_rows(data, header_table) {
+	const arr_sel = header_table.filter(x => x.selected);
+	const col_fun2 = x => x.RowTitle1
+	const col_fun1 = x => x.RowContent
 	const res = data.filter(x => 
 		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &
 		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
