@@ -171,7 +171,7 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
-		this.choices.xy = e.detail.chosen_xy;
+		this.choices.xy = e.detail.xy;
 		this._update_plot_data()
 	}
 
@@ -230,7 +230,7 @@ export class TableDataSelector extends LitElement {
 					</colorscale-selector>
 					<xy-selector 	  					
 						@update-xy="${this._on_xy_update}"
-						.chosen_xy=${this.choices.xy}>
+						.xy=${this.choices.xy}>
 					</xy-selector>
 				`
 			)}

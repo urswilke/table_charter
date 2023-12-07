@@ -16,7 +16,7 @@ export class XYSelector extends LitElement {
          
         const options = {
 			detail: {
-				chosen_xy: this.xy,
+				xy: this.xy,
 			},
 			bubbles: true,
 			composed: true,
