@@ -6,23 +6,28 @@ export function gen_plot_options(data) {
 	}
 	data["op"] = prep_options(data)
 	let tab_type = data.plot_data[0].TabType;
-	switch (tab_type) {
-		case "CAT":
-			return gen_plot_options_cat(data);
-	
-		case "MCG":
-			return gen_plot_options_mw(data);
-	
-		case "MDG":
-			return gen_plot_options_mw(data);
-	
-		case "MW":
-			return gen_plot_options_mw(data);
-	
-		default:
-			alert("Table type " + tab_type + " not implemented.")
-			break;
+	let chart_type = data.plot_data[0].TabDetails;
+	if (
+		tab_type === "CAT" ||
+		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
+		// TODO: implement in crosstabser!
+		(tab_type === "MW" & data.plot_data[0].TabDetails === "100percent" & data.choices.row_type === "%")
+
+	) {
+		return gen_plot_options_cat(data);
 	}
+	if (tab_type === "MCG") {
+		return gen_plot_options_mw(data);
+	}
+	if (tab_type === "MDG") {
+		return gen_plot_options_mw(data);
+	}
+	if (tab_type === "MW") {
+		return gen_plot_options_mw(data);
+	}
+	else {
+		alert("Table type " + tab_type + " not implemented.")
+	}	
 }
 
 function prep_options(data) {
