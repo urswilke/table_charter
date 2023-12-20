@@ -13,7 +13,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "inlined-build": "vite build --config vite.config.inlined.js",
+    "inlined-preview": "vite build --config vite.config.inlined.js && start ./dist/index.html"
   },
   "dependencies": {
     "lit": "^3.0.1",
