@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@observablehq/plot": "^0.6.13",
+    "arquero": "^5.4.0",
     "lit": "^3.1.1",
     "lodash": "^4.17.21",
     "tachyons": "^4.12.0",
