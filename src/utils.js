@@ -1,5 +1,6 @@
 import { css } from 'lit'
 import { chain, pick, uniqWith, isEqual } from 'lodash';
+// import * as aq from 'arquero';
 import * as XLSX from "xlsx";
 
 export async function xlsx_to_json_array(e) {
@@ -12,6 +13,8 @@ export async function xlsx_to_json_array(e) {
 
   
 export function distinct(arr, X) {
+    // with arquero, something like:
+    // aq.from(arr).groupby(X).rollup()
     return chain(arr.map(o => (pick(o, X))))
       .uniqWith(isEqual)
       .value();
