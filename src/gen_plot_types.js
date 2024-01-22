@@ -97,6 +97,7 @@ function gen_bar_plot_options(data) {
 		marginLeft: x1 === "y" ? 40 : 120,
         color: {
 			type: data.color_scale,
+			scheme: color_schemes[data.color_scale].get(data.choices.color_scheme),
             domain: color_order,
             legend: true
         },
@@ -172,3 +173,70 @@ const tooltip_fun = (x) => [
 	`col: ${x.ColTitle2 || ""}`, 
 	`val: ${x.Value.toFixed(1)}`,
 ].join("\n")
+
+
+// from here: 
+// https://observablehq.com/@observablehq/plot-scales#schemeo
+// and
+// https://observablehq.com/@observablehq/plot-scales#schemec
+
+const color_scheme_ordinal = new Map([
+	["Blues (sequential, single-hue)", "blues"],
+	["Greens (sequential, single-hue)", "greens"],
+	["Greys (sequential, single-hue)", "greys"],
+	["Purples (sequential, single-hue)", "purples"],
+	["Reds (sequential, single-hue)", "reds"],
+	["Oranges (sequential, single-hue)", "oranges"],
+	["Turbo (sequential, multi-hue)", "turbo"],
+	["Viridis (sequential, multi-hue)", "viridis"],
+	["Magma (sequential, multi-hue)", "magma"],
+	["Inferno (sequential, multi-hue)", "inferno"],
+	["Plasma (sequential, multi-hue)", "plasma"],
+	["Cividis (sequential, multi-hue)", "cividis"],
+	["Cubehelix (sequential, multi-hue)", "cubehelix"],
+	["Warm (sequential, multi-hue)", "warm"],
+	["Cool (sequential, multi-hue)", "cool"],
+	["BuGn (sequential, multi-hue)", "bugn"],
+	["BuPu (sequential, multi-hue)", "bupu"],
+	["GnBu (sequential, multi-hue)", "gnbu"],
+	["OrRd (sequential, multi-hue)", "orrd"],
+	["PuBuGn (sequential, multi-hue)", "pubugn"],
+	["PuBu (sequential, multi-hue)", "pubu"],
+	["PuRd (sequential, multi-hue)", "purd"],
+	["RdPu (sequential, multi-hue)", "rdpu"],
+	["YlGnBu (sequential, multi-hue)", "ylgnbu"],
+	["YlGn (sequential, multi-hue)", "ylgn"],
+	["YlOrBr (sequential, multi-hue)", "ylorbr"],
+	["YlOrRd (sequential, multi-hue)", "ylorrd"],
+	["BrBG (diverging)", "brbg"],
+	["PRGn (diverging)", "prgn"],
+	["PiYG (diverging)", "piyg"],
+	["PuOr (diverging)", "puor"],
+	["RdBu (diverging)", "rdbu"],
+	["RdGy (diverging)", "rdgy"],
+	["RdYlBu (diverging)", "rdylbu"],
+	["RdYlGn (diverging)", "rdylgn"],
+	["Spectral (diverging)", "spectral"],
+	["BuRd (diverging)", "burd"],
+	["BuYlRd (diverging)", "buylrd"],
+	["Rainbow (cyclical)", "rainbow"],
+	["Sinebow (cylical)", "sinebow"]
+])
+
+const color_scheme_discrete = new Map([
+	["Accent (categorical, 8 colors)", "accent"],
+	["Category10 (categorical, 10 colors)", "category10"],
+	["Dark2 (categorical, 8 colors)", "dark2"],
+	["Paired (categorical, 12 colors)", "paired"],
+	["Pastel1 (categorical, 9 colors)", "pastel1"],
+	["Pastel2 (categorical, 8 colors)", "pastel2"],
+	["Set1 (categorical, 9 colors)", "set1"],
+	["Set2 (categorical, 8 colors)", "set2"],
+	["Set3 (categorical, 12 colors)", "set3"],
+	["Tableau10 (categorical, 10 colors)", "tableau10"]
+])
+
+export const color_schemes = {
+	"linear": color_scheme_ordinal,
+	"categorical": color_scheme_discrete,
+}
