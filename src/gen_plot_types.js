@@ -1,32 +1,17 @@
 import * as Plot from "@observablehq/plot";
 
 export function gen_plot_options(data) {
-	if (data.length === 0 || data.plot_data.length === 0) {
+	if (data.choices === undefined) {
 		return {};
 	}
 	data["op"] = prep_options(data)
-	let tab_type = data.plot_data[0].TabType;
-	if (
-		tab_type === "CAT" ||
-		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
-		// TODO: implement in crosstabser!
-		(tab_type === "MW" & data.plot_data[0].TabDetails === "100percent" & data.choices.row_type === "%")
-
-	) {
+	let plot_type = data.choices.plot_type;
+	if (plot_type === "bar") {
 		return gen_bar_plot_options(data);
 	}
-	if (tab_type === "MCG") {
+	if (plot_type === "line") {
 		return gen_line_plot_options(data);
 	}
-	if (tab_type === "MDG") {
-		return gen_line_plot_options(data);
-	}
-	if (tab_type === "MW") {
-		return gen_line_plot_options(data);
-	}
-	else {
-		alert("Table type " + tab_type + " not implemented.")
-	}	
 }
 
 function prep_options(data) {
