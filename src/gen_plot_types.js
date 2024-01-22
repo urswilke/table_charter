@@ -220,8 +220,9 @@ const color_scheme_ordinal = new Map([
 	["Spectral (diverging)", "spectral"],
 	["BuRd (diverging)", "burd"],
 	["BuYlRd (diverging)", "buylrd"],
-	["Rainbow (cyclical)", "rainbow"],
-	["Sinebow (cyclical)", "sinebow"]
+	// doesn't make sense here:
+	// ["Rainbow (cyclical)", "rainbow"],
+	// ["Sinebow (cyclical)", "sinebow"]
 ])
 
 const color_scheme_discrete = new Map([
