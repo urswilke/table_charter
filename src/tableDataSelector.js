@@ -22,8 +22,10 @@ export class TableDataSelector extends LitElement {
 		plot_data: { type: Array },
 		params: { type: Object },
 		choices: { type: Object },
+		// needs to be extra reactive property (not in choices), 
+		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
+		// when it's reset in sel_question_data():
 		color_scale: { type: String },
-		// color_scheme: { type: String },
 	};
 
 	// Initialization:
@@ -59,9 +61,6 @@ export class TableDataSelector extends LitElement {
 			"linear": [...color_schemes.linear.keys()],
 			"categorical": [...color_schemes.categorical.keys()],
 		}
-		
-
-		// this.choices.color_scale = this.params.color_scale[0];
 		this.sel_question_data()
 	}
 
@@ -112,10 +111,6 @@ export class TableDataSelector extends LitElement {
 		} else {
 			this.color_scale = "categorical"
 		}
-		// // needs to be extra reactive property (not in choices), 
-		// // because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
-		// // when it's reset in sel_question_data():
-		// this.color_scale = this.params.color_scale[0];
 		this.choices.color_scheme = this.color_scale === "categorical" ?
 			"Tableau10 (categorical, 10 colors)" :
 			"Turbo (sequential, multi-hue)"
@@ -190,7 +185,6 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
-		// this.color_scale = e.detail.chosen_colorscale;
 		this.choices.color_scheme = e.detail.chosen_colorscheme;
 		this._update_plot_data()
 	}
