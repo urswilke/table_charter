@@ -13,16 +13,16 @@ export function gen_plot_options(data) {
 		(tab_type === "MW" & data.plot_data[0].TabDetails === "100percent" & data.choices.row_type === "%")
 
 	) {
-		return gen_plot_options_cat(data);
+		return gen_bar_plot_options(data);
 	}
 	if (tab_type === "MCG") {
-		return gen_plot_options_mw(data);
+		return gen_line_plot_options(data);
 	}
 	if (tab_type === "MDG") {
-		return gen_plot_options_mw(data);
+		return gen_line_plot_options(data);
 	}
 	if (tab_type === "MW") {
-		return gen_plot_options_mw(data);
+		return gen_line_plot_options(data);
 	}
 	else {
 		alert("Table type " + tab_type + " not implemented.")
@@ -68,7 +68,7 @@ function prep_options(data) {
 	}
 }
 
-function gen_plot_options_cat(data) {
+function gen_bar_plot_options(data) {
 	const { 
 		x2: x2,
 		x1: x1,
@@ -127,7 +127,7 @@ function gen_plot_options_cat(data) {
 	return res
 }
 
-function gen_plot_options_mw(data) {
+function gen_line_plot_options(data) {
 	const { 
 		x2: x2,
 		x1: x1,
