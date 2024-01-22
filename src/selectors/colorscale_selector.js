@@ -74,9 +74,6 @@ export class ColorscaleSelector extends LitElement {
 				float: left;
 				/* flex-direction: row; */
 			}
-            option:checked {
-                background: red linear-gradient(#333,#333);
-            }
 			label {
 				display: block;
 			}
