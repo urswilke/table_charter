@@ -60,10 +60,7 @@ export class TableDataSelector extends LitElement {
 			"categorical": [...color_schemes.categorical.keys()],
 		}
 		this.params.possible_color_schemes = [];
-		// this.params.color_scheme_discrete_keys = color_scheme_discrete_keys;
-		// this.params.color_scheme_ordinal_keys = color_scheme_ordinal_keys;
 		this.color_scheme = "Tableau10 (categorical, 10 colors)"
-		// this.choices.color_scheme_ordinal = "turbo"
 		
 		// needs to be extra reactive property (not in choices), 
 		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
@@ -361,9 +358,3 @@ function gen_plot_type_string(tab_sel_obj) {
 	}	
 	
 }
-// const color_scheme_discrete_keys = [...color_scheme_discrete.keys()]
-// const color_scheme_ordinal_keys = [...color_scheme_ordinal.keys()]
-// const color_schemes = {
-// 	"linear": [...color_scheme_ordinal.keys()],
-// 	"categorical": [...color_scheme_discrete.keys()],
-// }
