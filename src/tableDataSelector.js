@@ -7,7 +7,7 @@ import './selectors/question_selector.js'
 import './selectors/multi_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/colorscale_selector.js'
-import './selectors/xy_selector.js'
+import './selectors/further_options_selector.js'
 
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
@@ -233,12 +233,12 @@ export class TableDataSelector extends LitElement {
 						.chosen_colorscale=${this.color_scale} 
 						.colorscale_disabled=${this.choices.colorscale_disabled}>
 					</colorscale-selector>
-					<xy-selector 	  					
+					<further-options-selector 	  					
 						@update-xy="${this._on_xy_update}"
 						@update-plot_type="${this._on_plot_type_update}"
 						.xy=${this.choices.xy}
 						.plot_type=${this.choices.plot_type}>
-					</xy-selector>
+					</further-options-selector>
 				`
 			)}
 		`;

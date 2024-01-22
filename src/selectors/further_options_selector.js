@@ -1,7 +1,7 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
 
-export class XYSelector extends LitElement {
+export class FurtherOptionsSelector extends LitElement {
     static properties = {
 		xy: { type: String },
 		plot_type: { type: String}
@@ -50,4 +50,4 @@ export class XYSelector extends LitElement {
 	`
 	];
 }
-customElements.define('xy-selector', XYSelector);
+customElements.define('further-options-selector', FurtherOptionsSelector);
