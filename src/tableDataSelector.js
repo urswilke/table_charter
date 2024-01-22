@@ -59,14 +59,14 @@ export class TableDataSelector extends LitElement {
 			"linear": [...color_schemes.linear.keys()],
 			"categorical": [...color_schemes.categorical.keys()],
 		}
-		this.choices.color_scheme = this.params.color_scale === "categorical" ?
-			"Tableau10 (categorical, 10 colors)" :
-			"Turbo (sequential, multi-hue)"
 		
 		// needs to be extra reactive property (not in choices), 
 		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
 		// when it's reset in sel_question_data():
 		this.color_scale = this.params.color_scale[0];
+		this.choices.color_scheme = this.color_scale === "categorical" ?
+			"Tableau10 (categorical, 10 colors)" :
+			"Turbo (sequential, multi-hue)"
 		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
 
 		this.choices.color_scale = this.params.color_scale[0];
