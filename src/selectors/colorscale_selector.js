@@ -33,12 +33,13 @@ export class ColorscaleSelector extends LitElement {
          
         const options = {
             detail: {
+                // chosen_colorscale: this.chosen_colorscale,
                 chosen_colorscheme: this.chosen_colorscheme,
             },
             bubbles: true,
             composed: true,
 		};
-		this.dispatchEvent(new CustomEvent('update-colorscale', options));
+		this.dispatchEvent(new CustomEvent('update-colorscheme', options));
     }
 
     render() {

@@ -59,8 +59,9 @@ export class TableDataSelector extends LitElement {
 			"linear": [...color_schemes.linear.keys()],
 			"categorical": [...color_schemes.categorical.keys()],
 		}
-		this.params.possible_color_schemes = [];
-		this.color_scheme = "Tableau10 (categorical, 10 colors)"
+		this.choices.color_scheme = this.params.color_scale === "categorical" ?
+			"Tableau10 (categorical, 10 colors)" :
+			"Turbo (sequential, multi-hue)"
 		
 		// needs to be extra reactive property (not in choices), 
 		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
@@ -185,7 +186,8 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
-		this.color_scheme = e.detail.chosen_colorscheme;
+		// this.color_scale = e.detail.chosen_colorscale;
+		this.choices.color_scheme = e.detail.chosen_colorscheme;
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
@@ -246,12 +248,12 @@ export class TableDataSelector extends LitElement {
 					<span class="clear"></span>
 					<colorscale-selector 				
 						@update-colorscale="${this._on_colorscale_update}" 	
-						@update-colorscale="${this._on_colorscheme_update}" 	
+						@update-colorscheme="${this._on_colorscheme_update}" 	
 						.all_colorscales=${this.params.color_scale}	
 						.chosen_colorscale=${this.color_scale}  
 						.colorscale_disabled=${this.choices.colorscale_disabled}
 						.all_colorschemes=${this.params.possible_color_schemes}	
-						.chosen_colorscheme=${this.color_scheme}>
+						.chosen_colorscheme=${this.choices.color_scheme}>
 					</colorscale-selector>
 					<span class="clear"></span>
 					<further-options-selector 	  					
