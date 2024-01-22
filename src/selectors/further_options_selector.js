@@ -1,15 +1,11 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
 
-export class XYSelector extends LitElement {
+export class FurtherOptionsSelector extends LitElement {
     static properties = {
 		xy: { type: String },
+		plot_type: { type: String}
 	};
-
-	get _chosen_xy() {
-		return this.renderRoot?.querySelector('#xy-selector') ?? null;
-	}
-    
 
     _update_xy() {
 		this.xy = this.xy === "x" ? "y" : "x"
@@ -23,11 +19,24 @@ export class XYSelector extends LitElement {
 		};
 		this.dispatchEvent(new CustomEvent('update-xy', options));
     }
+	_update_plot_type() {
+		this.plot_type = this.plot_type === "bar" ? "line" : "bar"
+         
+        const options = {
+			detail: {
+				plot_type: this.plot_type,
+			},
+			bubbles: true,
+			composed: true,
+		};
+		this.dispatchEvent(new CustomEvent('update-plot_type', options));
+    }
 
     render() {
         return html`
         <div>
             <button @click=${this._update_xy}>Flip x & y axis</button>
+            <button @click=${this._update_plot_type}>${this.plot_type + " chart"}</button>
         </div>
         `;
     }
@@ -41,4 +50,4 @@ export class XYSelector extends LitElement {
 	`
 	];
 }
-customElements.define('xy-selector', XYSelector);
+customElements.define('further-options-selector', FurtherOptionsSelector);

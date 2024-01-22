@@ -7,7 +7,7 @@ import './selectors/question_selector.js'
 import './selectors/multi_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/colorscale_selector.js'
-import './selectors/xy_selector.js'
+import './selectors/further_options_selector.js'
 
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
@@ -86,6 +86,7 @@ export class TableDataSelector extends LitElement {
 			)
 		;
 		this.params.row_table = gen_row_table(this.num_type_data)
+		this.choices.plot_type = gen_plot_type_string(this)
 		
 		this.sel_rows_data()
 	}
@@ -174,6 +175,10 @@ export class TableDataSelector extends LitElement {
 		this.choices.xy = e.detail.xy;
 		this._update_plot_data()
 	}
+	_on_plot_type_update(e) {
+		this.choices.plot_type = e.detail.plot_type;
+		this._update_plot_data()
+	}
 
 	render() {
 
@@ -228,10 +233,12 @@ export class TableDataSelector extends LitElement {
 						.chosen_colorscale=${this.color_scale} 
 						.colorscale_disabled=${this.choices.colorscale_disabled}>
 					</colorscale-selector>
-					<xy-selector 	  					
+					<further-options-selector 	  					
 						@update-xy="${this._on_xy_update}"
-						.xy=${this.choices.xy}>
-					</xy-selector>
+						@update-plot_type="${this._on_plot_type_update}"
+						.xy=${this.choices.xy}
+						.plot_type=${this.choices.plot_type}>
+					</further-options-selector>
 				`
 			)}
 		`;
@@ -303,4 +310,30 @@ function filter_sel_rows(data, header_table) {
 		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
 	);
 	return res;
+}
+
+function gen_plot_type_string(tab_sel_obj) {
+	let tab_type = tab_sel_obj.num_type_data[0].TabType;
+	if (
+		tab_type === "CAT" ||
+		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
+		// TODO: implement in crosstabser!
+		(tab_type === "MW" & tab_sel_obj.num_type_data[0].TabDetails === "100percent" & tab_sel_obj.choices.row_type === "%")
+
+	) {
+		return "bar";
+	}
+	if (tab_type === "MCG") {
+		return "line";
+	}
+	if (tab_type === "MDG") {
+		return "line";
+	}
+	if (tab_type === "MW") {
+		return "line";
+	}
+	else {
+		alert("Table type " + tab_type + " not implemented.")
+	}	
+	
 }
