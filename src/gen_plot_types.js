@@ -6,7 +6,6 @@ export function gen_plot_options(data) {
 	}
 	data["op"] = prep_options(data)
 	let tab_type = data.plot_data[0].TabType;
-	let chart_type = data.plot_data[0].TabDetails;
 	if (
 		tab_type === "CAT" ||
 		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
