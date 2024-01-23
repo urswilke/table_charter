@@ -18,15 +18,15 @@
     "inlined-preview": "vite build --config vite.config.inlined.js && start ./dist/index.html"
   },
   "dependencies": {
-    "lit": "^3.0.1",
+    "@observablehq/plot": "^0.6.13",
+    "lit": "^3.1.1",
     "lodash": "^4.17.21",
     "tachyons": "^4.12.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "devDependencies": {
-    "@observablehq/plot": "^0.6.11",
     "terser": "^5.26.0",
-    "vite": "^4.5.0",
+    "vite": "^4.5.2",
     "vite-plugin-singlefile": "^0.13.5"
   }
 }

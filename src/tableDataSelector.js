@@ -7,7 +7,9 @@ import './selectors/question_selector.js'
 import './selectors/multi_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/colorscale_selector.js'
-import './selectors/xy_selector.js'
+import './selectors/further_options_selector.js'
+
+import { color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
@@ -20,6 +22,9 @@ export class TableDataSelector extends LitElement {
 		plot_data: { type: Array },
 		params: { type: Object },
 		choices: { type: Object },
+		// needs to be extra reactive property (not in choices), 
+		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
+		// when it's reset in sel_question_data():
 		color_scale: { type: String },
 	};
 
@@ -51,12 +56,11 @@ export class TableDataSelector extends LitElement {
 		this.choices.tab_nos = this.params.tab_titles[0].TabNo
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
-		this.params.color_scale = ["categorical", "linear"];
-		// needs to be extra reactive property (not in choices), 
-		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
-		// when it's reset in sel_question_data():
-		this.color_scale = this.params.color_scale[0];
-		this.choices.color_scale = this.params.color_scale[0];
+		this.params.color_scale = ["categorical", "ordinal"];
+		this.params.color_schemes = {
+			"ordinal": [...color_schemes.ordinal.keys()],
+			"categorical": [...color_schemes.categorical.keys()],
+		}
 		this.sel_question_data()
 	}
 
@@ -86,6 +90,7 @@ export class TableDataSelector extends LitElement {
 			)
 		;
 		this.params.row_table = gen_row_table(this.num_type_data)
+		this.choices.plot_type = gen_plot_type_string(this)
 		
 		this.sel_rows_data()
 	}
@@ -102,10 +107,14 @@ export class TableDataSelector extends LitElement {
 			n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & 
 			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
 		) {
-			this.color_scale = "linear"
+			this.color_scale = "ordinal"
 		} else {
 			this.color_scale = "categorical"
 		}
+		this.choices.color_scheme = this.color_scale === "categorical" ?
+			"Tableau10 (categorical, 10 colors)" :
+			"Turbo (sequential, multi-hue)"
+		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
 
 		this.plot_data = this.rows_data
 	}
@@ -117,7 +126,8 @@ export class TableDataSelector extends LitElement {
 				data: {
 					plot_data: this.plot_data,
 					choices: this.choices,
-					color_scale: this.color_scale
+					color_scale: this.color_scale,
+					color_scheme: this.choices.color_scheme
 				}
 			},
 			bubbles: true,
@@ -168,10 +178,22 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_colorscale_update(e) {
 		this.color_scale = e.detail.chosen_colorscale;
+		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
+		this.choices.color_scheme = this.color_scale === "categorical" ?
+			"Tableau10 (categorical, 10 colors)" :
+			"Turbo (sequential, multi-hue)"
+		this._update_plot_data()
+	}
+	_on_colorscheme_update(e) {
+		this.choices.color_scheme = e.detail.chosen_colorscheme;
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
 		this.choices.xy = e.detail.xy;
+		this._update_plot_data()
+	}
+	_on_plot_type_update(e) {
+		this.choices.plot_type = e.detail.plot_type;
 		this._update_plot_data()
 	}
 
@@ -224,14 +246,20 @@ export class TableDataSelector extends LitElement {
 					<span class="clear"></span>
 					<colorscale-selector 				
 						@update-colorscale="${this._on_colorscale_update}" 	
+						@update-colorscheme="${this._on_colorscheme_update}" 	
 						.all_colorscales=${this.params.color_scale}	
-						.chosen_colorscale=${this.color_scale} 
-						.colorscale_disabled=${this.choices.colorscale_disabled}>
+						.chosen_colorscale=${this.color_scale}  
+						.colorscale_disabled=${this.choices.colorscale_disabled}
+						.all_colorschemes=${this.params.possible_color_schemes}	
+						.chosen_colorscheme=${this.choices.color_scheme}>
 					</colorscale-selector>
-					<xy-selector 	  					
+					<span class="clear"></span>
+					<further-options-selector 	  					
 						@update-xy="${this._on_xy_update}"
-						.xy=${this.choices.xy}>
-					</xy-selector>
+						@update-plot_type="${this._on_plot_type_update}"
+						.xy=${this.choices.xy}
+						.plot_type=${this.choices.plot_type}>
+					</further-options-selector>
 				`
 			)}
 		`;
@@ -303,4 +331,30 @@ function filter_sel_rows(data, header_table) {
 		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
 	);
 	return res;
+}
+
+function gen_plot_type_string(tab_sel_obj) {
+	let tab_type = tab_sel_obj.num_type_data[0].TabType;
+	if (
+		tab_type === "CAT" ||
+		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
+		// TODO: implement in crosstabser!
+		(tab_type === "MW" & tab_sel_obj.num_type_data[0].TabDetails === "100percent" & tab_sel_obj.choices.row_type === "%")
+
+	) {
+		return "bar";
+	}
+	if (tab_type === "MCG") {
+		return "line";
+	}
+	if (tab_type === "MDG") {
+		return "line";
+	}
+	if (tab_type === "MW") {
+		return "line";
+	}
+	else {
+		alert("Table type " + tab_type + " not implemented.")
+	}	
+	
 }

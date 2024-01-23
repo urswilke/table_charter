@@ -1,33 +1,17 @@
 import * as Plot from "@observablehq/plot";
 
 export function gen_plot_options(data) {
-	if (data.length === 0 || data.plot_data.length === 0) {
+	if (data.choices === undefined) {
 		return {};
 	}
 	data["op"] = prep_options(data)
-	let tab_type = data.plot_data[0].TabType;
-	let chart_type = data.plot_data[0].TabDetails;
-	if (
-		tab_type === "CAT" ||
-		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
-		// TODO: implement in crosstabser!
-		(tab_type === "MW" & data.plot_data[0].TabDetails === "100percent" & data.choices.row_type === "%")
-
-	) {
-		return gen_plot_options_cat(data);
+	let plot_type = data.choices.plot_type;
+	if (plot_type === "bar") {
+		return gen_bar_plot_options(data);
 	}
-	if (tab_type === "MCG") {
-		return gen_plot_options_mw(data);
+	if (plot_type === "line") {
+		return gen_line_plot_options(data);
 	}
-	if (tab_type === "MDG") {
-		return gen_plot_options_mw(data);
-	}
-	if (tab_type === "MW") {
-		return gen_plot_options_mw(data);
-	}
-	else {
-		alert("Table type " + tab_type + " not implemented.")
-	}	
 }
 
 function prep_options(data) {
@@ -69,7 +53,7 @@ function prep_options(data) {
 	}
 }
 
-function gen_plot_options_cat(data) {
+function gen_bar_plot_options(data) {
 	const { 
 		x2: x2,
 		x1: x1,
@@ -113,6 +97,7 @@ function gen_plot_options_cat(data) {
 		marginLeft: x1 === "y" ? 40 : 120,
         color: {
 			type: data.color_scale,
+			scheme: color_schemes[data.color_scale].get(data.choices.color_scheme),
             domain: color_order,
             legend: true
         },
@@ -128,7 +113,7 @@ function gen_plot_options_cat(data) {
 	return res
 }
 
-function gen_plot_options_mw(data) {
+function gen_line_plot_options(data) {
 	const { 
 		x2: x2,
 		x1: x1,
@@ -161,6 +146,7 @@ function gen_plot_options_mw(data) {
 		marginLeft: x2 === "x" ? 40 : 160,
 		color: {
 			type: data.color_scale,
+			scheme: color_schemes[data.color_scale].get(data.choices.color_scheme),
 			domain: color_order,
 			legend: true
 		},
@@ -188,3 +174,71 @@ const tooltip_fun = (x) => [
 	`col: ${x.ColTitle2 || ""}`, 
 	`val: ${x.Value.toFixed(1)}`,
 ].join("\n")
+
+
+// from here: 
+// https://observablehq.com/@observablehq/plot-scales#schemeo
+// and
+// https://observablehq.com/@observablehq/plot-scales#schemec
+
+const color_scheme_ordinal = new Map([
+	["Blues (sequential, single-hue)", "blues"],
+	["Greens (sequential, single-hue)", "greens"],
+	["Greys (sequential, single-hue)", "greys"],
+	["Purples (sequential, single-hue)", "purples"],
+	["Reds (sequential, single-hue)", "reds"],
+	["Oranges (sequential, single-hue)", "oranges"],
+	["Turbo (sequential, multi-hue)", "turbo"],
+	["Viridis (sequential, multi-hue)", "viridis"],
+	["Magma (sequential, multi-hue)", "magma"],
+	["Inferno (sequential, multi-hue)", "inferno"],
+	["Plasma (sequential, multi-hue)", "plasma"],
+	["Cividis (sequential, multi-hue)", "cividis"],
+	["Cubehelix (sequential, multi-hue)", "cubehelix"],
+	["Warm (sequential, multi-hue)", "warm"],
+	["Cool (sequential, multi-hue)", "cool"],
+	["BuGn (sequential, multi-hue)", "bugn"],
+	["BuPu (sequential, multi-hue)", "bupu"],
+	["GnBu (sequential, multi-hue)", "gnbu"],
+	["OrRd (sequential, multi-hue)", "orrd"],
+	["PuBuGn (sequential, multi-hue)", "pubugn"],
+	["PuBu (sequential, multi-hue)", "pubu"],
+	["PuRd (sequential, multi-hue)", "purd"],
+	["RdPu (sequential, multi-hue)", "rdpu"],
+	["YlGnBu (sequential, multi-hue)", "ylgnbu"],
+	["YlGn (sequential, multi-hue)", "ylgn"],
+	["YlOrBr (sequential, multi-hue)", "ylorbr"],
+	["YlOrRd (sequential, multi-hue)", "ylorrd"],
+	["BrBG (diverging)", "brbg"],
+	["PRGn (diverging)", "prgn"],
+	["PiYG (diverging)", "piyg"],
+	["PuOr (diverging)", "puor"],
+	["RdBu (diverging)", "rdbu"],
+	["RdGy (diverging)", "rdgy"],
+	["RdYlBu (diverging)", "rdylbu"],
+	["RdYlGn (diverging)", "rdylgn"],
+	["Spectral (diverging)", "spectral"],
+	["BuRd (diverging)", "burd"],
+	["BuYlRd (diverging)", "buylrd"],
+	// doesn't make sense here:
+	// ["Rainbow (cyclical)", "rainbow"],
+	// ["Sinebow (cyclical)", "sinebow"]
+])
+
+const color_scheme_discrete = new Map([
+	["Accent (categorical, 8 colors)", "accent"],
+	["Category10 (categorical, 10 colors)", "category10"],
+	["Dark2 (categorical, 8 colors)", "dark2"],
+	["Paired (categorical, 12 colors)", "paired"],
+	["Pastel1 (categorical, 9 colors)", "pastel1"],
+	["Pastel2 (categorical, 8 colors)", "pastel2"],
+	["Set1 (categorical, 9 colors)", "set1"],
+	["Set2 (categorical, 8 colors)", "set2"],
+	["Set3 (categorical, 12 colors)", "set3"],
+	["Tableau10 (categorical, 10 colors)", "tableau10"]
+])
+
+export const color_schemes = {
+	"ordinal": color_scheme_ordinal,
+	"categorical": color_scheme_discrete,
+}
