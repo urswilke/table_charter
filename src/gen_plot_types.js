@@ -97,7 +97,7 @@ function gen_bar_plot_options(data) {
 		marginLeft: x1 === "y" ? 40 : 120,
         color: {
 			type: data.color_scale,
-			scheme: color_schemes[data.color_scale].get(data.choices.color_scheme),
+			scheme: color_schemes[data.color_scale].get(data.color_scheme),
             domain: color_order,
             legend: true
         },
@@ -146,7 +146,7 @@ function gen_line_plot_options(data) {
 		marginLeft: x2 === "x" ? 40 : 160,
 		color: {
 			type: data.color_scale,
-			scheme: color_schemes[data.color_scale].get(data.choices.color_scheme),
+			scheme: color_schemes[data.color_scale].get(data.color_scheme),
 			domain: color_order,
 			legend: true
 		},

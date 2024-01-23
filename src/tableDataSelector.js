@@ -26,6 +26,7 @@ export class TableDataSelector extends LitElement {
 		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
 		// when it's reset in sel_question_data():
 		color_scale: { type: String },
+		color_scheme: { type: String },
 	};
 
 	// Initialization:
@@ -111,7 +112,7 @@ export class TableDataSelector extends LitElement {
 		} else {
 			this.color_scale = "categorical"
 		}
-		this.choices.color_scheme = this.color_scale === "categorical" ?
+		this.color_scheme = this.color_scale === "categorical" ?
 			"Tableau10 (categorical, 10 colors)" :
 			"Turbo (sequential, multi-hue)"
 		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
@@ -127,7 +128,7 @@ export class TableDataSelector extends LitElement {
 					plot_data: this.plot_data,
 					choices: this.choices,
 					color_scale: this.color_scale,
-					color_scheme: this.choices.color_scheme
+					color_scheme: this.color_scheme
 				}
 			},
 			bubbles: true,
@@ -179,13 +180,13 @@ export class TableDataSelector extends LitElement {
 	_on_colorscale_update(e) {
 		this.color_scale = e.detail.chosen_colorscale;
 		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
-		this.choices.color_scheme = this.color_scale === "categorical" ?
+		this.color_scheme = this.color_scale === "categorical" ?
 			"Tableau10 (categorical, 10 colors)" :
 			"Turbo (sequential, multi-hue)"
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
-		this.choices.color_scheme = e.detail.chosen_colorscheme;
+		this.color_scheme = e.detail.chosen_colorscheme;
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
@@ -251,7 +252,7 @@ export class TableDataSelector extends LitElement {
 						.chosen_colorscale=${this.color_scale}  
 						.colorscale_disabled=${this.choices.colorscale_disabled}
 						.all_colorschemes=${this.params.possible_color_schemes}	
-						.chosen_colorscheme=${this.choices.color_scheme}>
+						.chosen_colorscheme=${this.color_scheme}>
 					</colorscale-selector>
 					<span class="clear"></span>
 					<further-options-selector 	  					
