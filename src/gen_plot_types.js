@@ -239,6 +239,6 @@ const color_scheme_discrete = new Map([
 ])
 
 export const color_schemes = {
-	"linear": color_scheme_ordinal,
+	"ordinal": color_scheme_ordinal,
 	"categorical": color_scheme_discrete,
 }

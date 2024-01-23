@@ -56,9 +56,9 @@ export class TableDataSelector extends LitElement {
 		this.choices.tab_nos = this.params.tab_titles[0].TabNo
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
-		this.params.color_scale = ["categorical", "linear"];
+		this.params.color_scale = ["categorical", "ordinal"];
 		this.params.color_schemes = {
-			"linear": [...color_schemes.linear.keys()],
+			"ordinal": [...color_schemes.ordinal.keys()],
 			"categorical": [...color_schemes.categorical.keys()],
 		}
 		this.sel_question_data()
@@ -107,7 +107,7 @@ export class TableDataSelector extends LitElement {
 			n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & 
 			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
 		) {
-			this.color_scale = "linear"
+			this.color_scale = "ordinal"
 		} else {
 			this.color_scale = "categorical"
 		}
