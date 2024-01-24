@@ -9,7 +9,7 @@ import './selectors/num_type_selector.js'
 import './selectors/colorscale_selector.js'
 import './selectors/further_options_selector.js'
 
-import { color_schemes } from './gen_plot_types.js'
+import { all_color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
@@ -55,10 +55,6 @@ export class TableDataSelector extends LitElement {
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
-		this.params.color_schemes = {
-			"ordinal": [...color_schemes.ordinal.keys()],
-			"categorical": [...color_schemes.categorical.keys()],
-		}
 		this.sel_question_data()
 	}
 
@@ -112,7 +108,7 @@ export class TableDataSelector extends LitElement {
 		this.color_scheme = this.color_scale === "categorical" ?
 			"Tableau10 (categorical, 10 colors)" :
 			"Turbo (sequential, multi-hue)"
-		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
+		this.params.color_schemes = all_color_schemes[this.color_scale];
 
 		this.plot_data = this.rows_data
 	}
@@ -176,7 +172,7 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_colorscale_update(e) {
 		this.color_scale = e.detail.chosen_colorscale;
-		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
+		this.params.color_schemes = all_color_schemes[this.color_scale];
 		this.color_scheme = this.color_scale === "categorical" ?
 			"Tableau10 (categorical, 10 colors)" :
 			"Turbo (sequential, multi-hue)"
@@ -248,7 +244,7 @@ export class TableDataSelector extends LitElement {
 						.all_colorscales=${this.params.color_scale}	
 						.chosen_colorscale=${this.color_scale}  
 						.colorscale_disabled=${this.choices.colorscale_disabled}
-						.all_colorschemes=${this.params.possible_color_schemes}	
+						.all_colorschemes=${this.params.color_schemes}	
 						.chosen_colorscheme=${this.color_scheme}>
 					</colorscale-selector>
 					<span class="clear"></span>
