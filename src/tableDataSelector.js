@@ -213,14 +213,18 @@ export class TableDataSelector extends LitElement {
 							.all_questions=${this.params.title_table}>
 						</question-selector>
 					</div>
-					<multi-selector 		
-						.mainsel_text = ${"header"}
-						.subsel_text = ${"sub-header"}
-						.parent_string = ${"ColTitle1"}
-						.children_fun = ${(x) => x.ColTitle2 || x.ColTitle1}
-						@update-multi-select="${this._on_header_update}" 		
-						.prop_table=${this.params.header_table}>	   																
-					</multi-selector>
+					<div>
+						<label for="headers">Headers</label>
+						<multi-selector
+							id="headers" 		
+							.mainsel_text = ${"header"}
+							.subsel_text = ${"sub-header"}
+							.parent_string = ${"ColTitle1"}
+							.children_fun = ${(x) => x.ColTitle2 || x.ColTitle1}
+							@update-multi-select="${this._on_header_update}" 		
+							.prop_table=${this.params.header_table}>	   																
+						</multi-selector>
+					</div>
 					<!-- https://stackoverflow.com/a/2062264 -->
 					<span class="clear"></span>
 					<num_type-selector 		
@@ -229,24 +233,32 @@ export class TableDataSelector extends LitElement {
 						.chosen_num_type=${this.choices.row_type}>
 					</num_type-selector>
 					<span class="clear"></span>
-					<multi-selector 		
-						.mainsel_text = ${"row type(s)"}
-						.subsel_text = ${"row(s)"}
-						.parent_string = ${"RowContent"}
-						.children_fun = ${(x) => x.RowTitle1}
-						@update-multi-select="${this._on_rows_update}" 		
-						.prop_table=${this.params.row_table}>	   																
-					</multi-selector>
+					<div>
+						<label for="rows">Rows</label>
+						<multi-selector 
+							id="rows"		
+							.mainsel_text = ${"type(s)"}
+							.subsel_text = ${"row(s)"}
+							.parent_string = ${"RowContent"}
+							.children_fun = ${(x) => x.RowTitle1}
+							@update-multi-select="${this._on_rows_update}" 		
+							.prop_table=${this.params.row_table}>	   																
+						</multi-selector>
+					</div>
 					<span class="clear"></span>
-					<colorscale-selector 				
-						@update-colorscale="${this._on_colorscale_update}" 	
-						@update-colorscheme="${this._on_colorscheme_update}" 	
-						.all_colorscales=${this.params.color_scale}	
-						.chosen_colorscale=${this.color_scale}  
-						.colorscale_disabled=${this.choices.colorscale_disabled}
-						.all_colorschemes=${this.params.color_schemes}	
-						.chosen_colorscheme=${this.color_scheme}>
-					</colorscale-selector>
+					<div>
+						<label for="colors">Color</label>
+						<colorscale-selector 	
+							id="colors"			
+							@update-colorscale="${this._on_colorscale_update}" 	
+							@update-colorscheme="${this._on_colorscheme_update}" 	
+							.all_colorscales=${this.params.color_scale}	
+							.chosen_colorscale=${this.color_scale}  
+							.colorscale_disabled=${this.choices.colorscale_disabled}
+							.all_colorschemes=${this.params.color_schemes}	
+							.chosen_colorscheme=${this.color_scheme}>
+						</colorscale-selector>
+					</div>
 					<span class="clear"></span>
 					<further-options-selector 	  					
 						@update-xy="${this._on_xy_update}"
@@ -265,6 +277,15 @@ export class TableDataSelector extends LitElement {
 			span.clear { clear: left; display: block; }
 			option:checked {
 				background: red linear-gradient(#333,#333);
+			}
+			label {
+				display: block;
+			}
+			div {
+				padding: 8px;
+				margin: 20px 20px 20px 00px;
+				border-style: solid;
+				border-radius: 8px;
 			}
 		`
 	];
