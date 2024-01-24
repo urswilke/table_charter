@@ -127,7 +127,7 @@ export class TableDataSelector extends LitElement {
 			bubbles: true,
 			composed: true,
 		};
-
+		// setCookie(this.choices)
 		this.dispatchEvent(new CustomEvent('update-data', options));
 
 	}
@@ -273,3 +273,7 @@ export class TableDataSelector extends LitElement {
 
 window.customElements.define('table-data-selector', TableDataSelector)
 
+// function setCookie(val) {
+//     document.cookie = "params=" + JSON.stringify(val) + ";path=/";
+// 	console.log(document.cookie)
+// }
