@@ -47,11 +47,11 @@ export class TableDataSelector extends LitElement {
 		this.choices = {};
 		this.choices.xy = "x"
 		
-		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
+		this.params.title_table = distinct(this.data, ["TabNo", "TabTitle"]);
 		
 		this.params.header_table = gen_header_table(this.data)
-		this.choices.tab_titles = this.params.tab_titles[0].TabTitle
-		this.choices.tab_nos = this.params.tab_titles[0].TabNo
+		this.choices.title_table = this.params.title_table[0].TabTitle
+		this.choices.tab_nos = this.params.title_table[0].TabNo
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
@@ -139,7 +139,7 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_question_update(e) {
-		this.choices.tab_titles = this.params.tab_titles[e.detail.chosen_tab_no];
+		this.choices.title_table = this.params.title_table[e.detail.chosen_tab_no];
 		// for this to work properly, it needs TabNo in the data to be an ascending sequence of 1, 2, ..., N:
 		this.choices.tab_nos = e.detail.chosen_tab_no;
 		this.sel_question_data()
@@ -210,7 +210,7 @@ export class TableDataSelector extends LitElement {
 						<question-selector 					
 							@update-question="${this._on_question_update}" 		
 							.chosen_tab_no=${this.choices.tab_nos} 
-							.all_questions=${this.params.tab_titles}>
+							.all_questions=${this.params.title_table}>
 						</question-selector>
 					</div>
 					<multi-selector 		
