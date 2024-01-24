@@ -46,9 +46,6 @@ export class TableDataSelector extends LitElement {
 		this.params = {};
 		this.choices = {};
 		this.choices.xy = "x"
-		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
-		// this.params.tab_titles = [...new Set(this.data.map(d => ({TabNo: d.TabNo, TabTitle: d.TabTitle})))].map(d => d.TabTitle);
-		// this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
 		
 		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
 		
