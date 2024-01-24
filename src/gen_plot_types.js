@@ -94,7 +94,7 @@ function gen_bar_plot_options(data) {
   
 
     const res = {
-		marginLeft: x1 === "y" ? 40 : 120,
+		marginLeft: x1 === "y" ? 40 : 220,
         color: {
 			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
 			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
