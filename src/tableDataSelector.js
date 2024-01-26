@@ -9,7 +9,7 @@ import './selectors/num_type_selector.js'
 import './selectors/colorscale_selector.js'
 import './selectors/further_options_selector.js'
 
-import { color_schemes } from './gen_plot_types.js'
+import { all_color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import data from './example.json' assert {type: 'json'};
@@ -46,22 +46,15 @@ export class TableDataSelector extends LitElement {
 		this.params = {};
 		this.choices = {};
 		this.choices.xy = "x"
-		this.params.tab_indices = [...new Set(this.data.map((d) => d.TabNo))];
-		// this.params.tab_titles = [...new Set(this.data.map(d => ({TabNo: d.TabNo, TabTitle: d.TabTitle})))].map(d => d.TabTitle);
-		// this.params.tab_titles = [...new Set(this.data.map(d => d.TabTitle))];
 		
-		this.params.tab_titles = distinct(this.data, ["TabNo", "TabTitle"]);
+		this.params.title_table = distinct(this.data, ["TabNo", "TabTitle"]);
 		
 		this.params.header_table = gen_header_table(this.data)
-		this.choices.tab_titles = this.params.tab_titles[0].TabTitle
-		this.choices.tab_nos = this.params.tab_titles[0].TabNo
+		this.choices.title_table = this.params.title_table[0].TabTitle
+		this.choices.tab_nos = this.params.title_table[0].TabNo
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
-		this.params.color_schemes = {
-			"ordinal": [...color_schemes.ordinal.keys()],
-			"categorical": [...color_schemes.categorical.keys()],
-		}
 		this.sel_question_data()
 	}
 
@@ -115,7 +108,7 @@ export class TableDataSelector extends LitElement {
 		this.color_scheme = this.color_scale === "categorical" ?
 			"Tableau10 (categorical, 10 colors)" :
 			"Turbo (sequential, multi-hue)"
-		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
+		this.params.color_schemes = all_color_schemes[this.color_scale];
 
 		this.plot_data = this.rows_data
 	}
@@ -146,7 +139,7 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_question_update(e) {
-		this.choices.tab_titles = this.params.tab_titles[e.detail.chosen_tab_no];
+		this.choices.title_table = this.params.title_table[e.detail.chosen_tab_no];
 		// for this to work properly, it needs TabNo in the data to be an ascending sequence of 1, 2, ..., N:
 		this.choices.tab_nos = e.detail.chosen_tab_no;
 		this.sel_question_data()
@@ -179,7 +172,7 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_colorscale_update(e) {
 		this.color_scale = e.detail.chosen_colorscale;
-		this.params.possible_color_schemes = this.params.color_schemes[this.color_scale];
+		this.params.color_schemes = all_color_schemes[this.color_scale];
 		this.color_scheme = this.color_scale === "categorical" ?
 			"Tableau10 (categorical, 10 colors)" :
 			"Turbo (sequential, multi-hue)"
@@ -217,17 +210,21 @@ export class TableDataSelector extends LitElement {
 						<question-selector 					
 							@update-question="${this._on_question_update}" 		
 							.chosen_tab_no=${this.choices.tab_nos} 
-							.all_questions=${this.params.tab_titles}>
+							.all_questions=${this.params.title_table}>
 						</question-selector>
 					</div>
-					<multi-selector 		
-						.mainsel_text = ${"header"}
-						.subsel_text = ${"sub-header"}
-						.parent_string = ${"ColTitle1"}
-						.children_fun = ${(x) => x.ColTitle2 || x.ColTitle1}
-						@update-multi-select="${this._on_header_update}" 		
-						.prop_table=${this.params.header_table}>	   																
-					</multi-selector>
+					<div>
+						<label for="headers">Headers</label>
+						<multi-selector
+							id="headers" 		
+							.mainsel_text = ${"header"}
+							.subsel_text = ${"sub-header"}
+							.parent_string = ${"ColTitle1"}
+							.children_fun = ${(x) => x.ColTitle2 || x.ColTitle1}
+							@update-multi-select="${this._on_header_update}" 		
+							.prop_table=${this.params.header_table}>	   																
+						</multi-selector>
+					</div>
 					<!-- https://stackoverflow.com/a/2062264 -->
 					<span class="clear"></span>
 					<num_type-selector 		
@@ -236,24 +233,32 @@ export class TableDataSelector extends LitElement {
 						.chosen_num_type=${this.choices.row_type}>
 					</num_type-selector>
 					<span class="clear"></span>
-					<multi-selector 		
-						.mainsel_text = ${"row type(s)"}
-						.subsel_text = ${"row(s)"}
-						.parent_string = ${"RowContent"}
-						.children_fun = ${(x) => x.RowTitle1}
-						@update-multi-select="${this._on_rows_update}" 		
-						.prop_table=${this.params.row_table}>	   																
-					</multi-selector>
+					<div>
+						<label for="rows">Rows</label>
+						<multi-selector 
+							id="rows"		
+							.mainsel_text = ${"type(s)"}
+							.subsel_text = ${"row(s)"}
+							.parent_string = ${"RowContent"}
+							.children_fun = ${(x) => x.RowTitle1}
+							@update-multi-select="${this._on_rows_update}" 		
+							.prop_table=${this.params.row_table}>	   																
+						</multi-selector>
+					</div>
 					<span class="clear"></span>
-					<colorscale-selector 				
-						@update-colorscale="${this._on_colorscale_update}" 	
-						@update-colorscheme="${this._on_colorscheme_update}" 	
-						.all_colorscales=${this.params.color_scale}	
-						.chosen_colorscale=${this.color_scale}  
-						.colorscale_disabled=${this.choices.colorscale_disabled}
-						.all_colorschemes=${this.params.possible_color_schemes}	
-						.chosen_colorscheme=${this.color_scheme}>
-					</colorscale-selector>
+					<div>
+						<label for="colors">Color</label>
+						<colorscale-selector 	
+							id="colors"			
+							@update-colorscale="${this._on_colorscale_update}" 	
+							@update-colorscheme="${this._on_colorscheme_update}" 	
+							.all_colorscales=${this.params.color_scale}	
+							.chosen_colorscale=${this.color_scale}  
+							.colorscale_disabled=${this.choices.colorscale_disabled}
+							.all_colorschemes=${this.params.color_schemes}	
+							.chosen_colorscheme=${this.color_scheme}>
+						</colorscale-selector>
+					</div>
 					<span class="clear"></span>
 					<further-options-selector 	  					
 						@update-xy="${this._on_xy_update}"
@@ -272,6 +277,15 @@ export class TableDataSelector extends LitElement {
 			span.clear { clear: left; display: block; }
 			option:checked {
 				background: red linear-gradient(#333,#333);
+			}
+			label {
+				display: block;
+			}
+			div {
+				padding: 8px;
+				margin: 20px 20px 20px 00px;
+				border-style: solid;
+				border-radius: 8px;
 			}
 		`
 	];
