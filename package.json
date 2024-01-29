@@ -14,8 +14,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "inlined-build": "vite build --config vite.config.inlined.js",
-    "inlined-preview": "vite build --config vite.config.inlined.js && start ./dist/index.html"
+    "standalone-build": "vite build --config vite.config.standalone.js",
+    "standalone-preview": "vite build --config vite.config.standalone.js && start ./dist/index.html"
   },
   "dependencies": {
     "@observablehq/plot": "^0.6.13",
