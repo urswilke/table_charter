@@ -94,10 +94,10 @@ function gen_bar_plot_options(data) {
   
 
     const res = {
-		marginLeft: x1 === "y" ? 40 : 120,
+		marginLeft: x1 === "y" ? 40 : 220,
         color: {
-			type: data.color_scale,
-			scheme: color_schemes[data.color_scale].get(data.choices.color_scheme),
+			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
+			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
             domain: color_order,
             legend: true
         },
@@ -145,8 +145,8 @@ function gen_line_plot_options(data) {
 	const res = {
 		marginLeft: x2 === "x" ? 40 : 160,
 		color: {
-			type: data.color_scale,
-			scheme: color_schemes[data.color_scale].get(data.choices.color_scheme),
+			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
+			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
 			domain: color_order,
 			legend: true
 		},
@@ -238,7 +238,12 @@ const color_scheme_discrete = new Map([
 	["Tableau10 (categorical, 10 colors)", "tableau10"]
 ])
 
-export const color_schemes = {
+const color_schemes_maps = {
 	"ordinal": color_scheme_ordinal,
 	"categorical": color_scheme_discrete,
+}
+
+export const all_color_schemes = {
+	"ordinal": [...color_schemes_maps.ordinal.keys()],
+	"categorical": [...color_schemes_maps.categorical.keys()],
 }

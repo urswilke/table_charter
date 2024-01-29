@@ -99,11 +99,11 @@ export class MultiSelector extends LitElement {
 				background: red linear-gradient(#333,#333);
 			}
 			div.subselect {
-				float: left;
-				/* flex-direction: row; */
+				display:inline-block;
 			}
 			label {
-				display: block;
+				display:flex;
+				flex-direction:column;
 			}
 		`
 	];
