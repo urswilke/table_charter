@@ -13,7 +13,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "standalone-build": "vite build --config vite.config.standalone.js",
+    "standalone-preview": "vite build --config vite.config.standalone.js && start ./dist/index.html"
   },
   "dependencies": {
     "@observablehq/plot": "^0.6.13",
@@ -23,6 +25,8 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "devDependencies": {
-    "vite": "^4.5.2"
+    "terser": "^5.26.0",
+    "vite": "^4.5.2",
+    "vite-plugin-singlefile": "^0.13.5"
   }
 }
