@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@observablehq/plot": "^0.6.13",
+    "compress-json": "^3.0.0",
     "lit": "^3.1.1",
     "lodash": "^4.17.21",
     "tachyons": "^4.12.0",
