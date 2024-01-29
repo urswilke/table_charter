@@ -4,7 +4,12 @@ export default defineConfig({
     base: '/table_charter/',  
     plugins: [viteSingleFile()],
     build: {
-      minify: 'terser'
+      minify: 'terser',
+      // terserOptions: {
+      //   mangle: {
+      //     toplevel: true
+      //   }
+      // }
     },
     esbuild: {
         supported: {
