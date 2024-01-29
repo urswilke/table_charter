@@ -1,4 +1,5 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
+import { decompress } from 'compress-json'
 import { when } from 'lit/directives/when.js';
 
 import { xlsx_to_json_array, distinct, gen_header_table, gen_row_table, filter_sel_headers, filter_sel_rows, gen_plot_type_string } from './utils.js'
@@ -12,8 +13,9 @@ import './selectors/further_options_selector.js'
 import { all_color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
-import data from './example.json' assert {type: 'json'};
+import data_compressed from './example_compressed.json' assert {type: 'json'};
 
+const data = decompress(data_compressed)
 const inspect = true // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
