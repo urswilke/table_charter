@@ -82,7 +82,7 @@ export function filter_sel_rows(data, header_table) {
 }
 
 export function gen_plot_type_string(tab_sel_obj) {
-	let tab_type = tab_sel_obj.num_type_data[0].TabType;
+	let tab_type = tab_sel_obj.num_type_data[0].TabType.toUpperCase();
 	if (
 		tab_type === "CAT" ||
 		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
