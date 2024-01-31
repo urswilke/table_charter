@@ -82,12 +82,13 @@ function gen_bar_plot_options(data) {
 		order: color_order,
 		// tip: true,
 	}
+	const n_decimals = data.plot_data[0].RowDecimals;
 	const group_args2_text = {
 		...plot_opts,
-		text: (x) => (x.Value == 0 ? null : x.Value.toFixed(0)),
+		text: (x) => (x.Value == 0 ? null : x.Value.toFixed(n_decimals)),
 		z: row_lab_fun,
 		order: color_order,
-		title: tooltip_fun
+		title: tooltip_fun(n_decimals)
 	}
 	const bar_opts = group_(group_args1, group_args2_bar)
 	const text_opts = group_(group_args1, group_args2_text)
@@ -133,12 +134,13 @@ function gen_line_plot_options(data) {
 		stroke: row_lab_fun
 	}
 
+	const n_decimals = data.plot_data[0].RowDecimals;
 	let dot_opts = {
 		...line_opts,
 		fill: row_lab_fun,
 		stroke: "transparent",
 		r: 7,
-		title: tooltip_fun
+		title: tooltip_fun(n_decimals)
 	}
 
 	
@@ -162,18 +164,20 @@ function gen_line_plot_options(data) {
 	return res
 }
 
-const tooltip_fun = (x) => [
-	// `Q: ${x.TabTitle}`, 
-	`row1: ${x.RowTitle1}`, 
-	// only write row2 if differing from row1:
-	x.RowTitle1 === x.RowTitle2 ? 
-		null : 
-		`row2: ${x.RowTitle2}`, 
-	`rowval: ${x.RowValue}`,
-	`head: ${x.ColTitle1}`, 
-	`col: ${x.ColTitle2}`, 
-	`val: ${x.Value.toFixed(1)}`,
-].join("\n")
+function tooltip_fun(n_decimals) {
+	return (x) => [
+		// `Q: ${x.TabTitle}`, 
+		`row1: ${x.RowTitle1}`, 
+		// only write row2 if differing from row1:
+		x.RowTitle1 === x.RowTitle2 ? 
+			null : 
+			`row2: ${x.RowTitle2}`, 
+		`rowval: ${x.RowValue}`,
+		`head: ${x.ColTitle1}`, 
+		`col: ${x.ColTitle2}`, 
+		`val: ${x.Value.toFixed(n_decimals)}`,
+	].join("\n")
+}
 
 
 // from here: 
