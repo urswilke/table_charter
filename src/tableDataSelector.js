@@ -15,7 +15,7 @@ import sharedStyles from './components.css?inline';
 import data_compressed from './example_compressed.json' assert {type: 'json'};
 
 const data = prepare_data(data_compressed);
-const inspect = true // set to true for some console.log msgs
+const inspect = false // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
 
