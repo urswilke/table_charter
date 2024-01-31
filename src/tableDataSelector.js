@@ -98,8 +98,8 @@ export class TableDataSelector extends LitElement {
 			0
 		)
 		if (
-			df_row_tit_val.length >= 5 & 
-			n_numeric_rowtitles / df_row_tit_val.length >= 0.4 & 
+			// df_row_tit_val.length >= 5 & 
+			n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
 			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
 		) {
 			this.color_scale = "ordinal"
