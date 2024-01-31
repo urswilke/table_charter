@@ -31,7 +31,7 @@ export class QuestionSelector extends LitElement {
             <select id="question-selector" @change=${this._update_question} .value="${this.chosen_tab_no}">
                 ${this.all_questions.map(
                     (x) => html`
-                        <option value="${x.TabNo}">${x.TabTitle}</option>
+                        <option value="${x.i_tab}">${x.TabTitle}</option>
                     `
                 )}
             </select>

@@ -1,6 +1,7 @@
 import { css } from 'lit'
 import { chain, pick, uniqWith, isEqual } from 'lodash';
 import * as XLSX from "xlsx";
+import { decompress } from 'compress-json'
 
 export async function xlsx_to_json_array(e) {
     // from here: https://docs.sheetjs.com/docs/demos/local/file#file-api
@@ -62,7 +63,7 @@ export function gen_row_table(data) {
 
 export function filter_sel_headers(data, header_table) {
 	const arr_sel = header_table.filter(x => x.selected);
-	const col_fun2 = x => x.ColTitle2 || x.ColTitle1
+	const col_fun2 = x => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1
 	const col_fun1 = x => x.ColTitle1
 	const res = data.filter(x => 
 		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &
@@ -82,7 +83,7 @@ export function filter_sel_rows(data, header_table) {
 }
 
 export function gen_plot_type_string(tab_sel_obj) {
-	let tab_type = tab_sel_obj.num_type_data[0].TabType.toUpperCase();
+	let tab_type = tab_sel_obj.num_type_data[0].TabType;
 	if (
 		tab_type === "CAT" ||
 		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
@@ -104,4 +105,18 @@ export function gen_plot_type_string(tab_sel_obj) {
 		alert("Table type " + tab_type + " not implemented.")
 	}	
 	
+}
+
+export function prepare_data(data_compressed) {
+	const data = decompress(data_compressed)
+		.filter(x => ["Detail", "MStatistics", "Summary"].includes(x.RowContent));
+	const unique_combis = distinct(data, ["QuestNo", "TabNo"])
+		.map(x => x.QuestNo + "-" + x.TabNo);
+	
+	return data.map(x => ({
+		...x,
+		// TODO: remove? (because it will be already done in future json data...)
+		TabType: x.TabType.toUpperCase(),
+		i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo)
+	}));
 }
