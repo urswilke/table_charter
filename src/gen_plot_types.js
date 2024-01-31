@@ -6,12 +6,19 @@ export function gen_plot_options(data) {
 	}
 	data["op"] = prep_options(data)
 	let plot_type = data.choices.plot_type;
+
+	var res;
 	if (plot_type === "bar") {
-		return gen_bar_plot_options(data);
+		res = gen_bar_plot_options(data);
 	}
 	if (plot_type === "line") {
-		return gen_line_plot_options(data);
+		res = gen_line_plot_options(data);
 	}
+	
+	res.style = {fontSize: "16px"}
+
+	res.color.className = "large-font"
+	return res
 }
 
 function prep_options(data) {
@@ -95,7 +102,8 @@ function gen_bar_plot_options(data) {
   
 
     const res = {
-		marginLeft: x1 === "y" ? 40 : 220,
+		marginLeft: x1 === "y" ? 40 : 260,
+		marginBottom: 60,
         color: {
 			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
 			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
@@ -146,6 +154,7 @@ function gen_line_plot_options(data) {
 	
 	const res = {
 		marginLeft: x2 === "x" ? 40 : 160,
+		marginBottom: 60,
 		color: {
 			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
 			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
