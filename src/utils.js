@@ -83,7 +83,7 @@ export function filter_sel_rows(data, header_table) {
 }
 
 export function gen_plot_type_string(tab_sel_obj) {
-	let tab_type = tab_sel_obj.num_type_data[0].TabType.toUpperCase();
+	let tab_type = tab_sel_obj.num_type_data[0].TabType;
 	if (
 		tab_type === "CAT" ||
 		// mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:
@@ -114,6 +114,8 @@ export function prepare_data(data_compressed) {
 	
 	return data.map(x => ({
 		...x,
+		// TODO: remove? (because it will be already done in future json data...)
+		TabType: x.TabType.toUpperCase(),
 		i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo)
 	}));
 }
