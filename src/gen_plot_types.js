@@ -14,6 +14,11 @@ export function gen_plot_options(data) {
 	if (plot_type === "line") {
 		res = gen_line_plot_options(data);
 	}
+
+	// TODO: adjust size according to size of containing element
+	// cf https://stackoverflow.com/a/66760690
+	res.width = 1000
+	res.height = 600
 	
 	res.style = {fontSize: "16px"}
 
