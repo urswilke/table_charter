@@ -1,8 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
-import { decompress } from 'compress-json'
 import { when } from 'lit/directives/when.js';
 
-import { xlsx_to_json_array, distinct, gen_header_table, gen_row_table, filter_sel_headers, filter_sel_rows, gen_plot_type_string } from './utils.js'
+import { xlsx_to_json_array, distinct, gen_header_table, gen_row_table, filter_sel_headers, filter_sel_rows, gen_plot_type_string, prepare_data } from './utils.js'
 
 import './selectors/question_selector.js'
 import './selectors/multi_selector.js'
@@ -15,7 +14,7 @@ import { all_color_schemes } from './gen_plot_types.js'
 import sharedStyles from './components.css?inline';
 import data_compressed from './example_compressed.json' assert {type: 'json'};
 
-const data = decompress(data_compressed)
+const data = prepare_data(data_compressed);
 const inspect = true // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
@@ -49,11 +48,11 @@ export class TableDataSelector extends LitElement {
 		this.choices = {};
 		this.choices.xy = "x"
 		
-		this.params.title_table = distinct(this.data, ["TabNo", "TabTitle"]);
+		this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
 		
 		this.params.header_table = gen_header_table(this.data)
 		this.choices.title_table = this.params.title_table[0].TabTitle
-		this.choices.tab_nos = this.params.title_table[0].TabNo
+		this.choices.tab_nos = this.params.title_table[0].i_tab
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
@@ -63,7 +62,7 @@ export class TableDataSelector extends LitElement {
 	// Helper:
 	sel_question_data() {
 		this.question_data = this.data
-			.filter(x => Number(x.TabNo) == this.choices.tab_nos);
+			.filter(x => x.i_tab == this.choices.tab_nos);
 		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
 		this.choices.colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType) 
 		if (this.choices.colorscale_disabled) {
@@ -142,7 +141,7 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_question_update(e) {
 		this.choices.title_table = this.params.title_table[e.detail.chosen_tab_no];
-		// for this to work properly, it needs TabNo in the data to be an ascending sequence of 1, 2, ..., N:
+		// for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
 		this.choices.tab_nos = e.detail.chosen_tab_no;
 		this.sel_question_data()
 		this._update_plot_data()

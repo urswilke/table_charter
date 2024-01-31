@@ -1,6 +1,7 @@
 import { css } from 'lit'
 import { chain, pick, uniqWith, isEqual } from 'lodash';
 import * as XLSX from "xlsx";
+import { decompress } from 'compress-json'
 
 export async function xlsx_to_json_array(e) {
     // from here: https://docs.sheetjs.com/docs/demos/local/file#file-api
@@ -104,4 +105,15 @@ export function gen_plot_type_string(tab_sel_obj) {
 		alert("Table type " + tab_type + " not implemented.")
 	}	
 	
+}
+
+export function prepare_data(data_compressed) {
+	const data = decompress(data_compressed);
+	const unique_combis = distinct(data, ["QuestNo", "TabNo"])
+		.map(x => x.QuestNo + "-" + x.TabNo);
+	
+	return data.map(x => ({
+		...x,
+		i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo)
+	}));
 }
