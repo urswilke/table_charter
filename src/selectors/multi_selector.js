@@ -8,6 +8,7 @@ export class MultiSelector extends LitElement {
 		// parent_string: { type: String },
 		// parent_fun: { type: Function },
 		// children_fun: { type: Function }
+		collapsed_view: { type: Boolean },
 	};
     constructor() {
         super()
@@ -78,7 +79,7 @@ export class MultiSelector extends LitElement {
 				`)}
             </select>
 		</div>
-		<div class= "subselect">
+		<div class= ${"subselect" + (!this.collapsed_view ? "" : " hide")}>
 			<label for="subsel">${this.subsel_text}</label>
             <select id="children-selector" class="subsel" multiple @change=${this._update_children}>
                 ${this.prop_table.map((x) => html`
@@ -98,12 +99,15 @@ export class MultiSelector extends LitElement {
 			option:checked {
 				background: red linear-gradient(#333,#333);
 			}
-			div.subselect {
+			.subselect {
 				display:inline-block;
 			}
 			label {
 				display:flex;
 				flex-direction:column;
+			}
+			.hide {
+				display: none
 			}
 		`
 	];

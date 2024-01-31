@@ -28,6 +28,7 @@ export class TableDataSelector extends LitElement {
 		// when it's reset in sel_question_data():
 		color_scale: { type: String },
 		color_scheme: { type: String },
+		collapsed_view: { type: Boolean },
 	};
 
 	// Initialization:
@@ -56,6 +57,7 @@ export class TableDataSelector extends LitElement {
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
+		this.collapsed_view = true;
 		this.sel_question_data()
 	}
 
@@ -191,6 +193,9 @@ export class TableDataSelector extends LitElement {
 		this.choices.plot_type = e.detail.plot_type;
 		this._update_plot_data()
 	}
+	_on_expand() {
+		this.collapsed_view = !this.collapsed_view
+	}
 
 	render() {
 
@@ -212,6 +217,11 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
+					<button
+						@click="${this._on_expand}"
+					>${this.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
+					</button>
+
 					<div>
 						<question-selector 					
 							@update-question="${this._on_question_update}" 		
@@ -227,7 +237,8 @@ export class TableDataSelector extends LitElement {
 							.subsel_text = ${"sub-header"}
 							.parent_string = ${"ColTitle1"}
 							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
-							@update-multi-select="${this._on_header_update}" 		
+							@update-multi-select="${this._on_header_update}"
+							.collapsed_view = "${this.collapsed_view}"		
 							.prop_table=${this.params.header_table}>	   																
 						</multi-selector>
 					</div>
@@ -248,11 +259,12 @@ export class TableDataSelector extends LitElement {
 							.parent_string = ${"RowContent"}
 							.children_fun = ${(x) => x.RowTitle1}
 							@update-multi-select="${this._on_rows_update}" 		
+							.collapsed_view = "${this.collapsed_view}"		
 							.prop_table=${this.params.row_table}>	   																
 						</multi-selector>
 					</div>
 					<span class="clear"></span>
-					<div>
+					<div class=${!this.collapsed_view ? "" : "hide"}>
 						<label for="colors">Color</label>
 						<colorscale-selector 	
 							id="colors"			
@@ -292,6 +304,9 @@ export class TableDataSelector extends LitElement {
 				margin: 20px 20px 20px 00px;
 				border-style: solid;
 				border-radius: 8px;
+			}
+			.hide {
+				display: none
 			}
 		`
 	];
