@@ -5,16 +5,11 @@ import { buttonStyles, distinct } from '../utils.js'
 export class MultiSelector extends LitElement {
     static properties = {
 		prop_table: { type: Array },
-		// parent_string: { type: String },
-		// parent_fun: { type: Function },
-		// children_fun: { type: Function }
 		collapsed_view: { type: Boolean },
 	};
     constructor() {
         super()
-        // this.parent_string = "ColTitle1"
         this.parent_fun = (x) => x[this.parent_string]
-        // this.children_fun = (x) => x.ColTitle2 || x.ColTitle1
     }
 
 	get _chosen_parents() {
@@ -95,6 +90,7 @@ export class MultiSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		buttonStyles,
+		// TODO: use different color if only part of the parents are checked...!
 		css`
 			option:checked {
 				background: red linear-gradient(#333,#333);
