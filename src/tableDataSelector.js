@@ -226,7 +226,7 @@ export class TableDataSelector extends LitElement {
 							.mainsel_text = ${"header"}
 							.subsel_text = ${"sub-header"}
 							.parent_string = ${"ColTitle1"}
-							.children_fun = ${(x) => x.ColTitle2 || x.ColTitle1}
+							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
 							@update-multi-select="${this._on_header_update}" 		
 							.prop_table=${this.params.header_table}>	   																
 						</multi-selector>

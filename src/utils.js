@@ -63,7 +63,7 @@ export function gen_row_table(data) {
 
 export function filter_sel_headers(data, header_table) {
 	const arr_sel = header_table.filter(x => x.selected);
-	const col_fun2 = x => x.ColTitle2 || x.ColTitle1
+	const col_fun2 = x => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1
 	const col_fun1 = x => x.ColTitle1
 	const res = data.filter(x => 
 		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &

@@ -171,7 +171,7 @@ const tooltip_fun = (x) => [
 		`row2: ${x.RowTitle2}`, 
 	`rowval: ${x.RowValue}`,
 	`head: ${x.ColTitle1}`, 
-	`col: ${x.ColTitle2 || ""}`, 
+	`col: ${x.ColTitle2}`, 
 	`val: ${x.Value.toFixed(1)}`,
 ].join("\n")
 
