@@ -151,6 +151,7 @@ function gen_line_plot_options(data) {
 	let dot_opts = {
 		...line_opts,
 		fill: row_lab_fun,
+		symbol: row_lab_fun,
 		stroke: "transparent",
 		r: 7,
 		title: tooltip_fun(n_decimals)
@@ -164,8 +165,8 @@ function gen_line_plot_options(data) {
 			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
 			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
 			domain: color_order,
-			legend: true
 		},
+		symbol: {legend: true},
 		marks: [
 			Plot.lineY(data.plot_data, line_opts),
 			Plot.dot(data.plot_data, dot_opts),
