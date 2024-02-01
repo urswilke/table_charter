@@ -109,8 +109,8 @@ export class TableDataSelector extends LitElement {
 			this.color_scale = "categorical"
 		}
 		this.color_scheme = this.color_scale === "categorical" ?
-			"Tableau10 (categorical, 10 colors)" :
-			"Turbo (sequential, multi-hue)"
+			"Tableau10" :
+			"Turbo"
 		this.params.color_schemes = all_color_schemes[this.color_scale];
 
 		this.plot_data = this.rows_data
@@ -304,8 +304,8 @@ export class TableDataSelector extends LitElement {
 			label {
                 background: #5e677b;
 				display: block;
-				border-top-right-radius: 5px;
-				border-top-left-radius: 5px;
+				border-top-right-radius: 6px;
+				border-top-left-radius: 6px;
 				padding: 5px;
 				padding-left: 15px;
 			}

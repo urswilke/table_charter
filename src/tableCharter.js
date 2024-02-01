@@ -58,6 +58,7 @@ export class TableCharter extends LitElement {
                 padding: 5px;
                 font-size: 20px;
 				height: 60px;
+                z-index: 2;
             }
             img {
                 float: right;
@@ -70,7 +71,7 @@ export class TableCharter extends LitElement {
                 margin: 0;
                 position:absolute;
                 bottom:0;
-                padding-top: 2px;
+                padding: 10px;
                 /* vertical-align: middle; */
                 text-align: center;
                 background: #2d3036;
@@ -80,16 +81,16 @@ export class TableCharter extends LitElement {
                 position:absolute;
                 width:100%;
                 top:60px;
-                bottom:40px;
-                overflow-y:auto;
+                bottom:30px;
+                overflow: auto;
             }
 
 
             .column1 {
                 float: left;
                 width: 20%;
-                padding: 10px;
-                overflow-x:auto;
+                padding: 20px;
+                padding-top: 30px;
             }
             .column2 {
                 float: left;
