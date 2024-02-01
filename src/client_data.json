@@ -1,3 +1,5 @@
 {
-    "project_name": "your company name"
+    "client_name": "your company name",
+    "client_logo": "your company logo url",
+    "project_name": "your project name"
 }

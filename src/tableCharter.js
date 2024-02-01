@@ -24,7 +24,7 @@ export class TableCharter extends LitElement {
 	render() {
 		return html`
             <div class="header">
-            <img src="header_logo.png" alt="logo" />
+            <img src=${client_data.client_logo} alt=${client_data.client_name} />
             <div>
                 <p>${client_data.project_name + " - " + date}</p>
             </div>
