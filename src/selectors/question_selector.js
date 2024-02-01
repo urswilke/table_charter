@@ -27,7 +27,6 @@ export class QuestionSelector extends LitElement {
     render() {
         return html`
         <div class="parent">
-            <label>question</label>
             <select id="question-selector" @change=${this._update_question} .value="${this.chosen_tab_no}">
                 ${this.all_questions.map(
                     (x) => html`
