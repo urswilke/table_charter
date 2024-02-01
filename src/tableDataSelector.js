@@ -218,6 +218,7 @@ export class TableDataSelector extends LitElement {
 				() => html`<div></div>`,
 				() => html`
 				<div>
+					<label>Settings</label>
 					<num_type-selector
 						class="show_in_same_line" 		
 						@update-num_type="${this._on_num_type_update}"
@@ -236,8 +237,8 @@ export class TableDataSelector extends LitElement {
 					</further-options-selector>
 					<span class="clear"></span>
 				</div>
-
 					<div>
+						<label>Question</label>
 						<question-selector 					
 							@update-question="${this._on_question_update}" 		
 							.chosen_tab_no=${this.choices.tab_nos} 
@@ -302,10 +303,15 @@ export class TableDataSelector extends LitElement {
 				display:inline-block;
 			}
 			label {
+                background: #5e677b;
 				display: block;
+				border-top-right-radius: 5px;
+				border-top-left-radius: 5px;
+				padding: 5px;
+				padding-left: 15px;
 			}
 			div {
-				padding: 8px;
+				/* padding: 8px; */
 				margin: 20px 20px 20px 00px;
 				border-style: solid;
 				border-radius: 8px;
