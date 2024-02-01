@@ -66,7 +66,12 @@ export class MultiSelector extends LitElement {
         return html`
 		<div class="parent">
         <div class= "subselect">
-			<label for="mainsel">${this.mainsel_text}</label>
+			<label 
+				for="mainsel" 
+				class= ${(!this.collapsed_view ? "" : " hide")}
+			>
+				${this.mainsel_text}
+			</label>
             <select id="parents-selector" class="mainsel" multiple @change=${this._update_parents}>
                 ${arr_selected.map((x) => html`
 					<option .selected=${x.selected}>
