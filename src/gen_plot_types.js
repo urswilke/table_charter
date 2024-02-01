@@ -100,6 +100,7 @@ function gen_bar_plot_options(data) {
 		text: (x) => (x.Value == 0 ? null : x.Value.toFixed(n_decimals)),
 		z: row_lab_fun,
 		order: color_order,
+		title: tooltip_fun(n_decimals)
 	}
 	const bar_opts = group_(group_args1, group_args2_bar)
 	const text_opts = group_(group_args1, group_args2_text)
