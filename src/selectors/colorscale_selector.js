@@ -44,6 +44,7 @@ export class ColorscaleSelector extends LitElement {
 
     render() {
         return html`
+        <div class="parent">
         <div class= "subselect">
             <label for="colorscale-selector">scale</label>
             <select id="colorscale-selector" @change=${this._update_colorscale} ?disabled=${this.colorscale_disabled}>
@@ -64,6 +65,7 @@ export class ColorscaleSelector extends LitElement {
                 `)}
             </select>
         </div>
+        </div>
         `;
     }
 
@@ -75,6 +77,10 @@ export class ColorscaleSelector extends LitElement {
 			}
 			label {
 				display: block;
+				padding-left: 7px;
+			}
+			.parent  *  {
+				margin: 3px;
 			}
 	`
 	];

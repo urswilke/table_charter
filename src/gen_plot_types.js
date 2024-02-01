@@ -88,13 +88,13 @@ function gen_bar_plot_options(data) {
 	const group_args1 = {text: "first"}
 	group_args1[x1] = "sum"
 	// const group_args2 = {...group_args1, text: "first"}
+	const n_decimals = data.plot_data[0].RowDecimals;
 	const group_args2_bar = {
 		...plot_opts,
 		fill: row_lab_fun,
 		order: color_order,
-		// tip: true,
+		title: tooltip_fun(n_decimals)
 	}
-	const n_decimals = data.plot_data[0].RowDecimals;
 	const group_args2_text = {
 		...plot_opts,
 		text: (x) => (x.Value == 0 ? null : x.Value.toFixed(n_decimals)),
@@ -104,7 +104,6 @@ function gen_bar_plot_options(data) {
 	}
 	const bar_opts = group_(group_args1, group_args2_bar)
 	const text_opts = group_(group_args1, group_args2_text)
-  
 
     const res = {
 		marginLeft: x1 === "y" ? 40 : 260,
@@ -118,8 +117,9 @@ function gen_bar_plot_options(data) {
         marks: [
             bar_(data.plot_data, bar_opts),
 			// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
-            text_(data.plot_data, stack_(text_opts)),
-			// x1 === "y" ? Plot.axisX({textAnchor: "start"}) : null
+            data.color_scale === "ordinal" ? null : text_(data.plot_data, stack_(text_opts)),
+            // only show if there 10 different color values at max...:
+			// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
         ]
     };
     res[x2] = x2_opts

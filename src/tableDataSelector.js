@@ -217,12 +217,27 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
+				<div class="parent">
+					<label>Settings</label>
+					<num_type-selector
+						class="show_in_same_line" 		
+						@update-num_type="${this._on_num_type_update}"
+						.all_num_types=${this.params.row_type}
+						.chosen_num_type=${this.choices.row_type}>
+					</num_type-selector>
 					<button
-						@click="${this._on_expand}"
-					>${this.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
+						@click="${this._on_expand}">
+						${this.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
 					</button>
-
+					<further-options-selector
+						@update-xy="${this._on_xy_update}"
+						@update-plot_type="${this._on_plot_type_update}"
+						.xy=${this.choices.xy}
+						.plot_type=${this.choices.plot_type}>
+					</further-options-selector>
+				</div>
 					<div>
+						<label>Question</label>
 						<question-selector 					
 							@update-question="${this._on_question_update}" 		
 							.chosen_tab_no=${this.choices.tab_nos} 
@@ -243,12 +258,6 @@ export class TableDataSelector extends LitElement {
 						</multi-selector>
 					</div>
 					<!-- https://stackoverflow.com/a/2062264 -->
-					<span class="clear"></span>
-					<num_type-selector 		
-						@update-num_type="${this._on_num_type_update}"
-						.all_num_types=${this.params.row_type}
-						.chosen_num_type=${this.choices.row_type}>
-					</num_type-selector>
 					<span class="clear"></span>
 					<div>
 						<label for="rows">Rows</label>
@@ -277,13 +286,6 @@ export class TableDataSelector extends LitElement {
 							.chosen_colorscheme=${this.color_scheme}>
 						</colorscale-selector>
 					</div>
-					<span class="clear"></span>
-					<further-options-selector 	  					
-						@update-xy="${this._on_xy_update}"
-						@update-plot_type="${this._on_plot_type_update}"
-						.xy=${this.choices.xy}
-						.plot_type=${this.choices.plot_type}>
-					</further-options-selector>
 				`
 			)}
 		`;
@@ -296,18 +298,31 @@ export class TableDataSelector extends LitElement {
 			option:checked {
 				background: red linear-gradient(#333,#333);
 			}
+			.show_in_same_line {
+				display:inline-block;
+			}
 			label {
+                background: #5e677b;
 				display: block;
+				border-top-right-radius: 5px;
+				border-top-left-radius: 5px;
+				padding: 5px;
+				padding-left: 15px;
 			}
 			div {
-				padding: 8px;
-				margin: 20px 20px 20px 00px;
+				/* padding: 8px; */
+				margin-left: 10px;
+				margin-top: 10px;
 				border-style: solid;
 				border-radius: 8px;
 			}
 			.hide {
 				display: none
 			}
+			.parent  * + * {
+				margin: 3px;
+			}
+
 		`
 	];
 
