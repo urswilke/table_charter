@@ -96,7 +96,7 @@ export class TableDataSelector extends LitElement {
 		
 		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowValue"])
 		const n_numeric_rowtitles = df_row_tit_val.reduce(
-			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^\d+/))),
+			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^-?\d+/))),
 			0
 		)
 		if (

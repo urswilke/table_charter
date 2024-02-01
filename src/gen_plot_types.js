@@ -194,6 +194,7 @@ function tooltip_fun(n_decimals) {
 		x.Value === undefined ?
 			null :
 			`value: ${x.Value.toFixed(n_decimals)}`,
+		`N: ${x.ColValidCases.toFixed(0)}`
 	].join("\n")
 }
 
