@@ -97,7 +97,7 @@ function gen_bar_plot_options(data) {
 	}
 	const group_args2_text = {
 		...plot_opts,
-		text: (x) => (x.Value == 0 ? null : x.Value.toFixed(n_decimals)),
+		text: (x) => ((x.Value === undefined || x.Value == 0) ? null : x.Value.toFixed(n_decimals)),
 		z: row_lab_fun,
 		order: color_order,
 		title: tooltip_fun(n_decimals)
