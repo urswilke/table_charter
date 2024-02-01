@@ -95,6 +95,15 @@ export class MultiSelector extends LitElement {
 			option:checked {
 				background: red linear-gradient(#333,#333);
 			}
+			option {
+				text-overflow:ellipsis;
+			}
+			select {
+				width:100%; 
+				overflow:hidden; 
+			    white-space:nowrap;
+				text-overflow:ellipsis;
+			}
 			.subselect {
 				display:inline-block;
 			}
