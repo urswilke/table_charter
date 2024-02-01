@@ -24,7 +24,7 @@ export class TableCharter extends LitElement {
 	render() {
 		return html`
             <div class="header">
-            <img src=${client_data.client_logo} alt=${client_data.client_name} />
+            <img src=${logo} alt=${client_data.client_name} />
             <div>
                 <p>${client_data.project_name + " - " + date}</p>
             </div>
@@ -115,4 +115,7 @@ const date = new Intl.DateTimeFormat('de', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
-  }).format((new Date()))
+}).format((new Date()))
+const logo = client_data.client_logo_base64 !== "" ?
+    "data:image/png;base64, " + client_data.client_logo_base64 : 
+    client_data.client_logo_url 
