@@ -181,15 +181,19 @@ function gen_line_plot_options(data) {
 function tooltip_fun(n_decimals) {
 	return (x) => [
 		// `Q: ${x.TabTitle}`, 
-		`row1: ${x.RowTitle1}`, 
+		`row: ${x.RowTitle1}`, 
 		// only write row2 if differing from row1:
 		x.RowTitle1 === x.RowTitle2 ? 
 			null : 
 			`row2: ${x.RowTitle2}`, 
-		`rowval: ${x.RowValue}`,
-		`head: ${x.ColTitle1}`, 
-		`col: ${x.ColTitle2}`, 
-		`val: ${x.Value.toFixed(n_decimals)}`,
+		`row value: ${x.RowValue}`,
+		`header: ${x.ColTitle1}`, 
+		`column: ${x.ColTitle2}`, 
+		// if an MW value is not defined, 
+		// it would lead to an error, for a line plot without this check:
+		x.Value === undefined ?
+			null :
+			`value: ${x.Value.toFixed(n_decimals)}`,
 	].join("\n")
 }
 
