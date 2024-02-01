@@ -93,10 +93,10 @@ export function gen_plot_type_string(tab_sel_obj) {
 		return "bar";
 	}
 	if (tab_type === "MCG") {
-		return "line";
+		return "bar";
 	}
 	if (tab_type === "MDG") {
-		return "line";
+		return "bar";
 	}
 	if (tab_type === "MW") {
 		return "line";
