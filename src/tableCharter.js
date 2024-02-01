@@ -110,8 +110,6 @@ export class TableCharter extends LitElement {
 }
 
 window.customElements.define('table-charter', TableCharter)
-const client_name = "Hiestermann & Frömchen GmbH"
-const project_name = "MCS Hybride Fuehrung"
 
 const date = new Intl.DateTimeFormat('de', {
     year: 'numeric',
