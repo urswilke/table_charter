@@ -189,7 +189,11 @@ function tooltip_fun(n_decimals) {
 		`row value: ${x.RowValue}`,
 		`header: ${x.ColTitle1}`, 
 		`column: ${x.ColTitle2}`, 
-		`value: ${x.Value.toFixed(n_decimals)}`,
+		// if an MW value is not defined, 
+		// it would lead to an error, for a line plot without this check:
+		x.Value === undefined ?
+			null :
+			`value: ${x.Value.toFixed(n_decimals)}`,
 	].join("\n")
 }
 
