@@ -217,7 +217,7 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
-				<div>
+				<div class="parent">
 					<label>Settings</label>
 					<num_type-selector
 						class="show_in_same_line" 		
@@ -229,13 +229,12 @@ export class TableDataSelector extends LitElement {
 						@click="${this._on_expand}">
 						${this.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
 					</button>
-					<further-options-selector 	  					
+					<further-options-selector
 						@update-xy="${this._on_xy_update}"
 						@update-plot_type="${this._on_plot_type_update}"
 						.xy=${this.choices.xy}
 						.plot_type=${this.choices.plot_type}>
 					</further-options-selector>
-					<span class="clear"></span>
 				</div>
 					<div>
 						<label>Question</label>
@@ -312,13 +311,18 @@ export class TableDataSelector extends LitElement {
 			}
 			div {
 				/* padding: 8px; */
-				margin: 20px 20px 20px 00px;
+				margin-left: 10px;
+				margin-top: 10px;
 				border-style: solid;
 				border-radius: 8px;
 			}
 			.hide {
 				display: none
 			}
+			.parent  * + * {
+				margin: 3px;
+			}
+
 		`
 	];
 

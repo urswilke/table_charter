@@ -64,6 +64,7 @@ export class MultiSelector extends LitElement {
 				selected: obj[i].length === 1 && obj[i][0].selected
 			}));
         return html`
+		<div class="parent">
         <div class= "subselect">
 			<label for="mainsel">${this.mainsel_text}</label>
             <select id="parents-selector" class="mainsel" multiple @change=${this._update_parents}>
@@ -84,6 +85,7 @@ export class MultiSelector extends LitElement {
 				`)}
             </select>
         </div>
+		</div>
         `;
     }
 
@@ -100,16 +102,20 @@ export class MultiSelector extends LitElement {
 			}
 			select {
 				width:100%; 
-				overflow:hidden; 
+				/* overflow:hidden;  */
 			    white-space:nowrap;
 				text-overflow:ellipsis;
 			}
 			.subselect {
 				display:inline-block;
 			}
+			.parent  *  {
+				margin: 3px;
+			}
 			label {
 				display:flex;
 				flex-direction:column;
+				padding-left: 7px;
 			}
 			.hide {
 				display: none

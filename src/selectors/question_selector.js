@@ -26,8 +26,8 @@ export class QuestionSelector extends LitElement {
 
     render() {
         return html`
-        <label>question</label>
-        <div>
+        <div class="parent">
+            <label>question</label>
             <select id="question-selector" @change=${this._update_question} .value="${this.chosen_tab_no}">
                 ${this.all_questions.map(
                     (x) => html`
@@ -43,8 +43,19 @@ export class QuestionSelector extends LitElement {
 		unsafeCSS(sharedStyles),
 		css`
             select {
-                max-width: 100%;
+				width:98%; 
+				overflow:hidden; 
+				text-overflow:ellipsis;
+                padding-right: 10px;
             }
+			label {
+				display:flex;
+				flex-direction:column;
+				padding-left: 7px;
+			}
+			.parent  *  {
+				margin: 3px;
+			}
         `
 	];
 }

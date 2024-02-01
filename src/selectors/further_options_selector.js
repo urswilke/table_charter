@@ -34,7 +34,7 @@ export class FurtherOptionsSelector extends LitElement {
 
     render() {
         return html`
-        <div>
+        <div class="parent">
             <button @click=${this._update_xy}>Flip x & y axis</button>
             <button @click=${this._update_plot_type}>${this.plot_type + " chart"}</button>
         </div>
@@ -46,6 +46,9 @@ export class FurtherOptionsSelector extends LitElement {
 		css`
 		option:checked {
 			background: red linear-gradient(#333,#333);
+		}
+		.parent  *  {
+			margin: 3px;
 		}
 	`
 	];
