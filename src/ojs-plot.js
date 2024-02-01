@@ -41,7 +41,7 @@ export class OJSPlot extends LitElement {
 		return when(this.chartOptions === null,
 			() => html`<div></div>`,
 			() => html`<div>
-			<h4 class="primary multi-line-header">${this.chartTitle}</h4>
+			<h2 class="primary multi-line-header">${this.chartTitle}</h2>
 			${renderedPlot}
 			</div>`
 		)
@@ -72,6 +72,14 @@ export class OJSPlot extends LitElement {
 			}
 			:host[dark] svg {
 				background: var(--dark-plot-background)
+			}
+			.large-font-ramp {
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+			.large-font-swatches {
+				font-size: 16px;
+				margin-bottom: 20px;
 			}
 		`
 	];
