@@ -194,7 +194,12 @@ function tooltip_fun(n_decimals) {
 		x.Value === undefined ?
 			null :
 			`value: ${x.Value.toFixed(n_decimals)}`,
-		`N: ${x.ColValidCases.toFixed(0)}`
+		`N: ${x.ColValidCases.toFixed(0)}`,
+		x.ColMean === undefined ?
+		null :
+		`mean: ${x.ColMean.toFixed(1)}`,
+		null
+
 	].join("\n")
 }
 
