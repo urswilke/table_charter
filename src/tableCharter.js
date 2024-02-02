@@ -95,7 +95,7 @@ export class TableCharter extends LitElement {
             .column2 {
                 float: left;
                 width: 65%;
-                padding: 10px;
+                padding: 30px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
