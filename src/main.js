@@ -1,2 +1,0 @@
-import './tableCharter.js'
-
