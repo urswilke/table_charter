@@ -1,4 +1,10 @@
+// Urs own objects:
+const debug = process.env.DEBUG
 export const config = {
+    // Urs config:
+    // execArgv: debug ? ['--inspect'] : [],
+
+    // Default params after install wizard:
     //
     // ====================
     // Runner Configuration
