@@ -14,6 +14,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "confidence-check": "wdio wdio.conf.js",
+    "deploy": "node build/deploy.js",
     "standalone-build": "vite build --config vite.config.standalone.js",
     "standalone-preview": "vite build --config vite.config.standalone.js && start ./dist/index.html",
     "wdio": "wdio run ./wdio.conf.js"
