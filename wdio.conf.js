@@ -1,6 +1,25 @@
 // Urs own objects:
 const debug = process.env.DEBUG
-export const config = {
+
+
+
+
+// not sure if that's needed:
+const dynamicConfig = {};
+if(process.env.CI_COMMIT_REF_SLUG) {
+    dynamicConfig.baseUrl = `https://${process.env.CI_COMMIT_REF_SLUG}.urswilke.gitlab.io/table_charter/`;
+    if(process.env.CI_COMMIT_REF_SLUG === 'main'){
+        dynamicConfig.baseUrl = 'https://urswilke.gitlab.io/table_charter/';
+    }
+}
+if(process.env.CI_JOB_NAME) {
+    dynamicConfig.capabilities = [
+        { browserName: process.env.CI_JOB_NAME === 'tester:chrome' ? 'chrome' : 'firefox' },
+    ];
+}
+
+
+export const config = Object.assign({}, {
     // Urs config:
     // execArgv: debug ? ['--inspect'] : [],
 
@@ -9,7 +28,7 @@ export const config = {
     // ====================
     // Runner Configuration
     // ====================
-    // WebdriverIO supports running e2e tests as well as unit and component tests.
+    // WebdriverIO supports running tester tests as well as unit and component tests.
     runner: 'browser',
     //
     // ==================
@@ -298,4 +317,4 @@ export const config = {
     */
     // afterAssertion: function(params) {
     // }
-}
+}, dynamicConfig);

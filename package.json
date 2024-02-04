@@ -11,6 +11,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "wdio wdio.conf.js",
+    "deploy": "node build/deploy.js",
     "standalone-build": "vite build --config vite.config.standalone.js",
     "standalone-preview": "vite build --config vite.config.standalone.js && start ./dist/index.html",
     "wdio": "wdio run ./wdio.conf.js"
@@ -27,7 +29,10 @@
     "@wdio/cli": "^8.29.7",
     "@wdio/mocha-framework": "^8.29.3",
     "@wdio/spec-reporter": "^8.29.7",
+    "chromedriver": "^121.0.0",
+    "geckodriver": "^4.3.2",
     "lit": "^3.1.2",
+    "selenium-assistant": "^6.1.1",
     "terser": "^5.26.0",
     "vite": "^4.5.2",
     "vite-plugin-singlefile": "^0.13.5"
