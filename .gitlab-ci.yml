@@ -55,12 +55,3 @@ e2e:firefox:
     - selenium/standalone-firefox
   script:
     - npm run confidence-check --host=selenium__standalone-firefox
-
-e2e:chrome:
-  stage: confidence-check
-  dependencies:
-   - prepare
-  services:
-    - selenium/standalone-chrome
-  script:
-    - npm run confidence-check --host=selenium__standalone-chrome
