@@ -1,11 +1,12 @@
 image: node:16.5.0
 
 stages:
+  - prepare
   - deploy
   - confidence-check
 
-pages:
-  stage: deploy
+prepare:
+  stage: prepare
   cache:
     key:
       files:
@@ -15,6 +16,15 @@ pages:
       - node_modules/
   script:
     - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+pages:
+  stage: deploy
+  dependencies:
+   - prepare
+  script:
     - npm run build
     - cp -a dist/. public/
   artifacts:
@@ -26,6 +36,8 @@ pages:
 
 e2e:firefox:
   stage: confidence-check
+  dependencies:
+   - prepare
   services:
     - selenium/standalone-firefox
   script:
@@ -33,6 +45,8 @@ e2e:firefox:
 
 e2e:chrome:
   stage: confidence-check
+  dependencies:
+   - prepare
   services:
     - selenium/standalone-chrome
   script:
