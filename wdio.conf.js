@@ -1,7 +1,6 @@
 // Urs own objects:
 const debug = process.env.DEBUG
-import { seleniumAssistant } from 'selenium-assistant';
-    
+
 
 
 
@@ -18,26 +17,9 @@ if(process.env.CI_JOB_NAME) {
         { browserName: process.env.CI_JOB_NAME === 'e2e:chrome' ? 'chrome' : 'firefox' },
     ];
 }
-if(!process.env.CI) {
-    // If we're not running in CI, start a local server for the app, and a Selenium server
-    dynamicConfig.services = ['selenium-standalone'];
-    dynamicConfig.baseUrl = 'http://localhost:8000';
-    // Find out which browsers are installed, and run the tests against them
-    const browsers = seleniumAssistant.getLocalBrowsers();
-    dynamicConfig.capabilities = browsers.map(browser => ({ browserName: browser.getId() }));
-}
-dynamicConfig.capabilities.map(capability => {
-    if(capability.browserName === 'chrome') {
-        // Prevent automatic tests with Chrome from showing up in Analytics
-        capability.chromeOptions = {
-            prefs: { 'enable_do_not_track': true },
-        };
-    }
-    return capability;
-});
 
 
-exports.config = Object.assign({}, {
+export const config = Object.assign({}, {
     // Urs config:
     // execArgv: debug ? ['--inspect'] : [],
 
