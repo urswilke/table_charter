@@ -1,15 +1,16 @@
 // Urs own objects:
 const debug = process.env.DEBUG
-
+import { seleniumAssistant } from 'selenium-assistant';
+    
 
 
 
 
 const dynamicConfig = {};
 if(process.env.CI_COMMIT_REF_SLUG) {
-    dynamicConfig.baseUrl = `https://${process.env.CI_COMMIT_REF_SLUG}.flockademic.com`;
+    dynamicConfig.baseUrl = `https://${process.env.CI_COMMIT_REF_SLUG}.urswilke.gitlab.io/table_charter/`;
     if(process.env.CI_COMMIT_REF_SLUG === 'master'){
-        dynamicConfig.baseUrl = 'https://flockademic.com';
+        dynamicConfig.baseUrl = 'https://urswilke.gitlab.io/table_charter/';
     }
 }
 if(process.env.CI_JOB_NAME) {
@@ -22,7 +23,6 @@ if(!process.env.CI) {
     dynamicConfig.services = ['selenium-standalone'];
     dynamicConfig.baseUrl = 'http://localhost:8000';
     // Find out which browsers are installed, and run the tests against them
-    const seleniumAssistant = require('selenium-assistant');
     const browsers = seleniumAssistant.getLocalBrowsers();
     dynamicConfig.capabilities = browsers.map(browser => ({ browserName: browser.getId() }));
 }
