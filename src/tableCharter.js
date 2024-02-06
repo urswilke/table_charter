@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import './ojs-plot.js'
 import './tableDataSelector.js'
-import client_data from './client_data.json' assert {type: 'json'};
+import client_data from './client_data.json';
 
 export class TableCharter extends LitElement {
 

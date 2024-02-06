@@ -12,7 +12,7 @@ import './selectors/further_options_selector.js'
 import { all_color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
-import data_compressed from './example_compressed.json' assert {type: 'json'};
+import data_compressed from './example_compressed.json';
 
 const data = prepare_data(data_compressed);
 const inspect = false // set to true for some console.log msgs
