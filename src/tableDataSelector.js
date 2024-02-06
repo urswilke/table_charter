@@ -12,7 +12,7 @@ import './selectors/further_options_selector.js'
 import { all_color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
-import data_compressed from './example_compressed.json' assert {type: 'json'};
+import data_compressed from './example_compressed.json';
 
 const data = prepare_data(data_compressed);
 const inspect = false // set to true for some console.log msgs
@@ -226,6 +226,7 @@ export class TableDataSelector extends LitElement {
 						.chosen_num_type=${this.choices.row_type}>
 					</num_type-selector>
 					<button
+						data-test-id="show-hide-button"
 						@click="${this._on_expand}">
 						${this.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
 					</button>
@@ -239,6 +240,7 @@ export class TableDataSelector extends LitElement {
 					<div>
 						<label>Question</label>
 						<question-selector 					
+							data-test-id="question-selector"	
 							@update-question="${this._on_question_update}" 		
 							.chosen_tab_no=${this.choices.tab_nos} 
 							.all_questions=${this.params.title_table}>
@@ -276,7 +278,8 @@ export class TableDataSelector extends LitElement {
 					<div class=${!this.collapsed_view ? "" : "hide"}>
 						<label for="colors">Color</label>
 						<colorscale-selector 	
-							id="colors"			
+							id="colors"		
+							data-test-id="color-scale-selector"	
 							@update-colorscale="${this._on_colorscale_update}" 	
 							@update-colorscheme="${this._on_colorscheme_update}" 	
 							.all_colorscales=${this.params.color_scale}	

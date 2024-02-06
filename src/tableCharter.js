@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import './ojs-plot.js'
 import './tableDataSelector.js'
-import client_data from './client_data.json' assert {type: 'json'};
+import client_data from './client_data.json';
 
 export class TableCharter extends LitElement {
 
@@ -35,7 +35,12 @@ export class TableCharter extends LitElement {
                 <table-data-selector @update-data="${this.update_plot_data}"></table-data-selector>
             </div>
             <div class="column2">
-                <ojs-plot class="ojsplot" .plot_data=${this.plot_data}></ojs-plot>
+                <ojs-plot 
+                    class="ojsplot" 
+                    data-test-id="ojs-plot"	
+                    .plot_data=${this.plot_data}
+                >
+                </ojs-plot>
             </div>
             </div>
             <div class="footer">

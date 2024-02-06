@@ -5,19 +5,6 @@ stages:
   - deploy
   - test
 
-before_script:
-  - apt-get update -qy
-  - apt-get install -y default-jre
-  - apt-get update
-  - apt-get install -y wget unzip curl
-
-  # Install or update Google Chrome
-  - CHROME_VERSION="122.0.6261.18"
-  # Install Google Chrome
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - dpkg -i google-chrome-stable_current_amd64.deb || apt --fix-broken install -y
-  - google-chrome-stable --version
-
 prepare:
   stage: prepare
   cache:
@@ -47,11 +34,32 @@ pages:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 
-tester:firefox:
+run_test_firefox:
   stage: test
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y default-jre
+    - apt-get update
+    - apt-get install -y wget unzip curl
+
+    # Install or update Google Chrome
+    - CHROME_VERSION="122.0.6261.18"
+    # Install Google Chrome
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - dpkg -i google-chrome-stable_current_amd64.deb || apt --fix-broken install -y
+    - google-chrome-stable --version
   dependencies:
    - prepare
   services:
     - selenium/standalone-firefox
   script:
     - npm run test --host=selenium__standalone-firefox
+
+run_test_chrome:
+  stage: test
+  image: atools/chrome-headless:java17-nodelts-latest
+  script:
+    - google-chrome --version
+    - npm install
+    - npm run test
+
