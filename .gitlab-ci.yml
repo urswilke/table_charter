@@ -1,75 +1,62 @@
-# image: node:20.11.0
+image: node:20.11.0
 
-# stages:
-#   - prepare
-#   - deploy
-#   - test
+stages:
+  - prepare
+  - deploy
+  - test
 
-# before_script:
-#   - apt-get update -qy
-#   - apt-get install -y default-jre
-#   - apt-get update
-#   - apt-get install -y wget unzip curl
+prepare:
+  stage: prepare
+  cache:
+    key:
+      files:
+        - package-lock.json
+      prefix: npm
+    paths:
+      - node_modules/
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
 
-#   # Install or update Google Chrome
-#   - CHROME_VERSION="122.0.6261.18"
-#   # Install Google Chrome
-#   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#   - dpkg -i google-chrome-stable_current_amd64.deb || apt --fix-broken install -y
-#   - google-chrome-stable --version
-
-# prepare:
-#   stage: prepare
-#   cache:
-#     key:
-#       files:
-#         - package-lock.json
-#       prefix: npm
-#     paths:
-#       - node_modules/
-#   script:
-#     - npm install
-#   artifacts:
-#     paths:
-#       - node_modules/
-
-# pages:
-#   stage: deploy
-#   dependencies:
-#    - prepare
-#   script:
-#     - npm run build
-#     - cp -a dist/. public/
-#   artifacts:
-#     paths:
-#       - public
-#   rules:
-#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+pages:
+  stage: deploy
+  dependencies:
+   - prepare
+  script:
+    - npm run build
+    - cp -a dist/. public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 
-# tester:firefox:
-#   stage: test
-#   dependencies:
-#    - prepare
-#   services:
-#     - selenium/standalone-firefox
-#   script:
-#     - npm run test --host=selenium__standalone-firefox
+run_test_firefox:
+  stage: test
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y default-jre
+    - apt-get update
+    - apt-get install -y wget unzip curl
 
-
-cache:
-  paths:
-    - node_modules/
-
-# run_test_firefox:
-#   stage: test
-#   image: atools/firefox-headless:java17-nodelts-latest
-#   script:
-#     - firefox --version
-#     - npm install
-#     - npm run test
+    # Install or update Google Chrome
+    - CHROME_VERSION="122.0.6261.18"
+    # Install Google Chrome
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - dpkg -i google-chrome-stable_current_amd64.deb || apt --fix-broken install -y
+    - google-chrome-stable --version
+  dependencies:
+   - prepare
+  services:
+    - selenium/standalone-firefox
+  script:
+    - npm run test --host=selenium__standalone-firefox
 
 run_test_chrome:
+  stage: test
   image: atools/chrome-headless:java17-nodelts-latest
   script:
     - google-chrome --version
