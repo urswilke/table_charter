@@ -70,7 +70,7 @@ cache:
 #     - npm run test
 
 run_test_chrome:
-  image: atools/chrome-headless:java11-node14-latest
+  image: atools/chrome-headless:java17-nodelts-latest
   script:
     - google-chrome --version
     - npm install
