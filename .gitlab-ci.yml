@@ -65,7 +65,7 @@ run_test_firefox:
   stage: test
   image: atools/firefox-headless:java17-nodelts-latest
   script:
-    - firefox --version
+    # - firefox --version
     - npm install
     - npm run test
 
