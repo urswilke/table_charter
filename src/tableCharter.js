@@ -35,7 +35,12 @@ export class TableCharter extends LitElement {
                 <table-data-selector @update-data="${this.update_plot_data}"></table-data-selector>
             </div>
             <div class="column2">
-                <ojs-plot class="ojsplot" .plot_data=${this.plot_data}></ojs-plot>
+                <ojs-plot 
+                    class="ojsplot" 
+                    data-test-id="ojs-plot"	
+                    .plot_data=${this.plot_data}
+                >
+                </ojs-plot>
             </div>
             </div>
             <div class="footer">

@@ -1,0 +1,36 @@
+// Snapshot v1
+
+exports[`Check all questions > should have all question texts in question-selector 1`] = `
+[
+  "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
+  "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? DC#SELVALLAB",
+  "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? Mittelwertüberblick",
+  "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? Summary of Medians",
+  "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? Mittelwertüberblick gewichtet mit gew",
+  "4. Wie häufig haben Sie einen Tabellenband in den letzten 12 Monaten erstellen lassen?",
+  "5. Was lief besonders gut in den Projekten?",
+  "5. Was lief besonders gut in den Projekten?",
+  "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. TOP2-Übersicht",
+  "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. TOP1-Übersicht",
+  "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.",
+  "9. Würden Sie das Tabellenbandtool weiterempfehlen? Kundenzufriedenheit",
+  "9. Würden Sie das Tabellenbandtool weiterempfehlen? Marktvolumen",
+  "9. Würden Sie das Tabellenbandtool weiterempfehlen? Sonstige",
+  "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? Kundenzufriedenheit",
+  "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? Marktvolumen",
+  "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? Sonstige",
+  "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? Sonstige",
+  "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
+  "NOT CHECKED: 5. Was lief besonders gut in den Projekten? Kundenzufriedenheit",
+  "NOT CHECKED: 5. Was lief besonders gut in den Projekten? Marktvolumen",
+  "NOT CHECKED: 5. Was lief besonders gut in den Projekten? Sonstige",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Marktvolumen TOP3-Übersicht",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Marktvolumen Mittelwertüberblick",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Marktvolumen Schnelle Umsetzung",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Marktvolumen Kurzfristige Anpassungen",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Sonstige TOP3-Übersicht",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Sonstige Mittelwertüberblick",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Sonstige Schnelle Umsetzung",
+  "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? Sonstige Kurzfristige Anpassungen",
+]
+`;
