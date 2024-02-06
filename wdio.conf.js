@@ -29,7 +29,12 @@ export const config = Object.assign({}, {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running tester tests as well as unit and component tests.
-    runner: 'browser',
+    runner: ['browser', {
+        preset: process.env.WDIO_PRESET,
+        coverage: {
+            enabled: true
+        }
+    }],
     //
     // ==================
     // Specify Test Files

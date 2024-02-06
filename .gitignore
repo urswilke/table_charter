@@ -29,3 +29,4 @@ build
 *.xlsm
 .~lock.*
 test.json
+coverage/
