@@ -47,11 +47,21 @@ pages:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 
-tester:firefox:
+# tester:firefox:
+#   stage: test
+#   dependencies:
+#    - prepare
+#   services:
+#     - selenium/standalone-firefox
+#   script:
+#     - npm run test --host=selenium__standalone-firefox
+
+
+run_test_firefox:
   stage: test
-  dependencies:
-   - prepare
-  services:
-    - selenium/standalone-firefox
+  image: atools/firefox-headless
   script:
-    - npm run test --host=selenium__standalone-firefox
+    - firefox --version
+    - npm install
+    - npm run test
+
