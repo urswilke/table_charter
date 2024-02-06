@@ -61,11 +61,18 @@ cache:
   paths:
     - node_modules/
 
-run_test_firefox:
-  stage: test
-  image: atools/firefox-headless:java11-node16-latest
+# run_test_firefox:
+#   stage: test
+#   image: atools/firefox-headless:java11-node16-latest
+#   script:
+#     - firefox --version
+#     - npm install
+#     - npm run test
+
+run_test_chrome:
+  image: atools/chrome-headless:java11-node14-latest
   script:
-    - firefox --version
+    - google-chrome --version
     - npm install
     - npm run test
 
