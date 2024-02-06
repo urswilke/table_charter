@@ -63,7 +63,7 @@ cache:
 
 run_test_firefox:
   stage: test
-  image: atools/firefox-headless:java11-node12-latest
+  image: atools/firefox-headless:java11-node16-latest
   script:
     - firefox --version
     - npm install
