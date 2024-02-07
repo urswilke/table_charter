@@ -55,11 +55,11 @@ run_test_firefox:
   script:
     - npm run test --host=selenium__standalone-firefox
 
+
 run_test_chrome:
   stage: test
-  image: atools/chrome-headless:java17-nodelts-latest
+  services:
+    - selenium/standalone-chrome
   script:
-    - google-chrome --version
-    - npm install
-    - npm run test
+    - npm run test --host=selenium__standalone-chrome
 
