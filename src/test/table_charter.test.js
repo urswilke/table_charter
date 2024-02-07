@@ -49,18 +49,12 @@ describe('Check all questions', () => {
         await expect(all_questions).toMatchSnapshot()
     })
     for (const question_text of all_questions) {
-        // console.log('aaaaaaaaaaaaaaaaaaaaaa :>> ', question_text);
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
             await question_select_el.selectByVisibleText(question_text)
-            // await browser.pause(300)
             await fig_el.isExisting()
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
-            // console.log('fig_string :>> ', fig_string);
-            // console.log('question_text :>> ', question_text.replace(/(?:\r\n|\r|\n)/g, ' ').trim());
-            await expect(
-                fig_string === question_text.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
-            ).toBe(true)
+            await expect(fig_string).toEqual(question_text)
         })
     }
 })
