@@ -14,7 +14,7 @@ if(process.env.CI_COMMIT_REF_SLUG) {
 }
 if(process.env.CI_JOB_NAME) {
     dynamicConfig.capabilities = [
-        { browserName: process.env.CI_JOB_NAME === 'tester:chrome' ? 'chrome' : 'firefox' },
+        { browserName: process.env.CI_JOB_NAME === 'run_test_chrome' ? 'chrome' : 'firefox' },
     ];
 }
 
