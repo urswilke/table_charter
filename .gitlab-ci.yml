@@ -61,5 +61,5 @@ run_test_chrome:
   script:
     - google-chrome --version
     - npm install
-    - npm run test
+    - npm run test --host=selenium__standalone-chrome
 
