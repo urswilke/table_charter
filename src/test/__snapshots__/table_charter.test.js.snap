@@ -44,8 +44,7 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick
-gewichtet mit gew",
+    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick --> gewichtet mit gew",
     "xy": "x",
   },
   {
@@ -199,8 +198,7 @@ gewichtet mit gew",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
-TOP3-Übersicht",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> TOP3-Übersicht",
     "xy": "x",
   },
   {
@@ -209,8 +207,7 @@ TOP3-Übersicht",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
-Mittelwertüberblick",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Mittelwertüberblick",
     "xy": "x",
   },
   {
@@ -219,8 +216,7 @@ Mittelwertüberblick",
     "n_points": 64,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
-Schnelle Umsetzung",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Schnelle Umsetzung",
     "xy": "x",
   },
   {
@@ -229,8 +225,7 @@ Schnelle Umsetzung",
     "n_points": 56,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
-Kurzfristige Anpassungen",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
     "xy": "x",
   },
   {
@@ -239,8 +234,7 @@ Kurzfristige Anpassungen",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
-TOP3-Übersicht",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> TOP3-Übersicht",
     "xy": "x",
   },
   {
@@ -249,8 +243,7 @@ TOP3-Übersicht",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
-Mittelwertüberblick",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Mittelwertüberblick",
     "xy": "x",
   },
   {
@@ -259,8 +252,7 @@ Mittelwertüberblick",
     "n_points": 64,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
-Schnelle Umsetzung",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Schnelle Umsetzung",
     "xy": "x",
   },
   {
@@ -269,8 +261,7 @@ Schnelle Umsetzung",
     "n_points": 58,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
-Kurzfristige Anpassungen",
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
     "xy": "x",
   },
 ]
