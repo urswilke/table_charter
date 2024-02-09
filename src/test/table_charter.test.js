@@ -55,7 +55,7 @@ describe('Check all questions', () => {
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
             current_plot_options = await table_data_selector_el.getProperty('choices');
             temp = await table_data_selector_el.getProperty('plot_data');
-            current_plot_options['n_points'] = temp.length;
+            current_plot_options.n_points = temp.length;
             current_plot_options.tab_title = current_plot_options.tab_title.replace(/\n/g, ' --> ')
             plot_options[current_plot_options.i_tab] = current_plot_options;
             
