@@ -8,10 +8,7 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "n_points": 15,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
-      "i_tab": 0,
-    },
+    "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
     "xy": "x",
   },
   {
@@ -20,10 +17,7 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "n_points": 34,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
-      "i_tab": 1,
-    },
+    "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
     "xy": "x",
   },
   {
@@ -32,10 +26,7 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "n_points": 35,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick",
-      "i_tab": 2,
-    },
+    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick",
     "xy": "x",
   },
   {
@@ -44,10 +35,7 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Summary of Medians",
-      "i_tab": 3,
-    },
+    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Summary of Medians",
     "xy": "x",
   },
   {
@@ -56,11 +44,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick
+    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick
 gewichtet mit gew",
-      "i_tab": 4,
-    },
     "xy": "x",
   },
   {
@@ -69,10 +54,7 @@ gewichtet mit gew",
     "n_points": 45,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "4. Wie häufig haben Sie einen Tabellenband in den letzten 12 Monaten erstellen lassen?",
-      "i_tab": 5,
-    },
+    "tab_title": "4. Wie häufig haben Sie einen Tabellenband in den letzten 12 Monaten erstellen lassen?",
     "xy": "x",
   },
   {
@@ -81,10 +63,7 @@ gewichtet mit gew",
     "n_points": 20,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "5. Was lief besonders gut in den Projekten?",
-      "i_tab": 6,
-    },
+    "tab_title": "5. Was lief besonders gut in den Projekten?",
     "xy": "x",
   },
   null,
@@ -94,10 +73,7 @@ gewichtet mit gew",
     "n_points": 40,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP2-Übersicht",
-      "i_tab": 8,
-    },
+    "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP2-Übersicht",
     "xy": "x",
   },
   {
@@ -106,10 +82,7 @@ gewichtet mit gew",
     "n_points": 40,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP1-Übersicht",
-      "i_tab": 9,
-    },
+    "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP1-Übersicht",
     "xy": "x",
   },
   {
@@ -118,10 +91,7 @@ gewichtet mit gew",
     "n_points": 17,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.",
-      "i_tab": 10,
-    },
+    "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.",
     "xy": "x",
   },
   {
@@ -130,10 +100,7 @@ gewichtet mit gew",
     "n_points": 26,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
-      "i_tab": 11,
-    },
+    "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
     "xy": "x",
   },
   {
@@ -142,10 +109,7 @@ gewichtet mit gew",
     "n_points": 24,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
-      "i_tab": 12,
-    },
+    "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
     "xy": "x",
   },
   {
@@ -154,10 +118,7 @@ gewichtet mit gew",
     "n_points": 21,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
-      "i_tab": 13,
-    },
+    "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
     "xy": "x",
   },
   {
@@ -166,10 +127,7 @@ gewichtet mit gew",
     "n_points": 15,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
-      "i_tab": 14,
-    },
+    "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
     "xy": "x",
   },
   {
@@ -178,10 +136,7 @@ gewichtet mit gew",
     "n_points": 10,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
-      "i_tab": 15,
-    },
+    "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
     "xy": "x",
   },
   {
@@ -190,10 +145,7 @@ gewichtet mit gew",
     "n_points": 12,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
-      "i_tab": 16,
-    },
+    "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
     "xy": "x",
   },
   {
@@ -202,10 +154,7 @@ gewichtet mit gew",
     "n_points": 8,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
-      "i_tab": 17,
-    },
+    "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
     "xy": "x",
   },
   {
@@ -214,10 +163,7 @@ gewichtet mit gew",
     "n_points": 4,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
-      "i_tab": 18,
-    },
+    "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
     "xy": "x",
   },
   {
@@ -226,10 +172,7 @@ gewichtet mit gew",
     "n_points": 17,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
-      "i_tab": 19,
-    },
+    "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
     "xy": "x",
   },
   {
@@ -238,10 +181,7 @@ gewichtet mit gew",
     "n_points": 8,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
-      "i_tab": 20,
-    },
+    "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
     "xy": "x",
   },
   {
@@ -250,10 +190,7 @@ gewichtet mit gew",
     "n_points": 8,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
-      "i_tab": 21,
-    },
+    "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
     "xy": "x",
   },
   {
@@ -262,11 +199,8 @@ gewichtet mit gew",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 TOP3-Übersicht",
-      "i_tab": 22,
-    },
     "xy": "x",
   },
   {
@@ -275,11 +209,8 @@ TOP3-Übersicht",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 Mittelwertüberblick",
-      "i_tab": 23,
-    },
     "xy": "x",
   },
   {
@@ -288,11 +219,8 @@ Mittelwertüberblick",
     "n_points": 64,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 Schnelle Umsetzung",
-      "i_tab": 24,
-    },
     "xy": "x",
   },
   {
@@ -301,11 +229,8 @@ Schnelle Umsetzung",
     "n_points": 56,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 Kurzfristige Anpassungen",
-      "i_tab": 25,
-    },
     "xy": "x",
   },
   {
@@ -314,11 +239,8 @@ Kurzfristige Anpassungen",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 TOP3-Übersicht",
-      "i_tab": 26,
-    },
     "xy": "x",
   },
   {
@@ -327,11 +249,8 @@ TOP3-Übersicht",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 Mittelwertüberblick",
-      "i_tab": 27,
-    },
     "xy": "x",
   },
   {
@@ -340,11 +259,8 @@ Mittelwertüberblick",
     "n_points": 64,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 Schnelle Umsetzung",
-      "i_tab": 28,
-    },
     "xy": "x",
   },
   {
@@ -353,11 +269,8 @@ Schnelle Umsetzung",
     "n_points": 58,
     "plot_type": "bar",
     "row_type": "%",
-    "title_table": {
-      "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
+    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 Kurzfristige Anpassungen",
-      "i_tab": 29,
-    },
     "xy": "x",
   },
 ]

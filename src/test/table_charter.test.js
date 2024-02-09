@@ -56,8 +56,8 @@ describe('Check all questions', () => {
             current_plot_options = await table_data_selector_el.getProperty('choices');
             temp = await table_data_selector_el.getProperty('plot_data');
             current_plot_options['n_points'] = temp.length;
-            current_plot_options.title_table['TabTitle'] = current_plot_options.title_table['TabTitle'].replace('\n', ' --> ')
-            plot_options[current_plot_options.title_table.i_tab] = current_plot_options;
+            current_plot_options.tab_title = current_plot_options.tab_title.replace('\n', ' --> ')
+            plot_options[current_plot_options.i_tab] = current_plot_options;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
             await expect(fig_string).toEqual(question_text)

@@ -49,11 +49,13 @@ export class TableDataSelector extends LitElement {
 		this.choices = {};
 		this.choices.xy = "x"
 		
+		this.params.header_table = gen_header_table(this.data)
+		
 		this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
 		
-		this.params.header_table = gen_header_table(this.data)
-		this.choices.title_table = this.params.title_table[0]
-		this.choices.i_tab = this.params.title_table[0].i_tab
+		let title_table = this.params.title_table[0]
+		this.choices.i_tab = title_table.i_tab
+		this.choices.tab_title = title_table.TabTitle
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
@@ -142,7 +144,9 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_question_update(e) {
-		this.choices.title_table = this.params.title_table[e.detail.chosen_tab_no];
+		let title_table = this.params.title_table[e.detail.chosen_tab_no];
+		this.choices.i_tab = title_table.i_tab
+		this.choices.tab_title = title_table.TabTitle
 		// for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
 		this.choices.i_tab = e.detail.chosen_tab_no;
 		this.sel_question_data()
