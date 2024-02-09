@@ -3,6 +3,8 @@
 exports[`Check all questions > should reproduce the options chosen in table-data-selector 1`] = `
 [
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": false,
     "i_tab": 0,
     "n_points": 15,
@@ -12,6 +14,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "1",
     "n_points": 34,
@@ -21,6 +25,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "2",
     "n_points": 35,
@@ -30,6 +36,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "3",
     "n_points": 10,
@@ -39,6 +47,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "4",
     "n_points": 10,
@@ -48,6 +58,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": false,
     "i_tab": "5",
     "n_points": 45,
@@ -57,6 +69,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "6",
     "n_points": 20,
@@ -67,6 +81,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
   },
   null,
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "8",
     "n_points": 40,
@@ -76,6 +92,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "9",
     "n_points": 40,
@@ -85,6 +103,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "10",
     "n_points": 17,
@@ -94,6 +114,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "11",
     "n_points": 26,
@@ -103,6 +125,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "12",
     "n_points": 24,
@@ -112,6 +136,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "13",
     "n_points": 21,
@@ -121,6 +147,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "14",
     "n_points": 15,
@@ -130,6 +158,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "15",
     "n_points": 10,
@@ -139,6 +169,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "16",
     "n_points": 12,
@@ -148,6 +180,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "17",
     "n_points": 8,
@@ -157,6 +191,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "18",
     "n_points": 4,
@@ -166,6 +202,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "19",
     "n_points": 17,
@@ -175,6 +213,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "20",
     "n_points": 8,
@@ -184,6 +224,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "21",
     "n_points": 8,
@@ -193,6 +235,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "22",
     "n_points": 10,
@@ -202,6 +246,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "23",
     "n_points": 10,
@@ -211,6 +257,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "24",
     "n_points": 64,
@@ -220,6 +268,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "25",
     "n_points": 56,
@@ -229,6 +279,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "26",
     "n_points": 10,
@@ -238,6 +290,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "categorical",
+    "color_scheme": "Tableau10",
     "colorscale_disabled": true,
     "i_tab": "27",
     "n_points": 10,
@@ -247,6 +301,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "28",
     "n_points": 64,
@@ -256,6 +312,8 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "color_scale": "ordinal",
+    "color_scheme": "Turbo",
     "colorscale_disabled": false,
     "i_tab": "29",
     "n_points": 58,

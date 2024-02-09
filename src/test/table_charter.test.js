@@ -56,6 +56,8 @@ describe('Check all questions', () => {
             current_plot_options = await table_data_selector_el.getProperty('choices');
             temp = await table_data_selector_el.getProperty('plot_data');
             current_plot_options.n_points = temp.length;
+            current_plot_options.color_scale = await table_data_selector_el.getProperty('color_scale');
+            current_plot_options.color_scheme = await table_data_selector_el.getProperty('color_scheme');
             current_plot_options.tab_title = current_plot_options.tab_title.replace(/\n/g, ' --> ')
             plot_options[current_plot_options.i_tab] = current_plot_options;
             
