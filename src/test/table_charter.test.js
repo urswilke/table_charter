@@ -9,6 +9,7 @@ render(
 )
 
 const table_charter_el = await $('table-charter')
+const table_data_selector_el = await $('>>>table-data-selector')
 const button = await table_charter_el.$('>>>button[data-test-id="show-hide-button"]')
 const question_selector_el = await table_charter_el.$('>>>question-selector[data-test-id="question-selector"]')
 const all_questions = await question_selector_el.$$(">>>option").map(x => x.getText())
@@ -45,16 +46,27 @@ describe('Check plots', () => {
 })
 
 describe('Check all questions', () => {
-    it('should have all question texts in question-selector', async () => {
-        await expect(all_questions).toMatchSnapshot()
-    })
+    var plot_options = new Array();
     for (const question_text of all_questions) {
+        let current_plot_options, temp;
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
             await question_select_el.selectByVisibleText(question_text)
             await fig_el.isExisting()
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
+            current_plot_options = await table_data_selector_el.getProperty('choices');
+            temp = await table_data_selector_el.getProperty('plot_data');
+            current_plot_options['n_points'] = temp.length;
+            current_plot_options.title_table['TabTitle'] = current_plot_options.title_table['TabTitle'].replace('\n', ' --> ')
+            plot_options[current_plot_options.title_table.i_tab] = current_plot_options;
+            
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
             await expect(fig_string).toEqual(question_text)
         })
     }
+    it('should reproduce the options chosen in table-data-selector', async () => {
+        await expect(plot_options).toMatchSnapshot()
+    })
 })
+
+
+
