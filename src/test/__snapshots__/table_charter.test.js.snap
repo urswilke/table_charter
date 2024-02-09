@@ -4,10 +4,10 @@ exports[`Check all questions > should reproduce the options chosen in table-data
 [
   {
     "colorscale_disabled": false,
+    "i_tab": 0,
     "n_points": 15,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": 0,
     "title_table": {
       "TabTitle": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
       "i_tab": 0,
@@ -16,10 +16,10 @@ exports[`Check all questions > should reproduce the options chosen in table-data
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "1",
     "n_points": 34,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "1",
     "title_table": {
       "TabTitle": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
       "i_tab": 1,
@@ -28,10 +28,10 @@ exports[`Check all questions > should reproduce the options chosen in table-data
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "2",
     "n_points": 35,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "2",
     "title_table": {
       "TabTitle": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick",
       "i_tab": 2,
@@ -40,10 +40,10 @@ exports[`Check all questions > should reproduce the options chosen in table-data
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "3",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "3",
     "title_table": {
       "TabTitle": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Summary of Medians",
       "i_tab": 3,
@@ -52,10 +52,10 @@ exports[`Check all questions > should reproduce the options chosen in table-data
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "4",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "4",
     "title_table": {
       "TabTitle": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick
 gewichtet mit gew",
@@ -65,10 +65,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "5",
     "n_points": 45,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "5",
     "title_table": {
       "TabTitle": "4. Wie häufig haben Sie einen Tabellenband in den letzten 12 Monaten erstellen lassen?",
       "i_tab": 5,
@@ -77,10 +77,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "6",
     "n_points": 20,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "6",
     "title_table": {
       "TabTitle": "5. Was lief besonders gut in den Projekten?",
       "i_tab": 6,
@@ -90,10 +90,10 @@ gewichtet mit gew",
   null,
   {
     "colorscale_disabled": true,
+    "i_tab": "8",
     "n_points": 40,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "8",
     "title_table": {
       "TabTitle": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP2-Übersicht",
       "i_tab": 8,
@@ -102,10 +102,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "9",
     "n_points": 40,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "9",
     "title_table": {
       "TabTitle": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP1-Übersicht",
       "i_tab": 9,
@@ -114,10 +114,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "10",
     "n_points": 17,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "10",
     "title_table": {
       "TabTitle": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.",
       "i_tab": 10,
@@ -126,10 +126,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "11",
     "n_points": 26,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "11",
     "title_table": {
       "TabTitle": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
       "i_tab": 11,
@@ -138,10 +138,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "12",
     "n_points": 24,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "12",
     "title_table": {
       "TabTitle": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
       "i_tab": 12,
@@ -150,10 +150,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "13",
     "n_points": 21,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "13",
     "title_table": {
       "TabTitle": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
       "i_tab": 13,
@@ -162,10 +162,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "14",
     "n_points": 15,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "14",
     "title_table": {
       "TabTitle": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
       "i_tab": 14,
@@ -174,10 +174,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "15",
     "n_points": 10,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "15",
     "title_table": {
       "TabTitle": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
       "i_tab": 15,
@@ -186,10 +186,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "16",
     "n_points": 12,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "16",
     "title_table": {
       "TabTitle": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
       "i_tab": 16,
@@ -198,10 +198,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "17",
     "n_points": 8,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "17",
     "title_table": {
       "TabTitle": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
       "i_tab": 17,
@@ -210,10 +210,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "18",
     "n_points": 4,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "18",
     "title_table": {
       "TabTitle": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
       "i_tab": 18,
@@ -222,10 +222,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "19",
     "n_points": 17,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "19",
     "title_table": {
       "TabTitle": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
       "i_tab": 19,
@@ -234,10 +234,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "20",
     "n_points": 8,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "20",
     "title_table": {
       "TabTitle": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
       "i_tab": 20,
@@ -246,10 +246,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "21",
     "n_points": 8,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "21",
     "title_table": {
       "TabTitle": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
       "i_tab": 21,
@@ -258,10 +258,10 @@ gewichtet mit gew",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "22",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "22",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 TOP3-Übersicht",
@@ -271,10 +271,10 @@ TOP3-Übersicht",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "23",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "23",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 Mittelwertüberblick",
@@ -284,10 +284,10 @@ Mittelwertüberblick",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "24",
     "n_points": 64,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "24",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 Schnelle Umsetzung",
@@ -297,10 +297,10 @@ Schnelle Umsetzung",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "25",
     "n_points": 56,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "25",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen
 Kurzfristige Anpassungen",
@@ -310,10 +310,10 @@ Kurzfristige Anpassungen",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "26",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "26",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 TOP3-Übersicht",
@@ -323,10 +323,10 @@ TOP3-Übersicht",
   },
   {
     "colorscale_disabled": true,
+    "i_tab": "27",
     "n_points": 10,
     "plot_type": "line",
     "row_type": "%",
-    "tab_nos": "27",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 Mittelwertüberblick",
@@ -336,10 +336,10 @@ Mittelwertüberblick",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "28",
     "n_points": 64,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "28",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 Schnelle Umsetzung",
@@ -349,10 +349,10 @@ Schnelle Umsetzung",
   },
   {
     "colorscale_disabled": false,
+    "i_tab": "29",
     "n_points": 58,
     "plot_type": "bar",
     "row_type": "%",
-    "tab_nos": "29",
     "title_table": {
       "TabTitle": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige
 Kurzfristige Anpassungen",

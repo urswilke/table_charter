@@ -53,7 +53,7 @@ export class TableDataSelector extends LitElement {
 		
 		this.params.header_table = gen_header_table(this.data)
 		this.choices.title_table = this.params.title_table[0]
-		this.choices.tab_nos = this.params.title_table[0].i_tab
+		this.choices.i_tab = this.params.title_table[0].i_tab
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
@@ -64,7 +64,7 @@ export class TableDataSelector extends LitElement {
 	// Helper:
 	sel_question_data() {
 		this.question_data = this.data
-			.filter(x => x.i_tab == this.choices.tab_nos);
+			.filter(x => x.i_tab == this.choices.i_tab);
 		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
 		this.choices.colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType) 
 		if (this.choices.colorscale_disabled) {
@@ -144,7 +144,7 @@ export class TableDataSelector extends LitElement {
 	_on_question_update(e) {
 		this.choices.title_table = this.params.title_table[e.detail.chosen_tab_no];
 		// for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
-		this.choices.tab_nos = e.detail.chosen_tab_no;
+		this.choices.i_tab = e.detail.chosen_tab_no;
 		this.sel_question_data()
 		this._update_plot_data()
 	}
@@ -242,7 +242,7 @@ export class TableDataSelector extends LitElement {
 						<question-selector 					
 							data-test-id="question-selector"	
 							@update-question="${this._on_question_update}" 		
-							.chosen_tab_no=${this.choices.tab_nos} 
+							.chosen_tab_no=${this.choices.i_tab} 
 							.all_questions=${this.params.title_table}>
 						</question-selector>
 					</div>
