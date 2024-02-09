@@ -52,7 +52,7 @@ export class TableDataSelector extends LitElement {
 		this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
 		
 		this.params.header_table = gen_header_table(this.data)
-		this.choices.title_table = this.params.title_table[0].TabTitle
+		this.choices.title_table = this.params.title_table[0]
 		this.choices.tab_nos = this.params.title_table[0].i_tab
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
