@@ -2,6 +2,7 @@ import { html, render } from 'lit'
 import { $, expect } from '@wdio/globals'
 
 import '../tableCharter.js'
+import { clean_data, remove_fields, replace_field_strings } from './test_utils.js'
 
 render(
     html`<table-charter></table-charter>`,
@@ -55,10 +56,20 @@ describe('Check all questions', () => {
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
             current_plot_options = await table_data_selector_el.getProperty('choices');
             temp = await table_data_selector_el.getProperty('plot_data');
+            let chartOptions = await ojs_plot_el.getProperty('chartOptions');
             current_plot_options.n_points = temp.length;
             current_plot_options.color_scale = await table_data_selector_el.getProperty('color_scale');
             current_plot_options.color_scheme = await table_data_selector_el.getProperty('color_scheme');
-            current_plot_options.tab_title = current_plot_options.tab_title.replace(/\n/g, ' --> ')
+            current_plot_options.tab_title = current_plot_options.tab_title
+            const fields_to_remove = [
+                'data', 
+                'optional', 'value', 'facet', 'frameAnchor', 'lineAnchor', 'lineHeight', 'monospace',
+                'fill', 'strokeLinecap', 'strokeLinejoin', 'strokeWidth', 'stroke', 'r', 'channels'
+            ];
+            remove_fields(chartOptions, fields_to_remove)
+            clean_data(chartOptions)
+            current_plot_options.chartOptions = chartOptions;
+            replace_field_strings(current_plot_options)
             plot_options[current_plot_options.i_tab] = current_plot_options;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()

@@ -3,6 +3,43 @@
 exports[`Check all questions > should reproduce the options chosen in table-data-selector 1`] = `
 [
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "2 - 4 Beschäftigte",
+          "5 - 9 Beschäftigte",
+          "10 - 19 Beschäftigte",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": false,
@@ -14,6 +51,47 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Marktvolumen",
+          "Onlineauftritte",
+          "Branchenbarometer",
+          "Strukturanalyse",
+          "Werbewirkungsmessung",
+          "Weitere",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -25,6 +103,47 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Marktvolumen",
+          "Onlineauftritte",
+          "Branchenbarometer",
+          "Strukturanalyse",
+          "Werbewirkungsmessung",
+          "Weitere",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -36,6 +155,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Marktvolumen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -47,6 +202,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Marktvolumen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -58,6 +249,43 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "ZUSAMMENFASSUNG 1-2mal",
+          "ZUSAMMENFASSUNG 3-5mal",
+          "ZUSAMMENFASSUNG >5mal",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": false,
@@ -69,6 +297,44 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Darstellung der Daten",
+          "Schnelligkeit der Umsetzung",
+          "Sonstiges",
+          "Freundlichkeit des Tabellenbanderstellers",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -81,6 +347,48 @@ exports[`Check all questions > should reproduce the options chosen in table-data
   },
   null,
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Schnelle Umsetzung",
+          "Kurzfristige Anpassungen",
+          "Korrektheit der Daten",
+          "Freundlichkeit der Tabellenbandersteller",
+          "Langfristige Zusammenarbeit",
+          "Gute telefonische Erreichbarkeit",
+          "Wochenenderreichbarkeit",
+          "Einhaltung von Zusagen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -92,6 +400,48 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Schnelle Umsetzung",
+          "Kurzfristige Anpassungen",
+          "Korrektheit der Daten",
+          "Freundlichkeit der Tabellenbandersteller",
+          "Langfristige Zusammenarbeit",
+          "Gute telefonische Erreichbarkeit",
+          "Wochenenderreichbarkeit",
+          "Einhaltung von Zusagen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -103,6 +453,41 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          2,
+          3,
+          4,
+          5,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
@@ -114,6 +499,44 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          2,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
@@ -125,6 +548,44 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          2,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
@@ -136,6 +597,43 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
@@ -147,6 +645,43 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Onlineauftritte",
+          "Strukturanalyse",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -158,6 +693,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Onlineauftritte",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -169,6 +740,43 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Onlineauftritte",
+          "Strukturanalyse",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -180,6 +788,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Kundenzufriedenheit",
+          "Onlineauftritte",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -191,6 +835,40 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Werbewirkungsmessung",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -202,6 +880,44 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Darstellung der Daten",
+          "Sonstiges",
+          "Schnelligkeit der Umsetzung",
+          "Freundlichkeit des Tabellenbanderstellers",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -213,6 +929,43 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Schnelligkeit der Umsetzung",
+          "Freundlichkeit des Tabellenbanderstellers",
+          "Darstellung der Daten",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -224,6 +977,43 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Darstellung der Daten",
+          "Freundlichkeit des Tabellenbanderstellers",
+          "Schnelligkeit der Umsetzung",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+        {
+          "ariaLabel": "text",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -235,6 +1025,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Schnelle Umsetzung",
+          "Kurzfristige Anpassungen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -246,6 +1072,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Schnelle Umsetzung",
+          "Kurzfristige Anpassungen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -257,6 +1119,47 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
@@ -268,6 +1171,46 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
@@ -279,6 +1222,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Schnelle Umsetzung",
+          "Kurzfristige Anpassungen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -290,6 +1269,42 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          "Schnelle Umsetzung",
+          "Kurzfristige Anpassungen",
+        ],
+        "legend": true,
+        "scheme": "tableau10",
+        "type": "categorical",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "line",
+        },
+        {
+          "ariaLabel": "dot",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "categorical",
     "color_scheme": "Tableau10",
     "colorscale_disabled": true,
@@ -301,6 +1316,47 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
@@ -312,6 +1368,45 @@ exports[`Check all questions > should reproduce the options chosen in table-data
     "xy": "x",
   },
   {
+    "chartOptions": {
+      "color": {
+        "className": "large-font",
+        "domain": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+        ],
+        "legend": true,
+        "scheme": "turbo",
+        "type": "linear",
+      },
+      "height": 600,
+      "marginBottom": 60,
+      "marginLeft": 40,
+      "marks": [
+        {
+          "ariaLabel": "bar",
+        },
+      ],
+      "style": {
+        "fontSize": "16px",
+      },
+      "width": 1000,
+      "x": {
+        "domain": [
+          "GESAMT --> ",
+          "Region --> Asien",
+          "Region --> Europa",
+          "Region --> Nordamerika",
+          "Region --> Pazifik",
+        ],
+      },
+    },
     "color_scale": "ordinal",
     "color_scheme": "Turbo",
     "colorscale_disabled": false,
