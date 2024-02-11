@@ -78,22 +78,24 @@ export class PlotOptions {
 			order: e.color_order,
 			title: tooltip_fun(e.n_decimals)
 		}
-		p.bar_opts = Plot[p.group_](p.group_args1, p.group_args2_bar)
-		p.text_opts = Plot[p.group_](p.group_args1, p.group_args2_text)
 		this.p = p;
 		this.bar_plot_options()
 	}
 	bar_plot_options() {
+		const p = this.p
+		const bar_opts = Plot[p.group_](p.group_args1, p.group_args2_bar)
+		const text_opts = Plot[p.group_](p.group_args1, p.group_args2_text)
+		
 		this.options = {
 			marginLeft: this.e.marginLeft,
 			marginBottom: this.e.marginBottom,
 			color: this.e.color_opts,
 			marks: [
-				Plot[this.p.bar_](this.plot_data, Plot[this.p.stack_](this.p.bar_opts)),
+				Plot[p.bar_](this.plot_data, Plot[p.stack_](bar_opts)),
 				// (explicit form of this):
-				// Plot[this.p.bar_](this.plot_data, this.p.bar_opts),
+				// Plot[p.bar_](this.plot_data, p.bar_opts),
 				// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
-				this.o.color_scale === "ordinal" ? null : Plot[this.p.text_](this.plot_data, Plot[this.p.stack_](this.p.text_opts)),
+				this.o.color_scale === "ordinal" ? null : Plot[p.text_](this.plot_data, Plot[p.stack_](text_opts)),
 				// only show if there 10 different color values at max...:
 				// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
 			]
