@@ -56,7 +56,8 @@ describe('Check all questions', () => {
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
             let plot_options_el_prop = await ojs_plot_el.getProperty('plot_options');
 
-            plot_option_array[current_plot_options.input.i_tab] = extract_snapshot_options(plot_options_el_prop);
+            const current_plot_options = extract_snapshot_options(plot_options_el_prop)
+            plot_option_array[current_plot_options.input.i_tab] = current_plot_options;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
             await expect(fig_string).toEqual(question_text)
@@ -69,12 +70,13 @@ describe('Check all questions', () => {
 
 function extract_snapshot_options(plot_options_el_prop) {
     const opts = plot_options_el_prop.options;
+    const n_points = plot_options_el_prop.plot_data.length
     remove_fields(opts, ['data'])
     clean_data(opts)
 
     const current_plot_options = {
         input: plot_options_el_prop.o,
-        data: { n_points: plot_options_el_prop.plot_data.length},
+        data: { n_points: n_points},
         options: opts
     }
     replace_field_strings(current_plot_options)
