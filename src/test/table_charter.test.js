@@ -47,36 +47,34 @@ describe('Check plots', () => {
 })
 
 describe('Check all questions', () => {
-    var plot_options = new Array();
+    var plot_option_array = new Array();
     for (const question_text of all_questions) {
         let current_plot_options, temp;
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
             await question_select_el.selectByVisibleText(question_text)
             await fig_el.isExisting()
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
-            current_plot_options = await table_data_selector_el.getProperty('choices');
-            temp = await table_data_selector_el.getProperty('plot_data');
-            let chartOptions = await ojs_plot_el.getProperty('plot_options');
-            chartOptions = chartOptions.options;
-            current_plot_options.n_points = temp.length;
-            current_plot_options.tab_title = current_plot_options.tab_title
-            const fields_to_remove = [
-                'data', 
-                // 'optional', 'value', 'facet', 'frameAnchor', 'lineAnchor', 'lineHeight', 'monospace',
-                // 'fill', 'strokeLinecap', 'strokeLinejoin', 'strokeWidth', 'stroke', 'r', 'channels'
-            ];
-            remove_fields(chartOptions, fields_to_remove)
-            clean_data(chartOptions)
-            current_plot_options.chartOptions = chartOptions;
+            let plot_options_el_prop = await ojs_plot_el.getProperty('plot_options');
+
+            const opts = plot_options_el_prop.options;
+            remove_fields(opts, ['data'])
+            clean_data(opts)
+
+            current_plot_options = {
+                input: plot_options_el_prop.o,
+                data: { n_points: plot_options_el_prop.plot_data.length},
+                options: opts
+            }
             replace_field_strings(current_plot_options)
-            plot_options[current_plot_options.i_tab] = current_plot_options;
+            
+            plot_option_array[current_plot_options.input.i_tab] = current_plot_options;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
             await expect(fig_string).toEqual(question_text)
         })
     }
     it('should reproduce the options chosen in table-data-selector', async () => {
-        await expect(plot_options).toMatchSnapshot()
+        await expect(plot_option_array).toMatchSnapshot()
     })
 })
 

@@ -3,7 +3,20 @@
 exports[`Check all questions > should reproduce the options chosen in table-data-selector 1`] = `
 [
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 15,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": false,
+      "i_tab": 0,
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -97,18 +110,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": false,
-    "i_tab": 0,
-    "n_points": 15,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 34,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "1",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -206,18 +223,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "1",
-    "n_points": 34,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 35,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "2",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -315,18 +336,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "2",
-    "n_points": 35,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 10,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "3",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Summary of Medians",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -406,18 +431,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "3",
-    "n_points": 10,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Summary of Medians",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 10,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "4",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick --> gewichtet mit gew",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -497,18 +526,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "4",
-    "n_points": 10,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick --> gewichtet mit gew",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 45,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": false,
+      "i_tab": "5",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "4. Wie häufig haben Sie einen Tabellenband in den letzten 12 Monaten erstellen lassen?",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -602,18 +635,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": false,
-    "i_tab": "5",
-    "n_points": 45,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "4. Wie häufig haben Sie einen Tabellenband in den letzten 12 Monaten erstellen lassen?",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 20,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "6",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "5. Was lief besonders gut in den Projekten?",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -708,19 +745,23 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "6",
-    "n_points": 20,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "5. Was lief besonders gut in den Projekten?",
-    "xy": "x",
   },
   null,
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 40,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "8",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP2-Übersicht",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -806,18 +847,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "8",
-    "n_points": 40,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP2-Übersicht",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 40,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "9",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP1-Übersicht",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -903,18 +948,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "9",
-    "n_points": 40,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP1-Übersicht",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 17,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "10",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -982,18 +1031,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "10",
-    "n_points": 17,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 26,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "11",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1064,18 +1117,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "11",
-    "n_points": 26,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 24,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "12",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1146,18 +1203,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "12",
-    "n_points": 24,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 21,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "13",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1227,18 +1288,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "13",
-    "n_points": 21,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 15,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "14",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1332,18 +1397,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "14",
-    "n_points": 15,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 10,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "15",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1436,18 +1505,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "15",
-    "n_points": 10,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 12,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "16",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1541,18 +1614,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "16",
-    "n_points": 12,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 8,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "17",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1645,18 +1722,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "17",
-    "n_points": 8,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 4,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "18",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1747,18 +1828,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "18",
-    "n_points": 4,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 17,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "19",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1853,18 +1938,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "19",
-    "n_points": 17,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 8,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "20",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -1958,18 +2047,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "20",
-    "n_points": 8,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 8,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "21",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2063,18 +2156,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "21",
-    "n_points": 8,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 10,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "22",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> TOP3-Übersicht",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2154,18 +2251,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "22",
-    "n_points": 10,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> TOP3-Übersicht",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 10,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "23",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Mittelwertüberblick",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2245,18 +2346,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "23",
-    "n_points": 10,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Mittelwertüberblick",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 64,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "24",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Schnelle Umsetzung",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2330,18 +2435,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "24",
-    "n_points": 64,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Schnelle Umsetzung",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 56,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "25",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2414,18 +2523,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "25",
-    "n_points": 56,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 10,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "26",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> TOP3-Übersicht",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2505,18 +2618,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "26",
-    "n_points": 10,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> TOP3-Übersicht",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 10,
+    },
+    "input": {
+      "color_scale": "categorical",
+      "color_scheme": "Tableau10",
+      "colorscale_disabled": true,
+      "i_tab": "27",
+      "plot_type": "line",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Mittelwertüberblick",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2596,18 +2713,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "categorical",
-    "color_scheme": "Tableau10",
-    "colorscale_disabled": true,
-    "i_tab": "27",
-    "n_points": 10,
-    "plot_type": "line",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Mittelwertüberblick",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 64,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "28",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Schnelle Umsetzung",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2681,18 +2802,22 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "28",
-    "n_points": 64,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Schnelle Umsetzung",
-    "xy": "x",
   },
   {
-    "chartOptions": {
+    "data": {
+      "n_points": 58,
+    },
+    "input": {
+      "color_scale": "ordinal",
+      "color_scheme": "Turbo",
+      "colorscale_disabled": false,
+      "i_tab": "29",
+      "plot_type": "bar",
+      "row_type": "%",
+      "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
+      "xy": "x",
+    },
+    "options": {
       "color": {
         "className": "large-font",
         "domain": [
@@ -2764,15 +2889,6 @@ exports[`Check all questions > should reproduce the options chosen in table-data
         ],
       },
     },
-    "color_scale": "ordinal",
-    "color_scheme": "Turbo",
-    "colorscale_disabled": false,
-    "i_tab": "29",
-    "n_points": 58,
-    "plot_type": "bar",
-    "row_type": "%",
-    "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
-    "xy": "x",
   },
 ]
 `;
