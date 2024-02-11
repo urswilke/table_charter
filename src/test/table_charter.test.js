@@ -63,8 +63,8 @@ describe('Check all questions', () => {
             current_plot_options.tab_title = current_plot_options.tab_title
             const fields_to_remove = [
                 'data', 
-                'optional', 'value', 'facet', 'frameAnchor', 'lineAnchor', 'lineHeight', 'monospace',
-                'fill', 'strokeLinecap', 'strokeLinejoin', 'strokeWidth', 'stroke', 'r', 'channels'
+                // 'optional', 'value', 'facet', 'frameAnchor', 'lineAnchor', 'lineHeight', 'monospace',
+                // 'fill', 'strokeLinecap', 'strokeLinejoin', 'strokeWidth', 'stroke', 'r', 'channels'
             ];
             remove_fields(chartOptions, fields_to_remove)
             clean_data(chartOptions)

@@ -21,9 +21,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -73,9 +130,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -125,9 +239,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -172,9 +343,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -219,9 +434,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -267,9 +526,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -316,9 +632,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -370,9 +743,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -423,9 +840,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -472,6 +933,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
@@ -521,6 +1015,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
@@ -570,6 +1097,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
@@ -618,6 +1178,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
@@ -663,9 +1256,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -710,9 +1360,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -758,9 +1465,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -805,9 +1569,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -851,9 +1672,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -899,9 +1777,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -947,9 +1882,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -995,9 +1987,66 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
         {
           "ariaLabel": "text",
+          "channels": {
+            "text": {
+              "optional": true,
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": {
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "lineAnchor": "middle",
+          "lineHeight": 1,
+          "monospace": false,
         },
       ],
       "style": {
@@ -1042,9 +2091,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -1089,9 +2182,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -1144,6 +2281,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
@@ -1195,6 +2365,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
@@ -1239,9 +2442,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -1286,9 +2533,53 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "line",
+          "channels": {
+            "stroke": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "x": {
+              "scale": "x",
+            },
+            "y": {
+              "scale": "y",
+              "value": "Value",
+            },
+            "z": {
+              "optional": true,
+            },
+          },
+          "facet": "auto",
+          "fill": "none",
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "strokeWidth": 1.5,
         },
         {
           "ariaLabel": "dot",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+            },
+            "y": {
+              "optional": true,
+              "scale": "y",
+              "value": "Value",
+            },
+          },
+          "facet": "auto",
+          "frameAnchor": "middle",
+          "r": 7,
+          "stroke": "transparent",
+          "strokeWidth": 1.5,
         },
       ],
       "style": {
@@ -1341,6 +2632,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
@@ -1391,6 +2715,39 @@ exports[`Check all questions > should reproduce the options chosen in table-data
       "marks": [
         {
           "ariaLabel": "bar",
+          "channels": {
+            "fill": {
+              "optional": true,
+              "scale": "auto",
+            },
+            "title": {
+              "optional": true,
+            },
+            "x": {
+              "optional": true,
+              "scale": "x",
+              "type": "band",
+            },
+            "y1": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+            "y2": {
+              "scale": "y",
+              "value": {
+                "hint": {
+                  "length": true,
+                },
+                "label": "Value",
+              },
+            },
+          },
+          "facet": "auto",
         },
       ],
       "style": {
