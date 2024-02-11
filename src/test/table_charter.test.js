@@ -56,13 +56,9 @@ describe('Check all questions', () => {
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
             current_plot_options = await table_data_selector_el.getProperty('choices');
             temp = await table_data_selector_el.getProperty('plot_data');
-            // let chartOptions = await ojs_plot_el.getProperty('chartOptions');
             let chartOptions = await ojs_plot_el.getProperty('plot_options');
             chartOptions = chartOptions.options;
-            console.log(chartOptions)
             current_plot_options.n_points = temp.length;
-            current_plot_options.color_scale = await table_data_selector_el.getProperty('color_scale');
-            current_plot_options.color_scheme = await table_data_selector_el.getProperty('color_scheme');
             current_plot_options.tab_title = current_plot_options.tab_title
             const fields_to_remove = [
                 'data', 
