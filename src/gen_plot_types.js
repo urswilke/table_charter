@@ -1,181 +1,145 @@
 import * as Plot from "@observablehq/plot";
 
-export function gen_plot_options(data) {
-	if (data.choices === undefined) {
-		return {};
-	}
-	data["op"] = prep_options(data)
-	let plot_type = data.choices.plot_type;
-
-	var res;
-	if (plot_type === "bar") {
-		res = gen_bar_plot_options(data);
-	}
-	if (plot_type === "line") {
-		res = gen_line_plot_options(data);
-	}
-
-	// TODO: adjust size according to size of containing element
-	// cf https://stackoverflow.com/a/66760690
-	res.width = 1000
-	res.height = 600
-	
-	res.style = {fontSize: "16px"}
-
-	res.color.className = "large-font"
-	return res
-}
-
-function prep_options(data) {
-	const x2 = data.choices.xy
-    const x1 = x2 === "x" ? "y" : "x"
-	const label_joiner = x1 === 'y' ? '\n' : ' '
-	const label_joiner2 = x2 === 'y' ? '\n' : ' '
-	const col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(label_joiner)
-    const row_lab_fun = data.color_scale === "categorical" ? 
-		(x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(label_joiner2) :
-		(x) => x.RowValue;
-    // const row_lab_fun = (x) => x.RowValue;
-	const color_order = [...new Set(data.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(row_lab_fun))];
-	const x_order = [...new Set(data.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(col_lab_fun))];
-	
-	const plot_opts = {}
-	plot_opts[x2] = col_lab_fun
-	plot_opts[x1] =  "Value"
-	const x1_opts = {
-		label: null,
-	}
-	const x2_opts = {
-        domain: x_order,
-        label: null
+export class PlotOptions {
+    constructor(input_data) {
+		let o = input_data.choices
+		o.color_scale = input_data.color_scale;
+		o.color_scheme = input_data.color_scheme;
+		this.o = o;
+		this.plot_data = input_data.plot_data;
+		this.pre_process()
+		// Execute method bar() or line() depending on the plot type:
+		this[o.plot_type]()		
+		this.post_process()
     }
+	pre_process() {
+		const o = this.o;
+		const e = {};
 
-	return {
-		x2,
-		x1,
-		label_joiner,
-		label_joiner2,
-		col_lab_fun,
-		row_lab_fun,
-		color_order,
-		x_order,
-		plot_opts,
-		x1_opts,
-		x2_opts,
-	}
-}
+		e.x2 = o.xy
+		e.x1 = e.x2 === "x" ? "y" : "x"
+		e.label_joiner = e.x1 === 'y' ? '\n' : ' '
+		e.label_joiner2 = e.x2 === 'y' ? '\n' : ' '
+		e.col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(e.label_joiner)
+		e.row_lab_fun = o.color_scale === "categorical" ? 
+			(x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(e.label_joiner2) :
+			(x) => x.RowValue;
+		// e.row_lab_fun = (x) => x.RowValue;
+		e.color_order = [...new Set(this.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(e.row_lab_fun))];
+		e.x_order = [...new Set(this.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(e.col_lab_fun))];
+		
+		const plot_opts = {}
+		plot_opts[e.x2] = e.col_lab_fun
+		plot_opts[e.x1] =  "Value"
+		e.plot_opts = plot_opts;
 
-function gen_bar_plot_options(data) {
-	const { 
-		x2: x2,
-		x1: x1,
-		// label_joiner: label_joiner,
-		// label_joiner2: label_joiner2,
-		// col_lab_fun: col_lab_fun,
-		row_lab_fun: row_lab_fun,
-		color_order: color_order,
-		x_order: x_order,
-		plot_opts: plot_opts,
-		x1_opts: x1_opts,
-		x2_opts: x2_opts,
-	} = data.op
-
-	const group_ 	= x1 === "y" ? Plot.groupX  : Plot.groupY
-    const text_ 	= x1 === "y" ? Plot.textY   : Plot.textX
-    const stack_ 	= x1 === "y" ? Plot.stackY  : Plot.stackX
-    const bar_      = x1 === "y" ? Plot.barY 	: Plot.barX
-    
-	const group_args1 = {text: "first"}
-	group_args1[x1] = "sum"
-	// const group_args2 = {...group_args1, text: "first"}
-	const n_decimals = data.plot_data[0].RowDecimals;
-	const group_args2_bar = {
-		...plot_opts,
-		fill: row_lab_fun,
-		order: color_order,
-		title: tooltip_fun(n_decimals)
-	}
-	const group_args2_text = {
-		...plot_opts,
-		text: (x) => ((x.Value === undefined || x.Value == 0) ? null : x.Value.toFixed(n_decimals)),
-		z: row_lab_fun,
-		order: color_order,
-		title: tooltip_fun(n_decimals)
-	}
-	const bar_opts = group_(group_args1, group_args2_bar)
-	const text_opts = group_(group_args1, group_args2_text)
-
-    const res = {
-		marginLeft: x1 === "y" ? 40 : 260,
-		marginBottom: 60,
-        color: {
-			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
-			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
-            domain: color_order,
-            legend: true
-        },
-        marks: [
-            bar_(data.plot_data, bar_opts),
-			// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
-            data.color_scale === "ordinal" ? null : text_(data.plot_data, stack_(text_opts)),
-            // only show if there 10 different color values at max...:
-			// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
-        ]
-    };
-    res[x2] = x2_opts
-	res[x1] = x1_opts
-	return res
-}
-
-function gen_line_plot_options(data) {
-	const { 
-		x2: x2,
-		x1: x1,
-		// label_joiner: label_joiner,
-		// label_joiner2: label_joiner2,
-		// col_lab_fun: col_lab_fun,
-		row_lab_fun: row_lab_fun,
-		color_order: color_order,
-		x_order: x_order,
-		plot_opts: plot_opts,
-		x1_opts: x1_opts,
-		x2_opts: x2_opts
-	} = data.op
-
-	let line_opts = {
-		...plot_opts,
-		stroke: row_lab_fun
-	}
-
-	const n_decimals = data.plot_data[0].RowDecimals;
-	let dot_opts = {
-		...line_opts,
-		fill: row_lab_fun,
-		stroke: "transparent",
-		r: 7,
-		title: tooltip_fun(n_decimals)
-	}
-
-	
-	const res = {
-		marginLeft: x2 === "x" ? 40 : 160,
-		marginBottom: 60,
-		color: {
-			type: data.color_scale === "ordinal" ? "linear" : data.color_scale,
-			scheme: color_schemes_maps[data.color_scale].get(data.color_scheme),
-			domain: color_order,
+		e.color_opts = {
+			type: o.color_scale === "ordinal" ? "linear" : o.color_scale,
+			scheme: color_schemes_maps[o.color_scale].get(o.color_scheme),
+			domain: e.color_order,
 			legend: true
-		},
-		marks: [
-			Plot.lineY(data.plot_data, line_opts),
-			Plot.dot(data.plot_data, dot_opts),
-			// x2 === "x" ? Plot.axisX({textAnchor: "start"}) : null
-		]
-	};
-	res[x1] = x1_opts
-	res[x2] = x2_opts
+		}
 
-	return res
+		e.x1_opts = {
+			label: null,
+		}
+		e.x2_opts = {
+			domain: e.x_order,
+			label: null
+		}
+		e.n_decimals = this.plot_data[0].RowDecimals;
+		e.marginLeft = e.x1 === "y" ? 40 : 260
+		e.marginBottom = 60
+	
+		this.e = e;
+	}
+	bar() {
+		const e = this.e;
+		
+		const p = {};
+		p.group_ = e.x1 === "y" ? "groupX" : "groupY";
+        p.text_ = e.x1 === "y" ? "textY" : "textX";
+        p.stack_ = e.x1 === "y" ? "stackY" : "stackX";
+        p.bar_ = e.x1 === "y" ? "barY" : "barX";
+		
+		p.group_args1 = {text: "first"}
+		p.group_args1[e.x1] = "sum"
+		// p.group_args2 = {...group_args1, text: "first"}
+		p.group_args2_bar = {
+			...e.plot_opts,
+			fill: e.row_lab_fun,
+			order: e.color_order,
+			title: tooltip_fun(e.n_decimals)
+		}
+		p.group_args2_text = {
+			...e.plot_opts,
+			text: (x) => ((x.Value === undefined || x.Value == 0) ? null : x.Value.toFixed(e.n_decimals)),
+			z: e.row_lab_fun,
+			order: e.color_order,
+			title: tooltip_fun(e.n_decimals)
+		}
+		p.bar_opts = Plot[p.group_](p.group_args1, p.group_args2_bar)
+		p.text_opts = Plot[p.group_](p.group_args1, p.group_args2_text)
+		this.p = p;
+		this.bar_plot_options()
+	}
+	bar_plot_options() {
+		this.options = {
+			marginLeft: this.e.marginLeft,
+			marginBottom: this.e.marginBottom,
+			color: this.e.color_opts,
+			marks: [
+				Plot[this.p.bar_](this.plot_data, Plot[this.p.stack_](this.p.bar_opts)),
+				// (explicit form of this):
+				// Plot[this.p.bar_](this.plot_data, this.p.bar_opts),
+				// https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
+				this.o.color_scale === "ordinal" ? null : Plot[this.p.text_](this.plot_data, Plot[this.p.stack_](this.p.text_opts)),
+				// only show if there 10 different color values at max...:
+				// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
+			]
+		};
+	}
+	
+	line() {
+		var p = {};
+		const o = this.o;
+		const e = this.e;
+		p.line_opts = {
+			...e.plot_opts,
+			stroke: e.row_lab_fun
+		}
+	
+		p.dot_opts = {
+			...p.line_opts,
+			fill: e.row_lab_fun,
+			stroke: "transparent",
+			r: 7,
+			title: tooltip_fun(e.n_decimals)
+		}
+		this.p = p;
+		this.line_plot_options()
+	}
+	line_plot_options() {
+		this.options = {
+			marginLeft: this.e.marginLeft,
+			marginBottom: this.e.marginBottom,
+			color: this.e.color_opts,
+			marks: [
+				Plot.lineY(this.plot_data, this.p.line_opts),
+				Plot.dot(this.plot_data, this.p.dot_opts),
+				// x2 === "x" ? Plot.axisX({textAnchor: "start"}) : null
+			]
+		};
+	}
+	post_process() {
+		this.options[this.e.x2] = this.e.x2_opts
+		this.options[this.e.x1] = this.e.x1_opts
+		this.options.width = 1000
+		this.options.height = 600
+		this.options.style = {fontSize: "16px"}
+		this.options.color.className = "large-font"
+	
+	}
 }
 
 function tooltip_fun(n_decimals) {
@@ -195,8 +159,8 @@ function tooltip_fun(n_decimals) {
 			null :
 			`value: ${x.Value.toFixed(n_decimals)}`,
 		`N: ${x.ColValidCases.toFixed(0)}`,
-		x.ColMean === undefined ?
-		null :
+			x.ColMean === undefined ?
+			null :
 		`mean: ${x.ColMean.toFixed(1)}`,
 		null
 

@@ -1,6 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
-import { gen_plot_options } from './gen_plot_types.js'
+import { PlotOptions } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
@@ -14,7 +14,7 @@ export class OJSPlot extends LitElement {
 		id: { type: String },
 		appStyles: { type: String },
 		chartTitle: { type: String },
-		chartOptions: { type: Object },
+		plot_options: { type: PlotOptions },
 	};
 
 	constructor() {
@@ -27,7 +27,10 @@ export class OJSPlot extends LitElement {
 	}
 
 	set plot_data(val) {
-		this.chartOptions = gen_plot_options(val)
+		if (val.length === 0) {
+			return this
+		}
+		this.plot_options = new PlotOptions(val)
 		this.chartTitle = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabTitle: ""
 	}
 
@@ -36,9 +39,10 @@ export class OJSPlot extends LitElement {
 
 		inspect && console.log("render")
 
-		const renderedPlot = this.chartOptions && Plot.plot(this.chartOptions)
+		const options = this.plot_options?.options;
+		const renderedPlot = options && Plot.plot(options)
 
-		return when(this.chartOptions === null,
+		return when(options === null,
 			() => html`<div></div>`,
 			() => html`<div>
 				<h2 
