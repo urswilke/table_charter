@@ -47,9 +47,8 @@ describe('Check plots', () => {
 })
 
 describe('Check all questions', () => {
-    var plot_option_array = new Array();
+    var plot_option_array = new Array(all_questions.length);
     for (const question_text of all_questions) {
-        let current_plot_options, temp;
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
             await question_select_el.selectByVisibleText(question_text)
             await fig_el.isExisting()
