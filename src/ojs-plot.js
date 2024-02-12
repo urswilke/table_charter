@@ -52,9 +52,29 @@ export class OJSPlot extends LitElement {
 					${this.chartTitle}
 				</h2>
 				${renderedPlot}
+				<span>
+					<button
+						data-test-id="save-button"
+						@click="${this._click_save_svg}">
+						save svg
+					</button>
+
+				</span>
 			</div>`
 		)
 
+	}
+	get _svg() {
+		return this.renderRoot?.querySelector("svg[class*=plot]") ?? null;
+	}
+
+	_click_save_svg() {
+		let tab_title_processed = this.plot_options.plot_data[0].TabTitle.replace(/[\./\\?%*:|"<> ]/g, '_')
+		let i_tab = this.plot_options.plot_data[0].i_tab
+		saveSvg(
+			this._svg, 
+			i_tab + "__" + tab_title_processed + '.svg'
+		)
 	}
 	static styles = [
 		unsafeCSS(this.appStyles),
@@ -95,6 +115,16 @@ export class OJSPlot extends LitElement {
 
 }
 
-
-
+function saveSvg(svgEl, name) {
+    svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    var svgData = svgEl.outerHTML;
+    var svgBlob = new Blob([svgData], {type:"image/svg+xml"});
+    var svgUrl = URL.createObjectURL(svgBlob);
+    var downloadLink = document.createElement("a");
+    downloadLink.href = svgUrl;
+    downloadLink.download = name;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
 window.customElements.define('ojs-plot', OJSPlot)
