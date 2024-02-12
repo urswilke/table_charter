@@ -65,7 +65,7 @@ export class OJSPlot extends LitElement {
 
 	}
 	get _svg() {
-		return this.renderRoot?.querySelector("svg[class*=plot]") ?? null;
+		return this.renderRoot?.querySelector("figure[class*=plot]") ?? null;
 	}
 
 	_click_save_svg() {
@@ -115,10 +115,31 @@ export class OJSPlot extends LitElement {
 
 }
 
+// combination of 
+// https://observablehq.com/@mbostock/saving-svg
+// and
+// https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an/46403589#46403589
 function saveSvg(svgEl, name) {
-    svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    var svgData = svgEl.outerHTML;
-    var svgBlob = new Blob([svgData], {type:"image/svg+xml"});
+	const xmlns = "http://www.w3.org/2000/xmlns/";
+    const xlinkns = "http://www.w3.org/1999/xlink";
+    const svgns = "http://www.w3.org/2000/svg";
+
+    svgEl = svgEl.cloneNode(true);
+    const fragment = window.location.href + "#";
+    const walker = document.createTreeWalker(svgEl, NodeFilter.SHOW_ELEMENT);
+    while (walker.nextNode()) {
+        for (const attr of walker.currentNode.attributes) {
+            if (attr.value.includes(fragment)) {
+                attr.value = attr.value.replace(fragment, "#");
+            }
+        }
+    }
+    svgEl.setAttributeNS(xmlns, "xmlns", svgns);
+    svgEl.setAttributeNS(xmlns, "xmlns:xlink", xlinkns);
+    const serializer = new window.XMLSerializer();
+    const string = serializer.serializeToString(svgEl);
+    var svgBlob = new Blob([string], { type: "image/svg+xml" });
+
     var svgUrl = URL.createObjectURL(svgBlob);
     var downloadLink = document.createElement("a");
     downloadLink.href = svgUrl;
