@@ -45,6 +45,7 @@ export class OJSPlot extends LitElement {
 		return when(options === null,
 			() => html`<div></div>`,
 			() => html`<div>
+				<div id="ojs-plot-div">
 				<h2 
 					class="primary multi-line-header"
 					data-test-id="plot-header"	
@@ -52,6 +53,7 @@ export class OJSPlot extends LitElement {
 					${this.chartTitle}
 				</h2>
 				${renderedPlot}
+				</div>
 				<span>
 					<button
 						data-test-id="save-button"
@@ -65,7 +67,7 @@ export class OJSPlot extends LitElement {
 
 	}
 	get _svg() {
-		return this.renderRoot?.querySelector("figure[class*=plot]") ?? null;
+		return this.renderRoot?.querySelector("#ojs-plot-div") ?? null;
 	}
 
 	_click_save_svg() {
