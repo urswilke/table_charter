@@ -11,7 +11,7 @@ render(
 
 const table_charter_el = await $('table-charter')
 const table_data_selector_el = await $('>>>table-data-selector')
-const button = await table_charter_el.$('>>>button[data-test-id="show-hide-button"]')
+const adv_settings_button = await table_charter_el.$('>>>button[data-test-id="show-hide-button"]')
 const question_selector_el = await table_charter_el.$('>>>question-selector[data-test-id="question-selector"]')
 const all_questions = await question_selector_el.$$(">>>option").map(x => x.getText())
 const question_select_el = await question_selector_el.$(">>>select")
@@ -23,17 +23,17 @@ describe('Button "Show/hide advanced settings" testing', () => {
     it('should change text to "Hide advanced settings" on click', async () => {
         await expect(subheader_selector).toHaveElementClass('hide')
         await expect(color_selector_el).toHaveElementClass('hide')
-        await button.click()
+        await adv_settings_button.click()
         await expect(subheader_selector).not.toHaveElementClass('hide')
         await expect(color_selector_el).not.toHaveElementClass('hide')
 
-        await expect(button).toHaveText('Hide advanced settings')
+        await expect(adv_settings_button).toHaveText('Hide advanced settings')
     })
 
     it('should change text back to "Show advanced settings" on click', async () => {
-        await button.click()
+        await adv_settings_button.click()
         await expect(subheader_selector).toHaveElementClass('hide')
-        await expect(button).toHaveText('Show advanced settings')
+        await expect(adv_settings_button).toHaveText('Show advanced settings')
         await expect(color_selector_el).toHaveElementClass('hide')
     })
 })
