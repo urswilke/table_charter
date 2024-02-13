@@ -42,28 +42,33 @@ export class OJSPlot extends LitElement {
 		const options = this.plot_options?.options;
 		const renderedPlot = options && Plot.plot(options)
 
-		return when(options === null,
-			() => html`<div></div>`,
-			() => html`<div>
-				<div id="ojs-plot-div">
-				<h2 
-					class="primary multi-line-header"
-					data-test-id="plot-header"	
-				>
-					${this.chartTitle}
-				</h2>
-				${renderedPlot}
-				</div>
-				<span>
-					<button
-						data-test-id="save-svg-button"
-						@click="${this._click_save_svg}">
-						save svg
-					</button>
+		return when(
+            options === null,
+            () => html`<div></div>`,
+            () => html`
+				<div>
+					<div id="ojs-plot-div">
+						<h2 
+							class="primary multi-line-header left_float"
+							data-test-id="plot-header"	
+						>
+							${this.chartTitle}
+						</h2>
+						${renderedPlot}
+						</div>
+							<span>
+								<button
+									data-test-id="save-svg-button"
+									@click="${this._click_save_svg}">
+									save svg
+								</button>
 
-				</span>
-			</div>`
-		)
+							</span>
+						</div>
+					</div>
+				</div>
+			`
+        );
 
 	}
 	get _svg() {
