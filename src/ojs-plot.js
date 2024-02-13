@@ -56,7 +56,7 @@ export class OJSPlot extends LitElement {
 				</div>
 				<span>
 					<button
-						data-test-id="save-button"
+						data-test-id="save-svg-button"
 						@click="${this._click_save_svg}">
 						save svg
 					</button>
@@ -77,10 +77,9 @@ export class OJSPlot extends LitElement {
 		
 		let tab_title_processed = this.plot_options.plot_data[0].TabTitle.replace(/[\./\\?%*:|"<> ]/g, '_')
 		let i_tab = this.plot_options.plot_data[0].i_tab
-		saveSvg(
-			this._svg, 
-			i_tab + "__" + tab_title_processed + '.svg'
-		)
+		let svg_blob = create_svg_blob(this._svg)
+		let name = i_tab + "__" + tab_title_processed + '.svg'
+		dowload_image(svg_blob, name)
 	}
 	static styles = [
 		unsafeCSS(this.appStyles),
@@ -125,28 +124,31 @@ export class OJSPlot extends LitElement {
 // https://observablehq.com/@mbostock/saving-svg
 // and
 // https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an/46403589#46403589
-function saveSvg(svgEl, name) {
+function create_svg_blob(svgEl) {
 	const xmlns = "http://www.w3.org/2000/xmlns/";
     const xlinkns = "http://www.w3.org/1999/xlink";
     const svgns = "http://www.w3.org/2000/svg";
 
-    svgEl = svgEl.cloneNode(true);
-    const fragment = window.location.href + "#";
-    const walker = document.createTreeWalker(svgEl, NodeFilter.SHOW_ELEMENT);
-    while (walker.nextNode()) {
-        for (const attr of walker.currentNode.attributes) {
-            if (attr.value.includes(fragment)) {
-                attr.value = attr.value.replace(fragment, "#");
-            }
-        }
-    }
+	// It seems that this isn't needed (I have no idea what it does anyway...):
+    // svgEl = svgEl.cloneNode(true);
+    // const fragment = window.location.href + "#";
+    // const walker = document.createTreeWalker(svgEl, NodeFilter.SHOW_ELEMENT);
+    // while (walker.nextNode()) {
+    //     for (const attr of walker.currentNode.attributes) {
+    //         if (attr.value.includes(fragment)) {
+    //             attr.value = attr.value.replace(fragment, "#");
+    //         }
+    //     }
+    // }
     svgEl.setAttributeNS(xmlns, "xmlns", svgns);
     svgEl.setAttributeNS(xmlns, "xmlns:xlink", xlinkns);
     const serializer = new window.XMLSerializer();
     const string = serializer.serializeToString(svgEl);
-    var svgBlob = new Blob([string], { type: "image/svg+xml" });
+    return new Blob([string], { type: "image/svg+xml" });
 
-    var svgUrl = URL.createObjectURL(svgBlob);
+}
+function dowload_image(image_blob, name) {
+    var svgUrl = URL.createObjectURL(image_blob);
     var downloadLink = document.createElement("a");
     downloadLink.href = svgUrl;
     downloadLink.download = name;
@@ -154,4 +156,5 @@ function saveSvg(svgEl, name) {
     downloadLink.click();
     document.body.removeChild(downloadLink);
 }
+
 window.customElements.define('ojs-plot', OJSPlot)
