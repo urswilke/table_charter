@@ -1,8 +1,8 @@
 // Urs own objects:
+import fs from "fs-extra";
+import * as path from 'path';
 const debug = process.env.DEBUG
-
-
-
+const downloadDir = path.resolve('src/test/output');
 
 // not sure if that's needed:
 const dynamicConfig = {};
@@ -12,6 +12,19 @@ if(process.env.CI_COMMIT_REF_SLUG) {
         dynamicConfig.baseUrl = 'https://urswilke.gitlab.io/table_charter/';
     }
 }
+dynamicConfig.capabilities = [{
+    maxInstances: 1,     
+    browserName: 'chrome',
+    "goog:chromeOptions": {
+        // args: [
+        //     'user-data-dir=./chrome/user-data',
+        // ],
+        prefs: {
+            "download.default_directory": downloadDir,
+        },
+        logPath: 'logs'
+    }
+}]
 if(process.env.CI_JOB_NAME) {
     dynamicConfig.capabilities = [
         { browserName: process.env.CI_JOB_NAME === 'run_test_chrome' ? 'chrome' : 'firefox' },
@@ -22,7 +35,18 @@ if(process.env.CI_JOB_NAME) {
 export const config = Object.assign({}, {
     // Urs config:
     // execArgv: debug ? ['--inspect'] : [],
-
+    onPrepare: function (config, capabilities) {
+        // make sure download directory exists
+        if (fs.existsSync(downloadDir)){
+            // if it doesn't exist, create it
+            fs.removeSync(downloadDir);
+        }
+        fs.mkdirsSync(downloadDir);
+    },
+    // onComplete: function() {
+    //     fs.removeSync(downloadDir);
+    //     // readdirSync(downloadDir).forEach(f => rmSync(`${dir}/${f}`));
+    // },
     // Default params after install wizard:
     //
     // ====================

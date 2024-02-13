@@ -1,0 +1,44 @@
+import { $, expect } from '@wdio/globals'
+import '../tableCharter.js'
+import { html, render } from 'lit'
+render(
+    html`<table-charter></table-charter>`,
+    document.body
+)
+const table_charter_el = await $('table-charter')
+const adv_settings_button = await table_charter_el.$('>>>button[data-test-id="show-hide-button"]')
+const ojs_plot_el = table_charter_el.$('>>>ojs-plot[data-test-id="ojs-plot"]')
+const save_svg_button = await ojs_plot_el.$('>>>button[data-test-id="save-svg-button"]')
+const question_selector_el = await table_charter_el.$('>>>question-selector[data-test-id="question-selector"]')
+const header_selector_el = await table_charter_el.$('>>>multi-selector[data-test-id="header-selector"]').$(">>>.mainsel")
+const row_selector_el = await table_charter_el.$('>>>multi-selector[data-test-id="row-selector"]').$(">>>.subsel")
+const all_questions = await question_selector_el.$$(">>>option").map(x => x.getText())
+const question_select_el = await question_selector_el.$(">>>select")
+const fig_el = await ojs_plot_el.$(">>>figure")
+await adv_settings_button.click()
+await header_selector_el.selectByIndex(1)
+
+describe('Check all questions', () => {
+    
+    for (const question_text of all_questions) {
+        it('question: ' + question_text.substring(0, 40) + "...", async () => {
+            await question_select_el.selectByVisibleText(question_text)
+            const first_option = await row_selector_el.$(">>>option")
+            console.log('first_option :>> ', first_option);
+            await first_option.click()
+            await browser.performActions([{
+                type: 'key',
+                id: 'keyboard',
+                actions: [
+                    {type: 'keyDown', value: '\ue015'},
+                    {type: 'keyUp', value: '\ue015'},
+                ]
+            }]);
+
+            await fig_el.isExisting()
+            // Scroll to the bottom of the element:
+            await ojs_plot_el.scrollIntoView({ block: 'end', inline: 'nearest' })
+            await save_svg_button.click()
+        })
+    }
+})

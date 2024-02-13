@@ -254,6 +254,7 @@ export class TableDataSelector extends LitElement {
 						<label for="headers">Headers</label>
 						<multi-selector
 							id="headers" 		
+							data-test-id="header-selector"	
 							.mainsel_text = ${"header"}
 							.subsel_text = ${"sub-header"}
 							.parent_string = ${"ColTitle1"}
@@ -269,6 +270,7 @@ export class TableDataSelector extends LitElement {
 						<label for="rows">Rows</label>
 						<multi-selector 
 							id="rows"		
+							data-test-id="row-selector"	
 							.mainsel_text = ${"type(s)"}
 							.subsel_text = ${"row(s)"}
 							.parent_string = ${"RowContent"}

@@ -15,6 +15,7 @@ export class OJSPlot extends LitElement {
 		appStyles: { type: String },
 		chartTitle: { type: String },
 		plot_options: { type: PlotOptions },
+		file_name: { type: String },
 	};
 
 	constructor() {
@@ -83,8 +84,9 @@ export class OJSPlot extends LitElement {
 		let tab_title_processed = this.plot_options.plot_data[0].TabTitle.replace(/[\./\\?%*:|"<> ]/g, '_')
 		let i_tab = this.plot_options.plot_data[0].i_tab
 		let svg_blob = create_svg_blob(this._svg)
-		let name = i_tab + "__" + tab_title_processed + '.svg'
-		dowload_image(svg_blob, name)
+		// let file_name = i_tab + "__" + tab_title_processed + '.svg'
+		this.file_name = i_tab + "_" + '.svg'
+		dowload_image(svg_blob, this.file_name)
 	}
 	static styles = [
 		unsafeCSS(this.appStyles),
@@ -148,15 +150,15 @@ function create_svg_blob(svgEl) {
     svgEl.setAttributeNS(xmlns, "xmlns", svgns);
     svgEl.setAttributeNS(xmlns, "xmlns:xlink", xlinkns);
     const serializer = new window.XMLSerializer();
-    const string = serializer.serializeToString(svgEl);
+    const string = serializer.serializeToString(svgEl).replace(/<\!--.*?-->/g, "");
     return new Blob([string], { type: "image/svg+xml" });
 
 }
-function dowload_image(image_blob, name) {
+function dowload_image(image_blob, file_name) {
     var svgUrl = URL.createObjectURL(image_blob);
     var downloadLink = document.createElement("a");
     downloadLink.href = svgUrl;
-    downloadLink.download = name;
+    downloadLink.download = file_name;
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);

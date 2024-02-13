@@ -1,0 +1,51 @@
+<div xmlns="http://www.w3.org/1999/xhtml" id="ojs-plot-div" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<h2 class="primary multi-line-header left_float" data-test-id="plot-header">
+							5. Was lief besonders gut in den Projekten?
+						</h2>
+						<figure class="plot-d6a7b5-figure" style="max-width: initial;"><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  margin-bottom: 0.5em;
+}
+:where(.large-font-swatch &gt; svg) {
+  margin-right: 0.5em;
+  overflow: visible;
+}
+:where(.large-font-swatches-wrap) {
+  display: flex;
+  align-items: center;
+  min-height: 33px;
+  flex-wrap: wrap;
+}
+:where(.large-font-swatches-wrap .large-font-swatch) {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1em;
+}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Sonstiges</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+  --plot-background: white;
+  display: block;
+  height: auto;
+  height: intrinsic;
+  max-width: 100%;
+}
+:where(.plot-d6a7b5 text),
+:where(.plot-d6a7b5 tspan) {
+  white-space: pre;
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,500.133399777667)" d="M0,0L-6,0"/><path transform="translate(40,460.26679955533405)" d="M0,0L-6,0"/><path transform="translate(40,420.4001993330011)" d="M0,0L-6,0"/><path transform="translate(40,380.53359911066815)" d="M0,0L-6,0"/><path transform="translate(40,340.6669988883351)" d="M0,0L-6,0"/><path transform="translate(40,300.8003986660022)" d="M0,0L-6,0"/><path transform="translate(40,260.9337984436693)" d="M0,0L-6,0"/><path transform="translate(40,221.0671982213363)" d="M0,0L-6,0"/><path transform="translate(40,181.20059799900335)" d="M0,0L-6,0"/><path transform="translate(40,141.33399777667037)" d="M0,0L-6,0"/><path transform="translate(40,101.46739755433742)" d="M0,0L-6,0"/><path transform="translate(40,61.60079733200443)" d="M0,0L-6,0"/><path transform="translate(40,21.734197109671495)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,500.133399777667)">2</text><text y="0.32em" transform="translate(40,460.26679955533405)">4</text><text y="0.32em" transform="translate(40,420.4001993330011)">6</text><text y="0.32em" transform="translate(40,380.53359911066815)">8</text><text y="0.32em" transform="translate(40,340.6669988883351)">10</text><text y="0.32em" transform="translate(40,300.8003986660022)">12</text><text y="0.32em" transform="translate(40,260.9337984436693)">14</text><text y="0.32em" transform="translate(40,221.0671982213363)">16</text><text y="0.32em" transform="translate(40,181.20059799900335)">18</text><text y="0.32em" transform="translate(40,141.33399777667037)">20</text><text y="0.32em" transform="translate(40,101.46739755433742)">22</text><text y="0.32em" transform="translate(40,61.60079733200443)">24</text><text y="0.32em" transform="translate(40,21.734197109671495)">26</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="20" height="520" fill="#4e79a7"><title>row: Sonstiges
+
+row value: 97
+header: GESAMT
+column: undefined
+value: 26.1
+N: 46
+
+ (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,280)">26.1<title>row: Sonstiges
+
+row value: 97
+header: GESAMT
+column: undefined
+value: 26.1
+N: 46
+
+ (1)</title></text></g></svg></figure>
+						</div>
