@@ -171,7 +171,6 @@ export class TableDataSelector extends LitElement {
 				? { ...p, selected: true }
 				: { ...p, selected: false }
 			)
-			console.log(1)
 		}
 		
 		this.sel_rows_data()
