@@ -21,7 +21,7 @@
   display: inline-flex;
   align-items: center;
   margin-right: 1em;
-}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>5 - 9 Beschäftigte</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>2 - 4 Beschäftigte</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>5 - 9 Beschäftigte</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -31,7 +31,15 @@
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,515.0730431739686)" d="M0,0L-6,0"/><path transform="translate(40,490.14608634793717)" d="M0,0L-6,0"/><path transform="translate(40,465.2191295219057)" d="M0,0L-6,0"/><path transform="translate(40,440.2921726958744)" d="M0,0L-6,0"/><path transform="translate(40,415.3652158698429)" d="M0,0L-6,0"/><path transform="translate(40,390.4382590438115)" d="M0,0L-6,0"/><path transform="translate(40,365.5113022177801)" d="M0,0L-6,0"/><path transform="translate(40,340.5843453917487)" d="M0,0L-6,0"/><path transform="translate(40,315.6573885657172)" d="M0,0L-6,0"/><path transform="translate(40,290.7304317396859)" d="M0,0L-6,0"/><path transform="translate(40,265.80347491365444)" d="M0,0L-6,0"/><path transform="translate(40,240.87651808762305)" d="M0,0L-6,0"/><path transform="translate(40,215.9495612615916)" d="M0,0L-6,0"/><path transform="translate(40,191.02260443556023)" d="M0,0L-6,0"/><path transform="translate(40,166.0956476095288)" d="M0,0L-6,0"/><path transform="translate(40,141.16869078349737)" d="M0,0L-6,0"/><path transform="translate(40,116.24173395746598)" d="M0,0L-6,0"/><path transform="translate(40,91.31477713143454)" d="M0,0L-6,0"/><path transform="translate(40,66.3878203054031)" d="M0,0L-6,0"/><path transform="translate(40,41.46086347937173)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,515.0730431739686)">2</text><text y="0.32em" transform="translate(40,490.14608634793717)">4</text><text y="0.32em" transform="translate(40,465.2191295219057)">6</text><text y="0.32em" transform="translate(40,440.2921726958744)">8</text><text y="0.32em" transform="translate(40,415.3652158698429)">10</text><text y="0.32em" transform="translate(40,390.4382590438115)">12</text><text y="0.32em" transform="translate(40,365.5113022177801)">14</text><text y="0.32em" transform="translate(40,340.5843453917487)">16</text><text y="0.32em" transform="translate(40,315.6573885657172)">18</text><text y="0.32em" transform="translate(40,290.7304317396859)">20</text><text y="0.32em" transform="translate(40,265.80347491365444)">22</text><text y="0.32em" transform="translate(40,240.87651808762305)">24</text><text y="0.32em" transform="translate(40,215.9495612615916)">26</text><text y="0.32em" transform="translate(40,191.02260443556023)">28</text><text y="0.32em" transform="translate(40,166.0956476095288)">30</text><text y="0.32em" transform="translate(40,141.16869078349737)">32</text><text y="0.32em" transform="translate(40,116.24173395746598)">34</text><text y="0.32em" transform="translate(40,91.31477713143454)">36</text><text y="0.32em" transform="translate(40,66.3878203054031)">38</text><text y="0.32em" transform="translate(40,41.46086347937173)">40</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="20" height="520" fill="#4e79a7"><title>row: 5 - 9 Beschäftigte
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,504.9464354569502)" d="M0,0L-6,0"/><path transform="translate(40,469.89287091390037)" d="M0,0L-6,0"/><path transform="translate(40,434.8393063708506)" d="M0,0L-6,0"/><path transform="translate(40,399.78574182780073)" d="M0,0L-6,0"/><path transform="translate(40,364.7321772847509)" d="M0,0L-6,0"/><path transform="translate(40,329.67861274170104)" d="M0,0L-6,0"/><path transform="translate(40,294.62504819865126)" d="M0,0L-6,0"/><path transform="translate(40,259.57148365560147)" d="M0,0L-6,0"/><path transform="translate(40,224.51791911255162)" d="M0,0L-6,0"/><path transform="translate(40,189.46435456950178)" d="M0,0L-6,0"/><path transform="translate(40,154.41079002645193)" d="M0,0L-6,0"/><path transform="translate(40,119.35722548340215)" d="M0,0L-6,0"/><path transform="translate(40,84.30366094035234)" d="M0,0L-6,0"/><path transform="translate(40,49.25009639730253)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,504.9464354569502)">5</text><text y="0.32em" transform="translate(40,469.89287091390037)">10</text><text y="0.32em" transform="translate(40,434.8393063708506)">15</text><text y="0.32em" transform="translate(40,399.78574182780073)">20</text><text y="0.32em" transform="translate(40,364.7321772847509)">25</text><text y="0.32em" transform="translate(40,329.67861274170104)">30</text><text y="0.32em" transform="translate(40,294.62504819865126)">35</text><text y="0.32em" transform="translate(40,259.57148365560147)">40</text><text y="0.32em" transform="translate(40,224.51791911255162)">45</text><text y="0.32em" transform="translate(40,189.46435456950178)">50</text><text y="0.32em" transform="translate(40,154.41079002645193)">55</text><text y="0.32em" transform="translate(40,119.35722548340215)">60</text><text y="0.32em" transform="translate(40,84.30366094035234)">65</text><text y="0.32em" transform="translate(40,49.25009639730253)">70</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="312.5002629017341" height="227.49973709826588" fill="#4e79a7"><title>row: 2 - 4 Beschäftigte
+
+row value: 2
+header: GESAMT
+column: undefined
+value: 32.5
+N: 151
+
+ (1)</title></rect><rect x="126" width="769" y="20" height="292.5002629017341" fill="#f28e2c"><title>row: 5 - 9 Beschäftigte
 
 row value: 3
 header: GESAMT
@@ -39,7 +47,15 @@ column: undefined
 value: 41.7
 N: 151
 
- (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,280)">41.7<title>row: 5 - 9 Beschäftigte
+ (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,426.250131450867)">32.5<title>row: 2 - 4 Beschäftigte
+
+row value: 2
+header: GESAMT
+column: undefined
+value: 32.5
+N: 151
+
+ (1)</title></text><text y="0.32em" transform="translate(126,166.25013145086706)">41.7<title>row: 5 - 9 Beschäftigte
 
 row value: 3
 header: GESAMT

@@ -22,7 +22,7 @@ TOP1-Übersicht
   display: inline-flex;
   align-items: center;
   margin-right: 1em;
-}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Langfristige Zusammenarbeit</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Schnelle Umsetzung</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>Kurzfristige Anpassungen</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -32,13 +32,21 @@ TOP1-Übersicht
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,280)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,280)">10</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(0.5,0)"><path transform="translate(510,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(0.5,9.5)"><text transform="translate(510,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="line" fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" transform="translate(0.5,0.5)"><path stroke="#4e79a7" d="M510,280Z"/></g><g aria-label="dot" stroke="transparent" stroke-width="1.5" transform="translate(0.5,0.5)"><circle cx="510" cy="280" r="7" fill="#4e79a7"><title>row: Langfristige Zusammenarbeit
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,527.33589644578)" d="M0,0L-6,0"/><path transform="translate(40,492.41488843745276)" d="M0,0L-6,0"/><path transform="translate(40,457.49388042912545)" d="M0,0L-6,0"/><path transform="translate(40,422.57287242079815)" d="M0,0L-6,0"/><path transform="translate(40,387.6518644124708)" d="M0,0L-6,0"/><path transform="translate(40,352.7308564041435)" d="M0,0L-6,0"/><path transform="translate(40,317.8098483958161)" d="M0,0L-6,0"/><path transform="translate(40,282.88884038748887)" d="M0,0L-6,0"/><path transform="translate(40,247.96783237916156)" d="M0,0L-6,0"/><path transform="translate(40,213.04682437083423)" d="M0,0L-6,0"/><path transform="translate(40,178.1258163625069)" d="M0,0L-6,0"/><path transform="translate(40,143.20480835417956)" d="M0,0L-6,0"/><path transform="translate(40,108.28380034585224)" d="M0,0L-6,0"/><path transform="translate(40,73.36279233752492)" d="M0,0L-6,0"/><path transform="translate(40,38.44178432919759)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,527.33589644578)">26</text><text y="0.32em" transform="translate(40,492.41488843745276)">28</text><text y="0.32em" transform="translate(40,457.49388042912545)">30</text><text y="0.32em" transform="translate(40,422.57287242079815)">32</text><text y="0.32em" transform="translate(40,387.6518644124708)">34</text><text y="0.32em" transform="translate(40,352.7308564041435)">36</text><text y="0.32em" transform="translate(40,317.8098483958161)">38</text><text y="0.32em" transform="translate(40,282.88884038748887)">40</text><text y="0.32em" transform="translate(40,247.96783237916156)">42</text><text y="0.32em" transform="translate(40,213.04682437083423)">44</text><text y="0.32em" transform="translate(40,178.1258163625069)">46</text><text y="0.32em" transform="translate(40,143.20480835417956)">48</text><text y="0.32em" transform="translate(40,108.28380034585224)">50</text><text y="0.32em" transform="translate(40,73.36279233752492)">52</text><text y="0.32em" transform="translate(40,38.44178432919759)">54</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(0.5,0)"><path transform="translate(510,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(0.5,9.5)"><text transform="translate(510,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="line" fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" transform="translate(0.5,0.5)"><path stroke="#4e79a7" d="M510,20Z"/><path stroke="#f28e2c" d="M510,540Z"/></g><g aria-label="dot" stroke="transparent" stroke-width="1.5" transform="translate(0.5,0.5)"><circle cx="510" cy="20" r="7" fill="#4e79a7"><title>row: Schnelle Umsetzung
 
 row value: undefined
 header: GESAMT
 column: undefined
-value: 9.9
+value: 55.1
 N: 91
 
-</title></circle></g></svg></figure>
+</title></circle><circle cx="510" cy="540" r="7" fill="#f28e2c"><title>row: Kurzfristige Anpassungen
+
+row value: undefined
+header: GESAMT
+column: undefined
+value: 25.3
+N: 91
+
+</title></circle></g><text x="1000" y="20" dy="-1em" text-anchor="end" font-family="initial">⚠️<title>1 warning. Please check the console.</title></text></svg></figure>
 						</div>

@@ -23,7 +23,7 @@ TOP3-Übersicht
   display: inline-flex;
   align-items: center;
   margin-right: 1em;
-}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Kurzfristige Anpassungen</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Schnelle Umsetzung</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>Kurzfristige Anpassungen</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -33,7 +33,15 @@ TOP3-Übersicht
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,280)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,280)">71</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(0.5,0)"><path transform="translate(510,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(0.5,9.5)"><text transform="translate(510,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="line" fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" transform="translate(0.5,0.5)"><path stroke="#4e79a7" d="M510,280Z"/></g><g aria-label="dot" stroke="transparent" stroke-width="1.5" transform="translate(0.5,0.5)"><circle cx="510" cy="280" r="7" fill="#4e79a7"><title>row: Kurzfristige Anpassungen
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,516.4944207064032)" d="M0,0L-6,0"/><path transform="translate(40,476.53253819433775)" d="M0,0L-6,0"/><path transform="translate(40,436.57065568227233)" d="M0,0L-6,0"/><path transform="translate(40,396.608773170207)" d="M0,0L-6,0"/><path transform="translate(40,356.6468906581417)" d="M0,0L-6,0"/><path transform="translate(40,316.6850081460762)" d="M0,0L-6,0"/><path transform="translate(40,276.7231256340109)" d="M0,0L-6,0"/><path transform="translate(40,236.7612431219455)" d="M0,0L-6,0"/><path transform="translate(40,196.79936060988018)" d="M0,0L-6,0"/><path transform="translate(40,156.83747809781482)" d="M0,0L-6,0"/><path transform="translate(40,116.87559558574938)" d="M0,0L-6,0"/><path transform="translate(40,76.91371307368402)" d="M0,0L-6,0"/><path transform="translate(40,36.951830561618664)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,516.4944207064032)">65.0</text><text y="0.32em" transform="translate(40,476.53253819433775)">65.5</text><text y="0.32em" transform="translate(40,436.57065568227233)">66.0</text><text y="0.32em" transform="translate(40,396.608773170207)">66.5</text><text y="0.32em" transform="translate(40,356.6468906581417)">67.0</text><text y="0.32em" transform="translate(40,316.6850081460762)">67.5</text><text y="0.32em" transform="translate(40,276.7231256340109)">68.0</text><text y="0.32em" transform="translate(40,236.7612431219455)">68.5</text><text y="0.32em" transform="translate(40,196.79936060988018)">69.0</text><text y="0.32em" transform="translate(40,156.83747809781482)">69.5</text><text y="0.32em" transform="translate(40,116.87559558574938)">70.0</text><text y="0.32em" transform="translate(40,76.91371307368402)">70.5</text><text y="0.32em" transform="translate(40,36.951830561618664)">71.0</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(0.5,0)"><path transform="translate(510,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(0.5,9.5)"><text transform="translate(510,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="line" fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" transform="translate(0.5,0.5)"><path stroke="#4e79a7" d="M510,540Z"/><path stroke="#f28e2c" d="M510,20Z"/></g><g aria-label="dot" stroke="transparent" stroke-width="1.5" transform="translate(0.5,0.5)"><circle cx="510" cy="540" r="7" fill="#4e79a7"><title>row: Schnelle Umsetzung
+
+row value: undefined
+header: GESAMT
+column: undefined
+value: 64.7
+N: 71
+
+</title></circle><circle cx="510" cy="20" r="7" fill="#f28e2c"><title>row: Kurzfristige Anpassungen
 
 row value: undefined
 header: GESAMT
@@ -41,5 +49,5 @@ column: undefined
 value: 71.2
 N: 71
 
-</title></circle></g></svg></figure>
+</title></circle></g><text x="1000" y="20" dy="-1em" text-anchor="end" font-family="initial">⚠️<title>1 warning. Please check the console.</title></text></svg></figure>
 						</div>

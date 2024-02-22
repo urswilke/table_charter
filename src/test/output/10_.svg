@@ -2,26 +2,16 @@
 						<h2 class="primary multi-line-header left_float" data-test-id="plot-header">
 							6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.
 						</h2>
-						<figure class="plot-d6a7b5-figure" style="max-width: initial;"><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
-  font-family: system-ui, sans-serif;
-  font-size: 10px;
-  margin-bottom: 0.5em;
-}
-:where(.large-font-swatch &gt; svg) {
-  margin-right: 0.5em;
+						<figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
+  display: block;
+  height: auto;
+  height: intrinsic;
+  max-width: 100%;
   overflow: visible;
 }
-:where(.large-font-swatches-wrap) {
-  display: flex;
-  align-items: center;
-  min-height: 33px;
-  flex-wrap: wrap;
-}
-:where(.large-font-swatches-wrap .large-font-swatch) {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 1em;
-}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG 2 1 und 2</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG 2 3</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#e15759"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG 2 4</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#76b7b2"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG 2 5</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+:where(.large-font-ramp text) {
+  white-space: pre;
+}</style><image x="0" y="18" width="240" height="10" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAAXNSR0IArs4c6QAAASdJREFUOE99kMtOBEEIRQ/Q6jjq2oVL//8TAQNFtT2JcZLKuS8WPfL9+ZWHfXDoG4e+Y0W7N1VfMbs31W6o3hC7IXpD7QWxZ9ChPSP6BDav9UHaAVq08Uaqtk8rKpgSnclkQmppOovKtfS81kmU15w8R2/G6dHofWqAVR7Qd8X1Un3pMxuvgezuokUc6duiI7J2m3p6R+tOnMp0Nrr9XySw2k5nLF3svLl86/3koneWleXvZvtmYDldcbqj2H6yU198JLrz2NtES49vnStbf+3Wdfvopf/utStKaWcxQLwyIBL8H3pC7U6Ovt5U9+Cv++k8CYeM4ekhWicRW0PM7pr79D5dM8D7Num+6Bddvj6h+9kXczZZmtWNXlx5zudvncD5Ssjy+/cDwM9vrCQo1UwAAAAASUVORK5CYII="/><g transform="translate(0,28)" fill="none" text-anchor="middle" font-variant="tabular-nums"><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">2.0</text></g><g class="tick" opacity="1" transform="translate(48.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">2.2</text></g><g class="tick" opacity="1" transform="translate(96.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">2.4</text></g><g class="tick" opacity="1" transform="translate(144.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">2.6</text></g><g class="tick" opacity="1" transform="translate(192.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">2.8</text></g><g class="tick" opacity="1" transform="translate(240.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">3.0</text></g></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -31,69 +21,21 @@
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,514.000025999974)" d="M0,0L-6,0"/><path transform="translate(40,488.000051999948)" d="M0,0L-6,0"/><path transform="translate(40,462.000077999922)" d="M0,0L-6,0"/><path transform="translate(40,436.000103999896)" d="M0,0L-6,0"/><path transform="translate(40,410.00012999987)" d="M0,0L-6,0"/><path transform="translate(40,384.000155999844)" d="M0,0L-6,0"/><path transform="translate(40,358.00018199981804)" d="M0,0L-6,0"/><path transform="translate(40,332.00020799979194)" d="M0,0L-6,0"/><path transform="translate(40,306.000233999766)" d="M0,0L-6,0"/><path transform="translate(40,280.00025999973997)" d="M0,0L-6,0"/><path transform="translate(40,254.00028599971404)" d="M0,0L-6,0"/><path transform="translate(40,228.00031199968802)" d="M0,0L-6,0"/><path transform="translate(40,202.00033799966198)" d="M0,0L-6,0"/><path transform="translate(40,176.000363999636)" d="M0,0L-6,0"/><path transform="translate(40,150.00038999961)" d="M0,0L-6,0"/><path transform="translate(40,124.00041599958404)" d="M0,0L-6,0"/><path transform="translate(40,98.00044199955798)" d="M0,0L-6,0"/><path transform="translate(40,72.00046799953199)" d="M0,0L-6,0"/><path transform="translate(40,46.00049399950601)" d="M0,0L-6,0"/><path transform="translate(40,20.000519999480026)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,514.000025999974)">5</text><text y="0.32em" transform="translate(40,488.000051999948)">10</text><text y="0.32em" transform="translate(40,462.000077999922)">15</text><text y="0.32em" transform="translate(40,436.000103999896)">20</text><text y="0.32em" transform="translate(40,410.00012999987)">25</text><text y="0.32em" transform="translate(40,384.000155999844)">30</text><text y="0.32em" transform="translate(40,358.00018199981804)">35</text><text y="0.32em" transform="translate(40,332.00020799979194)">40</text><text y="0.32em" transform="translate(40,306.000233999766)">45</text><text y="0.32em" transform="translate(40,280.00025999973997)">50</text><text y="0.32em" transform="translate(40,254.00028599971404)">55</text><text y="0.32em" transform="translate(40,228.00031199968802)">60</text><text y="0.32em" transform="translate(40,202.00033799966198)">65</text><text y="0.32em" transform="translate(40,176.000363999636)">70</text><text y="0.32em" transform="translate(40,150.00038999961)">75</text><text y="0.32em" transform="translate(40,124.00041599958404)">80</text><text y="0.32em" transform="translate(40,98.00044199955798)">85</text><text y="0.32em" transform="translate(40,72.00046799953199)">90</text><text y="0.32em" transform="translate(40,46.00049399950601)">95</text><text y="0.32em" transform="translate(40,20.000519999480026)">100</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="534.1572858427143" height="5.842714157285741" fill="#4e79a7"><title>row: ZUSAMMENFASSUNG 2
-row2: 1 und 2
-row value: 1
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,497.9274410175086)" d="M0,0L-6,0"/><path transform="translate(40,455.85488203501734)" d="M0,0L-6,0"/><path transform="translate(40,413.78232305252595)" d="M0,0L-6,0"/><path transform="translate(40,371.7097640700347)" d="M0,0L-6,0"/><path transform="translate(40,329.6372050875433)" d="M0,0L-6,0"/><path transform="translate(40,287.56464610505196)" d="M0,0L-6,0"/><path transform="translate(40,245.49208712256063)" d="M0,0L-6,0"/><path transform="translate(40,203.41952814006925)" d="M0,0L-6,0"/><path transform="translate(40,161.34696915757792)" d="M0,0L-6,0"/><path transform="translate(40,119.2744101750866)" d="M0,0L-6,0"/><path transform="translate(40,77.20185119259523)" d="M0,0L-6,0"/><path transform="translate(40,35.12929221010393)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,497.9274410175086)">1</text><text y="0.32em" transform="translate(40,455.85488203501734)">2</text><text y="0.32em" transform="translate(40,413.78232305252595)">3</text><text y="0.32em" transform="translate(40,371.7097640700347)">4</text><text y="0.32em" transform="translate(40,329.6372050875433)">5</text><text y="0.32em" transform="translate(40,287.56464610505196)">6</text><text y="0.32em" transform="translate(40,245.49208712256063)">7</text><text y="0.32em" transform="translate(40,203.41952814006925)">8</text><text y="0.32em" transform="translate(40,161.34696915757792)">9</text><text y="0.32em" transform="translate(40,119.2744101750866)">10</text><text y="0.32em" transform="translate(40,77.20185119259523)">11</text><text y="0.32em" transform="translate(40,35.12929221010393)">12</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="492.7272727272727" height="47.27272727272731" fill="rgb(35, 23, 27)"><title>row: 2
+
+row value: 2
 header: GESAMT
 column: undefined
 value: 1.1
 N: 89
 
- (1)</title></rect><rect x="126" width="769" y="475.7301442698557" height="58.427141572858545" fill="#f28e2c"><title>row: ZUSAMMENFASSUNG 2
-row2: 3
+ (1)</title></rect><rect x="126" width="769" y="20" height="472.7272727272727" fill="rgb(144, 12, 0)"><title>row: 3
+
 row value: 3
 header: GESAMT
 column: undefined
 value: 11.2
 N: 89
 
- (1)</title></rect><rect x="126" width="769" y="306.2919537080463" height="169.4381905618094" fill="#e15759"><title>row: ZUSAMMENFASSUNG 2
-row2: 4
-row value: 4
-header: GESAMT
-column: undefined
-value: 32.6
-N: 89
-
- (1)</title></rect><rect x="126" width="769" y="20" height="286.2919537080463" fill="#76b7b2"><title>row: ZUSAMMENFASSUNG 2
-row2: 5
-row value: 5
-header: GESAMT
-column: undefined
-value: 55.1
-N: 89
-
- (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,537.0786429213571)">1.1<title>row: ZUSAMMENFASSUNG 2
-row2: 1 und 2
-row value: 1
-header: GESAMT
-column: undefined
-value: 1.1
-N: 89
-
- (1)</title></text><text y="0.32em" transform="translate(126,504.94371505628493)">11.2<title>row: ZUSAMMENFASSUNG 2
-row2: 3
-row value: 3
-header: GESAMT
-column: undefined
-value: 11.2
-N: 89
-
- (1)</title></text><text y="0.32em" transform="translate(126,391.0110489889511)">32.6<title>row: ZUSAMMENFASSUNG 2
-row2: 4
-row value: 4
-header: GESAMT
-column: undefined
-value: 32.6
-N: 89
-
- (1)</title></text><text y="0.32em" transform="translate(126,163.14597685402313)">55.1<title>row: ZUSAMMENFASSUNG 2
-row2: 5
-row value: 5
-header: GESAMT
-column: undefined
-value: 55.1
-N: 89
-
- (1)</title></text></g></svg></figure>
+ (1)</title></rect></g></svg></figure>
 						</div>

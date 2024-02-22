@@ -3,26 +3,16 @@
 							9. Würden Sie das Tabellenbandtool weiterempfehlen?
 Sonstige
 						</h2>
-						<figure class="plot-d6a7b5-figure" style="max-width: initial;"><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
-  font-family: system-ui, sans-serif;
-  font-size: 10px;
-  margin-bottom: 0.5em;
-}
-:where(.large-font-swatch &gt; svg) {
-  margin-right: 0.5em;
+						<figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
+  display: block;
+  height: auto;
+  height: intrinsic;
+  max-width: 100%;
   overflow: visible;
 }
-:where(.large-font-swatches-wrap) {
-  display: flex;
-  align-items: center;
-  min-height: 33px;
-  flex-wrap: wrap;
-}
-:where(.large-font-swatches-wrap .large-font-swatch) {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 1em;
-}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG Promoters</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG Indifferent</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#e15759"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG Detractors</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#76b7b2"><rect width="100%" height="100%"/></svg>ZUSAMMENFASSUNG NPS</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+:where(.large-font-ramp text) {
+  white-space: pre;
+}</style><image x="0" y="18" width="240" height="10" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAAXNSR0IArs4c6QAAASdJREFUOE99kMtOBEEIRQ/Q6jjq2oVL//8TAQNFtT2JcZLKuS8WPfL9+ZWHfXDoG4e+Y0W7N1VfMbs31W6o3hC7IXpD7QWxZ9ChPSP6BDav9UHaAVq08Uaqtk8rKpgSnclkQmppOovKtfS81kmU15w8R2/G6dHofWqAVR7Qd8X1Un3pMxuvgezuokUc6duiI7J2m3p6R+tOnMp0Nrr9XySw2k5nLF3svLl86/3koneWleXvZvtmYDldcbqj2H6yU198JLrz2NtES49vnStbf+3Wdfvopf/utStKaWcxQLwyIBL8H3pC7U6Ovt5U9+Cv++k8CYeM4ekhWicRW0PM7pr79D5dM8D7Num+6Bddvj6h+9kXczZZmtWNXlx5zudvncD5Ssjy+/cDwM9vrCQo1UwAAAAASUVORK5CYII="/><g transform="translate(0,28)" fill="none" text-anchor="middle" font-variant="tabular-nums"><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">5.0</text></g><g class="tick" opacity="1" transform="translate(48.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">5.2</text></g><g class="tick" opacity="1" transform="translate(96.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">5.4</text></g><g class="tick" opacity="1" transform="translate(144.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">5.6</text></g><g class="tick" opacity="1" transform="translate(192.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">5.8</text></g><g class="tick" opacity="1" transform="translate(240.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">6.0</text></g></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -32,69 +22,21 @@ Sonstige
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,507.8095314739211)" d="M0,0L-6,0"/><path transform="translate(40,475.61906294784217)" d="M0,0L-6,0"/><path transform="translate(40,443.4285944217632)" d="M0,0L-6,0"/><path transform="translate(40,411.2381258956843)" d="M0,0L-6,0"/><path transform="translate(40,379.0476573696054)" d="M0,0L-6,0"/><path transform="translate(40,346.85718884352644)" d="M0,0L-6,0"/><path transform="translate(40,314.6667203174476)" d="M0,0L-6,0"/><path transform="translate(40,282.4762517913686)" d="M0,0L-6,0"/><path transform="translate(40,250.2857832652897)" d="M0,0L-6,0"/><path transform="translate(40,218.09531473921078)" d="M0,0L-6,0"/><path transform="translate(40,185.90484621313183)" d="M0,0L-6,0"/><path transform="translate(40,153.71437768705292)" d="M0,0L-6,0"/><path transform="translate(40,121.52390916097399)" d="M0,0L-6,0"/><path transform="translate(40,89.33344063489506)" d="M0,0L-6,0"/><path transform="translate(40,57.14297210881614)" d="M0,0L-6,0"/><path transform="translate(40,24.95250358273727)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,507.8095314739211)">10</text><text y="0.32em" transform="translate(40,475.61906294784217)">20</text><text y="0.32em" transform="translate(40,443.4285944217632)">30</text><text y="0.32em" transform="translate(40,411.2381258956843)">40</text><text y="0.32em" transform="translate(40,379.0476573696054)">50</text><text y="0.32em" transform="translate(40,346.85718884352644)">60</text><text y="0.32em" transform="translate(40,314.6667203174476)">70</text><text y="0.32em" transform="translate(40,282.4762517913686)">80</text><text y="0.32em" transform="translate(40,250.2857832652897)">90</text><text y="0.32em" transform="translate(40,218.09531473921078)">100</text><text y="0.32em" transform="translate(40,185.90484621313183)">110</text><text y="0.32em" transform="translate(40,153.71437768705292)">120</text><text y="0.32em" transform="translate(40,121.52390916097399)">130</text><text y="0.32em" transform="translate(40,89.33344063489506)">140</text><text y="0.32em" transform="translate(40,57.14297210881614)">150</text><text y="0.32em" transform="translate(40,24.95250358273727)">160</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="218.09531473921078" height="24.761874104315666" fill="#e15759"><title>row: ZUSAMMENFASSUNG
-row2: Detractors
-row value: 3
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,506.1999661999662)" d="M0,0L-6,0"/><path transform="translate(40,472.3999323999324)" d="M0,0L-6,0"/><path transform="translate(40,438.5998985998986)" d="M0,0L-6,0"/><path transform="translate(40,404.7998647998648)" d="M0,0L-6,0"/><path transform="translate(40,370.999830999831)" d="M0,0L-6,0"/><path transform="translate(40,337.19979719979716)" d="M0,0L-6,0"/><path transform="translate(40,303.3997633997634)" d="M0,0L-6,0"/><path transform="translate(40,269.5997295997296)" d="M0,0L-6,0"/><path transform="translate(40,235.79969579969577)" d="M0,0L-6,0"/><path transform="translate(40,201.999661999662)" d="M0,0L-6,0"/><path transform="translate(40,168.1996281996282)" d="M0,0L-6,0"/><path transform="translate(40,134.39959439959435)" d="M0,0L-6,0"/><path transform="translate(40,100.59956059956059)" d="M0,0L-6,0"/><path transform="translate(40,66.79952679952675)" d="M0,0L-6,0"/><path transform="translate(40,32.99949299949298)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0.0</text><text y="0.32em" transform="translate(40,506.1999661999662)">0.5</text><text y="0.32em" transform="translate(40,472.3999323999324)">1.0</text><text y="0.32em" transform="translate(40,438.5998985998986)">1.5</text><text y="0.32em" transform="translate(40,404.7998647998648)">2.0</text><text y="0.32em" transform="translate(40,370.999830999831)">2.5</text><text y="0.32em" transform="translate(40,337.19979719979716)">3.0</text><text y="0.32em" transform="translate(40,303.3997633997634)">3.5</text><text y="0.32em" transform="translate(40,269.5997295997296)">4.0</text><text y="0.32em" transform="translate(40,235.79969579969577)">4.5</text><text y="0.32em" transform="translate(40,201.999661999662)">5.0</text><text y="0.32em" transform="translate(40,168.1996281996282)">5.5</text><text y="0.32em" transform="translate(40,134.39959439959435)">6.0</text><text y="0.32em" transform="translate(40,100.59956059956059)">6.5</text><text y="0.32em" transform="translate(40,66.79952679952675)">7.0</text><text y="0.32em" transform="translate(40,32.99949299949298)">7.5</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="193.33333333333337" height="346.66666666666663" fill="rgb(35, 23, 27)"><title>row: 5
+
+row value: 5
 header: GESAMT
 column: undefined
-value: 7.7
+value: 5.1
 N: 39
 
- (1)</title></rect><rect x="126" width="769" y="242.85718884352644" height="74.28562231294711" fill="#f28e2c"><title>row: ZUSAMMENFASSUNG
-row2: Indifferent
-row value: 2
+ (1)</title></rect><rect x="126" width="769" y="20" height="173.33333333333337" fill="rgb(144, 12, 0)"><title>row: 6
+
+row value: 6
 header: GESAMT
 column: undefined
-value: 23.1
+value: 2.6
 N: 39
 
- (1)</title></rect><rect x="126" width="769" y="20" height="198.09531473921078" fill="#76b7b2"><title>row: ZUSAMMENFASSUNG
-row2: NPS
-row value: 4
-header: GESAMT
-column: undefined
-value: 61.5
-N: 39
-
- (1)</title></rect><rect x="126" width="769" y="317.14281115647356" height="222.85718884352644" fill="#4e79a7"><title>row: ZUSAMMENFASSUNG
-row2: Promoters
-row value: 1
-header: GESAMT
-column: undefined
-value: 69.2
-N: 39
-
- (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,230.47625179136858)">7.7<title>row: ZUSAMMENFASSUNG
-row2: Detractors
-row value: 3
-header: GESAMT
-column: undefined
-value: 7.7
-N: 39
-
- (1)</title></text><text y="0.32em" transform="translate(126,280)">23.1<title>row: ZUSAMMENFASSUNG
-row2: Indifferent
-row value: 2
-header: GESAMT
-column: undefined
-value: 23.1
-N: 39
-
- (1)</title></text><text y="0.32em" transform="translate(126,119.04765736960536)">61.5<title>row: ZUSAMMENFASSUNG
-row2: NPS
-row value: 4
-header: GESAMT
-column: undefined
-value: 61.5
-N: 39
-
- (1)</title></text><text y="0.32em" transform="translate(126,428.57140557823675)">69.2<title>row: ZUSAMMENFASSUNG
-row2: Promoters
-row value: 1
-header: GESAMT
-column: undefined
-value: 69.2
-N: 39
-
- (1)</title></text></g></svg></figure>
+ (1)</title></rect></g></svg></figure>
 						</div>

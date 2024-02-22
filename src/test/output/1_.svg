@@ -22,7 +22,7 @@ DC#SELVALLAB
   display: inline-flex;
   align-items: center;
   margin-right: 1em;
-}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Onlineauftritte</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Kundenzufriedenheit</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>Marktvolumen</span></div><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -32,20 +32,36 @@ DC#SELVALLAB
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,496.3776687219496)" d="M0,0L-6,0"/><path transform="translate(40,452.7553374438992)" d="M0,0L-6,0"/><path transform="translate(40,409.13300616584877)" d="M0,0L-6,0"/><path transform="translate(40,365.51067488779836)" d="M0,0L-6,0"/><path transform="translate(40,321.88834360974795)" d="M0,0L-6,0"/><path transform="translate(40,278.2660123316975)" d="M0,0L-6,0"/><path transform="translate(40,234.64368105364707)" d="M0,0L-6,0"/><path transform="translate(40,191.02134977559666)" d="M0,0L-6,0"/><path transform="translate(40,147.39901849754625)" d="M0,0L-6,0"/><path transform="translate(40,103.77668721949584)" d="M0,0L-6,0"/><path transform="translate(40,60.15435594144543)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,496.3776687219496)">1</text><text y="0.32em" transform="translate(40,452.7553374438992)">2</text><text y="0.32em" transform="translate(40,409.13300616584877)">3</text><text y="0.32em" transform="translate(40,365.51067488779836)">4</text><text y="0.32em" transform="translate(40,321.88834360974795)">5</text><text y="0.32em" transform="translate(40,278.2660123316975)">6</text><text y="0.32em" transform="translate(40,234.64368105364707)">7</text><text y="0.32em" transform="translate(40,191.02134977559666)">8</text><text y="0.32em" transform="translate(40,147.39901849754625)">9</text><text y="0.32em" transform="translate(40,103.77668721949584)">10</text><text y="0.32em" transform="translate(40,60.15435594144543)">11</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="20" height="520" fill="#4e79a7"><title>row: Onlineauftritte
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,495.88764243201604)" d="M0,0L-6,0"/><path transform="translate(40,451.77528486403213)" d="M0,0L-6,0"/><path transform="translate(40,407.6629272960482)" d="M0,0L-6,0"/><path transform="translate(40,363.55056972806426)" d="M0,0L-6,0"/><path transform="translate(40,319.4382121600803)" d="M0,0L-6,0"/><path transform="translate(40,275.3258545920964)" d="M0,0L-6,0"/><path transform="translate(40,231.21349702411246)" d="M0,0L-6,0"/><path transform="translate(40,187.10113945612855)" d="M0,0L-6,0"/><path transform="translate(40,142.9887818881446)" d="M0,0L-6,0"/><path transform="translate(40,98.8764243201607)" d="M0,0L-6,0"/><path transform="translate(40,54.76406675217673)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,495.88764243201604)">10</text><text y="0.32em" transform="translate(40,451.77528486403213)">20</text><text y="0.32em" transform="translate(40,407.6629272960482)">30</text><text y="0.32em" transform="translate(40,363.55056972806426)">40</text><text y="0.32em" transform="translate(40,319.4382121600803)">50</text><text y="0.32em" transform="translate(40,275.3258545920964)">60</text><text y="0.32em" transform="translate(40,231.21349702411246)">70</text><text y="0.32em" transform="translate(40,187.10113945612855)">80</text><text y="0.32em" transform="translate(40,142.9887818881446)">90</text><text y="0.32em" transform="translate(40,98.8764243201607)">100</text><text y="0.32em" transform="translate(40,54.76406675217673)">110</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="154.38212160080352" height="385.61787839919646" fill="#4e79a7"><title>row: Kundenzufriedenheit
 
 row value: 1
 header: GESAMT
 column: undefined
-value: 11.9
+value: 87.4
 N: 151
 
- (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,280)">11.9<title>row: Onlineauftritte
+ (1)</title></rect><rect x="126" width="769" y="20" height="134.38212160080352" fill="#f28e2c"><title>row: Marktvolumen
 
 row value: 1
 header: GESAMT
 column: undefined
-value: 11.9
+value: 30.5
+N: 151
+
+ (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,347.1910608004018)">87.4<title>row: Kundenzufriedenheit
+
+row value: 1
+header: GESAMT
+column: undefined
+value: 87.4
+N: 151
+
+ (1)</title></text><text y="0.32em" transform="translate(126,87.19106080040176)">30.5<title>row: Marktvolumen
+
+row value: 1
+header: GESAMT
+column: undefined
+value: 30.5
 N: 151
 
  (1)</title></text></g></svg></figure>

@@ -23,17 +23,12 @@ describe('Check all questions', () => {
     for (const question_text of all_questions) {
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
             await question_select_el.selectByVisibleText(question_text)
-            const first_option = await row_selector_el.$(">>>option")
-            console.log('first_option :>> ', first_option);
-            await first_option.click()
-            await browser.performActions([{
-                type: 'key',
-                id: 'keyboard',
-                actions: [
-                    {type: 'keyDown', value: '\ue015'},
-                    {type: 'keyUp', value: '\ue015'},
-                ]
-            }]);
+            const options = await row_selector_el.$$(">>>option")
+            await options[0].click()
+            // select first 2 options (if second exists):
+            if (!!options[1]) {
+                options[0].dragAndDrop(options[1])
+            }
 
             await fig_el.isExisting()
             // Scroll to the bottom of the element:

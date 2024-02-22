@@ -13,7 +13,7 @@ Schnelle Umsetzung
 }
 :where(.large-font-ramp text) {
   white-space: pre;
-}</style><image x="0" y="18" width="240" height="10" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAAXNSR0IArs4c6QAAASdJREFUOE99kMtOBEEIRQ/Q6jjq2oVL//8TAQNFtT2JcZLKuS8WPfL9+ZWHfXDoG4e+Y0W7N1VfMbs31W6o3hC7IXpD7QWxZ9ChPSP6BDav9UHaAVq08Uaqtk8rKpgSnclkQmppOovKtfS81kmU15w8R2/G6dHofWqAVR7Qd8X1Un3pMxuvgezuokUc6duiI7J2m3p6R+tOnMp0Nrr9XySw2k5nLF3svLl86/3koneWleXvZvtmYDldcbqj2H6yU198JLrz2NtES49vnStbf+3Wdfvopf/utStKaWcxQLwyIBL8H3pC7U6Ovt5U9+Cv++k8CYeM4ekhWicRW0PM7pr79D5dM8D7Num+6Bddvj6h+9kXczZZmtWNXlx5zudvncD5Ssjy+/cDwM9vrCQo1UwAAAAASUVORK5CYII="/><g transform="translate(0,28)" fill="none" text-anchor="middle" font-variant="tabular-nums"><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">2</text></g><g class="tick" opacity="1" transform="translate(60.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">4</text></g><g class="tick" opacity="1" transform="translate(120.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">6</text></g><g class="tick" opacity="1" transform="translate(180.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">8</text></g><g class="tick" opacity="1" transform="translate(240.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">10</text></g></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+}</style><image x="0" y="18" width="240" height="10" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAABCAYAAAAxWXB3AAAAAXNSR0IArs4c6QAAASdJREFUOE99kMtOBEEIRQ/Q6jjq2oVL//8TAQNFtT2JcZLKuS8WPfL9+ZWHfXDoG4e+Y0W7N1VfMbs31W6o3hC7IXpD7QWxZ9ChPSP6BDav9UHaAVq08Uaqtk8rKpgSnclkQmppOovKtfS81kmU15w8R2/G6dHofWqAVR7Qd8X1Un3pMxuvgezuokUc6duiI7J2m3p6R+tOnMp0Nrr9XySw2k5nLF3svLl86/3koneWleXvZvtmYDldcbqj2H6yU198JLrz2NtES49vnStbf+3Wdfvopf/utStKaWcxQLwyIBL8H3pC7U6Ovt5U9+Cv++k8CYeM4ekhWicRW0PM7pr79D5dM8D7Num+6Bddvj6h+9kXczZZmtWNXlx5zudvncD5Ssjy+/cDwM9vrCQo1UwAAAAASUVORK5CYII="/><g transform="translate(0,28)" fill="none" text-anchor="middle" font-variant="tabular-nums"><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">1.0</text></g><g class="tick" opacity="1" transform="translate(48.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">1.2</text></g><g class="tick" opacity="1" transform="translate(96.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">1.4</text></g><g class="tick" opacity="1" transform="translate(144.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">1.6</text></g><g class="tick" opacity="1" transform="translate(192.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">1.8</text></g><g class="tick" opacity="1" transform="translate(240.5,0)"><line stroke="currentColor" y2="6" y1="-10"/><text fill="currentColor" y="9" dy="0.71em">2.0</text></g></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -23,7 +23,24 @@ Schnelle Umsetzung
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,513.6119639295845)" d="M0,0L-6,0"/><path transform="translate(40,487.223927859169)" d="M0,0L-6,0"/><path transform="translate(40,460.8358917887536)" d="M0,0L-6,0"/><path transform="translate(40,434.44785571833813)" d="M0,0L-6,0"/><path transform="translate(40,408.0598196479227)" d="M0,0L-6,0"/><path transform="translate(40,381.67178357750726)" d="M0,0L-6,0"/><path transform="translate(40,355.28374750709173)" d="M0,0L-6,0"/><path transform="translate(40,328.89571143667627)" d="M0,0L-6,0"/><path transform="translate(40,302.5076753662608)" d="M0,0L-6,0"/><path transform="translate(40,276.1196392958454)" d="M0,0L-6,0"/><path transform="translate(40,249.7316032254299)" d="M0,0L-6,0"/><path transform="translate(40,223.34356715501443)" d="M0,0L-6,0"/><path transform="translate(40,196.95553108459902)" d="M0,0L-6,0"/><path transform="translate(40,170.56749501418352)" d="M0,0L-6,0"/><path transform="translate(40,144.17945894376803)" d="M0,0L-6,0"/><path transform="translate(40,117.79142287335256)" d="M0,0L-6,0"/><path transform="translate(40,91.40338680293715)" d="M0,0L-6,0"/><path transform="translate(40,65.01535073252165)" d="M0,0L-6,0"/><path transform="translate(40,38.62731466210619)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,513.6119639295845)">10</text><text y="0.32em" transform="translate(40,487.223927859169)">20</text><text y="0.32em" transform="translate(40,460.8358917887536)">30</text><text y="0.32em" transform="translate(40,434.44785571833813)">40</text><text y="0.32em" transform="translate(40,408.0598196479227)">50</text><text y="0.32em" transform="translate(40,381.67178357750726)">60</text><text y="0.32em" transform="translate(40,355.28374750709173)">70</text><text y="0.32em" transform="translate(40,328.89571143667627)">80</text><text y="0.32em" transform="translate(40,302.5076753662608)">90</text><text y="0.32em" transform="translate(40,276.1196392958454)">100</text><text y="0.32em" transform="translate(40,249.7316032254299)">110</text><text y="0.32em" transform="translate(40,223.34356715501443)">120</text><text y="0.32em" transform="translate(40,196.95553108459902)">130</text><text y="0.32em" transform="translate(40,170.56749501418352)">140</text><text y="0.32em" transform="translate(40,144.17945894376803)">150</text><text y="0.32em" transform="translate(40,117.79142287335256)">160</text><text y="0.32em" transform="translate(40,91.40338680293715)">170</text><text y="0.32em" transform="translate(40,65.01535073252165)">180</text><text y="0.32em" transform="translate(40,38.62731466210619)">190</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="524.4775016619388" height="15.522498338061155" fill="rgb(35, 23, 27)"><title>row: 2
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,510.5335690647808)" d="M0,0L-6,0"/><path transform="translate(40,481.0671381295616)" d="M0,0L-6,0"/><path transform="translate(40,451.6007071943424)" d="M0,0L-6,0"/><path transform="translate(40,422.1342762591232)" d="M0,0L-6,0"/><path transform="translate(40,392.6678453239041)" d="M0,0L-6,0"/><path transform="translate(40,363.20141438868484)" d="M0,0L-6,0"/><path transform="translate(40,333.73498345346565)" d="M0,0L-6,0"/><path transform="translate(40,304.2685525182465)" d="M0,0L-6,0"/><path transform="translate(40,274.80212158302726)" d="M0,0L-6,0"/><path transform="translate(40,245.3356906478081)" d="M0,0L-6,0"/><path transform="translate(40,215.86925971258893)" d="M0,0L-6,0"/><path transform="translate(40,186.4028287773697)" d="M0,0L-6,0"/><path transform="translate(40,156.93639784215054)" d="M0,0L-6,0"/><path transform="translate(40,127.46996690693133)" d="M0,0L-6,0"/><path transform="translate(40,98.00353597171215)" d="M0,0L-6,0"/><path transform="translate(40,68.53710503649296)" d="M0,0L-6,0"/><path transform="translate(40,39.07067410127382)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0.0</text><text y="0.32em" transform="translate(40,510.5335690647808)">0.5</text><text y="0.32em" transform="translate(40,481.0671381295616)">1.0</text><text y="0.32em" transform="translate(40,451.6007071943424)">1.5</text><text y="0.32em" transform="translate(40,422.1342762591232)">2.0</text><text y="0.32em" transform="translate(40,392.6678453239041)">2.5</text><text y="0.32em" transform="translate(40,363.20141438868484)">3.0</text><text y="0.32em" transform="translate(40,333.73498345346565)">3.5</text><text y="0.32em" transform="translate(40,304.2685525182465)">4.0</text><text y="0.32em" transform="translate(40,274.80212158302726)">4.5</text><text y="0.32em" transform="translate(40,245.3356906478081)">5.0</text><text y="0.32em" transform="translate(40,215.86925971258893)">5.5</text><text y="0.32em" transform="translate(40,186.4028287773697)">6.0</text><text y="0.32em" transform="translate(40,156.93639784215054)">6.5</text><text y="0.32em" transform="translate(40,127.46996690693133)">7.0</text><text y="0.32em" transform="translate(40,98.00353597171215)">7.5</text><text y="0.32em" transform="translate(40,68.53710503649296)">8.0</text><text y="0.32em" transform="translate(40,39.07067410127382)">8.5</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="366.6666666666667" height="173.33333333333331" fill="rgb(35, 23, 27)"><title>row: 1 - völlig unzufrieden
+
+row value: 1
+header: GESAMT
+column: undefined
+value: 1.5
+N: 68
+mean: 0.2
+ (1)
+row: 1 - völlig unzufrieden
+
+row value: 1
+header: GESAMT
+column: undefined
+value: 1.5
+N: 68
+mean: 7.5
+ (1)</title></rect><rect x="126" width="769" y="20" height="346.6666666666667" fill="rgb(144, 12, 0)"><title>row: 2
 
 row value: 2
 header: GESAMT
@@ -38,142 +55,6 @@ row value: 2
 header: GESAMT
 column: undefined
 value: 2.9
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="516.7162524929082" height="7.761249169030634" fill="rgb(69, 105, 238)"><title>row: 3
-
-row value: 3
-header: GESAMT
-column: undefined
-value: 1.5
-N: 68
-mean: 0.2
- (1)
-row: 3
-
-row value: 3
-header: GESAMT
-column: undefined
-value: 1.5
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="508.95500332387763" height="7.761249169030577" fill="rgb(38, 188, 225)"><title>row: 4
-
-row value: 4
-header: GESAMT
-column: undefined
-value: 1.5
-N: 68
-mean: 0.2
- (1)
-row: 4
-
-row value: 4
-header: GESAMT
-column: undefined
-value: 1.5
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="470.149285239446" height="38.805718084431646" fill="rgb(63, 243, 147)"><title>row: 5
-
-row value: 5
-header: GESAMT
-column: undefined
-value: 7.4
-N: 68
-mean: 0.2
- (1)
-row: 5
-
-row value: 5
-header: GESAMT
-column: undefined
-value: 7.4
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="454.6267869013849" height="15.522498338061098" fill="rgb(149, 251, 81)"><title>row: 6
-
-row value: 6
-header: GESAMT
-column: undefined
-value: 2.9
-N: 68
-mean: 0.2
- (1)
-row: 6
-
-row value: 6
-header: GESAMT
-column: undefined
-value: 2.9
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="361.49232463373914" height="93.13446226764574" fill="rgb(236, 209, 46)"><title>row: 7
-
-row value: 7
-header: GESAMT
-column: undefined
-value: 17.6
-N: 68
-mean: 0.2
- (1)
-row: 7
-
-row value: 7
-header: GESAMT
-column: undefined
-value: 17.6
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="159.70142952110785" height="201.7908951126313" fill="rgb(255, 130, 29)"><title>row: 8
-
-row value: 8
-header: GESAMT
-column: undefined
-value: 38.2
-N: 68
-mean: 0.2
- (1)
-row: 8
-
-row value: 8
-header: GESAMT
-column: undefined
-value: 38.2
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="66.56696725346214" height="93.13446226764572" fill="rgb(203, 47, 13)"><title>row: 9
-
-row value: 9
-header: GESAMT
-column: undefined
-value: 17.6
-N: 68
-mean: 0.2
- (1)
-row: 9
-
-row value: 9
-header: GESAMT
-column: undefined
-value: 17.6
-N: 68
-mean: 7.5
- (1)</title></rect><rect x="126" width="769" y="20" height="46.56696725346214" fill="rgb(144, 12, 0)"><title>row: 10 - absolut zufrieden
-
-row value: 10
-header: GESAMT
-column: undefined
-value: 8.8
-N: 68
-mean: 0.2
- (1)
-row: 10 - absolut zufrieden
-
-row value: 10
-header: GESAMT
-column: undefined
-value: 8.8
 N: 68
 mean: 7.5
  (1)</title></rect></g></svg></figure>
