@@ -148,7 +148,7 @@ export class TableDataSelector extends LitElement {
 		this.choices.i_tab = title_table.i_tab
 		this.choices.tab_title = title_table.TabTitle
 		// for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
-		this.choices.i_tab = e.detail.chosen_tab_no;
+		this.choices.i_tab = Number(e.detail.chosen_tab_no);
 		this.sel_question_data()
 		this._update_plot_data()
 	}
