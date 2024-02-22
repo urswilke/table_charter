@@ -22,7 +22,7 @@ dynamicConfig.capabilities = [{
         prefs: {
             "download.default_directory": downloadDir,
         },
-        logPath: 'logs'
+        logPath: 'src/test/logs.txt'
     }
 }]
 if(process.env.CI_JOB_NAME) {
@@ -105,7 +105,7 @@ export const config = Object.assign({}, {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
     }],
 
     //
@@ -115,7 +115,7 @@ export const config = Object.assign({}, {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'silent',
+    logLevel: 'info',
     //
     // Set specific log levels per logger
     // loggers:
