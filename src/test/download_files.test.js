@@ -26,7 +26,7 @@ describe('Check all questions', () => {
             const options = await row_selector_el.$$(">>>option")
             await options[0].click()
             // select first 2 options (if second exists):
-            options[1]?.dragAndDrop(options[0])
+            await options[1]?.dragAndDrop(options[0])
 
             await fig_el.isExisting()
             // Scroll to the bottom of the element:
