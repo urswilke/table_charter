@@ -17,6 +17,22 @@ export class TableCharter extends LitElement {
     update_plot_data(e) {
         this.plot_data = e.detail.data;
     }
+    download() {
+        var text = document.querySelector("html").innerHTML
+        var element = document.createElement("a");
+        element.setAttribute(
+            "href",
+            "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+        );
+        element.setAttribute("download", "test.html");
+    
+        element.style.display = "none";
+        document.body.appendChild(element);
+    
+        element.click();
+    
+        document.body.removeChild(element);
+    }
 
     // https://lit.dev/docs/composition/component-composition/#passing-data-up-and-down-the-tree
     // good example here:
@@ -33,6 +49,7 @@ export class TableCharter extends LitElement {
             <div class="content">
             <div class="column1">
                 <table-data-selector @update-data="${this.update_plot_data}"></table-data-selector>
+                <button @click="${this.download}">Save file</button>
             </div>
             <div class="column2">
                 <ojs-plot 
