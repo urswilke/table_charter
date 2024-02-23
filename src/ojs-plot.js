@@ -4,6 +4,7 @@ import { PlotOptions } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
+import { select } from "d3";
 
 const inspect = false // set to true for some console.log msgs
 
@@ -42,7 +43,12 @@ export class OJSPlot extends LitElement {
 
 		const options = this.plot_options?.options;
 		const renderedPlot = options && Plot.plot(options)
-
+		// https://talk.observablehq.com/t/legend-placement-options/8407/3
+		select(renderedPlot)
+			.select("div")
+			.raise() 
+			// https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements/4767993#4767993
+			.style("display", "inline-block"); 
 		return when(
             options === null,
             () => html`<div></div>`,
