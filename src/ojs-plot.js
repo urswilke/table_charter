@@ -45,10 +45,11 @@ export class OJSPlot extends LitElement {
 		const renderedPlot = options && Plot.plot(options)
 		// https://talk.observablehq.com/t/legend-placement-options/8407/3
 		select(renderedPlot)
-			.select("div")
+			.select(".large-font-ramp, .large-font-swatches")
 			.raise() 
 			// https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements/4767993#4767993
-			.style("display", "inline-block"); 
+			.style("display", "inline-block") 
+			// .style("text-align", "center"); 
 		return when(
             options === null,
             () => html`<div></div>`,
