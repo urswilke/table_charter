@@ -10,7 +10,7 @@
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,505.333298666632)" d="M0,0L-6,0"/><path transform="translate(40,470.666597333264)" d="M0,0L-6,0"/><path transform="translate(40,435.999895999896)" d="M0,0L-6,0"/><path transform="translate(40,401.33319466652796)" d="M0,0L-6,0"/><path transform="translate(40,366.66649333315996)" d="M0,0L-6,0"/><path transform="translate(40,331.99979199979197)" d="M0,0L-6,0"/><path transform="translate(40,297.33309066642397)" d="M0,0L-6,0"/><path transform="translate(40,262.666389333056)" d="M0,0L-6,0"/><path transform="translate(40,227.99968799968795)" d="M0,0L-6,0"/><path transform="translate(40,193.33298666631995)" d="M0,0L-6,0"/><path transform="translate(40,158.66628533295196)" d="M0,0L-6,0"/><path transform="translate(40,123.99958399958395)" d="M0,0L-6,0"/><path transform="translate(40,89.33288266621594)" d="M0,0L-6,0"/><path transform="translate(40,54.66618133284794)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,505.333298666632)">20</text><text y="0.32em" transform="translate(40,470.666597333264)">40</text><text y="0.32em" transform="translate(40,435.999895999896)">60</text><text y="0.32em" transform="translate(40,401.33319466652796)">80</text><text y="0.32em" transform="translate(40,366.66649333315996)">100</text><text y="0.32em" transform="translate(40,331.99979199979197)">120</text><text y="0.32em" transform="translate(40,297.33309066642397)">140</text><text y="0.32em" transform="translate(40,262.666389333056)">160</text><text y="0.32em" transform="translate(40,227.99968799968795)">180</text><text y="0.32em" transform="translate(40,193.33298666631995)">200</text><text y="0.32em" transform="translate(40,158.66628533295196)">220</text><text y="0.32em" transform="translate(40,123.99958399958395)">240</text><text y="0.32em" transform="translate(40,89.33288266621594)">260</text><text y="0.32em" transform="translate(40,54.66618133284794)">280</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(385,0)"><path transform="translate(126,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(385,9.5)"><text transform="translate(126,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="126" width="769" y="343.6363636363636" height="196.36363636363637" fill="#4e79a7"><title>row: ZUSAMMENFASSUNG
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,505.999965999966)" d="M0,0L-6,0"/><path transform="translate(40,471.999931999932)" d="M0,0L-6,0"/><path transform="translate(40,437.999897999898)" d="M0,0L-6,0"/><path transform="translate(40,403.999863999864)" d="M0,0L-6,0"/><path transform="translate(40,369.99982999982996)" d="M0,0L-6,0"/><path transform="translate(40,335.999795999796)" d="M0,0L-6,0"/><path transform="translate(40,301.999761999762)" d="M0,0L-6,0"/><path transform="translate(40,267.99972799972795)" d="M0,0L-6,0"/><path transform="translate(40,233.99969399969396)" d="M0,0L-6,0"/><path transform="translate(40,199.99965999965997)" d="M0,0L-6,0"/><path transform="translate(40,165.99962599962595)" d="M0,0L-6,0"/><path transform="translate(40,131.99959199959196)" d="M0,0L-6,0"/><path transform="translate(40,97.99955799955794)" d="M0,0L-6,0"/><path transform="translate(40,63.999523999523944)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,505.999965999966)">20</text><text y="0.32em" transform="translate(40,471.999931999932)">40</text><text y="0.32em" transform="translate(40,437.999897999898)">60</text><text y="0.32em" transform="translate(40,403.999863999864)">80</text><text y="0.32em" transform="translate(40,369.99982999982996)">100</text><text y="0.32em" transform="translate(40,335.999795999796)">120</text><text y="0.32em" transform="translate(40,301.999761999762)">140</text><text y="0.32em" transform="translate(40,267.99972799972795)">160</text><text y="0.32em" transform="translate(40,233.99969399969396)">180</text><text y="0.32em" transform="translate(40,199.99965999965997)">200</text><text y="0.32em" transform="translate(40,165.99962599962595)">220</text><text y="0.32em" transform="translate(40,131.99959199959196)">240</text><text y="0.32em" transform="translate(40,97.99955799955794)">260</text><text y="0.32em" transform="translate(40,63.999523999523944)">280</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(364.5,0)"><path transform="translate(121,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(364.5,9.5)"><text transform="translate(121,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="121" width="728" y="347.41258741258736" height="192.58741258741264" fill="#4e79a7"><title>row: ZUSAMMENFASSUNG
 row2: 1-2mal
 row value: 1
 header: GESAMT
@@ -36,7 +36,7 @@ column: undefined
 value: 37.8
 N: 143
 mean: 5.5
- (1)</title></rect><rect x="126" width="769" y="129.0909090909091" height="214.54545454545453" fill="#f28e2c"><title>row: ZUSAMMENFASSUNG
+ (1)</title></rect><rect x="121" width="728" y="136.993006993007" height="210.41958041958037" fill="#f28e2c"><title>row: ZUSAMMENFASSUNG
 row2: 3-5mal
 row value: 2
 header: GESAMT
@@ -62,7 +62,7 @@ column: undefined
 value: 41.3
 N: 143
 mean: 5.5
- (1)</title></rect><rect x="126" width="769" y="20" height="109.0909090909091" fill="#e15759"><title>row: ZUSAMMENFASSUNG
+ (1)</title></rect><rect x="121" width="728" y="30" height="106.99300699300699" fill="#e15759"><title>row: ZUSAMMENFASSUNG
 row2: &gt;5mal
 row value: 3
 header: GESAMT
@@ -88,7 +88,7 @@ column: undefined
 value: 21.0
 N: 143
 mean: 5.5
- (1)</title></rect></g><g aria-label="text" transform="translate(385,0.5)"><text y="0.32em" transform="translate(126,441.8181818181818)">37.8<title>row: ZUSAMMENFASSUNG
+ (1)</title></rect></g><g aria-label="text" transform="translate(364.5,0.5)"><text y="0.32em" transform="translate(121,443.7062937062937)">37.8<title>row: ZUSAMMENFASSUNG
 row2: 1-2mal
 row value: 1
 header: GESAMT
@@ -114,7 +114,7 @@ column: undefined
 value: 37.8
 N: 143
 mean: 5.5
- (1)</title></text><text y="0.32em" transform="translate(126,236.36363636363635)">41.3<title>row: ZUSAMMENFASSUNG
+ (1)</title></text><text y="0.32em" transform="translate(121,242.20279720279717)">41.3<title>row: ZUSAMMENFASSUNG
 row2: 3-5mal
 row value: 2
 header: GESAMT
@@ -140,7 +140,7 @@ column: undefined
 value: 41.3
 N: 143
 mean: 5.5
- (1)</title></text><text y="0.32em" transform="translate(126,74.54545454545455)">21.0<title>row: ZUSAMMENFASSUNG
+ (1)</title></text><text y="0.32em" transform="translate(121,83.4965034965035)">21.0<title>row: ZUSAMMENFASSUNG
 row2: &gt;5mal
 row value: 3
 header: GESAMT

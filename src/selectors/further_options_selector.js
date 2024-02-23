@@ -4,7 +4,8 @@ import sharedStyles from './../components.css?inline';
 export class FurtherOptionsSelector extends LitElement {
     static properties = {
 		xy: { type: String },
-		plot_type: { type: String}
+		plot_type: { type: String },
+		show_n: { type: Boolean },
 	};
 
     _update_xy() {
@@ -31,12 +32,32 @@ export class FurtherOptionsSelector extends LitElement {
 		};
 		this.dispatchEvent(new CustomEvent('update-plot_type', options));
     }
+	get _show_n() {
+		return this.renderRoot?.querySelector('#show-n:checked')?.value === "on";
+	}
+
+    _toggle_show_n() {
+        const options = {
+			detail: {
+				show_n: this._show_n,
+			},
+			bubbles: true,
+			composed: true,
+		};
+		this.dispatchEvent(new CustomEvent('update-show-n', options));
+    }
 
     render() {
         return html`
         <div class="parent">
             <button @click=${this._update_xy}>Flip x & y axis</button>
             <button @click=${this._update_plot_type}>${this.plot_type + " chart"}</button>
+			<input 
+				type="checkbox" 
+				id="show-n"
+				@change=${this._toggle_show_n}
+			>
+			<label for="show-n">Show totals in charts</label><br>
         </div>
         `;
     }

@@ -5,6 +5,7 @@ export class PlotOptions {
 		let o = input_data.choices
 		o.color_scale = input_data.color_scale;
 		o.color_scheme = input_data.color_scheme;
+		o.show_n = input_data.show_n;
 		this.o = o;
 		this.plot_data = input_data.plot_data;
 		this.pre_process()
@@ -78,6 +79,12 @@ export class PlotOptions {
 			order: e.color_order,
 			title: tooltip_fun(e.n_decimals)
 		}
+		p.group_args2_text_n = {
+			...e.plot_opts,
+			text: (x) => ((x.Value === undefined || x.Value == 0) ? null : 'N = ' + x.ColValidCases),
+			order: e.color_order,
+		}
+		p.group_args2_text_n[this.o.xy === "x" ? "dy" : "dx"] = this.o.xy === "x" ? -15 : 30
 		this.p = p;
 		this.bar_plot_options()
 	}
@@ -87,6 +94,8 @@ export class PlotOptions {
 		const text_opts = Plot[p.group_](p.group_args1, p.group_args2_text)
 		
 		this.options = {
+			marginTop: 30,
+			marginRight: 70,
 			marginLeft: this.e.marginLeft,
 			marginBottom: this.e.marginBottom,
 			color: this.e.color_opts,
@@ -98,6 +107,7 @@ export class PlotOptions {
 				this.o.color_scale === "ordinal" ? null : Plot[p.text_](this.plot_data, Plot[p.stack_](text_opts)),
 				// only show if there 10 different color values at max...:
 				// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
+				this.o.show_n ? Plot.text(this.plot_data, Plot[p.group_](p.group_args1, p.group_args2_text_n)) : null
 			]
 		};
 	}

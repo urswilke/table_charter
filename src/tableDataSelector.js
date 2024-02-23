@@ -29,6 +29,7 @@ export class TableDataSelector extends LitElement {
 		color_scale: { type: String },
 		color_scheme: { type: String },
 		collapsed_view: { type: Boolean },
+		show_n: { type: Boolean },
 	};
 
 	// Initialization:
@@ -60,6 +61,7 @@ export class TableDataSelector extends LitElement {
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
 		this.collapsed_view = true;
+		this.show_n = false;
 		this.sel_question_data()
 	}
 
@@ -126,7 +128,8 @@ export class TableDataSelector extends LitElement {
 					plot_data: this.plot_data,
 					choices: this.choices,
 					color_scale: this.color_scale,
-					color_scheme: this.color_scheme
+					color_scheme: this.color_scheme,
+					show_n: this.show_n,
 				}
 			},
 			bubbles: true,
@@ -192,6 +195,10 @@ export class TableDataSelector extends LitElement {
 		this.choices.xy = e.detail.xy;
 		this._update_plot_data()
 	}
+	_on_show_n_update(e) {
+		this.show_n = e.detail.show_n;
+		this._update_plot_data()
+	}
 	_on_plot_type_update(e) {
 		this.choices.plot_type = e.detail.plot_type;
 		this._update_plot_data()
@@ -236,6 +243,7 @@ export class TableDataSelector extends LitElement {
 					<further-options-selector
 						@update-xy="${this._on_xy_update}"
 						@update-plot_type="${this._on_plot_type_update}"
+						@update-show-n="${this._on_show_n_update}"
 						.xy=${this.choices.xy}
 						.plot_type=${this.choices.plot_type}>
 					</further-options-selector>
