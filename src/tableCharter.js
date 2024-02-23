@@ -102,12 +102,6 @@ export class TableCharter extends LitElement {
                 width: 65%;
                 padding: 30px;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .ojsplot {
-                vertical-align: middle;
-                text-align: center;
             }
             
         `

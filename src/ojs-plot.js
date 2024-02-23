@@ -47,32 +47,25 @@ export class OJSPlot extends LitElement {
 		select(renderedPlot)
 			.select(".large-font-ramp, .large-font-swatches")
 			.raise() 
-			// https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements/4767993#4767993
-			.style("display", "inline-block") 
-			// .style("text-align", "center"); 
 		return when(
             options === null,
             () => html`<div></div>`,
+			// it's important to put the chart title text directly next to the ">" because of the pre-wrap style:
             () => html`
 				<div>
 					<div id="ojs-plot-div">
 						<h2 
-							class="primary multi-line-header left_float"
+							class="primary multi-line-header"
 							data-test-id="plot-header"	
-						>
-							${this.chartTitle}
-						</h2>
-						${renderedPlot}
-						</div>
-							<span>
-								<button
-									data-test-id="save-svg-button"
-									@click="${this._click_save_svg}">
-									save svg
-								</button>
-
-							</span>
-						</div>
+						>${this.chartTitle}</h2>
+						<div class="plot-div">${renderedPlot}</div>
+					</div>
+					<div class="save-svg-button">
+						<button
+							data-test-id="save-svg-button"
+							@click="${this._click_save_svg}">
+							save svg
+						</button>
 					</div>
 				</div>
 			`
@@ -121,13 +114,13 @@ export class OJSPlot extends LitElement {
 			:host[dark] svg {
 				background: var(--dark-plot-background)
 			}
-			.large-font-ramp {
+			.large-font-swatches, .large-font-ramp {
 				font-size: 16px;
-				margin-bottom: 20px;
+				/* https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements/4767993#4767993: */
+				display: inline-block;
 			}
-			.large-font-swatches {
-				font-size: 16px;
-				margin-bottom: 20px;
+			.plot-div, .save-svg-button {
+				text-align: center;
 			}
 		`
 	];
