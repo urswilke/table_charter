@@ -319,6 +319,7 @@ export class TableDataSelector extends LitElement {
 			}
 			label {
                 background: #5e677b;
+				color: white;
 				display: block;
 				border-top-right-radius: 6px;
 				border-top-left-radius: 6px;
