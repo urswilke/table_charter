@@ -47,7 +47,14 @@ const firefox_capabilities = {
     'moz:firefoxOptions': {
         args: [
             '-headless'
-        ]
+        ],
+        prefs: {
+            "browser.download.dir": downloadDir,
+            "browser.download.folderList": 2,
+            "browser.download.manager.showWhenStarting": false,
+            "browser.helperApps.neverAsk.saveToDisk": "*/*"
+        }
+        // "outputDir": downloadDir,
     }
 };
 console.log(process.argv)
