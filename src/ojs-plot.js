@@ -147,7 +147,11 @@ function create_svg_blob(svgEl) {
     //         }
     //     }
     // }
-    svgEl.setAttributeNS(xmlns, "xmlns", svgns);
+	// apparently, this isn't needed when embedding svg in inline html
+	// (see here: https://stackoverflow.com/questions/33025085/base64-svg-fails-to-render-in-chrome-works-in-firefox/33029193#33029193)
+    // svgEl.setAttributeNS(xmlns, "xmlns", svgns);
+	// TODO: find a way that also allows to show the svg outside of the browser 
+	// (works in chrome/firefox, but not in image viewer)...!
     svgEl.setAttributeNS(xmlns, "xmlns:xlink", xlinkns);
     const serializer = new window.XMLSerializer();
     const string = serializer.serializeToString(svgEl).replace(/<\!--.*?-->/g, "");
