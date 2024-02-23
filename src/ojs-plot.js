@@ -96,7 +96,7 @@ export class OJSPlot extends LitElement {
 				white-space: pre-wrap;
 			}
 			:host {
-				display: flex;
+				/* display: flex; */
 				background-color: var(--light-plot-background, "white")
 			}
 			:host[dark] {
