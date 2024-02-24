@@ -9,6 +9,9 @@ export class PlotOptions {
 		o.show_n = input_data.show_n;
 		this.o = o;
 		this.plot_data = input_data.plot_data;
+		if (this.plot_data.length === 0) {
+			return null
+		}
 		this.pre_process()
 		// Execute method bar() or line() depending on the plot type:
 		this[o.plot_type]()		

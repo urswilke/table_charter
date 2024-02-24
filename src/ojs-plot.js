@@ -46,8 +46,8 @@ export class OJSPlot extends LitElement {
 			.select(".large-font-ramp, .large-font-swatches")
 			.raise() 
 		return when(
-            options === null,
-            () => html`<div></div>`,
+            options === undefined,
+            () => html`<div id="no-data"><h1>All data is filtered.</h1></div>`,
 			// it's important to put the chart title text directly next to the ">" because of the pre-wrap style:
             () => html`
 				<div>
@@ -99,6 +99,10 @@ export class OJSPlot extends LitElement {
 			}
 			.plot-div, .save-svg-button {
 				text-align: center;
+			}
+			#no-data {
+				border: 0.05em solid red;
+				padding: 10px;
 			}
 		`
 	];
