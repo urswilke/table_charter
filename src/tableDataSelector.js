@@ -74,7 +74,8 @@ export class TableDataSelector extends LitElement {
 		if (this.choices.colorscale_disabled) {
 			this.color_scale = "categorical"
 		}
-	
+		this.choices.plot_type = gen_plot_type_string(this)
+
 		this.sel_header_data()
 	}
 	sel_header_data() {
@@ -91,7 +92,6 @@ export class TableDataSelector extends LitElement {
 			)
 		;
 		this.params.row_table = gen_row_table(this.num_type_data)
-		this.choices.plot_type = gen_plot_type_string(this)
 		
 		this.sel_rows_data()
 	}
