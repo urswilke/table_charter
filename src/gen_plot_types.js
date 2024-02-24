@@ -91,7 +91,9 @@ export class PlotOptions {
 			text: (x) => ((x.Value === undefined || x.Value == 0) ? null : 'N = ' + x.ColValidCases),
 			order: e.color_order,
 		}
-		p.group_args2_text_n[this.o.xy === "x" ? "dy" : "dx"] = this.o.xy === "x" ? -15 : 30
+		const is_x = this.o.xy === "x";
+		p.group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10
+		is_x ? p.group_args2_text_n.lineAnchor = "bottom" : p.group_args2_text_n.textAnchor = "start"
 		this.p = p;
 		this.bar_plot_options()
 	}
