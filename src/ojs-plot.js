@@ -31,7 +31,15 @@ export class OJSPlot extends LitElement {
 			return this
 		}
 		this.plot_options = new PlotOptions(val)
-		this.chartTitle = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabTitle: ""
+		this.chartTitle = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabTitle : null
+		const chartHeaders = !!val.plot_data && val.plot_data.length > 0 ? 
+			"vs " + [...new Set(val.plot_data.map(x => x.ColTitle1))].join(" / ") :
+			null
+		const chartCaption = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabCaption : null
+		this.chartSubTitle = [chartHeaders, chartCaption]
+			// remove empty:
+			.filter(n => n)
+			.join(" - ")
 	}
 
 
@@ -56,6 +64,7 @@ export class OJSPlot extends LitElement {
 							class="primary multi-line-header"
 							data-test-id="plot-header"	
 						>${this.chartTitle}</h2>
+						<h4>${this.chartSubTitle}</h4>
 						<div class="plot-div">${renderedPlot}</div>
 					</div>
 					<div class="save-svg-button">
