@@ -183,8 +183,8 @@ export class TableDataSelector extends LitElement {
 		this.color_scale = e.detail.chosen_colorscale;
 		this.params.color_schemes = all_color_schemes[this.color_scale];
 		this.color_scheme = this.color_scale === "categorical" ?
-			"Tableau10 (categorical, 10 colors)" :
-			"Turbo (sequential, multi-hue)"
+			"Tableau10" :
+			"Turbo"
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
