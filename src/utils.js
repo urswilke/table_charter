@@ -21,7 +21,6 @@ export function distinct(arr, X) {
 export const buttonStyles = css`
     select[multiple] option:checked {
         background: grey linear-gradient(40deg, grey 0%, #bbb 100%);
-        color: --primary
     }
     select {
         border-radius:5px;

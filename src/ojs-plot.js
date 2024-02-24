@@ -13,7 +13,6 @@ export class OJSPlot extends LitElement {
 	static properties = {
 		plot_data: {type: Array},
 		id: { type: String },
-		appStyles: { type: String },
 		chartTitle: { type: String },
 		plot_options: { type: PlotOptions },
 		file_name: { type: String },
@@ -24,7 +23,6 @@ export class OJSPlot extends LitElement {
 		super()
 		
 		this.chart = null
-		this.appStyles = ''
 
 	}
 
@@ -89,30 +87,10 @@ export class OJSPlot extends LitElement {
 		dowload_image(svg_blob, this.file_name)
 	}
 	static styles = [
-		unsafeCSS(this.appStyles),
 		unsafeCSS(sharedStyles),
 		css`
 			.multi-line-header {
 				white-space: pre-wrap;
-			}
-			:host {
-				/* display: flex; */
-				background-color: var(--light-plot-background, "white")
-			}
-			:host[dark] {
-				background-color: var(--dark-plot-background, "#1c1c1e")
-			}
-			:host div {
-				color: var(--light-plot-div-color, "white")
-			}
-			:host div[dark] {
-				color: var(--dark-plot-div-color, "white")
-			}
-			:host svg {
-				background: var(--light-plot-background)
-			}
-			:host[dark] svg {
-				background: var(--dark-plot-background)
 			}
 			.large-font-swatches, .large-font-ramp {
 				font-size: 16px;

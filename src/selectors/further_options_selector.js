@@ -65,9 +65,6 @@ export class FurtherOptionsSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
-		option:checked {
-			background: red linear-gradient(#333,#333);
-		}
 		.parent  *  {
 			margin: 3px;
 		}

@@ -99,9 +99,6 @@ export class MultiSelector extends LitElement {
 		buttonStyles,
 		// TODO: use different color if only part of the parents are checked...!
 		css`
-			option:checked {
-				background: red linear-gradient(#333,#333);
-			}
 			option {
 				text-overflow:ellipsis;
 			}
