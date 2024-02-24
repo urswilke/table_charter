@@ -92,11 +92,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "2 - 4 Beschäftigte",
             "5 - 9 Beschäftigte",
             "10 - 19 Beschäftigte",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -105,6 +108,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "2 - 4 Beschäftigte",
             "5 - 9 Beschäftigte",
@@ -202,10 +206,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -326,6 +335,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Kundenzufriedenheit",
             "Marktvolumen",
@@ -335,6 +345,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Werbewirkungsmessung",
             "Weitere",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -343,6 +355,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Kundenzufriedenheit",
             "Marktvolumen",
@@ -448,10 +461,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -572,6 +590,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Kundenzufriedenheit",
             "Marktvolumen",
@@ -581,6 +600,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Werbewirkungsmessung",
             "Weitere",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -589,6 +610,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Kundenzufriedenheit",
             "Marktvolumen",
@@ -694,10 +716,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -1156,11 +1183,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "ZUSAMMENFASSUNG 1-2mal",
             "ZUSAMMENFASSUNG 3-5mal",
             "ZUSAMMENFASSUNG >5mal",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -1169,6 +1199,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "ZUSAMMENFASSUNG 1-2mal",
             "ZUSAMMENFASSUNG 3-5mal",
@@ -1266,10 +1297,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -1381,12 +1417,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Darstellung der Daten",
             "Schnelligkeit der Umsetzung",
             "Sonstiges",
             "Freundlichkeit des Tabellenbanderstellers",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -1395,6 +1434,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Darstellung der Daten",
             "Schnelligkeit der Umsetzung",
@@ -1494,10 +1534,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -1996,12 +2041,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             2,
             3,
             4,
             5,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -2010,6 +2058,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             2,
             3,
@@ -2207,6 +2256,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             2,
             5,
@@ -2216,6 +2266,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             9,
             10,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -2224,6 +2276,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             2,
             5,
@@ -2427,6 +2480,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             2,
             5,
@@ -2436,6 +2490,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             9,
             10,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -2444,6 +2500,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             2,
             5,
@@ -2644,6 +2701,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             5,
             6,
@@ -2652,6 +2710,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             9,
             10,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -2660,6 +2720,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             5,
             6,
@@ -2849,11 +2910,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
             "Strukturanalyse",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -2862,6 +2926,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
@@ -2959,10 +3024,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -3068,10 +3138,13 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -3080,6 +3153,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
@@ -3175,10 +3249,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -3287,11 +3366,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
             "Strukturanalyse",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -3300,6 +3382,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
@@ -3397,10 +3480,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -3506,10 +3594,13 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -3518,6 +3609,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Kundenzufriedenheit",
             "Onlineauftritte",
@@ -3613,10 +3705,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -3717,9 +3814,12 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Werbewirkungsmessung",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -3728,6 +3828,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Werbewirkungsmessung",
           ],
@@ -3821,10 +3922,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -3935,12 +4041,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Darstellung der Daten",
             "Sonstiges",
             "Schnelligkeit der Umsetzung",
             "Freundlichkeit des Tabellenbanderstellers",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -3949,6 +4058,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Darstellung der Daten",
             "Sonstiges",
@@ -4048,10 +4158,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -4160,11 +4275,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Schnelligkeit der Umsetzung",
             "Freundlichkeit des Tabellenbanderstellers",
             "Darstellung der Daten",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -4173,6 +4291,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Schnelligkeit der Umsetzung",
             "Freundlichkeit des Tabellenbanderstellers",
@@ -4270,10 +4389,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -4382,11 +4506,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             "Darstellung der Daten",
             "Freundlichkeit des Tabellenbanderstellers",
             "Schnelligkeit der Umsetzung",
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -4395,6 +4522,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             "Darstellung der Daten",
             "Freundlichkeit des Tabellenbanderstellers",
@@ -4492,10 +4620,15 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               },
             },
             "facet": "auto",
+            "fill": "#111111",
             "frameAnchor": "middle",
             "lineAnchor": "middle",
             "lineHeight": 1,
             "monospace": false,
+            "paintOrder": "stroke",
+            "stroke": "#eeeeee",
+            "strokeLinejoin": "round",
+            "strokeWidth": 4,
           },
         ],
         "style": {
@@ -4975,6 +5108,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             1,
             2,
@@ -4987,6 +5121,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             9,
             10,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -4995,6 +5131,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             1,
             2,
@@ -5210,6 +5347,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             2,
             3,
@@ -5221,6 +5359,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             9,
             10,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -5229,6 +5369,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             2,
             3,
@@ -5795,6 +5936,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             1,
             2,
@@ -5807,6 +5949,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             9,
             10,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -5815,6 +5959,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             1,
             2,
@@ -6027,6 +6172,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "y": "Value",
         },
         "group_args2_text": {
+          "fill": "#111111",
           "order": [
             3,
             4,
@@ -6037,6 +6183,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             9,
             10,
           ],
+          "stroke": "#eeeeee",
+          "strokeWidth": 4,
           "text": {},
           "title": {},
           "x": {},
@@ -6045,6 +6193,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
         },
         "group_args2_text_n": {
           "dy": -15,
+          "lineAnchor": "bottom",
           "order": [
             3,
             4,
