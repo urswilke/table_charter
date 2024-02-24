@@ -24,9 +24,11 @@ describe('Check all questions', () => {
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
             await question_select_el.selectByVisibleText(question_text)
             const options = await row_selector_el.$$(">>>option")
-            await options[0].click()
-            // select first 2 options (if second exists):
-            await options[1]?.dragAndDrop(options[0])
+            if (options.length > 1) {
+                await options[0].click()
+                // select first 2 options (if second exists):
+                await options[1].dragAndDrop(options[0])
+            }
 
             await fig_el.isExisting()
             // Scroll to the bottom of the element:
