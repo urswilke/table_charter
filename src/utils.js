@@ -26,6 +26,9 @@ export const buttonStyles = css`
         border-radius:5px;
     }
 `;
+const is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+export const bg_col = is_dark ? `#111111` : `#eeeeee`
+export const fg_col = !is_dark ? `#111111` : `#eeeeee`
 
 export function gen_header_table(data) {
 	const arr = distinct(

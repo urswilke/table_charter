@@ -1,4 +1,5 @@
 import * as Plot from "@observablehq/plot";
+import { bg_col, fg_col } from './utils.js'
 
 export class PlotOptions {
     constructor(input_data) {
@@ -77,7 +78,13 @@ export class PlotOptions {
 			text: (x) => ((x.Value === undefined || x.Value == 0) ? null : x.Value.toFixed(e.n_decimals)),
 			z: e.row_lab_fun,
 			order: e.color_order,
-			title: tooltip_fun(e.n_decimals)
+			title: tooltip_fun(e.n_decimals),
+			// put halo around text:
+			// https://observablehq.com/plot/marks/text#text-options
+			stroke: bg_col,
+			strokeWidth: 4,
+			fill: fg_col
+
 		}
 		p.group_args2_text_n = {
 			...e.plot_opts,
