@@ -18,6 +18,7 @@ const question_select_el = await question_selector_el.$(">>>select")
 const header_selector_el = await table_charter_el.$(">>>multi-selector#headers")
 const subheader_selector = await header_selector_el.$(">>>select#children-selector").parentElement()
 const color_selector_el = await table_charter_el.$('>>>colorscale-selector[data-test-id="color-scale-selector"]').parentElement()
+const flip_xy_button = await table_charter_el.$('>>>button[data-test-id="flip-xy-button"]')
     
 describe('Button "Show/hide advanced settings" testing', () => {
     it('should change text to "Hide advanced settings" on click', async () => {
@@ -54,8 +55,16 @@ describe('Check all questions', () => {
             await question_select_el.selectByVisibleText(question_text)
             await fig_el.isExisting()
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
+            
             const res = {}
+            
             res['initial'] = await get_options(ojs_plot_el);
+            
+            await flip_xy_button.click();
+            res['flip_xy'] = await get_options(ojs_plot_el);
+            await flip_xy_button.click();
+            await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
+
             plot_option_array[i] = res;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()

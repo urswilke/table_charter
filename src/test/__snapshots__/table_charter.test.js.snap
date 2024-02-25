@@ -3,6 +3,237 @@
 exports[`Check all questions > should reproduce the plot options 1`] = `
 [
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": false,
+          "i_tab": 0,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "2 - 4 Beschäftigte",
+            "5 - 9 Beschäftigte",
+            "10 - 19 Beschäftigte",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 15,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -236,6 +467,261 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 1,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Marktvolumen",
+            "Onlineauftritte",
+            "Branchenbarometer",
+            "Strukturanalyse",
+            "Werbewirkungsmessung",
+            "Weitere",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 34,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -493,6 +979,261 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 2,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Marktvolumen",
+            "Onlineauftritte",
+            "Branchenbarometer",
+            "Strukturanalyse",
+            "Werbewirkungsmessung",
+            "Weitere",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 35,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+              "Onlineauftritte",
+              "Branchenbarometer",
+              "Strukturanalyse",
+              "Werbewirkungsmessung",
+              "Weitere",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -750,6 +1491,181 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 3,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Summary of Medians",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Marktvolumen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 10,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -927,6 +1843,181 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 4,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten? --> Mittelwertüberblick --> gewichtet mit gew",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Marktvolumen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 10,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Marktvolumen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -1104,6 +2195,237 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": false,
+          "i_tab": 5,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "4. Wie häufig haben Sie einen Tabellenband in den letzten 12 Monaten erstellen lassen?",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "ZUSAMMENFASSUNG --> 1-2mal",
+              "ZUSAMMENFASSUNG --> 3-5mal",
+              "ZUSAMMENFASSUNG --> >5mal",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "ZUSAMMENFASSUNG --> 1-2mal",
+            "ZUSAMMENFASSUNG --> 3-5mal",
+            "ZUSAMMENFASSUNG --> >5mal",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "ZUSAMMENFASSUNG --> 1-2mal",
+              "ZUSAMMENFASSUNG --> 3-5mal",
+              "ZUSAMMENFASSUNG --> >5mal",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "ZUSAMMENFASSUNG --> 1-2mal",
+              "ZUSAMMENFASSUNG --> 3-5mal",
+              "ZUSAMMENFASSUNG --> >5mal",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "ZUSAMMENFASSUNG --> 1-2mal",
+              "ZUSAMMENFASSUNG --> 3-5mal",
+              "ZUSAMMENFASSUNG --> >5mal",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 45,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "ZUSAMMENFASSUNG --> 1-2mal",
+              "ZUSAMMENFASSUNG --> 3-5mal",
+              "ZUSAMMENFASSUNG --> >5mal",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -1337,6 +2659,243 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 6,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "5. Was lief besonders gut in den Projekten?",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Darstellung der Daten",
+            "Schnelligkeit der Umsetzung",
+            "Sonstiges",
+            "Freundlichkeit des Tabellenbanderstellers",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 20,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -1576,6 +3135,243 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 6,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "5. Was lief besonders gut in den Projekten?",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Darstellung der Daten",
+            "Schnelligkeit der Umsetzung",
+            "Sonstiges",
+            "Freundlichkeit des Tabellenbanderstellers",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 20,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -1815,6 +3611,199 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 8,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP2-Übersicht",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+              "Korrektheit der Daten",
+              "Freundlichkeit der Tabellenbandersteller",
+              "Langfristige Zusammenarbeit",
+              "Gute telefonische Erreichbarkeit",
+              "Wochenenderreichbarkeit",
+              "Einhaltung von Zusagen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Schnelle Umsetzung",
+            "Kurzfristige Anpassungen",
+            "Korrektheit der Daten",
+            "Freundlichkeit der Tabellenbandersteller",
+            "Langfristige Zusammenarbeit",
+            "Gute telefonische Erreichbarkeit",
+            "Wochenenderreichbarkeit",
+            "Einhaltung von Zusagen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 40,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+              "Korrektheit der Daten",
+              "Freundlichkeit der Tabellenbandersteller",
+              "Langfristige Zusammenarbeit",
+              "Gute telefonische Erreichbarkeit",
+              "Wochenenderreichbarkeit",
+              "Einhaltung von Zusagen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -2010,6 +3999,199 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 9,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein. --> TOP1-Übersicht",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+              "Korrektheit der Daten",
+              "Freundlichkeit der Tabellenbandersteller",
+              "Langfristige Zusammenarbeit",
+              "Gute telefonische Erreichbarkeit",
+              "Wochenenderreichbarkeit",
+              "Einhaltung von Zusagen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Schnelle Umsetzung",
+            "Kurzfristige Anpassungen",
+            "Korrektheit der Daten",
+            "Freundlichkeit der Tabellenbandersteller",
+            "Langfristige Zusammenarbeit",
+            "Gute telefonische Erreichbarkeit",
+            "Wochenenderreichbarkeit",
+            "Einhaltung von Zusagen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 40,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+              "Korrektheit der Daten",
+              "Freundlichkeit der Tabellenbandersteller",
+              "Langfristige Zusammenarbeit",
+              "Gute telefonische Erreichbarkeit",
+              "Wochenenderreichbarkeit",
+              "Einhaltung von Zusagen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -2205,6 +4387,212 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 10,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              2,
+              3,
+              4,
+              5,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            2,
+            3,
+            4,
+            5,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              2,
+              3,
+              4,
+              5,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              2,
+              3,
+              4,
+              5,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              2,
+              3,
+              4,
+              5,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 17,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              2,
+              3,
+              4,
+              5,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -2413,6 +4801,230 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 11,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 26,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -2639,6 +5251,230 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 12,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 24,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -2865,6 +5701,224 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 13,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 21,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -3085,6 +6139,237 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 14,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Onlineauftritte",
+            "Strukturanalyse",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 15,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -3318,6 +6603,231 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 15,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Onlineauftritte",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 10,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -3545,6 +7055,237 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 16,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Onlineauftritte",
+            "Strukturanalyse",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 12,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+              "Strukturanalyse",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -3778,6 +7519,231 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 17,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Kundenzufriedenheit",
+            "Onlineauftritte",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 8,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Kundenzufriedenheit",
+              "Onlineauftritte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -4005,6 +7971,222 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 18,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Werbewirkungsmessung",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Werbewirkungsmessung",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Werbewirkungsmessung",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Werbewirkungsmessung",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Werbewirkungsmessung",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 4,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Werbewirkungsmessung",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -4223,6 +8405,243 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 19,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Sonstiges",
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Darstellung der Daten",
+            "Sonstiges",
+            "Schnelligkeit der Umsetzung",
+            "Freundlichkeit des Tabellenbanderstellers",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Darstellung der Daten",
+              "Sonstiges",
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Darstellung der Daten",
+              "Sonstiges",
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Darstellung der Daten",
+              "Sonstiges",
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 17,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Sonstiges",
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -4462,6 +8881,237 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 20,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Darstellung der Daten",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Schnelligkeit der Umsetzung",
+            "Freundlichkeit des Tabellenbanderstellers",
+            "Darstellung der Daten",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Darstellung der Daten",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Darstellung der Daten",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Darstellung der Daten",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 8,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Schnelligkeit der Umsetzung",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Darstellung der Daten",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -4695,6 +9345,237 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 21,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Schnelligkeit der Umsetzung",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Darstellung der Daten",
+            "Freundlichkeit des Tabellenbanderstellers",
+            "Schnelligkeit der Umsetzung",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Darstellung der Daten",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Schnelligkeit der Umsetzung",
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Darstellung der Daten",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Schnelligkeit der Umsetzung",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              "Darstellung der Daten",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Schnelligkeit der Umsetzung",
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 8,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Freundlichkeit des Tabellenbanderstellers",
+              "Schnelligkeit der Umsetzung",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -4928,6 +9809,181 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 22,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> TOP3-Übersicht",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Schnelle Umsetzung",
+            "Kurzfristige Anpassungen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 10,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -5105,6 +10161,181 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 23,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Mittelwertüberblick",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Schnelle Umsetzung",
+            "Kurzfristige Anpassungen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 10,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -5282,6 +10513,248 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 24,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Schnelle Umsetzung",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 64,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -5526,6 +10999,242 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 25,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 56,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -5764,6 +11473,181 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 26,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> TOP3-Übersicht",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Schnelle Umsetzung",
+            "Kurzfristige Anpassungen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 10,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -5941,6 +11825,181 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 27,
+          "plot_type": "line",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Mittelwertüberblick",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Schnelle Umsetzung",
+            "Kurzfristige Anpassungen",
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "line_opts": {
+            "stroke": {},
+            "x": "Value",
+            "y": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 10,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Schnelle Umsetzung",
+              "Kurzfristige Anpassungen",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "scale": "y",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "Value",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -6118,6 +12177,248 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 28,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Schnelle Umsetzung",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 64,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
@@ -6362,6 +12663,236 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
     ],
   },
   {
+    "flip_xy": [
+      [
+        "input",
+        {
+          "color_scale": "ordinal",
+          "color_scheme": "Turbo",
+          "colorscale_disabled": false,
+          "i_tab": 29,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "color_order": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+          ],
+          "label_joiner": " ",
+          "label_joiner2": " --> ",
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT ",
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_": "groupY",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "title": {},
+            "x": "Value",
+            "y": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "order": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 58,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+            ],
+            "legend": true,
+            "scheme": "turbo",
+            "type": "linear",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 260,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            null,
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "y": {
+            "domain": [
+              "GESAMT ",
+              "Region Asien",
+              "Region Europa",
+              "Region Nordamerika",
+              "Region Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
     "initial": [
       [
         "input",
