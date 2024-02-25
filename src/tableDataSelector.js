@@ -80,7 +80,8 @@ export class TableDataSelector extends LitElement {
 	}
 	sel_header_data() {
 		this.header_data = filter_sel_headers(this.question_data, this.params.header_table)
-
+		this.toggle_filtered_class('#header-multi-sel', this.question_data, this.header_data)
+		
 		this.sel_num_type_data()
 	}
 	sel_num_type_data() {
@@ -91,13 +92,16 @@ export class TableDataSelector extends LitElement {
 				x.RowAbsPercent != "Abs"
 			)
 		;
+		this.toggle_filtered_class('num_type-selector', this.header_data, this.num_type_data)
+		
 		this.params.row_table = gen_row_table(this.num_type_data)
 		
 		this.sel_rows_data()
 	}
 	sel_rows_data() {
 		this.rows_data = filter_sel_rows(this.num_type_data, this.params.row_table)
-		
+		this.toggle_filtered_class('#row-multi-sel', this.num_type_data, this.rows_data)
+	
 		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowValue"])
 		const n_numeric_rowtitles = df_row_tit_val.reduce(
 			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^-?\d+/))),
@@ -118,6 +122,18 @@ export class TableDataSelector extends LitElement {
 		this.params.color_schemes = all_color_schemes[this.color_scale];
 
 		this.plot_data = this.rows_data
+	}
+	toggle_filtered_class(id_string, input_data, output_data) {
+		if (input_data.length === 0) {
+			return;
+		}
+		const html_el = this.renderRoot?.querySelector(id_string);
+		if (output_data.length === 0) {
+			html_el?.classList.add("all-filtered")
+		} else {
+			html_el?.classList.remove("all-filtered")
+		}
+
 	}
 	
 	// Talk to parent:
@@ -257,7 +273,7 @@ export class TableDataSelector extends LitElement {
 							.all_questions=${this.params.title_table}>
 						</question-selector>
 					</div>
-					<div>
+					<div id="header-multi-sel">
 						<label for="headers">Headers</label>
 						<multi-selector
 							id="headers" 		
@@ -273,7 +289,7 @@ export class TableDataSelector extends LitElement {
 					</div>
 					<!-- https://stackoverflow.com/a/2062264 -->
 					<span class="clear"></span>
-					<div>
+					<div id="row-multi-sel">
 						<label for="rows">Rows</label>
 						<multi-selector 
 							id="rows"		
