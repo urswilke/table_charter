@@ -123,11 +123,11 @@ export class TableDataSelector extends LitElement {
 
 		this.plot_data = this.rows_data
 	}
-	toggle_filtered_class(id_string, input_data, output_data) {
+	toggle_filtered_class(selector_string, input_data, output_data) {
 		if (input_data.length === 0) {
 			return;
 		}
-		const html_el = this.renderRoot?.querySelector(id_string);
+		const html_el = this.renderRoot?.querySelector(selector_string);
 		if (output_data.length === 0) {
 			html_el?.classList.add("all-filtered")
 		} else {
