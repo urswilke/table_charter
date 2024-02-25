@@ -59,7 +59,8 @@ export class FurtherOptionsSelector extends LitElement {
 				data-test-id="plot-type-button"
 			>${this.plot_type + " chart"}</button>
 			<input 
-				type="checkbox" 
+				type="checkbox"
+				data-test-id="n-checkbox" 
 				id="show-n"
 				@change=${this._toggle_show_n}
 			>

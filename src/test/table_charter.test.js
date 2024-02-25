@@ -20,6 +20,7 @@ const subheader_selector = await header_selector_el.$(">>>select#children-select
 const color_selector_el = await table_charter_el.$('>>>colorscale-selector[data-test-id="color-scale-selector"]').parentElement()
 const flip_xy_button = await table_charter_el.$('>>>button[data-test-id="flip-xy-button"]')
 const plot_type_button = await table_charter_el.$('>>>button[data-test-id="plot-type-button"]')
+const n_checkbox = await table_charter_el.$('>>>input[data-test-id="n-checkbox"]')
     
 describe('Button "Show/hide advanced settings" testing', () => {
     it('should change text to "Hide advanced settings" on click', async () => {
@@ -69,6 +70,11 @@ describe('Check all questions', () => {
             await plot_type_button.click();
             res['other_type'] = await get_options(ojs_plot_el);
             await plot_type_button.click();
+            await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
+
+            await n_checkbox.click();
+            res['add_n'] = await get_options(ojs_plot_el);
+            await n_checkbox.click();
             await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
 
             plot_option_array[i] = res;
