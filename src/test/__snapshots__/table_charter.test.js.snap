@@ -1575,7 +1575,245 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       ],
     ],
   },
-  null,
+  {
+    "initial": [
+      [
+        "input",
+        {
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": true,
+          "i_tab": 6,
+          "plot_type": "bar",
+          "row_type": "%",
+          "show_n": false,
+          "tab_title": "5. Was lief besonders gut in den Projekten?",
+          "xy": "x",
+        },
+      ],
+      [
+        "derived",
+        {
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "Darstellung der Daten",
+            "Schnelligkeit der Umsetzung",
+            "Sonstiges",
+            "Freundlichkeit des Tabellenbanderstellers",
+          ],
+          "label_joiner": " --> ",
+          "label_joiner2": " ",
+          "marginBottom": 60,
+          "marginLeft": 40,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": {},
+            "y": "Value",
+          },
+          "row_lab_fun": {},
+          "x1": "y",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "x",
+          "x2_opts": {
+            "domain": [
+              "GESAMT --> ",
+              "Region --> Asien",
+              "Region --> Europa",
+              "Region --> Nordamerika",
+              "Region --> Pazifik",
+            ],
+            "label": null,
+          },
+          "x_order": [
+            "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barY",
+          "group_": "groupX",
+          "group_args1": {
+            "text": "first",
+            "y": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "title": {},
+            "x": {},
+            "y": "Value",
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "stroke": "#eeeeee",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": {},
+            "y": "Value",
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dy": -15,
+            "lineAnchor": "bottom",
+            "order": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "text": {},
+            "x": {},
+            "y": "Value",
+          },
+          "stack_": "stackY",
+          "text_": "textY",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 20,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "Darstellung der Daten",
+              "Schnelligkeit der Umsetzung",
+              "Sonstiges",
+              "Freundlichkeit des Tabellenbanderstellers",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 600,
+          "marginBottom": 60,
+          "marginLeft": 40,
+          "marginRight": 70,
+          "marginTop": 30,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "type": "band",
+                },
+                "y1": {
+                  "scale": "y",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y2": {
+                  "scale": "y",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#eeeeee",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+          ],
+          "style": {
+            "fontSize": "16px",
+          },
+          "width": 1000,
+          "x": {
+            "domain": [
+              "GESAMT --> ",
+              "Region --> Asien",
+              "Region --> Europa",
+              "Region --> Nordamerika",
+              "Region --> Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
+  },
   {
     "initial": [
       [

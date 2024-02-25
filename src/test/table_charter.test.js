@@ -48,17 +48,15 @@ describe('Check plots', () => {
 
 describe('Check all questions', () => {
     var plot_option_array = new Array(all_questions.length);
-    for (const question_text of all_questions) {
+    for (let i = 0; i < all_questions.length; i++) {
+        const question_text = all_questions[i];
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
             await question_select_el.selectByVisibleText(question_text)
             await fig_el.isExisting()
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()
-            let plot_options_el_prop = await ojs_plot_el.getProperty('plot_options');
-
-            const current_plot_options = extract_snapshot_options(plot_options_el_prop)
             const res = {}
-            res['initial'] = Object.entries(current_plot_options);
-            plot_option_array[current_plot_options.input.i_tab] = res;
+            res['initial'] = await get_options(ojs_plot_el);
+            plot_option_array[i] = res;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
             await expect(fig_string).toEqual(question_text)
@@ -68,6 +66,13 @@ describe('Check all questions', () => {
         await expect(plot_option_array).toMatchSnapshot()
     })
 })
+
+async function get_options(ojs_plot_el) {
+    let plot_options_el_prop = await ojs_plot_el.getProperty('plot_options');
+
+    const current_plot_options = extract_snapshot_options(plot_options_el_prop)
+    return Object.entries(current_plot_options);
+}
 
 function extract_snapshot_options(plot_options_el_prop) {
     const opts = plot_options_el_prop.options;
