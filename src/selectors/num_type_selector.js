@@ -28,7 +28,12 @@ export class RowtypeSelector extends LitElement {
     render() {
         return  html`
             <div>
-                <select id="num_type-selector" @change=${this._update_num_type} .value=${this.chosen_num_type}>
+                <select 
+					id="num_type-selector" 
+					@change=${this._update_num_type} 
+					.value=${this.chosen_num_type}
+					data-test-id="num_type-selector"
+				>
                     ${this.all_num_types.map(
                         (col) => html`
                             <option title=${col}>${col}</option>

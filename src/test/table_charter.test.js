@@ -21,7 +21,8 @@ const color_selector_el = await table_charter_el.$('>>>colorscale-selector[data-
 const flip_xy_button = await table_charter_el.$('>>>button[data-test-id="flip-xy-button"]')
 const plot_type_button = await table_charter_el.$('>>>button[data-test-id="plot-type-button"]')
 const n_checkbox = await table_charter_el.$('>>>input[data-test-id="n-checkbox"]')
-    
+const num_type_el = await table_charter_el.$('>>>select[data-test-id="num_type-selector"]')
+
 describe('Button "Show/hide advanced settings" testing', () => {
     it('should change text to "Hide advanced settings" on click', async () => {
         await expect(subheader_selector).toHaveElementClass('hide')
@@ -77,6 +78,11 @@ describe('Check all questions', () => {
             await n_checkbox.click();
             await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
 
+            await num_type_el.selectByVisibleText('n');
+            res['total'] = await get_options(ojs_plot_el);
+            await num_type_el.selectByVisibleText('%');
+            await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
+            
             plot_option_array[i] = res;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
