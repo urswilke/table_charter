@@ -56,7 +56,9 @@ describe('Check all questions', () => {
             let plot_options_el_prop = await ojs_plot_el.getProperty('plot_options');
 
             const current_plot_options = extract_snapshot_options(plot_options_el_prop)
-            plot_option_array[current_plot_options.input.i_tab] = Object.entries(current_plot_options);
+            const res = {}
+            res['initial'] = Object.entries(current_plot_options);
+            plot_option_array[current_plot_options.input.i_tab] = res;
             
             const fig_string = fig_header.replace(/(?:\r\n|\r|\n)/g, ' ').trim()
             await expect(fig_string).toEqual(question_text)
