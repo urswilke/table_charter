@@ -54,7 +54,10 @@ export class FurtherOptionsSelector extends LitElement {
 				@click=${this._update_xy}
 				data-test-id="flip-xy-button"
 			>Flip x & y axis</button>
-            <button @click=${this._update_plot_type}>${this.plot_type + " chart"}</button>
+            <button 
+				@click=${this._update_plot_type}
+				data-test-id="plot-type-button"
+			>${this.plot_type + " chart"}</button>
 			<input 
 				type="checkbox" 
 				id="show-n"
