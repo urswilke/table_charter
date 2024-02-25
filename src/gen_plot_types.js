@@ -85,7 +85,7 @@ export class PlotOptions {
 			// put halo around text:
 			// https://observablehq.com/plot/marks/text#text-options
 			stroke: bg_col,
-			strokeWidth: 4,
+			strokeWidth: 3,
 			fill: fg_col
 
 		}

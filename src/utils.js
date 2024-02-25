@@ -27,8 +27,8 @@ export const buttonStyles = css`
     }
 `;
 const is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-export const bg_col = is_dark ? `#111111` : `#eeeeee`
-export const fg_col = !is_dark ? `#111111` : `#eeeeee`
+export const bg_col = is_dark ? `#000000` : `#eeeeee`
+export const fg_col = !is_dark ? `#000000` : `#eeeeee`
 
 export function gen_header_table(data) {
 	const arr = distinct(
