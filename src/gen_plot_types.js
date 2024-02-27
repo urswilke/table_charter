@@ -26,7 +26,7 @@ export class PlotOptions {
 		e.x1 = e.x2 === "x" ? "y" : "x"
 		e.label_joiner = e.x1 === 'y' ? '\n' : ' '
 		e.label_joiner2 = e.x2 === 'y' ? '\n' : ' '
-		e.col_lab_fun = (x) => [x.ColTitle1, x.ColTitle2].join(e.label_joiner)
+		e.col_lab_fun = (x) => x.ColTitle2,
 		e.row_lab_fun = o.color_scale === "categorical" ? 
 			(x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(e.label_joiner2) :
 			(x) => x.RowValue;
@@ -168,7 +168,7 @@ export class PlotOptions {
 		this.options.height = 600
 		this.options.style = {fontSize: "16px"}
 		this.options.color.className = "large-font"
-		this.options.marks.push(Plot[this.e.axis_]({ticks: this.e.x_order}))
+		set_axis_labels(this)
 	}
 }
 
@@ -284,4 +284,33 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 	}
 	return x_order_gaps
 
+}
+
+function set_axis_labels(plot_options) {
+	const subheader_tick_opts = {
+		textAnchor: "start",
+		z: "ColTitle1",
+		text: "ColTitle1",
+		tickSize: 0,
+		tickFormat: x => x.ColTitle2,
+		dx: plot_options.e.x2 === "x" ? -20 : -200,
+		dy: plot_options.e.x2 === "x" ? 30 : 0,
+		label: null
+	};
+	subheader_tick_opts[plot_options.e.x2] = "ColTitle2"
+	const header_tick_opts = {
+		text: "ColTitle2",
+		z: "ColTitle2",
+		tickFormat: x => x.ColTitle2,
+		label: null
+	};
+	header_tick_opts[plot_options.e.x2] = "ColTitle2"
+	plot_options.options.marks.push(Plot[plot_options.e.axis_](
+		plot_options.plot_data, 
+		Plot.selectFirst(subheader_tick_opts)
+	))
+	plot_options.options.marks.push(Plot[plot_options.e.axis_](
+		plot_options.plot_data, 
+		Plot.selectFirst(header_tick_opts)
+	))
 }
