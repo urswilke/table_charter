@@ -21,6 +21,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -84,7 +85,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -328,6 +328,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -391,7 +392,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -612,6 +612,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -675,7 +676,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -894,6 +894,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -1046,6 +1047,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -1081,6 +1123,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -1144,7 +1187,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -1365,6 +1407,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -1436,7 +1479,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -1696,6 +1738,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -1767,7 +1810,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -2004,6 +2046,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -2075,7 +2118,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -2310,6 +2352,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -2474,6 +2517,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -2509,6 +2593,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -2580,7 +2665,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -2821,6 +2905,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -2886,7 +2971,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -3134,6 +3218,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -3199,7 +3284,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -3424,6 +3508,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -3489,7 +3574,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -3712,6 +3796,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -3867,6 +3952,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -3902,6 +4028,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -3967,7 +4094,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -4192,6 +4318,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -4257,7 +4384,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -4505,6 +4631,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -4570,7 +4697,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -4795,6 +4921,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -4860,7 +4987,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -5083,6 +5209,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -5238,6 +5365,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -5273,6 +5441,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -5338,7 +5507,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -5566,6 +5734,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -5637,7 +5806,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -5865,6 +6033,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -5936,7 +6105,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -6099,6 +6267,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -6170,7 +6339,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -6333,6 +6501,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -6497,6 +6666,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -6532,6 +6742,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -6603,7 +6814,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -6768,6 +6978,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -6839,7 +7050,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -7067,6 +7277,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -7138,7 +7349,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -7301,6 +7511,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -7372,7 +7583,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -7535,6 +7745,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -7699,6 +7910,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -7734,6 +7986,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -7805,7 +8058,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -7970,6 +8222,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -8039,7 +8292,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -8263,6 +8515,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -8332,7 +8585,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -8491,6 +8743,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -8560,7 +8813,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -8719,6 +8971,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -8880,6 +9133,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -8915,6 +9209,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -8984,7 +9279,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -9145,6 +9439,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -9208,7 +9503,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -9452,6 +9746,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -9515,7 +9810,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -9736,6 +10030,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -9799,7 +10094,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -10018,6 +10312,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -10170,6 +10465,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -10205,6 +10541,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -10268,7 +10605,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -10489,6 +10825,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -10550,7 +10887,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -10790,6 +11126,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -10851,7 +11188,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -11068,6 +11404,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -11129,7 +11466,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -11344,6 +11680,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -11493,6 +11830,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -11528,6 +11906,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -11589,7 +11968,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -11806,6 +12184,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -11869,7 +12248,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -12113,6 +12491,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -12176,7 +12555,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -12397,6 +12775,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -12460,7 +12839,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -12679,6 +13057,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -12831,6 +13210,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -12866,6 +13286,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -12929,7 +13350,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -13150,6 +13570,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -13211,7 +13632,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -13451,6 +13871,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -13512,7 +13933,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -13729,6 +14149,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -13790,7 +14211,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -14005,6 +14425,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -14154,6 +14575,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -14189,6 +14651,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -14250,7 +14713,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -14467,6 +14929,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -14523,7 +14986,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -14758,6 +15220,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -14814,7 +15277,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -15026,6 +15488,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -15082,7 +15545,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -15292,6 +15754,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -15435,6 +15898,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -15469,6 +15973,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -15525,7 +16030,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -15737,6 +16241,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -15802,7 +16307,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -16050,6 +16554,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -16115,7 +16620,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -16340,6 +16844,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -16405,7 +16910,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -16628,6 +17132,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -16783,6 +17288,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -16818,6 +17364,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -16883,7 +17430,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -17108,6 +17654,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -17171,7 +17718,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -17415,6 +17961,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -17478,7 +18025,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -17699,6 +18245,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -17762,7 +18309,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -17981,6 +18527,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -18133,6 +18680,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -18168,6 +18756,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -18231,7 +18820,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -18452,6 +19040,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -18515,7 +19104,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -18759,6 +19347,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -18822,7 +19411,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -19043,6 +19631,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -19106,7 +19695,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -19325,6 +19913,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -19477,6 +20066,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -19512,6 +20142,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -19575,7 +20206,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -19799,6 +20429,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -19874,7 +20505,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -20110,6 +20740,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -20185,7 +20816,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -20356,6 +20986,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -20431,7 +21062,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -20602,6 +21232,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -20772,6 +21403,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -20807,6 +21479,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -20882,7 +21555,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -21058,6 +21730,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -21131,7 +21804,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -21363,6 +22035,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisY",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -21436,7 +22109,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -21603,6 +22275,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -21676,7 +22349,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -21843,6 +22515,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -22010,6 +22683,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "stroke": "transparent",
               "strokeWidth": 1.5,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -22045,6 +22759,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived",
         {
+          "axis_": "axisX",
           "col_lab_fun": {},
           "color_opts": {
             "className": "large-font",
@@ -22118,7 +22833,6 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "derived_p",
         {
-          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {

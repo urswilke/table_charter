@@ -60,7 +60,7 @@ export class PlotOptions {
 		e.n_decimals = this.plot_data[0].RowDecimals;
 		e.marginLeft = e.x1 === "y" ? 40 : 260
 		e.marginBottom = 60
-	
+		e.axis_ = e.x1 === "y" ? "axisX" : "axisY";
 		this.e = e;
 	}
 	bar() {
@@ -71,7 +71,7 @@ export class PlotOptions {
         p.text_ = e.x1 === "y" ? "textY" : "textX";
         p.stack_ = e.x1 === "y" ? "stackY" : "stackX";
         p.bar_ = e.x1 === "y" ? "barY" : "barX";
-        p.axis_ = e.x1 === "y" ? "axisX" : "axisY";
+        
 		
 		p.group_args1 = {text: "first"}
 		p.group_args1[e.x1] = "sum"
@@ -126,7 +126,6 @@ export class PlotOptions {
 				// only show if there 10 different color values at max...:
 				// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
 				this.o.show_n ? Plot.text(this.plot_data, Plot[p.group_](p.group_args1, p.group_args2_text_n)) : null,
-				Plot[p.axis_]({ticks: this.e.x_order}),
 			]
 		};
 	}
@@ -169,7 +168,7 @@ export class PlotOptions {
 		this.options.height = 600
 		this.options.style = {fontSize: "16px"}
 		this.options.color.className = "large-font"
-	
+		this.options.marks.push(Plot[this.e.axis_]({ticks: this.e.x_order}))
 	}
 }
 
