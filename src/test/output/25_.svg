@@ -47,7 +47,7 @@ header: GESAMT
 value: 1.5
 N: 66
 mean: 8.0
- (1)</title></rect></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(364.5,0)"><path transform="translate(121,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(364.5,9.5)"><text transform="translate(121,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
+ (1)</title></rect></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(344.5,39.5)"><text y="0.71em" transform="translate(121,540)">GESAMT</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(364.5,0)"><path transform="translate(121,540)" d="M0,0L0,6"/></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
   display: block;
   height: auto;
   height: intrinsic;
