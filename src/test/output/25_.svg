@@ -13,11 +13,11 @@ Kurzfristige Anpassungen</h2>
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,497.9263463569166)" d="M0,0L-6,0"/><path transform="translate(40,455.85269271383316)" d="M0,0L-6,0"/><path transform="translate(40,413.7790390707498)" d="M0,0L-6,0"/><path transform="translate(40,371.70538542766633)" d="M0,0L-6,0"/><path transform="translate(40,329.6317317845829)" d="M0,0L-6,0"/><path transform="translate(40,287.55807814149955)" d="M0,0L-6,0"/><path transform="translate(40,245.48442449841605)" d="M0,0L-6,0"/><path transform="translate(40,203.41077085533263)" d="M0,0L-6,0"/><path transform="translate(40,161.33711721224924)" d="M0,0L-6,0"/><path transform="translate(40,119.26346356916582)" d="M0,0L-6,0"/><path transform="translate(40,77.18980992608242)" d="M0,0L-6,0"/><path transform="translate(40,35.116156282999)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0.0</text><text y="0.32em" transform="translate(40,497.9263463569166)">0.5</text><text y="0.32em" transform="translate(40,455.85269271383316)">1.0</text><text y="0.32em" transform="translate(40,413.7790390707498)">1.5</text><text y="0.32em" transform="translate(40,371.70538542766633)">2.0</text><text y="0.32em" transform="translate(40,329.6317317845829)">2.5</text><text y="0.32em" transform="translate(40,287.55807814149955)">3.0</text><text y="0.32em" transform="translate(40,245.48442449841605)">3.5</text><text y="0.32em" transform="translate(40,203.41077085533263)">4.0</text><text y="0.32em" transform="translate(40,161.33711721224924)">4.5</text><text y="0.32em" transform="translate(40,119.26346356916582)">5.0</text><text y="0.32em" transform="translate(40,77.18980992608242)">5.5</text><text y="0.32em" transform="translate(40,35.116156282999)">6.0</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(364.5,0)"><path transform="translate(121,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(364.5,9.5)"><text transform="translate(121,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g><g aria-label="bar"><rect x="121" width="728" y="285" height="255" fill="rgb(35, 23, 27)"><title>row: 2
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,497.9263463569166)" d="M0,0L-6,0"/><path transform="translate(40,455.85269271383316)" d="M0,0L-6,0"/><path transform="translate(40,413.7790390707498)" d="M0,0L-6,0"/><path transform="translate(40,371.70538542766633)" d="M0,0L-6,0"/><path transform="translate(40,329.6317317845829)" d="M0,0L-6,0"/><path transform="translate(40,287.55807814149955)" d="M0,0L-6,0"/><path transform="translate(40,245.48442449841605)" d="M0,0L-6,0"/><path transform="translate(40,203.41077085533263)" d="M0,0L-6,0"/><path transform="translate(40,161.33711721224924)" d="M0,0L-6,0"/><path transform="translate(40,119.26346356916582)" d="M0,0L-6,0"/><path transform="translate(40,77.18980992608242)" d="M0,0L-6,0"/><path transform="translate(40,35.116156282999)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0.0</text><text y="0.32em" transform="translate(40,497.9263463569166)">0.5</text><text y="0.32em" transform="translate(40,455.85269271383316)">1.0</text><text y="0.32em" transform="translate(40,413.7790390707498)">1.5</text><text y="0.32em" transform="translate(40,371.70538542766633)">2.0</text><text y="0.32em" transform="translate(40,329.6317317845829)">2.5</text><text y="0.32em" transform="translate(40,287.55807814149955)">3.0</text><text y="0.32em" transform="translate(40,245.48442449841605)">3.5</text><text y="0.32em" transform="translate(40,203.41077085533263)">4.0</text><text y="0.32em" transform="translate(40,161.33711721224924)">4.5</text><text y="0.32em" transform="translate(40,119.26346356916582)">5.0</text><text y="0.32em" transform="translate(40,77.18980992608242)">5.5</text><text y="0.32em" transform="translate(40,35.116156282999)">6.0</text></g><g aria-label="bar"><rect x="121" width="728" y="285" height="255" fill="rgb(35, 23, 27)"><title>row: 2
 
 row value: 2
 header: GESAMT
-column: undefined
+
 value: 1.5
 N: 66
 mean: 0.2
@@ -26,7 +26,7 @@ row: 2
 
 row value: 2
 header: GESAMT
-column: undefined
+
 value: 1.5
 N: 66
 mean: 8.0
@@ -34,7 +34,7 @@ mean: 8.0
 
 row value: 3
 header: GESAMT
-column: undefined
+
 value: 1.5
 N: 66
 mean: 0.2
@@ -43,11 +43,11 @@ row: 3
 
 row value: 3
 header: GESAMT
-column: undefined
+
 value: 1.5
 N: 66
 mean: 8.0
- (1)</title></rect></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
+ (1)</title></rect></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(364.5,0)"><path transform="translate(121,540)" d="M0,0L0,6"/></g><g aria-label="x-axis tick label" transform="translate(364.5,9.5)"><text transform="translate(121,540)"><tspan x="0" y="0.71em">GESAMT</tspan></text></g></svg><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
   display: block;
   height: auto;
   height: intrinsic;

@@ -56,6 +56,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -70,11 +71,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -242,6 +252,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -312,6 +363,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -326,11 +378,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -473,6 +534,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -543,6 +647,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -557,11 +662,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -704,6 +818,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -774,6 +929,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -783,6 +939,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -952,6 +1116,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -966,11 +1131,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -1113,6 +1287,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -1193,6 +1408,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -1207,11 +1423,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -1395,6 +1620,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -1473,6 +1739,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -1487,11 +1754,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -1650,6 +1926,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -1728,6 +2047,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -1742,11 +2062,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -1905,6 +2234,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -1983,6 +2353,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -1992,6 +2363,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -2173,6 +2552,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -2187,11 +2567,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -2350,6 +2739,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -2428,6 +2858,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -2442,11 +2873,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -2618,6 +3058,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -2690,6 +3171,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -2704,11 +3186,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -2855,6 +3346,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -2927,6 +3461,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -2941,11 +3476,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -3092,6 +3636,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -3164,6 +3749,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -3173,6 +3759,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -3345,6 +3939,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -3359,11 +3954,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -3510,6 +4114,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -3584,6 +4229,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -3598,11 +4244,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -3774,6 +4429,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -3846,6 +4542,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -3860,11 +4557,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -4011,6 +4717,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -4083,6 +4832,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -4097,11 +4847,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -4248,6 +5007,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -4320,6 +5120,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -4329,6 +5130,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -4501,6 +5310,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -4515,11 +5325,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -4666,6 +5485,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -4749,6 +5609,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -4763,11 +5624,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -4919,6 +5789,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -4997,6 +5908,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -5011,11 +5923,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -5221,6 +6142,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -5235,11 +6157,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -5445,6 +6376,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -5454,6 +6386,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -5635,6 +6575,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -5649,11 +6590,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -5861,6 +6811,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -5875,11 +6826,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -6031,6 +6991,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -6109,6 +7110,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -6123,11 +7125,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -6333,6 +7344,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -6347,11 +7359,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -6557,6 +7578,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -6566,6 +7588,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -6747,6 +7777,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -6761,11 +7792,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -6971,6 +8011,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -6985,11 +8026,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -7137,6 +8187,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -7213,6 +8304,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -7227,11 +8319,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -7431,6 +8532,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -7445,11 +8547,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -7649,6 +8760,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -7658,6 +8770,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -7836,6 +8956,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -7850,11 +8971,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -8050,6 +9180,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -8064,11 +9195,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -8236,6 +9376,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -8306,6 +9487,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -8320,11 +9502,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -8467,6 +9658,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -8537,6 +9771,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -8551,11 +9786,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -8698,6 +9942,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -8768,6 +10053,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -8777,6 +10063,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -8946,6 +10240,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -8960,11 +10255,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -9107,6 +10411,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -9177,6 +10522,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -9191,11 +10537,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -9359,6 +10714,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -9427,6 +10823,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -9441,11 +10838,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -9584,6 +10990,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -9652,6 +11101,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -9666,11 +11116,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -9809,6 +11268,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -9877,6 +11377,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -9886,6 +11387,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -10052,6 +11561,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -10066,11 +11576,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -10209,6 +11728,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -10281,6 +11841,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -10295,11 +11856,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -10467,6 +12037,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -10537,6 +12148,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -10551,11 +12163,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -10698,6 +12319,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -10768,6 +12432,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -10782,11 +12447,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -10929,6 +12603,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -10999,6 +12714,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -11008,6 +12724,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -11177,6 +12901,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -11191,11 +12916,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -11338,6 +13072,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -11408,6 +13183,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -11422,11 +13198,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -11590,6 +13375,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -11658,6 +13484,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -11672,11 +13499,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -11815,6 +13651,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -11883,6 +13762,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -11897,11 +13777,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -12040,6 +13929,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -12108,6 +14038,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -12117,6 +14048,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -12283,6 +14222,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -12297,11 +14237,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -12440,6 +14389,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -12508,6 +14498,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Europa",
               "Region --> Nordamerika",
               "Region --> Pazifik",
@@ -12520,11 +14511,19 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -12684,6 +14683,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -12749,6 +14789,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Europa",
               "Region Nordamerika",
               "Region Pazifik",
@@ -12761,11 +14802,19 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -12900,6 +14949,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -12965,6 +15057,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Europa",
               "Region --> Nordamerika",
               "Region --> Pazifik",
@@ -12977,11 +15070,19 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -13116,6 +15217,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -13181,6 +15323,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Europa",
               "Region --> Nordamerika",
               "Region --> Pazifik",
@@ -13189,6 +15332,13 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Europa",
             "Region --> Nordamerika",
             "Region --> Pazifik",
@@ -13350,6 +15500,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Europa",
               "Region --> Nordamerika",
               "Region --> Pazifik",
@@ -13362,11 +15513,19 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -13501,6 +15660,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -13574,6 +15774,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -13588,11 +15789,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -13764,6 +15974,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -13836,6 +16087,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -13850,11 +16102,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -14001,6 +16262,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -14073,6 +16377,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -14087,11 +16392,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -14238,6 +16552,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -14310,6 +16665,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -14319,6 +16675,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -14491,6 +16855,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -14505,11 +16870,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -14656,6 +17030,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -14728,6 +17143,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -14742,11 +17158,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -14914,6 +17339,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -14984,6 +17450,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -14998,11 +17465,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -15145,6 +17621,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -15215,6 +17734,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -15229,11 +17749,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -15376,6 +17905,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -15446,6 +18016,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -15455,6 +18026,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -15624,6 +18203,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -15638,11 +18218,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -15785,6 +18374,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -15857,6 +18487,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -15871,11 +18502,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -16043,6 +18683,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -16113,6 +18794,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -16127,11 +18809,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -16274,6 +18965,49 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "y-axis tick",
+                "clip": false,
+                "dx": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "left",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "y-axis tick label",
+                "clip": false,
+                "dx": -9,
+                "facet": "auto",
+                "frameAnchor": "left",
+                "lineAnchor": "middle",
+                "lineHeight": 1,
+                "marginBottom": 20,
+                "marginLeft": 40,
+                "marginTop": 20,
+                "monospace": false,
+                "textAnchor": "end",
+              },
+              {
+                "ariaLabel": "y-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dx": -257,
+                "facet": "super",
+                "frameAnchor": "left",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "monospace": false,
+                "rotate": -90,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -16344,6 +19078,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -16358,11 +19093,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -16505,6 +19249,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -16575,6 +19360,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -16584,6 +19370,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -16753,6 +19547,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -16767,11 +19562,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -16914,6 +19718,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "strokeLinejoin": "round",
               "strokeWidth": 3,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -17001,6 +19846,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -17015,11 +19861,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -17179,6 +20034,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -17261,6 +20157,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -17275,11 +20172,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -17497,6 +20403,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -17511,11 +20418,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -17733,6 +20649,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -17742,6 +20659,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -17929,6 +20854,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -17943,11 +20869,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -18168,6 +21103,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -18182,11 +21118,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -18342,6 +21287,47 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
               "lineHeight": 1,
               "monospace": false,
             },
+            [
+              {
+                "anchor": "start",
+                "ariaLabel": "x-axis tick",
+                "clip": false,
+                "dy": -0.5,
+                "facet": "auto",
+                "fill": "none",
+                "frameAnchor": "bottom",
+                "length": 6,
+                "r": 3.5,
+                "stroke": "currentColor",
+              },
+              {
+                "ariaLabel": "x-axis tick label",
+                "clip": false,
+                "dy": 9,
+                "facet": "auto",
+                "frameAnchor": "bottom",
+                "lineAnchor": "top",
+                "lineHeight": 1,
+                "marginBottom": 30,
+                "marginLeft": 20,
+                "marginRight": 20,
+                "monospace": false,
+              },
+              {
+                "ariaLabel": "x-axis label",
+                "channels": {
+                  "text": {
+                    "optional": true,
+                  },
+                },
+                "dy": 57,
+                "facet": "super",
+                "frameAnchor": "bottom",
+                "lineAnchor": "bottom",
+                "lineHeight": 1,
+                "monospace": false,
+              },
+            ],
           ],
           "style": {
             "fontSize": "16px",
@@ -18422,6 +21408,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT ",
+              null,
               "Region Asien",
               "Region Europa",
               "Region Nordamerika",
@@ -18436,11 +21423,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region Nordamerika",
             "Region Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT ",
+            null,
+            "Region Asien",
+            "Region Europa",
+            "Region Nordamerika",
+            "Region Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisY",
           "bar_": "barX",
           "group_": "groupY",
           "group_args1": {
@@ -18652,6 +21648,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -18666,11 +21663,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
@@ -18882,6 +21888,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -18891,6 +21898,14 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           },
           "x_order": [
             "GESAMT --> ",
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
             "Region --> Asien",
             "Region --> Europa",
             "Region --> Nordamerika",
@@ -19075,6 +22090,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "x2_opts": {
             "domain": [
               "GESAMT --> ",
+              null,
               "Region --> Asien",
               "Region --> Europa",
               "Region --> Nordamerika",
@@ -19089,11 +22105,20 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "Region --> Nordamerika",
             "Region --> Pazifik",
           ],
+          "x_order_gaps": [
+            "GESAMT --> ",
+            null,
+            "Region --> Asien",
+            "Region --> Europa",
+            "Region --> Nordamerika",
+            "Region --> Pazifik",
+          ],
         },
       ],
       [
         "derived_p",
         {
+          "axis_": "axisX",
           "bar_": "barY",
           "group_": "groupX",
           "group_args1": {
