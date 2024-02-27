@@ -176,7 +176,7 @@ function tooltip_fun(n_decimals) {
 			`row2: ${x.RowTitle2}`, 
 		`row value: ${x.RowValue}`,
 		`header: ${x.ColTitle1}`, 
-		`column: ${x.ColTitle2}`, 
+		x.ColTitle2 && `column: ${x.ColTitle2}`, 
 		// if an MW value is not defined, 
 		// it would lead to an error, for a line plot without this check:
 		x.Value === undefined ?
