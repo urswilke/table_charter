@@ -1,5 +1,6 @@
 import * as Plot from "@observablehq/plot";
 import { bg_col, fg_col } from './utils.js'
+import { distinct } from './utils.js'
 
 export class PlotOptions {
     constructor(input_data) {
@@ -32,6 +33,10 @@ export class PlotOptions {
 		// e.row_lab_fun = (x) => x.RowValue;
 		e.color_order = [...new Set(this.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(e.row_lab_fun))];
 		e.x_order = [...new Set(this.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(e.col_lab_fun))];
+		e.x_order_gaps = add_gaps_to_xlabels(
+			e.x_order, 
+			distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(x => x.ColTitle1)
+		);
 		
 		const plot_opts = {}
 		plot_opts[e.x2] = e.col_lab_fun
@@ -49,7 +54,7 @@ export class PlotOptions {
 			label: null,
 		}
 		e.x2_opts = {
-			domain: e.x_order,
+			domain: e.x_order_gaps,
 			label: null
 		}
 		e.n_decimals = this.plot_data[0].RowDecimals;
@@ -66,6 +71,7 @@ export class PlotOptions {
         p.text_ = e.x1 === "y" ? "textY" : "textX";
         p.stack_ = e.x1 === "y" ? "stackY" : "stackX";
         p.bar_ = e.x1 === "y" ? "barY" : "barX";
+        p.axis_ = e.x1 === "y" ? "axisX" : "axisY";
 		
 		p.group_args1 = {text: "first"}
 		p.group_args1[e.x1] = "sum"
@@ -119,7 +125,8 @@ export class PlotOptions {
 				this.o.color_scale === "ordinal" ? null : Plot[p.text_](this.plot_data, Plot[p.stack_](text_opts)),
 				// only show if there 10 different color values at max...:
 				// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
-				this.o.show_n ? Plot.text(this.plot_data, Plot[p.group_](p.group_args1, p.group_args2_text_n)) : null
+				this.o.show_n ? Plot.text(this.plot_data, Plot[p.group_](p.group_args1, p.group_args2_text_n)) : null,
+				Plot[p.axis_]({ticks: this.e.x_order}),
 			]
 		};
 	}
@@ -262,4 +269,20 @@ const color_schemes_maps = {
 export const all_color_schemes = {
 	"ordinal": [...color_schemes_maps.ordinal.keys()],
 	"categorical": [...color_schemes_maps.categorical.keys()],
+}
+
+function add_gaps_to_xlabels(x_order, col_titles) {
+	// https://stackoverflow.com/questions/64204535/how-to-find-indexes-where-value-changes/64204722#64204722
+	const diff_indices = [];
+	col_titles.map((el, index) => {
+		return col_titles[index-1] !== el && index > 0 && diff_indices.push(index)
+	})
+	const x_order_gaps = [...x_order];
+	for (let i = diff_indices.length - 1; i >= 0; i--) {
+		const diff_index = diff_indices[i];
+		x_order_gaps.splice(diff_index, 0, null)
+		
+	}
+	return x_order_gaps
+
 }
