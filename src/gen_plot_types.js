@@ -180,7 +180,7 @@ function tooltip_fun(n_decimals) {
 		x.RowTitle1 === x.RowTitle2 ? 
 			null : 
 			`row2: ${x.RowTitle2}`, 
-		`row value: ${x.RowValue}`,
+		x.RowValue && `row value: ${x.RowValue}`,
 		`header: ${x.ColTitle1}`, 
 		x.ColTitle2 && `column: ${x.ColTitle2}`, 
 		// if an MW value is not defined, 
