@@ -122,3 +122,10 @@ export function prepare_data(data_compressed) {
 		i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo)
 	}));
 }
+
+export function truncate(input, len) {
+	if (!input) {
+		return input;
+	}
+	return input.length > len ? `${input.substring(0, len)}…` : input;
+}

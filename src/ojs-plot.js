@@ -5,6 +5,7 @@ import { PlotOptions } from './gen_plot_types.js'
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
 import { select } from "d3";
+import { truncate } from './utils.js'
 
 const inspect = false // set to true for some console.log msgs
 
@@ -48,11 +49,13 @@ export class OJSPlot extends LitElement {
 		inspect && console.log("render")
 
 		const options = this.plot_options?.options;
-		const renderedPlot = options && Plot.plot(options)
+		this.renderedPlot = options && Plot.plot(options)
 		// https://talk.observablehq.com/t/legend-placement-options/8407/3
-		select(renderedPlot)
+		select(this.renderedPlot)
 			.select(".large-font-ramp, .large-font-swatches")
 			.raise() 
+		this.plot_options && add_axis_label_hover_events(this)
+		
 		return when(
             options === undefined,
             () => html`<div class="all-filtered">
@@ -68,7 +71,7 @@ export class OJSPlot extends LitElement {
 							data-test-id="plot-header"	
 						>${this.chartTitle}</h2>
 						<h4>${this.chartSubTitle}</h4>
-						<div class="plot-div">${renderedPlot}</div>
+						<div class="plot-div">${this.renderedPlot}</div>
 					</div>
 					<div class="save-svg-button">
 						<button
@@ -163,3 +166,32 @@ function dowload_image(image_blob, file_name) {
 }
 
 window.customElements.define('ojs-plot', OJSPlot)
+
+function add_axis_label_hover_events(ojs_plot_el) {
+	const all_labels = [...new Set(ojs_plot_el.plot_options.plot_data.map(x => x.ColTitle1))]
+		.concat([...new Set(ojs_plot_el.plot_options.plot_data.map(x => x.ColTitle2))])
+		.filter(elm => elm)
+		.map((x, i) => ({i: i, label: x, abbr: truncate(x, 8)}));
+	const label_elements = select(ojs_plot_el.renderedPlot)
+		.selectAll('g[aria-label="' + ojs_plot_el.plot_options.e.x2 + '-axis tick label"] > text');
+	label_elements
+		.on("mouseover", function() {
+			const e = label_elements.nodes();
+			const i = e.indexOf(this);
+			const text_abbr = select(this).text()
+			select(this)
+				.attr("text_abbr", text_abbr)
+			select(this)
+				.text(all_labels[i].label)
+		})
+	label_elements
+		.on("mouseout", function() {
+			const text_abbr = select(this)
+				.attr("text_abbr")
+
+			select(this)
+				.text(text_abbr)
+				.style("fill", "currentColor");
+		})
+
+}
