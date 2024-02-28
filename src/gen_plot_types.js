@@ -289,6 +289,7 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 function set_axis_labels(plot_options) {
 	const subheader_tick_opts = {
 		textAnchor: "start",
+		// TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
 		z: "ColTitle1",
 		text: "ColTitle1",
 		tickSize: 0,
@@ -300,7 +301,7 @@ function set_axis_labels(plot_options) {
 	subheader_tick_opts[plot_options.e.x2] = "ColTitle2"
 	const header_tick_opts = {
 		text: "ColTitle2",
-		z: "ColTitle2",
+		z: "ColNo",
 		tickFormat: x => x.ColTitle2,
 		label: null
 	};
