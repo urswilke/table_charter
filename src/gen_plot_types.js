@@ -294,7 +294,7 @@ function set_axis_labels(plot_options) {
 	const text_width = xy === "x" ? Math.floor(plot_width / n_bars / font_size * 0.8) : 7
 	// small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
 	const text_margin_left = 5;
-	
+
 	const subheader_tick_opts = {
 		textAnchor: "start",
 		// TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
@@ -307,6 +307,7 @@ function set_axis_labels(plot_options) {
 		label: null,
 		lineWidth: xy === "x" ? text_width : n_bars,
 		textOverflow: "ellipsis-end",
+		fontWeight: "bold",
 	};
 	subheader_tick_opts[xy] = "ColTitle2"
 	const header_tick_opts = {

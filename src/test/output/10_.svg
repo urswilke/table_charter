@@ -29,7 +29,7 @@ header: GESAMT
 value: 11.2
 N: 89
 
- (1)</title></rect></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(-30.5,39.5)"><text y="0.71em" transform="translate(121,540)">GESAMT</text></g></svg><br /><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
+ (1)</title></rect></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-30.5,39.5)"><text y="0.71em" transform="translate(121,540)">GESAMT</text></g></svg><br /><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
   display: block;
   height: auto;
   height: intrinsic;
