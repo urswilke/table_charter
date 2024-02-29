@@ -44,7 +44,7 @@ header: GESAMT
 value: 30.5
 N: 151
 
- (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(344.5,39.5)"><text y="0.71em" transform="translate(121,540)" full_text="GESAMT" abbr_text="GESAMT">GESAMT</text></g><g aria-label="x-axis tick" fill="none" stroke="currentColor" transform="translate(364.5,0)"><path transform="translate(121,540)" d="M0,0L0,6"/></g></svg><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+ (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(-30.5,39.5)"><text y="0.71em" transform="translate(121,540)">GESAMT</text></g></svg><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;

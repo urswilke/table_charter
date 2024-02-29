@@ -5,7 +5,6 @@ import { PlotOptions } from './gen_plot_types.js'
 import sharedStyles from './components.css?inline';
 import * as Plot from "@observablehq/plot";
 import { select } from "d3";
-import { truncate } from './utils.js'
 
 const inspect = false // set to true for some console.log msgs
 
@@ -55,11 +54,6 @@ export class OJSPlot extends LitElement {
 			.select(".large-font-ramp, .large-font-swatches")
 			.raise()
 			
-		this.plot_options && add_axis_label_hover_full_text(
-			select(this.renderedPlot)
-				.selectAll('g[aria-label="' + this.plot_options.e.x2 + '-axis tick label"] > text')
-		)
-		
 		return when(
             options === undefined,
             () => html`<div class="all-filtered">
@@ -170,29 +164,3 @@ function dowload_image(image_blob, file_name) {
 }
 
 window.customElements.define('ojs-plot', OJSPlot)
-
-function add_axis_label_hover_full_text(label_elements) {
-	label_elements
-		.attr("full_text", function() {
-			return select(this).text();
-		})
-		.attr("abbr_text", function() {
-			return truncate(select(this).text(), 8);
-		})
-		.text(function() {
-			return select(this).attr("abbr_text");
-		})
-		.on("mouseover", function() {
-			const text = select(this)
-				.attr("full_text")
-			select(this)
-				.text(text)
-		})
-		.on("mouseout", function() {
-			const text = select(this)
-				.attr("abbr_text")
-			select(this)
-				.text(text)
-		})
-
-}

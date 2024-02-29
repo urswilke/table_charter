@@ -58,7 +58,7 @@ export class PlotOptions {
 			label: null
 		}
 		e.n_decimals = this.plot_data[0].RowDecimals;
-		e.marginLeft = e.x1 === "y" ? 40 : 260
+		e.marginLeft = e.x1 === "y" ? 40 : 210
 		e.marginBottom = 60
 		e.axis_ = e.x1 === "y" ? "axisX" : "axisY";
 		this.e = e;
@@ -287,6 +287,14 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 }
 
 function set_axis_labels(plot_options) {
+	const xy = plot_options.e.x2;
+	const plot_width = plot_options.options.width;
+	const n_bars = plot_options.options[xy].domain.length
+	const font_size = Number(plot_options.options.style.fontSize.replace(/px/, ""));
+	const text_width = xy === "x" ? Math.floor(plot_width / n_bars / font_size * 0.8) : 7
+	// small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
+	const text_margin_left = 5;
+	
 	const subheader_tick_opts = {
 		textAnchor: "start",
 		// TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
@@ -294,18 +302,25 @@ function set_axis_labels(plot_options) {
 		text: "ColTitle1",
 		tickSize: 0,
 		tickFormat: x => x.ColTitle2,
-		dx: plot_options.e.x2 === "x" ? -20 : -200,
-		dy: plot_options.e.x2 === "x" ? 30 : 0,
-		label: null
+		dx: xy === "x" ? -text_width / 2 * font_size + text_margin_left : -200,
+		dy: xy === "x" ? 30 : 0,
+		label: null,
+		lineWidth: xy === "x" ? text_width : n_bars,
+		textOverflow: "ellipsis-end",
 	};
-	subheader_tick_opts[plot_options.e.x2] = "ColTitle2"
+	subheader_tick_opts[xy] = "ColTitle2"
 	const header_tick_opts = {
+		textAnchor: "start",
 		text: "ColTitle2",
 		z: "ColNo",
 		tickFormat: x => x.ColTitle2,
-		label: null
+		tickSize: 0,
+		label: null,
+		dx: xy === "x" ? -text_width / 2 * font_size + text_margin_left : -100,
+		lineWidth: text_width,
+		textOverflow: "ellipsis-end",
 	};
-	header_tick_opts[plot_options.e.x2] = "ColTitle2"
+	header_tick_opts[xy] = "ColTitle2"
 	plot_options.options.marks.push(Plot[plot_options.e.axis_](
 		plot_options.plot_data, 
 		Plot.selectFirst(subheader_tick_opts)
