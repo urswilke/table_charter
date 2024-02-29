@@ -1,6 +1,6 @@
 import * as Plot from "@observablehq/plot";
 import { bg_col, fg_col } from './utils.js'
-import { distinct, truncate } from './utils.js'
+import { distinct } from './utils.js'
 
 export class PlotOptions {
     constructor(input_data) {
@@ -13,11 +13,6 @@ export class PlotOptions {
 		if (this.plot_data.length === 0) {
 			return null
 		}
-		this.plot_data = this.plot_data.map(x => ({
-			...x,
-			col_title1_abbr: truncate(x.ColTitle1, 8),
-			col_title2_abbr: truncate(x.ColTitle2, 8),
-		}))
 		this.pre_process()
 		// Execute method bar() or line() depending on the plot type:
 		this[o.plot_type]()		
@@ -31,7 +26,7 @@ export class PlotOptions {
 		e.x1 = e.x2 === "x" ? "y" : "x"
 		e.label_joiner = e.x1 === 'y' ? '\n' : ' '
 		e.label_joiner2 = e.x2 === 'y' ? '\n' : ' '
-		e.col_lab_fun = (x) => x.col_title2_abbr,
+		e.col_lab_fun = (x) => x.ColTitle2,
 		e.row_lab_fun = o.color_scale === "categorical" ? 
 			(x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(e.label_joiner2) :
 			(x) => x.RowValue;
@@ -40,7 +35,7 @@ export class PlotOptions {
 		e.x_order = [...new Set(this.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(e.col_lab_fun))];
 		e.x_order_gaps = add_gaps_to_xlabels(
 			e.x_order, 
-			distinct(this.plot_data, ["col_title1_abbr", "ColNo"]).map(x => x.col_title1_abbr)
+			distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(x => x.ColTitle1)
 		);
 		
 		const plot_opts = {}
@@ -296,21 +291,21 @@ function set_axis_labels(plot_options) {
 		textAnchor: "start",
 		// TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
 		z: "ColTitle1",
-		text: "col_title1_abbr",
+		text: "ColTitle1",
 		tickSize: 0,
-		tickFormat: x => x.col_title2_abbr,
+		tickFormat: x => x.ColTitle2,
 		dx: plot_options.e.x2 === "x" ? -20 : -200,
 		dy: plot_options.e.x2 === "x" ? 30 : 0,
 		label: null
 	};
-	subheader_tick_opts[plot_options.e.x2] = "col_title2_abbr"
+	subheader_tick_opts[plot_options.e.x2] = "ColTitle2"
 	const header_tick_opts = {
-		text: "col_title2_abbr",
+		text: "ColTitle2",
 		z: "ColNo",
-		tickFormat: x => x.col_title2_abbr,
+		tickFormat: x => x.ColTitle2,
 		label: null
 	};
-	header_tick_opts[plot_options.e.x2] = "col_title2_abbr"
+	header_tick_opts[plot_options.e.x2] = "ColTitle2"
 	plot_options.options.marks.push(Plot[plot_options.e.axis_](
 		plot_options.plot_data, 
 		Plot.selectFirst(subheader_tick_opts)

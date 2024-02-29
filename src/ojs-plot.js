@@ -53,8 +53,12 @@ export class OJSPlot extends LitElement {
 		// https://talk.observablehq.com/t/legend-placement-options/8407/3
 		select(this.renderedPlot)
 			.select(".large-font-ramp, .large-font-swatches")
-			.raise() 
-		this.plot_options && add_axis_label_hover_events(this)
+			.raise()
+			
+		this.plot_options && add_axis_label_hover_full_text(
+			select(this.renderedPlot)
+				.selectAll('g[aria-label="' + this.plot_options.e.x2 + '-axis tick label"] > text')
+		)
 		
 		return when(
             options === undefined,
@@ -167,31 +171,28 @@ function dowload_image(image_blob, file_name) {
 
 window.customElements.define('ojs-plot', OJSPlot)
 
-function add_axis_label_hover_events(ojs_plot_el) {
-	const all_labels = [...new Set(ojs_plot_el.plot_options.plot_data.map(x => x.ColTitle1))]
-		.concat([...new Set(ojs_plot_el.plot_options.plot_data.map(x => x.ColTitle2))])
-		.filter(elm => elm)
-		.map((x, i) => ({i: i, label: x, abbr: truncate(x, 8)}));
-	const label_elements = select(ojs_plot_el.renderedPlot)
-		.selectAll('g[aria-label="' + ojs_plot_el.plot_options.e.x2 + '-axis tick label"] > text');
+function add_axis_label_hover_full_text(label_elements) {
 	label_elements
-		.on("mouseover", function() {
-			const e = label_elements.nodes();
-			const i = e.indexOf(this);
-			const text_abbr = select(this).text()
-			select(this)
-				.attr("text_abbr", text_abbr)
-			select(this)
-				.text(all_labels[i].label)
+		.attr("full_text", function() {
+			return select(this).text();
 		})
-	label_elements
-		.on("mouseout", function() {
-			const text_abbr = select(this)
-				.attr("text_abbr")
-
+		.attr("abbr_text", function() {
+			return truncate(select(this).text(), 8);
+		})
+		.text(function() {
+			return select(this).attr("abbr_text");
+		})
+		.on("mouseover", function() {
+			const text = select(this)
+				.attr("full_text")
 			select(this)
-				.text(text_abbr)
-				.style("fill", "currentColor");
+				.text(text)
+		})
+		.on("mouseout", function() {
+			const text = select(this)
+				.attr("abbr_text")
+			select(this)
+				.text(text)
 		})
 
 }
