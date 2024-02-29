@@ -50,6 +50,9 @@ export class OJSPlot extends LitElement {
 		const options = this.plot_options?.options;
 		this.renderedPlot = options && Plot.plot(options)
 		// https://talk.observablehq.com/t/legend-placement-options/8407/3
+		// adding this before will move the legend a bit downwards :)
+		select(this.renderedPlot)
+			.append("br")
 		select(this.renderedPlot)
 			.select(".large-font-ramp, .large-font-swatches")
 			.raise()
