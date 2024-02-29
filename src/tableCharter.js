@@ -9,10 +9,6 @@ export class TableCharter extends LitElement {
         plot_data: { type: Array },
     };
 
-	constructor() {
-		super()
-        this.plot_data = [];
-	}
 
     update_plot_data(e) {
         this.plot_data = e.detail.data;

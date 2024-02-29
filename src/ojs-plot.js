@@ -19,7 +19,7 @@ export class OJSPlot extends LitElement {
 	};
 
 	set plot_data(val) {
-		if (val.length === 0) {
+		if (!val || val.length === 0) {
 			return this
 		}
 		this.plot_options = new PlotOptions(val)
