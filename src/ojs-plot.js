@@ -64,11 +64,13 @@ export class OJSPlot extends LitElement {
             () => html`
 				<div>
 					<div id="ojs-plot-div">
-						<h2 
-							class="primary multi-line-header"
-							data-test-id="plot-header"	
-						>${this.chartTitle}</h2>
-						<h4>${this.chartSubTitle}</h4>
+						<div style="margin-left: 80px">
+							<h2 
+								class="primary multi-line-header"
+								data-test-id="plot-header"
+							>${this.chartTitle}</h2>
+							<h4>${this.chartSubTitle}</h4>
+						</div>
 						<div class="plot-div">${this.renderedPlot}</div>
 					</div>
 					<div class="save-svg-button">

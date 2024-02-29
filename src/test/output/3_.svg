@@ -1,7 +1,9 @@
 <div xmlns="http://www.w3.org/1999/xhtml" id="ojs-plot-div" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<h2 class="primary multi-line-header" data-test-id="plot-header">3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten?
+						<div style="margin-left: 80px">
+							<h2 class="primary multi-line-header" data-test-id="plot-header">3. Wie verteilten sich die Studien prozentual auf die einzelnen Arten?
 Summary of Medians</h2>
-						<h4>vs GESAMT</h4>
+							<h4>vs GESAMT</h4>
+						</div>
 						<div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
