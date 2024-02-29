@@ -5,7 +5,6 @@ import { distinct } from './utils.js'
 export class PlotOptions {
     constructor(input_data) {
 		let o = input_data.choices
-		o.color_scale = input_data.color_scale;
 		o.color_scheme = input_data.color_scheme;
 		o.show_n = input_data.show_n;
 		this.o = o;

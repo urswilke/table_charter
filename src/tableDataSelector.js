@@ -26,7 +26,6 @@ export class TableDataSelector extends LitElement {
 		// needs to be extra reactive property (not in choices), 
 		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
 		// when it's reset in sel_question_data():
-		color_scale: { type: String },
 		color_scheme: { type: String },
 		collapsed_view: { type: Boolean },
 		show_n: { type: Boolean },
@@ -72,7 +71,7 @@ export class TableDataSelector extends LitElement {
 		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
 		this.choices.colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType) 
 		if (this.choices.colorscale_disabled) {
-			this.color_scale = "categorical"
+			this.choices.color_scale = "categorical"
 		}
 		this.choices.plot_type = gen_plot_type_string(this)
 
@@ -112,14 +111,14 @@ export class TableDataSelector extends LitElement {
 			n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
 			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
 		) {
-			this.color_scale = "ordinal"
+			this.choices.color_scale = "ordinal"
 		} else {
-			this.color_scale = "categorical"
+			this.choices.color_scale = "categorical"
 		}
-		this.color_scheme = this.color_scale === "categorical" ?
+		this.color_scheme = this.choices.color_scale === "categorical" ?
 			"Tableau10" :
 			"Turbo"
-		this.params.color_schemes = all_color_schemes[this.color_scale];
+		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
 
 		this.plot_data = this.rows_data
 	}
@@ -143,7 +142,6 @@ export class TableDataSelector extends LitElement {
 				data: {
 					plot_data: this.plot_data,
 					choices: this.choices,
-					color_scale: this.color_scale,
 					color_scheme: this.color_scheme,
 					show_n: this.show_n,
 				}
@@ -196,9 +194,9 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
-		this.color_scale = e.detail.chosen_colorscale;
-		this.params.color_schemes = all_color_schemes[this.color_scale];
-		this.color_scheme = this.color_scale === "categorical" ?
+		this.choices.color_scale = e.detail.chosen_colorscale;
+		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
+		this.color_scheme = this.choices.color_scale === "categorical" ?
 			"Tableau10" :
 			"Turbo"
 		this._update_plot_data()
@@ -312,7 +310,7 @@ export class TableDataSelector extends LitElement {
 							@update-colorscale="${this._on_colorscale_update}" 	
 							@update-colorscheme="${this._on_colorscheme_update}" 	
 							.all_colorscales=${this.params.color_scale}	
-							.chosen_colorscale=${this.color_scale}  
+							.chosen_colorscale=${this.choices.color_scale}  
 							.colorscale_disabled=${this.choices.colorscale_disabled}
 							.all_colorschemes=${this.params.color_schemes}	
 							.chosen_colorscheme=${this.color_scheme}>
