@@ -18,14 +18,6 @@ export class OJSPlot extends LitElement {
 		file_name: { type: String },
 	};
 
-	constructor() {
-
-		super()
-		
-		this.chart = null
-
-	}
-
 	set plot_data(val) {
 		if (val.length === 0) {
 			return this
