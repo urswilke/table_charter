@@ -24,7 +24,6 @@ export class TableDataSelector extends LitElement {
 		plot_data: { type: Array },
 		params: { type: Object },
 		choices: { type: Object },
-		show_n: { type: Boolean },
 	};
 
 	// Initialization:
@@ -56,7 +55,7 @@ export class TableDataSelector extends LitElement {
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
 		this.choices.collapsed_view = true;
-		this.show_n = false;
+		this.choices.show_n = false;
 		this.sel_question_data()
 	}
 
@@ -145,7 +144,6 @@ export class TableDataSelector extends LitElement {
 				data: {
 					plot_data: this.plot_data,
 					choices: this.choices,
-					show_n: this.show_n,
 				}
 			},
 			bubbles: true,
@@ -220,7 +218,9 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_show_n_update(e) {
-		this.show_n = e.detail.show_n;
+		this.choices = produce(this.choices, draft => {
+			draft.show_n = e.detail.show_n
+		})
 		this._update_plot_data()
 	}
 	_on_plot_type_update(e) {

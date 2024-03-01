@@ -4,17 +4,14 @@ import { distinct } from './utils.js'
 
 export class PlotOptions {
     constructor(input_data) {
-		// TODO: should be possible to remove the spread stuff once all is in choices
-		let o = {...input_data.choices}
-		o.show_n = input_data.show_n;
-		this.o = o;
+		this.o = input_data.choices;
 		this.plot_data = input_data.plot_data;
 		if (this.plot_data.length === 0) {
 			return null
 		}
 		this.pre_process()
 		// Execute method bar() or line() depending on the plot type:
-		this[o.plot_type]()		
+		this[this.o.plot_type]()		
 		this.post_process()
     }
 	pre_process() {
