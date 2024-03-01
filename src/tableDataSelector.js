@@ -65,12 +65,12 @@ export class TableDataSelector extends LitElement {
 			.filter(x => x.i_tab == this.choices.i_tab);
 		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
 		
-		this.choices = update_choices(this.choices, {
+		this.update_choices({
 			colorscale_disabled: !["CAT"].includes(this.question_data[0].TabType),
 			plot_type: gen_plot_type_string(this),
 		})
 		if (this.choices.colorscale_disabled) {
-			this.choices = update_choices(this.choices, {
+			this.update_choices({
 				color_scale: "categorical"
 			})
 		}
@@ -118,13 +118,18 @@ export class TableDataSelector extends LitElement {
 		} else {
 			color_scale = "categorical"
 		}
-		this.choices = update_choices(this.choices, {
+		this.update_choices({
 			color_scale: color_scale,
 		})
 		this.choices = init_color_scheme(this.choices)
 		this.params.color_schemes = all_color_schemes[color_scale];
 
 		this.plot_data = this.rows_data
+	}
+	update_choices(obj) {
+		this.choices = produce(this.choices, draft => (
+			{...draft, ...obj}
+		))
 	}
 	toggle_filtered_class(selector_string, input_data, output_data) {
 		if (input_data.length === 0) {
@@ -166,7 +171,7 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_question_update(e) {
 		let title_table = this.params.title_table[e.detail.chosen_tab_no];
-		this.choices = update_choices(this.choices, {
+		this.update_choices({
 			i_tab: Number(title_table.i_tab),
 			tab_title: title_table.TabTitle
 		})
@@ -389,9 +394,4 @@ function init_color_scheme(choices) {
 			"Tableau10" :
 			"Turbo"
 	})
-}
-function update_choices(choices, obj) {
-	return produce(choices, draft => (
-		{...draft, ...obj}
-	))
 }
