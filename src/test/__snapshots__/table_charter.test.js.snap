@@ -7,11 +7,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 0,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
@@ -335,11 +384,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 0,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
@@ -636,11 +734,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 0,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
@@ -939,11 +1086,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 0,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
@@ -1189,11 +1385,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 0,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
@@ -1494,11 +1739,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 1,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Marktvolumen",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Branchenbarometer",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Weitere",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
@@ -1846,11 +2160,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 1,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Marktvolumen",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Branchenbarometer",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Weitere",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
@@ -2171,11 +2554,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 1,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Marktvolumen",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Branchenbarometer",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Weitere",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
@@ -2498,11 +2950,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 1,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Marktvolumen",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Branchenbarometer",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Weitere",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
@@ -2760,11 +3281,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 1,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Marktvolumen",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Branchenbarometer",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Weitere",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> DC#SELVALLAB",
@@ -3093,11 +3683,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -3427,11 +4071,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -3734,11 +4432,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -4043,11 +4795,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -4296,11 +5102,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -4607,11 +5467,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -4941,11 +5855,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -5248,11 +6216,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -5557,11 +6579,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -5810,11 +6886,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 6,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "5. Was lief besonders gut in den Projekten?",
@@ -6124,11 +7254,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 11,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
@@ -6444,11 +7648,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 11,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
@@ -6707,11 +7985,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 11,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
@@ -6971,11 +8323,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 11,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
@@ -7233,11 +8659,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 11,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Kundenzufriedenheit",
@@ -7499,11 +8999,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 12,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
@@ -7819,11 +9393,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 12,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
@@ -8082,11 +9730,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 12,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
@@ -8346,11 +10068,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 12,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
@@ -8608,11 +10404,85 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 12,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Marktvolumen",
@@ -8874,11 +10744,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 13,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
@@ -9188,11 +11127,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 13,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
@@ -9445,11 +11453,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 13,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
@@ -9703,11 +11780,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 13,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
@@ -9962,11 +12108,80 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 13,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - auf jeden Fall",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "9. Würden Sie das Tabellenbandtool weiterempfehlen? --> Sonstige",
@@ -10222,11 +12437,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 14,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
@@ -10550,11 +12814,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 14,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
@@ -10851,11 +13164,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 14,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
@@ -11154,11 +13516,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 14,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
@@ -11404,11 +13815,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 14,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Kundenzufriedenheit",
@@ -11709,11 +14169,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 15,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
@@ -12031,11 +14535,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 15,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
@@ -12326,11 +14874,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 15,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
@@ -12623,11 +15215,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 15,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
@@ -12870,11 +15506,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 15,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Marktvolumen",
@@ -13169,11 +15849,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 16,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -13497,11 +16226,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 16,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -13798,11 +16576,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 16,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -14101,11 +16928,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 16,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -14351,11 +17227,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 16,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Strukturanalyse",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "NOT CHECKED: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -14656,11 +17581,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 17,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -14978,11 +17947,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 17,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -15273,11 +18286,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 17,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -15570,11 +18627,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 17,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -15817,11 +18918,55 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 17,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Kundenzufriedenheit",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Onlineauftritte",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "multi selvar with unguelt: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch? --> Sonstige",
@@ -16116,11 +19261,50 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 18,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
@@ -16428,11 +19612,50 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 18,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
@@ -16713,11 +19936,50 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 18,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
@@ -17000,11 +20262,50 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 18,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
@@ -17240,11 +20541,50 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 18,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Werbewirkungsmessung",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "trigger invalid values: 2. Welche Art von Studien führen Sie mit dem Tabellenbandtool durch?",
@@ -17529,11 +20869,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 19,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
@@ -17863,11 +21257,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 19,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
@@ -18170,11 +21618,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 19,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
@@ -18479,11 +21981,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 19,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
@@ -18732,11 +22288,65 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 19,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Sonstiges",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Kundenzufriedenheit",
@@ -19043,11 +22653,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 20,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
@@ -19371,11 +23030,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 20,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
@@ -19672,11 +23380,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 20,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
@@ -19975,11 +23732,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 20,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
@@ -20225,11 +24031,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 20,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Marktvolumen",
@@ -20530,11 +24385,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 21,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
@@ -20858,11 +24762,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 21,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
@@ -21159,11 +25112,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 21,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
@@ -21462,11 +25464,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 21,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
@@ -21712,11 +25763,60 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 21,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Darstellung der Daten",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Freundlichkeit des Tabellenbanderstellers",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "Schnelligkeit der Umsetzung",
+              "selected": true,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "NOT CHECKED: 5. Was lief besonders gut in den Projekten? --> Sonstige",
@@ -22020,11 +26120,95 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 25,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
@@ -22352,11 +26536,95 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 25,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
@@ -22627,11 +26895,95 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 25,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
@@ -22903,11 +27255,95 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 25,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
@@ -23171,11 +27607,95 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 25,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Marktvolumen --> Kurzfristige Anpassungen",
@@ -23452,11 +27972,90 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 29,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": true,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
@@ -23778,11 +28377,90 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 29,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
@@ -24047,11 +28725,90 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 29,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
@@ -24317,11 +29074,90 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 29,
           "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "%",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
@@ -24582,11 +29418,90 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
+          "collapsed_view": true,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
           "i_tab": 29,
           "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "3",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "4",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "6",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "7",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "8",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "9",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - absolut zufrieden",
+              "selected": true,
+            },
+            {
+              "RowContent": "Summary",
+              "RowTitle1": "ZUSAMMENFASSUNG",
+              "selected": false,
+            },
+          ],
           "row_type": "n",
           "show_n": false,
           "tab_title": "7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale? --> Sonstige --> Kurzfristige Anpassungen",
