@@ -24,7 +24,6 @@ export class TableDataSelector extends LitElement {
 		plot_data: { type: Array },
 		params: { type: Object },
 		choices: { type: Object },
-		collapsed_view: { type: Boolean },
 		show_n: { type: Boolean },
 	};
 
@@ -56,7 +55,7 @@ export class TableDataSelector extends LitElement {
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
-		this.collapsed_view = true;
+		this.choices.collapsed_view = true;
 		this.show_n = false;
 		this.sel_question_data()
 	}
@@ -231,7 +230,9 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_expand() {
-		this.collapsed_view = !this.collapsed_view
+		this.choices = produce(this.choices, draft => {
+			draft.collapsed_view = !draft.collapsed_view
+		})
 	}
 
 	render() {
@@ -265,7 +266,7 @@ export class TableDataSelector extends LitElement {
 					<button
 						data-test-id="show-hide-button"
 						@click="${this._on_expand}">
-						${this.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
+						${this.choices.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
 					</button>
 					<further-options-selector
 						@update-xy="${this._on_xy_update}"
@@ -294,7 +295,7 @@ export class TableDataSelector extends LitElement {
 							.parent_string = ${"ColTitle1"}
 							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
 							@update-multi-select="${this._on_header_update}"
-							.collapsed_view = "${this.collapsed_view}"		
+							.collapsed_view = "${this.choices.collapsed_view}"		
 							.prop_table=${this.params.header_table}>	   																
 						</multi-selector>
 					</div>
@@ -310,12 +311,12 @@ export class TableDataSelector extends LitElement {
 							.parent_string = ${"RowContent"}
 							.children_fun = ${(x) => x.RowTitle1}
 							@update-multi-select="${this._on_rows_update}" 		
-							.collapsed_view = "${this.collapsed_view}"		
+							.collapsed_view = "${this.choices.collapsed_view}"		
 							.prop_table=${this.params.row_table}>	   																
 						</multi-selector>
 					</div>
 					<span class="clear"></span>
-					<div class=${!this.collapsed_view ? "" : "hide"}>
+					<div class=${!this.choices.collapsed_view ? "" : "hide"}>
 						<label for="colors">Color</label>
 						<colorscale-selector 	
 							id="colors"		
