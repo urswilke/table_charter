@@ -117,10 +117,17 @@ export class TableDataSelector extends LitElement {
 		this.update_choices({
 			color_scale: color_scale,
 		})
-		this.choices = init_color_scheme(this.choices)
+		this.init_color_scheme()
 		this.params.color_schemes = all_color_schemes[color_scale];
 
 		this.plot_data = this.rows_data
+	}
+	init_color_scheme() {
+		this.update_choices({
+			color_scheme: this.choices.color_scale === "categorical" ?
+				"Tableau10" :
+				"Turbo"
+		})
 	}
 	update_choices(obj) {
 		this.choices = produce(this.choices, draft => (
@@ -210,7 +217,7 @@ export class TableDataSelector extends LitElement {
 			color_scale: e.detail.chosen_colorscale
 		})
 		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
-		this.choices = init_color_scheme(this.choices)
+		this.init_color_scheme()
 
 		this._update_plot_data()
 	}
@@ -383,11 +390,3 @@ export class TableDataSelector extends LitElement {
 }
 
 window.customElements.define('table-data-selector', TableDataSelector)
-
-function init_color_scheme(choices) {
-	return produce(choices, draft => {
-		draft.color_scheme = draft.color_scale === "categorical" ?
-			"Tableau10" :
-			"Turbo"
-	})
-}
