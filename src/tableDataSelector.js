@@ -93,8 +93,8 @@ export class TableDataSelector extends LitElement {
 		;
 		this.toggle_filtered_class('num_type-selector', this.header_data, this.num_type_data)
 		
-		this.choices = produce(this.choices, draft => {
-			draft.row_table = gen_row_table(this.num_type_data)
+		this.update_choices({
+			row_table: gen_row_table(this.num_type_data)
 		})
 
 		this.sel_rows_data()
@@ -163,8 +163,8 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.header_table = e.detail.prop_table
+		this.update_choices({
+			header_table: e.detail.prop_table
 		})
 		this.sel_header_data()
 		this._update_plot_data()
@@ -180,15 +180,15 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_num_type_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.row_type = e.detail.chosen_num_type
+		this.update_choices({
+			row_type: e.detail.chosen_num_type
 		})
 		this.sel_num_type_data()
 		this._update_plot_data()
 	}
 	_on_rows_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.row_table = e.detail.prop_table
+		this.update_choices({
+			row_table: e.detail.prop_table
 		})
 	
 		const arr_selected = this.choices.row_table.filter(x => x.selected)
@@ -197,8 +197,8 @@ export class TableDataSelector extends LitElement {
 			[... new Set(arr_selected.map(x => x.RowContent))] == "Summary"
 		) {
 			const summary_titles = [... new Set(arr_selected.map(x => x.RowTitle1))]
-			this.choices = produce(this.choices, draft => {
-				draft.row_table = this.choices.row_table.map(p =>
+			this.update_choices({
+				row_table: this.choices.row_table.map(p =>
 					p.RowTitle1 === summary_titles[0]
 					? { ...p, selected: true }
 					: { ...p, selected: false }
@@ -210,8 +210,8 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.color_scale = e.detail.chosen_colorscale
+		this.update_choices({
+			color_scale: e.detail.chosen_colorscale
 		})
 		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
 		this.choices = init_color_scheme(this.choices)
@@ -219,32 +219,32 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.color_scheme = e.detail.chosen_colorscheme
+		this.update_choices({
+			color_scheme: e.detail.chosen_colorscheme
 		})
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.xy = e.detail.xy
+		this.update_choices({
+			xy: e.detail.xy
 		})
 		this._update_plot_data()
 	}
 	_on_show_n_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.show_n = e.detail.show_n
+		this.update_choices({
+			show_n: e.detail.show_n
 		})
 		this._update_plot_data()
 	}
 	_on_plot_type_update(e) {
-		this.choices = produce(this.choices, draft => {
-			draft.plot_type = e.detail.plot_type
+		this.update_choices({
+			plot_type: e.detail.plot_type
 		})
 		this._update_plot_data()
 	}
 	_on_expand() {
-		this.choices = produce(this.choices, draft => {
-			draft.collapsed_view = !draft.collapsed_view
+		this.update_choices({
+			collapsed_view: !this.choices.collapsed_view
 		})
 	}
 
