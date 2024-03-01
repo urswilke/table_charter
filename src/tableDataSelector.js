@@ -44,7 +44,7 @@ export class TableDataSelector extends LitElement {
 		this.choices = {};
 		this.choices.xy = "x"
 		
-		this.params.header_table = gen_header_table(this.data)
+		this.choices.header_table = gen_header_table(this.data)
 		
 		this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
 		
@@ -78,7 +78,7 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 	}
 	sel_header_data() {
-		this.header_data = filter_sel_headers(this.question_data, this.params.header_table)
+		this.header_data = filter_sel_headers(this.question_data, this.choices.header_table)
 		this.toggle_filtered_class('#header-multi-sel', this.question_data, this.header_data)
 		
 		this.sel_num_type_data()
@@ -156,7 +156,9 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.params.header_table = e.detail.prop_table;
+		this.choices = produce(this.choices, draft => {
+			draft.header_table = e.detail.prop_table
+		})
 		this.sel_header_data()
 		this._update_plot_data()
 	}
@@ -296,7 +298,7 @@ export class TableDataSelector extends LitElement {
 							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
 							@update-multi-select="${this._on_header_update}"
 							.collapsed_view = "${this.choices.collapsed_view}"		
-							.prop_table=${this.params.header_table}>	   																
+							.prop_table=${this.choices.header_table}>	   																
 						</multi-selector>
 					</div>
 					<!-- https://stackoverflow.com/a/2062264 -->
