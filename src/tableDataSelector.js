@@ -13,6 +13,7 @@ import { all_color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import data_compressed from './example_compressed.json';
+import { produce } from "immer"
 
 const data = prepare_data(data_compressed);
 const inspect = false // set to true for some console.log msgs
@@ -23,10 +24,6 @@ export class TableDataSelector extends LitElement {
 		plot_data: { type: Array },
 		params: { type: Object },
 		choices: { type: Object },
-		// needs to be extra reactive property (not in choices), 
-		// because otherwise it's not correctly updated in the selected choice in <colorscale-selector>, 
-		// when it's reset in sel_question_data():
-		color_scheme: { type: String },
 		collapsed_view: { type: Boolean },
 		show_n: { type: Boolean },
 	};
@@ -69,11 +66,16 @@ export class TableDataSelector extends LitElement {
 		this.question_data = this.data
 			.filter(x => x.i_tab == this.choices.i_tab);
 		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
-		this.choices.colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType) 
+		
+		this.choices = update_choices(this.choices, {
+			colorscale_disabled: !["CAT"].includes(this.question_data[0].TabType),
+			plot_type: gen_plot_type_string(this),
+		})
 		if (this.choices.colorscale_disabled) {
-			this.choices.color_scale = "categorical"
+			this.choices = update_choices(this.choices, {
+				color_scale: "categorical"
+			})
 		}
-		this.choices.plot_type = gen_plot_type_string(this)
 
 		this.sel_header_data()
 	}
@@ -106,19 +108,21 @@ export class TableDataSelector extends LitElement {
 			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^-?\d+/))),
 			0
 		)
+		let color_scale;
 		if (
 			// df_row_tit_val.length >= 5 & 
 			n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
 			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
 		) {
-			this.choices.color_scale = "ordinal"
+			color_scale = "ordinal"
 		} else {
-			this.choices.color_scale = "categorical"
+			color_scale = "categorical"
 		}
-		this.color_scheme = this.choices.color_scale === "categorical" ?
-			"Tableau10" :
-			"Turbo"
-		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
+		this.choices = update_choices(this.choices, {
+			color_scale: color_scale,
+		})
+		this.choices = init_color_scheme(this.choices)
+		this.params.color_schemes = all_color_schemes[color_scale];
 
 		this.plot_data = this.rows_data
 	}
@@ -142,7 +146,6 @@ export class TableDataSelector extends LitElement {
 				data: {
 					plot_data: this.plot_data,
 					choices: this.choices,
-					color_scheme: this.color_scheme,
 					show_n: this.show_n,
 				}
 			},
@@ -162,15 +165,18 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_question_update(e) {
 		let title_table = this.params.title_table[e.detail.chosen_tab_no];
-		this.choices.i_tab = title_table.i_tab
-		this.choices.tab_title = title_table.TabTitle
+		this.choices = update_choices(this.choices, {
+			i_tab: Number(title_table.i_tab),
+			tab_title: title_table.TabTitle
+		})
 		// for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
-		this.choices.i_tab = Number(e.detail.chosen_tab_no);
 		this.sel_question_data()
 		this._update_plot_data()
 	}
 	_on_num_type_update(e) {
-		this.choices.row_type = e.detail.chosen_num_type;
+		this.choices = produce(this.choices, draft => {
+			draft.row_type = e.detail.chosen_num_type
+		})
 		this.sel_num_type_data()
 		this._update_plot_data()
 	}
@@ -194,19 +200,24 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
-		this.choices.color_scale = e.detail.chosen_colorscale;
+		this.choices = produce(this.choices, draft => {
+			draft.color_scale = e.detail.chosen_colorscale
+		})
 		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
-		this.color_scheme = this.choices.color_scale === "categorical" ?
-			"Tableau10" :
-			"Turbo"
+		this.choices = init_color_scheme(this.choices)
+
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
-		this.color_scheme = e.detail.chosen_colorscheme;
+		this.choices = produce(this.choices, draft => {
+			draft.color_scheme = e.detail.chosen_colorscheme
+		})
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
-		this.choices.xy = e.detail.xy;
+		this.choices = produce(this.choices, draft => {
+			draft.xy = e.detail.xy
+		})
 		this._update_plot_data()
 	}
 	_on_show_n_update(e) {
@@ -214,7 +225,9 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_plot_type_update(e) {
-		this.choices.plot_type = e.detail.plot_type;
+		this.choices = produce(this.choices, draft => {
+			draft.plot_type = e.detail.plot_type
+		})
 		this._update_plot_data()
 	}
 	_on_expand() {
@@ -313,7 +326,7 @@ export class TableDataSelector extends LitElement {
 							.chosen_colorscale=${this.choices.color_scale}  
 							.colorscale_disabled=${this.choices.colorscale_disabled}
 							.all_colorschemes=${this.params.color_schemes}	
-							.chosen_colorscheme=${this.color_scheme}>
+							.chosen_colorscheme=${this.choices.color_scheme}>
 						</colorscale-selector>
 					</div>
 				`
@@ -361,3 +374,15 @@ export class TableDataSelector extends LitElement {
 
 window.customElements.define('table-data-selector', TableDataSelector)
 
+function init_color_scheme(choices) {
+	return produce(choices, draft => {
+		draft.color_scheme = draft.color_scale === "categorical" ?
+			"Tableau10" :
+			"Turbo"
+	})
+}
+function update_choices(choices, obj) {
+	return produce(choices, draft => (
+		{...draft, ...obj}
+	))
+}
