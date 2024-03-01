@@ -93,12 +93,14 @@ export class TableDataSelector extends LitElement {
 		;
 		this.toggle_filtered_class('num_type-selector', this.header_data, this.num_type_data)
 		
-		this.params.row_table = gen_row_table(this.num_type_data)
-		
+		this.choices = produce(this.choices, draft => {
+			draft.row_table = gen_row_table(this.num_type_data)
+		})
+
 		this.sel_rows_data()
 	}
 	sel_rows_data() {
-		this.rows_data = filter_sel_rows(this.num_type_data, this.params.row_table)
+		this.rows_data = filter_sel_rows(this.num_type_data, this.choices.row_table)
 		this.toggle_filtered_class('#row-multi-sel', this.num_type_data, this.rows_data)
 	
 		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowValue"])
@@ -110,7 +112,7 @@ export class TableDataSelector extends LitElement {
 		if (
 			// df_row_tit_val.length >= 5 & 
 			n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
-			[... new Set(this.params.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
+			[... new Set(this.choices.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
 		) {
 			color_scale = "ordinal"
 		} else {
@@ -180,19 +182,23 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_rows_update(e) {
-		this.params.row_table = e.detail.prop_table;
-		
-		const arr_selected = this.params.row_table.filter(x => x.selected)
+		this.choices = produce(this.choices, draft => {
+			draft.row_table = e.detail.prop_table
+		})
+	
+		const arr_selected = this.choices.row_table.filter(x => x.selected)
 		if (
 			e.detail.from === "parents" && 
 			[... new Set(arr_selected.map(x => x.RowContent))] == "Summary"
 		) {
 			const summary_titles = [... new Set(arr_selected.map(x => x.RowTitle1))]
-			this.params.row_table = this.params.row_table.map(p =>
-				p.RowTitle1 === summary_titles[0]
-				? { ...p, selected: true }
-				: { ...p, selected: false }
-			)
+			this.choices = produce(this.choices, draft => {
+				draft.row_table = this.choices.row_table.map(p =>
+					p.RowTitle1 === summary_titles[0]
+					? { ...p, selected: true }
+					: { ...p, selected: false }
+				)
+			})
 		}
 		
 		this.sel_rows_data()
@@ -314,7 +320,7 @@ export class TableDataSelector extends LitElement {
 							.children_fun = ${(x) => x.RowTitle1}
 							@update-multi-select="${this._on_rows_update}" 		
 							.collapsed_view = "${this.choices.collapsed_view}"		
-							.prop_table=${this.params.row_table}>	   																
+							.prop_table=${this.choices.row_table}>	   																
 						</multi-selector>
 					</div>
 					<span class="clear"></span>
