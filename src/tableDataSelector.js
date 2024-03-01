@@ -63,18 +63,14 @@ export class TableDataSelector extends LitElement {
 	sel_question_data() {
 		this.question_data = this.data
 			.filter(x => x.i_tab == this.choices.i_tab);
-		// TODO: move this somewhere else -> perhaps best to allow to choose between stacked bar / line/dot plots:
-		
+		const colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType);
 		this.update_choices({
-			colorscale_disabled: !["CAT"].includes(this.question_data[0].TabType),
+			colorscale_disabled: colorscale_disabled,
 			plot_type: gen_plot_type_string(this),
-		})
-		if (this.choices.colorscale_disabled) {
-			this.update_choices({
+			...(colorscale_disabled && {
 				color_scale: "categorical"
-			})
-		}
-
+			}),
+		})
 		this.sel_header_data()
 	}
 	sel_header_data() {
