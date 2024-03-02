@@ -96,17 +96,25 @@ export class PlotOptions {
 			text: (x) => ((x.Value === undefined || x.Value == 0) ? null : 'N = ' + x.ColValidCases),
 			order: e.color_order,
 		}
-		const is_x = this.o.xy === "x";
-		p.group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10
-		is_x ? p.group_args2_text_n.lineAnchor = "bottom" : p.group_args2_text_n.textAnchor = "start"
+		p.is_x = this.o.xy === "x";
+		p.group_args2_text_n[p.is_x ? "dy" : "dx"] = p.is_x ? -15 : 10
+		p.is_x ? p.group_args2_text_n.lineAnchor = "bottom" : p.group_args2_text_n.textAnchor = "start"
 		this.p = p;
 		this.bar_plot_options()
 	}
 	bar_plot_options() {
 		const p = this.p
-		const bar_opts = Plot[p.group_](p.group_args1, p.group_args2_bar)
-		const text_opts = Plot[p.group_](p.group_args1, p.group_args2_text)
-		
+		// reverse stack order for barY charts (in order to have the same order as the legend and the tables)
+		// https://stackoverflow.com/questions/68056843/in-observable-plot-how-to-sort-order-the-stack-from-a-bin-transform/68057660#68057660
+		const bar_opts = {
+			...Plot[p.group_](p.group_args1, p.group_args2_bar), 
+			...(p.is_x && {reverse: true}),
+		};
+		const text_opts = {
+			...Plot[p.group_](p.group_args1, p.group_args2_text),
+			...(p.is_x && {reverse: true}),
+		}
+
 		this.options = {
 			marginTop: 30,
 			marginRight: 70,
