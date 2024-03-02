@@ -50,6 +50,7 @@ export class TableDataSelector extends LitElement {
 		
 		let title_table = this.params.title_table[0]
 		this.choices.i_tab = title_table.i_tab
+		this.i_tab = title_table.i_tab
 		this.choices.tab_title = title_table.TabTitle
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
@@ -63,7 +64,7 @@ export class TableDataSelector extends LitElement {
 	// Helper:
 	sel_question_data() {
 		this.question_data = this.data
-			.filter(x => x.i_tab == this.choices.i_tab);
+			.filter(x => x.i_tab == this.i_tab);
 		const colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType);
 		this.update_choices({
 			colorscale_disabled: colorscale_disabled,
@@ -136,12 +137,12 @@ export class TableDataSelector extends LitElement {
 	}
 	update_choices(obj) {
 		this.choices = produce(this.choices, draft => (
-			{...draft, ...obj, ...this.saved[this.choices.i_tab]}
+			{...draft, ...obj, ...this.saved[this.i_tab]}
 		))
 	}
 	update_choices_perm(obj) {
-		this.saved[this.choices.i_tab] = {
-			...this.saved[this.choices.i_tab],
+		this.saved[this.i_tab] = {
+			...this.saved[this.i_tab],
 			...obj
 		}
 		this.update_choices(obj)
@@ -186,8 +187,9 @@ export class TableDataSelector extends LitElement {
 	}
 	_on_question_update(e) {
 		let title_table = this.params.title_table[e.detail.chosen_tab_no];
+		this.i_tab = Number(title_table.i_tab);
 		this.update_choices({
-			i_tab: Number(title_table.i_tab),
+			i_tab: this.i_tab,
 			tab_title: title_table.TabTitle
 		})
 		// for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
