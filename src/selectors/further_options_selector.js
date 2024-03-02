@@ -37,6 +37,7 @@ export class FurtherOptionsSelector extends LitElement {
 	}
 
     _toggle_show_n() {
+		this.show_n = !this.show_n
         const options = {
 			detail: {
 				show_n: this._show_n,
@@ -62,7 +63,8 @@ export class FurtherOptionsSelector extends LitElement {
 				type="checkbox"
 				data-test-id="n-checkbox" 
 				id="show-n"
-				@change=${this._toggle_show_n}
+				.checked=${this.show_n}
+				@click=${this._toggle_show_n}
 			>
 			<label for="show-n">Show totals in charts</label><br>
         </div>

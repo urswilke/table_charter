@@ -56,6 +56,7 @@ export class TableDataSelector extends LitElement {
 		this.params.color_scale = ["categorical", "ordinal"];
 		this.choices.collapsed_view = true;
 		this.choices.show_n = false;
+		this.saved = new Array(this.params.title_table.length).fill({})
 		this.sel_question_data()
 	}
 
@@ -74,15 +75,19 @@ export class TableDataSelector extends LitElement {
 		this.sel_header_data()
 	}
 	sel_header_data() {
-		this.header_data = filter_sel_headers(this.question_data, this.choices.header_table)
+		this.header_data = filter_sel_headers(
+			this.question_data, 
+			this.choices.header_table
+		)
 		this.toggle_filtered_class('#header-multi-sel', this.question_data, this.header_data)
 		
 		this.sel_num_type_data()
 	}
 	sel_num_type_data() {
+		const row_type = this.choices.row_type
 		this.num_type_data = this.header_data
 			.filter(x => 
-				this.choices.row_type === "n" ? 
+				row_type === "n" ? 
 				x.RowAbsPercent == "Abs" : 
 				x.RowAbsPercent != "Abs"
 			)
@@ -131,8 +136,15 @@ export class TableDataSelector extends LitElement {
 	}
 	update_choices(obj) {
 		this.choices = produce(this.choices, draft => (
-			{...draft, ...obj}
+			{...draft, ...obj, ...this.saved[this.choices.i_tab]}
 		))
+	}
+	update_choices_perm(obj) {
+		this.saved[this.choices.i_tab] = {
+			...this.saved[this.choices.i_tab],
+			...obj
+		}
+		this.update_choices(obj)
 	}
 	toggle_filtered_class(selector_string, input_data, output_data) {
 		if (input_data.length === 0) {
@@ -166,7 +178,7 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			header_table: e.detail.prop_table
 		})
 		this.sel_header_data()
@@ -183,14 +195,14 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_num_type_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			row_type: e.detail.chosen_num_type
 		})
 		this.sel_num_type_data()
 		this._update_plot_data()
 	}
 	_on_rows_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			row_table: e.detail.prop_table
 		})
 	
@@ -213,7 +225,7 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			color_scale: e.detail.chosen_colorscale
 		})
 		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
@@ -222,31 +234,31 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			color_scheme: e.detail.chosen_colorscheme
 		})
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			xy: e.detail.xy
 		})
 		this._update_plot_data()
 	}
 	_on_show_n_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			show_n: e.detail.show_n
 		})
 		this._update_plot_data()
 	}
 	_on_plot_type_update(e) {
-		this.update_choices({
+		this.update_choices_perm({
 			plot_type: e.detail.plot_type
 		})
 		this._update_plot_data()
 	}
 	_on_expand() {
-		this.update_choices({
+		this.update_choices_perm({
 			collapsed_view: !this.choices.collapsed_view
 		})
 	}
@@ -289,7 +301,8 @@ export class TableDataSelector extends LitElement {
 						@update-plot_type="${this._on_plot_type_update}"
 						@update-show-n="${this._on_show_n_update}"
 						.xy=${this.choices.xy}
-						.plot_type=${this.choices.plot_type}>
+						.plot_type=${this.choices.plot_type}
+						.show_n=${this.choices.show_n}>
 					</further-options-selector>
 				</div>
 					<div>
@@ -312,7 +325,7 @@ export class TableDataSelector extends LitElement {
 							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
 							@update-multi-select="${this._on_header_update}"
 							.collapsed_view = "${this.choices.collapsed_view}"		
-							.prop_table=${this.choices.header_table}>	   																
+							.prop_table=${this.choices.header_table}>
 						</multi-selector>
 					</div>
 					<!-- https://stackoverflow.com/a/2062264 -->
