@@ -138,6 +138,7 @@ export class PlotOptions {
 		const e = this.e;
 		p.line_opts = {
 			...e.plot_opts,
+			z: x => x.RowNo,
 			stroke: e.row_lab_fun
 		}
 	
