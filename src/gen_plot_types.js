@@ -20,11 +20,9 @@ export class PlotOptions {
 
 		e.x2 = o.xy
 		e.x1 = e.x2 === "x" ? "y" : "x"
-		e.label_joiner = e.x1 === 'y' ? '\n' : ' '
-		e.label_joiner2 = e.x2 === 'y' ? '\n' : ' '
 		e.col_lab_fun = (x) => x.ColTitle2,
 		e.row_lab_fun = o.color_scale === "categorical" ? 
-			(x) => [...new Set([x.RowTitle1, x.RowTitle2])].join(e.label_joiner2) :
+			(x) => x.RowTitle2 :
 			(x) => x.RowValue;
 		// e.row_lab_fun = (x) => x.RowValue;
 		e.color_order = [...new Set(this.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(e.row_lab_fun))];
