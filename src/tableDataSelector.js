@@ -111,21 +111,27 @@ export class TableDataSelector extends LitElement {
 			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^-?\d+/))),
 			0
 		)
-		let color_scale;
+		// TODO: find cleaner solution!...:
 		if (
-			// df_row_tit_val.length >= 5 & 
-			n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
-			[... new Set(this.choices.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
+			// only when object is empty:
+			Object.keys(this.saved[this.i_tab]).length === 0
 		) {
-			color_scale = "ordinal"
-		} else {
-			color_scale = "categorical"
+			let color_scale;
+			if (
+				// df_row_tit_val.length >= 5 & 
+				n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
+				[... new Set(this.choices.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
+			) {
+				color_scale = "ordinal"
+			} else {
+				color_scale = "categorical"
+			}
+			this.update_choices({
+				color_scale: color_scale,
+			})
+			this.init_color_scheme()
+			this.params.color_schemes = all_color_schemes[color_scale];
 		}
-		this.update_choices({
-			color_scale: color_scale,
-		})
-		this.init_color_scheme()
-		this.params.color_schemes = all_color_schemes[color_scale];
 
 		this.plot_data = this.rows_data
 	}
