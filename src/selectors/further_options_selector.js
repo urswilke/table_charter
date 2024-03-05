@@ -33,15 +33,14 @@ export class FurtherOptionsSelector extends LitElement {
 		};
 		this.dispatchEvent(new CustomEvent('update-plot_type', options));
     }
-	get _show_n() {
-		return this.renderRoot?.querySelector('#show-n:checked')?.value === "on";
+	is_checked(id_string) {
+		return this.renderRoot?.querySelector(id_string + ':checked')?.value === "on";
 	}
 
     _toggle_show_n() {
-		this.show_n = !this.show_n
         const options = {
 			detail: {
-				show_n: this._show_n,
+				show_n: this.is_checked("#show-n"),
 			},
 			bubbles: true,
 			composed: true,
