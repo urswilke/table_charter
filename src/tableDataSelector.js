@@ -8,6 +8,7 @@ import './selectors/multi_selector.js'
 import './selectors/num_type_selector.js'
 import './selectors/colorscale_selector.js'
 import './selectors/further_options_selector.js'
+import './selectors/advanced_options_selector.js'
 
 import { all_color_schemes } from './gen_plot_types.js'
 
@@ -356,6 +357,23 @@ export class TableDataSelector extends LitElement {
 					</button>
 					<div class=${!this.choices.collapsed_view ? "" : "hide"}>
 						<hr></hr>
+						<further-options-selector
+							@update-xy="${this._on_xy_update}"
+							@update-plot_type="${this._on_plot_type_update}"
+							.xy=${this.choices.xy}
+							.plot_type=${this.choices.plot_type}
+						>
+						</further-options-selector>
+						<hr></hr>
+						<advanced-options-selector
+							@update-checkboxes="${this._on_checkbox_update}"
+							@update-font-size="${this._on_font_size_update}"
+							.show_n=${this.choices.show_n}
+							.separate_headers=${this.choices.separate_headers}
+							.font_size=${this.choices.font_size}
+						>
+						</advanced-options-selector>
+						<hr></hr>
 						<colorscale-selector 	
 							id="colors"		
 							data-test-id="color-scale-selector"	
@@ -368,19 +386,6 @@ export class TableDataSelector extends LitElement {
 							.chosen_colorscheme=${this.choices.color_scheme}>
 						</colorscale-selector>
 					</div>
-					<hr></hr>
-					<further-options-selector
-						@update-xy="${this._on_xy_update}"
-						@update-plot_type="${this._on_plot_type_update}"
-						@update-checkboxes="${this._on_checkbox_update}"
-						@update-font-size="${this._on_font_size_update}"
-						.xy=${this.choices.xy}
-						.plot_type=${this.choices.plot_type}
-						.show_n=${this.choices.show_n}
-						.separate_headers=${this.choices.separate_headers}
-						.font_size=${this.choices.font_size}
-					>
-					</further-options-selector>
 				</div>
 				`
 			)}
