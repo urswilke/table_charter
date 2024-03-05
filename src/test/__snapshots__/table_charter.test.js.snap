@@ -141,6 +141,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -510,6 +511,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -852,6 +854,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -1486,6 +1489,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -1864,6 +1868,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -2277,6 +2282,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -2663,6 +2669,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -3373,6 +3380,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -3743,6 +3751,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -4123,6 +4132,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -4476,6 +4486,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -5129,6 +5140,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -5486,6 +5498,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -5866,6 +5879,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -6219,6 +6233,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -6872,6 +6887,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -7261,6 +7277,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -7647,6 +7664,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -7976,6 +7994,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -8633,6 +8652,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -8965,6 +8985,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -9351,6 +9372,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -9680,6 +9702,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -10337,6 +10360,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -10661,6 +10685,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -11036,6 +11061,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -11354,6 +11380,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -11992,6 +12019,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -12284,6 +12312,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -12653,6 +12682,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -12995,6 +13025,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -13629,6 +13660,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -13967,6 +13999,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -14325,6 +14358,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -14656,6 +14690,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -15271,6 +15306,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -15614,6 +15650,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -15983,6 +16020,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -16325,6 +16363,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -16959,6 +16998,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -17297,6 +17337,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -17655,6 +17696,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -17986,6 +18028,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -18601,6 +18644,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -18926,6 +18970,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -19270,6 +19315,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -19587,6 +19633,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -20177,6 +20224,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -20524,6 +20572,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -20904,6 +20953,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -21257,6 +21307,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -21910,6 +21961,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -22259,6 +22311,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -22628,6 +22681,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -22970,6 +23024,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -23604,6 +23659,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -23950,6 +24006,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -24319,6 +24376,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -24661,6 +24719,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -25295,6 +25354,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -25697,6 +25757,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -26105,6 +26166,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -26456,6 +26518,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -27151,6 +27214,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -27500,6 +27564,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -27897,6 +27962,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": "Value",
             "y": {},
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -28237,6 +28303,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",
@@ -28913,6 +28980,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
             "title": {},
             "x": {},
             "y": "Value",
+            "z": {},
           },
           "group_args2_text": {
             "fill": "#000000",

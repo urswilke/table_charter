@@ -24,7 +24,6 @@ export class PlotOptions {
 		e.row_lab_fun = o.color_scale === "categorical" ? 
 			(x) => x.RowTitle2 :
 			(x) => x.RowValue;
-		// e.row_lab_fun = (x) => x.RowValue;
 		e.color_order = [...new Set(this.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(e.row_lab_fun))];
 		e.x_order = [...new Set(this.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(e.col_lab_fun))];
 		e.x_order = add_gaps_to_xlabels(
@@ -73,13 +72,14 @@ export class PlotOptions {
 		p.group_args2_bar = {
 			...e.plot_opts,
 			fill: e.row_lab_fun,
+			z: x => x.RowNo,
 			order: e.color_order,
 			title: tooltip_fun(e.n_decimals)
 		}
 		p.group_args2_text = {
 			...e.plot_opts,
 			text: (x) => ((x.Value === undefined || x.Value == 0) ? null : x.Value.toFixed(e.n_decimals)),
-			z: e.row_lab_fun,
+			z: x => x.RowNo,
 			order: e.color_order,
 			title: tooltip_fun(e.n_decimals),
 			// put halo around text:
