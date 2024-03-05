@@ -87,7 +87,7 @@ export class OJSPlot extends LitElement {
 	_click_save_svg() {
 		// Hack to set the font size in the legend that got lost to 16px again
 		// TODO: use setting from user here and in PlotOptions.post_process()!:
-		this.renderRoot.querySelector("[class*=large-font-]").style.fontSize = "16px"
+		this.renderRoot.querySelector("[class*=large-font-]").style.fontSize = this.plot_options.o.font_size + "px"
 		
 		let tab_title_processed = this.plot_options.plot_data[0].TabTitle.replace(/[\./\\?%*:|"<> ]/g, '_')
 		let i_tab = this.plot_options.plot_data[0].i_tab

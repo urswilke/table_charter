@@ -51,8 +51,8 @@ export class PlotOptions {
 			label: null
 		}
 		e.n_decimals = this.plot_data[0].RowDecimals;
-		e.marginLeft = e.x1 === "y" ? 40 : 210
-		e.marginBottom = 60
+		e.marginLeft = e.x1 === "y" ? 60 : 210
+		e.marginBottom = 80
 		e.axis_ = e.x1 === "y" ? "axisX" : "axisY";
 		this.e = e;
 	}
@@ -169,7 +169,7 @@ export class PlotOptions {
 		this.options[this.e.x1] = this.e.x1_opts
 		this.options.width = 1000
 		this.options.height = 600
-		this.options.style = {fontSize: "16px"}
+		this.options.style = {fontSize: this.o.font_size + "px"}
 		this.options.color.className = "large-font"
 		set_axis_labels(this)
 	}

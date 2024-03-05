@@ -14,7 +14,7 @@ Marktvolumen</h2>
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(40,540)" d="M0,0L-6,0"/><path transform="translate(40,506)" d="M0,0L-6,0"/><path transform="translate(40,472)" d="M0,0L-6,0"/><path transform="translate(40,438)" d="M0,0L-6,0"/><path transform="translate(40,404.00000000000006)" d="M0,0L-6,0"/><path transform="translate(40,370.00000000000006)" d="M0,0L-6,0"/><path transform="translate(40,336)" d="M0,0L-6,0"/><path transform="translate(40,302)" d="M0,0L-6,0"/><path transform="translate(40,268)" d="M0,0L-6,0"/><path transform="translate(40,234)" d="M0,0L-6,0"/><path transform="translate(40,200.00000000000003)" d="M0,0L-6,0"/><path transform="translate(40,166.00000000000003)" d="M0,0L-6,0"/><path transform="translate(40,131.99999999999997)" d="M0,0L-6,0"/><path transform="translate(40,97.99999999999999)" d="M0,0L-6,0"/><path transform="translate(40,63.99999999999999)" d="M0,0L-6,0"/><path transform="translate(40,30)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(40,540)">0</text><text y="0.32em" transform="translate(40,506)">5</text><text y="0.32em" transform="translate(40,472)">10</text><text y="0.32em" transform="translate(40,438)">15</text><text y="0.32em" transform="translate(40,404.00000000000006)">20</text><text y="0.32em" transform="translate(40,370.00000000000006)">25</text><text y="0.32em" transform="translate(40,336)">30</text><text y="0.32em" transform="translate(40,302)">35</text><text y="0.32em" transform="translate(40,268)">40</text><text y="0.32em" transform="translate(40,234)">45</text><text y="0.32em" transform="translate(40,200.00000000000003)">50</text><text y="0.32em" transform="translate(40,166.00000000000003)">55</text><text y="0.32em" transform="translate(40,131.99999999999997)">60</text><text y="0.32em" transform="translate(40,97.99999999999999)">65</text><text y="0.32em" transform="translate(40,63.99999999999999)">70</text><text y="0.32em" transform="translate(40,30)">75</text></g><g aria-label="bar"><rect x="121" width="728" y="30" height="340.00000000000006" fill="#4e79a7"><title>row: Schnelligkeit der Umsetzung
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,487.3333333333333)" d="M0,0L-6,0"/><path transform="translate(60,454.6666666666667)" d="M0,0L-6,0"/><path transform="translate(60,422)" d="M0,0L-6,0"/><path transform="translate(60,389.33333333333337)" d="M0,0L-6,0"/><path transform="translate(60,356.6666666666667)" d="M0,0L-6,0"/><path transform="translate(60,324)" d="M0,0L-6,0"/><path transform="translate(60,291.3333333333333)" d="M0,0L-6,0"/><path transform="translate(60,258.66666666666663)" d="M0,0L-6,0"/><path transform="translate(60,226)" d="M0,0L-6,0"/><path transform="translate(60,193.33333333333334)" d="M0,0L-6,0"/><path transform="translate(60,160.66666666666669)" d="M0,0L-6,0"/><path transform="translate(60,127.99999999999997)" d="M0,0L-6,0"/><path transform="translate(60,95.33333333333331)" d="M0,0L-6,0"/><path transform="translate(60,62.66666666666666)" d="M0,0L-6,0"/><path transform="translate(60,30)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,487.3333333333333)">5</text><text y="0.32em" transform="translate(60,454.6666666666667)">10</text><text y="0.32em" transform="translate(60,422)">15</text><text y="0.32em" transform="translate(60,389.33333333333337)">20</text><text y="0.32em" transform="translate(60,356.6666666666667)">25</text><text y="0.32em" transform="translate(60,324)">30</text><text y="0.32em" transform="translate(60,291.3333333333333)">35</text><text y="0.32em" transform="translate(60,258.66666666666663)">40</text><text y="0.32em" transform="translate(60,226)">45</text><text y="0.32em" transform="translate(60,193.33333333333334)">50</text><text y="0.32em" transform="translate(60,160.66666666666669)">55</text><text y="0.32em" transform="translate(60,127.99999999999997)">60</text><text y="0.32em" transform="translate(60,95.33333333333331)">65</text><text y="0.32em" transform="translate(60,62.66666666666666)">70</text><text y="0.32em" transform="translate(60,30)">75</text></g><g aria-label="bar"><rect x="140" width="711" y="30" height="326.6666666666667" fill="#4e79a7"><title>row: Schnelligkeit der Umsetzung
 
 row value: 3
 header: GESAMT
@@ -22,7 +22,7 @@ header: GESAMT
 value: 50.0
 N: 8
 
- (1)</title></rect><rect x="121" width="728" y="370.00000000000006" height="169.99999999999994" fill="#f28e2c"><title>row: Freundlichkeit des Tabellenbanderstellers
+ (1)</title></rect><rect x="140" width="711" y="356.6666666666667" height="163.33333333333331" fill="#f28e2c"><title>row: Freundlichkeit des Tabellenbanderstellers
 
 row value: 1
 header: GESAMT
@@ -30,7 +30,7 @@ header: GESAMT
 value: 25.0
 N: 8
 
- (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(364.5,0.5)"><text y="0.32em" transform="translate(121,200.00000000000003)">50.0<title>row: Schnelligkeit der Umsetzung
+ (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(356,0.5)"><text y="0.32em" transform="translate(140,193.33333333333334)">50.0<title>row: Schnelligkeit der Umsetzung
 
 row value: 3
 header: GESAMT
@@ -38,7 +38,7 @@ header: GESAMT
 value: 50.0
 N: 8
 
- (1)</title></text><text y="0.32em" transform="translate(121,455)">25.0<title>row: Freundlichkeit des Tabellenbanderstellers
+ (1)</title></text><text y="0.32em" transform="translate(140,438.33333333333337)">25.0<title>row: Freundlichkeit des Tabellenbanderstellers
 
 row value: 1
 header: GESAMT
@@ -46,7 +46,7 @@ header: GESAMT
 value: 25.0
 N: 8
 
- (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-30.5,39.5)"><text y="0.71em" transform="translate(121,540)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+ (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-39,39.5)"><text y="0.71em" transform="translate(140,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;

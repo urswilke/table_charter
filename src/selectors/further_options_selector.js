@@ -6,6 +6,7 @@ export class FurtherOptionsSelector extends LitElement {
 		xy: { type: String },
 		plot_type: { type: String },
 		show_n: { type: Boolean },
+		font_size: { type: String },
 	};
 
     _update_xy() {
@@ -47,6 +48,19 @@ export class FurtherOptionsSelector extends LitElement {
 		};
 		this.dispatchEvent(new CustomEvent('update-show-n', options));
     }
+	get _font_size() {
+		return this.renderRoot?.querySelector('#font-size').value;
+	}
+	_on_font_size_change() {
+        const options = {
+			detail: {
+				font_size: this._font_size,
+			},
+			bubbles: true,
+			composed: true,
+		};
+		this.dispatchEvent(new CustomEvent('update-font-size', options));
+	}
 
     render() {
         return html`
@@ -59,14 +73,23 @@ export class FurtherOptionsSelector extends LitElement {
 				@click=${this._update_plot_type}
 				data-test-id="plot-type-button"
 			>${this.plot_type + " chart"}</button>
+			<label for="show-n">Show totals in charts</label>
 			<input 
 				type="checkbox"
 				data-test-id="n-checkbox" 
 				id="show-n"
 				.checked=${this.show_n}
 				@click=${this._toggle_show_n}
-			>
-			<label for="show-n">Show totals in charts</label><br>
+			></input>
+			<label for="font-size">Font size</label><br>
+			<input 
+				id="font-size" 
+				type="number"
+				.value=${this.font_size}
+				min="5"
+				max="30"
+				@change=${this._on_font_size_change}
+			></input>
         </div>
         `;
     }
@@ -76,6 +99,9 @@ export class FurtherOptionsSelector extends LitElement {
 		css`
 		.parent  *  {
 			margin: 3px;
+		}
+		input[type='number']{
+			width: 3em;
 		}
 	`
 	];
