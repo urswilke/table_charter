@@ -299,16 +299,15 @@ export class TableDataSelector extends LitElement {
 				this.params === undefined,
 				() => html`<div></div>`,
 				() => html`
-				<div class="parent">
+				<div class="selector-group">
 					<label>Show absolute / percent values</label>
 					<num_type-selector
-						class="show_in_same_line" 		
 						@update-num_type="${this._on_num_type_update}"
 						.all_num_types=${this.params.row_type}
 						.chosen_num_type=${this.choices.row_type}>
 					</num_type-selector>
 				</div>
-				<div>
+				<div class="selector-group">
 					<label>Question</label>
 					<question-selector 					
 						data-test-id="question-selector"	
@@ -317,7 +316,7 @@ export class TableDataSelector extends LitElement {
 						.all_questions=${this.params.title_table}>
 					</question-selector>
 				</div>
-				<div id="header-multi-sel">
+				<div class="selector-group" id="header-multi-sel">
 					<label for="headers">Headers</label>
 					<multi-selector
 						id="headers" 		
@@ -333,7 +332,7 @@ export class TableDataSelector extends LitElement {
 				</div>
 				<!-- https://stackoverflow.com/a/2062264 -->
 				<span class="clear"></span>
-				<div id="row-multi-sel">
+				<div class="selector-group" id="row-multi-sel">
 					<label for="rows">Rows</label>
 					<multi-selector 
 						id="rows"		
@@ -348,7 +347,7 @@ export class TableDataSelector extends LitElement {
 					</multi-selector>
 				</div>
 				<span class="clear"></span>
-				<div class="parent">
+				<div class="selector-group">
 					<label>Settings</label>
 					<button
 						data-test-id="show-hide-button"
@@ -356,7 +355,7 @@ export class TableDataSelector extends LitElement {
 						${this.choices.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
 					</button>
 					<div class=${!this.choices.collapsed_view ? "" : "hide"}>
-						<label for="colors">Color</label>
+						<hr></hr>
 						<colorscale-selector 	
 							id="colors"		
 							data-test-id="color-scale-selector"	
@@ -369,6 +368,7 @@ export class TableDataSelector extends LitElement {
 							.chosen_colorscheme=${this.choices.color_scheme}>
 						</colorscale-selector>
 					</div>
+					<hr></hr>
 					<further-options-selector
 						@update-xy="${this._on_xy_update}"
 						@update-plot_type="${this._on_plot_type_update}"
@@ -394,9 +394,6 @@ export class TableDataSelector extends LitElement {
 			option:checked {
 				background: red linear-gradient(#333,#333);
 			}
-			.show_in_same_line {
-				display:inline-block;
-			}
 			label {
                 background: #5e677b;
 				color: white;
@@ -406,7 +403,7 @@ export class TableDataSelector extends LitElement {
 				padding: 5px;
 				padding-left: 15px;
 			}
-			div {
+			div.selector-group {
 				/* padding: 8px; */
 				margin-left: 10px;
 				margin-top: 10px;
@@ -416,9 +413,7 @@ export class TableDataSelector extends LitElement {
 			.hide {
 				display: none
 			}
-			.parent  * + * {
-				margin: 3px;
-			}
+
 
 		`
 	];

@@ -44,9 +44,9 @@ export class ColorscaleSelector extends LitElement {
 
     render() {
         return html`
-        <div class="parent">
+        <div class="selector-group">
         <div class= "subselect">
-            <label for="colorscale-selector">scale</label>
+            <label for="colorscale-selector">color scale</label>
             <select id="colorscale-selector" @change=${this._update_colorscale} ?disabled=${this.colorscale_disabled}>
                 ${this.all_colorscales.map((col) => html`
                     <option .selected=${this.chosen_colorscale === col}>
@@ -56,7 +56,7 @@ export class ColorscaleSelector extends LitElement {
             </select>
         </div>
         <div class= "subselect">
-            <label for="colorscheme-selector">scheme</label>
+            <label for="colorscheme-selector">color scheme</label>
             <select id="colorscheme-selector" @change=${this._update_colorscheme}>
                 ${this.all_colorschemes.map((col) => html`
                     <option .selected=${this.chosen_colorscheme === col}>
@@ -79,7 +79,7 @@ export class ColorscaleSelector extends LitElement {
 				display: block;
 				padding-left: 7px;
 			}
-			.parent  *  {
+			.selector-group  *  {
 				margin: 3px;
 			}
 	`

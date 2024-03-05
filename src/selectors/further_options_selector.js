@@ -75,33 +75,42 @@ export class FurtherOptionsSelector extends LitElement {
 				@click=${this._update_plot_type}
 				data-test-id="plot-type-button"
 			>${this.plot_type + " chart"}</button>
+			<hr></hr>
 			
-			<label for="show-n">Show totals in charts</label>
-			<input 
-				type="checkbox"
-				data-test-id="n-checkbox" 
-				id="show-n"
-				.checked=${this.show_n}
-				@click=${this._toggle_checkboxes}
-			></input>
-			<label for="separate-headers">Spatially separate headers</label>
-			<input 
-				type="checkbox"
-				data-test-id="separate-headers-checkbox" 
-				id="separate-headers"
-				.checked=${this.separate_headers}
-				@click=${this._toggle_checkboxes}
-			></input>
+			<form>
+				<field>
+					<label for="show-n">Show totals in charts</label>
+					<input 
+						type="checkbox"
+						data-test-id="n-checkbox" 
+						id="show-n"
+						.checked=${this.show_n}
+						@click=${this._toggle_checkboxes}
+					></input>
+				</field>
+				<field>
+					<label for="separate-headers">Spatially separate headers</label>
+					<input 
+						type="checkbox"
+						data-test-id="separate-headers-checkbox" 
+						id="separate-headers"
+						.checked=${this.separate_headers}
+						@click=${this._toggle_checkboxes}
+					></input>
+				</field>
+				<field>
 
-			<label for="font-size">Font size</label><br>
-			<input 
-				id="font-size" 
-				type="number"
-				.value=${this.font_size}
-				min="5"
-				max="30"
-				@change=${this._on_font_size_change}
-			></input>
+					<label for="font-size">Font size</label>
+					<input 
+						id="font-size" 
+						type="number"
+						.value=${this.font_size}
+						min="5"
+						max="30"
+						@change=${this._on_font_size_change}
+					></input>
+				</field>
+			</form>
         </div>
         `;
     }
@@ -115,6 +124,16 @@ export class FurtherOptionsSelector extends LitElement {
 		input[type='number']{
 			width: 3em;
 		}
+		field {
+			line-height: 2em;
+		}
+		form {
+			display: grid;
+		}
+		label {
+			float: left;
+		}
+
 	`
 	];
 }
