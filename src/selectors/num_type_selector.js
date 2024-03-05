@@ -46,6 +46,12 @@ export class RowtypeSelector extends LitElement {
 
 	static styles = [
 		unsafeCSS(sharedStyles),
+		css`
+			select {
+				width: 100%;
+				text-align-last: center;
+			}
+		`
 	];
 }
 customElements.define('num_type-selector', RowtypeSelector);
