@@ -29,7 +29,7 @@ export class PlotOptions {
 		// e.row_lab_fun = (x) => x.RowValue;
 		e.color_order = [...new Set(this.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(e.row_lab_fun))];
 		e.x_order = [...new Set(this.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(e.col_lab_fun))];
-		e.x_order_gaps = add_gaps_to_xlabels(
+		e.x_order = add_gaps_to_xlabels(
 			e.x_order, 
 			distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(x => x.ColTitle1)
 		);
@@ -50,7 +50,7 @@ export class PlotOptions {
 			label: null,
 		}
 		e.x2_opts = {
-			domain: e.x_order_gaps,
+			domain: e.x_order,
 			label: null
 		}
 		e.n_decimals = this.plot_data[0].RowDecimals;
