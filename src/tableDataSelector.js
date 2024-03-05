@@ -348,14 +348,16 @@ export class TableDataSelector extends LitElement {
 					</multi-selector>
 				</div>
 				<span class="clear"></span>
+				<button
+					id="show-hide"
+					data-test-id="show-hide-button"
+					@click="${this._on_expand}">
+					${this.choices.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
+				</button>
+				<span class="clear"></span>
 				<div class="selector-group">
-					<label>Settings</label>
-					<button
-						data-test-id="show-hide-button"
-						@click="${this._on_expand}">
-						${this.choices.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
-					</button>
-					<div class=${!this.choices.collapsed_view ? "" : "hide"}>
+					<div id="settings" class=${!this.choices.collapsed_view ? "" : "hide"}>
+						<label for="settings">Settings</label>
 						<hr></hr>
 						<further-options-selector
 							@update-xy="${this._on_xy_update}"
@@ -417,6 +419,9 @@ export class TableDataSelector extends LitElement {
 			}
 			.hide {
 				display: none
+			}
+			#show-hide {
+				width: 100%;
 			}
 
 
