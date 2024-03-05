@@ -70,7 +70,8 @@ export class TableDataSelector extends LitElement {
 			colorscale_disabled: colorscale_disabled,
 			plot_type: gen_plot_type_string(this),
 			...(colorscale_disabled && {
-				color_scale: "categorical"
+				color_scale: "categorical",
+				...this.saved[this.i_tab],
 			}),
 		})
 		this.sel_header_data()
@@ -137,15 +138,8 @@ export class TableDataSelector extends LitElement {
 	}
 	update_choices(obj) {
 		this.choices = produce(this.choices, draft => (
-			{...draft, ...obj, ...this.saved[this.i_tab]}
+			{...draft, ...obj}
 		))
-	}
-	update_choices_perm(obj) {
-		this.saved[this.i_tab] = {
-			...this.saved[this.i_tab],
-			...obj
-		}
-		this.update_choices(obj)
 	}
 	toggle_filtered_class(selector_string, input_data, output_data) {
 		if (input_data.length === 0) {
@@ -162,11 +156,15 @@ export class TableDataSelector extends LitElement {
 	
 	// Talk to parent:
 	_update_plot_data() {
+		// this.saved[this.i_tab] = {...this.saved[this.i_tab], ...this.choices}
+		this.saved[this.i_tab] = produce(this.saved[this.i_tab], draft => ({
+			...draft, ...this.choices
+		})) 
 		const options = {
 			detail: {
 				data: {
 					plot_data: this.plot_data,
-					choices: this.choices,
+					choices: this.saved[this.i_tab],
 				}
 			},
 			bubbles: true,
@@ -179,7 +177,7 @@ export class TableDataSelector extends LitElement {
 
 	// Listen to children:
 	_on_header_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			header_table: e.detail.prop_table
 		})
 		this.sel_header_data()
@@ -189,6 +187,7 @@ export class TableDataSelector extends LitElement {
 		let title_table = this.params.title_table[e.detail.chosen_tab_no];
 		this.i_tab = Number(title_table.i_tab);
 		this.update_choices({
+			...this.saved[this.i_tab],
 			i_tab: this.i_tab,
 			tab_title: title_table.TabTitle
 		})
@@ -197,14 +196,14 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_num_type_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			row_type: e.detail.chosen_num_type
 		})
 		this.sel_num_type_data()
 		this._update_plot_data()
 	}
 	_on_rows_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			row_table: e.detail.prop_table
 		})
 	
@@ -227,7 +226,7 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			color_scale: e.detail.chosen_colorscale
 		})
 		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
@@ -236,31 +235,31 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_colorscheme_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			color_scheme: e.detail.chosen_colorscheme
 		})
 		this._update_plot_data()
 	}
 	_on_xy_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			xy: e.detail.xy
 		})
 		this._update_plot_data()
 	}
 	_on_show_n_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			show_n: e.detail.show_n
 		})
 		this._update_plot_data()
 	}
 	_on_plot_type_update(e) {
-		this.update_choices_perm({
+		this.update_choices({
 			plot_type: e.detail.plot_type
 		})
 		this._update_plot_data()
 	}
 	_on_expand() {
-		this.update_choices_perm({
+		this.update_choices({
 			collapsed_view: !this.choices.collapsed_view
 		})
 	}
