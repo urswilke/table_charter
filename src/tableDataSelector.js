@@ -300,71 +300,61 @@ export class TableDataSelector extends LitElement {
 				() => html`<div></div>`,
 				() => html`
 				<div class="parent">
-					<label>Settings</label>
+					<label>Show absolute / percent values</label>
 					<num_type-selector
 						class="show_in_same_line" 		
 						@update-num_type="${this._on_num_type_update}"
 						.all_num_types=${this.params.row_type}
 						.chosen_num_type=${this.choices.row_type}>
 					</num_type-selector>
+				</div>
+				<div>
+					<label>Question</label>
+					<question-selector 					
+						data-test-id="question-selector"	
+						@update-question="${this._on_question_update}" 		
+						.chosen_tab_no=${this.choices.i_tab} 
+						.all_questions=${this.params.title_table}>
+					</question-selector>
+				</div>
+				<div id="header-multi-sel">
+					<label for="headers">Headers</label>
+					<multi-selector
+						id="headers" 		
+						data-test-id="header-selector"	
+						.mainsel_text = ${"header"}
+						.subsel_text = ${"sub-header"}
+						.parent_string = ${"ColTitle1"}
+						.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
+						@update-multi-select="${this._on_header_update}"
+						.collapsed_view = "${this.choices.collapsed_view}"		
+						.prop_table=${this.choices.header_table}>
+					</multi-selector>
+				</div>
+				<!-- https://stackoverflow.com/a/2062264 -->
+				<span class="clear"></span>
+				<div id="row-multi-sel">
+					<label for="rows">Rows</label>
+					<multi-selector 
+						id="rows"		
+						data-test-id="row-selector"	
+						.mainsel_text = ${"type(s)"}
+						.subsel_text = ${"row(s)"}
+						.parent_string = ${"RowContent"}
+						.children_fun = ${(x) => x.RowTitle1}
+						@update-multi-select="${this._on_rows_update}" 		
+						.collapsed_view = "${this.choices.collapsed_view}"		
+						.prop_table=${this.choices.row_table}>	   																
+					</multi-selector>
+				</div>
+				<span class="clear"></span>
+				<div class="parent">
+					<label>Settings</label>
 					<button
 						data-test-id="show-hide-button"
 						@click="${this._on_expand}">
 						${this.choices.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
 					</button>
-					<further-options-selector
-						@update-xy="${this._on_xy_update}"
-						@update-plot_type="${this._on_plot_type_update}"
-						@update-checkboxes="${this._on_checkbox_update}"
-						@update-font-size="${this._on_font_size_update}"
-						.xy=${this.choices.xy}
-						.plot_type=${this.choices.plot_type}
-						.show_n=${this.choices.show_n}
-						.separate_headers=${this.choices.separate_headers}
-						.font_size=${this.choices.font_size}
-					>
-					</further-options-selector>
-				</div>
-					<div>
-						<label>Question</label>
-						<question-selector 					
-							data-test-id="question-selector"	
-							@update-question="${this._on_question_update}" 		
-							.chosen_tab_no=${this.choices.i_tab} 
-							.all_questions=${this.params.title_table}>
-						</question-selector>
-					</div>
-					<div id="header-multi-sel">
-						<label for="headers">Headers</label>
-						<multi-selector
-							id="headers" 		
-							data-test-id="header-selector"	
-							.mainsel_text = ${"header"}
-							.subsel_text = ${"sub-header"}
-							.parent_string = ${"ColTitle1"}
-							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
-							@update-multi-select="${this._on_header_update}"
-							.collapsed_view = "${this.choices.collapsed_view}"		
-							.prop_table=${this.choices.header_table}>
-						</multi-selector>
-					</div>
-					<!-- https://stackoverflow.com/a/2062264 -->
-					<span class="clear"></span>
-					<div id="row-multi-sel">
-						<label for="rows">Rows</label>
-						<multi-selector 
-							id="rows"		
-							data-test-id="row-selector"	
-							.mainsel_text = ${"type(s)"}
-							.subsel_text = ${"row(s)"}
-							.parent_string = ${"RowContent"}
-							.children_fun = ${(x) => x.RowTitle1}
-							@update-multi-select="${this._on_rows_update}" 		
-							.collapsed_view = "${this.choices.collapsed_view}"		
-							.prop_table=${this.choices.row_table}>	   																
-						</multi-selector>
-					</div>
-					<span class="clear"></span>
 					<div class=${!this.choices.collapsed_view ? "" : "hide"}>
 						<label for="colors">Color</label>
 						<colorscale-selector 	
@@ -379,6 +369,19 @@ export class TableDataSelector extends LitElement {
 							.chosen_colorscheme=${this.choices.color_scheme}>
 						</colorscale-selector>
 					</div>
+					<further-options-selector
+						@update-xy="${this._on_xy_update}"
+						@update-plot_type="${this._on_plot_type_update}"
+						@update-checkboxes="${this._on_checkbox_update}"
+						@update-font-size="${this._on_font_size_update}"
+						.xy=${this.choices.xy}
+						.plot_type=${this.choices.plot_type}
+						.show_n=${this.choices.show_n}
+						.separate_headers=${this.choices.separate_headers}
+						.font_size=${this.choices.font_size}
+					>
+					</further-options-selector>
+				</div>
 				`
 			)}
 		`;
