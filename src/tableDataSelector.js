@@ -57,6 +57,7 @@ export class TableDataSelector extends LitElement {
 		this.params.color_scale = ["categorical", "ordinal"];
 		this.choices.collapsed_view = true;
 		this.choices.show_n = false;
+		this.choices.separate_headers = true;
 		this.choices.font_size = 16;
 		this.saved = new Array(this.params.title_table.length).fill({})
 		this.sel_question_data()
@@ -253,9 +254,10 @@ export class TableDataSelector extends LitElement {
 		})
 		this._update_plot_data()
 	}
-	_on_show_n_update(e) {
+	_on_checkbox_update(e) {
 		this.update_choices({
-			show_n: e.detail.show_n
+			show_n: e.detail.show_n,
+			separate_headers: e.detail.separate_headers,
 		})
 		this._update_plot_data()
 	}
@@ -313,11 +315,12 @@ export class TableDataSelector extends LitElement {
 					<further-options-selector
 						@update-xy="${this._on_xy_update}"
 						@update-plot_type="${this._on_plot_type_update}"
-						@update-show-n="${this._on_show_n_update}"
+						@update-checkboxes="${this._on_checkbox_update}"
 						@update-font-size="${this._on_font_size_update}"
 						.xy=${this.choices.xy}
 						.plot_type=${this.choices.plot_type}
 						.show_n=${this.choices.show_n}
+						.separate_headers=${this.choices.separate_headers}
 						.font_size=${this.choices.font_size}
 					>
 					</further-options-selector>

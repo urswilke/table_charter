@@ -26,10 +26,12 @@ export class PlotOptions {
 			(x) => x.RowValue;
 		e.color_order = [...new Set(this.plot_data.sort((a, b) => a.RowNo - b.RowNo).map(e.row_lab_fun))];
 		e.x_order = [...new Set(this.plot_data.sort((a, b) => a.ColNo - b.ColNo).map(e.col_lab_fun))];
-		e.x_order = add_gaps_to_xlabels(
-			e.x_order, 
-			distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(x => x.ColTitle1)
-		);
+		if (o.separate_headers) {
+			e.x_order = add_gaps_to_xlabels(
+				e.x_order, 
+				distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(x => x.ColTitle1)
+			);	
+		}
 		
 		const plot_opts = {}
 		plot_opts[e.x2] = e.col_lab_fun
