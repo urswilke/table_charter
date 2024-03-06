@@ -42,19 +42,10 @@ export class QuestionSelector extends LitElement {
 		unsafeCSS(sharedStyles),
 		css`
             select {
-				width:98%; 
+				width:100%; 
 				overflow:hidden; 
 				text-overflow:ellipsis;
-                padding-right: 10px;
             }
-			label {
-				display:flex;
-				flex-direction:column;
-				padding-left: 7px;
-			}
-			.parent  *  {
-				margin: 3px;
-			}
         `
 	];
 }

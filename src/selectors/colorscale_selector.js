@@ -79,9 +79,6 @@ export class ColorscaleSelector extends LitElement {
 				display: block;
 				padding-left: 7px;
 			}
-			.selector-group  *  {
-				margin: 3px;
-			}
 	`
 	];
 }

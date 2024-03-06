@@ -81,9 +81,6 @@ export class AdvancedOptionsSelector extends LitElement {
 	static styles = [
 		unsafeCSS(sharedStyles),
 		css`
-		.parent  *  {
-			margin: 3px;
-		}
 		input[type='number']{
 			width: 3em;
 		}

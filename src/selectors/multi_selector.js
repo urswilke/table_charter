@@ -111,9 +111,6 @@ export class MultiSelector extends LitElement {
 			.subselect {
 				display:inline-block;
 			}
-			.parent  *  {
-				margin: 3px;
-			}
 			label {
 				display:flex;
 				flex-direction:column;
