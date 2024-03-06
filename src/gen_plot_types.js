@@ -116,8 +116,8 @@ export class PlotOptions {
 		}
 
 		this.options = {
-			marginTop: 30,
-			marginRight: 70,
+			marginTop: 40,
+			marginRight: 120,
 			marginLeft: this.e.marginLeft,
 			marginBottom: this.e.marginBottom,
 			color: this.e.color_opts,
