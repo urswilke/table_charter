@@ -363,7 +363,11 @@ export class TableDataSelector extends LitElement {
 					${this.choices.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
 				</button>
 				<span class="clear"></span>
-				<div id="settings" class=${!this.choices.collapsed_view ? "" : "hide"}>
+				<div 
+					id="settings"
+					data-test-id="settings-div"
+					class=${!this.choices.collapsed_view ? "" : "hide"}
+				>
 					<div class="selector-group">
 						<label for="settings">Settings</label>
 						<div class="content">

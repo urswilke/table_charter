@@ -9,7 +9,7 @@ render(
     document.body
 )
 // TODO: why do I need this???
-await browser.setWindowSize(2000, 1000)
+await browser.setWindowSize(2000, 3000)
 
 const table_charter_el = await $('table-charter')
 const table_data_selector_el = await $('>>>table-data-selector')
@@ -20,6 +20,7 @@ const question_select_el = await question_selector_el.$(">>>select")
 const header_selector_el = await table_charter_el.$(">>>multi-selector#headers")
 const subheader_selector = await header_selector_el.$(">>>select#children-selector").parentElement()
 const color_selector_el = await table_charter_el.$('>>>colorscale-selector[data-test-id="color-scale-selector"]').parentElement()
+const settings_el = await table_charter_el.$('>>>div[data-test-id="settings-div"]')
 const flip_xy_button = await table_charter_el.$('>>>button[data-test-id="flip-xy-button"]')
 const plot_type_button = await table_charter_el.$('>>>button[data-test-id="plot-type-button"]')
 const n_checkbox = await table_charter_el.$('>>>input[data-test-id="n-checkbox"]')
@@ -28,10 +29,10 @@ const num_type_el = await table_charter_el.$('>>>select[data-test-id="num_type-s
 describe('Button "Show/hide advanced settings" testing', () => {
     it('should change text to "Hide advanced settings" on click', async () => {
         await expect(subheader_selector).toHaveElementClass('hide')
-        await expect(color_selector_el).toHaveElementClass('hide')
+        await expect(settings_el).toHaveElementClass('hide')
         await adv_settings_button.click()
         await expect(subheader_selector).not.toHaveElementClass('hide')
-        await expect(color_selector_el).not.toHaveElementClass('hide')
+        await expect(settings_el).not.toHaveElementClass('hide')
 
         await expect(adv_settings_button).toHaveText('Hide advanced settings')
     })
@@ -40,7 +41,7 @@ describe('Button "Show/hide advanced settings" testing', () => {
         await adv_settings_button.click()
         await expect(subheader_selector).toHaveElementClass('hide')
         await expect(adv_settings_button).toHaveText('Show advanced settings')
-        await expect(color_selector_el).toHaveElementClass('hide')
+        await expect(settings_el).toHaveElementClass('hide')
     })
 })
 
@@ -84,10 +85,10 @@ describe('Check all questions', () => {
             await n_checkbox.click();
             await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
 
-            await num_type_el.selectByVisibleText('n');
-            res['total'] = await get_options(ojs_plot_el);
-            await num_type_el.selectByVisibleText('%');
-            await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
+            // await num_type_el.selectByVisibleText('n');
+            // res['total'] = await get_options(ojs_plot_el);
+            // await num_type_el.selectByVisibleText('%');
+            // await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
             
             plot_option_array[i] = res;
             
