@@ -428,6 +428,7 @@ export class TableDataSelector extends LitElement {
 				margin-bottom: 5px;
 				border-style: solid;
 				border-radius: 8px;
+				border-width: 2px;
 			}
 			div.content {
 				padding: 3px;
