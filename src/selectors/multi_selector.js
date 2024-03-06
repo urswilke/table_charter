@@ -99,22 +99,28 @@ export class MultiSelector extends LitElement {
 		buttonStyles,
 		// TODO: use different color if only part of the parents are checked...!
 		css`
-			option {
-				text-overflow:ellipsis;
-			}
-			select {
-				width:100%; 
-				/* overflow:hidden;  */
-			    white-space:nowrap;
-				text-overflow:ellipsis;
+			div.parent {
+				display: flex; 
 			}
 			.subselect {
-				display:inline-block;
+				flex: auto; 
+				/* both will have equal width: */
+				flex-basis: 0;
+			}
+			select {
+				width: 100%;
+			}
+			option {
+				text-overflow: ellipsis;
+				margin: 1px;
+				overflow: hidden;
+				white-space: nowrap;
 			}
 			label {
-				display:flex;
-				flex-direction:column;
 				padding-left: 7px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
 			}
 			.hide {
 				display: none
