@@ -293,10 +293,11 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 
 function set_axis_labels(plot_options) {
 	const xy = plot_options.e.x2;
+	const is_x = xy === "x"
 	const plot_width = plot_options.options.width;
 	const n_bars = plot_options.options[xy].domain.length
 	const font_size = Number(plot_options.options.style.fontSize.replace(/px/, ""));
-	const text_width = xy === "x" ? Math.floor(plot_width / n_bars / font_size * 0.8) : 7
+	const text_width = is_x ? Math.floor(plot_width / n_bars / font_size * 0.8) : 7
 	// small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
 	const text_margin_left = 5;
 
@@ -307,10 +308,10 @@ function set_axis_labels(plot_options) {
 		text: "ColTitle1",
 		tickSize: 0,
 		tickFormat: x => x.ColTitle2,
-		dx: xy === "x" ? -text_width / 2 * font_size + text_margin_left : -200,
-		dy: xy === "x" ? 30 : 0,
+		dx: is_x ? -text_width / 2 * font_size + text_margin_left : -200,
+		dy: is_x ? 30 : 0,
 		label: null,
-		lineWidth: xy === "x" ? text_width : n_bars,
+		lineWidth: is_x ? text_width : n_bars,
 		textOverflow: "ellipsis-end",
 		fontWeight: "bold",
 	};
@@ -322,7 +323,7 @@ function set_axis_labels(plot_options) {
 		tickFormat: x => x.ColTitle2,
 		tickSize: 0,
 		label: null,
-		dx: xy === "x" ? -text_width / 2 * font_size + text_margin_left : -100,
+		dx: is_x ? -text_width / 2 * font_size + text_margin_left : -100,
 		lineWidth: text_width,
 		textOverflow: "ellipsis-end",
 	};
