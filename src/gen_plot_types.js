@@ -298,6 +298,8 @@ function set_axis_labels(plot_options) {
 	const n_bars = plot_options.options[xy].domain.length
 	const font_size = Number(plot_options.options.style.fontSize.replace(/px/, ""));
 	const text_width = is_x ? Math.floor(plot_width / n_bars / font_size * 0.8) : 7
+	const line_width_px = 100
+	const line_width = is_x ? text_width : line_width_px * 0.9 / font_size
 	// small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
 	const text_margin_left = 5;
 
@@ -308,10 +310,10 @@ function set_axis_labels(plot_options) {
 		text: "ColTitle1",
 		tickSize: 0,
 		tickFormat: x => x.ColTitle2,
-		dx: is_x ? -text_width / 2 * font_size + text_margin_left : -200,
+		dx: is_x ? -text_width / 2 * font_size + text_margin_left : -2 * line_width_px,
 		dy: is_x ? 30 : 0,
 		label: null,
-		lineWidth: is_x ? text_width : n_bars,
+		lineWidth: line_width,
 		textOverflow: "ellipsis-end",
 		fontWeight: "bold",
 	};
@@ -323,8 +325,8 @@ function set_axis_labels(plot_options) {
 		tickFormat: x => x.ColTitle2,
 		tickSize: 0,
 		label: null,
-		dx: is_x ? -text_width / 2 * font_size + text_margin_left : -100,
-		lineWidth: text_width,
+		dx: is_x ? -text_width / 2 * font_size + text_margin_left : -1 * line_width_px,
+		lineWidth: line_width,
 		textOverflow: "ellipsis-end",
 	};
 	header_tick_opts[xy] = "ColTitle2"
