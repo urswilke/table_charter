@@ -41,7 +41,7 @@ export class AdvancedOptionsSelector extends LitElement {
         return html`
         <div class="parent">
 			<form>
-				<field>
+				<div>
 					<label for="show-n">Show totals in charts</label>
 					<input 
 						type="checkbox"
@@ -50,8 +50,8 @@ export class AdvancedOptionsSelector extends LitElement {
 						.checked=${this.show_n}
 						@click=${this._toggle_checkboxes}
 					></input>
-				</field>
-				<field>
+				</div>
+				<div>
 					<label for="separate-headers">Spatially separate headers</label>
 					<input 
 						type="checkbox"
@@ -60,8 +60,8 @@ export class AdvancedOptionsSelector extends LitElement {
 						.checked=${this.separate_headers}
 						@click=${this._toggle_checkboxes}
 					></input>
-				</field>
-				<field>
+				</div>
+				<div>
 
 					<label for="font-size">Font size</label>
 					<input 
@@ -72,7 +72,7 @@ export class AdvancedOptionsSelector extends LitElement {
 						max="30"
 						@change=${this._on_font_size_change}
 					></input>
-				</field>
+				</div>
 			</form>
         </div>
         `;
@@ -84,16 +84,22 @@ export class AdvancedOptionsSelector extends LitElement {
 		input[type='number']{
 			width: 3em;
 		}
-		field {
-			line-height: 2em;
-		}
 		form {
-			display: grid;
+			display: table;
+			border-spacing: 7px;
+		}
+		form>div {
+			display: table-row;
 		}
 		label {
-			float: left;
+			display: table-cell;
+			text-align: right;
 		}
 
+input[type=checkbox] {
+  vertical-align: bottom;
+  margin-left:0;
+}
 	`
 	];
 }
