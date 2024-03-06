@@ -410,10 +410,10 @@ export class TableDataSelector extends LitElement {
 				padding: 5px;
 				padding-left: 15px;
 			}
-			div.selector-group {
+			div.selector-group,#show-hide {
 				/* padding: 8px; */
-				margin-left: 10px;
-				margin-top: 10px;
+				margin-top: 5px;
+				margin-bottom: 5px;
 				border-style: solid;
 				border-radius: 8px;
 			}
