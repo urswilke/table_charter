@@ -123,7 +123,7 @@ export class OJSPlot extends LitElement {
 			}
 			h4 {
 				font-size: var(--font-size);
-				/* margin-left: 40px; */
+				margin-left: 40px;
 			}
 		`
 	];
