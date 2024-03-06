@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 
-import { xlsx_to_json_array, distinct, gen_header_table, gen_row_table, filter_sel_headers, filter_sel_rows, gen_plot_type_string, prepare_data } from './utils.js'
+import { xlsx_to_json_array, distinct, gen_header_table, gen_row_table, filter_sel_headers, filter_sel_rows, gen_plot_type_string, prepare_data, save_file } from './utils.js'
 
 import './selectors/question_selector.js'
 import './selectors/multi_selector.js'
@@ -60,7 +60,9 @@ export class TableDataSelector extends LitElement {
 		this.choices.show_n = false;
 		this.choices.separate_headers = true;
 		this.choices.font_size = 16;
-		this.saved = new Array(this.params.title_table.length).fill({})
+		const saved_settings = document.querySelector("table-charter").dataset.savedSettings;
+		this.saved = (saved_settings && JSON.parse(saved_settings)) || 
+			new Array(this.params.title_table.length).fill({})
 		this.sel_question_data()
 	}
 
@@ -399,6 +401,8 @@ export class TableDataSelector extends LitElement {
 								.all_colorschemes=${this.params.color_schemes}	
 								.chosen_colorscheme=${this.choices.color_scheme}>
 							</colorscale-selector>
+							<hr></hr>
+							<button @click="${save_file}">Save file</button>
 						</div>
 					</div>
 				</div>

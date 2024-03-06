@@ -122,3 +122,32 @@ export function prepare_data(data_compressed) {
 		i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo)
 	}));
 }
+
+
+export function save_file() {
+	document.querySelector("table-charter").dataset.savedSettings = JSON.stringify(this.saved)
+	var text = document.querySelector("html").innerHTML
+	var element = document.createElement("a");
+	element.setAttribute(
+		"href",
+		"data:text/plain;charset=utf-8," + encodeURIComponent(text)
+	);
+	const whole_file_name = location.href;
+	var file_name = whole_file_name
+		.replace(/\/$/, "")
+		.replace(/\.html$/, "")
+		.split("/");
+	file_name = file_name[file_name.length - 1];
+	var time_string = new Date().toJSON().slice(0,19);
+	var ind2 = file_name.lastIndexOf('.');
+
+	var new_url = file_name.substring(ind2) + "_" + time_string + ".html";
+	element.setAttribute("download", new_url);
+
+	element.style.display = "none";
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
+}
