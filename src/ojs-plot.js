@@ -23,6 +23,10 @@ export class OJSPlot extends LitElement {
 			return this
 		}
 		this.plot_options = new PlotOptions(val)
+		const font_size = this.plot_options.o.font_size;
+		this.style.setProperty('--font-size', String(font_size) + "px")
+		this.style.setProperty('--big-font-size', String(2 * font_size) + "px")
+
 		this.chartTitle = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabTitle : null
 		const chartHeaders = !!val.plot_data && val.plot_data.length > 0 ? 
 			"vs " + [...new Set(val.plot_data.map(x => x.ColTitle1))].join(" / ") :
@@ -103,7 +107,7 @@ export class OJSPlot extends LitElement {
 				white-space: pre-wrap;
 			}
 			.large-font-swatches, .large-font-ramp {
-				font-size: 16px;
+				font-size: var(--font-size);
 				/* https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements/4767993#4767993: */
 				display: inline-block;
 			}
@@ -113,6 +117,13 @@ export class OJSPlot extends LitElement {
 			#no-data {
 				border: 0.05em solid red;
 				padding: 10px;
+			}
+			h2 {
+				font-size: var(--big-font-size);
+			}
+			h4 {
+				font-size: var(--font-size);
+				/* margin-left: 40px; */
 			}
 		`
 	];
