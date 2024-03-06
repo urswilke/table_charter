@@ -15,7 +15,7 @@ Schnelle Umsetzung</h2>
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,474.6749546749546)" d="M0,0L-6,0"/><path transform="translate(60,429.34990934990935)" d="M0,0L-6,0"/><path transform="translate(60,384.024864024864)" d="M0,0L-6,0"/><path transform="translate(60,338.6998186998187)" d="M0,0L-6,0"/><path transform="translate(60,293.3747733747733)" d="M0,0L-6,0"/><path transform="translate(60,248.04972804972806)" d="M0,0L-6,0"/><path transform="translate(60,202.72468272468274)" d="M0,0L-6,0"/><path transform="translate(60,157.3996373996374)" d="M0,0L-6,0"/><path transform="translate(60,112.07459207459208)" d="M0,0L-6,0"/><path transform="translate(60,66.74954674954675)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,474.6749546749546)">1</text><text y="0.32em" transform="translate(60,429.34990934990935)">2</text><text y="0.32em" transform="translate(60,384.024864024864)">3</text><text y="0.32em" transform="translate(60,338.6998186998187)">4</text><text y="0.32em" transform="translate(60,293.3747733747733)">5</text><text y="0.32em" transform="translate(60,248.04972804972806)">6</text><text y="0.32em" transform="translate(60,202.72468272468274)">7</text><text y="0.32em" transform="translate(60,157.3996373996374)">8</text><text y="0.32em" transform="translate(60,112.07459207459208)">9</text><text y="0.32em" transform="translate(60,66.74954674954675)">10</text></g><g aria-label="bar"><rect x="140" width="711" y="30" height="245" fill="rgb(35, 23, 27)"><title>row: 1 - völlig unzufrieden
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,475.5999555999556)" d="M0,0L-6,0"/><path transform="translate(60,431.1999111999112)" d="M0,0L-6,0"/><path transform="translate(60,386.7998667998668)" d="M0,0L-6,0"/><path transform="translate(60,342.3998223998224)" d="M0,0L-6,0"/><path transform="translate(60,297.99977799977796)" d="M0,0L-6,0"/><path transform="translate(60,253.5997335997336)" d="M0,0L-6,0"/><path transform="translate(60,209.1996891996892)" d="M0,0L-6,0"/><path transform="translate(60,164.7996447996448)" d="M0,0L-6,0"/><path transform="translate(60,120.39960039960039)" d="M0,0L-6,0"/><path transform="translate(60,75.999555999556)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,475.5999555999556)">1</text><text y="0.32em" transform="translate(60,431.1999111999112)">2</text><text y="0.32em" transform="translate(60,386.7998667998668)">3</text><text y="0.32em" transform="translate(60,342.3998223998224)">4</text><text y="0.32em" transform="translate(60,297.99977799977796)">5</text><text y="0.32em" transform="translate(60,253.5997335997336)">6</text><text y="0.32em" transform="translate(60,209.1996891996892)">7</text><text y="0.32em" transform="translate(60,164.7996447996448)">8</text><text y="0.32em" transform="translate(60,120.39960039960039)">9</text><text y="0.32em" transform="translate(60,75.999555999556)">10</text></g><g aria-label="bar"><rect x="135" width="671" y="40" height="240" fill="rgb(35, 23, 27)"><title>row: 1 - völlig unzufrieden
 
 row value: 1
 header: GESAMT
@@ -32,7 +32,7 @@ header: GESAMT
 value: 2.7
 N: 37
 mean: 6.5
- (1)</title></rect><rect x="140" width="711" y="275" height="245" fill="rgb(144, 12, 0)"><title>row: 2
+ (1)</title></rect><rect x="135" width="671" y="280" height="240" fill="rgb(144, 12, 0)"><title>row: 2
 
 row value: 2
 header: GESAMT
@@ -49,7 +49,7 @@ header: GESAMT
 value: 2.7
 N: 37
 mean: 6.5
- (1)</title></rect></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-39,39.5)"><text y="0.71em" transform="translate(140,520)">GESAMT</text></g></svg><br /><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
+ (1)</title></rect></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
   display: block;
   height: auto;
   height: intrinsic;

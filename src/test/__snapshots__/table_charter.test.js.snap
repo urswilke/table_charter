@@ -2,1719 +2,13 @@
 
 exports[`Check all questions > should reproduce the plot options 1`] = `
 [
+  null,
   {
     "add_n": [
       [
         "input",
         {
-          "collapsed_view": true,
-          "color_scale": "categorical",
-          "color_scheme": "Tableau10",
-          "colorscale_disabled": false,
-          "font_size": 16,
-          "header_table": [
-            {
-              "ColNo": 1,
-              "ColTitle1": "GESAMT",
-              "selected": true,
-            },
-            {
-              "ColNo": 2,
-              "ColTitle1": "Region",
-              "ColTitle2": "Asien",
-              "selected": true,
-            },
-            {
-              "ColNo": 3,
-              "ColTitle1": "Region",
-              "ColTitle2": "Europa",
-              "selected": true,
-            },
-            {
-              "ColNo": 4,
-              "ColTitle1": "Region",
-              "ColTitle2": "Nordamerika",
-              "selected": true,
-            },
-            {
-              "ColNo": 5,
-              "ColTitle1": "Region",
-              "ColTitle2": "Pazifik",
-              "selected": true,
-            },
-          ],
-          "i_tab": 0,
-          "plot_type": "bar",
-          "row_table": [
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "2 - 4 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "5 - 9 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "10 - 19 Beschäftigte",
-              "selected": true,
-            },
-          ],
-          "row_type": "%",
-          "separate_headers": true,
-          "show_n": true,
-          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
-          "xy": "x",
-        },
-      ],
-      [
-        "derived",
-        {
-          "axis_": "axisX",
-          "col_lab_fun": {},
-          "color_opts": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "color_order": [
-            "2 - 4 Beschäftigte",
-            "5 - 9 Beschäftigte",
-            "10 - 19 Beschäftigte",
-          ],
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "n_decimals": 1,
-          "plot_opts": {
-            "x": {},
-            "y": "Value",
-          },
-          "row_lab_fun": {},
-          "x1": "y",
-          "x1_opts": {
-            "label": null,
-          },
-          "x2": "x",
-          "x2_opts": {
-            "domain": [
-              null,
-              null,
-              "Asien",
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-            "label": null,
-          },
-          "x_order": [
-            null,
-            null,
-            "Asien",
-            "Europa",
-            "Nordamerika",
-            "Pazifik",
-          ],
-        },
-      ],
-      [
-        "derived_p",
-        {
-          "bar_": "barY",
-          "group_": "groupX",
-          "group_args1": {
-            "text": "first",
-            "y": "sum",
-          },
-          "group_args2_bar": {
-            "fill": {},
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "title": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-          "group_args2_text": {
-            "fill": "#000000",
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "stroke": "#eeeeee",
-            "strokeWidth": 3,
-            "text": {},
-            "title": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-          "group_args2_text_n": {
-            "dy": -15,
-            "lineAnchor": "bottom",
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "text": {},
-            "x": {},
-            "y": "Value",
-          },
-          "is_x": true,
-          "stack_": "stackY",
-          "text_": "textY",
-        },
-      ],
-      [
-        "data",
-        {
-          "n_points": 15,
-        },
-      ],
-      [
-        "options",
-        {
-          "color": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "height": 600,
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
-          "marks": [
-            {
-              "ariaLabel": "bar",
-              "channels": {
-                "fill": {
-                  "optional": true,
-                  "scale": "auto",
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                  "type": "band",
-                },
-                "y1": {
-                  "scale": "y",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-                "y2": {
-                  "scale": "y",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-              },
-              "facet": "auto",
-            },
-            {
-              "ariaLabel": "text",
-              "channels": {
-                "text": {
-                  "optional": true,
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                },
-                "y": {
-                  "optional": true,
-                  "scale": "y",
-                  "value": {
-                    "label": "Value",
-                  },
-                },
-              },
-              "facet": "auto",
-              "fill": "#000000",
-              "frameAnchor": "middle",
-              "lineAnchor": "middle",
-              "lineHeight": 1,
-              "monospace": false,
-              "paintOrder": "stroke",
-              "stroke": "#eeeeee",
-              "strokeLinejoin": "round",
-              "strokeWidth": 3,
-            },
-            {
-              "ariaLabel": "text",
-              "channels": {
-                "text": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                },
-                "y": {
-                  "optional": true,
-                  "scale": "y",
-                  "value": {
-                    "label": "Value",
-                  },
-                },
-              },
-              "dy": -15,
-              "facet": "auto",
-              "frameAnchor": "middle",
-              "lineAnchor": "bottom",
-              "lineHeight": 1,
-              "monospace": false,
-            },
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle1",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 39,
-                "facet": "auto",
-                "fontWeight": "bold",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle2",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 9,
-                "facet": "auto",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-          ],
-          "style": {
-            "fontSize": "16px",
-          },
-          "width": 1000,
-          "x": {
-            "domain": [
-              null,
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-          },
-        },
-      ],
-    ],
-    "flip_xy": [
-      [
-        "input",
-        {
-          "collapsed_view": true,
-          "color_scale": "categorical",
-          "color_scheme": "Tableau10",
-          "colorscale_disabled": false,
-          "font_size": 16,
-          "header_table": [
-            {
-              "ColNo": 1,
-              "ColTitle1": "GESAMT",
-              "selected": true,
-            },
-            {
-              "ColNo": 2,
-              "ColTitle1": "Region",
-              "ColTitle2": "Asien",
-              "selected": true,
-            },
-            {
-              "ColNo": 3,
-              "ColTitle1": "Region",
-              "ColTitle2": "Europa",
-              "selected": true,
-            },
-            {
-              "ColNo": 4,
-              "ColTitle1": "Region",
-              "ColTitle2": "Nordamerika",
-              "selected": true,
-            },
-            {
-              "ColNo": 5,
-              "ColTitle1": "Region",
-              "ColTitle2": "Pazifik",
-              "selected": true,
-            },
-          ],
-          "i_tab": 0,
-          "plot_type": "bar",
-          "row_table": [
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "2 - 4 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "5 - 9 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "10 - 19 Beschäftigte",
-              "selected": true,
-            },
-          ],
-          "row_type": "%",
-          "separate_headers": true,
-          "show_n": false,
-          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
-          "xy": "y",
-        },
-      ],
-      [
-        "derived",
-        {
-          "axis_": "axisY",
-          "col_lab_fun": {},
-          "color_opts": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "color_order": [
-            "2 - 4 Beschäftigte",
-            "5 - 9 Beschäftigte",
-            "10 - 19 Beschäftigte",
-          ],
-          "marginBottom": 80,
-          "marginLeft": 210,
-          "n_decimals": 1,
-          "plot_opts": {
-            "x": "Value",
-            "y": {},
-          },
-          "row_lab_fun": {},
-          "x1": "x",
-          "x1_opts": {
-            "label": null,
-          },
-          "x2": "y",
-          "x2_opts": {
-            "domain": [
-              null,
-              null,
-              "Asien",
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-            "label": null,
-          },
-          "x_order": [
-            null,
-            null,
-            "Asien",
-            "Europa",
-            "Nordamerika",
-            "Pazifik",
-          ],
-        },
-      ],
-      [
-        "derived_p",
-        {
-          "bar_": "barX",
-          "group_": "groupY",
-          "group_args1": {
-            "text": "first",
-            "x": "sum",
-          },
-          "group_args2_bar": {
-            "fill": {},
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "title": {},
-            "x": "Value",
-            "y": {},
-            "z": {},
-          },
-          "group_args2_text": {
-            "fill": "#000000",
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "stroke": "#eeeeee",
-            "strokeWidth": 3,
-            "text": {},
-            "title": {},
-            "x": "Value",
-            "y": {},
-            "z": {},
-          },
-          "group_args2_text_n": {
-            "dx": 10,
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "text": {},
-            "textAnchor": "start",
-            "x": "Value",
-            "y": {},
-          },
-          "is_x": false,
-          "stack_": "stackX",
-          "text_": "textX",
-        },
-      ],
-      [
-        "data",
-        {
-          "n_points": 15,
-        },
-      ],
-      [
-        "options",
-        {
-          "color": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "height": 600,
-          "marginBottom": 80,
-          "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
-          "marks": [
-            {
-              "ariaLabel": "bar",
-              "channels": {
-                "fill": {
-                  "optional": true,
-                  "scale": "auto",
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x1": {
-                  "scale": "x",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-                "x2": {
-                  "scale": "x",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-                "y": {
-                  "optional": true,
-                  "scale": "y",
-                  "type": "band",
-                },
-              },
-              "facet": "auto",
-            },
-            {
-              "ariaLabel": "text",
-              "channels": {
-                "text": {
-                  "optional": true,
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                  "value": {
-                    "label": "Value",
-                  },
-                },
-                "y": {
-                  "optional": true,
-                  "scale": "y",
-                },
-              },
-              "facet": "auto",
-              "fill": "#000000",
-              "frameAnchor": "middle",
-              "lineAnchor": "middle",
-              "lineHeight": 1,
-              "monospace": false,
-              "paintOrder": "stroke",
-              "stroke": "#eeeeee",
-              "strokeLinejoin": "round",
-              "strokeWidth": 3,
-            },
-            [
-              {
-                "ariaLabel": "y-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle1",
-                  },
-                  "y": {
-                    "optional": true,
-                    "scale": "y",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -209,
-                "facet": "auto",
-                "fontWeight": "bold",
-                "frameAnchor": "left",
-                "lineAnchor": "middle",
-                "lineHeight": 1,
-                "lineWidth": 6,
-                "marginBottom": 20,
-                "marginLeft": 40,
-                "marginTop": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-            [
-              {
-                "ariaLabel": "y-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle2",
-                  },
-                  "y": {
-                    "optional": true,
-                    "scale": "y",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -109,
-                "facet": "auto",
-                "frameAnchor": "left",
-                "lineAnchor": "middle",
-                "lineHeight": 1,
-                "lineWidth": 7,
-                "marginBottom": 20,
-                "marginLeft": 40,
-                "marginTop": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-          ],
-          "style": {
-            "fontSize": "16px",
-          },
-          "width": 1000,
-          "y": {
-            "domain": [
-              null,
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-          },
-        },
-      ],
-    ],
-    "initial": [
-      [
-        "input",
-        {
-          "collapsed_view": true,
-          "color_scale": "categorical",
-          "color_scheme": "Tableau10",
-          "colorscale_disabled": false,
-          "font_size": 16,
-          "header_table": [
-            {
-              "ColNo": 1,
-              "ColTitle1": "GESAMT",
-              "selected": true,
-            },
-            {
-              "ColNo": 2,
-              "ColTitle1": "Region",
-              "ColTitle2": "Asien",
-              "selected": true,
-            },
-            {
-              "ColNo": 3,
-              "ColTitle1": "Region",
-              "ColTitle2": "Europa",
-              "selected": true,
-            },
-            {
-              "ColNo": 4,
-              "ColTitle1": "Region",
-              "ColTitle2": "Nordamerika",
-              "selected": true,
-            },
-            {
-              "ColNo": 5,
-              "ColTitle1": "Region",
-              "ColTitle2": "Pazifik",
-              "selected": true,
-            },
-          ],
-          "i_tab": 0,
-          "plot_type": "bar",
-          "row_table": [
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "2 - 4 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "5 - 9 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "10 - 19 Beschäftigte",
-              "selected": true,
-            },
-          ],
-          "row_type": "%",
-          "separate_headers": true,
-          "show_n": false,
-          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
-          "xy": "x",
-        },
-      ],
-      [
-        "derived",
-        {
-          "axis_": "axisX",
-          "col_lab_fun": {},
-          "color_opts": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "color_order": [
-            "2 - 4 Beschäftigte",
-            "5 - 9 Beschäftigte",
-            "10 - 19 Beschäftigte",
-          ],
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "n_decimals": 1,
-          "plot_opts": {
-            "x": {},
-            "y": "Value",
-          },
-          "row_lab_fun": {},
-          "x1": "y",
-          "x1_opts": {
-            "label": null,
-          },
-          "x2": "x",
-          "x2_opts": {
-            "domain": [
-              null,
-              null,
-              "Asien",
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-            "label": null,
-          },
-          "x_order": [
-            null,
-            null,
-            "Asien",
-            "Europa",
-            "Nordamerika",
-            "Pazifik",
-          ],
-        },
-      ],
-      [
-        "derived_p",
-        {
-          "bar_": "barY",
-          "group_": "groupX",
-          "group_args1": {
-            "text": "first",
-            "y": "sum",
-          },
-          "group_args2_bar": {
-            "fill": {},
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "title": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-          "group_args2_text": {
-            "fill": "#000000",
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "stroke": "#eeeeee",
-            "strokeWidth": 3,
-            "text": {},
-            "title": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-          "group_args2_text_n": {
-            "dy": -15,
-            "lineAnchor": "bottom",
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "text": {},
-            "x": {},
-            "y": "Value",
-          },
-          "is_x": true,
-          "stack_": "stackY",
-          "text_": "textY",
-        },
-      ],
-      [
-        "data",
-        {
-          "n_points": 15,
-        },
-      ],
-      [
-        "options",
-        {
-          "color": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "height": 600,
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
-          "marks": [
-            {
-              "ariaLabel": "bar",
-              "channels": {
-                "fill": {
-                  "optional": true,
-                  "scale": "auto",
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                  "type": "band",
-                },
-                "y1": {
-                  "scale": "y",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-                "y2": {
-                  "scale": "y",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-              },
-              "facet": "auto",
-            },
-            {
-              "ariaLabel": "text",
-              "channels": {
-                "text": {
-                  "optional": true,
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                },
-                "y": {
-                  "optional": true,
-                  "scale": "y",
-                  "value": {
-                    "label": "Value",
-                  },
-                },
-              },
-              "facet": "auto",
-              "fill": "#000000",
-              "frameAnchor": "middle",
-              "lineAnchor": "middle",
-              "lineHeight": 1,
-              "monospace": false,
-              "paintOrder": "stroke",
-              "stroke": "#eeeeee",
-              "strokeLinejoin": "round",
-              "strokeWidth": 3,
-            },
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle1",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 39,
-                "facet": "auto",
-                "fontWeight": "bold",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle2",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 9,
-                "facet": "auto",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-          ],
-          "style": {
-            "fontSize": "16px",
-          },
-          "width": 1000,
-          "x": {
-            "domain": [
-              null,
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-          },
-        },
-      ],
-    ],
-    "other_type": [
-      [
-        "input",
-        {
-          "collapsed_view": true,
-          "color_scale": "categorical",
-          "color_scheme": "Tableau10",
-          "colorscale_disabled": false,
-          "font_size": 16,
-          "header_table": [
-            {
-              "ColNo": 1,
-              "ColTitle1": "GESAMT",
-              "selected": true,
-            },
-            {
-              "ColNo": 2,
-              "ColTitle1": "Region",
-              "ColTitle2": "Asien",
-              "selected": true,
-            },
-            {
-              "ColNo": 3,
-              "ColTitle1": "Region",
-              "ColTitle2": "Europa",
-              "selected": true,
-            },
-            {
-              "ColNo": 4,
-              "ColTitle1": "Region",
-              "ColTitle2": "Nordamerika",
-              "selected": true,
-            },
-            {
-              "ColNo": 5,
-              "ColTitle1": "Region",
-              "ColTitle2": "Pazifik",
-              "selected": true,
-            },
-          ],
-          "i_tab": 0,
-          "plot_type": "line",
-          "row_table": [
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "2 - 4 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "5 - 9 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "10 - 19 Beschäftigte",
-              "selected": true,
-            },
-          ],
-          "row_type": "%",
-          "separate_headers": true,
-          "show_n": false,
-          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
-          "xy": "x",
-        },
-      ],
-      [
-        "derived",
-        {
-          "axis_": "axisX",
-          "col_lab_fun": {},
-          "color_opts": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "color_order": [
-            "2 - 4 Beschäftigte",
-            "5 - 9 Beschäftigte",
-            "10 - 19 Beschäftigte",
-          ],
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "n_decimals": 1,
-          "plot_opts": {
-            "x": {},
-            "y": "Value",
-          },
-          "row_lab_fun": {},
-          "x1": "y",
-          "x1_opts": {
-            "label": null,
-          },
-          "x2": "x",
-          "x2_opts": {
-            "domain": [
-              null,
-              null,
-              "Asien",
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-            "label": null,
-          },
-          "x_order": [
-            null,
-            null,
-            "Asien",
-            "Europa",
-            "Nordamerika",
-            "Pazifik",
-          ],
-        },
-      ],
-      [
-        "derived_p",
-        {
-          "dot_opts": {
-            "fill": {},
-            "r": 7,
-            "stroke": "transparent",
-            "title": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-          "line_opts": {
-            "stroke": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-        },
-      ],
-      [
-        "data",
-        {
-          "n_points": 15,
-        },
-      ],
-      [
-        "options",
-        {
-          "color": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "height": 600,
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "marks": [
-            {
-              "ariaLabel": "line",
-              "channels": {
-                "stroke": {
-                  "optional": true,
-                  "scale": "auto",
-                },
-                "x": {
-                  "scale": "x",
-                },
-                "y": {
-                  "scale": "y",
-                  "value": "Value",
-                },
-                "z": {
-                  "optional": true,
-                },
-              },
-              "facet": "auto",
-              "fill": "none",
-              "strokeLinecap": "round",
-              "strokeLinejoin": "round",
-              "strokeWidth": 1.5,
-            },
-            {
-              "ariaLabel": "dot",
-              "channels": {
-                "fill": {
-                  "optional": true,
-                  "scale": "auto",
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                },
-                "y": {
-                  "optional": true,
-                  "scale": "y",
-                  "value": "Value",
-                },
-              },
-              "facet": "auto",
-              "frameAnchor": "middle",
-              "r": 7,
-              "stroke": "transparent",
-              "strokeWidth": 1.5,
-            },
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle1",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 39,
-                "facet": "auto",
-                "fontWeight": "bold",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle2",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 9,
-                "facet": "auto",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-          ],
-          "style": {
-            "fontSize": "16px",
-          },
-          "width": 1000,
-          "x": {
-            "domain": [
-              null,
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-          },
-        },
-      ],
-    ],
-    "total": [
-      [
-        "input",
-        {
-          "collapsed_view": true,
-          "color_scale": "categorical",
-          "color_scheme": "Tableau10",
-          "colorscale_disabled": false,
-          "font_size": 16,
-          "header_table": [
-            {
-              "ColNo": 1,
-              "ColTitle1": "GESAMT",
-              "selected": true,
-            },
-            {
-              "ColNo": 2,
-              "ColTitle1": "Region",
-              "ColTitle2": "Asien",
-              "selected": true,
-            },
-            {
-              "ColNo": 3,
-              "ColTitle1": "Region",
-              "ColTitle2": "Europa",
-              "selected": true,
-            },
-            {
-              "ColNo": 4,
-              "ColTitle1": "Region",
-              "ColTitle2": "Nordamerika",
-              "selected": true,
-            },
-            {
-              "ColNo": 5,
-              "ColTitle1": "Region",
-              "ColTitle2": "Pazifik",
-              "selected": true,
-            },
-          ],
-          "i_tab": 0,
-          "plot_type": "bar",
-          "row_table": [
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "2 - 4 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "5 - 9 Beschäftigte",
-              "selected": true,
-            },
-            {
-              "RowContent": "Detail",
-              "RowTitle1": "10 - 19 Beschäftigte",
-              "selected": true,
-            },
-          ],
-          "row_type": "n",
-          "separate_headers": true,
-          "show_n": false,
-          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
-          "xy": "x",
-        },
-      ],
-      [
-        "derived",
-        {
-          "axis_": "axisX",
-          "col_lab_fun": {},
-          "color_opts": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "color_order": [
-            "2 - 4 Beschäftigte",
-            "5 - 9 Beschäftigte",
-            "10 - 19 Beschäftigte",
-          ],
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "n_decimals": 0,
-          "plot_opts": {
-            "x": {},
-            "y": "Value",
-          },
-          "row_lab_fun": {},
-          "x1": "y",
-          "x1_opts": {
-            "label": null,
-          },
-          "x2": "x",
-          "x2_opts": {
-            "domain": [
-              null,
-              null,
-              "Asien",
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-            "label": null,
-          },
-          "x_order": [
-            null,
-            null,
-            "Asien",
-            "Europa",
-            "Nordamerika",
-            "Pazifik",
-          ],
-        },
-      ],
-      [
-        "derived_p",
-        {
-          "bar_": "barY",
-          "group_": "groupX",
-          "group_args1": {
-            "text": "first",
-            "y": "sum",
-          },
-          "group_args2_bar": {
-            "fill": {},
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "title": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-          "group_args2_text": {
-            "fill": "#000000",
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "stroke": "#eeeeee",
-            "strokeWidth": 3,
-            "text": {},
-            "title": {},
-            "x": {},
-            "y": "Value",
-            "z": {},
-          },
-          "group_args2_text_n": {
-            "dy": -15,
-            "lineAnchor": "bottom",
-            "order": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "text": {},
-            "x": {},
-            "y": "Value",
-          },
-          "is_x": true,
-          "stack_": "stackY",
-          "text_": "textY",
-        },
-      ],
-      [
-        "data",
-        {
-          "n_points": 15,
-        },
-      ],
-      [
-        "options",
-        {
-          "color": {
-            "className": "large-font",
-            "domain": [
-              "2 - 4 Beschäftigte",
-              "5 - 9 Beschäftigte",
-              "10 - 19 Beschäftigte",
-            ],
-            "legend": true,
-            "scheme": "tableau10",
-            "type": "categorical",
-          },
-          "height": 600,
-          "marginBottom": 80,
-          "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
-          "marks": [
-            {
-              "ariaLabel": "bar",
-              "channels": {
-                "fill": {
-                  "optional": true,
-                  "scale": "auto",
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                  "type": "band",
-                },
-                "y1": {
-                  "scale": "y",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-                "y2": {
-                  "scale": "y",
-                  "value": {
-                    "hint": {
-                      "length": true,
-                    },
-                    "label": "Value",
-                  },
-                },
-              },
-              "facet": "auto",
-            },
-            {
-              "ariaLabel": "text",
-              "channels": {
-                "text": {
-                  "optional": true,
-                },
-                "title": {
-                  "optional": true,
-                },
-                "x": {
-                  "optional": true,
-                  "scale": "x",
-                },
-                "y": {
-                  "optional": true,
-                  "scale": "y",
-                  "value": {
-                    "label": "Value",
-                  },
-                },
-              },
-              "facet": "auto",
-              "fill": "#000000",
-              "frameAnchor": "middle",
-              "lineAnchor": "middle",
-              "lineHeight": 1,
-              "monospace": false,
-              "paintOrder": "stroke",
-              "stroke": "#eeeeee",
-              "strokeLinejoin": "round",
-              "strokeWidth": 3,
-            },
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle1",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 39,
-                "facet": "auto",
-                "fontWeight": "bold",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-            [
-              {
-                "ariaLabel": "x-axis tick label",
-                "channels": {
-                  "text": {
-                    "optional": true,
-                    "value": "ColTitle2",
-                  },
-                  "x": {
-                    "optional": true,
-                    "scale": "x",
-                    "value": "ColTitle2",
-                  },
-                },
-                "clip": false,
-                "dx": -59,
-                "dy": 9,
-                "facet": "auto",
-                "frameAnchor": "bottom",
-                "lineAnchor": "top",
-                "lineHeight": 1,
-                "lineWidth": 8,
-                "marginBottom": 30,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "monospace": false,
-                "textAnchor": "start",
-                "textOverflow": "ellipsis-end",
-              },
-              null,
-            ],
-          ],
-          "style": {
-            "fontSize": "16px",
-          },
-          "width": 1000,
-          "x": {
-            "domain": [
-              null,
-              "Europa",
-              "Nordamerika",
-              "Pazifik",
-            ],
-          },
-        },
-      ],
-    ],
-  },
-  {
-    "add_n": [
-      [
-        "input",
-        {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -1951,8 +245,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -2130,7 +424,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -2367,8 +661,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -2519,7 +813,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -2756,8 +1050,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -2910,7 +1204,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -3236,7 +1530,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -3473,8 +1767,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -3633,7 +1927,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -3837,8 +2131,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -4016,7 +2310,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -4220,8 +2514,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -4372,7 +2666,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -4576,8 +2870,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -4730,7 +3024,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -5032,7 +3326,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -5236,8 +3530,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -5392,7 +3686,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -5596,8 +3890,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -5775,7 +4069,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -5979,8 +4273,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -6131,7 +4425,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -6335,8 +4629,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -6489,7 +4783,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -6791,7 +5085,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -6995,8 +5289,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -7154,7 +5448,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -7396,8 +5690,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -7543,7 +5837,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -7785,8 +6079,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -7875,7 +6169,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -8117,8 +6411,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -8208,7 +6502,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -8539,7 +6833,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -8781,8 +7075,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -8874,7 +7168,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -9116,8 +7410,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -9263,7 +7557,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -9505,8 +7799,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -9595,7 +7889,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -9837,8 +8131,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -9928,7 +8222,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -10259,7 +8553,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -10501,8 +8795,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -10594,7 +8888,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -10825,8 +9119,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -10972,7 +9266,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -11203,8 +9497,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -11293,7 +9587,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -11524,8 +9818,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -11615,7 +9909,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -11938,7 +10232,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -12169,8 +10463,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -12262,7 +10556,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -12455,8 +10749,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -12634,7 +10928,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -12827,8 +11121,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -12979,7 +11273,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -13172,8 +11466,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -13326,7 +11620,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -13620,7 +11914,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -13813,8 +12107,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -13969,7 +12263,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -14151,8 +12445,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -14330,7 +12624,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -14512,8 +12806,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -14664,7 +12958,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -14846,8 +13140,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -15000,7 +13294,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -15286,7 +13580,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -15468,8 +13762,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -15624,7 +13918,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -15817,8 +14111,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -15996,7 +14290,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -16189,8 +14483,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -16341,7 +14635,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -16534,8 +14828,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -16688,7 +14982,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -16982,7 +15276,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -17175,8 +15469,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -17331,7 +15625,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -17513,8 +15807,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -17692,7 +15986,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -17874,8 +16168,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -18026,7 +16320,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -18208,8 +16502,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -18362,7 +16656,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -18648,7 +16942,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -18830,8 +17124,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -18986,7 +17280,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -19155,8 +17449,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -19333,7 +17627,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -19502,8 +17796,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -19653,7 +17947,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -19822,8 +18116,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -19975,7 +18269,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -20250,7 +18544,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -20419,8 +18713,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -20574,7 +18868,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -20778,8 +19072,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -20957,7 +19251,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -21161,8 +19455,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -21313,7 +19607,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -21517,8 +19811,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -21671,7 +19965,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -21973,7 +20267,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -22177,8 +20471,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -22333,7 +20627,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -22526,8 +20820,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -22705,7 +20999,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -22898,8 +21192,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -23050,7 +21344,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -23243,8 +21537,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -23397,7 +21691,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -23691,7 +21985,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -23884,8 +22178,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -24040,7 +22334,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -24233,8 +22527,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -24412,7 +22706,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -24605,8 +22899,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -24757,7 +23051,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -24950,8 +23244,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -25104,7 +23398,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -25398,7 +23692,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "categorical",
           "color_scheme": "Tableau10",
           "colorscale_disabled": true,
@@ -25591,8 +23885,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -25750,7 +24044,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -26014,8 +24308,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -26161,7 +24455,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -26425,8 +24719,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -26515,7 +24809,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -26779,8 +25073,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -26870,7 +25164,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -27217,7 +25511,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -27481,8 +25775,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -27577,7 +25871,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -27830,8 +26124,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -27977,7 +26271,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -28230,8 +26524,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 210,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -28320,7 +26614,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -28573,8 +26867,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",
@@ -28664,7 +26958,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -29003,7 +27297,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "input",
         {
-          "collapsed_view": true,
+          "collapsed_view": false,
           "color_scale": "ordinal",
           "color_scheme": "Turbo",
           "colorscale_disabled": false,
@@ -29256,8 +27550,8 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
           "height": 600,
           "marginBottom": 80,
           "marginLeft": 60,
-          "marginRight": 70,
-          "marginTop": 30,
+          "marginRight": 120,
+          "marginTop": 40,
           "marks": [
             {
               "ariaLabel": "bar",

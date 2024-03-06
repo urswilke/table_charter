@@ -8,6 +8,8 @@ render(
     html`<table-charter></table-charter>`,
     document.body
 )
+// TODO: why do I need this???
+await browser.setWindowSize(2000, 1000)
 
 const table_charter_el = await $('table-charter')
 const table_data_selector_el = await $('>>>table-data-selector')
@@ -47,6 +49,9 @@ const fig_el = await ojs_plot_el.$(">>>figure")
 describe('Check plots', () => {
     it('should exist from start', async () => {
         await expect(fig_el).toBeExisting()
+        // needed for next test...
+        // TODO: find cleaner solution!
+        await adv_settings_button.click()
     })
 })
 
@@ -55,6 +60,7 @@ describe('Check all questions', () => {
     for (let i = 0; i < all_questions.length; i++) {
         const question_text = all_questions[i];
         it('question: ' + question_text.substring(0, 40) + "...", async () => {
+            await table_data_selector_el.scrollIntoView({ block: 'end', inline: 'nearest' })
             await question_select_el.selectByVisibleText(question_text)
             await fig_el.isExisting()
             const fig_header = await ojs_plot_el.$('>>>h2[data-test-id="plot-header"]').getText()

@@ -14,7 +14,7 @@ Mittelwertüberblick</h2>
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,492.8656328288187)" d="M0,0L-6,0"/><path transform="translate(60,465.7312656576374)" d="M0,0L-6,0"/><path transform="translate(60,438.5968984864561)" d="M0,0L-6,0"/><path transform="translate(60,411.46253131527476)" d="M0,0L-6,0"/><path transform="translate(60,384.3281641440935)" d="M0,0L-6,0"/><path transform="translate(60,357.1937969729121)" d="M0,0L-6,0"/><path transform="translate(60,330.05942980173086)" d="M0,0L-6,0"/><path transform="translate(60,302.9250626305495)" d="M0,0L-6,0"/><path transform="translate(60,275.7906954593682)" d="M0,0L-6,0"/><path transform="translate(60,248.65632828818687)" d="M0,0L-6,0"/><path transform="translate(60,221.5219611170056)" d="M0,0L-6,0"/><path transform="translate(60,194.38759394582428)" d="M0,0L-6,0"/><path transform="translate(60,167.253226774643)" d="M0,0L-6,0"/><path transform="translate(60,140.11885960346163)" d="M0,0L-6,0"/><path transform="translate(60,112.98449243228035)" d="M0,0L-6,0"/><path transform="translate(60,85.85012526109905)" d="M0,0L-6,0"/><path transform="translate(60,58.71575808991775)" d="M0,0L-6,0"/><path transform="translate(60,31.581390918736396)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,492.8656328288187)">5</text><text y="0.32em" transform="translate(60,465.7312656576374)">10</text><text y="0.32em" transform="translate(60,438.5968984864561)">15</text><text y="0.32em" transform="translate(60,411.46253131527476)">20</text><text y="0.32em" transform="translate(60,384.3281641440935)">25</text><text y="0.32em" transform="translate(60,357.1937969729121)">30</text><text y="0.32em" transform="translate(60,330.05942980173086)">35</text><text y="0.32em" transform="translate(60,302.9250626305495)">40</text><text y="0.32em" transform="translate(60,275.7906954593682)">45</text><text y="0.32em" transform="translate(60,248.65632828818687)">50</text><text y="0.32em" transform="translate(60,221.5219611170056)">55</text><text y="0.32em" transform="translate(60,194.38759394582428)">60</text><text y="0.32em" transform="translate(60,167.253226774643)">65</text><text y="0.32em" transform="translate(60,140.11885960346163)">70</text><text y="0.32em" transform="translate(60,112.98449243228035)">75</text><text y="0.32em" transform="translate(60,85.85012526109905)">80</text><text y="0.32em" transform="translate(60,58.71575808991775)">85</text><text y="0.32em" transform="translate(60,31.581390918736396)">90</text></g><g aria-label="bar"><rect x="140" width="711" y="30" height="394.90381143719117" fill="#4e79a7"><title>row: Kundenzufriedenheit
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,493.41939542414895)" d="M0,0L-6,0"/><path transform="translate(60,466.8387908482979)" d="M0,0L-6,0"/><path transform="translate(60,440.2581862724468)" d="M0,0L-6,0"/><path transform="translate(60,413.67758169659567)" d="M0,0L-6,0"/><path transform="translate(60,387.0969771207446)" d="M0,0L-6,0"/><path transform="translate(60,360.5163725448935)" d="M0,0L-6,0"/><path transform="translate(60,333.93576796904244)" d="M0,0L-6,0"/><path transform="translate(60,307.35516339319133)" d="M0,0L-6,0"/><path transform="translate(60,280.7745588173403)" d="M0,0L-6,0"/><path transform="translate(60,254.1939542414892)" d="M0,0L-6,0"/><path transform="translate(60,227.6133496656381)" d="M0,0L-6,0"/><path transform="translate(60,201.03274508978706)" d="M0,0L-6,0"/><path transform="translate(60,174.45214051393597)" d="M0,0L-6,0"/><path transform="translate(60,147.87153593808486)" d="M0,0L-6,0"/><path transform="translate(60,121.2909313622338)" d="M0,0L-6,0"/><path transform="translate(60,94.71032678638274)" d="M0,0L-6,0"/><path transform="translate(60,68.12972221053167)" d="M0,0L-6,0"/><path transform="translate(60,41.54911763468055)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,493.41939542414895)">5</text><text y="0.32em" transform="translate(60,466.8387908482979)">10</text><text y="0.32em" transform="translate(60,440.2581862724468)">15</text><text y="0.32em" transform="translate(60,413.67758169659567)">20</text><text y="0.32em" transform="translate(60,387.0969771207446)">25</text><text y="0.32em" transform="translate(60,360.5163725448935)">30</text><text y="0.32em" transform="translate(60,333.93576796904244)">35</text><text y="0.32em" transform="translate(60,307.35516339319133)">40</text><text y="0.32em" transform="translate(60,280.7745588173403)">45</text><text y="0.32em" transform="translate(60,254.1939542414892)">50</text><text y="0.32em" transform="translate(60,227.6133496656381)">55</text><text y="0.32em" transform="translate(60,201.03274508978706)">60</text><text y="0.32em" transform="translate(60,174.45214051393597)">65</text><text y="0.32em" transform="translate(60,147.87153593808486)">70</text><text y="0.32em" transform="translate(60,121.2909313622338)">75</text><text y="0.32em" transform="translate(60,94.71032678638274)">80</text><text y="0.32em" transform="translate(60,68.12972221053167)">85</text><text y="0.32em" transform="translate(60,41.54911763468055)">90</text></g><g aria-label="bar"><rect x="135" width="671" y="40" height="386.84454997928935" fill="#4e79a7"><title>row: Kundenzufriedenheit
 
 
 header: GESAMT
@@ -22,7 +22,7 @@ header: GESAMT
 value: 72.8
 N: 151
 
- (1)</title></rect><rect x="140" width="711" y="424.90381143719117" height="95.09618856280883" fill="#f28e2c"><title>row: Marktvolumen
+ (1)</title></rect><rect x="135" width="671" y="426.84454997928935" height="93.15545002071065" fill="#f28e2c"><title>row: Marktvolumen
 
 
 header: GESAMT
@@ -30,7 +30,7 @@ header: GESAMT
 value: 17.5
 N: 151
 
- (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(356,0.5)"><text y="0.32em" transform="translate(140,227.45190571859558)">72.8<title>row: Kundenzufriedenheit
+ (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(336,0.5)"><text y="0.32em" transform="translate(135,233.42227498964468)">72.8<title>row: Kundenzufriedenheit
 
 
 header: GESAMT
@@ -38,7 +38,7 @@ header: GESAMT
 value: 72.8
 N: 151
 
- (1)</title></text><text y="0.32em" transform="translate(140,472.4519057185956)">17.5<title>row: Marktvolumen
+ (1)</title></text><text y="0.32em" transform="translate(135,473.4222749896446)">17.5<title>row: Marktvolumen
 
 
 header: GESAMT
@@ -46,7 +46,7 @@ header: GESAMT
 value: 17.5
 N: 151
 
- (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-39,39.5)"><text y="0.71em" transform="translate(140,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+ (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;

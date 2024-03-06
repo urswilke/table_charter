@@ -15,6 +15,7 @@ const row_selector_el = await table_charter_el.$('>>>multi-selector[data-test-id
 const all_questions = await question_selector_el.$$(">>>option").map(x => x.getText())
 const question_select_el = await question_selector_el.$(">>>select")
 const fig_el = await ojs_plot_el.$(">>>figure")
+await ojs_plot_el.scrollIntoView({ block: 'end', inline: 'nearest' })
 await adv_settings_button.click()
 await header_selector_el.selectByIndex(1)
 

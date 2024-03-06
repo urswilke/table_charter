@@ -14,7 +14,7 @@ Kundenzufriedenheit</h2>
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,475.89999558999955)" d="M0,0L-6,0"/><path transform="translate(60,431.7999911799991)" d="M0,0L-6,0"/><path transform="translate(60,387.6999867699987)" d="M0,0L-6,0"/><path transform="translate(60,343.59998235999825)" d="M0,0L-6,0"/><path transform="translate(60,299.4999779499978)" d="M0,0L-6,0"/><path transform="translate(60,255.39997353999738)" d="M0,0L-6,0"/><path transform="translate(60,211.2999691299969)" d="M0,0L-6,0"/><path transform="translate(60,167.19996471999644)" d="M0,0L-6,0"/><path transform="translate(60,123.09996030999598)" d="M0,0L-6,0"/><path transform="translate(60,78.99995589999558)" d="M0,0L-6,0"/><path transform="translate(60,34.89995148999512)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,475.89999558999955)">10</text><text y="0.32em" transform="translate(60,431.7999911799991)">20</text><text y="0.32em" transform="translate(60,387.6999867699987)">30</text><text y="0.32em" transform="translate(60,343.59998235999825)">40</text><text y="0.32em" transform="translate(60,299.4999779499978)">50</text><text y="0.32em" transform="translate(60,255.39997353999738)">60</text><text y="0.32em" transform="translate(60,211.2999691299969)">70</text><text y="0.32em" transform="translate(60,167.19996471999644)">80</text><text y="0.32em" transform="translate(60,123.09996030999598)">90</text><text y="0.32em" transform="translate(60,78.99995589999558)">100</text><text y="0.32em" transform="translate(60,34.89995148999512)">110</text></g><g aria-label="bar"><rect x="140" width="711" y="30" height="431.2001411200141" fill="#4e79a7"><title>row: Kundenzufriedenheit
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,476.79999567999954)" d="M0,0L-6,0"/><path transform="translate(60,433.5999913599991)" d="M0,0L-6,0"/><path transform="translate(60,390.39998703999873)" d="M0,0L-6,0"/><path transform="translate(60,347.1999827199983)" d="M0,0L-6,0"/><path transform="translate(60,303.9999783999978)" d="M0,0L-6,0"/><path transform="translate(60,260.7999740799974)" d="M0,0L-6,0"/><path transform="translate(60,217.59996975999695)" d="M0,0L-6,0"/><path transform="translate(60,174.3999654399965)" d="M0,0L-6,0"/><path transform="translate(60,131.19996111999606)" d="M0,0L-6,0"/><path transform="translate(60,87.99995679999567)" d="M0,0L-6,0"/><path transform="translate(60,44.79995247999522)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,476.79999567999954)">10</text><text y="0.32em" transform="translate(60,433.5999913599991)">20</text><text y="0.32em" transform="translate(60,390.39998703999873)">30</text><text y="0.32em" transform="translate(60,347.1999827199983)">40</text><text y="0.32em" transform="translate(60,303.9999783999978)">50</text><text y="0.32em" transform="translate(60,260.7999740799974)">60</text><text y="0.32em" transform="translate(60,217.59996975999695)">70</text><text y="0.32em" transform="translate(60,174.3999654399965)">80</text><text y="0.32em" transform="translate(60,131.19996111999606)">90</text><text y="0.32em" transform="translate(60,87.99995679999567)">100</text><text y="0.32em" transform="translate(60,44.79995247999522)">110</text></g><g aria-label="bar"><rect x="135" width="671" y="40" height="422.4001382400138" fill="#4e79a7"><title>row: Kundenzufriedenheit
 
 row value: 1
 header: GESAMT
@@ -22,7 +22,7 @@ header: GESAMT
 value: 97.8
 N: 135
 
- (1)</title></rect><rect x="140" width="711" y="461.2001411200141" height="58.79985887998589" fill="#f28e2c"><title>row: Onlineauftritte
+ (1)</title></rect><rect x="135" width="671" y="462.4001382400138" height="57.5998617599862" fill="#f28e2c"><title>row: Onlineauftritte
 
 row value: 1
 header: GESAMT
@@ -30,7 +30,7 @@ header: GESAMT
 value: 13.3
 N: 135
 
- (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(356,0.5)"><text y="0.32em" transform="translate(140,245.60007056000705)">97.8<title>row: Kundenzufriedenheit
+ (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(336,0.5)"><text y="0.32em" transform="translate(135,251.2000691200069)">97.8<title>row: Kundenzufriedenheit
 
 row value: 1
 header: GESAMT
@@ -38,7 +38,7 @@ header: GESAMT
 value: 97.8
 N: 135
 
- (1)</title></text><text y="0.32em" transform="translate(140,490.60007056000705)">13.3<title>row: Onlineauftritte
+ (1)</title></text><text y="0.32em" transform="translate(135,491.20006912000696)">13.3<title>row: Onlineauftritte
 
 row value: 1
 header: GESAMT
@@ -46,7 +46,7 @@ header: GESAMT
 value: 13.3
 N: 135
 
- (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-39,39.5)"><text y="0.71em" transform="translate(140,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+ (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;
