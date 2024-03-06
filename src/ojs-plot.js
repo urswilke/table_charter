@@ -57,7 +57,7 @@ export class OJSPlot extends LitElement {
             options === undefined,
             () => html`<div class="all-filtered">
 				<h1>No data.</h1>
-				<h2>Please change the filters.</h2>
+				<h3>Please change the filter settings.</h3>
 			</div>`,
 			// it's important to put the chart title text directly next to the ">" because of the pre-wrap style:
             () => html`
