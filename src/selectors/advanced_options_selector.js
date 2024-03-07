@@ -3,7 +3,7 @@ import sharedStyles from './../components.css?inline';
 
 export class AdvancedOptionsSelector extends LitElement {
     static properties = {
-		show_n: { type: Boolean },
+		show_mean: { type: Boolean },
 		separate_headers: { type: Boolean },
 		font_size: { type: String },
 	};
@@ -15,7 +15,7 @@ export class AdvancedOptionsSelector extends LitElement {
     _toggle_checkboxes() {
         const options = {
 			detail: {
-				show_n: this.is_checked("#show-n"),
+				show_mean: this.is_checked("#show-mean"),
 				separate_headers: this.is_checked("#separate-headers"),
 			},
 			bubbles: true,
@@ -42,12 +42,12 @@ export class AdvancedOptionsSelector extends LitElement {
         <div class="parent">
 			<form>
 				<div>
-					<label for="show-n">Show totals in charts</label>
+					<label for="show-mean">Show mean values</label>
 					<input 
 						type="checkbox"
 						data-test-id="n-checkbox" 
-						id="show-n"
-						.checked=${this.show_n}
+						id="show-mean"
+						.checked=${this.show_mean}
 						@click=${this._toggle_checkboxes}
 					></input>
 				</div>

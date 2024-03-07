@@ -93,7 +93,7 @@ export class PlotOptions {
 		}
 		p.group_args2_text_n = {
 			...e.plot_opts,
-			text: (x) => ((x.Value === undefined || x.Value == 0) ? null : 'N = ' + x.ColValidCases),
+			text: (x) => ((x.ColMean === undefined) ? null : 'Ø: ' + x.ColMean.toFixed(1)),
 			order: e.color_order,
 		}
 		p.is_x = this.o.xy === "x";
@@ -129,7 +129,7 @@ export class PlotOptions {
 				this.o.color_scale === "ordinal" ? null : Plot[p.text_](this.plot_data, Plot[p.stack_](text_opts)),
 				// only show if there 10 different color values at max...:
 				// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
-				this.o.show_n ? Plot.text(this.plot_data, Plot[p.group_](p.group_args1, p.group_args2_text_n)) : null,
+				this.o.show_mean ? Plot.text(this.plot_data, Plot[p.group_](p.group_args1, p.group_args2_text_n)) : null,
 			]
 		};
 	}
