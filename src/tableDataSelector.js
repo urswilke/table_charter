@@ -1,7 +1,17 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
 
-import { xlsx_to_json_array, distinct, gen_header_table, gen_row_table, filter_sel_headers, filter_sel_rows, gen_plot_type_string, prepare_data, save_file } from './utils.js'
+import {
+    xlsx_to_json_array,
+    distinct,
+    gen_header_table,
+    gen_row_table,
+    filter_sel_headers,
+    filter_sel_rows,
+    gen_plot_type_string,
+    prepare_data,
+    save_file,
+} from "./utils.js";
 
 import './selectors/question_selector.js'
 import './selectors/multi_selector.js'
