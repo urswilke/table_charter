@@ -87,6 +87,7 @@ export class TableDataSelector extends LitElement {
 				color_scale: "categorical",
 				...this.saved[this.i_tab],
 			}),
+			...this.saved[this.i_tab],
 		})
 		this.sel_header_data()
 	}
@@ -207,7 +208,6 @@ export class TableDataSelector extends LitElement {
 		let title_table = this.params.title_table[e.detail.chosen_tab_no];
 		this.i_tab = Number(title_table.i_tab);
 		this.update_choices({
-			...this.saved[this.i_tab],
 			i_tab: this.i_tab,
 			tab_title: title_table.TabTitle
 		})
