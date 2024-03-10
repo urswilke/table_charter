@@ -1,5 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
+import { translate } from "lit-translate";
 
 export class AdvancedOptionsSelector extends LitElement {
     static properties = {
@@ -42,7 +43,7 @@ export class AdvancedOptionsSelector extends LitElement {
         <div class="parent">
 			<form>
 				<div>
-					<label for="show-mean">Show mean values</label>
+					<label for="show-mean">${translate("showMean.label")}</label>
 					<input 
 						type="checkbox"
 						data-test-id="n-checkbox" 
@@ -52,7 +53,7 @@ export class AdvancedOptionsSelector extends LitElement {
 					></input>
 				</div>
 				<div>
-					<label for="separate-headers">Spatially separate headers</label>
+					<label for="separate-headers">${translate("separateHeaders.label")}</label>
 					<input 
 						type="checkbox"
 						data-test-id="separate-headers-checkbox" 
@@ -63,7 +64,7 @@ export class AdvancedOptionsSelector extends LitElement {
 				</div>
 				<div>
 
-					<label for="font-size">Font size</label>
+					<label for="font-size">${translate("fontSize.label")}</label>
 					<input 
 						id="font-size" 
 						type="number"
