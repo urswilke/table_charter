@@ -1,5 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
+import { translate } from "lit-translate";
 
 import {
     distinct,
@@ -302,7 +303,7 @@ export class TableDataSelector extends LitElement {
 				() => html`<div></div>`,
 				() => html`
 				<div class="selector-group" id="num-type-div">
-					<label>Show absolute / percent values</label>
+					<label>${translate("numType.label")}</label>
 					<div class="content">
 						<num_type-selector
 							@update-num_type="${this._on_num_type_update}"
