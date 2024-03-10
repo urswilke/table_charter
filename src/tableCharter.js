@@ -62,7 +62,7 @@ export class TableCharter extends LitElement {
                 z-index: 2;
             }
             img {
-                float: right;
+                float: left;
                 height: 60px;
             }
             .footer {
