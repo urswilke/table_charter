@@ -1,10 +1,12 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
-import { PlotOptions } from './gen_plot_types.js'
+import { translate } from "lit-translate";
 
-import sharedStyles from './components.css?inline';
+import { PlotOptions } from './gen_plot_types.js'
 import * as Plot from "@observablehq/plot";
 import { select } from "d3";
+
+import sharedStyles from './components.css?inline';
 
 const inspect = false // set to true for some console.log msgs
 
@@ -56,8 +58,8 @@ export class OJSPlot extends LitElement {
 		return when(
             options === undefined,
             () => html`<div class="all-filtered">
-				<h1>No data.</h1>
-				<h3>Please change the filter settings.</h3>
+				<h1>${translate("noData.title")}</h1>
+				<h3>${translate("noData.subTitle")}</h3>
 			</div>`,
 			// it's important to put the chart title text directly next to the ">" because of the pre-wrap style:
             () => html`
@@ -76,7 +78,7 @@ export class OJSPlot extends LitElement {
 						<button
 							data-test-id="save-svg-button"
 							@click="${this._click_save_svg}">
-							save svg
+							${translate("saveSvg.label")}
 						</button>
 					</div>
 				</div>

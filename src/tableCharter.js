@@ -2,16 +2,40 @@ import { LitElement, css, html, unsafeCSS } from 'lit'
 import './ojs-plot.js'
 import './tableDataSelector.js'
 import client_data from './client_data.json';
-
+import { registerTranslateConfig, use } from "lit-translate";
+registerTranslateConfig({
+  loader: lang => fetch(`./src/languages/${lang}.json`).then(res => res.json())
+});
 export class TableCharter extends LitElement {
 
 	static properties = {
         plot_data: { type: Array },
     };
+    
+    // needed for lit-translate to work properly from the beginning:
+    // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component) 
+    constructor() {
+        super();
+        this._browser_language = navigator.language.replace(/-.*/, "") || "en";
+        this.hasLoadedStrings = false;
+    }
+    shouldUpdate(changedProperties) {
+      return this.hasLoadedStrings && super.shouldUpdate(changedProperties);
+    }
+    async connectedCallback () {
+        await use(this._browser_language);
+        this.hasLoadedStrings = true;
+        super.connectedCallback();
+    }
+
 
 
     update_plot_data(e) {
         this.plot_data = e.detail.data;
+    }
+    update_lang()  {
+        const lang = this.renderRoot?.querySelector("#lang-selector-select").value
+        use(lang)
     }
 
     // https://lit.dev/docs/composition/component-composition/#passing-data-up-and-down-the-tree
@@ -21,6 +45,19 @@ export class TableCharter extends LitElement {
 		return html`
             <div class="header">
             <img src=${logo} alt=${client_data.client_name} />
+            <div id="lang_selector">
+                <span>🌍</span>
+                <select
+                    id="lang-selector-select"
+                    @change=${this.update_lang}
+                >
+                    ${languages_array.map((lang) => html`
+                        <option .selected=${this._browser_language === lang}>
+                            ${lang}
+                        </option>
+                    `)}
+                </select>
+            </div>
             <div>
                 <p>${client_data.project_name + " - " + date}</p>
             </div>
@@ -62,8 +99,11 @@ export class TableCharter extends LitElement {
                 z-index: 2;
             }
             img {
-                float: right;
+                float: left;
                 height: 60px;
+            }
+            #lang_selector {
+                float: right;
             }
             .footer {
                 height:20px;
@@ -115,3 +155,5 @@ const date = new Intl.DateTimeFormat('de', {
 const logo = client_data.client_logo_base64 !== "" ?
     "data:image/png;base64, " + client_data.client_logo_base64 : 
     client_data.client_logo_url 
+
+const languages_array = ["en", "de"]

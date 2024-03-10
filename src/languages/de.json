@@ -1,0 +1,67 @@
+{
+    "numType": {
+        "label": "Absolut- / Prozentwerte zeigen"
+    },
+    "question": {
+      "label": "Frage"
+    },
+    "header": {
+      "label": "Köpfe",
+      "mainsel": "Kopfgruppe(n)",
+      "subsel": "Köpfe"
+    },
+    "rows": {
+      "label": "Zeilen",
+      "mainsel": "Typ(en)",
+      "subsel": "Zeile(n)"
+    },
+    "showHide": {
+      "show": "Weitere Einstellungen anzeigen",
+      "hide": "Weitere Einstellungen verstecken"
+    },
+    "settings": {
+      "label": "Einstellungen"
+    },
+    "saveSettings": {
+      "label": "App mit diesen Plot-Einstellungen als Datei speichern"
+    },
+    "flipXY": {
+      "label": "X- & Y-Achse vertauschen"
+    },
+    "plotName": {
+      "line": "Linien-Diagramm",
+      "bar": "Balken-Diagramm"
+    },
+    "showMean": {
+      "label": "Mittelwerte anzeigen"
+    },
+    "separateHeaders": {
+      "label": "Kopfgruppen räumlich trennen"
+    },
+    "fontSize": {
+      "label": "Schriftgröße"
+    },
+    "color" : {
+      "scale": "Farbskala",
+      "scheme": "Farbschema",
+      "categorical": "kategorisch",
+      "ordinal": "ordinal"
+    },
+    "noData": {
+      "title": "Keine Daten.",
+      "subTitle": "Bitte die Filter-Einstellungen ändern."
+    },
+    "saveSvg": {
+      "label": "Als svg-Datei speichern"
+    },
+    "tooltips": {
+      "row": "Zeile",
+      "row2": "Zeile2",
+      "rowValue": "Zeilenwert",
+      "header": "Kopfgruppe",
+      "column": "Kopf",
+      "value": "Wert",
+      "N": "N",
+      "mean": "Mittelwert"
+    }
+}

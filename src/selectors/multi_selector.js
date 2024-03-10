@@ -6,6 +6,9 @@ export class MultiSelector extends LitElement {
     static properties = {
 		prop_table: { type: Array },
 		collapsed_view: { type: Boolean },
+		// These need to be reactive, to update on language change:
+		mainsel_text: { type: String },
+		subsel_text: { type: String },
 	};
     constructor() {
         super()

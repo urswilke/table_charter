@@ -1,5 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
+import { translate } from "lit-translate";
 
 export class FurtherOptionsSelector extends LitElement {
     static properties = {
@@ -38,12 +39,12 @@ export class FurtherOptionsSelector extends LitElement {
             <button 
 				@click=${this._update_xy}
 				data-test-id="flip-xy-button"
-			>Flip x & y axis</button>
+			>${translate("flipXY.label")}</button>
             
 			<button 
 				@click=${this._update_plot_type}
 				data-test-id="plot-type-button"
-			>${this.plot_type + " chart"}</button>
+			>${translate("plotName." + this.plot_type)}</button>
         </div>
         `;
     }

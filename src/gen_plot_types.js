@@ -1,6 +1,7 @@
 import * as Plot from "@observablehq/plot";
 import { bg_col, fg_col } from './utils.js'
 import { distinct } from './utils.js'
+import { get } from "lit-translate";
 
 export class PlotOptions {
     constructor(input_data) {
@@ -179,24 +180,25 @@ export class PlotOptions {
 
 function tooltip_fun(n_decimals) {
 	return (x) => [
-		// `Q: ${x.TabTitle}`, 
-		`row: ${x.RowTitle1}`, 
+		// The tooltip texts don't get updated, when the language setting is changed
+		// but will be updated upon plot settings change. (translate() doesn't work here...):
+		`${get("tooltips.row")}: ${x.RowTitle1}`, 
 		// only write row2 if differing from row1:
 		x.RowTitle1 === x.RowTitle2 ? 
 			null : 
-			`row2: ${x.RowTitle2}`, 
-		x.RowValue && `row value: ${x.RowValue}`,
-		`header: ${x.ColTitle1}`, 
-		x.ColTitle2 && `column: ${x.ColTitle2}`, 
+			`${get("tooltips.row2")}: ${x.RowTitle2}`, 
+		x.RowValue && `${get("tooltips.rowValue")}: ${x.RowValue}`,
+		`${get("tooltips.header")}: ${x.ColTitle1}`, 
+		x.ColTitle2 && `${get("tooltips.column")}: ${x.ColTitle2}`, 
 		// if an MW value is not defined, 
 		// it would lead to an error, for a line plot without this check:
 		x.Value === undefined ?
 			null :
-			`value: ${x.Value.toFixed(n_decimals)}`,
-		`N: ${x.ColValidCases.toFixed(0)}`,
+			`${get("tooltips.value")}: ${x.Value.toFixed(n_decimals)}`,
+		`${get("tooltips.N")}: ${x.ColValidCases.toFixed(0)}`,
 			x.ColMean === undefined ?
 			null :
-		`mean: ${x.ColMean.toFixed(1)}`,
+		`${get("tooltips.mean")}: ${x.ColMean.toFixed(1)}`,
 		null
 
 	].join("\n")

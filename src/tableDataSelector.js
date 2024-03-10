@@ -1,5 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
+import { translate } from "lit-translate";
 
 import {
     distinct,
@@ -302,7 +303,7 @@ export class TableDataSelector extends LitElement {
 				() => html`<div></div>`,
 				() => html`
 				<div class="selector-group" id="num-type-div">
-					<label>Show absolute / percent values</label>
+					<label>${translate("numType.label")}</label>
 					<div class="content">
 						<num_type-selector
 							@update-num_type="${this._on_num_type_update}"
@@ -312,7 +313,7 @@ export class TableDataSelector extends LitElement {
 					</div>
 				</div>
 				<div class="selector-group">
-					<label>Question</label>
+					<label>${translate("question.label")}</label>
 					<div class="content">
 						<question-selector 					
 							data-test-id="question-selector"	
@@ -323,13 +324,13 @@ export class TableDataSelector extends LitElement {
 					</div>
 				</div>
 				<div class="selector-group" id="header-multi-sel">
-					<label for="headers">Headers</label>
+					<label for="headers">${translate("header.label")}</label>
 					<div class="content">
 						<multi-selector
 							id="headers" 		
 							data-test-id="header-selector"	
-							.mainsel_text = ${"header"}
-							.subsel_text = ${"sub-header"}
+							.mainsel_text = ${translate("header.mainsel")}
+							.subsel_text = ${translate("header.subsel")}
 							.parent_string = ${"ColTitle1"}
 							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
 							@update-multi-select="${this._on_header_update}"
@@ -341,13 +342,13 @@ export class TableDataSelector extends LitElement {
 				<!-- https://stackoverflow.com/a/2062264 -->
 				<span class="clear"></span>
 				<div class="selector-group" id="row-multi-sel">
-					<label for="rows">Rows</label>
+					<label for="rows">${translate("rows.label")}</label>
 					<div class="content">
 						<multi-selector 
 							id="rows"		
 							data-test-id="row-selector"	
-							.mainsel_text = ${"type(s)"}
-							.subsel_text = ${"row(s)"}
+							.mainsel_text = ${translate("rows.mainsel")}
+							.subsel_text = ${translate("rows.subsel")}
 							.parent_string = ${"RowContent"}
 							.children_fun = ${(x) => x.RowTitle1}
 							@update-multi-select="${this._on_rows_update}" 		
@@ -361,7 +362,7 @@ export class TableDataSelector extends LitElement {
 					id="show-hide"
 					data-test-id="show-hide-button"
 					@click="${this._on_expand}">
-					${this.choices.collapsed_view ? "Show advanced settings" : "Hide advanced settings"}
+					${this.choices.collapsed_view ? translate("showHide.show") : translate("showHide.hide")}
 				</button>
 				<span class="clear"></span>
 				<div 
@@ -370,7 +371,7 @@ export class TableDataSelector extends LitElement {
 					class=${!this.choices.collapsed_view ? "" : "hide"}
 				>
 					<div class="selector-group">
-						<label for="settings">Settings</label>
+						<label for="settings">${translate("settings.label")}</label>
 						<div class="content">
 							<further-options-selector
 								@update-xy="${this._on_xy_update}"
@@ -401,7 +402,7 @@ export class TableDataSelector extends LitElement {
 								.chosen_colorscheme=${this.choices.color_scheme}>
 							</colorscale-selector>
 							<hr></hr>
-							<button @click="${save_file}">Save file</button>
+							<button @click="${save_file}">${translate("saveSettings.label")}</button>
 						</div>
 					</div>
 				</div>

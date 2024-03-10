@@ -1,5 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
+import { translate } from "lit-translate";
 
 export class ColorscaleSelector extends LitElement {
     static properties = {
@@ -46,17 +47,17 @@ export class ColorscaleSelector extends LitElement {
         return html`
         <div class="selector-group">
         <div class= "subselect">
-            <label for="colorscale-selector">color scale</label>
+            <label for="colorscale-selector">${translate("color.scale")}</label>
             <select id="colorscale-selector" @change=${this._update_colorscale} ?disabled=${this.colorscale_disabled}>
                 ${this.all_colorscales.map((col) => html`
-                    <option .selected=${this.chosen_colorscale === col}>
-                        ${col}
+                    <option .selected=${this.chosen_colorscale === col} .value=${col}>
+                        ${translate("color." + col)}
                     </option>
                 `)}
             </select>
         </div>
         <div class= "subselect">
-            <label for="colorscheme-selector">color scheme</label>
+            <label for="colorscheme-selector">${translate("color.scheme")}</label>
             <select id="colorscheme-selector" @change=${this._update_colorscheme}>
                 ${this.all_colorschemes.map((col) => html`
                     <option .selected=${this.chosen_colorscheme === col}>
