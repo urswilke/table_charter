@@ -54,7 +54,7 @@ export class PlotOptions {
 			label: null
 		}
 		e.n_decimals = this.plot_data[0].RowDecimals;
-		e.marginLeft = e.x1 === "y" ? 60 : 210
+		e.marginLeft = e.x1 === "y" ? 60 : 410
 		e.marginBottom = 80
 		e.axis_ = e.x1 === "y" ? "axisX" : "axisY";
 		this.e = e;
@@ -170,7 +170,7 @@ export class PlotOptions {
 	post_process() {
 		this.options[this.e.x2] = this.e.x2_opts
 		this.options[this.e.x1] = this.e.x1_opts
-		this.options.width = 1000
+		this.options.width = 1200
 		this.options.height = 600
 		this.options.style = {fontSize: this.o.font_size + "px"}
 		this.options.color.className = "large-font"
@@ -300,7 +300,7 @@ function set_axis_labels(plot_options) {
 	const n_bars = plot_options.options[xy].domain.length
 	const font_size = Number(plot_options.options.style.fontSize.replace(/px/, ""));
 	const text_width = is_x ? Math.floor(plot_width / n_bars / font_size * 0.8) : 7
-	const line_width_px = 100
+	const line_width_px = 200
 	const line_width = is_x ? text_width : line_width_px * 0.9 / font_size
 	// small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
 	const text_margin_left = 5;
