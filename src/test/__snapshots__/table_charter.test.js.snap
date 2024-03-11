@@ -5794,7 +5794,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 45,
+          "n_points": 15,
         },
       ],
       [
@@ -6144,7 +6144,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 45,
+          "n_points": 15,
         },
       ],
       [
@@ -6518,7 +6518,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 45,
+          "n_points": 15,
         },
       ],
       [
@@ -6860,7 +6860,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 45,
+          "n_points": 15,
         },
       ],
       [
@@ -32666,7 +32666,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -33055,7 +33055,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -33499,7 +33499,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -33890,7 +33890,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -34313,7 +34313,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 56,
+          "n_points": 28,
         },
       ],
       [
@@ -34690,7 +34690,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 56,
+          "n_points": 28,
         },
       ],
       [
@@ -35122,7 +35122,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 56,
+          "n_points": 28,
         },
       ],
       [
@@ -35504,7 +35504,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 56,
+          "n_points": 28,
         },
       ],
       [
@@ -38391,7 +38391,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -38780,7 +38780,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -39224,7 +39224,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -39615,7 +39615,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 64,
+          "n_points": 32,
         },
       ],
       [
@@ -40027,7 +40027,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 58,
+          "n_points": 29,
         },
       ],
       [
@@ -40392,7 +40392,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 58,
+          "n_points": 29,
         },
       ],
       [
@@ -40812,7 +40812,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 58,
+          "n_points": 29,
         },
       ],
       [
@@ -41185,7 +41185,7 @@ exports[`Check all questions > should reproduce the plot options 1`] = `
       [
         "data",
         {
-          "n_points": 58,
+          "n_points": 29,
         },
       ],
       [
