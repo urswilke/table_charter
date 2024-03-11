@@ -4,7 +4,7 @@ import './tableDataSelector.js'
 import client_data from './client_data.json';
 import { registerTranslateConfig, use } from "lit-translate";
 registerTranslateConfig({
-  loader: lang => fetch(`/src/languages/${lang}.json`).then(res => res.json())
+  loader: lang => fetch(`src/languages/${lang}.json`).then(res => res.json())
 });
 export class TableCharter extends LitElement {
 
