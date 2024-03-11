@@ -124,35 +124,39 @@ export class TableDataSelector extends LitElement {
 		this.rows_data = filter_sel_rows(this.num_type_data, this.choices.row_table)
 		this.toggle_filtered_class('#row-multi-sel', this.num_type_data, this.rows_data)
 	
-		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowTitle2", "RowValue"])
-		const n_numeric_rowtitles = df_row_tit_val.reduce(
-			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle2.match(/^-?\d+/))),
-			0
-		)
 		// TODO: find cleaner solution!...:
 		if (
 			// only when object is empty:
 			Object.keys(this.saved[this.i_tab]).length === 0
 		) {
-			let color_scale;
-			if (
-				// df_row_tit_val.length >= 5 & 
-				n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
-				[... new Set(this.choices.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
-			) {
-				color_scale = "ordinal"
-			} else {
-				color_scale = "categorical"
-			}
-			this.update_choices({
-				color_scale: color_scale,
-			})
+			this.set_color_scale()
 			this.init_color_scheme()
-			this.params.color_schemes = all_color_schemes[color_scale];
+			this.params.color_schemes = all_color_schemes[this.choices.color_scale];
 		}
 
 		this.plot_data = this.rows_data
 	}
+	set_color_scale() {
+		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowTitle2", "RowValue"])
+		const n_numeric_rowtitles = df_row_tit_val.reduce(
+			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle2.match(/^-?\d+/))),
+			0
+		)
+		let color_scale;
+		if (
+			// df_row_tit_val.length >= 5 & 
+			n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
+			[... new Set(this.choices.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
+		) {
+			color_scale = "ordinal"
+		} else {
+			color_scale = "categorical"
+		}
+		this.update_choices({
+			color_scale: color_scale,
+		})
+	}
+
 	init_color_scheme() {
 		this.update_choices({
 			color_scheme: this.choices.color_scale === "categorical" ?
@@ -229,8 +233,12 @@ export class TableDataSelector extends LitElement {
 		this.update_choices({
 			row_table: e.detail.prop_table
 		})
-	
 		this.sel_rows_data()
+
+		this.set_color_scale()
+		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
+		this.init_color_scheme()
+	
 		this._update_plot_data()
 	}
 	_on_colorscale_update(e) {
