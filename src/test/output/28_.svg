@@ -21,35 +21,13 @@ row value: 1
 header: GESAMT
 
 value: 2.7
-N: 37
-mean: 0.4
- (1)
-row: 1 - völlig unzufrieden
-
-row value: 1
-header: GESAMT
-
-value: 2.7
-N: 37
-mean: 6.5
- (1)</title></rect><rect x="135" width="671" y="280" height="240" fill="rgb(144, 12, 0)"><title>row: 2
+ (2)</title></rect><rect x="135" width="671" y="280" height="240" fill="rgb(144, 12, 0)"><title>row: 2
 
 row value: 2
 header: GESAMT
 
 value: 2.7
-N: 37
-mean: 0.4
- (1)
-row: 2
-
-row value: 2
-header: GESAMT
-
-value: 2.7
-N: 37
-mean: 6.5
- (1)</title></rect></g><g aria-label="text" transform="translate(336,-14.5)"><text transform="translate(135,40)">Ø: 6.5</text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
+ (2)</title></rect></g><g aria-label="text" transform="translate(336,-14.5)"><text transform="translate(135,40)">Ø: 6.5</text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
   display: block;
   height: auto;
   height: intrinsic;

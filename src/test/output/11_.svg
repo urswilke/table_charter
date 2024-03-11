@@ -20,16 +20,12 @@ row value: 2
 header: GESAMT
 
 value: 0.7
-N: 147
-
  (1)</title></rect><rect x="135" width="671" y="200.0078400627205" height="319.9921599372795" fill="rgb(144, 12, 0)"><title>row: 5
 
 row value: 5
 header: GESAMT
 
 value: 1.4
-N: 147
-
  (1)</title></rect></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><svg xmlns="http://www.w3.org/2000/svg" class="large-font-ramp" font-family="system-ui, sans-serif" font-size="10" width="240" height="50" viewBox="0 0 240 50" style="font-size: 16px;"><style>:where(.large-font-ramp) {
   display: block;
   height: auto;

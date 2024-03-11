@@ -20,32 +20,24 @@ row value: 1
 header: GESAMT
 
 value: 87.4
-N: 151
-
  (1)</title></rect><rect x="135" width="671" y="395.95496467618136" height="124.04503532381864" fill="#f28e2c"><title>row: Marktvolumen
 
 row value: 1
 header: GESAMT
 
 value: 30.5
-N: 151
-
  (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(336,0.5)"><text y="0.32em" transform="translate(135,217.97748233809062)">87.4<title>row: Kundenzufriedenheit
 
 row value: 1
 header: GESAMT
 
 value: 87.4
-N: 151
-
  (1)</title></text><text y="0.32em" transform="translate(135,457.9774823380907)">30.5<title>row: Marktvolumen
 
 row value: 1
 header: GESAMT
 
 value: 30.5
-N: 151
-
  (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;

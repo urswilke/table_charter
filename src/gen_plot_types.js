@@ -195,10 +195,6 @@ function tooltip_fun(n_decimals) {
 		x.Value === undefined ?
 			null :
 			`${get("tooltips.value")}: ${x.Value.toFixed(n_decimals)}`,
-		`${get("tooltips.N")}: ${x.ColValidCases.toFixed(0)}`,
-			x.ColMean === undefined ?
-			null :
-		`${get("tooltips.mean")}: ${x.ColMean.toFixed(1)}`,
 		null
 
 	].join("\n")
