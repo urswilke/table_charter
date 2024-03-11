@@ -280,10 +280,14 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 		return col_titles[index-1] !== el && index > 0 && diff_indices.push(index)
 	})
 	const x_order_gaps = [...x_order];
+	
+	// it seems as if the placeholders for the gaps need to be unique.
+	// Therefore, we'll add an "a" for every new gap:
+	var gap_string = "udfaufdanjkewoicxjnk";
 	for (let i = diff_indices.length - 1; i >= 0; i--) {
 		const diff_index = diff_indices[i];
-		x_order_gaps.splice(diff_index, 0, null)
-		
+		x_order_gaps.splice(diff_index, 0, gap_string)
+		gap_string += "a"
 	}
 	return x_order_gaps
 
