@@ -63,5 +63,8 @@
       "value": "Wert",
       "N": "N",
       "mean": "Mittelwert"
+    },
+    "plotTitle": {
+      "subtitle_beginning": "nach"
     }
 }

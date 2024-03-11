@@ -63,5 +63,8 @@
     "value": "value",
     "N": "N",
     "mean": "mean"
+  },
+  "plotTitle": {
+    "subtitle_beginning": "vs"
   }
 }

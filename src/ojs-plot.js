@@ -1,6 +1,6 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { when } from 'lit/directives/when.js';
-import { translate } from "lit-translate";
+import { translate, get } from "lit-translate";
 
 import { PlotOptions } from './gen_plot_types.js'
 import * as Plot from "@observablehq/plot";
@@ -31,7 +31,7 @@ export class OJSPlot extends LitElement {
 
 		this.chartTitle = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabTitle : null
 		const chartHeaders = !!val.plot_data && val.plot_data.length > 0 ? 
-			"vs " + [...new Set(val.plot_data.map(x => x.ColTitle1))].join(" / ") :
+			get("plotTitle.subtitle_beginning") + " " + [...new Set(val.plot_data.map(x => x.ColTitle1))].join(" / ") :
 			null
 		const chartCaption = !!val.plot_data && val.plot_data.length > 0 ? val.plot_data[0].TabCaption : null
 		this.chartSubTitle = [chartHeaders, chartCaption]
