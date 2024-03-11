@@ -3,8 +3,21 @@ import './ojs-plot.js'
 import './tableDataSelector.js'
 import client_data from './client_data.json';
 import { registerTranslateConfig, use } from "lit-translate";
+
+// approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
+import * as de_lang from './languages/de.json';
+import * as en_lang from './languages/en.json';
 registerTranslateConfig({
-  loader: lang => fetch(`src/languages/${lang}.json`).then(res => res.json())
+  loader: lang => new Promise((resolve, reject) => {
+    switch (lang) {
+        case 'de':
+            resolve(de_lang['default']);
+            break;
+        case 'en':
+            resolve(en_lang['default']);
+    }
+    reject(new Error(`The language ${lang} is not supported`));
+  })
 });
 export class TableCharter extends LitElement {
 
