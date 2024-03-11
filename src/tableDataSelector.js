@@ -122,9 +122,9 @@ export class TableDataSelector extends LitElement {
 		this.rows_data = filter_sel_rows(this.num_type_data, this.choices.row_table)
 		this.toggle_filtered_class('#row-multi-sel', this.num_type_data, this.rows_data)
 	
-		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowValue"])
+		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowTitle2", "RowValue"])
 		const n_numeric_rowtitles = df_row_tit_val.reduce(
-			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle1.match(/^-?\d+/))),
+			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle2.match(/^-?\d+/))),
 			0
 		)
 		// TODO: find cleaner solution!...:
@@ -228,21 +228,6 @@ export class TableDataSelector extends LitElement {
 			row_table: e.detail.prop_table
 		})
 	
-		const arr_selected = this.choices.row_table.filter(x => x.selected)
-		if (
-			e.detail.from === "parents" && 
-			[... new Set(arr_selected.map(x => x.RowContent))] == "Summary"
-		) {
-			const summary_titles = [... new Set(arr_selected.map(x => x.RowTitle1))]
-			this.update_choices({
-				row_table: this.choices.row_table.map(p =>
-					p.RowTitle1 === summary_titles[0]
-					? { ...p, selected: true }
-					: { ...p, selected: false }
-				)
-			})
-		}
-		
 		this.sel_rows_data()
 		this._update_plot_data()
 	}
@@ -350,7 +335,7 @@ export class TableDataSelector extends LitElement {
 							.mainsel_text = ${translate("rows.mainsel")}
 							.subsel_text = ${translate("rows.subsel")}
 							.parent_string = ${"RowContent"}
-							.children_fun = ${(x) => x.RowTitle1}
+							.children_fun = ${(x) => x.RowTitle2}
 							@update-multi-select="${this._on_rows_update}" 		
 							.collapsed_view = "${this.choices.collapsed_view}"		
 							.prop_table=${this.choices.row_table}>	   																

@@ -36,7 +36,7 @@ export function gen_header_table(data) {
 }
 
 export function gen_row_table(data) {
-	const arr = distinct(data, ["RowContent", "RowTitle1"])
+	const arr = distinct(data, ["RowContent", "RowTitle1", "RowTitle2"])
 	const row_contents = [... new Set(arr.map(x => x.RowContent))];
 	var types_to_take;
 	if (row_contents.includes("Detail")) {
@@ -66,11 +66,11 @@ export function filter_sel_headers(data, header_table) {
 }
 export function filter_sel_rows(data, header_table) {
 	const arr_sel = header_table.filter(x => x.selected);
-	const col_fun2 = x => x.RowTitle1
-	const col_fun1 = x => x.RowContent
+	const col_fun1 = x => x.RowTitle1
+	const col_fun2 = x => x.RowTitle2
 	const res = data.filter(x => 
-		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x)) &
-		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x))
+		[... new Set(arr_sel.map(col_fun1))].includes(col_fun1(x)) &
+		[... new Set(arr_sel.map(col_fun2))].includes(col_fun2(x))
 	);
 	return res;
 }
