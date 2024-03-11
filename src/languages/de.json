@@ -26,7 +26,7 @@
       "label": "App mit diesen Plot-Einstellungen als Datei speichern"
     },
     "flipXY": {
-      "label": "X- & Y-Achse vertauschen"
+      "label": "x- & y-Achse tauschen"
     },
     "plotName": {
       "line": "Linien-Diagramm",
