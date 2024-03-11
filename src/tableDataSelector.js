@@ -39,7 +39,9 @@ export class TableDataSelector extends LitElement {
 
 	// Initialization:
 	init_tablebook_data(data) {
-		this.data = data;
+		this.data = data
+			// hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
+			.map(x => ({...x, ColTitle2: x.ColTitle2 + " ".repeat(Number(x.ColNo))}));
 		this.init_params();
 		this._update_plot_data()
 	}
