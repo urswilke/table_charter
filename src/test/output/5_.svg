@@ -13,7 +13,7 @@
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,487.999967999968)" d="M0,0L-6,0"/><path transform="translate(60,455.999935999936)" d="M0,0L-6,0"/><path transform="translate(60,423.999903999904)" d="M0,0L-6,0"/><path transform="translate(60,391.99987199987197)" d="M0,0L-6,0"/><path transform="translate(60,359.99983999984)" d="M0,0L-6,0"/><path transform="translate(60,327.99980799980796)" d="M0,0L-6,0"/><path transform="translate(60,295.999775999776)" d="M0,0L-6,0"/><path transform="translate(60,263.999743999744)" d="M0,0L-6,0"/><path transform="translate(60,231.99971199971196)" d="M0,0L-6,0"/><path transform="translate(60,199.99967999967996)" d="M0,0L-6,0"/><path transform="translate(60,167.99964799964795)" d="M0,0L-6,0"/><path transform="translate(60,135.99961599961597)" d="M0,0L-6,0"/><path transform="translate(60,103.99958399958396)" d="M0,0L-6,0"/><path transform="translate(60,71.99955199955195)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,487.999967999968)">20</text><text y="0.32em" transform="translate(60,455.999935999936)">40</text><text y="0.32em" transform="translate(60,423.999903999904)">60</text><text y="0.32em" transform="translate(60,391.99987199987197)">80</text><text y="0.32em" transform="translate(60,359.99983999984)">100</text><text y="0.32em" transform="translate(60,327.99980799980796)">120</text><text y="0.32em" transform="translate(60,295.999775999776)">140</text><text y="0.32em" transform="translate(60,263.999743999744)">160</text><text y="0.32em" transform="translate(60,231.99971199971196)">180</text><text y="0.32em" transform="translate(60,199.99967999967996)">200</text><text y="0.32em" transform="translate(60,167.99964799964795)">220</text><text y="0.32em" transform="translate(60,135.99961599961597)">240</text><text y="0.32em" transform="translate(60,103.99958399958396)">260</text><text y="0.32em" transform="translate(60,71.99955199955195)">280</text></g><g aria-label="bar"><rect x="135" width="671" y="40" height="181.25874125874125" fill="#4e79a7"><title>row: ZUSAMMENFASSUNG
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,479.5043842831453)" d="M0,0L-6,0"/><path transform="translate(60,439.0087685662907)" d="M0,0L-6,0"/><path transform="translate(60,398.51315284943604)" d="M0,0L-6,0"/><path transform="translate(60,358.01753713258137)" d="M0,0L-6,0"/><path transform="translate(60,317.52192141572675)" d="M0,0L-6,0"/><path transform="translate(60,277.02630569887214)" d="M0,0L-6,0"/><path transform="translate(60,236.53068998201744)" d="M0,0L-6,0"/><path transform="translate(60,196.0350742651628)" d="M0,0L-6,0"/><path transform="translate(60,155.53945854830812)" d="M0,0L-6,0"/><path transform="translate(60,115.04384283145347)" d="M0,0L-6,0"/><path transform="translate(60,74.54822711459882)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,479.5043842831453)">20</text><text y="0.32em" transform="translate(60,439.0087685662907)">40</text><text y="0.32em" transform="translate(60,398.51315284943604)">60</text><text y="0.32em" transform="translate(60,358.01753713258137)">80</text><text y="0.32em" transform="translate(60,317.52192141572675)">100</text><text y="0.32em" transform="translate(60,277.02630569887214)">120</text><text y="0.32em" transform="translate(60,236.53068998201744)">140</text><text y="0.32em" transform="translate(60,196.0350742651628)">160</text><text y="0.32em" transform="translate(60,155.53945854830812)">180</text><text y="0.32em" transform="translate(60,115.04384283145347)">200</text><text y="0.32em" transform="translate(60,74.54822711459882)">220</text></g><g aria-label="bar"><rect x="135" width="671" y="40.00000000000005" height="229.3805309734513" fill="#4e79a7"><title>row: ZUSAMMENFASSUNG
 row2: 1-2mal
 row value: 1
 header: GESAMT
@@ -39,7 +39,7 @@ header: GESAMT
 value: 37.8
 N: 143
 mean: 5.5
- (1)</title></rect><rect x="135" width="671" y="221.25874125874125" height="198.04195804195805" fill="#f28e2c"><title>row: ZUSAMMENFASSUNG
+ (1)</title></rect><rect x="135" width="671" y="269.38053097345136" height="250.61946902654864" fill="#f28e2c"><title>row: ZUSAMMENFASSUNG
 row2: 3-5mal
 row value: 2
 header: GESAMT
@@ -65,33 +65,7 @@ header: GESAMT
 value: 41.3
 N: 143
 mean: 5.5
- (1)</title></rect><rect x="135" width="671" y="419.3006993006993" height="100.6993006993007" fill="#e15759"><title>row: ZUSAMMENFASSUNG
-row2: &gt;5mal
-row value: 3
-header: GESAMT
-
-value: 21.0
-N: 143
-mean: 3.0
- (1)
-row: ZUSAMMENFASSUNG
-row2: &gt;5mal
-row value: 3
-header: GESAMT
-
-value: 21.0
-N: 143
-mean: 0.6
- (1)
-row: ZUSAMMENFASSUNG
-row2: &gt;5mal
-row value: 3
-header: GESAMT
-
-value: 21.0
-N: 143
-mean: 5.5
- (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(336,0.5)"><text y="0.32em" transform="translate(135,130.6293706293706)">37.8<title>row: ZUSAMMENFASSUNG
+ (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(336,0.5)"><text y="0.32em" transform="translate(135,154.69026548672568)">37.8<title>row: ZUSAMMENFASSUNG
 row2: 1-2mal
 row value: 1
 header: GESAMT
@@ -117,7 +91,7 @@ header: GESAMT
 value: 37.8
 N: 143
 mean: 5.5
- (1)</title></text><text y="0.32em" transform="translate(135,320.27972027972027)">41.3<title>row: ZUSAMMENFASSUNG
+ (1)</title></text><text y="0.32em" transform="translate(135,394.69026548672565)">41.3<title>row: ZUSAMMENFASSUNG
 row2: 3-5mal
 row value: 2
 header: GESAMT
@@ -143,33 +117,7 @@ header: GESAMT
 value: 41.3
 N: 143
 mean: 5.5
- (1)</title></text><text y="0.32em" transform="translate(135,469.65034965034965)">21.0<title>row: ZUSAMMENFASSUNG
-row2: &gt;5mal
-row value: 3
-header: GESAMT
-
-value: 21.0
-N: 143
-mean: 3.0
- (1)
-row: ZUSAMMENFASSUNG
-row2: &gt;5mal
-row value: 3
-header: GESAMT
-
-value: 21.0
-N: 143
-mean: 0.6
- (1)
-row: ZUSAMMENFASSUNG
-row2: &gt;5mal
-row value: 3
-header: GESAMT
-
-value: 21.0
-N: 143
-mean: 5.5
- (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+ (1)</title></text></g><g aria-label="text" transform="translate(336,-14.5)"><text transform="translate(135,40)">Ø: 5.5</text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-59,39.5)"><text y="0.71em" transform="translate(135,520)">GESAMT</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;
@@ -188,5 +136,5 @@ mean: 5.5
   display: inline-flex;
   align-items: center;
   margin-right: 1em;
-}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>1-2mal</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>3-5mal</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#e15759"><rect width="100%" height="100%"/></svg>&gt;5mal</span></div></figure></div>
+}</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>1-2mal</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>3-5mal</span></div></figure></div>
 					</div>
