@@ -305,7 +305,7 @@ function set_axis_labels(plot_options) {
 	// small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
 	const text_margin_left = 5;
 
-	const subheader_tick_opts = {
+	const header_tick_opts = {
 		textAnchor: "start",
 		// TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
 		z: "ColTitle1",
@@ -319,8 +319,8 @@ function set_axis_labels(plot_options) {
 		textOverflow: "ellipsis-end",
 		fontWeight: "bold",
 	};
-	subheader_tick_opts[xy] = "ColTitle2"
-	const header_tick_opts = {
+	header_tick_opts[xy] = "ColTitle2"
+	const subheader_tick_opts = {
 		textAnchor: "start",
 		text: "ColTitle2",
 		z: "ColNo",
@@ -331,13 +331,13 @@ function set_axis_labels(plot_options) {
 		lineWidth: line_width,
 		textOverflow: "ellipsis-end",
 	};
-	header_tick_opts[xy] = "ColTitle2"
-	plot_options.options.marks.push(Plot[plot_options.e.axis_](
-		plot_options.plot_data, 
-		Plot.selectFirst(subheader_tick_opts)
-	))
+	subheader_tick_opts[xy] = "ColTitle2"
 	plot_options.options.marks.push(Plot[plot_options.e.axis_](
 		plot_options.plot_data, 
 		Plot.selectFirst(header_tick_opts)
+	))
+	plot_options.options.marks.push(Plot[plot_options.e.axis_](
+		plot_options.plot_data, 
+		Plot.selectFirst(subheader_tick_opts)
 	))
 }
