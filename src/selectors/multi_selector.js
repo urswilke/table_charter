@@ -77,7 +77,7 @@ export class MultiSelector extends LitElement {
 			</label>
             <select id="parents-selector" class="mainsel" multiple @change=${this._update_parents}>
                 ${arr_selected.map((x) => html`
-					<option .selected=${x.selected}>
+					<option .selected=${x.selected} title=${this.parent_fun(x)}>
 						${this.parent_fun(x)}
 					</option>
 				`)}
@@ -87,7 +87,7 @@ export class MultiSelector extends LitElement {
 			<label for="subsel">${this.subsel_text}</label>
             <select id="children-selector" class="subsel" multiple @change=${this._update_children}>
                 ${this.prop_table.map((x) => html`
-                    <option .selected=${x.selected}>
+                    <option .selected=${x.selected} title=${this.children_fun(x)}>
                         ${this.children_fun(x)}
                     </option>
 				`)}
