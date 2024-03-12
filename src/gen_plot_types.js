@@ -34,10 +34,10 @@ export class PlotOptions {
 			);	
 		}
 		
-		const plot_opts = {}
-		plot_opts[e.x2] = e.col_lab_fun
-		plot_opts[e.x1] =  "Value"
-		e.plot_opts = plot_opts;
+		e.plot_opts = {
+			[e.x2]: e.col_lab_fun,
+			[e.x1]:  "Value"
+		}
 
 		e.color_opts = {
 			type: o.color_scale === "ordinal" ? "linear" : o.color_scale,
@@ -69,9 +69,7 @@ export class PlotOptions {
         p.bar_ = e.x1 === "y" ? "barY" : "barX";
         
 		
-		p.group_args1 = {text: "first"}
-		p.group_args1[e.x1] = "sum"
-		// p.group_args2 = {...group_args1, text: "first"}
+		p.group_args1 = {text: "first", [e.x1]: "sum"}
 		p.group_args2_bar = {
 			...e.plot_opts,
 			fill: e.row_lab_fun,
