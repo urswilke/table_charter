@@ -85,10 +85,6 @@ export class TableDataSelector extends LitElement {
 		this.update_choices({
 			colorscale_disabled: colorscale_disabled,
 			plot_type: gen_plot_type_string(this),
-			...(colorscale_disabled && {
-				color_scale: "categorical",
-				...this.saved[this.i_tab],
-			}),
 			...this.saved[this.i_tab],
 		})
 		this.sel_header_data()
