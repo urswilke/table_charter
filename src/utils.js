@@ -162,6 +162,6 @@ export function add_spaces(data) {
     }));
 
 	return data
-        .map((s) => c.find((t) => t.ColNo == s.ColNo) || s)
+		.map((s) => ({...s, ...c.find((t) => t.ColNo == s.ColNo)}))
         .concat(c.filter((s) => !data.find((t) => t.ColNo == s.ColNo)));
 }
