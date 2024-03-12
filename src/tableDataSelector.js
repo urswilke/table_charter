@@ -11,6 +11,7 @@ import {
     gen_plot_type_string,
     prepare_data,
     save_file,
+	add_spaces,
 } from "./utils.js";
 
 import './selectors/question_selector.js'
@@ -38,9 +39,8 @@ export class TableDataSelector extends LitElement {
 
 	// Initialization:
 	init_tablebook_data(data) {
-		this.data = data
-			// hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-			.map(x => ({...x, ColTitle2: x.ColTitle2 + " ".repeat(Number(x.ColNo))}));
+		// hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
+		this.data = add_spaces(data)
 		this.init_params();
 		this._update_plot_data()
 	}

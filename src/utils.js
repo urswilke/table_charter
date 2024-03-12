@@ -142,3 +142,26 @@ export function save_file() {
 
 	document.body.removeChild(element);
 }
+
+// add varying number of spaces to duplicated `ColTitle2`s
+// (that every ColNo has a unique ColTitle2):
+export function add_spaces(data) {
+	var a = distinct(data, ["ColNo", "ColTitle2"])
+	var counts = {}
+	for (let i = 0; i < a.length; i++) {
+		const e = a[i];
+		counts = { 
+			...counts,
+			[e.ColTitle2]: (counts[e.ColTitle2] || 0) + 1
+		}
+		e.n = counts[e.ColTitle2]
+	}
+	var c = a.map((x, i) => ({
+        i: x.i,
+        ColTitle2: x.ColTitle2 + " ".repeat(x.n - 1),
+    }));
+
+	return data
+        .map((s) => c.find((t) => t.ColNo == s.ColNo) || s)
+        .concat(c.filter((s) => !data.find((t) => t.ColNo == s.ColNo)));
+}
