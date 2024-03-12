@@ -74,13 +74,13 @@ export class OJSPlot extends LitElement {
 						</div>
 						<div class="plot-div">${this.renderedPlot}</div>
 					</div>
-					<div class="save-svg-button">
+					<!-- <div class="save-svg-button">
 						<button
 							data-test-id="save-svg-button"
 							@click="${this._click_save_svg}">
 							${translate("saveSvg.label")}
 						</button>
-					</div>
+					</div> -->
 				</div>
 			`
         );
