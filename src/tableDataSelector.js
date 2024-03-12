@@ -20,7 +20,6 @@ import './selectors/colorscale_selector.js'
 import './selectors/further_options_selector.js'
 import './selectors/advanced_options_selector.js'
 
-import { all_color_schemes } from './gen_plot_types.js'
 
 import sharedStyles from './components.css?inline';
 import data_compressed from './example_compressed.json';
@@ -131,7 +130,6 @@ export class TableDataSelector extends LitElement {
 		) {
 			this.set_color_scale()
 			this.init_color_scheme()
-			this.params.color_schemes = all_color_schemes[this.choices.color_scale];
 		}
 
 		this.plot_data = this.rows_data
@@ -236,7 +234,6 @@ export class TableDataSelector extends LitElement {
 		this.sel_rows_data()
 
 		this.set_color_scale()
-		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
 		this.init_color_scheme()
 	
 		this._update_plot_data()
@@ -245,7 +242,6 @@ export class TableDataSelector extends LitElement {
 		this.update_choices({
 			color_scale: e.detail.chosen_colorscale
 		})
-		this.params.color_schemes = all_color_schemes[this.choices.color_scale];
 		this.init_color_scheme()
 
 		this._update_plot_data()
@@ -393,7 +389,6 @@ export class TableDataSelector extends LitElement {
 								.all_colorscales=${this.params.color_scale}	
 								.chosen_colorscale=${this.choices.color_scale}  
 								.colorscale_disabled=${this.choices.colorscale_disabled}
-								.all_colorschemes=${this.params.color_schemes}	
 								.chosen_colorscheme=${this.choices.color_scheme}>
 							</colorscale-selector>
 							<hr></hr>

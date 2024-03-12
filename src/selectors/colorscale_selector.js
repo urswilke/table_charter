@@ -1,10 +1,10 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import sharedStyles from './../components.css?inline';
 import { translate } from "lit-translate";
+import { all_color_schemes } from '../gen_plot_types.js'
 
 export class ColorscaleSelector extends LitElement {
     static properties = {
-		all_colorschemes: { type: Array },
 		chosen_colorscheme: { type: String },
 		chosen_colorscale: { type: String },
 		colorscale_disabled: { type: Boolean },
@@ -44,6 +44,7 @@ export class ColorscaleSelector extends LitElement {
     }
 
     render() {
+        const color_schemes = all_color_schemes[this.chosen_colorscale]
         return html`
         <div class="selector-group">
         <div class= "subselect">
@@ -59,7 +60,7 @@ export class ColorscaleSelector extends LitElement {
         <div class= "subselect">
             <label for="colorscheme-selector">${translate("color.scheme")}</label>
             <select id="colorscheme-selector" @change=${this._update_colorscheme}>
-                ${this.all_colorschemes.map((col) => html`
+                ${color_schemes.map((col) => html`
                     <option .selected=${this.chosen_colorscheme === col}>
                         ${col}
                     </option>
