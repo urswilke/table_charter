@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 export default defineConfig({
-    base: '/table_charter/',  
+    base: '/',  
     esbuild: {
         supported: {
           'top-level-await': true //browsers can handle top-level-await features
