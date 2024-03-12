@@ -109,9 +109,10 @@ export class TableDataSelector extends LitElement {
 		;
 		this.toggle_filtered_class('#num-type-div', this.header_data, this.num_type_data)
 		
-		this.update_choices({
-			row_table: gen_row_table(this.num_type_data)
-		})
+		this.update_choices(
+			{row_table: gen_row_table(this.num_type_data)}, 
+			!this.saved[this.i_tab].row_table
+		)
 
 		this.sel_rows_data()
 	}
@@ -158,7 +159,10 @@ export class TableDataSelector extends LitElement {
 				"Turbo"
 		})
 	}
-	update_choices(obj) {
+	update_choices(obj, overwrite = true) {
+		if (!overwrite) {
+			return;
+		}
 		this.choices = produce(this.choices, draft => (
 			{...draft, ...obj}
 		))
