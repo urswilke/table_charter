@@ -146,21 +146,21 @@ export function save_file() {
 // add varying number of spaces to duplicated `ColTitle2`s
 // (that every ColNo has a unique ColTitle2):
 export function add_spaces(data) {
-	var a = distinct(data, ["ColNo", "ColTitle2"])
+	var coltitle_array = distinct(data, ["ColNo", "ColTitle2"])
 	var counts = {}
-	for (let i = 0; i < a.length; i++) {
-		const e = a[i];
+	for (let i = 0; i < coltitle_array.length; i++) {
+		const e = coltitle_array[i];
 		counts = { 
 			...counts,
 			[e.ColTitle2]: (counts[e.ColTitle2] || 0) + 1
 		}
 		e.n = counts[e.ColTitle2]
 	}
-	var c = a.map((x) => ({
+	var coltitle_array_unique = coltitle_array.map((x) => ({
         ColNo: x.ColNo,
         ColTitle2: x.ColTitle2 + " ".repeat(x.n - 1),
     }));
 
 	return data
-		.map((s) => ({...s, ...c.find((t) => t.ColNo === s.ColNo)}));
+		.map((s) => ({...s, ...coltitle_array_unique.find((t) => t.ColNo === s.ColNo)}));
 }
