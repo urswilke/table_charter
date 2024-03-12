@@ -156,7 +156,7 @@ export function add_spaces(data) {
 		}
 		e.n = counts[e.ColTitle2]
 	}
-	var c = a.map((x, i) => ({
+	var c = a.map((x) => ({
         ColNo: x.ColNo,
         ColTitle2: x.ColTitle2 + " ".repeat(x.n - 1),
     }));
