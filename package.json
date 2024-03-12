@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 4000",
     "build": "vite build",
     "preview": "vite preview",
     "test": "wdio wdio.conf.js",
