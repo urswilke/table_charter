@@ -57,13 +57,13 @@ export class PlotOptions {
 		e.marginLeft = e.x1 === "y" ? 60 : 410
 		e.marginBottom = 80
 		e.axis_ = e.x1 === "y" ? "axisX" : "axisY";
+		e.group_ = e.x1 === "y" ? "groupX" : "groupY";
 		this.e = e;
 	}
 	bar() {
 		const e = this.e;
 		
 		const p = {};
-		p.group_ = e.x1 === "y" ? "groupX" : "groupY";
         p.text_ = e.x1 === "y" ? "textY" : "textX";
         p.stack_ = e.x1 === "y" ? "stackY" : "stackX";
         p.bar_ = e.x1 === "y" ? "barY" : "barX";
@@ -103,23 +103,22 @@ export class PlotOptions {
 	}
 	bar_plot_options() {
 		const p = this.p
+		const e = this.e
 		// reverse stack order for barY charts (in order to have the same order as the legend and the tables)
 		// https://stackoverflow.com/questions/68056843/in-observable-plot-how-to-sort-order-the-stack-from-a-bin-transform/68057660#68057660
 		const bar_opts = {
-			...Plot[p.group_](p.group_args1, p.group_args2_bar), 
+			...Plot[e.group_](p.group_args1, p.group_args2_bar), 
 			...(p.is_x && {reverse: true}),
 		};
 		const text_opts = {
-			...Plot[p.group_](p.group_args1, p.group_args2_text),
+			...Plot[e.group_](p.group_args1, p.group_args2_text),
 			...(p.is_x && {reverse: true}),
 		}
 
 		this.options = {
-			marginTop: 40,
-			marginRight: 120,
-			marginLeft: this.e.marginLeft,
-			marginBottom: this.e.marginBottom,
-			color: this.e.color_opts,
+			marginLeft: e.marginLeft,
+			marginBottom: e.marginBottom,
+			color: e.color_opts,
 			marks: [
 				Plot[p.bar_](this.plot_data, Plot[p.stack_](bar_opts)),
 				// (explicit form of this):
@@ -128,7 +127,7 @@ export class PlotOptions {
 				this.o.color_scale === "ordinal" ? null : Plot[p.text_](this.plot_data, Plot[p.stack_](text_opts)),
 				// only show if there 10 different color values at max...:
 				// color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
-				this.o.show_mean ? Plot.text(this.plot_data, Plot[p.group_](p.group_args1, p.group_args2_text_n)) : null,
+				this.o.show_mean ? Plot.text(this.plot_data, Plot[e.group_](p.group_args1, p.group_args2_text_n)) : null,
 			]
 		};
 	}
@@ -150,10 +149,23 @@ export class PlotOptions {
 			r: 7,
 			title: tooltip_fun(e.n_decimals)
 		}
+		p.group_args1 = {[e.x1]: "max"}
+
+		p.group_args2_text_n = {
+			...e.plot_opts, 
+			[e.x2]: "ColTitle2",
+			z: "ColTitle2",
+			text: (x) => ((x.ColMean === undefined) ? null : 'Ø: ' + x.ColMean.toFixed(1)),
+		}
+		p.is_x = this.o.xy === "x";
+		p.group_args2_text_n[p.is_x ? "dy" : "dx"] = p.is_x ? -15 : 15
+		p.is_x ? p.group_args2_text_n.lineAnchor = "bottom" : p.group_args2_text_n.textAnchor = "start"
+
 		this.p = p;
 		this.line_plot_options()
 	}
 	line_plot_options() {
+		const p = this.p
 		this.options = {
 			marginLeft: this.e.marginLeft,
 			marginBottom: this.e.marginBottom,
@@ -161,11 +173,13 @@ export class PlotOptions {
 			marks: [
 				Plot.lineY(this.plot_data, this.p.line_opts),
 				Plot.dot(this.plot_data, this.p.dot_opts),
-				// x2 === "x" ? Plot.axisX({textAnchor: "start"}) : null
+				this.o.show_mean ? Plot.text(this.plot_data, Plot.select(p.group_args1, p.group_args2_text_n)) : null,
 			]
 		};
 	}
 	post_process() {
+		this.options.marginTop = 40
+		this.options.marginRight = 120
 		this.options[this.e.x2] = this.e.x2_opts
 		this.options[this.e.x1] = this.e.x1_opts
 		this.options.width = 1200
