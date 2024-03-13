@@ -166,6 +166,7 @@ export function add_spaces(data) {
         };
         e.n = counts[e.ColTitle2];
     }
+    // TODO fix: undefined becomes string "undefined" here:
     var coltitle_array_unique = coltitle_array.map((x) => ({
         ColNo: x.ColNo,
         ColTitle2: x.ColTitle2 + " ".repeat(x.n - 1),

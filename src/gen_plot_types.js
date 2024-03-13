@@ -236,7 +236,10 @@ function tooltip_fun(n_decimals) {
                 : `${get("tooltips.row2")}: ${x.RowTitle2}`,
             x.RowValue && `${get("tooltips.rowValue")}: ${x.RowValue}`,
             `${get("tooltips.header")}: ${x.ColTitle1}`,
-            x.ColTitle2 && `${get("tooltips.column")}: ${x.ColTitle2}`,
+            // TODO: see TODO in add_spaces() helper function!...:
+            x.ColTitle2 === "undefined" 
+                ? null
+                : `${get("tooltips.column")}: ${x.ColTitle2}`,
             // if an MW value is not defined,
             // it would lead to an error, for a line plot without this check:
             x.Value === undefined
@@ -332,7 +335,7 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 
     // it seems as if the placeholders for the gaps need to be unique.
     // Therefore, we'll add an "a" for every new gap:
-    var gap_string = "udfaufdanjkewoicxjnk";
+    var gap_string = "this_label_should_never_occur_in_real_data";
     for (let i = diff_indices.length - 1; i >= 0; i--) {
         const diff_index = diff_indices[i];
         x_order_gaps.splice(diff_index, 0, gap_string);
