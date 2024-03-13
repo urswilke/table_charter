@@ -35,7 +35,6 @@
     "chromedriver": "^121.0.0",
     "fs-extra": "^11.2.0",
     "geckodriver": "^4.3.2",
-    "js-beautify": "^1.14.11",
     "lit": "^3.1.2",
     "nyc": "^15.1.0",
     "selenium-assistant": "^6.1.1",
