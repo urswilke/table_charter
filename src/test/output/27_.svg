@@ -1,11 +1,13 @@
 <div xmlns="http://www.w3.org/1999/xhtml" id="ojs-plot-div" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<div style="margin-left: 80px">
-							<h2 class="primary multi-line-header" data-test-id="plot-header">7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale?
+                        <div style="margin-left: 80px">
+                            <h2 class="primary multi-line-header" data-test-id="plot-header">
+                                7. Für die abgefragten Studienarten: Wie zufrieden sind Sie mit dem Tabellenbandtool bezüglich der eben abgefragten Merkmale?
 Sonstige
-Mittelwertüberblick</h2>
-							<h4>vs GESAMT</h4>
-						</div>
-						<div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1000" height="600" viewBox="0 0 1000 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+Mittelwertüberblick
+                            </h2>
+                            <h4>vs GESAMT</h4>
+                        </div>
+                        <div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1200" height="600" viewBox="0 0 1200 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -15,7 +17,19 @@ Mittelwertüberblick</h2>
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,514.9746085484553)" d="M0,0L-6,0"/><path transform="translate(60,488.5251798561152)" d="M0,0L-6,0"/><path transform="translate(60,462.0757511637745)" d="M0,0L-6,0"/><path transform="translate(60,435.62632247143443)" d="M0,0L-6,0"/><path transform="translate(60,409.1768937790942)" d="M0,0L-6,0"/><path transform="translate(60,382.7274650867541)" d="M0,0L-6,0"/><path transform="translate(60,356.2780363944139)" d="M0,0L-6,0"/><path transform="translate(60,329.8286077020733)" d="M0,0L-6,0"/><path transform="translate(60,303.3791790097331)" d="M0,0L-6,0"/><path transform="translate(60,276.929750317393)" d="M0,0L-6,0"/><path transform="translate(60,250.48032162505282)" d="M0,0L-6,0"/><path transform="translate(60,224.03089293271265)" d="M0,0L-6,0"/><path transform="translate(60,197.58146424037204)" d="M0,0L-6,0"/><path transform="translate(60,171.1320355480319)" d="M0,0L-6,0"/><path transform="translate(60,144.6826068556917)" d="M0,0L-6,0"/><path transform="translate(60,118.23317816335158)" d="M0,0L-6,0"/><path transform="translate(60,91.7837494710114)" d="M0,0L-6,0"/><path transform="translate(60,65.33432077867077)" d="M0,0L-6,0"/><path transform="translate(60,38.884892086330595)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,514.9746085484553)">6.55</text><text y="0.32em" transform="translate(60,488.5251798561152)">6.60</text><text y="0.32em" transform="translate(60,462.0757511637745)">6.65</text><text y="0.32em" transform="translate(60,435.62632247143443)">6.70</text><text y="0.32em" transform="translate(60,409.1768937790942)">6.75</text><text y="0.32em" transform="translate(60,382.7274650867541)">6.80</text><text y="0.32em" transform="translate(60,356.2780363944139)">6.85</text><text y="0.32em" transform="translate(60,329.8286077020733)">6.90</text><text y="0.32em" transform="translate(60,303.3791790097331)">6.95</text><text y="0.32em" transform="translate(60,276.929750317393)">7.00</text><text y="0.32em" transform="translate(60,250.48032162505282)">7.05</text><text y="0.32em" transform="translate(60,224.03089293271265)">7.10</text><text y="0.32em" transform="translate(60,197.58146424037204)">7.15</text><text y="0.32em" transform="translate(60,171.1320355480319)">7.20</text><text y="0.32em" transform="translate(60,144.6826068556917)">7.25</text><text y="0.32em" transform="translate(60,118.23317816335158)">7.30</text><text y="0.32em" transform="translate(60,91.7837494710114)">7.35</text><text y="0.32em" transform="translate(60,65.33432077867077)">7.40</text><text y="0.32em" transform="translate(60,38.884892086330595)">7.45</text></g><g aria-label="line" fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" transform="translate(0.5,0.5)"/></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,515.1756242065171)" d="M0,0L-6,0"/><path transform="translate(60,489.78417266187057)" d="M0,0L-6,0"/><path transform="translate(60,464.3927211172235)" d="M0,0L-6,0"/><path transform="translate(60,439.00126957257703)" d="M0,0L-6,0"/><path transform="translate(60,413.60981802793043)" d="M0,0L-6,0"/><path transform="translate(60,388.2183664832839)" d="M0,0L-6,0"/><path transform="translate(60,362.82691493863734)" d="M0,0L-6,0"/><path transform="translate(60,337.4354633939904)" d="M0,0L-6,0"/><path transform="translate(60,312.0440118493438)" d="M0,0L-6,0"/><path transform="translate(60,286.65256030469726)" d="M0,0L-6,0"/><path transform="translate(60,261.2611087600507)" d="M0,0L-6,0"/><path transform="translate(60,235.86965721540415)" d="M0,0L-6,0"/><path transform="translate(60,210.47820567075715)" d="M0,0L-6,0"/><path transform="translate(60,185.08675412611063)" d="M0,0L-6,0"/><path transform="translate(60,159.69530258146403)" d="M0,0L-6,0"/><path transform="translate(60,134.30385103681752)" d="M0,0L-6,0"/><path transform="translate(60,108.91239949217095)" d="M0,0L-6,0"/><path transform="translate(60,83.52094794752395)" d="M0,0L-6,0"/><path transform="translate(60,58.12949640287737)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,515.1756242065171)">6.55</text><text y="0.32em" transform="translate(60,489.78417266187057)">6.60</text><text y="0.32em" transform="translate(60,464.3927211172235)">6.65</text><text y="0.32em" transform="translate(60,439.00126957257703)">6.70</text><text y="0.32em" transform="translate(60,413.60981802793043)">6.75</text><text y="0.32em" transform="translate(60,388.2183664832839)">6.80</text><text y="0.32em" transform="translate(60,362.82691493863734)">6.85</text><text y="0.32em" transform="translate(60,337.4354633939904)">6.90</text><text y="0.32em" transform="translate(60,312.0440118493438)">6.95</text><text y="0.32em" transform="translate(60,286.65256030469726)">7.00</text><text y="0.32em" transform="translate(60,261.2611087600507)">7.05</text><text y="0.32em" transform="translate(60,235.86965721540415)">7.10</text><text y="0.32em" transform="translate(60,210.47820567075715)">7.15</text><text y="0.32em" transform="translate(60,185.08675412611063)">7.20</text><text y="0.32em" transform="translate(60,159.69530258146403)">7.25</text><text y="0.32em" transform="translate(60,134.30385103681752)">7.30</text><text y="0.32em" transform="translate(60,108.91239949217095)">7.35</text><text y="0.32em" transform="translate(60,83.52094794752395)">7.40</text><text y="0.32em" transform="translate(60,58.12949640287737)">7.45</text></g><g aria-label="line" fill="none" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" transform="translate(0.5,0.5)"><path stroke="#4e79a7" d="M570,520Z"/><path stroke="#f28e2c" d="M570,40Z"/></g><g aria-label="dot" stroke="transparent" stroke-width="1.5" transform="translate(0.5,0.5)"><circle cx="570" cy="520" r="7" fill="#4e79a7"><title>row: Schnelle Umsetzung
+
+
+header: GESAMT
+
+value: 6.5
+</title></circle><circle cx="570" cy="40" r="7" fill="#f28e2c"><title>row: Kurzfristige Anpassungen
+
+
+header: GESAMT
+
+value: 7.5
+</title></circle></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-474.5,39.5)"><text y="0.71em" transform="translate(570,520)">GESAMT</text></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(-474.5,9.5)"><text y="0.71em" transform="translate(570,520)">undefined</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;
@@ -35,4 +49,4 @@ Mittelwertüberblick</h2>
   align-items: center;
   margin-right: 1em;
 }</style><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#4e79a7"><rect width="100%" height="100%"/></svg>Schnelle Umsetzung</span><span class="large-font-swatch"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#f28e2c"><rect width="100%" height="100%"/></svg>Kurzfristige Anpassungen</span></div></figure></div>
-					</div>
+                    </div>
