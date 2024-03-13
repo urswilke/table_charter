@@ -41,7 +41,7 @@
   "fontSize": {
     "label": "Font size"
   },
-  "color" : {
+  "color": {
     "scale": "color scale",
     "scheme": "color scheme",
     "categorical": "categorical",

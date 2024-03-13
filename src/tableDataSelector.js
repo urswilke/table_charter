@@ -1,5 +1,5 @@
-import { LitElement, css, html, unsafeCSS } from 'lit'
-import { when } from 'lit/directives/when.js';
+import { LitElement, css, html, unsafeCSS } from "lit";
+import { when } from "lit/directives/when.js";
 import { translate } from "lit-translate";
 
 import {
@@ -11,293 +11,315 @@ import {
     gen_plot_type_string,
     prepare_data,
     save_file,
-	add_spaces,
+    add_spaces,
 } from "./utils.js";
 
-import './selectors/question_selector.js'
-import './selectors/multi_selector.js'
-import './selectors/num_type_selector.js'
-import './selectors/colorscale_selector.js'
-import './selectors/further_options_selector.js'
-import './selectors/advanced_options_selector.js'
+import "./selectors/question_selector.js";
+import "./selectors/multi_selector.js";
+import "./selectors/num_type_selector.js";
+import "./selectors/colorscale_selector.js";
+import "./selectors/further_options_selector.js";
+import "./selectors/advanced_options_selector.js";
 
-
-import sharedStyles from './components.css?inline';
-import data_compressed from './example_compressed.json';
-import { produce } from "immer"
+import sharedStyles from "./components.css?inline";
+import data_compressed from "./example_compressed.json";
+import { produce } from "immer";
 
 const data = prepare_data(data_compressed);
-const inspect = false // set to true for some console.log msgs
+const inspect = false; // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
+    static properties = {
+        plot_data: { type: Array },
+        params: { type: Object },
+        choices: { type: Object },
+    };
 
-	static properties = {
-		plot_data: { type: Array },
-		params: { type: Object },
-		choices: { type: Object },
-	};
+    // Initialization:
+    init_tablebook_data(data) {
+        // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
+        this.data = add_spaces(data);
+        this.init_params();
+        this._update_plot_data();
+    }
 
-	// Initialization:
-	init_tablebook_data(data) {
-		// hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-		this.data = add_spaces(data)
-		this.init_params();
-		this._update_plot_data()
-	}
-	
-	// not in constructor cause need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized..:
-	connectedCallback() {
-		super.connectedCallback()
-		this.init_tablebook_data(data);
-	}
+    // not in constructor cause need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized..:
+    connectedCallback() {
+        super.connectedCallback();
+        this.init_tablebook_data(data);
+    }
 
-	init_params() {
-		this.params = {};
-		this.choices = {};
-		this.choices.xy = "x"
-		
-		this.choices.header_table = gen_header_table(this.data)
-		
-		this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
-		
-		let title_table = this.params.title_table[0]
-		this.choices.i_tab = title_table.i_tab
-		this.i_tab = title_table.i_tab
-		this.choices.tab_title = title_table.TabTitle
-		this.params.row_type = ["%", "n"];
-		this.choices.row_type = this.params.row_type[0];
-		this.params.color_scale = ["categorical", "ordinal"];
-		this.params.collapsed_view = true;
-		this.choices.show_mean = true;
-		this.choices.separate_headers = true;
-		this.choices.font_size = 16;
-		const saved_settings = document.querySelector("table-charter").dataset.savedSettings;
-		this.saved = (saved_settings && JSON.parse(saved_settings)) || 
-			new Array(this.params.title_table.length).fill({})
-		this.sel_question_data()
-	}
+    init_params() {
+        this.params = {};
+        this.choices = {};
+        this.choices.xy = "x";
 
-	// Helper:
-	sel_question_data() {
-		this.question_data = this.data
-			.filter(x => x.i_tab == this.i_tab);
-		const colorscale_disabled = !["CAT"].includes(this.question_data[0].TabType);
-		this.update_choices({
-			colorscale_disabled: colorscale_disabled,
-			plot_type: gen_plot_type_string(this),
-			...this.saved[this.i_tab],
-		})
-		this.sel_header_data()
-	}
-	sel_header_data() {
-		this.header_data = filter_sel_headers(
-			this.question_data, 
-			this.choices.header_table
-		)
-		this.toggle_filtered_class('#header-multi-sel', this.question_data, this.header_data)
-		
-		this.sel_num_type_data()
-	}
-	sel_num_type_data() {
-		const row_type = this.choices.row_type
-		this.num_type_data = this.header_data
-			.filter(x => 
-				row_type === "n" ? 
-				x.RowAbsPercent == "Abs" : 
-				x.RowAbsPercent != "Abs"
-			)
-		;
-		this.toggle_filtered_class('#num-type-div', this.header_data, this.num_type_data)
-		
-		this.update_choices(
-			{row_table: gen_row_table(this.num_type_data)}, 
-			!this.saved[this.i_tab].row_table
-		)
+        this.choices.header_table = gen_header_table(this.data);
 
-		this.sel_rows_data()
-	}
-	sel_rows_data() {
-		this.rows_data = filter_sel_rows(this.num_type_data, this.choices.row_table)
-		this.toggle_filtered_class('#row-multi-sel', this.num_type_data, this.rows_data)
-	
-		// TODO: find cleaner solution!...:
-		if (
-			// only when object is empty:
-			Object.keys(this.saved[this.i_tab]).length === 0
-		) {
-			this.set_color_scale()
-			this.init_color_scheme()
-		}
+        this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
 
-		this.plot_data = this.rows_data
-	}
-	set_color_scale() {
-		const df_row_tit_val = distinct(this.rows_data, ["RowTitle1", "RowTitle2", "RowValue"])
-		const n_numeric_rowtitles = df_row_tit_val.reduce(
-			(sum, x) => sum + Number(x.RowValue === Number(x.RowTitle2.match(/^-?\d+/))),
-			0
-		)
-		let color_scale;
-		if (
-			// df_row_tit_val.length >= 5 & 
-			n_numeric_rowtitles / df_row_tit_val.length >= 0.6 & 
-			[... new Set(this.choices.row_table.filter(x => x.selected).map(x => x.RowContent))] == "Detail"
-		) {
-			color_scale = "ordinal"
-		} else {
-			color_scale = "categorical"
-		}
-		this.update_choices({
-			color_scale: color_scale,
-		})
-	}
+        let title_table = this.params.title_table[0];
+        this.choices.i_tab = title_table.i_tab;
+        this.i_tab = title_table.i_tab;
+        this.choices.tab_title = title_table.TabTitle;
+        this.params.row_type = ["%", "n"];
+        this.choices.row_type = this.params.row_type[0];
+        this.params.color_scale = ["categorical", "ordinal"];
+        this.params.collapsed_view = true;
+        this.choices.show_mean = true;
+        this.choices.separate_headers = true;
+        this.choices.font_size = 16;
+        const saved_settings =
+            document.querySelector("table-charter").dataset.savedSettings;
+        this.saved =
+            (saved_settings && JSON.parse(saved_settings)) ||
+            new Array(this.params.title_table.length).fill({});
+        this.sel_question_data();
+    }
 
-	init_color_scheme() {
-		this.update_choices({
-			color_scheme: this.choices.color_scale === "categorical" ?
-				"Tableau10" :
-				"Turbo"
-		})
-	}
-	update_choices(obj, overwrite = true) {
-		if (!overwrite) {
-			return;
-		}
-		this.choices = produce(this.choices, draft => (
-			{...draft, ...obj}
-		))
-	}
-	update_params(obj) {
-		this.params = produce(this.params, draft => (
-			{...draft, ...obj}
-		))
-	}
-	toggle_filtered_class(selector_string, input_data, output_data) {
-		if (input_data.length === 0) {
-			return;
-		}
-		const html_el = this.renderRoot?.querySelector(selector_string);
-		if (output_data.length === 0) {
-			html_el?.classList.add("all-filtered")
-		} else {
-			html_el?.classList.remove("all-filtered")
-		}
+    // Helper:
+    sel_question_data() {
+        this.question_data = this.data.filter((x) => x.i_tab == this.i_tab);
+        const colorscale_disabled = !["CAT"].includes(
+            this.question_data[0].TabType,
+        );
+        this.update_choices({
+            colorscale_disabled: colorscale_disabled,
+            plot_type: gen_plot_type_string(this),
+            ...this.saved[this.i_tab],
+        });
+        this.sel_header_data();
+    }
+    sel_header_data() {
+        this.header_data = filter_sel_headers(
+            this.question_data,
+            this.choices.header_table,
+        );
+        this.toggle_filtered_class(
+            "#header-multi-sel",
+            this.question_data,
+            this.header_data,
+        );
 
-	}
-	
-	// Talk to parent:
-	_update_plot_data() {
-		// this.saved[this.i_tab] = {...this.saved[this.i_tab], ...this.choices}
-		this.saved[this.i_tab] = produce(this.saved[this.i_tab], draft => ({
-			...draft, ...this.choices
-		})) 
-		const options = {
-			detail: {
-				data: {
-					plot_data: this.plot_data,
-					choices: this.saved[this.i_tab],
-				}
-			},
-			bubbles: true,
-			composed: true,
-		};
+        this.sel_num_type_data();
+    }
+    sel_num_type_data() {
+        const row_type = this.choices.row_type;
+        this.num_type_data = this.header_data.filter((x) =>
+            row_type === "n"
+                ? x.RowAbsPercent == "Abs"
+                : x.RowAbsPercent != "Abs",
+        );
+        this.toggle_filtered_class(
+            "#num-type-div",
+            this.header_data,
+            this.num_type_data,
+        );
 
-		this.dispatchEvent(new CustomEvent('update-data', options));
+        this.update_choices(
+            { row_table: gen_row_table(this.num_type_data) },
+            !this.saved[this.i_tab].row_table,
+        );
 
-	}
+        this.sel_rows_data();
+    }
+    sel_rows_data() {
+        this.rows_data = filter_sel_rows(
+            this.num_type_data,
+            this.choices.row_table,
+        );
+        this.toggle_filtered_class(
+            "#row-multi-sel",
+            this.num_type_data,
+            this.rows_data,
+        );
 
-	// Listen to children:
-	_on_header_update(e) {
-		this.update_choices({
-			header_table: e.detail.prop_table
-		})
-		this.sel_header_data()
-		this._update_plot_data()
-	}
-	_on_question_update(e) {
-		let title_table = this.params.title_table[e.detail.chosen_tab_no];
-		this.i_tab = Number(title_table.i_tab);
-		this.update_choices({
-			i_tab: this.i_tab,
-			tab_title: title_table.TabTitle
-		})
-		// for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
-		this.sel_question_data()
-		this._update_plot_data()
-	}
-	_on_num_type_update(e) {
-		this.update_choices({
-			row_type: e.detail.chosen_num_type
-		})
-		this.sel_num_type_data()
-		this._update_plot_data()
-	}
-	_on_rows_update(e) {
-		this.update_choices({
-			row_table: e.detail.prop_table
-		})
-		this.sel_rows_data()
+        // TODO: find cleaner solution!...:
+        if (
+            // only when object is empty:
+            Object.keys(this.saved[this.i_tab]).length === 0
+        ) {
+            this.set_color_scale();
+            this.init_color_scheme();
+        }
 
-		this.set_color_scale()
-		this.init_color_scheme()
-	
-		this._update_plot_data()
-	}
-	_on_colorscale_update(e) {
-		this.update_choices({
-			color_scale: e.detail.chosen_colorscale
-		})
-		this.init_color_scheme()
+        this.plot_data = this.rows_data;
+    }
+    set_color_scale() {
+        const df_row_tit_val = distinct(this.rows_data, [
+            "RowTitle1",
+            "RowTitle2",
+            "RowValue",
+        ]);
+        const n_numeric_rowtitles = df_row_tit_val.reduce(
+            (sum, x) =>
+                sum +
+                Number(x.RowValue === Number(x.RowTitle2.match(/^-?\d+/))),
+            0,
+        );
+        let color_scale;
+        if (
+            // df_row_tit_val.length >= 5 &
+            (n_numeric_rowtitles / df_row_tit_val.length >= 0.6) &
+            ([
+                ...new Set(
+                    this.choices.row_table
+                        .filter((x) => x.selected)
+                        .map((x) => x.RowContent),
+                ),
+            ] ==
+                "Detail")
+        ) {
+            color_scale = "ordinal";
+        } else {
+            color_scale = "categorical";
+        }
+        this.update_choices({
+            color_scale: color_scale,
+        });
+    }
 
-		this._update_plot_data()
-	}
-	_on_colorscheme_update(e) {
-		this.update_choices({
-			color_scheme: e.detail.chosen_colorscheme
-		})
-		this._update_plot_data()
-	}
-	_on_xy_update(e) {
-		this.update_choices({
-			xy: e.detail.xy
-		})
-		this._update_plot_data()
-	}
-	_on_checkbox_update(e) {
-		this.update_choices({
-			show_mean: e.detail.show_mean,
-			separate_headers: e.detail.separate_headers,
-		})
-		this._update_plot_data()
-	}
-	_on_font_size_update(e) {
-		this.update_choices({
-			font_size: e.detail.font_size
-		})
-		this._update_plot_data()
-	}
-	_on_plot_type_update(e) {
-		this.update_choices({
-			plot_type: e.detail.plot_type
-		})
-		this._update_plot_data()
-	}
-	_on_expand() {
-		this.update_params({
-			collapsed_view: !this.params.collapsed_view
-		})
-	}
+    init_color_scheme() {
+        this.update_choices({
+            color_scheme:
+                this.choices.color_scale === "categorical"
+                    ? "Tableau10"
+                    : "Turbo",
+        });
+    }
+    update_choices(obj, overwrite = true) {
+        if (!overwrite) {
+            return;
+        }
+        this.choices = produce(this.choices, (draft) => ({ ...draft, ...obj }));
+    }
+    update_params(obj) {
+        this.params = produce(this.params, (draft) => ({ ...draft, ...obj }));
+    }
+    toggle_filtered_class(selector_string, input_data, output_data) {
+        if (input_data.length === 0) {
+            return;
+        }
+        const html_el = this.renderRoot?.querySelector(selector_string);
+        if (output_data.length === 0) {
+            html_el?.classList.add("all-filtered");
+        } else {
+            html_el?.classList.remove("all-filtered");
+        }
+    }
 
-	render() {
+    // Talk to parent:
+    _update_plot_data() {
+        // this.saved[this.i_tab] = {...this.saved[this.i_tab], ...this.choices}
+        this.saved[this.i_tab] = produce(this.saved[this.i_tab], (draft) => ({
+            ...draft,
+            ...this.choices,
+        }));
+        const options = {
+            detail: {
+                data: {
+                    plot_data: this.plot_data,
+                    choices: this.saved[this.i_tab],
+                },
+            },
+            bubbles: true,
+            composed: true,
+        };
 
-		inspect && console.log("rendering table-book-data")
-		inspect && console.log(this)
+        this.dispatchEvent(new CustomEvent("update-data", options));
+    }
 
-		return html`
-			${when(
-				this.params === undefined,
-				() => html`<div></div>`,
-				() => html`
+    // Listen to children:
+    _on_header_update(e) {
+        this.update_choices({
+            header_table: e.detail.prop_table,
+        });
+        this.sel_header_data();
+        this._update_plot_data();
+    }
+    _on_question_update(e) {
+        let title_table = this.params.title_table[e.detail.chosen_tab_no];
+        this.i_tab = Number(title_table.i_tab);
+        this.update_choices({
+            i_tab: this.i_tab,
+            tab_title: title_table.TabTitle,
+        });
+        // for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
+        this.sel_question_data();
+        this._update_plot_data();
+    }
+    _on_num_type_update(e) {
+        this.update_choices({
+            row_type: e.detail.chosen_num_type,
+        });
+        this.sel_num_type_data();
+        this._update_plot_data();
+    }
+    _on_rows_update(e) {
+        this.update_choices({
+            row_table: e.detail.prop_table,
+        });
+        this.sel_rows_data();
+
+        this.set_color_scale();
+        this.init_color_scheme();
+
+        this._update_plot_data();
+    }
+    _on_colorscale_update(e) {
+        this.update_choices({
+            color_scale: e.detail.chosen_colorscale,
+        });
+        this.init_color_scheme();
+
+        this._update_plot_data();
+    }
+    _on_colorscheme_update(e) {
+        this.update_choices({
+            color_scheme: e.detail.chosen_colorscheme,
+        });
+        this._update_plot_data();
+    }
+    _on_xy_update(e) {
+        this.update_choices({
+            xy: e.detail.xy,
+        });
+        this._update_plot_data();
+    }
+    _on_checkbox_update(e) {
+        this.update_choices({
+            show_mean: e.detail.show_mean,
+            separate_headers: e.detail.separate_headers,
+        });
+        this._update_plot_data();
+    }
+    _on_font_size_update(e) {
+        this.update_choices({
+            font_size: e.detail.font_size,
+        });
+        this._update_plot_data();
+    }
+    _on_plot_type_update(e) {
+        this.update_choices({
+            plot_type: e.detail.plot_type,
+        });
+        this._update_plot_data();
+    }
+    _on_expand() {
+        this.update_params({
+            collapsed_view: !this.params.collapsed_view,
+        });
+    }
+
+    render() {
+        inspect && console.log("rendering table-book-data");
+        inspect && console.log(this);
+
+        return html`
+            ${when(
+                this.params === undefined,
+                () => html`<div></div>`,
+                () => html`
 				<div class="selector-group" id="num-type-div">
 					<label>${translate("numType.label")}</label>
 					<div class="content">
@@ -328,7 +350,7 @@ export class TableDataSelector extends LitElement {
 							.mainsel_text = ${translate("header.mainsel")}
 							.subsel_text = ${translate("header.subsel")}
 							.parent_string = ${"ColTitle1"}
-							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
+							.children_fun = ${(x) => (x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1)}
 							@update-multi-select="${this._on_header_update}"
 							.collapsed_view = "${this.params.collapsed_view}"		
 							.prop_table=${this.choices.header_table}>
@@ -401,48 +423,49 @@ export class TableDataSelector extends LitElement {
 						</div>
 					</div>
 				</div>
-				`
-			)}
-		`;
-	}
+				`,
+            )}
+        `;
+    }
 
-	static styles = [
-		unsafeCSS(sharedStyles),
-		css`
-			span.clear { clear: left; display: block; }
-			option:checked {
-				background: red linear-gradient(#333,#333);
-			}
-			label {
+    static styles = [
+        unsafeCSS(sharedStyles),
+        css`
+            span.clear {
+                clear: left;
+                display: block;
+            }
+            option:checked {
+                background: red linear-gradient(#333, #333);
+            }
+            label {
                 background: #5e677b;
-				color: white;
-				display: block;
-				border-top-right-radius: 6px;
-				border-top-left-radius: 6px;
-				padding: 5px;
-				padding-left: 15px;
-			}
-			div.selector-group,#show-hide {
-				margin-top: 5px;
-				margin-bottom: 5px;
-				border-style: solid;
-				border-radius: 8px;
-				border-width: 2px;
-			}
-			div.content {
-				padding: 3px;
-			}
-			.hide {
-				display: none
-			}
-			#show-hide {
-				width: 100%;
-			}
-
-
-		`
-	];
-
+                color: white;
+                display: block;
+                border-top-right-radius: 6px;
+                border-top-left-radius: 6px;
+                padding: 5px;
+                padding-left: 15px;
+            }
+            div.selector-group,
+            #show-hide {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                border-style: solid;
+                border-radius: 8px;
+                border-width: 2px;
+            }
+            div.content {
+                padding: 3px;
+            }
+            .hide {
+                display: none;
+            }
+            #show-hide {
+                width: 100%;
+            }
+        `,
+    ];
 }
 
-window.customElements.define('table-data-selector', TableDataSelector)
+window.customElements.define("table-data-selector", TableDataSelector);
