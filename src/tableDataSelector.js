@@ -67,7 +67,7 @@ export class TableDataSelector extends LitElement {
 		this.params.row_type = ["%", "n"];
 		this.choices.row_type = this.params.row_type[0];
 		this.params.color_scale = ["categorical", "ordinal"];
-		this.choices.collapsed_view = true;
+		this.params.collapsed_view = true;
 		this.choices.show_mean = true;
 		this.choices.separate_headers = true;
 		this.choices.font_size = 16;
@@ -164,6 +164,11 @@ export class TableDataSelector extends LitElement {
 			return;
 		}
 		this.choices = produce(this.choices, draft => (
+			{...draft, ...obj}
+		))
+	}
+	update_params(obj) {
+		this.params = produce(this.params, draft => (
 			{...draft, ...obj}
 		))
 	}
@@ -278,8 +283,8 @@ export class TableDataSelector extends LitElement {
 		this._update_plot_data()
 	}
 	_on_expand() {
-		this.update_choices({
-			collapsed_view: !this.choices.collapsed_view
+		this.update_params({
+			collapsed_view: !this.params.collapsed_view
 		})
 	}
 
@@ -325,7 +330,7 @@ export class TableDataSelector extends LitElement {
 							.parent_string = ${"ColTitle1"}
 							.children_fun = ${(x) => x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1}
 							@update-multi-select="${this._on_header_update}"
-							.collapsed_view = "${this.choices.collapsed_view}"		
+							.collapsed_view = "${this.params.collapsed_view}"		
 							.prop_table=${this.choices.header_table}>
 						</multi-selector>
 					</div>
@@ -343,7 +348,7 @@ export class TableDataSelector extends LitElement {
 							.parent_string = ${"RowContent"}
 							.children_fun = ${(x) => x.RowTitle2}
 							@update-multi-select="${this._on_rows_update}" 		
-							.collapsed_view = "${this.choices.collapsed_view}"		
+							.collapsed_view = "${this.params.collapsed_view}"		
 							.prop_table=${this.choices.row_table}>	   																
 						</multi-selector>
 					</div>
@@ -353,13 +358,13 @@ export class TableDataSelector extends LitElement {
 					id="show-hide"
 					data-test-id="show-hide-button"
 					@click="${this._on_expand}">
-					${this.choices.collapsed_view ? translate("showHide.show") : translate("showHide.hide")}
+					${this.params.collapsed_view ? translate("showHide.show") : translate("showHide.hide")}
 				</button>
 				<span class="clear"></span>
 				<div 
 					id="settings"
 					data-test-id="settings-div"
-					class=${!this.choices.collapsed_view ? "" : "hide"}
+					class=${!this.params.collapsed_view ? "" : "hide"}
 				>
 					<div class="selector-group">
 						<label for="settings">${translate("settings.label")}</label>
