@@ -237,7 +237,7 @@ function tooltip_fun(n_decimals) {
             x.RowValue && `${get("tooltips.rowValue")}: ${x.RowValue}`,
             `${get("tooltips.header")}: ${x.ColTitle1}`,
             // TODO: see TODO in add_spaces() helper function!...:
-            x.ColTitle2 === "undefined" 
+            x.ColTitle2 === "undefined"
                 ? null
                 : `${get("tooltips.column")}: ${x.ColTitle2}`,
             // if an MW value is not defined,
