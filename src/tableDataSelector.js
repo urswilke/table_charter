@@ -95,7 +95,7 @@ export class TableDataSelector extends LitElement {
             this.question_data,
             this.choices.header_table,
         );
-        this.toggle_filtered_class(
+        this.check_if_all_filtered(
             "#header-multi-sel",
             this.question_data,
             this.header_data,
@@ -110,7 +110,7 @@ export class TableDataSelector extends LitElement {
                 ? x.RowAbsPercent == "Abs"
                 : x.RowAbsPercent != "Abs",
         );
-        this.toggle_filtered_class(
+        this.check_if_all_filtered(
             "#num-type-div",
             this.header_data,
             this.num_type_data,
@@ -128,7 +128,7 @@ export class TableDataSelector extends LitElement {
             this.num_type_data,
             this.choices.row_table,
         );
-        this.toggle_filtered_class(
+        this.check_if_all_filtered(
             "#row-multi-sel",
             this.num_type_data,
             this.rows_data,
@@ -196,7 +196,7 @@ export class TableDataSelector extends LitElement {
     update_params(obj) {
         this.params = produce(this.params, (draft) => ({ ...draft, ...obj }));
     }
-    toggle_filtered_class(selector_string, input_data, output_data) {
+    check_if_all_filtered(selector_string, input_data, output_data) {
         if (input_data.length === 0) {
             return;
         }
