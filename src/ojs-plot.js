@@ -73,6 +73,7 @@ export class OJSPlot extends LitElement {
                     <h3>${translate("noData.subTitle")}</h3>
                 </div>`,
             // it's important to put the chart title text directly next to the ">" because of the pre-wrap style:
+            // prettier-ignore
             () => html`
                 <div>
                     <div id="ojs-plot-div">
@@ -80,9 +81,7 @@ export class OJSPlot extends LitElement {
                             <h2
                                 class="primary multi-line-header"
                                 data-test-id="plot-header"
-                            >
-                                ${this.chartTitle}
-                            </h2>
+                            >${this.chartTitle}</h2>
                             <h4>${this.chartSubTitle}</h4>
                         </div>
                         <div class="plot-div">${this.renderedPlot}</div>

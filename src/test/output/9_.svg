@@ -1,9 +1,7 @@
 <div xmlns="http://www.w3.org/1999/xhtml" id="ojs-plot-div" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <div style="margin-left: 80px">
-                            <h2 class="primary multi-line-header" data-test-id="plot-header">
-                                6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.
-TOP1-Übersicht
-                            </h2>
+                            <h2 class="primary multi-line-header" data-test-id="plot-header">6. Ich nenne Ihnen gleich einige generelle Merkmale, die bei quantitativen Forschungsprojekten eine Rolle spielen. Bitte stufen Sie die Wichtigkeit ein.
+TOP1-Übersicht</h2>
                             <h4>vs GESAMT</h4>
                         </div>
                         <div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1200" height="600" viewBox="0 0 1200 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
