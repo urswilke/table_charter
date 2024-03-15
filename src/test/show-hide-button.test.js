@@ -19,17 +19,27 @@ const settings_el = await table_charter_el.$(
 );
 
 describe('Button "Show/hide advanced settings" testing', () => {
-    it('should change text to "Hide advanced settings" on click', async () => {
+    it("should change text on click and show hidden", async () => {
+        var display_prop = await subheader_selector.getCSSProperty("display");
+        await expect(display_prop.value).toEqual("none");
+        display_prop = await settings_el.getCSSProperty("display");
+        await expect(display_prop.value).toEqual("none");
+
         await expect(subheader_selector).toHaveElementClass("hide");
         await expect(settings_el).toHaveElementClass("hide");
         await adv_settings_button.click();
+        display_prop = await subheader_selector.getCSSProperty("display");
+        await expect(display_prop.value).not.toEqual("none");
+
         await expect(subheader_selector).not.toHaveElementClass("hide");
         await expect(settings_el).not.toHaveElementClass("hide");
+        display_prop = await settings_el.getCSSProperty("display");
+        await expect(display_prop.value).not.toEqual("none");
 
         await expect(adv_settings_button).toHaveText("Hide advanced settings");
     });
 
-    it('should change text back to "Show advanced settings" on click', async () => {
+    it("should change text on click and hide elements again", async () => {
         // await browser.debug()
         await adv_settings_button.moveTo();
         await adv_settings_button.click();
