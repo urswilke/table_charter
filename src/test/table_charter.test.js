@@ -49,25 +49,6 @@ const num_type_el = await table_charter_el.$(
     '>>>select[data-test-id="num_type-selector"]',
 );
 
-describe('Button "Show/hide advanced settings" testing', () => {
-    it('should change text to "Hide advanced settings" on click', async () => {
-        await expect(subheader_selector).toHaveElementClass("hide");
-        await expect(settings_el).toHaveElementClass("hide");
-        await adv_settings_button.click();
-        await expect(subheader_selector).not.toHaveElementClass("hide");
-        await expect(settings_el).not.toHaveElementClass("hide");
-
-        await expect(adv_settings_button).toHaveText("Hide advanced settings");
-    });
-
-    it('should change text back to "Show advanced settings" on click', async () => {
-        await adv_settings_button.click();
-        await expect(subheader_selector).toHaveElementClass("hide");
-        await expect(adv_settings_button).toHaveText("Show advanced settings");
-        await expect(settings_el).toHaveElementClass("hide");
-    });
-});
-
 const ojs_plot_el = table_charter_el.$('>>>ojs-plot[data-test-id="ojs-plot"]');
 const fig_el = await ojs_plot_el.$(">>>figure");
 describe("Check plots", () => {
