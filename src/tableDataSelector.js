@@ -61,6 +61,8 @@ export class TableDataSelector extends LitElement {
         let title_table = this.params.title_table[0];
         this.choices.i_tab = title_table.i_tab;
         this.i_tab = title_table.i_tab;
+        // TODO: talk with Wolf how exactly to deal with the numbering of tables and clean up the mess of i_tab, i_tabs & TabNo
+        this.i_tabs = this.params.title_table.map((x) => x.i_tab);
         this.choices.tab_title = title_table.TabTitle;
         this.params.row_type = ["%", "n"];
         this.choices.row_type = this.params.row_type[0];
@@ -79,7 +81,9 @@ export class TableDataSelector extends LitElement {
 
     // Helper:
     sel_question_data() {
-        this.question_data = this.data.filter((x) => x.i_tab == this.i_tab);
+        this.question_data = this.data.filter(
+            (x) => x.i_tab === this.i_tabs[this.i_tab],
+        );
         const colorscale_disabled = !["CAT"].includes(
             this.question_data[0].TabType,
         );
@@ -238,13 +242,14 @@ export class TableDataSelector extends LitElement {
         this._update_plot_data();
     }
     _on_question_update(e) {
-        let title_table = this.params.title_table[e.detail.chosen_tab_no];
-        this.i_tab = Number(title_table.i_tab);
+        let title_table = this.params.title_table.find(
+            (x) => x.i_tab === Number(e.detail.chosen_tab_no),
+        );
+        this.i_tab = this.i_tabs.indexOf(Number(title_table.i_tab));
         this.update_choices({
             i_tab: this.i_tab,
             tab_title: title_table.TabTitle,
         });
-        // for this to work properly, it needs i_tab in the data to be an ascending sequence of 1, 2, ..., N:
         this.sel_question_data();
         this._update_plot_data();
     }
@@ -336,7 +341,7 @@ export class TableDataSelector extends LitElement {
 						<question-selector 					
 							data-test-id="question-selector"	
 							@update-question="${this._on_question_update}" 		
-							.chosen_tab_no=${this.choices.i_tab} 
+							.chosen_tab_no=${this.i_tabs[this.choices.i_tab]} 
 							.all_questions=${this.params.title_table}>
 						</question-selector>
 					</div>
