@@ -2,6 +2,7 @@
 import fs from "fs-extra";
 import * as path from "path";
 const debug = process.env.DEBUG;
+const timeout = debug ? 1e8 : 60000;
 const downloadDir = path.resolve("src/test/output");
 
 const chrome_capabilities = {
@@ -105,6 +106,6 @@ export const config = {
     reporters: ["spec"],
     mochaOpts: {
         ui: "bdd",
-        timeout: 60000,
+        timeout: timeout,
     },
 };
