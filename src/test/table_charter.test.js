@@ -31,18 +31,6 @@ const all_questions = await question_selector_el
     .$$(">>>option")
     .map((x) => x.getText());
 const question_select_el = await question_selector_el.$(">>>select");
-const header_selector_el = await table_charter_el.$(
-    ">>>multi-selector#headers",
-);
-const subheader_selector = await header_selector_el
-    .$(">>>select#children-selector")
-    .parentElement();
-const color_selector_el = await table_charter_el
-    .$('>>>colorscale-selector[data-test-id="color-scale-selector"]')
-    .parentElement();
-const settings_el = await table_charter_el.$(
-    '>>>div[data-test-id="settings-div"]',
-);
 const flip_xy_button = await table_charter_el.$(
     '>>>button[data-test-id="flip-xy-button"]',
 );
