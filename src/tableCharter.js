@@ -22,6 +22,7 @@ registerTranslateConfig({
 });
 export class TableCharter extends LitElement {
     static properties = {
+        data: { type: Array },
         plot_data: { type: Array },
     };
 
@@ -83,6 +84,7 @@ export class TableCharter extends LitElement {
             <div class="content">
                 <div class="column1">
                     <table-data-selector
+                        .html_data=${this.data}
                         @update-data="${this.update_plot_data}"
                     ></table-data-selector>
                 </div>

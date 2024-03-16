@@ -29,12 +29,16 @@ const inspect = false; // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
     static properties = {
+        html_data: { type: Array },
         plot_data: { type: Array },
         params: { type: Object },
         choices: { type: Object },
     };
 
-    // not in constructor cause need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized..:
+    // not in constructor because:
+    // - need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized, and
+    // - the property html_data (originating from table-charter html element attribute) is still undefined in constructor
+    // (see: https://stackoverflow.com/questions/70072284/lit-no-attributes-values-in-constructor/70080948#70080948):
     connectedCallback() {
         super.connectedCallback();
         this.init_tablebook_data(data);
@@ -42,7 +46,7 @@ export class TableDataSelector extends LitElement {
     // Initialization:
     init_tablebook_data(data) {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-        this.data = add_spaces(data);
+        this.data = add_spaces(this.html_data || data);
         this.init_params();
         this._update_plot_data();
     }
