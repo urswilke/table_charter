@@ -96,7 +96,7 @@ export const config = {
     exclude: [],
     maxInstances: 10,
     capabilities: [capabilities],
-    logLevel: "silent",
+    logLevel: "error",
     bail: 0,
     baseUrl: "",
     waitforTimeout: 10000,
