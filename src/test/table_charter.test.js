@@ -20,7 +20,6 @@ render(html`<table-charter .data=${data}></table-charter>`, document.body);
 await browser.setWindowSize(2000, 3000);
 
 const table_charter_el = await $("table-charter");
-const table_data_selector_el = await $(">>>table-data-selector");
 const adv_settings_button = await table_charter_el.$(
     '>>>button[data-test-id="show-hide-button"]',
 );
@@ -30,6 +29,7 @@ const question_selector_el = await table_charter_el.$(
 const all_questions = await question_selector_el
     .$$(">>>option")
     .map((x) => x.getText());
+await question_selector_el.moveTo();
 const question_select_el = await question_selector_el.$(">>>select");
 const flip_xy_button = await table_charter_el.$(
     '>>>button[data-test-id="flip-xy-button"]',
@@ -60,10 +60,7 @@ describe("Check all questions", () => {
     for (let i = 0; i < all_questions.length; i++) {
         const question_text = all_questions[i];
         it("question: " + question_text.substring(0, 40) + "...", async () => {
-            await table_data_selector_el.scrollIntoView({
-                block: "end",
-                inline: "nearest",
-            });
+            await question_select_el.moveTo();
             await question_select_el.selectByVisibleText(question_text);
             await fig_el.isExisting();
             const fig_header = await ojs_plot_el
@@ -73,7 +70,7 @@ describe("Check all questions", () => {
             const res = {};
 
             res["initial"] = await get_options(ojs_plot_el);
-
+            await flip_xy_button.moveTo();
             await flip_xy_button.click();
             res["flip_xy"] = await get_options(ojs_plot_el);
             await flip_xy_button.click();
@@ -84,10 +81,11 @@ describe("Check all questions", () => {
             await plot_type_button.click();
             res["other_type"] = await get_options(ojs_plot_el);
             await plot_type_button.click();
+            await plot_type_button.moveTo();
             await expect(res["initial"]).toEqual(
                 await get_options(ojs_plot_el),
             );
-
+            await n_checkbox.moveTo();
             await n_checkbox.click();
             res["add_n"] = await get_options(ojs_plot_el);
             await n_checkbox.click();
