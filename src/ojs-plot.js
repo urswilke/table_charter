@@ -1,5 +1,4 @@
 import { LitElement, css, html, unsafeCSS } from "lit";
-import { when } from "lit/directives/when.js";
 import { translate, get } from "lit-translate";
 
 import { PlotOptions } from "./gen_plot_types.js";
@@ -65,16 +64,16 @@ export class OJSPlot extends LitElement {
             .select(".large-font-ramp, .large-font-swatches")
             .raise();
 
-        return when(
-            options === undefined,
-            () =>
-                html`<div class="all-filtered">
+        // prettier-ignore
+        return options === undefined
+            ? html`
+                <div class="all-filtered">
                     <h1>${translate("noData.title")}</h1>
                     <h3>${translate("noData.subTitle")}</h3>
-                </div>`,
+                </div>
+            `
             // it's important to put the chart title text directly next to the ">" because of the pre-wrap style:
-            // prettier-ignore
-            () => html`
+            : html`
                 <div>
                     <div id="ojs-plot-div">
                         <div style="margin-left: 80px">
@@ -94,8 +93,7 @@ export class OJSPlot extends LitElement {
 						</button>
 					</div>
                 </div>
-            `,
-        );
+            `;
     }
     get _svg() {
         return this.renderRoot?.querySelector("#ojs-plot-div") ?? null;

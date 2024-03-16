@@ -1,5 +1,4 @@
 import { LitElement, css, html, unsafeCSS } from "lit";
-import { when } from "lit/directives/when.js";
 import { translate } from "lit-translate";
 
 import {
@@ -320,11 +319,9 @@ export class TableDataSelector extends LitElement {
         inspect && console.log("rendering table-book-data");
         inspect && console.log(this);
 
-        return html`
-            ${when(
-                this.params === undefined,
-                () => html`<div></div>`,
-                () => html`
+        return this.params === undefined
+            ? html`<div></div>`
+            : html`
 				<div class="selector-group" id="num-type-div">
 					<label>${translate("numType.label")}</label>
 					<div class="content">
@@ -428,9 +425,7 @@ export class TableDataSelector extends LitElement {
 						</div>
 					</div>
 				</div>
-				`,
-            )}
-        `;
+            `;
     }
 
     static styles = [
