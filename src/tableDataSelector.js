@@ -34,18 +34,17 @@ export class TableDataSelector extends LitElement {
         choices: { type: Object },
     };
 
+    // not in constructor cause need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized..:
+    connectedCallback() {
+        super.connectedCallback();
+        this.init_tablebook_data(data);
+    }
     // Initialization:
     init_tablebook_data(data) {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
         this.data = add_spaces(data);
         this.init_params();
         this._update_plot_data();
-    }
-
-    // not in constructor cause need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized..:
-    connectedCallback() {
-        super.connectedCallback();
-        this.init_tablebook_data(data);
     }
 
     init_params() {
