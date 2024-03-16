@@ -16,10 +16,9 @@ import {
 } from "./test_utils.js";
 
 render(html`<table-charter .data=${data}></table-charter>`, document.body);
-// TODO: why do I need this???
-await browser.setWindowSize(2000, 3000);
 
 const table_charter_el = await $("table-charter");
+const table_data_selector_el = await $(">>>table-data-selector");
 const adv_settings_button = await table_charter_el.$(
     '>>>button[data-test-id="show-hide-button"]',
 );
@@ -78,14 +77,17 @@ describe("Check all questions", () => {
                 await get_options(ojs_plot_el),
             );
 
+            await plot_type_button.moveTo();
             await plot_type_button.click();
             res["other_type"] = await get_options(ojs_plot_el);
             await plot_type_button.click();
-            await plot_type_button.moveTo();
             await expect(res["initial"]).toEqual(
                 await get_options(ojs_plot_el),
             );
-            await n_checkbox.moveTo();
+            await table_data_selector_el.scrollIntoView({
+                block: "end",
+                inline: "nearest",
+            });
             await n_checkbox.click();
             res["add_n"] = await get_options(ojs_plot_el);
             await n_checkbox.click();
