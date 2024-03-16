@@ -1,6 +1,13 @@
 import { html, render } from "lit";
 import { $, expect } from "@wdio/globals";
 
+import { prepare_data } from "../utils.js";
+import data_compressed from "../example_compressed.json";
+
+const data = prepare_data(data_compressed).filter((x) =>
+    [0, 1, 2, 29].includes(x.i_tab),
+);
+
 import "../tableCharter.js";
 import {
     clean_data,
@@ -8,7 +15,7 @@ import {
     replace_field_strings,
 } from "./test_utils.js";
 
-render(html`<table-charter></table-charter>`, document.body);
+render(html`<table-charter .data=${data}></table-charter>`, document.body);
 // TODO: why do I need this???
 await browser.setWindowSize(2000, 3000);
 

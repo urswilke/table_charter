@@ -1,7 +1,17 @@
 import { $, expect } from "@wdio/globals";
 import "../tableCharter.js";
 import { html, render } from "lit";
-render(html`<table-charter></table-charter>`, document.body);
+import { prepare_data } from "../utils.js";
+import data_compressed from "../example_compressed.json";
+
+const data = prepare_data(data_compressed).filter((x) =>
+    [0, 1, 2, 29].includes(x.i_tab),
+);
+
+import "../tableCharter.js";
+
+render(html`<table-charter .data=${data}></table-charter>`, document.body);
+
 const table_charter_el = await $("table-charter");
 const adv_settings_button = await table_charter_el.$(
     '>>>button[data-test-id="show-hide-button"]',
