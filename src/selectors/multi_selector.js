@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit";
 
-import { buttonStyles, distinct } from "../utils.js";
+import { distinct } from "../utils.js";
 
 export class MultiSelector extends LitElement {
     static properties = {
@@ -120,7 +120,6 @@ export class MultiSelector extends LitElement {
     }
 
     static styles = [
-        buttonStyles,
         // TODO: use different color if only part of the parents are checked...!
         css`
             div.parent {
@@ -148,6 +147,9 @@ export class MultiSelector extends LitElement {
             }
             .hide {
                 display: none;
+            }
+            select[multiple] option:checked {
+                background: grey linear-gradient(40deg, grey 0%, #bbb 100%);
             }
         `,
     ];

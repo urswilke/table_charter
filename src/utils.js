@@ -9,11 +9,6 @@ export function distinct(arr, X) {
         .value();
 }
 
-export const buttonStyles = css`
-    select[multiple] option:checked {
-        background: grey linear-gradient(40deg, grey 0%, #bbb 100%);
-    }
-`;
 const is_dark =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
