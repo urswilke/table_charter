@@ -148,8 +148,11 @@ export class MultiSelector extends LitElement {
             .hide {
                 display: none;
             }
-            select[multiple] option:checked {
+            option:checked {
                 background: grey linear-gradient(40deg, grey 0%, #bbb 100%);
+            }
+            option:hover {
+                opacity: 0.8;
             }
         `,
     ];
