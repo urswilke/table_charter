@@ -1,5 +1,5 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
-import sharedStyles from "./../components.css?inline";
+import { LitElement, html, css } from "lit";
+
 import { translate } from "lit-translate";
 
 export class AdvancedOptionsSelector extends LitElement {
@@ -83,7 +83,6 @@ export class AdvancedOptionsSelector extends LitElement {
     }
 
     static styles = [
-        unsafeCSS(sharedStyles),
         css`
             input[type="number"] {
                 width: 3em;

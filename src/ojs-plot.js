@@ -1,11 +1,9 @@
-import { LitElement, css, html, unsafeCSS } from "lit";
+import { LitElement, css, html } from "lit";
 import { translate, get } from "lit-translate";
 
 import { PlotOptions } from "./gen_plot_types.js";
 import * as Plot from "@observablehq/plot";
 import { select } from "d3";
-
-import sharedStyles from "./components.css?inline";
 
 const inspect = false; // set to true for some console.log msgs
 
@@ -117,7 +115,6 @@ export class OJSPlot extends LitElement {
         dowload_image(svg_blob, this.file_name);
     }
     static styles = [
-        unsafeCSS(sharedStyles),
         css`
             .multi-line-header {
                 white-space: pre-wrap;

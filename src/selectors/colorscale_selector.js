@@ -1,5 +1,5 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
-import sharedStyles from "./../components.css?inline";
+import { LitElement, html, css } from "lit";
+
 import { translate } from "lit-translate";
 import { all_color_schemes } from "../gen_plot_types.js";
 
@@ -92,7 +92,6 @@ export class ColorscaleSelector extends LitElement {
     }
 
     static styles = [
-        unsafeCSS(sharedStyles),
         css`
             div.subselect {
                 display: inline-block;

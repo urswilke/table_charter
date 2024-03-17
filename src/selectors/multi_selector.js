@@ -1,5 +1,5 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
-import sharedStyles from "./../components.css?inline";
+import { LitElement, html, css } from "lit";
+
 import { buttonStyles, distinct } from "../utils.js";
 
 export class MultiSelector extends LitElement {
@@ -120,7 +120,6 @@ export class MultiSelector extends LitElement {
     }
 
     static styles = [
-        unsafeCSS(sharedStyles),
         buttonStyles,
         // TODO: use different color if only part of the parents are checked...!
         css`

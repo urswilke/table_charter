@@ -1,5 +1,4 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
-import sharedStyles from "./../components.css?inline";
+import { LitElement, html, css } from "lit";
 
 export class RowtypeSelector extends LitElement {
     static properties = {
@@ -43,7 +42,6 @@ export class RowtypeSelector extends LitElement {
     }
 
     static styles = [
-        unsafeCSS(sharedStyles),
         css`
             select {
                 width: 100%;

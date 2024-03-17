@@ -1,5 +1,5 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
-import sharedStyles from "./../components.css?inline";
+import { LitElement, html, css } from "lit";
+
 import { translate } from "lit-translate";
 
 export class FurtherOptionsSelector extends LitElement {
@@ -49,7 +49,5 @@ export class FurtherOptionsSelector extends LitElement {
             </div>
         `;
     }
-
-    static styles = [unsafeCSS(sharedStyles)];
 }
 customElements.define("further-options-selector", FurtherOptionsSelector);

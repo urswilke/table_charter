@@ -1,4 +1,4 @@
-import { LitElement, css, html, unsafeCSS } from "lit";
+import { LitElement, css, html } from "lit";
 import { translate } from "lit-translate";
 
 import {
@@ -20,7 +20,6 @@ import "./selectors/colorscale_selector.js";
 import "./selectors/further_options_selector.js";
 import "./selectors/advanced_options_selector.js";
 
-import sharedStyles from "./components.css?inline";
 import data_compressed from "./example_compressed.json";
 import { produce } from "immer";
 
@@ -432,7 +431,6 @@ export class TableDataSelector extends LitElement {
     }
 
     static styles = [
-        unsafeCSS(sharedStyles),
         css`
             span.clear {
                 clear: left;
@@ -466,6 +464,9 @@ export class TableDataSelector extends LitElement {
             }
             #show-hide {
                 width: 100%;
+            }
+            .all-filtered {
+                border: solid red;
             }
         `,
     ];
