@@ -57,30 +57,6 @@ export class TableCharter extends LitElement {
     // https://stackoverflow.com/a/72402114
     render() {
         return html`
-            <div class="header">
-                <img src=${logo} alt=${client_data.client_name} />
-                <div id="lang_selector">
-                    <span>🌍</span>
-                    <select
-                        id="lang-selector-select"
-                        @change=${this.update_lang}
-                    >
-                        ${languages_array.map(
-                            (lang) => html`
-                                <option
-                                    .selected=${this._browser_language === lang}
-                                >
-                                    ${lang}
-                                </option>
-                            `,
-                        )}
-                    </select>
-                </div>
-                <div>
-                    <p>${client_data.project_name + " - " + date}</p>
-                </div>
-            </div>
-
             <div class="content">
                 <div class="column1">
                     <table-data-selector
@@ -102,27 +78,6 @@ export class TableCharter extends LitElement {
 
     static styles = [
         css`
-            .header {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                text-align: center;
-                vertical-align: middle;
-                background: #5e677b;
-                color: white;
-                padding: 5px;
-                font-size: 20px;
-                height: 60px;
-                z-index: 2;
-            }
-            img {
-                float: left;
-                height: 60px;
-            }
-            #lang_selector {
-                float: right;
-            }
             .content {
                 position: absolute;
                 width: 100%;

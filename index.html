@@ -11,6 +11,29 @@
 	<link id='stylesheet' rel='stylesheet' href='./src/styles.css'/>
 </head>
 	<body>
+		<div class="header">
+			<img src=${logo} alt=${client_data.client_name} />
+			<div id="lang_selector">
+				<span>🌍</span>
+				<!-- <select
+					id="lang-selector-select"
+					@change=${this.update_lang}
+				>
+					${languages_array.map(
+						(lang) => html`
+							<option
+								.selected=${this._browser_language === lang}
+							>
+								${lang}
+							</option>
+						`,
+					)}
+				</select> -->
+			</div>
+			<div>
+				<p>${client_data.project_name + " - " + date}</p>
+			</div>
+		</div>
 		<table-charter></table-charter>
 		<div class="footer">
 			© 2023 - 2024 DATA-Connection Gebr. Wilke GbR
