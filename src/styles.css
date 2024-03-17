@@ -15,3 +15,15 @@ div,
 span {
   font-family: "Rubik", serif;
 }
+
+.footer {
+  height: 20px;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  text-align: center;
+  background: #2d3036;
+  color: white;
+}

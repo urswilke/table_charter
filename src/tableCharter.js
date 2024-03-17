@@ -97,9 +97,6 @@ export class TableCharter extends LitElement {
                     </ojs-plot>
                 </div>
             </div>
-            <div class="footer">
-                © 2023 - 2024 DATA-Connection Gebr. Wilke GbR
-            </div>
         `;
     }
 
@@ -125,19 +122,6 @@ export class TableCharter extends LitElement {
             }
             #lang_selector {
                 float: right;
-            }
-            .footer {
-                height: 20px;
-                width: 100%;
-
-                margin: 0;
-                position: absolute;
-                bottom: 0;
-                padding: 10px;
-                /* vertical-align: middle; */
-                text-align: center;
-                background: #2d3036;
-                color: white;
             }
             .content {
                 position: absolute;
