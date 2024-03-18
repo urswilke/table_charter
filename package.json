@@ -1,6 +1,6 @@
 {
     "name": "table_charter",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "type": "module",
     "main": "./build/main.min.js",
     "module": "./build/main.min.js",
@@ -31,6 +31,7 @@
     "devDependencies": {
         "@rollup/plugin-json": "^6.1.0",
         "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-replace": "^5.0.5",
         "@wdio/browser-runner": "^8.29.7",
         "@wdio/cli": "^8.29.7",
         "@wdio/mocha-framework": "^8.29.3",
