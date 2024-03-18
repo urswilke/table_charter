@@ -12,32 +12,62 @@
 </head>
 	<body>
 		<div class="header">
-			<img src=${logo} alt=${client_data.client_name} />
+			<img id="logo" />
 			<div id="lang_selector">
 				<span>🌍</span>
-				<!-- <select
-					id="lang-selector-select"
-					@change=${this.update_lang}
-				>
-					${languages_array.map(
-						(lang) => html`
-							<option
-								.selected=${this._browser_language === lang}
-							>
-								${lang}
-							</option>
-						`,
-					)}
-				</select> -->
+				<select id="lang-selector-select">
+					<option>en</option>
+					<option>de</option>
+				</select>
 			</div>
 			<div>
-				<p>${client_data.project_name + " - " + date}</p>
+				<p id="project-name"></p>
 			</div>
 		</div>
 		<table-charter></table-charter>
 		<div class="footer">
 			© 2023 - 2024 DATA-Connection Gebr. Wilke GbR
 		</div>
+		<script>
+			const project_data = {
+				"client_name": "your company name",
+				"client_logo_base64": "",
+				"client_logo_url": "your company logo url",
+				"project_name": "your project name",
+				"date": "2024-03-19"
+			};
+			const logo =
+				project_data.client_logo_base64 !== ""
+					? "data:image/png;base64, " + project_data.client_logo_base64
+					: project_data.client_logo_url;
+			document.getElementById("logo").alt = logo;
+			
+			const browser_language = navigator.language.replace(/-.*/, "") || "en";
+			
+			// write the project title with the date in the format specified by the language:
+			function update_title(browser_language) {
+				let date = new Intl.DateTimeFormat(browser_language, {
+					year: "numeric",
+					month: "short",
+					day: "numeric",
+				}).format(new Date(project_data.date));
+				document.getElementById("project-name").innerHTML = 
+					project_data.project_name + 
+					" - " + 
+					date;
+			}
+			update_title(browser_language);
+
+			let element = document.getElementById('lang-selector-select');
+			element.value = browser_language;
+			
+			var selected_language = document.getElementById('lang-selector-select');
+			selected_language.addEventListener('change', function() {
+				document.querySelector("table-charter").language = this.value;
+				update_title(this.value)
+			}, false);
+
+		</script> 
 	</body>
 </html>
 
