@@ -4,8 +4,8 @@ export default {
     input: "src/index.js",
     output: {
         name: "table_charter",
-        file: "dist/table_charter.umd.js",
-        format: "umd",
+        file: "dist/table_charter.es.js",
+        format: "es",
     },
     plugins: [json()],
 };
