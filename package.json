@@ -5,7 +5,8 @@
     "main": "./src/index.js",
     "module": "./src/index.js",
     "files": [
-        "dist"
+        "dist",
+        "src/**/*.js"
     ],
     "scripts": {
         "dev": "vite --port 4000",
