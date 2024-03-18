@@ -30,6 +30,7 @@
     },
     "devDependencies": {
         "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^15.2.3",
         "@wdio/browser-runner": "^8.29.7",
         "@wdio/cli": "^8.29.7",
         "@wdio/mocha-framework": "^8.29.3",
