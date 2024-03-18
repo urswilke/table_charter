@@ -1,11 +1,11 @@
 {
     "name": "table_charter",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "module",
     "main": "./src/index.js",
     "module": "./src/index.js",
     "files": [
-        "dist",
+        "dist/**/*.js",
         "src/**/*.js"
     ],
     "scripts": {
