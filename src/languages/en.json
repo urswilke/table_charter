@@ -1,0 +1,70 @@
+{
+  "numType": {
+    "label": "Show absolute / percent values"
+  },
+  "question": {
+    "label": "Question"
+  },
+  "header": {
+    "label": "Headers",
+    "mainsel": "header(s)",
+    "subsel": "sub-header(s)"
+  },
+  "rows": {
+    "label": "Rows",
+    "mainsel": "type(s)",
+    "subsel": "row(s)"
+  },
+  "showHide": {
+    "show": "Show advanced settings",
+    "hide": "Hide advanced settings"
+  },
+  "settings": {
+    "label": "Settings"
+  },
+  "saveSettings": {
+    "label": "Save app with these plot settings to file"
+  },
+  "flipXY": {
+    "label": "Flip x & y axis"
+  },
+  "plotName": {
+    "line": "line chart",
+    "bar": "bar chart"
+  },
+  "showMean": {
+    "label": "Show mean values"
+  },
+  "separateHeaders": {
+    "label": "Spatially separate headers"
+  },
+  "fontSize": {
+    "label": "Font size"
+  },
+  "color": {
+    "scale": "color scale",
+    "scheme": "color scheme",
+    "categorical": "categorical",
+    "ordinal": "ordinal"
+  },
+  "noData": {
+    "title": "No data.",
+    "subTitle": "Please change the filter settings."
+  },
+  "saveSvg": {
+    "label": "save svg"
+  },
+  "tooltips": {
+    "row": "row",
+    "row2": "row2",
+    "rowValue": "row value",
+    "header": "header",
+    "column": "column",
+    "value": "value",
+    "N": "N",
+    "mean": "mean"
+  },
+  "plotTitle": {
+    "subtitle_beginning": "vs"
+  }
+}

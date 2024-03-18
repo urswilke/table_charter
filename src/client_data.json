@@ -1,6 +1,6 @@
 {
-    "client_name": "your company name",
-    "client_logo_base64": "",
-    "client_logo_url": "your company logo url",
-    "project_name": "your project name"
+  "client_name": "your company name",
+  "client_logo_base64": "",
+  "client_logo_url": "your company logo url",
+  "project_name": "your project name"
 }
