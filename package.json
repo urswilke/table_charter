@@ -1,9 +1,9 @@
 {
     "name": "table_charter",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "type": "module",
-    "main": "./src/index.js",
-    "module": "./src/index.js",
+    "main": "./build/main.min.js",
+    "module": "./build/main.min.js",
     "files": [
         "dist/**/*.js",
         "src/**/*.js"
