@@ -1,6 +1,4 @@
-import { css } from "lit";
 import { chain, pick, uniqWith, isEqual } from "lodash";
-import * as XLSX from "xlsx";
 import { decompress } from "compress-json";
 
 export function distinct(arr, X) {
