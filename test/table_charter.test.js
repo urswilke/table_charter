@@ -1,14 +1,14 @@
 import { html, render } from "lit";
 import { $, expect } from "@wdio/globals";
 
-import { prepare_data } from "../utils.js";
-import data_compressed from "../example_compressed.json";
+import { prepare_data } from "../src/utils.js";
+import data_compressed from "../src/example_compressed.json";
 
 const data = prepare_data(data_compressed).filter((x) =>
     [0, 1, 2, 29].includes(x.i_tab),
 );
 
-import "../tableCharter.js";
+import "../src/tableCharter.js";
 import {
     clean_data,
     remove_fields,
@@ -48,7 +48,7 @@ const fig_el = await ojs_plot_el.$(">>>figure");
 describe("Check plots", () => {
     it("should exist from start", async () => {
         await expect(fig_el).toBeExisting();
-        // needed for next test...
+        // needed for next test../src.
         // TODO: find cleaner solution!
         await adv_settings_button.click();
     });
@@ -58,55 +58,58 @@ describe("Check all questions", () => {
     var plot_option_array = new Array(all_questions.length);
     for (let i = 0; i < all_questions.length; i++) {
         const question_text = all_questions[i];
-        it("question: " + question_text.substring(0, 40) + "...", async () => {
-            await question_select_el.moveTo();
-            await question_select_el.selectByVisibleText(question_text);
-            await fig_el.isExisting();
-            const fig_header = await ojs_plot_el
-                .$('>>>h2[data-test-id="plot-header"]')
-                .getText();
+        it(
+            "question: " + question_text.substring(0, 40) + "../src.",
+            async () => {
+                await question_select_el.moveTo();
+                await question_select_el.selectByVisibleText(question_text);
+                await fig_el.isExisting();
+                const fig_header = await ojs_plot_el
+                    .$('>>>h2[data-test-id="plot-header"]')
+                    .getText();
 
-            const res = {};
+                const res = {};
 
-            res["initial"] = await get_options(ojs_plot_el);
-            await flip_xy_button.moveTo();
-            await flip_xy_button.click();
-            res["flip_xy"] = await get_options(ojs_plot_el);
-            await flip_xy_button.click();
-            await expect(res["initial"]).toEqual(
-                await get_options(ojs_plot_el),
-            );
+                res["initial"] = await get_options(ojs_plot_el);
+                await flip_xy_button.moveTo();
+                await flip_xy_button.click();
+                res["flip_xy"] = await get_options(ojs_plot_el);
+                await flip_xy_button.click();
+                await expect(res["initial"]).toEqual(
+                    await get_options(ojs_plot_el),
+                );
 
-            await plot_type_button.moveTo();
-            await plot_type_button.click();
-            res["other_type"] = await get_options(ojs_plot_el);
-            await plot_type_button.click();
-            await expect(res["initial"]).toEqual(
-                await get_options(ojs_plot_el),
-            );
-            await table_data_selector_el.scrollIntoView({
-                block: "end",
-                inline: "nearest",
-            });
-            await n_checkbox.click();
-            res["add_n"] = await get_options(ojs_plot_el);
-            await n_checkbox.click();
-            await expect(res["initial"]).toEqual(
-                await get_options(ojs_plot_el),
-            );
+                await plot_type_button.moveTo();
+                await plot_type_button.click();
+                res["other_type"] = await get_options(ojs_plot_el);
+                await plot_type_button.click();
+                await expect(res["initial"]).toEqual(
+                    await get_options(ojs_plot_el),
+                );
+                await table_data_selector_el.scrollIntoView({
+                    block: "end",
+                    inline: "nearest",
+                });
+                await n_checkbox.click();
+                res["add_n"] = await get_options(ojs_plot_el);
+                await n_checkbox.click();
+                await expect(res["initial"]).toEqual(
+                    await get_options(ojs_plot_el),
+                );
 
-            // await num_type_el.selectByVisibleText('n');
-            // res['total'] = await get_options(ojs_plot_el);
-            // await num_type_el.selectByVisibleText('%');
-            // await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
+                // await num_type_el.selectByVisibleText('n');
+                // res['total'] = await get_options(ojs_plot_el);
+                // await num_type_el.selectByVisibleText('%');
+                // await expect(res["initial"]).toEqual(await get_options(ojs_plot_el))
 
-            plot_option_array[i] = res;
+                plot_option_array[i] = res;
 
-            const fig_string = fig_header
-                .replace(/(?:\r\n|\r|\n)/g, " ")
-                .trim();
-            await expect(fig_string).toEqual(question_text);
-        });
+                const fig_string = fig_header
+                    .replace(/(?:\r\n|\r|\n)/g, " ")
+                    .trim();
+                await expect(fig_string).toEqual(question_text);
+            },
+        );
     }
     it("should reproduce the plot options", async () => {
         await expect(plot_option_array).toMatchSnapshot();

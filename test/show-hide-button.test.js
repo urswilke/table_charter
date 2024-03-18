@@ -1,7 +1,7 @@
 import { html, render } from "lit";
 import { $, expect } from "@wdio/globals";
 
-import "../tableCharter.js";
+import "../src/tableCharter.js";
 render(html`<table-charter></table-charter>`, document.body);
 
 const table_charter_el = await $("table-charter");

@@ -92,7 +92,7 @@ export const config = {
             },
         },
     ],
-    specs: ["./src/**/*.test.js"],
+    specs: ["./test/**/*.test.js"],
     exclude: [],
     maxInstances: 10,
     capabilities: [capabilities],

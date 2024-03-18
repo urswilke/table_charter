@@ -1,14 +1,14 @@
 import { $, expect } from "@wdio/globals";
-import "../tableCharter.js";
+import "../src/tableCharter.js";
 import { html, render } from "lit";
-import { prepare_data } from "../utils.js";
-import data_compressed from "../example_compressed.json";
+import { prepare_data } from "../src/utils.js";
+import data_compressed from "../src/example_compressed.json";
 
 const data = prepare_data(data_compressed).filter((x) =>
     [0, 1, 2, 29].includes(x.i_tab),
 );
 
-import "../tableCharter.js";
+import "../src/tableCharter.js";
 
 render(html`<table-charter .data=${data}></table-charter>`, document.body);
 
@@ -40,22 +40,25 @@ await header_selector_el.selectByIndex(1);
 
 describe("Check all questions", () => {
     for (const question_text of all_questions) {
-        it("question: " + question_text.substring(0, 40) + "...", async () => {
-            await question_select_el.selectByVisibleText(question_text);
-            const options = await row_selector_el.$$(">>>option");
-            if (options.length > 1) {
-                await options[0].click();
-                // select first 2 options (if second exists):
-                await options[1].dragAndDrop(options[0]);
-            }
+        it(
+            "question: " + question_text.substring(0, 40) + "../src.",
+            async () => {
+                await question_select_el.selectByVisibleText(question_text);
+                const options = await row_selector_el.$$(">>>option");
+                if (options.length > 1) {
+                    await options[0].click();
+                    // select first 2 options (if second exists):
+                    await options[1].dragAndDrop(options[0]);
+                }
 
-            await fig_el.isExisting();
-            // Scroll to the bottom of the element:
-            await ojs_plot_el.scrollIntoView({
-                block: "end",
-                inline: "nearest",
-            });
-            await save_svg_button.click();
-        });
+                await fig_el.isExisting();
+                // Scroll to the bottom of the element:
+                await ojs_plot_el.scrollIntoView({
+                    block: "end",
+                    inline: "nearest",
+                });
+                await save_svg_button.click();
+            },
+        );
     }
 });
