@@ -1,6 +1,6 @@
 {
     "name": "table_charter",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "type": "module",
     "main": "./src/index.js",
     "module": "./src/index.js",
@@ -18,7 +18,7 @@
         "standalone-build": "vite build --config vite.config.standalone.js",
         "standalone-preview": "vite build --config vite.config.standalone.js && start ./dist/index.html",
         "wdio": "wdio run ./wdio.conf.js",
-        "prepare": "husky install"
+        "minify": "terser src/**/*.js -o dist/table_charter.min.js --compress"
     },
     "dependencies": {
         "@observablehq/plot": "^0.6.13",
