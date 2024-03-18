@@ -1,4 +1,5 @@
 import json from "@rollup/plugin-json";
+import resolve from "rollup-plugin-node-resolve";
 
 export default {
     input: "src/index.js",
@@ -7,5 +8,12 @@ export default {
         file: "dist/table_charter.es.js",
         format: "es",
     },
-    plugins: [json()],
+    plugins: [
+        resolve({
+            jsnext: true,
+            main: true,
+            browser: true,
+        }),
+        json(),
+    ],
 };
