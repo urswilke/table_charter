@@ -22,7 +22,8 @@
         "deploy": "node build/deploy.js",
         "standalone-build": "vite build --config vite.config.standalone.js",
         "standalone-preview": "vite build --config vite.config.standalone.js && start ./dist/index.html",
-        "wdio": "wdio run ./wdio.conf.js"
+        "wdio": "wdio run ./wdio.conf.js",
+        "prepublishOnly": "rollup -c"
     },
     "dependencies": {
         "@observablehq/plot": "^0.6.13",
