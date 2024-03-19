@@ -6,7 +6,14 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 export default {
     input: "src/index.js",
-    external: [/node_modules/],
+    external: [
+        "@observablehq/plot",
+        "@rollup/plugin-commonjs",
+        "compress-json",
+        "d3",
+        "immer",
+        "lodash",
+    ],
     output: {
         name: "table_charter",
         file: "dist/main.es.js",
