@@ -2,7 +2,7 @@ import replace from "@rollup/plugin-replace";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
+// import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 export default {
     input: "src/index.js",
@@ -13,7 +13,7 @@ export default {
         format: "es",
     },
     plugins: [
-        peerDepsExternal(),
+        // peerDepsExternal(),
         resolve(),
         commonjs(),
         replace({
