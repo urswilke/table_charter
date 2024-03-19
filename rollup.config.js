@@ -5,6 +5,7 @@ import commonjs from "@rollup/plugin-commonjs";
 
 export default {
     input: "src/index.js",
+    external: [/node_modules/],
     output: {
         name: "table_charter",
         file: "dist/main.es.js",
