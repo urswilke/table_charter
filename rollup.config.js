@@ -1,4 +1,5 @@
 import replace from "@rollup/plugin-replace";
+
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
@@ -7,8 +8,8 @@ export default {
     input: "src/index.js",
     output: {
         name: "table_charter",
-        file: "dist/main.umd.js",
-        format: "umd",
+        file: "dist/main.es.js",
+        format: "es",
     },
     plugins: [
         commonjs(),
