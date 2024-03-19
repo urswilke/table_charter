@@ -17,7 +17,6 @@ export class PlotOptions {
     }
     pre_process() {
         const o = this.o;
-        const e = {};
         const { xy, color_scale, separate_headers, color_scheme } = o;
         let x2,
             x1,
@@ -110,7 +109,6 @@ export class PlotOptions {
     bar() {
         const e = this.e;
 
-        const p = {};
         const { x1, plot_opts, row_lab_fun, color_order, n_decimals } = e;
         let text_,
             stack_,
@@ -218,8 +216,6 @@ export class PlotOptions {
     }
 
     line() {
-        var p = {};
-        const o = this.o;
         const e = this.e;
         const { plot_opts, row_lab_fun, n_decimals, x1, x2 } = e;
         let line_opts, dot_opts, group_args1, group_args2_text_n, is_x;
