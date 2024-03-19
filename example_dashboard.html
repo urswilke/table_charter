@@ -1,73 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="color-scheme" content="dark light"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>table charter</title>
-	<link rel="icon" href="./favicon.ico" type="image/x-icon" />
-	<script type='module' src='./src/index.js'></script>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link id='stylesheet' rel='stylesheet' href='./src/styles.css'/>
-</head>
-	<body>
-		<div class="header">
-			<img id="logo" />
-			<div id="lang_selector">
-				<span>🌍</span>
-				<select id="lang-selector-select">
-					<option>en</option>
-					<option>de</option>
-				</select>
-			</div>
-			<div>
-				<p id="project-name"></p>
-			</div>
-		</div>
-		<table-charter></table-charter>
-		<div class="footer">
-			© 2023 - 2024 DATA-Connection Gebr. Wilke GbR
-		</div>
-		<script>
-			const project_data = {
-				"client_name": "your company name",
-				"client_logo_base64": "",
-				"client_logo_url": "your company logo url",
-				"project_name": "your project name",
-				"date": "2024-03-19"
-			};
-			const logo =
-				project_data.client_logo_base64 !== ""
-					? "data:image/png;base64, " + project_data.client_logo_base64
-					: project_data.client_logo_url;
-			document.getElementById("logo").alt = logo;
-			
-			const browser_language = navigator.language.replace(/-.*/, "") || "en";
-			
-			// write the project title with the date in the format specified by the language:
-			function update_title(browser_language) {
-				let date = new Intl.DateTimeFormat(browser_language, {
-					year: "numeric",
-					month: "short",
-					day: "numeric",
-				}).format(new Date(project_data.date));
-				document.getElementById("project-name").innerHTML = 
-					project_data.project_name + 
-					" - " + 
-					date;
-			}
-			update_title(browser_language);
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="color-scheme" content="dark light" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>table charter</title>
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <script type="module">
+            import { TableCharter } from "https://unpkg.com/table_charter@1.0.23/dist/main.es.js";
+        </script>
+        <style>
+            body {
+                font-family: system-ui, sans-serif;
+            }
 
-			let element = document.getElementById('lang-selector-select');
-			element.value = browser_language;
-			
-			var selected_language = document.getElementById('lang-selector-select');
-			selected_language.addEventListener('change', function() {
-				document.querySelector("table-charter").language = this.value;
-				update_title(this.value)
-			}, false);
+            img {
+                float: left;
+                height: 60px;
+            }
 
-		</script> 
-	</body>
+            #lang_selector {
+                float: right;
+            }
+
+            .header {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+                vertical-align: middle;
+                background: #5e677b;
+                color: white;
+                padding: 5px;
+                font-size: 20px;
+                height: 60px;
+                z-index: 2;
+            }
+
+            .footer {
+                height: 20px;
+                width: 100%;
+                margin: 0;
+                position: absolute;
+                bottom: 0;
+                padding: 10px;
+                text-align: center;
+                background: #2d3036;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img id="logo" />
+            <div id="lang_selector">
+                <span>🌍</span>
+                <select id="lang-selector-select">
+                    <option>en</option>
+                    <option>de</option>
+                </select>
+            </div>
+            <div>
+                <p id="project-name"></p>
+            </div>
+        </div>
+        <table-charter></table-charter>
+        <div class="footer">© 2023 - 2024 DATA-Connection Gebr. Wilke GbR</div>
+        <script>
+            const project_data = {
+                client_name: "your company name",
+                client_logo_base64: "",
+                client_logo_url: "your company logo url",
+                project_name: "your project name",
+                date: "2024-03-19",
+            };
+            const logo =
+                project_data.client_logo_base64 !== ""
+                    ? "data:image/png;base64, " +
+                      project_data.client_logo_base64
+                    : project_data.client_logo_url;
+            document.getElementById("logo").alt = logo;
+
+            const browser_language =
+                navigator.language.replace(/-.*/, "") || "en";
+
+            // write the project title with the date in the format specified by the language:
+            function update_title(browser_language) {
+                let date = new Intl.DateTimeFormat(browser_language, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                }).format(new Date(project_data.date));
+                document.getElementById("project-name").innerHTML =
+                    project_data.project_name + " - " + date;
+            }
+            update_title(browser_language);
+
+            let element = document.getElementById("lang-selector-select");
+            element.value = browser_language;
+
+            var selected_language = document.getElementById(
+                "lang-selector-select",
+            );
+            selected_language.addEventListener(
+                "change",
+                function () {
+                    document.querySelector("table-charter").language =
+                        this.value;
+                    update_title(this.value);
+                },
+                false,
+            );
+        </script>
+    </body>
 </html>
-
