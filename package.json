@@ -17,8 +17,7 @@
         "deploy": "node build/deploy.js",
         "standalone-build": "vite build --config vite.config.standalone.js",
         "standalone-preview": "vite build --config vite.config.standalone.js && start ./dist/index.html",
-        "wdio": "wdio run ./wdio.conf.js",
-        "minify": "terser src/**/*.js -o dist/table_charter.min.js --compress"
+        "wdio": "wdio run ./wdio.conf.js"
     },
     "dependencies": {
         "@observablehq/plot": "^0.6.13",
