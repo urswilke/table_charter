@@ -18,140 +18,201 @@ export class PlotOptions {
     pre_process() {
         const o = this.o;
         const e = {};
+        const { xy, color_scale, separate_headers, color_scheme } = o;
+        let x2,
+            x1,
+            col_lab_fun,
+            row_lab_fun,
+            color_order,
+            x_order,
+            plot_opts,
+            color_opts,
+            x1_opts,
+            x2_opts,
+            n_decimals,
+            marginLeft,
+            marginBottom,
+            axis_,
+            group_;
 
-        e.x2 = o.xy;
-        e.x1 = e.x2 === "x" ? "y" : "x";
-        e.col_lab_fun = (x) => x.ColTitle2;
-        e.row_lab_fun =
-            o.color_scale === "categorical"
+        x2 = xy;
+        x1 = x2 === "x" ? "y" : "x";
+        col_lab_fun = (x) => x.ColTitle2;
+        row_lab_fun =
+            color_scale === "categorical"
                 ? (x) => x.RowTitle2
                 : (x) => x.RowValue;
-        e.color_order = [
+        color_order = [
             ...new Set(
                 this.plot_data
                     .sort((a, b) => a.RowNo - b.RowNo)
-                    .map(e.row_lab_fun),
+                    .map(row_lab_fun),
             ),
         ];
-        e.x_order = [
+        x_order = [
             ...new Set(
                 this.plot_data
                     .sort((a, b) => a.ColNo - b.ColNo)
-                    .map(e.col_lab_fun),
+                    .map(col_lab_fun),
             ),
         ];
-        if (o.separate_headers) {
-            e.x_order = add_gaps_to_xlabels(
-                e.x_order,
+        if (separate_headers) {
+            x_order = add_gaps_to_xlabels(
+                x_order,
                 distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(
                     (x) => x.ColTitle1,
                 ),
             );
         }
 
-        e.plot_opts = {
-            [e.x2]: e.col_lab_fun,
-            [e.x1]: "Value",
+        plot_opts = {
+            [x2]: col_lab_fun,
+            [x1]: "Value",
         };
 
-        e.color_opts = {
-            type: o.color_scale === "ordinal" ? "linear" : o.color_scale,
-            scheme: color_schemes_maps[o.color_scale].get(o.color_scheme),
-            domain: e.color_order,
+        color_opts = {
+            type: color_scale === "ordinal" ? "linear" : color_scale,
+            scheme: color_schemes_maps[color_scale].get(color_scheme),
+            domain: color_order,
             legend: true,
         };
 
-        e.x1_opts = {
+        x1_opts = {
             label: null,
         };
-        e.x2_opts = {
-            domain: e.x_order,
+        x2_opts = {
+            domain: x_order,
             label: null,
         };
-        e.n_decimals = this.plot_data[0].RowDecimals;
-        e.marginLeft = e.x1 === "y" ? 60 : 410;
-        e.marginBottom = 80;
-        e.axis_ = e.x1 === "y" ? "axisX" : "axisY";
-        e.group_ = e.x1 === "y" ? "groupX" : "groupY";
-        this.e = e;
+        n_decimals = this.plot_data[0].RowDecimals;
+        marginLeft = x1 === "y" ? 60 : 410;
+        marginBottom = 80;
+        axis_ = x1 === "y" ? "axisX" : "axisY";
+        group_ = x1 === "y" ? "groupX" : "groupY";
+        this.e = {
+            x2,
+            x1,
+            col_lab_fun,
+            row_lab_fun,
+            color_order,
+            x_order,
+            plot_opts,
+            color_opts,
+            x1_opts,
+            x2_opts,
+            n_decimals,
+            marginLeft,
+            marginBottom,
+            axis_,
+            group_,
+        };
     }
     bar() {
         const e = this.e;
 
         const p = {};
-        p.text_ = e.x1 === "y" ? "textY" : "textX";
-        p.stack_ = e.x1 === "y" ? "stackY" : "stackX";
-        p.bar_ = e.x1 === "y" ? "barY" : "barX";
+        const { x1, plot_opts, row_lab_fun, color_order, n_decimals } = e;
+        let text_,
+            stack_,
+            bar_,
+            group_args1,
+            group_args2_bar,
+            group_args2_text,
+            group_args2_text_n,
+            is_x;
+        text_ = x1 === "y" ? "textY" : "textX";
+        stack_ = x1 === "y" ? "stackY" : "stackX";
+        bar_ = x1 === "y" ? "barY" : "barX";
 
-        p.group_args1 = { text: "first", [e.x1]: "sum" };
-        p.group_args2_bar = {
-            ...e.plot_opts,
-            fill: e.row_lab_fun,
+        group_args1 = { text: "first", [x1]: "sum" };
+        group_args2_bar = {
+            ...plot_opts,
+            fill: row_lab_fun,
             z: (x) => x.RowNo,
-            order: e.color_order,
-            title: tooltip_fun(e.n_decimals),
+            order: color_order,
+            title: tooltip_fun(n_decimals),
         };
-        p.group_args2_text = {
-            ...e.plot_opts,
+        group_args2_text = {
+            ...plot_opts,
             text: (x) =>
                 x.Value === undefined || x.Value == 0
                     ? null
-                    : x.Value.toFixed(e.n_decimals),
+                    : x.Value.toFixed(n_decimals),
             z: (x) => x.RowNo,
-            order: e.color_order,
-            title: tooltip_fun(e.n_decimals),
+            order: color_order,
+            title: tooltip_fun(n_decimals),
             // put halo around text:
             // https://observablehq.com/plot/marks/text#text-options
             stroke: bg_col,
             strokeWidth: 3,
             fill: fg_col,
         };
-        p.group_args2_text_n = {
-            ...e.plot_opts,
+        group_args2_text_n = {
+            ...plot_opts,
             text: (x) =>
                 x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
-            order: e.color_order,
+            order: color_order,
         };
-        p.is_x = this.o.xy === "x";
-        p.group_args2_text_n[p.is_x ? "dy" : "dx"] = p.is_x ? -15 : 10;
-        p.is_x
-            ? (p.group_args2_text_n.lineAnchor = "bottom")
-            : (p.group_args2_text_n.textAnchor = "start");
-        this.p = p;
+        is_x = this.o.xy === "x";
+        group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10;
+        is_x
+            ? (group_args2_text_n.lineAnchor = "bottom")
+            : (group_args2_text_n.textAnchor = "start");
+        this.p = {
+            text_,
+            stack_,
+            bar_,
+            group_args1,
+            group_args2_bar,
+            group_args2_text,
+            group_args2_text_n,
+            is_x,
+        };
         this.bar_plot_options();
     }
     bar_plot_options() {
-        const p = this.p;
-        const e = this.e;
+        const { p, e, o, plot_data } = this;
+        const {
+            group_args1,
+            group_args2_bar,
+            group_args2_text,
+            group_args2_text_n,
+            is_x,
+            bar_,
+            stack_,
+            text_,
+        } = p;
+        const { color_scale, show_mean } = o;
+        const { group_, marginLeft, marginBottom, color_opts } = e;
         // reverse stack order for barY charts (in order to have the same order as the legend and the tables)
         // https://stackoverflow.com/questions/68056843/in-observable-plot-how-to-sort-order-the-stack-from-a-bin-transform/68057660#68057660
         const bar_opts = {
-            ...Plot[e.group_](p.group_args1, p.group_args2_bar),
-            ...(p.is_x && { reverse: true }),
+            ...Plot[group_](group_args1, group_args2_bar),
+            ...(is_x && { reverse: true }),
         };
         const text_opts = {
-            ...Plot[e.group_](p.group_args1, p.group_args2_text),
-            ...(p.is_x && { reverse: true }),
+            ...Plot[group_](group_args1, group_args2_text),
+            ...(is_x && { reverse: true }),
         };
 
         this.options = {
-            marginLeft: e.marginLeft,
-            marginBottom: e.marginBottom,
-            color: e.color_opts,
+            marginLeft,
+            marginBottom,
+            color: color_opts,
             marks: [
-                Plot[p.bar_](this.plot_data, Plot[p.stack_](bar_opts)),
+                Plot[bar_](plot_data, Plot[stack_](bar_opts)),
                 // (explicit form of this):
-                // Plot[p.bar_](this.plot_data, p.bar_opts),
+                // Plot[bar_](plot_data, bar_opts),
                 // https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
-                this.o.color_scale === "ordinal"
+                color_scale === "ordinal"
                     ? null
-                    : Plot[p.text_](this.plot_data, Plot[p.stack_](text_opts)),
+                    : Plot[text_](plot_data, Plot[stack_](text_opts)),
                 // only show if there 10 different color values at max...:
                 // color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
-                this.o.show_mean
+                show_mean
                     ? Plot.text(
-                          this.plot_data,
-                          Plot[e.group_](p.group_args1, p.group_args2_text_n),
+                          plot_data,
+                          Plot[group_](group_args1, group_args2_text_n),
                       )
                     : null,
             ],
@@ -162,50 +223,53 @@ export class PlotOptions {
         var p = {};
         const o = this.o;
         const e = this.e;
-        p.line_opts = {
-            ...e.plot_opts,
+        const { plot_opts, row_lab_fun, n_decimals, x1, x2 } = e;
+        let line_opts, dot_opts, group_args1, group_args2_text_n, is_x;
+        line_opts = {
+            ...plot_opts,
             z: (x) => x.RowNo,
-            stroke: e.row_lab_fun,
+            stroke: row_lab_fun,
         };
 
-        p.dot_opts = {
-            ...p.line_opts,
-            fill: e.row_lab_fun,
+        dot_opts = {
+            ...line_opts,
+            fill: row_lab_fun,
             stroke: "transparent",
             r: 7,
-            title: tooltip_fun(e.n_decimals),
+            title: tooltip_fun(n_decimals),
         };
-        p.group_args1 = { [e.x1]: "max" };
+        group_args1 = { [x1]: "max" };
 
-        p.group_args2_text_n = {
-            ...e.plot_opts,
-            [e.x2]: "ColTitle2",
+        group_args2_text_n = {
+            ...plot_opts,
+            [x2]: "ColTitle2",
             z: "ColTitle2",
             text: (x) =>
                 x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
         };
-        p.is_x = this.o.xy === "x";
-        p.group_args2_text_n[p.is_x ? "dy" : "dx"] = p.is_x ? -15 : 15;
-        p.is_x
-            ? (p.group_args2_text_n.lineAnchor = "bottom")
-            : (p.group_args2_text_n.textAnchor = "start");
+        is_x = this.o.xy === "x";
+        group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 15;
+        is_x
+            ? (group_args2_text_n.lineAnchor = "bottom")
+            : (group_args2_text_n.textAnchor = "start");
 
-        this.p = p;
+        this.p = { line_opts, dot_opts, group_args1, group_args2_text_n, is_x };
         this.line_plot_options();
     }
     line_plot_options() {
-        const p = this.p;
+        const { line_opts, dot_opts, group_args1, group_args2_text_n } = this.p;
+        const { marginLeft, marginBottom, color_opts } = this.e;
         this.options = {
-            marginLeft: this.e.marginLeft,
-            marginBottom: this.e.marginBottom,
-            color: this.e.color_opts,
+            marginLeft,
+            marginBottom,
+            color: color_opts,
             marks: [
-                Plot.lineY(this.plot_data, this.p.line_opts),
-                Plot.dot(this.plot_data, this.p.dot_opts),
+                Plot.lineY(this.plot_data, line_opts),
+                Plot.dot(this.plot_data, dot_opts),
                 this.o.show_mean
                     ? Plot.text(
                           this.plot_data,
-                          Plot.select(p.group_args1, p.group_args2_text_n),
+                          Plot.select(group_args1, group_args2_text_n),
                       )
                     : null,
             ],
