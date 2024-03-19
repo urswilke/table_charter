@@ -130,9 +130,9 @@ function extract_snapshot_options(plot_options_el_prop) {
     clean_data(opts);
 
     const current_plot_options = {
-        input: plot_options_el_prop.o,
-        derived: plot_options_el_prop.e,
-        derived_p: plot_options_el_prop.p,
+        input: plot_options_el_prop.input,
+        derived: plot_options_el_prop.derived,
+        derived_p: plot_options_el_prop.derived_p,
         data: { n_points: n_points },
         options: opts,
     };

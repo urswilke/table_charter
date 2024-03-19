@@ -21,7 +21,7 @@ export class OJSPlot extends LitElement {
             return this;
         }
         this.plot_options = new PlotOptions(val);
-        const font_size = this.plot_options.o.font_size;
+        const font_size = this.plot_options.input.font_size;
         this.style.setProperty("--font-size", String(font_size) + "px");
         this.style.setProperty(
             "--big-font-size",
@@ -101,7 +101,7 @@ export class OJSPlot extends LitElement {
         // Hack to set the font size in the legend that got lost to 16px again
         // TODO: use setting from user here and in PlotOptions.post_process()!:
         this.renderRoot.querySelector("[class*=large-font-]").style.fontSize =
-            this.plot_options.o.font_size + "px";
+            this.plot_options.input.font_size + "px";
 
         let tab_title_processed =
             this.plot_options.plot_data[0].TabTitle.replace(
