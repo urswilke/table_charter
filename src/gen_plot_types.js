@@ -21,11 +21,11 @@ export class PlotOptions {
 
         e.x2 = o.xy;
         e.x1 = e.x2 === "x" ? "y" : "x";
-        (e.col_lab_fun = (x) => x.ColTitle2),
-            (e.row_lab_fun =
-                o.color_scale === "categorical"
-                    ? (x) => x.RowTitle2
-                    : (x) => x.RowValue);
+        e.col_lab_fun = (x) => x.ColTitle2;
+        e.row_lab_fun =
+            o.color_scale === "categorical"
+                ? (x) => x.RowTitle2
+                : (x) => x.RowValue;
         e.color_order = [
             ...new Set(
                 this.plot_data
