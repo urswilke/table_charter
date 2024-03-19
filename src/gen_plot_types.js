@@ -183,7 +183,7 @@ export class PlotOptions {
             text_,
         } = p;
         const { color_scale, show_mean } = o;
-        const { group_, marginLeft, marginBottom, color_opts } = e;
+        const { group_, color_opts } = e;
         // reverse stack order for barY charts (in order to have the same order as the legend and the tables)
         // https://stackoverflow.com/questions/68056843/in-observable-plot-how-to-sort-order-the-stack-from-a-bin-transform/68057660#68057660
         const bar_opts = {
@@ -196,8 +196,6 @@ export class PlotOptions {
         };
 
         this.options = {
-            marginLeft,
-            marginBottom,
             color: color_opts,
             marks: [
                 Plot[bar_](plot_data, Plot[stack_](bar_opts)),
@@ -258,10 +256,8 @@ export class PlotOptions {
     }
     line_plot_options() {
         const { line_opts, dot_opts, group_args1, group_args2_text_n } = this.p;
-        const { marginLeft, marginBottom, color_opts } = this.e;
+        const { color_opts } = this.e;
         this.options = {
-            marginLeft,
-            marginBottom,
             color: color_opts,
             marks: [
                 Plot.lineY(this.plot_data, line_opts),
@@ -278,6 +274,8 @@ export class PlotOptions {
     post_process() {
         this.options.marginTop = 40;
         this.options.marginRight = 120;
+        this.options.marginLeft = this.e.marginLeft;
+        this.options.marginBottom = this.e.marginBottom;
         this.options[this.e.x2] = this.e.x2_opts;
         this.options[this.e.x1] = this.e.x1_opts;
         this.options.width = 1200;
