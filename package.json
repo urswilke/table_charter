@@ -1,9 +1,14 @@
 {
     "name": "table_charter",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "type": "module",
-    "main": "./build/main.min.js",
-    "module": "./build/main.min.js",
+    "main": "./src/index.js",
+    "module": "./src/index.js",
+    "unpkg": "dist/main.es.js",
+    "exports": {
+        "umd": "./dist/main.es.js",
+        "default": "./src/index.js"
+    },
     "files": [
         "dist/**/*.js",
         "src/**/*.js"
@@ -21,6 +26,7 @@
     },
     "dependencies": {
         "@observablehq/plot": "^0.6.13",
+        "@rollup/plugin-commonjs": "^25.0.7",
         "compress-json": "^3.0.0",
         "d3": "^7.8.5",
         "immer": "^10.0.3",
@@ -30,6 +36,7 @@
     "devDependencies": {
         "@rollup/plugin-json": "^6.1.0",
         "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-replace": "^5.0.5",
         "@wdio/browser-runner": "^8.29.7",
         "@wdio/cli": "^8.29.7",
         "@wdio/mocha-framework": "^8.29.3",
