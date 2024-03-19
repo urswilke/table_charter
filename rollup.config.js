@@ -14,6 +14,7 @@ export default {
     plugins: [
         commonjs(),
         replace({
+            preventAssignment: true,
             "process.env.NODE_ENV": JSON.stringify("development"),
         }),
         resolve({
