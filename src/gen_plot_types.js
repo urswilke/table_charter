@@ -272,12 +272,13 @@ export class PlotOptions {
         };
     }
     post_process() {
+        const e = this.e;
         this.options.marginTop = 40;
         this.options.marginRight = 120;
-        this.options.marginLeft = this.e.marginLeft;
-        this.options.marginBottom = this.e.marginBottom;
-        this.options[this.e.x2] = this.e.x2_opts;
-        this.options[this.e.x1] = this.e.x1_opts;
+        this.options.marginLeft = e.marginLeft;
+        this.options.marginBottom = e.marginBottom;
+        this.options[e.x2] = e.x2_opts;
+        this.options[e.x1] = e.x1_opts;
         this.options.width = 1200;
         this.options.height = 600;
         this.options.style = { fontSize: this.o.font_size + "px" };
