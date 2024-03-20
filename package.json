@@ -1,6 +1,7 @@
 {
     "name": "table_charter",
     "version": "1.0.23",
+    "license": "AGPL-3.0-or-later",
     "type": "module",
     "main": "./src/index.js",
     "module": "./src/index.js",
