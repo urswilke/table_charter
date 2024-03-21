@@ -8,10 +8,6 @@ import { prepare_data } from "./utils.js";
 import * as de_lang from "./languages/de.json";
 import * as en_lang from "./languages/en.json";
 
-import data_compressed from "./example_compressed.json";
-
-const data = prepare_data(data_compressed);
-
 registerTranslateConfig({
     loader: (lang) =>
         new Promise((resolve, reject) => {
@@ -36,7 +32,6 @@ export class TableCharter extends LitElement {
     // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component)
     constructor() {
         super();
-        this.data = this.data || data_compressed;
         this.language = this.language || "en";
         this.hasLoadedStrings = false;
     }
