@@ -20,10 +20,8 @@ import "./selectors/colorscale_selector.js";
 import "./selectors/further_options_selector.js";
 import "./selectors/advanced_options_selector.js";
 
-import data_compressed from "./example_compressed.json";
 import { produce } from "immer";
 
-const data = prepare_data(data_compressed);
 const inspect = false; // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
@@ -40,12 +38,12 @@ export class TableDataSelector extends LitElement {
     // (see: https://stackoverflow.com/questions/70072284/lit-no-attributes-values-in-constructor/70080948#70080948):
     connectedCallback() {
         super.connectedCallback();
-        this.init_tablebook_data(data);
+        this.init_tablebook_data();
     }
     // Initialization:
-    init_tablebook_data(data) {
+    init_tablebook_data() {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-        this.data = add_spaces(this.html_data || data);
+        this.data = add_spaces(this.html_data);
         this.init_params();
         this._update_plot_data();
     }

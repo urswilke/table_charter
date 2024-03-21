@@ -7,10 +7,14 @@ import data_compressed from "../src/example_compressed.json";
 const data = prepare_data(data_compressed).filter((x) =>
     [0, 1, 2, 29].includes(x.i_tab),
 );
+const data_obj = {
+    type: "uncompressed",
+    data,
+};
 
 import "../src/tableCharter.js";
 
-render(html`<table-charter .data=${data}></table-charter>`, document.body);
+render(html`<table-charter .data=${data_obj}></table-charter>`, document.body);
 
 const table_charter_el = await $("table-charter");
 const adv_settings_button = await table_charter_el.$(
