@@ -98,8 +98,16 @@ export function gen_plot_type_string(tab_sel_obj) {
     }
 }
 
-export function prepare_data(data_compressed) {
-    const data = decompress(data_compressed);
+export function prepare_data(data_obj) {
+    let data = data_obj.data;
+    switch (data_obj.type) {
+        case "compressed":
+            data = decompress(data);
+            break;
+        case "uncompressed":
+            data = data_obj.data;
+    }
+
     const unique_combis = distinct(data, ["QuestNo", "TabNo"]).map(
         (x) => x.QuestNo + "-" + x.TabNo,
     );
