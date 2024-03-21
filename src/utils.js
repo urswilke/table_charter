@@ -99,9 +99,7 @@ export function gen_plot_type_string(tab_sel_obj) {
 }
 
 export function prepare_data(data_compressed) {
-    const data = decompress(data_compressed).filter((x) =>
-        ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
-    );
+    const data = decompress(data_compressed);
     const unique_combis = distinct(data, ["QuestNo", "TabNo"]).map(
         (x) => x.QuestNo + "-" + x.TabNo,
     );
