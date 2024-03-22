@@ -40,7 +40,7 @@ export class TableDataSelector extends LitElement {
     // Initialization:
     init_tablebook_data() {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-        this.data = add_spaces(this.html_data.slice());
+        this.data = add_spaces(this.html_data);
         this.init_params();
         this._update_plot_data();
     }
