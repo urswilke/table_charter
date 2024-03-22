@@ -32,26 +32,11 @@ export class TableDataSelector extends LitElement {
         choices: { type: Object },
     };
 
-    constructor() {
-        super();
-        this.hasLoadedStrings = false;
-    }
-    shouldUpdate(changedProperties) {
-        return this.hasLoadedStrings && super.shouldUpdate(changedProperties);
+    connectedCallback() {
+        super.connectedCallback();
+        this.init_tablebook_data();
     }
 
-    // TODO: why is called on every change in choices ???
-    set html_data(val) {
-        console.log(val);
-        if (!!val & !this.hasLoadedStrings) {
-            this._html_data = val;
-            this.hasLoadedStrings = true;
-            this.init_tablebook_data();
-        }
-    }
-    get html_data() {
-        return this._html_data;
-    }
     // Initialization:
     init_tablebook_data() {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
