@@ -24,7 +24,7 @@ registerTranslateConfig({
 export class TableCharter extends LitElement {
     static properties = {
         language: { type: String },
-        data: { type: Array },
+        data: { type: Object },
         plot_data: { type: Array },
     };
 
