@@ -32,18 +32,30 @@ export class TableDataSelector extends LitElement {
         choices: { type: Object },
     };
 
-    // not in constructor because:
-    // - need to wait for triggering sending the data (via update-data event) to ojs-plot after it has been initilized, and
-    // - the property html_data (originating from table-charter html element attribute) is still undefined in constructor
-    // (see: https://stackoverflow.com/questions/70072284/lit-no-attributes-values-in-constructor/70080948#70080948):
-    connectedCallback() {
-        super.connectedCallback();
-        this.init_tablebook_data();
+    constructor() {
+        super();
+        this.hasLoadedStrings = false;
+    }
+    shouldUpdate(changedProperties) {
+        return this.hasLoadedStrings && super.shouldUpdate(changedProperties);
+    }
+
+    // TODO: why is called on every change in choices ???
+    set html_data(val) {
+        console.log(val);
+        if (!!val & !this.hasLoadedStrings) {
+            this._html_data = val;
+            this.hasLoadedStrings = true;
+            this.init_tablebook_data();
+        }
+    }
+    get html_data() {
+        return this._html_data;
     }
     // Initialization:
     init_tablebook_data() {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-        this.data = add_spaces(this.html_data);
+        this.data = add_spaces(this.html_data.slice());
         this.init_params();
         this._update_plot_data();
     }
@@ -319,7 +331,7 @@ export class TableDataSelector extends LitElement {
         inspect && console.log("rendering table-book-data");
         inspect && console.log(this);
 
-        return this.params === undefined
+        return this.choices === undefined
             ? html`<div></div>`
             : html`
 				<div class="selector-group" id="num-type-div">

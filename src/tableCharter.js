@@ -55,7 +55,8 @@ export class TableCharter extends LitElement {
     }
 
     set data(val) {
-        this._data = prepare_data(val);
+        // TODO: why do I have to call JSON.parse() here ???
+        this._data = prepare_data(JSON.parse(val));
     }
     get data() {
         return this._data;
@@ -66,24 +67,26 @@ export class TableCharter extends LitElement {
     }
 
     render() {
-        return html`
-            <div class="content">
-                <div class="column1">
-                    <table-data-selector
-                        .html_data=${this.data}
-                        @update-data="${this.update_plot_data}"
-                    ></table-data-selector>
-                </div>
-                <div class="column2">
-                    <ojs-plot
-                        class="ojsplot"
-                        data-test-id="ojs-plot"
-                        .plot_data=${this.plot_data}
-                    >
-                    </ojs-plot>
-                </div>
-            </div>
-        `;
+        return this.data === undefined
+            ? html`<div>no data loaded</div>`
+            : html`
+                  <div class="content">
+                      <div class="column1">
+                          <table-data-selector
+                              .html_data=${this.data}
+                              @update-data="${this.update_plot_data}"
+                          ></table-data-selector>
+                      </div>
+                      <div class="column2">
+                          <ojs-plot
+                              class="ojsplot"
+                              data-test-id="ojs-plot"
+                              .plot_data=${this.plot_data}
+                          >
+                          </ojs-plot>
+                      </div>
+                  </div>
+              `;
     }
 
     static styles = [
