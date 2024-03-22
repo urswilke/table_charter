@@ -58,6 +58,11 @@ export class TableCharter extends LitElement {
     }
 
     render() {
+        this.plot_data &&
+            (this.plot_data.params = {
+                element_width:
+                    this.renderRoot?.querySelector(".column2").offsetWidth,
+            });
         return this.data === undefined
             ? html`<div>no data loaded</div>`
             : html`
@@ -83,23 +88,16 @@ export class TableCharter extends LitElement {
     static styles = [
         css`
             .content {
-                position: absolute;
                 width: 100%;
-                top: 60px;
-                bottom: 30px;
-                overflow: auto;
             }
 
             .column1 {
                 float: left;
-                width: 20%;
+                width: 25%;
                 padding: 20px;
-                padding-top: 30px;
             }
             .column2 {
-                float: left;
-                width: 65%;
-                padding: 30px;
+                float: none;
                 display: flex;
             }
         `,

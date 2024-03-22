@@ -6,6 +6,7 @@ import { get } from "lit-translate";
 export class PlotOptions {
     constructor(input_data) {
         this.input = input_data.choices;
+        this.params = input_data.params;
         this.plot_data = input_data.plot_data;
         if (this.plot_data.length === 0) {
             return null;
@@ -282,8 +283,8 @@ export class PlotOptions {
         this.options.marginBottom = derived.marginBottom;
         this.options[derived.x2] = derived.x2_opts;
         this.options[derived.x1] = derived.x1_opts;
-        this.options.width = 1200;
-        this.options.height = 600;
+        this.options.width = this.params.element_width;
+        this.options.height = 700;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
         set_axis_labels(this);
