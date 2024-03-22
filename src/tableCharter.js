@@ -2,7 +2,6 @@ import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
 import "./tableDataSelector.js";
 import { registerTranslateConfig, use } from "lit-translate";
-import { prepare_data } from "./utils.js";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import * as de_lang from "./languages/de.json";
@@ -52,13 +51,6 @@ export class TableCharter extends LitElement {
     }
     get language() {
         return this._language;
-    }
-
-    set data(val) {
-        this._data = prepare_data(val);
-    }
-    get data() {
-        return this._data;
     }
 
     update_plot_data(e) {
