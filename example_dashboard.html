@@ -68,6 +68,19 @@
         <table-charter></table-charter>
         <div class="footer">© 2023 - 2024 DATA-Connection Gebr. Wilke GbR</div>
         <script>
+            // The following sets the attribute data in the table-charter element to the content of the file
+            // https://gitlab.com/urswilke/table_charter/-/blob/main/src/example_compressed.json
+            // instead, you could also write:
+            // <table-charter data='--put-the-data-here--' />
+            // instead of the above definition of the <table-charter> element...:
+                (async function () {
+                const response = await fetch(
+                    "https://gitlab.com/api/v4/projects/45687298/repository/files/src%2Fexample_compressed.json/raw"
+                );
+                const data = await response.text();
+                document.querySelector("table-charter").setAttribute("data", data)
+            })();
+            
             const project_data = {
                 client_name: "your company name",
                 client_logo_base64: "",
