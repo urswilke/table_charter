@@ -55,8 +55,7 @@ export class TableCharter extends LitElement {
     }
 
     set data(val) {
-        // TODO: why do I have to call JSON.parse() here ???
-        this._data = prepare_data(JSON.parse(val));
+        this._data = prepare_data(val);
     }
     get data() {
         return this._data;
