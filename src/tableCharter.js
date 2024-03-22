@@ -2,15 +2,10 @@ import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
 import "./tableDataSelector.js";
 import { registerTranslateConfig, use } from "lit-translate";
-import { prepare_data } from "./utils.js";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import * as de_lang from "./languages/de.json";
 import * as en_lang from "./languages/en.json";
-
-import data_compressed from "./example_compressed.json";
-
-const data = prepare_data(data_compressed);
 
 registerTranslateConfig({
     loader: (lang) =>
@@ -28,7 +23,7 @@ registerTranslateConfig({
 export class TableCharter extends LitElement {
     static properties = {
         language: { type: String },
-        data: { type: Array },
+        data: { type: Object },
         plot_data: { type: Array },
     };
 
@@ -36,7 +31,6 @@ export class TableCharter extends LitElement {
     // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component)
     constructor() {
         super();
-        this.data = this.data || data_compressed;
         this.language = this.language || "en";
         this.hasLoadedStrings = false;
     }
@@ -59,36 +53,31 @@ export class TableCharter extends LitElement {
         return this._language;
     }
 
-    set data(val) {
-        this._data = prepare_data(val);
-    }
-    get data() {
-        return this._data;
-    }
-
     update_plot_data(e) {
         this.plot_data = e.detail.data;
     }
 
     render() {
-        return html`
-            <div class="content">
-                <div class="column1">
-                    <table-data-selector
-                        .html_data=${this.data}
-                        @update-data="${this.update_plot_data}"
-                    ></table-data-selector>
-                </div>
-                <div class="column2">
-                    <ojs-plot
-                        class="ojsplot"
-                        data-test-id="ojs-plot"
-                        .plot_data=${this.plot_data}
-                    >
-                    </ojs-plot>
-                </div>
-            </div>
-        `;
+        return this.data === undefined
+            ? html`<div>no data loaded</div>`
+            : html`
+                  <div class="content">
+                      <div class="column1">
+                          <table-data-selector
+                              .html_data=${this.data}
+                              @update-data="${this.update_plot_data}"
+                          ></table-data-selector>
+                      </div>
+                      <div class="column2">
+                          <ojs-plot
+                              class="ojsplot"
+                              data-test-id="ojs-plot"
+                              .plot_data=${this.plot_data}
+                          >
+                          </ojs-plot>
+                      </div>
+                  </div>
+              `;
     }
 
     static styles = [
