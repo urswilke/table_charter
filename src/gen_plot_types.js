@@ -284,7 +284,7 @@ export class PlotOptions {
         this.options[derived.x2] = derived.x2_opts;
         this.options[derived.x1] = derived.x1_opts;
         this.options.width = this.params.element_width;
-        this.options.height = 700;
+        this.options.height = Math.floor(this.options.width * 0.6);
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
         set_axis_labels(this);
