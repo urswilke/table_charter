@@ -88,18 +88,13 @@ export class TableCharter extends LitElement {
     static styles = [
         css`
             .content {
-                /* top: 30px;
-                bottom: 20px; */
                 display: flex;
-                /* flex-flow: column; */
                 height: 100vh;
             }
 
             .column1 {
                 flex: 1 1 auto;
-                /* position: fixed; */
                 overflow: auto;
-                /* float: left; */
                 width: 25%;
                 padding: 20px;
             }
@@ -107,10 +102,7 @@ export class TableCharter extends LitElement {
                 flex: 2 1 auto;
                 display: flex;
                 flex-direction: column;
-                /* flex: 1; */
                 overflow: auto;
-                /* float: none; */
-                /* margin-left: 25%; */
             }
         `,
     ];
