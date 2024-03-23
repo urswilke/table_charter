@@ -26,6 +26,7 @@
             }
 
             .header {
+                /* display: block; */
                 text-align: center;
                 vertical-align: middle;
                 background: #5e677b;
@@ -36,14 +37,6 @@
                 height: 30px;
                 z-index: 2;
             }
-            table-charter {
-                position: absolute;
-                width: 100%;
-                top: 50px;
-                bottom: 30px;
-                overflow: auto;
-            }
-
             .footer {
                 position: fixed;
                 left: 0;
@@ -54,6 +47,25 @@
                 text-align: center;
                 background: #2d3036;
                 color: white;
+            }
+            table-charter {
+                position: absolute;
+                width: 100%;
+                top: 50px;
+                bottom: 30px;
+                overflow: auto;
+            }
+
+            @media (max-height: 592px) {
+                table-charter {
+                    bottom: 0px;
+                    top: 0px;
+                }
+                .footer,
+                .header {
+                    /* visibility: hidden; */
+                    display: none;
+                }
             }
         </style>
     </head>
@@ -81,12 +93,14 @@
             // instead of the above definition of the <table-charter> element...:
             (async function () {
                 const response = await fetch(
-                    "https://gitlab.com/api/v4/projects/45687298/repository/files/src%2Fexample_compressed.json/raw"
+                    "https://gitlab.com/api/v4/projects/45687298/repository/files/src%2Fexample_compressed.json/raw",
                 );
                 const data = await response.text();
-                document.querySelector("table-charter").setAttribute("data", data)
+                document
+                    .querySelector("table-charter")
+                    .setAttribute("data", data);
             })();
-            
+
             const project_data = {
                 client_name: "your company name",
                 client_logo_base64: "",
