@@ -284,8 +284,7 @@ export class PlotOptions {
         this.options[derived.x2] = derived.x2_opts;
         this.options[derived.x1] = derived.x1_opts;
         this.options.width = this.params.element_width;
-        // TODO: we'd better have a two row (instead of column) layout for small screen widths...!
-        this.options.height = Math.floor(this.options.width * 0.4);
+        this.options.height = 0.7 * this.params.element_height;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
         set_axis_labels(this);

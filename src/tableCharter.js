@@ -84,13 +84,21 @@ export class TableCharter extends LitElement {
         this.renderRoot?.querySelector(".hide-menu").innerText === "☰"
             ? this.show_menu()
             : this.hide_menu();
+        // HACK to trigger re-rendering of <ojs-plot> element:
+        this.plot_data = { ...this.plot_data };
     }
 
     render() {
         this.plot_data &&
             (this.plot_data.params = {
-                element_width:
-                    this.renderRoot?.querySelector(".column2").offsetWidth,
+                element_width: this.el(
+                    // HACK: to get the width of the plot container:
+                    // at this point I don't know how to get the height...
+                    // the value needs to be the same as in the max-width css below...
+                    // TODO: find cleaner solution (perhaps with flex layout within class .content ?)
+                    window.innerWidth < 1100 ? ".content" : ".column2",
+                ).offsetWidth,
+                element_height: this.el(".column2").offsetHeight,
             });
         return this.data === undefined
             ? html`<div>no data loaded</div>`
