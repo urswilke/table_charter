@@ -81,7 +81,7 @@ export class TableCharter extends LitElement {
         this.el(".column2").style.flexBasis = "95%";
     }
     show_hide_menu() {
-        this.renderRoot?.querySelector(".hide-menu").innerText === "☰"
+        this.el(".hide-menu").innerText === "☰"
             ? this.show_menu()
             : this.hide_menu();
         // HACK to trigger re-rendering of <ojs-plot> element:
