@@ -10,8 +10,8 @@ export function distinct(arr, X) {
 const is_dark =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
-export const bg_col = is_dark ? `#000000` : `#eeeeee`;
-export const fg_col = !is_dark ? `#000000` : `#eeeeee`;
+export const bg_col = is_dark ? `#000000` : `#ffffff`;
+export const fg_col = !is_dark ? `#000000` : `#ffffff`;
 
 export function gen_header_table(data) {
     const arr = distinct(
