@@ -48,8 +48,16 @@ export class OJSPlot extends LitElement {
             // remove empty:
             .filter((n) => n)
             .join(" - ");
+        function replacer(key, value) {
+            // Filtering out properties
+            if (key === "data") {
+                return "dataaaa";
+            }
+            return value;
+        }
 
         const options = this.plot_options?.options;
+        console.log(JSON.stringify(options, replacer, 2));
         this.renderedPlot = options && Plot.plot(options);
         // https://talk.observablehq.com/t/legend-placement-options/8407/3
         // adding this before will move the legend a bit downwards :)
