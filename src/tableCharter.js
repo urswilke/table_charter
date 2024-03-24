@@ -158,6 +158,13 @@ export class TableCharter extends LitElement {
                 flex-shrink: 0; */
                 overflow: auto;
             }
+            .column1,
+            .column2 {
+                margin: 5px;
+                border-style: solid;
+                border-radius: 8px;
+                border-width: 2px;
+            }
             .hide-menu {
                 float: right;
                 font-size: 1.2em;
