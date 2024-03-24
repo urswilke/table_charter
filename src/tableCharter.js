@@ -127,6 +127,12 @@ export class TableCharter extends LitElement {
                 display: flex;
                 height: 100vh;
             }
+            @media only screen and (max-width: 1100px) {
+                .content {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
 
             .column1 {
                 flex: 0 0 25%;
