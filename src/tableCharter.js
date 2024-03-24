@@ -65,7 +65,8 @@ export class TableCharter extends LitElement {
         this.el(".hide-menu").innerText = "☰";
         this.el(".hide-menu").style.float = "left";
         this.el("table-data-selector").style.visibility = "hidden";
-        this.el(".column1").style.flexBasis = "2%";
+        // this.el("table-data-selector").display = "none";
+        this.el(".column1").style.flexBasis = "5%";
         this.el(".column1").style.minWidth = "0";
         this.el(".column1").style.overflow = "";
         this.el(".column2").style.flexBasis = "75%";
@@ -73,6 +74,7 @@ export class TableCharter extends LitElement {
     show_menu() {
         this.el(".hide-menu").innerText = "×";
         this.el(".hide-menu").style.float = "right";
+        // this.el("table-data-selector").display = "block";
         this.el("table-data-selector").style.visibility = "visible";
         this.el(".column1").style.flexBasis = "25%";
         this.el(".column1").style.minWidth = "150px";
