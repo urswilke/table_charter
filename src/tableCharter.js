@@ -57,6 +57,33 @@ export class TableCharter extends LitElement {
         this.plot_data = e.detail.data;
     }
 
+    el(selector) {
+        return this.renderRoot.querySelector(selector);
+    }
+
+    hide_menu() {
+        this.el(".hide-menu").innerText = "☰";
+        this.el(".hide-menu").style.float = "left";
+        this.el("table-data-selector").style.visibility = "hidden";
+        this.el(".column1").style.flexBasis = "2%";
+        this.el(".column1").style.minWidth = "0";
+        this.el(".column1").style.overflow = "";
+        this.el(".column2").style.flexBasis = "75%";
+    }
+    show_menu() {
+        this.el(".hide-menu").innerText = "×";
+        this.el(".hide-menu").style.float = "right";
+        this.el("table-data-selector").style.visibility = "visible";
+        this.el(".column1").style.flexBasis = "25%";
+        this.el(".column1").style.minWidth = "150px";
+        this.el(".column2").style.flexBasis = "95%";
+    }
+    show_hide_menu() {
+        this.renderRoot?.querySelector(".hide-menu").innerText === "☰"
+            ? this.show_menu()
+            : this.hide_menu();
+    }
+
     render() {
         this.plot_data &&
             (this.plot_data.params = {
@@ -68,6 +95,13 @@ export class TableCharter extends LitElement {
             : html`
                   <div class="content">
                       <div class="column1">
+                          <button
+                              class="hide-menu"
+                              @click="${this.show_hide_menu}"
+                          >
+                              ×
+                          </button>
+
                           <table-data-selector
                               .html_data=${this.data}
                               @update-data="${this.update_plot_data}"
@@ -93,16 +127,24 @@ export class TableCharter extends LitElement {
             }
 
             .column1 {
-                flex: 1 1 auto;
-                overflow: auto;
-                width: 25%;
+                flex: 0 0 25%;
+                overflow-y: auto;
+                /* width: 25%; */
+                /* min-width: 150px; */
                 padding: 20px;
             }
             .column2 {
-                flex: 2 1 auto;
+                flex: 2 1 75%;
                 display: flex;
                 flex-direction: column;
+                /* min-width: 300px; */
+                /* flex-basis: 100%;
+                flex-shrink: 0; */
                 overflow: auto;
+            }
+            .hide-menu {
+                float: right;
+                font-size: 1.2em;
             }
         `,
     ];

@@ -135,6 +135,7 @@ export class OJSPlot extends LitElement {
             }
             h2 {
                 font-size: var(--big-font-size);
+                margin-right: 100px;
             }
             h4 {
                 font-size: var(--font-size);
@@ -146,10 +147,10 @@ export class OJSPlot extends LitElement {
                 border-width: 2px;
                 border-radius: 8px;
             }
-            #ojs-plot-div {
+            /* #ojs-plot-div {
                 margin-right: 10%;
                 margin-left: 10%;
-            }
+            } */
 
             /* this would add an orange border on hover: */
             /* svg[class^=plot-] > g > circle:hover,

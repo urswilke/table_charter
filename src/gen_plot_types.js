@@ -278,13 +278,13 @@ export class PlotOptions {
     post_process() {
         const derived = this.derived;
         this.options.marginTop = 40;
-        this.options.marginRight = 120;
+        this.options.marginRight = 100;
         this.options.marginLeft = derived.marginLeft;
         this.options.marginBottom = derived.marginBottom;
         this.options[derived.x2] = derived.x2_opts;
         this.options[derived.x1] = derived.x1_opts;
         this.options.width = this.params.element_width;
-        this.options.height = Math.floor(this.options.width * 0.6);
+        this.options.height = Math.floor(this.options.width * 0.5);
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
         set_axis_labels(this);
