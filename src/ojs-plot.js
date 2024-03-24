@@ -48,10 +48,6 @@ export class OJSPlot extends LitElement {
             // remove empty:
             .filter((n) => n)
             .join(" - ");
-    }
-
-    render() {
-        inspect && console.log("render");
 
         const options = this.plot_options?.options;
         this.renderedPlot = options && Plot.plot(options);
@@ -61,9 +57,13 @@ export class OJSPlot extends LitElement {
         select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
             .raise();
+    }
+
+    render() {
+        inspect && console.log("render");
 
         // prettier-ignore
-        return options === undefined
+        return this.plot_options?.options === undefined
             ? html`
                 <div class="all-filtered">
                     <h1>${translate("noData.title")}</h1>
