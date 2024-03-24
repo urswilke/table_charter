@@ -63,19 +63,16 @@ export class TableCharter extends LitElement {
 
     hide_menu() {
         this.el(".hide-menu").innerText = "☰";
-        this.el(".hide-menu").style.float = "left";
         this.el("table-data-selector").style.visibility = "hidden";
-        // this.el("table-data-selector").display = "none";
-        this.el(".column1").style.flexBasis = "5%";
+        this.el(".column1").style.flexBasis = "1%";
         this.el(".column1").style.minWidth = "0";
-        this.el(".column1").style.overflow = "";
+        this.el(".column1").style.overflowY = "hidden";
         this.el(".column2").style.flexBasis = "75%";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
-        this.el(".hide-menu").style.float = "right";
-        // this.el("table-data-selector").display = "block";
         this.el("table-data-selector").style.visibility = "visible";
+        this.el(".column1").style.overflowY = "auto";
         this.el(".column1").style.flexBasis = "25%";
         this.el(".column1").style.minWidth = "150px";
         this.el(".column2").style.flexBasis = "95%";
@@ -145,21 +142,17 @@ export class TableCharter extends LitElement {
             .column1 {
                 flex: 0 0 25%;
                 overflow-y: auto;
-                /* width: 25%; */
-                /* min-width: 150px; */
                 padding: 20px;
             }
             .column2 {
                 flex: 2 1 75%;
                 display: flex;
                 flex-direction: column;
-                /* min-width: 300px; */
-                /* flex-basis: 100%;
-                flex-shrink: 0; */
                 overflow: auto;
             }
+            .column2,
             .column1,
-            .column2 {
+            .hide-menu {
                 margin: 5px;
                 border-style: solid;
                 border-radius: 8px;
@@ -168,6 +161,7 @@ export class TableCharter extends LitElement {
             .hide-menu {
                 float: right;
                 font-size: 1.2em;
+                margin: 0px;
             }
         `,
     ];
