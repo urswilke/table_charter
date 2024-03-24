@@ -1,6 +1,6 @@
 import * as Plot from "@observablehq/plot";
 import { bg_col, fg_col } from "./utils.js";
-import { distinct } from "./utils.js";
+import { distinct, fantasy_string } from "./utils.js";
 import { get } from "lit-translate";
 
 export class PlotOptions {
@@ -402,7 +402,7 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 
     // it seems as if the placeholders for the gaps need to be unique.
     // Therefore, we'll add an "a" for every new gap:
-    var gap_string = "this_label_should_never_occur_in_real_data";
+    var gap_string = fantasy_string;
     for (let i = diff_indices.length - 1; i >= 0; i--) {
         const diff_index = diff_indices[i];
         x_order_gaps.splice(diff_index, 0, gap_string);

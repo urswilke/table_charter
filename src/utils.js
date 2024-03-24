@@ -176,3 +176,5 @@ export function add_spaces(data) {
         ...coltitle_array_unique.find((t) => t.ColNo === s.ColNo),
     }));
 }
+
+export const fantasy_string = "this_label_should_never_occur_in_real_data";
