@@ -39,6 +39,7 @@ const all_questions = await question_selector_el
 const question_select_el = await question_selector_el.$(">>>select");
 const fig_el = await ojs_plot_el.$(">>>figure");
 await ojs_plot_el.scrollIntoView({ block: "end", inline: "nearest" });
+await adv_settings_button.moveTo();
 await adv_settings_button.click();
 await header_selector_el.selectByIndex(1);
 

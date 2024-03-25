@@ -57,12 +57,58 @@ export class TableCharter extends LitElement {
         this.plot_data = e.detail.data;
     }
 
+    el(selector) {
+        return this.renderRoot.querySelector(selector);
+    }
+
+    hide_menu() {
+        this.el(".hide-menu").innerText = "☰";
+        this.el("table-data-selector").style.visibility = "hidden";
+        this.el(".column1").style.flexBasis = "1%";
+        this.el(".column1").style.minWidth = "0";
+        this.el(".column1").style.overflowY = "hidden";
+        this.el(".column2").style.flexBasis = "75%";
+    }
+    show_menu() {
+        this.el(".hide-menu").innerText = "×";
+        this.el("table-data-selector").style.visibility = "visible";
+        this.el(".column1").style.overflowY = "auto";
+        this.el(".column1").style.flexBasis = "25%";
+        this.el(".column1").style.minWidth = "150px";
+        this.el(".column2").style.flexBasis = "95%";
+    }
+    show_hide_menu() {
+        this.el(".hide-menu").innerText === "☰"
+            ? this.show_menu()
+            : this.hide_menu();
+        // HACK to trigger re-rendering of <ojs-plot> element:
+        this.plot_data = { ...this.plot_data };
+    }
+
     render() {
+        this.plot_data &&
+            (this.plot_data.params = {
+                element_width: this.el(
+                    // HACK: to get the width of the plot container:
+                    // at this point I don't know how to get the height...
+                    // the value needs to be the same as in the max-width css below...
+                    // TODO: find cleaner solution (perhaps with flex layout within class .content ?)
+                    window.innerWidth < 1100 ? ".content" : ".column2",
+                ).offsetWidth,
+                element_height: this.el(".column2").offsetHeight,
+            });
         return this.data === undefined
             ? html`<div>no data loaded</div>`
             : html`
                   <div class="content">
                       <div class="column1">
+                          <button
+                              class="hide-menu"
+                              @click="${this.show_hide_menu}"
+                          >
+                              ×
+                          </button>
+
                           <table-data-selector
                               .html_data=${this.data}
                               @update-data="${this.update_plot_data}"
@@ -83,24 +129,39 @@ export class TableCharter extends LitElement {
     static styles = [
         css`
             .content {
-                position: absolute;
-                width: 100%;
-                top: 60px;
-                bottom: 30px;
-                overflow: auto;
+                display: flex;
+                height: 100vh;
+            }
+            @media only screen and (max-width: 1100px) {
+                .content {
+                    flex-direction: column;
+                    align-items: center;
+                }
             }
 
             .column1 {
-                float: left;
-                width: 20%;
+                flex: 0 0 25%;
+                overflow-y: auto;
                 padding: 20px;
-                padding-top: 30px;
             }
             .column2 {
-                float: left;
-                width: 65%;
-                padding: 30px;
+                flex: 2 1 75%;
                 display: flex;
+                flex-direction: column;
+                overflow: auto;
+            }
+            .column2,
+            .column1,
+            .hide-menu {
+                margin: 5px;
+                border-style: solid;
+                border-radius: 8px;
+                border-width: 2px;
+            }
+            .hide-menu {
+                float: right;
+                font-size: 1.2em;
+                margin: 0px;
             }
         `,
     ];

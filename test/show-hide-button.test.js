@@ -34,6 +34,7 @@ describe('Button "Show/hide advanced settings" testing', () => {
 
         await expect(subheader_selector).toHaveElementClass("hide");
         await expect(settings_el).toHaveElementClass("hide");
+        await adv_settings_button.moveTo();
         await adv_settings_button.click();
         display_prop = await subheader_selector.getCSSProperty("display");
         await expect(display_prop.value).not.toEqual("none");

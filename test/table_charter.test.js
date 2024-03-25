@@ -54,6 +54,7 @@ describe("Check plots", () => {
         await expect(fig_el).toBeExisting();
         // needed for next test../src.
         // TODO: find cleaner solution!
+        await adv_settings_button.moveTo();
         await adv_settings_button.click();
     });
 });
@@ -94,6 +95,7 @@ describe("Check all questions", () => {
                     block: "end",
                     inline: "nearest",
                 });
+                await n_checkbox.moveTo();
                 await n_checkbox.click();
                 res["add_n"] = await get_options(ojs_plot_el);
                 await n_checkbox.click();

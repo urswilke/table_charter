@@ -10,8 +10,8 @@ export function distinct(arr, X) {
 const is_dark =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
-export const bg_col = is_dark ? `#000000` : `#eeeeee`;
-export const fg_col = !is_dark ? `#000000` : `#eeeeee`;
+export const bg_col = is_dark ? `#000000` : `#ffffff`;
+export const fg_col = !is_dark ? `#000000` : `#ffffff`;
 
 export function gen_header_table(data) {
     const arr = distinct(
@@ -165,11 +165,65 @@ export function add_spaces(data) {
     // TODO fix: undefined becomes string "undefined" here:
     var coltitle_array_unique = coltitle_array.map((x) => ({
         ColNo: x.ColNo,
-        ColTitle2: x.ColTitle2 + " ".repeat(x.n - 1),
+        ColTitle2: (x.ColTitle2 + " ".repeat(x.n - 1)).replace(
+            /^undefined */,
+            "-",
+        ),
     }));
 
     return data.map((s) => ({
         ...s,
         ...coltitle_array_unique.find((t) => t.ColNo === s.ColNo),
     }));
+}
+
+export const fantasy_string = "this_label_should_never_occur_in_real_data";
+
+function get_max_text_len(string_array, font_size) {
+    return (
+        Math.max(
+            ...string_array
+                .filter((x) => !x.match("^" + fantasy_string))
+                .map((el) => el.length),
+        ) *
+        font_size *
+        0.7
+    );
+}
+
+export function calc_header_text_lengths(po) {
+    const header_table = po.input.header_table;
+    const font_size = po.input.font_size;
+    const is_x = po.derived.is_x;
+    const plot_width = po.params.element_width;
+    const max_len = plot_width / 5;
+    const n_bars = po.derived.x_order.length;
+    const text_width = is_x
+        ? Math.floor((plot_width / n_bars / font_size) * 0.8)
+        : 7;
+    let subheader_linewidth_px = get_max_text_len(
+        header_table.map((x) => x.ColTitle2),
+        font_size,
+    );
+    let header_part_linewidth_px = get_max_text_len(
+        header_table.map((x) => x.ColTitle1),
+        font_size,
+    );
+    subheader_linewidth_px = Math.min(subheader_linewidth_px, max_len);
+    header_part_linewidth_px = Math.min(header_part_linewidth_px, max_len);
+    const header_linewidth_px =
+        header_part_linewidth_px + subheader_linewidth_px + 40;
+
+    const header_line_width = is_x
+        ? text_width
+        : (header_linewidth_px * 0.9) / font_size;
+    const subheader_line_width = is_x
+        ? text_width
+        : (subheader_linewidth_px * 0.9) / font_size;
+    return {
+        subheader_linewidth_px,
+        header_linewidth_px,
+        header_line_width,
+        subheader_line_width,
+    };
 }

@@ -3,7 +3,7 @@
                             <h2 class="primary multi-line-header" data-test-id="plot-header">1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?</h2>
                             <h4>vs GESAMT</h4>
                         </div>
-                        <div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1200" height="600" viewBox="0 0 1200 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+                        <div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="300" height="270.2" viewBox="0 0 300 270.2" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -13,31 +13,31 @@
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,487.6428634987233)" d="M0,0L-6,0"/><path transform="translate(60,455.2857269974465)" d="M0,0L-6,0"/><path transform="translate(60,422.92859049616976)" d="M0,0L-6,0"/><path transform="translate(60,390.571453994893)" d="M0,0L-6,0"/><path transform="translate(60,358.2143174936162)" d="M0,0L-6,0"/><path transform="translate(60,325.85718099233947)" d="M0,0L-6,0"/><path transform="translate(60,293.5000444910627)" d="M0,0L-6,0"/><path transform="translate(60,261.14290798978595)" d="M0,0L-6,0"/><path transform="translate(60,228.78577148850923)" d="M0,0L-6,0"/><path transform="translate(60,196.4286349872324)" d="M0,0L-6,0"/><path transform="translate(60,164.07149848595566)" d="M0,0L-6,0"/><path transform="translate(60,131.7143619846789)" d="M0,0L-6,0"/><path transform="translate(60,99.35722548340216)" d="M0,0L-6,0"/><path transform="translate(60,67.00008898212542)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,487.6428634987233)">5</text><text y="0.32em" transform="translate(60,455.2857269974465)">10</text><text y="0.32em" transform="translate(60,422.92859049616976)">15</text><text y="0.32em" transform="translate(60,390.571453994893)">20</text><text y="0.32em" transform="translate(60,358.2143174936162)">25</text><text y="0.32em" transform="translate(60,325.85718099233947)">30</text><text y="0.32em" transform="translate(60,293.5000444910627)">35</text><text y="0.32em" transform="translate(60,261.14290798978595)">40</text><text y="0.32em" transform="translate(60,228.78577148850923)">45</text><text y="0.32em" transform="translate(60,196.4286349872324)">50</text><text y="0.32em" transform="translate(60,164.07149848595566)">55</text><text y="0.32em" transform="translate(60,131.7143619846789)">60</text><text y="0.32em" transform="translate(60,99.35722548340216)">65</text><text y="0.32em" transform="translate(60,67.00008898212542)">70</text></g><g aria-label="bar"><rect x="153" width="834" y="40" height="209.99975732147627" fill="#4e79a7"><title>row: 2 - 4 Beschäftigte
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,190.2)" d="M0,0L-6,0"/><path transform="translate(60,149.6996508125686)" d="M0,0L-6,0"/><path transform="translate(60,109.19930162513718)" d="M0,0L-6,0"/><path transform="translate(60,68.69895243770577)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,190.2)">0</text><text y="0.32em" transform="translate(60,149.6996508125686)">20</text><text y="0.32em" transform="translate(60,109.19930162513718)">40</text><text y="0.32em" transform="translate(60,68.69895243770577)">60</text></g><g aria-label="bar"><rect x="73" width="114" y="40" height="65.71242406184528" fill="#4e79a7"><title>row: 2 - 4 Beschäftigte
 
 row value: 2
 header: GESAMT
-
+column: -
 value: 32.5
- (1)</title></rect><rect x="153" width="834" y="249.99975732147627" height="270.0002426785237" fill="#f28e2c"><title>row: 5 - 9 Beschäftigte
+ (1)</title></rect><rect x="73" width="114" y="105.71242406184528" height="84.4875759381547" fill="#f28e2c"><title>row: 5 - 9 Beschäftigte
 
 row value: 3
 header: GESAMT
-
+column: -
 value: 41.7
- (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(417.5,0.5)"><text y="0.32em" transform="translate(153,144.99987866073812)">32.5<title>row: 2 - 4 Beschäftigte
+ (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(57.5,0.5)"><text y="0.32em" transform="translate(73,72.85621203092262)">32.5<title>row: 2 - 4 Beschäftigte
 
 row value: 2
 header: GESAMT
-
+column: -
 value: 32.5
- (1)</title></text><text y="0.32em" transform="translate(153,384.99987866073815)">41.7<title>row: 5 - 9 Beschäftigte
+ (1)</title></text><text y="0.32em" transform="translate(73,147.95621203092264)">41.7<title>row: 5 - 9 Beschäftigte
 
 row value: 3
 header: GESAMT
-
+column: -
 value: 41.7
- (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-57.5,39.5)"><text y="0.71em" transform="translate(153,520)">GESAMT</text></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(-57.5,9.5)"><text y="0.71em" transform="translate(153,520)">undefined</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+ (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-57.5,39.5)"><text y="0.71em" transform="translate(73,190.2)">GESAMT</text></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(-57.5,9.5)"><text y="0.71em" transform="translate(73,190.2)">-</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;

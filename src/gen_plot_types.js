@@ -1,11 +1,12 @@
 import * as Plot from "@observablehq/plot";
 import { bg_col, fg_col } from "./utils.js";
-import { distinct } from "./utils.js";
+import { distinct, calc_header_text_lengths, fantasy_string } from "./utils.js";
 import { get } from "lit-translate";
 
 export class PlotOptions {
     constructor(input_data) {
         this.input = input_data.choices;
+        this.params = input_data.params;
         this.plot_data = input_data.plot_data;
         if (this.plot_data.length === 0) {
             return null;
@@ -20,6 +21,7 @@ export class PlotOptions {
         const { xy, color_scale, separate_headers, color_scheme } = input;
         let x2,
             x1,
+            is_x,
             col_lab_fun,
             row_lab_fun,
             color_order,
@@ -36,6 +38,8 @@ export class PlotOptions {
 
         x2 = xy;
         x1 = x2 === "x" ? "y" : "x";
+        is_x = xy === "x";
+
         col_lab_fun = (x) => x.ColTitle2;
         row_lab_fun =
             color_scale === "categorical"
@@ -84,13 +88,13 @@ export class PlotOptions {
             label: null,
         };
         n_decimals = this.plot_data[0].RowDecimals;
-        marginLeft = x1 === "y" ? 60 : 410;
         marginBottom = 80;
         axis_ = x1 === "y" ? "axisX" : "axisY";
         group_ = x1 === "y" ? "groupX" : "groupY";
         this.derived = {
             x2,
             x1,
+            is_x,
             col_lab_fun,
             row_lab_fun,
             color_order,
@@ -105,19 +109,23 @@ export class PlotOptions {
             axis_,
             group_,
         };
+        // comes here, because depends on this.derived...:
+        this.header_text_lengths = calc_header_text_lengths(this);
+        this.derived.marginLeft =
+            x1 === "y" ? 60 : this.header_text_lengths.header_linewidth_px + 40;
     }
     bar() {
         const derived = this.derived;
 
-        const { x1, plot_opts, row_lab_fun, color_order, n_decimals } = derived;
+        const { x1, is_x, plot_opts, row_lab_fun, color_order, n_decimals } =
+            derived;
         let text_,
             stack_,
             bar_,
             group_args1,
             group_args2_bar,
             group_args2_text,
-            group_args2_text_n,
-            is_x;
+            group_args2_text_n;
         text_ = x1 === "y" ? "textY" : "textX";
         stack_ = x1 === "y" ? "stackY" : "stackX";
         bar_ = x1 === "y" ? "barY" : "barX";
@@ -151,7 +159,6 @@ export class PlotOptions {
                 x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
             order: color_order,
         };
-        is_x = this.input.xy === "x";
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10;
         is_x
             ? (group_args2_text_n.lineAnchor = "bottom")
@@ -217,8 +224,8 @@ export class PlotOptions {
 
     line() {
         const derived = this.derived;
-        const { plot_opts, row_lab_fun, n_decimals, x1, x2 } = derived;
-        let line_opts, dot_opts, group_args1, group_args2_text_n, is_x;
+        const { plot_opts, is_x, row_lab_fun, n_decimals, x1, x2 } = derived;
+        let line_opts, dot_opts, group_args1, group_args2_text_n;
         line_opts = {
             ...plot_opts,
             z: (x) => x.RowNo,
@@ -241,7 +248,6 @@ export class PlotOptions {
             text: (x) =>
                 x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
         };
-        is_x = this.input.xy === "x";
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 15;
         is_x
             ? (group_args2_text_n.lineAnchor = "bottom")
@@ -277,13 +283,13 @@ export class PlotOptions {
     post_process() {
         const derived = this.derived;
         this.options.marginTop = 40;
-        this.options.marginRight = 120;
+        this.options.marginRight = 100;
         this.options.marginLeft = derived.marginLeft;
         this.options.marginBottom = derived.marginBottom;
         this.options[derived.x2] = derived.x2_opts;
         this.options[derived.x1] = derived.x1_opts;
-        this.options.width = 1200;
-        this.options.height = 600;
+        this.options.width = this.params.element_width;
+        this.options.height = 0.7 * this.params.element_height;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
         set_axis_labels(this);
@@ -401,7 +407,7 @@ function add_gaps_to_xlabels(x_order, col_titles) {
 
     // it seems as if the placeholders for the gaps need to be unique.
     // Therefore, we'll add an "a" for every new gap:
-    var gap_string = "this_label_should_never_occur_in_real_data";
+    var gap_string = fantasy_string;
     for (let i = diff_indices.length - 1; i >= 0; i--) {
         const diff_index = diff_indices[i];
         x_order_gaps.splice(diff_index, 0, gap_string);
@@ -421,11 +427,10 @@ function set_axis_labels(plot_options) {
     const text_width = is_x
         ? Math.floor((plot_width / n_bars / font_size) * 0.8)
         : 7;
-    const line_width_px = 200;
-    const line_width = is_x ? text_width : (line_width_px * 0.9) / font_size;
     // small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
     const text_margin_left = 5;
 
+    const hl = plot_options.header_text_lengths;
     const header_tick_opts = {
         textAnchor: "start",
         // TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
@@ -435,10 +440,10 @@ function set_axis_labels(plot_options) {
         tickFormat: (x) => x.ColTitle2,
         dx: is_x
             ? (-text_width / 2) * font_size + text_margin_left
-            : -2 * line_width_px,
+            : -1 * hl.header_linewidth_px,
         dy: is_x ? 30 : 0,
         label: null,
-        lineWidth: line_width,
+        lineWidth: hl.header_line_width,
         textOverflow: "ellipsis-end",
         fontWeight: "bold",
     };
@@ -452,8 +457,8 @@ function set_axis_labels(plot_options) {
         label: null,
         dx: is_x
             ? (-text_width / 2) * font_size + text_margin_left
-            : -1 * line_width_px,
-        lineWidth: line_width,
+            : -1 * hl.subheader_linewidth_px,
+        lineWidth: hl.subheader_line_width,
         textOverflow: "ellipsis-end",
     };
     subheader_tick_opts[xy] = "ColTitle2";

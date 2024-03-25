@@ -11,23 +11,124 @@
             body {
                 font-family: system-ui, sans-serif;
             }
+
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            img {
+                float: left;
+            }
+
+            #lang_selector {
+                float: right;
+            }
+            /* see 2nd example here: https://stackoverflow.com/questions/25098042/fill-remaining-vertical-space-with-css-using-displayflex/25098486#25098486 */
+            section {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+            }
+            header {
+                text-align: center;
+                background: #5e677b;
+                color: white;
+                margin: 0px;
+                padding: 10px;
+                font-size: 20px;
+                height: 30px;
+            }
+            footer {
+                min-height: 20px;
+                padding: 10px;
+                text-align: center;
+                background: #2d3036;
+                color: white;
+            }
+            table-charter {
+                flex: 1;
+            }
         </style>
     </head>
     <body>
-        <table-charter></table-charter>
-        <script>
-            // The following sets the attribute data in the table-charter element to the content of the file
-            // https://gitlab.com/urswilke/table_charter/-/blob/main/src/example_compressed.json
-            // instead, you could also write:
-            // <table-charter data='--put-the-data-here--' />
-            // instead of the above definition of the <table-charter> element...:
-            (async function () {
-                const response = await fetch(
-                    "https://gitlab.com/api/v4/projects/45687298/repository/files/src%2Fexample_compressed.json/raw"
+        <section>
+            <header>
+                <img id="logo" />
+                <div id="lang_selector">
+                    <span>🌍</span>
+                    <select id="lang-selector-select">
+                        <option>en</option>
+                        <option>de</option>
+                    </select>
+                </div>
+                <div>
+                    <p id="project-name"></p>
+                </div>
+            </header>
+            <table-charter></table-charter>
+            <footer>© 2023 - 2024 DATA-Connection Gebr. Wilke GbR</footer>
+            <script>
+                // The following sets the attribute data in the table-charter element to the content of the file
+                // https://gitlab.com/urswilke/table_charter/-/blob/main/src/example_compressed.json
+                // instead, you could also write:
+                // <table-charter data='--put-the-data-here--' />
+                // instead of the above definition of the <table-charter> element...:
+                (async function () {
+                    const response = await fetch(
+                        "https://gitlab.com/api/v4/projects/45687298/repository/files/src%2Fexample_compressed.json/raw",
+                    );
+                    const data = await response.text();
+                    document
+                        .querySelector("table-charter")
+                        .setAttribute("data", data);
+                })();
+
+                const project_data = {
+                    client_name: "your company name",
+                    client_logo_base64: "",
+                    client_logo_url: "your company logo url",
+                    project_name: "your project name",
+                    date: "2024-03-19",
+                };
+                const logo =
+                    project_data.client_logo_base64 !== ""
+                        ? "data:image/png;base64, " +
+                          project_data.client_logo_base64
+                        : project_data.client_logo_url;
+                document.getElementById("logo").alt = logo;
+
+                const browser_language =
+                    navigator.language.replace(/-.*/, "") || "en";
+
+                // write the project title with the date in the format specified by the language:
+                function update_title(browser_language) {
+                    let date = new Intl.DateTimeFormat(browser_language, {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                    }).format(new Date(project_data.date));
+                    document.getElementById("project-name").innerHTML =
+                        project_data.project_name + " - " + date;
+                }
+                update_title(browser_language);
+
+                let element = document.getElementById("lang-selector-select");
+                element.value = browser_language;
+
+                var selected_language = document.getElementById(
+                    "lang-selector-select",
                 );
-                const data = await response.text();
-                document.querySelector("table-charter").setAttribute("data", data)
-            })();
-        </script>
+                selected_language.addEventListener(
+                    "change",
+                    function () {
+                        document.querySelector("table-charter").language =
+                            this.value;
+                        update_title(this.value);
+                    },
+                    false,
+                );
+            </script>
+        </section>
     </body>
 </html>

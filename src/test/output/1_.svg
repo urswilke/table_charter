@@ -4,7 +4,7 @@
 DC#SELVALLAB</h2>
                             <h4>vs GESAMT</h4>
                         </div>
-                        <div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="1200" height="600" viewBox="0 0 1200 600" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
+                        <div class="plot-div"><figure class="plot-d6a7b5-figure" style="max-width: initial;"><svg xmlns="http://www.w3.org/2000/svg" class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="300" height="270.2" viewBox="0 0 300 270.2" style="font-size: 16px;"><style>:where(.plot-d6a7b5) {
   --plot-background: white;
   display: block;
   height: auto;
@@ -14,31 +14,31 @@ DC#SELVALLAB</h2>
 :where(.plot-d6a7b5 text),
 :where(.plot-d6a7b5 tspan) {
   white-space: pre;
-}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,520)" d="M0,0L-6,0"/><path transform="translate(60,479.28090070647636)" d="M0,0L-6,0"/><path transform="translate(60,438.5618014129527)" d="M0,0L-6,0"/><path transform="translate(60,397.84270211942913)" d="M0,0L-6,0"/><path transform="translate(60,357.1236028259055)" d="M0,0L-6,0"/><path transform="translate(60,316.4045035323818)" d="M0,0L-6,0"/><path transform="translate(60,275.6854042388582)" d="M0,0L-6,0"/><path transform="translate(60,234.96630494533457)" d="M0,0L-6,0"/><path transform="translate(60,194.24720565181096)" d="M0,0L-6,0"/><path transform="translate(60,153.52810635828732)" d="M0,0L-6,0"/><path transform="translate(60,112.80900706476372)" d="M0,0L-6,0"/><path transform="translate(60,72.08990777124006)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,520)">0</text><text y="0.32em" transform="translate(60,479.28090070647636)">10</text><text y="0.32em" transform="translate(60,438.5618014129527)">20</text><text y="0.32em" transform="translate(60,397.84270211942913)">30</text><text y="0.32em" transform="translate(60,357.1236028259055)">40</text><text y="0.32em" transform="translate(60,316.4045035323818)">50</text><text y="0.32em" transform="translate(60,275.6854042388582)">60</text><text y="0.32em" transform="translate(60,234.96630494533457)">70</text><text y="0.32em" transform="translate(60,194.24720565181096)">80</text><text y="0.32em" transform="translate(60,153.52810635828732)">90</text><text y="0.32em" transform="translate(60,112.80900706476372)">100</text><text y="0.32em" transform="translate(60,72.08990777124006)">110</text></g><g aria-label="bar"><rect x="153" width="834" y="40" height="355.95496467618136" fill="#4e79a7"><title>row: Kundenzufriedenheit
+}</style><g aria-label="y-axis tick" fill="none" stroke="currentColor" transform="translate(0,0.5)"><path transform="translate(60,190.2)" d="M0,0L-6,0"/><path transform="translate(60,164.71663035880314)" d="M0,0L-6,0"/><path transform="translate(60,139.23326071760624)" d="M0,0L-6,0"/><path transform="translate(60,113.74989107640937)" d="M0,0L-6,0"/><path transform="translate(60,88.26652143521251)" d="M0,0L-6,0"/><path transform="translate(60,62.783151794015644)" d="M0,0L-6,0"/></g><g aria-label="y-axis tick label" text-anchor="end" font-variant="tabular-nums" transform="translate(-8.5,0.5)"><text y="0.32em" transform="translate(60,190.2)">0</text><text y="0.32em" transform="translate(60,164.71663035880314)">20</text><text y="0.32em" transform="translate(60,139.23326071760624)">40</text><text y="0.32em" transform="translate(60,113.74989107640937)">60</text><text y="0.32em" transform="translate(60,88.26652143521251)">80</text><text y="0.32em" transform="translate(60,62.783151794015644)">100</text></g><g aria-label="bar"><rect x="73" width="114" y="40" height="111.38424102992172" fill="#4e79a7"><title>row: Kundenzufriedenheit
 
 row value: 1
 header: GESAMT
-
+column: -
 value: 87.4
- (1)</title></rect><rect x="153" width="834" y="395.95496467618136" height="124.04503532381864" fill="#f28e2c"><title>row: Marktvolumen
+ (1)</title></rect><rect x="73" width="114" y="151.38424102992172" height="38.815758970078264" fill="#f28e2c"><title>row: Marktvolumen
 
 row value: 1
 header: GESAMT
-
+column: -
 value: 30.5
- (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#eeeeee" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(417.5,0.5)"><text y="0.32em" transform="translate(153,217.97748233809062)">87.4<title>row: Kundenzufriedenheit
+ (1)</title></rect></g><g aria-label="text" fill="#000000" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" paint-order="stroke" transform="translate(57.5,0.5)"><text y="0.32em" transform="translate(73,95.69212051496086)">87.4<title>row: Kundenzufriedenheit
 
 row value: 1
 header: GESAMT
-
+column: -
 value: 87.4
- (1)</title></text><text y="0.32em" transform="translate(153,457.9774823380907)">30.5<title>row: Marktvolumen
+ (1)</title></text><text y="0.32em" transform="translate(73,170.79212051496089)">30.5<title>row: Marktvolumen
 
 row value: 1
 header: GESAMT
-
+column: -
 value: 30.5
- (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-57.5,39.5)"><text y="0.71em" transform="translate(153,520)">GESAMT</text></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(-57.5,9.5)"><text y="0.71em" transform="translate(153,520)">undefined</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
+ (1)</title></text></g><g aria-label="x-axis tick label" text-anchor="start" font-weight="bold" transform="translate(-57.5,39.5)"><text y="0.71em" transform="translate(73,190.2)">GESAMT</text></g><g aria-label="x-axis tick label" text-anchor="start" transform="translate(-57.5,9.5)"><text y="0.71em" transform="translate(73,190.2)">-</text></g></svg><br /><div class="large-font-swatches large-font-swatches-wrap" style="font-size: 16px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;
   font-size: 10px;
   margin-bottom: 0.5em;
