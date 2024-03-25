@@ -21,6 +21,7 @@ export class PlotOptions {
         const { xy, color_scale, separate_headers, color_scheme } = input;
         let x2,
             x1,
+            is_x,
             col_lab_fun,
             row_lab_fun,
             color_order,
@@ -37,6 +38,8 @@ export class PlotOptions {
 
         x2 = xy;
         x1 = x2 === "x" ? "y" : "x";
+        is_x = xy === "x";
+
         col_lab_fun = (x) => x.ColTitle2;
         row_lab_fun =
             color_scale === "categorical"
@@ -85,13 +88,13 @@ export class PlotOptions {
             label: null,
         };
         n_decimals = this.plot_data[0].RowDecimals;
-        marginLeft = x1 === "y" ? 60 : 410;
         marginBottom = 80;
         axis_ = x1 === "y" ? "axisX" : "axisY";
         group_ = x1 === "y" ? "groupX" : "groupY";
         this.derived = {
             x2,
             x1,
+            is_x,
             col_lab_fun,
             row_lab_fun,
             color_order,
@@ -106,19 +109,23 @@ export class PlotOptions {
             axis_,
             group_,
         };
+        // comes here, because depends on this.derived...:
+        this.header_text_lengths = calc_header_text_lengths(this);
+        this.derived.marginLeft =
+            x1 === "y" ? 60 : this.header_text_lengths.header_linewidth_px + 40;
     }
     bar() {
         const derived = this.derived;
 
-        const { x1, plot_opts, row_lab_fun, color_order, n_decimals } = derived;
+        const { x1, is_x, plot_opts, row_lab_fun, color_order, n_decimals } =
+            derived;
         let text_,
             stack_,
             bar_,
             group_args1,
             group_args2_bar,
             group_args2_text,
-            group_args2_text_n,
-            is_x;
+            group_args2_text_n;
         text_ = x1 === "y" ? "textY" : "textX";
         stack_ = x1 === "y" ? "stackY" : "stackX";
         bar_ = x1 === "y" ? "barY" : "barX";
@@ -152,7 +159,6 @@ export class PlotOptions {
                 x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
             order: color_order,
         };
-        is_x = this.input.xy === "x";
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10;
         is_x
             ? (group_args2_text_n.lineAnchor = "bottom")
@@ -218,8 +224,8 @@ export class PlotOptions {
 
     line() {
         const derived = this.derived;
-        const { plot_opts, row_lab_fun, n_decimals, x1, x2 } = derived;
-        let line_opts, dot_opts, group_args1, group_args2_text_n, is_x;
+        const { plot_opts, is_x, row_lab_fun, n_decimals, x1, x2 } = derived;
+        let line_opts, dot_opts, group_args1, group_args2_text_n;
         line_opts = {
             ...plot_opts,
             z: (x) => x.RowNo,
@@ -242,7 +248,6 @@ export class PlotOptions {
             text: (x) =>
                 x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
         };
-        is_x = this.input.xy === "x";
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 15;
         is_x
             ? (group_args2_text_n.lineAnchor = "bottom")
@@ -422,11 +427,10 @@ function set_axis_labels(plot_options) {
     const text_width = is_x
         ? Math.floor((plot_width / n_bars / font_size) * 0.8)
         : 7;
-    const line_width_px = 200;
-    const line_width = is_x ? text_width : (line_width_px * 0.9) / font_size;
     // small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
     const text_margin_left = 5;
 
+    const hl = plot_options.header_text_lengths;
     const header_tick_opts = {
         textAnchor: "start",
         // TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
@@ -436,10 +440,10 @@ function set_axis_labels(plot_options) {
         tickFormat: (x) => x.ColTitle2,
         dx: is_x
             ? (-text_width / 2) * font_size + text_margin_left
-            : -2 * line_width_px,
+            : -1 * hl.header_linewidth_px,
         dy: is_x ? 30 : 0,
         label: null,
-        lineWidth: line_width,
+        lineWidth: hl.header_line_width,
         textOverflow: "ellipsis-end",
         fontWeight: "bold",
     };
@@ -453,8 +457,8 @@ function set_axis_labels(plot_options) {
         label: null,
         dx: is_x
             ? (-text_width / 2) * font_size + text_margin_left
-            : -1 * line_width_px,
-        lineWidth: line_width,
+            : -1 * hl.subheader_linewidth_px,
+        lineWidth: hl.subheader_line_width,
         textOverflow: "ellipsis-end",
     };
     subheader_tick_opts[xy] = "ColTitle2";
@@ -470,4 +474,51 @@ function set_axis_labels(plot_options) {
             Plot.selectFirst(subheader_tick_opts),
         ),
     );
+}
+
+function get_max_text_len(string_array, font_size) {
+    return (
+        Math.max(
+            ...string_array
+                .filter((x) => !x.match("^" + fantasy_string))
+                .map((el) => el.length),
+        ) *
+        font_size *
+        0.7
+    );
+}
+
+function calc_header_text_lengths(po) {
+    const header_table = po.input.header_table;
+    const font_size = po.input.font_size;
+    const is_x = po.derived.is_x;
+    const plot_width = po.params.element_width;
+    const n_bars = po.derived.x_order.length;
+    const text_width = is_x
+        ? Math.floor((plot_width / n_bars / font_size) * 0.8)
+        : 7;
+    const subheader_linewidth_px = get_max_text_len(
+        header_table.map((x) => x.ColTitle2),
+        font_size,
+    );
+    const header_linewidth_px =
+        get_max_text_len(
+            header_table.map((x) => x.ColTitle1),
+            font_size,
+        ) +
+        subheader_linewidth_px +
+        40;
+
+    const header_line_width = is_x
+        ? text_width
+        : (header_linewidth_px * 0.9) / font_size;
+    const subheader_line_width = is_x
+        ? text_width
+        : (subheader_linewidth_px * 0.9) / font_size;
+    return {
+        subheader_linewidth_px,
+        header_linewidth_px,
+        header_line_width,
+        subheader_line_width,
+    };
 }
