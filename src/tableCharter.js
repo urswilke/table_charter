@@ -93,9 +93,7 @@ export class TableCharter extends LitElement {
                     // at this point I don't know how to get the height...
                     // the value needs to be the same as in the max-width css below...
                     // TODO: find cleaner solution (perhaps with flex layout within class .content ?)
-                    document.documentElement.clientWidth < 1100
-                        ? ".content"
-                        : ".column2",
+                    window.innerWidth < 1100 ? ".content" : ".column2",
                 ).offsetWidth,
                 element_height: this.el(".column2").offsetHeight,
             });
@@ -134,8 +132,7 @@ export class TableCharter extends LitElement {
                 display: flex;
                 height: 100vh;
             }
-            @media screen and (max-width: 1100px),
-                screen and (orientation: portrait) {
+            @media only screen and (max-width: 1100px) {
                 .content {
                     flex-direction: column;
                     align-items: center;
