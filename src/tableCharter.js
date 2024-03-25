@@ -172,6 +172,25 @@ export class TableCharter extends LitElement {
                 font-size: 1.2em;
                 margin: 0px;
             }
+
+            /* https://stackoverflow.com/questions/12539006/tooltips-for-mobile-browsers/60660207#60660207 */
+            @media (pointer: coarse), (hover: none) {
+                [title] {
+                    position: relative;
+                    display: inline-flex;
+                    justify-content: center;
+                }
+                [title]:focus::after {
+                    content: attr(title);
+                    position: absolute;
+                    top: 90%;
+                    color: #000;
+                    background-color: #fff;
+                    border: 1px solid;
+                    width: fit-content;
+                    padding: 3px;
+                }
+            }
         `,
     ];
 }
