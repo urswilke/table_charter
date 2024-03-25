@@ -493,21 +493,23 @@ function calc_header_text_lengths(po) {
     const font_size = po.input.font_size;
     const is_x = po.derived.is_x;
     const plot_width = po.params.element_width;
+    const max_len = plot_width / 5;
     const n_bars = po.derived.x_order.length;
     const text_width = is_x
         ? Math.floor((plot_width / n_bars / font_size) * 0.8)
         : 7;
-    const subheader_linewidth_px = get_max_text_len(
+    let subheader_linewidth_px = get_max_text_len(
         header_table.map((x) => x.ColTitle2),
         font_size,
     );
+    let header_part_linewidth_px = get_max_text_len(
+        header_table.map((x) => x.ColTitle1),
+        font_size,
+    );
+    subheader_linewidth_px = Math.min(subheader_linewidth_px, max_len);
+    header_part_linewidth_px = Math.min(header_part_linewidth_px, max_len);
     const header_linewidth_px =
-        get_max_text_len(
-            header_table.map((x) => x.ColTitle1),
-            font_size,
-        ) +
-        subheader_linewidth_px +
-        40;
+        header_part_linewidth_px + subheader_linewidth_px + 40;
 
     const header_line_width = is_x
         ? text_width
