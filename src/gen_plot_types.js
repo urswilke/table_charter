@@ -1,6 +1,6 @@
 import * as Plot from "@observablehq/plot";
 import { bg_col, fg_col } from "./utils.js";
-import { distinct, fantasy_string } from "./utils.js";
+import { distinct, calc_header_text_lengths, fantasy_string } from "./utils.js";
 import { get } from "lit-translate";
 
 export class PlotOptions {
@@ -474,53 +474,4 @@ function set_axis_labels(plot_options) {
             Plot.selectFirst(subheader_tick_opts),
         ),
     );
-}
-
-function get_max_text_len(string_array, font_size) {
-    return (
-        Math.max(
-            ...string_array
-                .filter((x) => !x.match("^" + fantasy_string))
-                .map((el) => el.length),
-        ) *
-        font_size *
-        0.7
-    );
-}
-
-function calc_header_text_lengths(po) {
-    const header_table = po.input.header_table;
-    const font_size = po.input.font_size;
-    const is_x = po.derived.is_x;
-    const plot_width = po.params.element_width;
-    const max_len = plot_width / 5;
-    const n_bars = po.derived.x_order.length;
-    const text_width = is_x
-        ? Math.floor((plot_width / n_bars / font_size) * 0.8)
-        : 7;
-    let subheader_linewidth_px = get_max_text_len(
-        header_table.map((x) => x.ColTitle2),
-        font_size,
-    );
-    let header_part_linewidth_px = get_max_text_len(
-        header_table.map((x) => x.ColTitle1),
-        font_size,
-    );
-    subheader_linewidth_px = Math.min(subheader_linewidth_px, max_len);
-    header_part_linewidth_px = Math.min(header_part_linewidth_px, max_len);
-    const header_linewidth_px =
-        header_part_linewidth_px + subheader_linewidth_px + 40;
-
-    const header_line_width = is_x
-        ? text_width
-        : (header_linewidth_px * 0.9) / font_size;
-    const subheader_line_width = is_x
-        ? text_width
-        : (subheader_linewidth_px * 0.9) / font_size;
-    return {
-        subheader_linewidth_px,
-        header_linewidth_px,
-        header_line_width,
-        subheader_line_width,
-    };
 }
