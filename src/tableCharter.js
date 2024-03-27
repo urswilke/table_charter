@@ -33,6 +33,11 @@ export class TableCharter extends LitElement {
         super();
         this.language = this.language || "en";
         this.hasLoadedStrings = false;
+        // HACK to regenerate plot on window resize...:
+        window.addEventListener(
+            "resize",
+            (x) => (this.plot_data = { ...this.plot_data }),
+        );
     }
     shouldUpdate(changedProperties) {
         return this.hasLoadedStrings && super.shouldUpdate(changedProperties);
