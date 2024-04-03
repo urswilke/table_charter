@@ -1,5 +1,5 @@
 import * as Plot from "@observablehq/plot";
-import { bg_col, fg_col } from "./utils.js";
+import { bg_col, fg_col, get_max_stack_value } from "./utils.js";
 import { distinct, calc_header_text_lengths, fantasy_string } from "./utils.js";
 import { get } from "lit-translate";
 
@@ -141,7 +141,8 @@ export class PlotOptions {
         group_args2_text = {
             ...plot_opts,
             text: (x) =>
-                x.Value === undefined || x.Value == 0
+                x.Value === undefined ||
+                x.Value < get_max_stack_value(this.plot_data) / 20
                     ? null
                     : x.Value.toFixed(n_decimals),
             z: (x) => x.RowNo,
@@ -187,7 +188,6 @@ export class PlotOptions {
             stack_,
             text_,
         } = derived_p;
-        const { color_scale, show_mean } = input;
         const { group_, color_opts } = derived;
         // reverse stack order for barY charts (in order to have the same order as the legend and the tables)
         // https://stackoverflow.com/questions/68056843/in-observable-plot-how-to-sort-order-the-stack-from-a-bin-transform/68057660#68057660
@@ -199,7 +199,6 @@ export class PlotOptions {
             ...Plot[group_](group_args1, group_args2_text),
             ...(is_x && { reverse: true }),
         };
-
         this.options = {
             color: color_opts,
             marks: [
@@ -207,12 +206,10 @@ export class PlotOptions {
                 // (explicit form of this):
                 // Plot[bar_](plot_data, bar_opts),
                 // https://talk.observablehq.com/t/how-to-display-text-in-each-level-of-a-stacked-bar-chart-made-with-plot/6510/2
-                color_scale === "ordinal"
-                    ? null
-                    : Plot[text_](plot_data, Plot[stack_](text_opts)),
+                Plot[text_](plot_data, Plot[stack_](text_opts)),
                 // only show if there 10 different color values at max...:
                 // color_order.length > 10? null : text_(data.plot_data, stack_(text_opts)),
-                show_mean
+                input.show_mean
                     ? Plot.text(
                           plot_data,
                           Plot[group_](group_args1, group_args2_text_n),

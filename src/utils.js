@@ -227,3 +227,15 @@ export function calc_header_text_lengths(po) {
         subheader_line_width,
     };
 }
+export function get_max_stack_value(array) {
+    var result = [];
+    const stack_array = array.reduce(function (res, value) {
+        if (!res[value.ColNo]) {
+            res[value.ColNo] = { ColNo: value.ColNo, Value: 0 };
+            result.push(res[value.ColNo]);
+        }
+        res[value.ColNo].Value += value.Value;
+        return res;
+    }, {});
+    return Math.max(...result.map((o) => o.Value));
+}
