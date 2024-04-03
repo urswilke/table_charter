@@ -66,5 +66,11 @@
   },
   "plotTitle": {
     "subtitle_beginning": "vs"
+  },
+  "showText": {
+    "label": "Show values in labels",
+    "always": "always",
+    "never": "never",
+    "ifGE5": "if value >= 5 % of the maximum stacked value"
   }
 }

@@ -7,7 +7,13 @@ export class AdvancedOptionsSelector extends LitElement {
         show_mean: { type: Boolean },
         separate_headers: { type: Boolean },
         font_size: { type: String },
+        show_text: { type: String },
     };
+
+    constructor() {
+        super();
+        this.show_text_options = ["always", "never", "ifGE5"];
+    }
 
     is_checked(id_string) {
         return (
@@ -30,6 +36,9 @@ export class AdvancedOptionsSelector extends LitElement {
     get _font_size() {
         return this.renderRoot?.querySelector("#font-size").value;
     }
+    get _show_text() {
+        return this.renderRoot?.querySelector("#show-text").value;
+    }
     _on_font_size_change() {
         const options = {
             detail: {
@@ -39,6 +48,17 @@ export class AdvancedOptionsSelector extends LitElement {
             composed: true,
         };
         this.dispatchEvent(new CustomEvent("update-font-size", options));
+    }
+    _on_show_text_change() {
+        this.show_text = this._show_text;
+        const options = {
+            detail: {
+                show_text: this.show_text,
+            },
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(new CustomEvent("update-show-text", options));
     }
 
     render() {
@@ -77,6 +97,24 @@ export class AdvancedOptionsSelector extends LitElement {
 						@change=${this._on_font_size_change}
 					></input>
 				</div>
+                <div>
+                    <label for="show-text">${translate("showText.label")}</label>
+                    <select 
+                        id="show-text" 
+                        @change=${this._on_show_text_change}
+                    >
+                        ${this.show_text_options.map(
+                            (col) => html`
+                                <option
+                                    .selected=${this.show_text === col}
+                                    .value=${col}
+                                >
+                                    ${translate("showText." + col)}
+                                </option>
+                            `,
+                        )}
+                    </select>
+                </div>
 			</form>
         </div>
         `;

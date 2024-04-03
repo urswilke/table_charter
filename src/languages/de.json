@@ -66,5 +66,11 @@
   },
   "plotTitle": {
     "subtitle_beginning": "nach"
+  },
+  "showText": {
+    "label": "Werte anzeigen",
+    "always": "immer",
+    "never": "nie",
+    "ifGE5": "wenn Wert >= 5 % des Maximalwertes ist"
   }
 }

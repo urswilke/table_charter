@@ -142,9 +142,12 @@ export class PlotOptions {
             ...plot_opts,
             text: (x) =>
                 x.Value === undefined ||
-                x.Value < get_max_stack_value(this.plot_data) / 20
+                this.input.show_text === "never" ||
+                (this.input.show_text === "ifGE5" &&
+                    x.Value < get_max_stack_value(this.plot_data) / 20)
                     ? null
-                    : x.Value.toFixed(n_decimals),
+                    : // if this.input.show_text === "always" the else option should also be selected...:
+                      x.Value.toFixed(n_decimals),
             z: (x) => x.RowNo,
             order: color_order,
             title: tooltip_fun(n_decimals),

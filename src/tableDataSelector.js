@@ -67,6 +67,7 @@ export class TableDataSelector extends LitElement {
         this.choices.show_mean = true;
         this.choices.separate_headers = true;
         this.choices.font_size = 16;
+        this.choices.show_text = "ifGE5";
         const saved_settings =
             document.querySelector("table-charter").dataset.savedSettings;
         this.saved =
@@ -300,6 +301,12 @@ export class TableDataSelector extends LitElement {
         });
         this._update_plot_data();
     }
+    _on_show_text_update(e) {
+        this.update_choices({
+            show_text: e.detail.show_text,
+        });
+        this._update_plot_data();
+    }
     _on_plot_type_update(e) {
         this.update_choices({
             plot_type: e.detail.plot_type,
@@ -401,9 +408,11 @@ export class TableDataSelector extends LitElement {
 							<advanced-options-selector
 								@update-checkboxes="${this._on_checkbox_update}"
 								@update-font-size="${this._on_font_size_update}"
+								@update-show-text="${this._on_show_text_update}"
 								.show_mean=${this.choices.show_mean}
 								.separate_headers=${this.choices.separate_headers}
 								.font_size=${this.choices.font_size}
+                                .show_text=${this.choices.show_text}
 							>
 							</advanced-options-selector>
 							<hr></hr>
