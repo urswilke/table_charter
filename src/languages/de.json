@@ -71,6 +71,6 @@
     "label": "Werte anzeigen",
     "always": "immer",
     "never": "nie",
-    "ifGE5": "wenn Wert >= 5 % des Maximalwertes ist"
+    "ifGE5": "wenn >= 5 % der Totallänge"
   }
 }
