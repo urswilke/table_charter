@@ -53,48 +53,55 @@ export class OJSPlot extends LitElement {
         if (!options) {
             return;
         }
-        this.renderedPlot = options && Plot.plot(options);
+        this.renderedPlot = Object.assign(Plot.plot(options), {
+            style: `max-width: ${options.width}px; overflow: scroll`,
+        });
+        // this.renderedPlot = Plot.plot(options);
+        // delete this.renderedPlot.style.maxWidth;
         // https://talk.observablehq.com/t/legend-placement-options/8407/3
         // adding this before will move the legend a bit downwards :)
         select(this.renderedPlot).append("br");
-        console.log(
-            select(this.renderedPlot).selectAll("rect").node().getBBox(),
-        );
-        var subheaders = select(this.renderedPlot).append("div");
-        subheaders.classed("subheaders", true).style({
-            marginLeft: this.plot_options.derived.marginLeft,
-            display: "flex",
-            flexDirection: "row",
-        });
 
-        var divs = subheaders
+        const n_cats = this.plot_options.derived.x_order.length;
+        const inset =
+            (options.width - options.marginLeft - options.marginRight) /
+            (10 * n_cats + 1);
+
+        var subheaders = select(this.renderedPlot)
+            .append("div")
+            .classed("subheaders", true);
+        subheaders
             .selectAll("div")
-            // divs
             .data(this.plot_options.derived.x_order)
             .enter()
             .append("div")
+            .classed("subheader", true)
             .text(function (d) {
                 return d;
             });
 
-        var svg = select(this.renderedPlot).append("svg");
+        const plot_width =
+            options.width -
+            options.marginLeft -
+            options.marginRight -
+            70 -
+            2 * inset +
+            "px";
+        // TODO: where do these numbers (70 & 8) come from (still not exact)?
+        const style = {
+            "margin-left": options.marginLeft - inset + 8 + "px",
+            "margin-right": options.marginRight + "px",
+            display: "flex",
+            "flex-direction": "row",
+            width: plot_width,
+            gap: inset + "px",
+            "padding-left": inset + "px",
+            "padding-right": inset + "px",
+        };
 
-        var g = svg
-            .selectAll(".rect")
-            .data([10, 60, 120])
-            .enter()
-            .append("g")
-            .classed("rect", true);
-
-        g.append("rect")
-            .attr("width", 20)
-            .attr("height", 20)
-            .attr("x", 0)
-            .attr("y", function (d) {
-                return d;
-            })
-            .attr("fill", "red")
-            .style("marginLeft", this.plot_options.derived.marginLeft);
+        Object.entries(style).forEach(([prop, val]) =>
+            subheaders.style(prop, val),
+        );
 
         select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
@@ -188,6 +195,14 @@ export class OJSPlot extends LitElement {
                 padding: 15px;
                 border-width: 2px;
                 border-radius: 8px;
+            }
+            .subheader {
+                flex: 1 1;
+                /* https://stackoverflow.com/questions/29503227/how-to-make-flexbox-items-the-same-size/47323475#47323475 */
+                width: 0px;
+                overflow-wrap: break-word;
+                background-color: skyblue;
+                border: solid skyblue;
             }
             /* #ojs-plot-div {
                 margin-right: 10%;
