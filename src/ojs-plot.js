@@ -50,10 +50,52 @@ export class OJSPlot extends LitElement {
             .join(" - ");
 
         const options = this.plot_options?.options;
+        if (!options) {
+            return;
+        }
         this.renderedPlot = options && Plot.plot(options);
         // https://talk.observablehq.com/t/legend-placement-options/8407/3
         // adding this before will move the legend a bit downwards :)
         select(this.renderedPlot).append("br");
+        console.log(
+            select(this.renderedPlot).selectAll("rect").node().getBBox(),
+        );
+        var subheaders = select(this.renderedPlot).append("div");
+        subheaders.classed("subheaders", true).style({
+            marginLeft: this.plot_options.derived.marginLeft,
+            display: "flex",
+            flexDirection: "row",
+        });
+
+        var divs = subheaders
+            .selectAll("div")
+            // divs
+            .data(this.plot_options.derived.x_order)
+            .enter()
+            .append("div")
+            .text(function (d) {
+                return d;
+            });
+
+        var svg = select(this.renderedPlot).append("svg");
+
+        var g = svg
+            .selectAll(".rect")
+            .data([10, 60, 120])
+            .enter()
+            .append("g")
+            .classed("rect", true);
+
+        g.append("rect")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("x", 0)
+            .attr("y", function (d) {
+                return d;
+            })
+            .attr("fill", "red")
+            .style("marginLeft", this.plot_options.derived.marginLeft);
+
         select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
             .raise();

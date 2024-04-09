@@ -424,11 +424,10 @@ function set_axis_labels(plot_options) {
     const font_size = Number(
         plot_options.options.style.fontSize.replace(/px/, ""),
     );
-    const text_width = is_x
-        ? Math.floor((plot_width / n_bars / font_size) * 0.8)
-        : 7;
+    const text_width_x = (plot_width / n_bars / font_size) * 0.8;
+    const text_width = is_x ? text_width_x : 7;
     // small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
-    const text_margin_left = 5;
+    const text_margin_left = 0;
 
     const hl = plot_options.header_text_lengths;
     const header_tick_opts = {
