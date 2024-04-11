@@ -96,6 +96,7 @@ export class OJSPlot extends LitElement {
             gap: inset + "px",
             "padding-left": inset + "px",
             "padding-right": inset + "px",
+            "font-size": font_size + "px",
         };
 
         Object.entries(style).forEach(([prop, val]) =>
