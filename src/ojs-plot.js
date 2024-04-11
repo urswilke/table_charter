@@ -73,9 +73,16 @@ export class OJSPlot extends LitElement {
             .append("div")
             .classed("subheaders", true);
 
-        subheaders
-            .selectAll("div")
-            .data(x_order)
+        const header_table_gaps = this.plot_options.derived.header_table_gaps;
+        const arr_col_title1 = Object.entries(
+            Object.groupBy(
+                header_table_gaps.filter((x) => x.selected),
+                (x) => x.ColTitle1,
+            ),
+        );
+
+        const x = subheaders.selectAll("div");
+        x.data(x_order)
             .enter()
             .append("div")
             .classed("subheader gap_subheader", (d) =>
@@ -84,6 +91,16 @@ export class OJSPlot extends LitElement {
             .classed("subheader", true)
             .text(function (d) {
                 return d.replace(RegExp("^" + fantasy_string + ".*"), "");
+            });
+
+        x.data(arr_col_title1)
+            .enter()
+            .append("div")
+            .classed("subheader gap_subheader", (d) => d[0] === "undefined")
+            .classed("subheader", true)
+            .style("grid-column-end", (d) => "span " + d[1].length)
+            .text(function (d) {
+                return d[0].replace(RegExp("^undefined$"), "");
             });
 
         const plot_width =
