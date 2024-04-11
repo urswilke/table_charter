@@ -18,13 +18,20 @@ export class PlotOptions {
     }
     pre_process() {
         const input = this.input;
-        const { xy, color_scale, separate_headers, color_scheme } = input;
+        const {
+            xy,
+            color_scale,
+            separate_headers,
+            color_scheme,
+            header_table,
+        } = input;
         let x2,
             x1,
             is_x,
             col_lab_fun,
             row_lab_fun,
             color_order,
+            header_table_gaps,
             x_order,
             plot_opts,
             color_opts,
@@ -35,6 +42,8 @@ export class PlotOptions {
             marginBottom,
             axis_,
             group_;
+
+        header_table_gaps = header_table;
 
         x2 = xy;
         x1 = x2 === "x" ? "y" : "x";
@@ -60,12 +69,15 @@ export class PlotOptions {
             ),
         ];
         if (separate_headers) {
-            x_order = add_gaps_to_xlabels(
-                x_order,
+            header_table_gaps = add_gaps_to_xlabels(
+                header_table,
                 distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(
                     (x) => x.ColTitle1,
                 ),
             );
+            x_order = header_table_gaps
+                .filter((x) => x.selected)
+                .map((x) => x.ColTitle2);
         }
 
         plot_opts = {
@@ -98,6 +110,7 @@ export class PlotOptions {
             col_lab_fun,
             row_lab_fun,
             color_order,
+            header_table_gaps,
             x_order,
             plot_opts,
             color_opts,
@@ -395,7 +408,7 @@ export const all_color_schemes = {
     categorical: [...color_schemes_maps.categorical.keys()],
 };
 
-function add_gaps_to_xlabels(x_order, col_titles) {
+function add_gaps_to_xlabels(header_table, col_titles) {
     // https://stackoverflow.com/questions/64204535/how-to-find-indexes-where-value-changes/64204722#64204722
     const diff_indices = [];
     col_titles.map((el, index) => {
@@ -405,17 +418,21 @@ function add_gaps_to_xlabels(x_order, col_titles) {
             diff_indices.push(index)
         );
     });
-    const x_order_gaps = [...x_order];
+    const header_table_gaps = [...header_table];
 
     // it seems as if the placeholders for the gaps need to be unique.
     // Therefore, we'll add an "a" for every new gap:
     var gap_string = fantasy_string;
     for (let i = diff_indices.length - 1; i >= 0; i--) {
         const diff_index = diff_indices[i];
-        x_order_gaps.splice(diff_index, 0, gap_string);
+        header_table_gaps.splice(diff_index, 0, {
+            ColTilte1: gap_string,
+            ColTitle2: gap_string,
+            selected: true,
+        });
         gap_string += "a";
     }
-    return x_order_gaps;
+    return header_table_gaps;
 }
 
 function set_axis_labels(plot_options) {

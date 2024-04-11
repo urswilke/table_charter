@@ -63,7 +63,8 @@ export class OJSPlot extends LitElement {
         // adding this before will move the legend a bit downwards :)
         select(this.renderedPlot).append("br");
 
-        const n_cats = this.plot_options.derived.x_order.length;
+        const x_order = this.plot_options.derived.x_order;
+        const n_cats = x_order.length;
         const inset =
             (options.width - options.marginLeft - options.marginRight) /
             (10 * n_cats + 1);
@@ -71,9 +72,10 @@ export class OJSPlot extends LitElement {
         var subheaders = select(this.renderedPlot)
             .append("div")
             .classed("subheaders", true);
+
         subheaders
             .selectAll("div")
-            .data(this.plot_options.derived.x_order)
+            .data(x_order)
             .enter()
             .append("div")
             .classed("subheader gap_subheader", (d) =>
