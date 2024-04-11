@@ -1,5 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { translate, get } from "lit-translate";
+import { fantasy_string } from "./utils.js";
 
 import { PlotOptions } from "./gen_plot_types.js";
 import * as Plot from "@observablehq/plot";
@@ -75,9 +76,12 @@ export class OJSPlot extends LitElement {
             .data(this.plot_options.derived.x_order)
             .enter()
             .append("div")
+            .classed("subheader gap_subheader", (d) =>
+                d.includes(fantasy_string),
+            )
             .classed("subheader", true)
             .text(function (d) {
-                return d;
+                return d.replace(RegExp("^" + fantasy_string + ".*"), "");
             });
 
         const plot_width =
@@ -206,6 +210,9 @@ export class OJSPlot extends LitElement {
                 overflow-wrap: break-word;
                 background-color: skyblue;
                 border: solid skyblue;
+            }
+            .gap_subheader {
+                visibility: hidden;
             }
             /* #ojs-plot-div {
                 margin-right: 10%;
