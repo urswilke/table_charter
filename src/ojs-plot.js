@@ -84,10 +84,9 @@ export class OJSPlot extends LitElement {
             options.width -
             options.marginLeft -
             options.marginRight -
-            70 -
             2 * inset +
             "px";
-        // TODO: where do these numbers (70 & 8) come from (still not exact)?
+        // TODO: where does this number (8) come from (still not exact)?
         const style = {
             "margin-left": options.marginLeft - inset + 8 + "px",
             "margin-right": options.marginRight + "px",
@@ -195,6 +194,9 @@ export class OJSPlot extends LitElement {
                 padding: 15px;
                 border-width: 2px;
                 border-radius: 8px;
+            }
+            figure[class*="plot-"] {
+                margin: 0px;
             }
             .subheader {
                 flex: 1 1;
