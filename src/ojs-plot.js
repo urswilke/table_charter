@@ -96,10 +96,10 @@ export class OJSPlot extends LitElement {
         const style = {
             "margin-left": options.marginLeft - inset + 8 + "px",
             "margin-right": options.marginRight + "px",
-            display: "flex",
-            "flex-direction": "row",
+            display: "grid",
+            "grid-template-columns": `repeat(${n_cats}, 1fr)`,
             width: plot_width,
-            gap: inset + "px",
+            "grid-gap": inset + "px",
             "padding-left": inset + "px",
             "padding-right": inset + "px",
             "font-size": font_size + "px",
@@ -206,9 +206,9 @@ export class OJSPlot extends LitElement {
                 margin: 0px;
             }
             .subheader {
-                flex: 1 1;
-                /* https://stackoverflow.com/questions/29503227/how-to-make-flexbox-items-the-same-size/47323475#47323475 */
-                width: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 overflow-wrap: break-word;
                 background-color: skyblue;
                 border: solid skyblue;
