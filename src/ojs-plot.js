@@ -69,9 +69,9 @@ export class OJSPlot extends LitElement {
             (options.width - options.marginLeft - options.marginRight) /
             (10 * n_cats + 1);
 
-        var subheaders = select(this.renderedPlot)
+        var cat_labels_div = select(this.renderedPlot)
             .append("div")
-            .classed("subheaders", true);
+            .classed("cat_labels_div", true);
 
         const header_table_gaps = this.plot_options.derived.header_table_gaps;
         const arr_col_title1 = Object.entries(
@@ -81,23 +81,23 @@ export class OJSPlot extends LitElement {
             ),
         );
 
-        const x = subheaders.selectAll("div");
-        x.data(x_order)
+        const cat_labels = cat_labels_div.selectAll("div");
+        cat_labels
+            .data(x_order)
             .enter()
             .append("div")
-            .classed("subheader gap_subheader", (d) =>
-                d.includes(fantasy_string),
-            )
-            .classed("subheader", true)
+            .classed("cat-label gap", (d) => d.includes(fantasy_string))
+            .classed("cat-label", true)
             .text(function (d) {
                 return d.replace(RegExp("^" + fantasy_string + ".*"), "");
             });
 
-        x.data(arr_col_title1)
+        cat_labels
+            .data(arr_col_title1)
             .enter()
             .append("div")
-            .classed("subheader gap_subheader", (d) => d[0] === "undefined")
-            .classed("subheader", true)
+            .classed("cat-label gap", (d) => d[0] === "undefined")
+            .classed("cat-label", true)
             .style("grid-column-end", (d) => "span " + d[1].length)
             .text(function (d) {
                 return d[0].replace(RegExp("^undefined$"), "");
@@ -123,7 +123,7 @@ export class OJSPlot extends LitElement {
         };
 
         Object.entries(style).forEach(([prop, val]) =>
-            subheaders.style(prop, val),
+            cat_labels_div.style(prop, val),
         );
 
         select(this.renderedPlot)
@@ -222,14 +222,14 @@ export class OJSPlot extends LitElement {
             figure[class*="plot-"] {
                 margin: 0px;
             }
-            .subheader {
+            .cat-label {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 word-break: break-word;
                 border: 1px solid;
             }
-            .gap_subheader {
+            .gap {
                 visibility: hidden;
             }
             /* #ojs-plot-div {
