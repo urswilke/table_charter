@@ -114,7 +114,7 @@ export class OJSPlot extends LitElement {
             "margin-left": options.marginLeft - inset + 8 + "px",
             "margin-right": options.marginRight + "px",
             display: "grid",
-            "grid-template-columns": `repeat(${n_cats}, 1fr)`,
+            "grid-template-columns": `repeat(${n_cats}, minmax(0, 1fr))`,
             width: plot_width,
             "grid-gap": inset + "px",
             "padding-left": inset + "px",
