@@ -227,8 +227,7 @@ export class OJSPlot extends LitElement {
                 align-items: center;
                 justify-content: center;
                 overflow-wrap: break-word;
-                background-color: skyblue;
-                border: solid skyblue;
+                border: 1px solid;
             }
             .gap_subheader {
                 visibility: hidden;
