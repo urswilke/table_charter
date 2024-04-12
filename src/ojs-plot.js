@@ -227,6 +227,10 @@ export class OJSPlot extends LitElement {
                 justify-content: center;
                 word-break: break-word;
                 border: 1px solid;
+                /* don't show labels in multiple lines:
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden; */
             }
             .gap {
                 visibility: hidden;
