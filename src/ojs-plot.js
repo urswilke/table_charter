@@ -55,7 +55,7 @@ export class OJSPlot extends LitElement {
             return;
         }
         this.renderedPlot = Object.assign(Plot.plot(options), {
-            style: `max-width: ${options.width}px; overflow: scroll`,
+            style: `max-width: ${options.width}px;`,
         });
         // this.renderedPlot = Plot.plot(options);
         // delete this.renderedPlot.style.maxWidth;
@@ -223,7 +223,6 @@ export class OJSPlot extends LitElement {
                 margin: 0px;
             }
             .cat-label {
-                display: flex;
                 align-items: center;
                 justify-content: center;
                 word-break: break-word;
