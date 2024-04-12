@@ -93,13 +93,7 @@ export class TableCharter extends LitElement {
     render() {
         this.plot_data &&
             (this.plot_data.params = {
-                element_width: this.el(
-                    // HACK: to get the width of the plot container:
-                    // at this point I don't know how to get the height...
-                    // the value needs to be the same as in the max-width css below...
-                    // TODO: find cleaner solution (perhaps with flex layout within class .content ?)
-                    window.innerWidth < 1100 ? ".content" : ".column2",
-                ).offsetWidth,
+                element_width: this.el(".column2").offsetWidth,
                 element_height: this.el(".column2").offsetHeight,
             });
         return this.data === undefined
