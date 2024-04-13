@@ -226,7 +226,10 @@ export class OJSPlot extends LitElement {
                 align-items: center;
                 justify-content: center;
                 word-break: break-word;
-                border: 1px solid;
+                -webkit-box-shadow: inset 0px 0px 0px 1px;
+                -moz-box-shadow: inset 0px 0px 0px 1px;
+                box-shadow: inset 0px 0px 0px 1px;
+                padding: 2px;
                 /* don't show labels in multiple lines:
                 text-overflow: ellipsis;
                 white-space: nowrap;
