@@ -103,6 +103,7 @@ export class OJSPlot extends LitElement {
                 return d[0].replace(RegExp("^undefined$"), "");
             });
 
+        // TODO: for line plots this approach for the inset is slightly incorrect
         const plot_width =
             options.width -
             options.marginLeft -
