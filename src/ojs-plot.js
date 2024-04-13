@@ -130,6 +130,10 @@ export class OJSPlot extends LitElement {
             .select(".large-font-ramp, .large-font-swatches")
             .raise();
     }
+    // this could be an alternative way to get the positions of the plot area
+    // updated() {
+    //     console.log(this.renderRoot.querySelector('rect[aria-label="frame"]')?.getBBox());
+    // }
 
     render() {
         inspect && console.log("render");
