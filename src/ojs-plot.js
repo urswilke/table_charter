@@ -109,9 +109,8 @@ export class OJSPlot extends LitElement {
             options.marginRight -
             2 * inset +
             "px";
-        // TODO: where does this number (8) come from (still not exact)?
         const style = {
-            "margin-left": options.marginLeft - inset + 8 + "px",
+            "margin-left": options.marginLeft + "px",
             "margin-right": options.marginRight + "px",
             display: "grid",
             "grid-template-columns": `repeat(${n_cats}, minmax(0, 1fr))`,

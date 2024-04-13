@@ -93,7 +93,7 @@ export class TableCharter extends LitElement {
     render() {
         this.plot_data &&
             (this.plot_data.params = {
-                element_width: this.el(".column2").offsetWidth,
+                element_width: this.el(".ojsplot").offsetWidth,
                 element_height: this.el(".column2").offsetHeight,
             });
         return this.data === undefined
