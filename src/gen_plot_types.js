@@ -233,6 +233,7 @@ export class PlotOptions {
                           Plot[group_](group_args1, group_args2_text_n),
                       )
                     : null,
+                Plot.frame({ stroke: "none" }),
             ],
         };
     }
