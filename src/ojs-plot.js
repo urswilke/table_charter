@@ -59,9 +59,6 @@ export class OJSPlot extends LitElement {
         });
         // this.renderedPlot = Plot.plot(options);
         // delete this.renderedPlot.style.maxWidth;
-        // https://talk.observablehq.com/t/legend-placement-options/8407/3
-        // adding this before will move the legend a bit downwards :)
-        select(this.renderedPlot).append("br");
 
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
@@ -125,7 +122,10 @@ export class OJSPlot extends LitElement {
         Object.entries(style).forEach(([prop, val]) =>
             cat_labels_div.style(prop, val),
         );
+        // adding this before will move the legend a bit downwards :)
+        select(this.renderedPlot).append("br");
 
+        // https://talk.observablehq.com/t/legend-placement-options/8407/3
         select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
             .raise();

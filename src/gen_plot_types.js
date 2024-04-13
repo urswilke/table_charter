@@ -97,10 +97,10 @@ export class PlotOptions {
         };
         x2_opts = {
             domain: x_order,
-            label: null,
+            axis: null,
         };
         n_decimals = this.plot_data[0].RowDecimals;
-        marginBottom = 80;
+        marginBottom = 25;
         axis_ = x1 === "y" ? "axisX" : "axisY";
         group_ = x1 === "y" ? "groupX" : "groupY";
         this.derived = {
@@ -308,7 +308,6 @@ export class PlotOptions {
         this.options.height = 0.7 * this.params.element_height;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
-        set_axis_labels(this);
     }
 }
 
@@ -434,63 +433,4 @@ function add_gaps_to_xlabels(header_table, col_titles) {
         gap_string += "a";
     }
     return header_table_gaps;
-}
-
-function set_axis_labels(plot_options) {
-    const xy = plot_options.derived.x2;
-    const is_x = xy === "x";
-    const plot_width = plot_options.options.width;
-    const n_bars = plot_options.options[xy].domain.length;
-    const font_size = Number(
-        plot_options.options.style.fontSize.replace(/px/, ""),
-    );
-    const text_width_x = (plot_width / n_bars / font_size) * 0.8;
-    const text_width = is_x ? text_width_x : 7;
-    // small margin (in pixel) from where the text starts (counting from the left of the bars on the x-axis):
-    const text_margin_left = 0;
-
-    const hl = plot_options.header_text_lengths;
-    const header_tick_opts = {
-        textAnchor: "start",
-        // TODO: replace with HeadNo to prevent tohuwabohu if there are the same `ColTitle1`s for different headers (HeadNo is deleted from the input data at the moment...):
-        z: "ColTitle1",
-        text: "ColTitle1",
-        tickSize: 0,
-        tickFormat: (x) => x.ColTitle2,
-        dx: is_x
-            ? (-text_width / 2) * font_size + text_margin_left
-            : -1 * hl.header_linewidth_px,
-        dy: is_x ? 30 : 0,
-        label: null,
-        lineWidth: hl.header_line_width,
-        textOverflow: "ellipsis-end",
-        fontWeight: "bold",
-    };
-    header_tick_opts[xy] = "ColTitle2";
-    const subheader_tick_opts = {
-        textAnchor: "start",
-        text: "ColTitle2",
-        z: "ColNo",
-        tickFormat: (x) => x.ColTitle2,
-        tickSize: 0,
-        label: null,
-        dx: is_x
-            ? (-text_width / 2) * font_size + text_margin_left
-            : -1 * hl.subheader_linewidth_px,
-        lineWidth: hl.subheader_line_width,
-        textOverflow: "ellipsis-end",
-    };
-    subheader_tick_opts[xy] = "ColTitle2";
-    plot_options.options.marks.push(
-        Plot[plot_options.derived.axis_](
-            plot_options.plot_data,
-            Plot.selectFirst(header_tick_opts),
-        ),
-    );
-    plot_options.options.marks.push(
-        Plot[plot_options.derived.axis_](
-            plot_options.plot_data,
-            Plot.selectFirst(subheader_tick_opts),
-        ),
-    );
 }
