@@ -60,11 +60,46 @@ export class OJSPlot extends LitElement {
         // this.renderedPlot = Plot.plot(options);
         // delete this.renderedPlot.style.maxWidth;
 
+        let len,
+            margin1,
+            margin2,
+            margin1_string,
+            margin2_string,
+            grid_template_string,
+            padding1_string,
+            padding2_string,
+            grid_end,
+            len_string;
+
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
-        const inset =
-            (options.width - options.marginLeft - options.marginRight) /
-            (10 * n_cats + 1);
+        const is_x = this.plot_options.derived.is_x;
+
+        if (is_x) {
+            len = options.width;
+            len_string = "width";
+            margin1 = options.marginLeft;
+            margin2 = options.marginRight;
+            margin1_string = "margin-left";
+            margin2_string = "margin-right";
+            grid_template_string = "grid-template-columns";
+            padding1_string = "padding-left";
+            padding2_string = "padding-right";
+            grid_end = "grid-column-end";
+        } else {
+            len = options.height;
+            len_string = "height";
+            margin1 = options.marginTop;
+            margin2 = options.marginBottom;
+            margin1_string = "margin-top";
+            margin2_string = "margin-bottom";
+            grid_template_string = "grid-template-rows";
+            padding1_string = "padding-top";
+            padding2_string = "padding-bottom";
+            grid_end = "grid-row-end";
+        }
+
+        const inset = (len - margin1 - margin2) / (10 * n_cats + 1);
 
         var cat_labels_div = select(this.renderedPlot)
             .append("div")
@@ -95,28 +130,24 @@ export class OJSPlot extends LitElement {
             .append("div")
             .classed("cat-label gap", (d) => d[0] === "undefined")
             .classed("cat-label", true)
-            .style("grid-column-end", (d) => "span " + d[1].length)
+            .style(grid_end, (d) => "span " + d[1].length)
             .text(function (d) {
                 return d[0].replace(RegExp("^undefined$"), "");
             });
 
         // TODO: for line plots this approach for the inset is slightly incorrect
-        const plot_width =
-            options.width -
-            options.marginLeft -
-            options.marginRight -
-            2 * inset +
-            "px";
+        const plot_width = len - margin1 - margin2 - 2 * inset + "px";
         const style = {
-            "margin-left": options.marginLeft + "px",
-            "margin-right": options.marginRight + "px",
+            [margin1_string]: options.marginLeft + "px",
+            [margin2_string]: options.marginRight + "px",
             display: "grid",
-            "grid-template-columns": `repeat(${n_cats}, minmax(0, 1fr))`,
-            width: plot_width,
+            [grid_template_string]: `repeat(${n_cats}, minmax(0, 1fr))`,
+            [len_string]: plot_width,
             "grid-gap": inset + "px",
-            "padding-left": inset + "px",
-            "padding-right": inset + "px",
+            [padding1_string]: inset + "px",
+            [padding2_string]: inset + "px",
             "font-size": font_size + "px",
+            ...(!is_x && { "grid-auto-flow": "column" }),
         };
 
         Object.entries(style).forEach(([prop, val]) =>
@@ -225,6 +256,8 @@ export class OJSPlot extends LitElement {
             }
             figure[class*="plot-"] {
                 margin: 0px;
+                /* display: flex;
+                flex-direction: row; */
             }
             .cat-label {
                 align-items: center;
