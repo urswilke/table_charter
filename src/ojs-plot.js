@@ -70,7 +70,8 @@ export class OJSPlot extends LitElement {
             padding2_string,
             grid_end,
             len_string,
-            flex_dir;
+            flex_dir,
+            write_labels;
 
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
@@ -88,6 +89,10 @@ export class OJSPlot extends LitElement {
             padding2_string = "padding-right";
             grid_end = "grid-column-end";
             flex_dir = "column";
+            write_labels = () => {
+                write_col_title2();
+                write_col_title1();
+            };
         } else {
             len = options.height;
             len_string = "height";
@@ -100,6 +105,10 @@ export class OJSPlot extends LitElement {
             padding2_string = "padding-top";
             grid_end = "grid-row-end";
             flex_dir = "row";
+            write_labels = () => {
+                write_col_title1();
+                write_col_title2();
+            };
         }
 
         this.style.setProperty("--flex-dir", flex_dir);
@@ -119,8 +128,7 @@ export class OJSPlot extends LitElement {
         );
 
         const cat_labels = cat_labels_div.selectAll("div");
-        write_col_title2();
-        write_col_title1();
+        write_labels();
 
         // TODO: for line plots this approach for the inset is slightly incorrect
         const plot_width = len - margin1 - margin2 - 2 * inset + "px";
