@@ -119,26 +119,8 @@ export class OJSPlot extends LitElement {
         );
 
         const cat_labels = cat_labels_div.selectAll("div");
-        cat_labels
-            .data(x_order)
-            .enter()
-            .append("div")
-            .classed("cat-label gap", (d) => d.includes(fantasy_string))
-            .classed("cat-label", true)
-            .text(function (d) {
-                return d.replace(RegExp("^" + fantasy_string + ".*"), "");
-            });
-
-        cat_labels
-            .data(arr_col_title1)
-            .enter()
-            .append("div")
-            .classed("cat-label gap", (d) => d[0] === "undefined")
-            .classed("cat-label", true)
-            .style(grid_end, (d) => "span " + d[1].length)
-            .text(function (d) {
-                return d[0].replace(RegExp("^undefined$"), "");
-            });
+        write_col_title2();
+        write_col_title1();
 
         // TODO: for line plots this approach for the inset is slightly incorrect
         const plot_width = len - margin1 - margin2 - 2 * inset + "px";
@@ -165,6 +147,30 @@ export class OJSPlot extends LitElement {
         select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
             .remove();
+
+        function write_col_title1() {
+            cat_labels
+                .data(arr_col_title1)
+                .enter()
+                .append("div")
+                .classed("cat-label gap", (d) => d[0] === "undefined")
+                .classed("cat-label", true)
+                .style(grid_end, (d) => "span " + d[1].length)
+                .text(function (d) {
+                    return d[0].replace(RegExp("^undefined$"), "");
+                });
+        }
+        function write_col_title2() {
+            cat_labels
+                .data(x_order)
+                .enter()
+                .append("div")
+                .classed("cat-label gap", (d) => d.includes(fantasy_string))
+                .classed("cat-label", true)
+                .text(function (d) {
+                    return d.replace(RegExp("^" + fantasy_string + ".*"), "");
+                });
+        }
     }
     // this could be an alternative way to get the positions of the plot area
     // updated() {
