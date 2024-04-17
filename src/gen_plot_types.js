@@ -102,8 +102,8 @@ export class PlotOptions {
         };
         n_decimals = this.plot_data[0].RowDecimals;
         marginBottom = 25;
-        axis_ = x1 === "y" ? "axisX" : "axisY";
-        group_ = x1 === "y" ? "groupX" : "groupY";
+        axis_ = is_x ? "axisX" : "axisY";
+        group_ = is_x ? "groupX" : "groupY";
         x_chart_labels_width = is_x ? 1 : 0.25;
         this.derived = {
             x2,
@@ -127,7 +127,7 @@ export class PlotOptions {
         };
         // comes here, because depends on this.derived...:
         this.header_text_lengths = calc_header_text_lengths(this);
-        this.derived.marginLeft = x1 === "y" ? 100 : 30;
+        this.derived.marginLeft = is_x ? 100 : 30;
     }
     bar() {
         const derived = this.derived;
@@ -141,9 +141,9 @@ export class PlotOptions {
             group_args2_bar,
             group_args2_text,
             group_args2_text_n;
-        text_ = x1 === "y" ? "textY" : "textX";
-        stack_ = x1 === "y" ? "stackY" : "stackX";
-        bar_ = x1 === "y" ? "barY" : "barX";
+        text_ = is_x ? "textY" : "textX";
+        stack_ = is_x ? "stackY" : "stackX";
+        bar_ = is_x ? "barY" : "barX";
 
         group_args1 = { text: "first", [x1]: "sum" };
         group_args2_bar = {
