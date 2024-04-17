@@ -148,11 +148,16 @@ export class OJSPlot extends LitElement {
         Object.entries(style).forEach(([prop, val]) =>
             cat_labels_div.style(prop, val),
         );
+
+        if (!is_x) {
+            select(this.renderedPlot).select('svg[class*="plot-"]').raise();
+        }
+
         // adding this before will move the legend a bit downwards :)
         select(this.renderedPlot).append("br");
 
         // https://talk.observablehq.com/t/legend-placement-options/8407/3
-        select(this.renderedPlot)
+        const legend = select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
             .remove();
 
