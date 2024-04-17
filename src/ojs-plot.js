@@ -143,6 +143,10 @@ export class OJSPlot extends LitElement {
             [padding2_string]: inset + "px",
             "font-size": font_size + "px",
             ...(!is_x && { "grid-auto-flow": "column" }),
+            ...(!is_x && {
+                "max-width":
+                    this.plot_options.derived.x_chart_labels_width * 100 + "%",
+            }),
         };
 
         Object.entries(style).forEach(([prop, val]) =>

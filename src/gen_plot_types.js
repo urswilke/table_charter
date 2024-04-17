@@ -41,7 +41,8 @@ export class PlotOptions {
             marginLeft,
             marginBottom,
             axis_,
-            group_;
+            group_,
+            x_chart_labels_width;
 
         header_table_gaps = header_table;
 
@@ -103,6 +104,7 @@ export class PlotOptions {
         marginBottom = 25;
         axis_ = x1 === "y" ? "axisX" : "axisY";
         group_ = x1 === "y" ? "groupX" : "groupY";
+        x_chart_labels_width = is_x ? 1 : 0.2;
         this.derived = {
             x2,
             x1,
@@ -121,6 +123,7 @@ export class PlotOptions {
             marginBottom,
             axis_,
             group_,
+            x_chart_labels_width,
         };
         // comes here, because depends on this.derived...:
         this.header_text_lengths = calc_header_text_lengths(this);
@@ -302,7 +305,8 @@ export class PlotOptions {
         this.options[derived.x2] = derived.x2_opts;
         this.options[derived.x1] = derived.x1_opts;
         this.options.width =
-            (derived.is_x ? 1 : 0.8) * this.params.element_width;
+            (derived.is_x ? 1 : 1 - derived.x_chart_labels_width) *
+            this.params.element_width;
         this.options.height = 0.7 * this.params.element_height;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
