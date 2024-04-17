@@ -54,10 +54,10 @@ export class OJSPlot extends LitElement {
         if (!options) {
             return;
         }
-        this.renderedPlot = Object.assign(Plot.plot(options), {
-            style: `max-width: ${options.width}px;`,
-        });
-        // this.renderedPlot = Plot.plot(options);
+        // this.renderedPlot = Object.assign(Plot.plot(options), {
+        //     style: `max-width: ${options.width}px;`,
+        // });
+        this.renderedPlot = Plot.plot(options);
         // delete this.renderedPlot.style.maxWidth;
 
         let len,
@@ -69,7 +69,8 @@ export class OJSPlot extends LitElement {
             padding1_string,
             padding2_string,
             grid_end,
-            len_string;
+            len_string,
+            flex_dir;
 
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
@@ -86,18 +87,22 @@ export class OJSPlot extends LitElement {
             padding1_string = "padding-left";
             padding2_string = "padding-right";
             grid_end = "grid-column-end";
+            flex_dir = "column";
         } else {
             len = options.height;
             len_string = "height";
-            margin1 = options.marginTop;
-            margin2 = options.marginBottom;
-            margin1_string = "margin-top";
-            margin2_string = "margin-bottom";
+            margin1 = options.marginBottom;
+            margin2 = options.marginTop;
+            margin1_string = "margin-bottom";
+            margin2_string = "margin-top";
             grid_template_string = "grid-template-rows";
-            padding1_string = "padding-top";
-            padding2_string = "padding-bottom";
+            padding1_string = "padding-bottom";
+            padding2_string = "padding-top";
             grid_end = "grid-row-end";
+            flex_dir = "row";
         }
+
+        this.style.setProperty("--flex-dir", flex_dir);
 
         const inset = (len - margin1 - margin2) / (10 * n_cats + 1);
 
@@ -138,8 +143,8 @@ export class OJSPlot extends LitElement {
         // TODO: for line plots this approach for the inset is slightly incorrect
         const plot_width = len - margin1 - margin2 - 2 * inset + "px";
         const style = {
-            [margin1_string]: options.marginLeft + "px",
-            [margin2_string]: options.marginRight + "px",
+            [margin1_string]: margin1 + "px",
+            [margin2_string]: margin2 + "px",
             display: "grid",
             [grid_template_string]: `repeat(${n_cats}, minmax(0, 1fr))`,
             [len_string]: plot_width,
@@ -159,7 +164,7 @@ export class OJSPlot extends LitElement {
         // https://talk.observablehq.com/t/legend-placement-options/8407/3
         select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
-            .raise();
+            .remove();
     }
     // this could be an alternative way to get the positions of the plot area
     // updated() {
@@ -256,8 +261,8 @@ export class OJSPlot extends LitElement {
             }
             figure[class*="plot-"] {
                 margin: 0px;
-                /* display: flex;
-                flex-direction: row; */
+                display: flex;
+                flex-direction: var(--flex-dir);
             }
             .cat-label {
                 align-items: center;

@@ -124,10 +124,7 @@ export class PlotOptions {
         };
         // comes here, because depends on this.derived...:
         this.header_text_lengths = calc_header_text_lengths(this);
-        this.derived.marginLeft =
-            x1 === "y"
-                ? 100
-                : this.header_text_lengths.header_linewidth_px + 80;
+        this.derived.marginLeft = x1 === "y" ? 100 : 30;
     }
     bar() {
         const derived = this.derived;
@@ -304,7 +301,8 @@ export class PlotOptions {
         this.options.marginBottom = derived.marginBottom;
         this.options[derived.x2] = derived.x2_opts;
         this.options[derived.x1] = derived.x1_opts;
-        this.options.width = this.params.element_width;
+        this.options.width =
+            (derived.is_x ? 1 : 0.8) * this.params.element_width;
         this.options.height = 0.7 * this.params.element_height;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
