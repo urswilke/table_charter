@@ -101,7 +101,7 @@ export class PlotOptions {
             axis: null,
         };
         n_decimals = this.plot_data[0].RowDecimals;
-        marginBottom = 25;
+        marginBottom = is_x ? 25 : 40;
         axis_ = is_x ? "axisX" : "axisY";
         group_ = is_x ? "groupX" : "groupY";
         x_chart_labels_width = is_x ? 1 : 0.25;
