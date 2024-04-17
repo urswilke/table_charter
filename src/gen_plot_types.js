@@ -104,7 +104,7 @@ export class PlotOptions {
         marginBottom = 25;
         axis_ = x1 === "y" ? "axisX" : "axisY";
         group_ = x1 === "y" ? "groupX" : "groupY";
-        x_chart_labels_width = is_x ? 1 : 0.2;
+        x_chart_labels_width = is_x ? 1 : 0.25;
         this.derived = {
             x2,
             x1,

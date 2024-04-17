@@ -143,9 +143,12 @@ export class OJSPlot extends LitElement {
             [padding2_string]: inset + "px",
             "font-size": font_size + "px",
             ...(!is_x && {
+                "padding-left": "5%",
                 "grid-auto-flow": "column",
                 "max-width":
-                    this.plot_options.derived.x_chart_labels_width * 100 + "%",
+                    this.plot_options.derived.x_chart_labels_width * 100 -
+                    5 +
+                    "%",
             }),
         };
 
