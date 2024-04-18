@@ -191,11 +191,8 @@ export class OJSPlot extends LitElement {
             select(this.renderedPlot).select('svg[class*="plot-"]').raise();
         }
 
-        // adding this before will move the legend a bit downwards :)
-        select(this.renderedPlot).append("br");
-
         // https://talk.observablehq.com/t/legend-placement-options/8407/3
-        const legend = select(this.renderedPlot)
+        this.legend = select(this.renderedPlot)
             .select(".large-font-ramp, .large-font-swatches")
             .remove();
 
@@ -251,6 +248,9 @@ export class OJSPlot extends LitElement {
                             <h4>${this.chartSubTitle}</h4>
                         </div>
                         <div class="plot-div">${this.renderedPlot}</div>
+                        <div class="legend-container">
+                            ${this.legend}
+                        </div>
                     </div>
                     <div class="save-svg-button">
 						<button
@@ -291,8 +291,6 @@ export class OJSPlot extends LitElement {
             .large-font-swatches,
             .large-font-ramp {
                 font-size: var(--font-size);
-                /* https://stackoverflow.com/questions/4767971/how-do-i-center-floated-elements/4767993#4767993: */
-                display: inline-block;
             }
             .plot-div,
             .save-svg-button {
@@ -342,6 +340,11 @@ export class OJSPlot extends LitElement {
             }
             .gap {
                 visibility: hidden;
+            }
+            .legend-container {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
             }
             /* #ojs-plot-div {
                 margin-right: 10%;
