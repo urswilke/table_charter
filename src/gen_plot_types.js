@@ -101,6 +101,7 @@ export class PlotOptions {
             axis: null,
         };
         n_decimals = this.plot_data[0].RowDecimals;
+        marginLeft = is_x ? 100 : 30;
         marginBottom = is_x ? 25 : 40;
         axis_ = is_x ? "axisX" : "axisY";
         group_ = is_x ? "groupX" : "groupY";
@@ -125,8 +126,6 @@ export class PlotOptions {
             group_,
             x_chart_labels_width,
         };
-        // comes here, because depends on this.derived...:
-        this.derived.marginLeft = is_x ? 100 : 30;
     }
     bar() {
         const derived = this.derived;
