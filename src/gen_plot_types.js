@@ -1,6 +1,6 @@
 import * as Plot from "@observablehq/plot";
 import { bg_col, fg_col, get_max_stack_value } from "./utils.js";
-import { distinct, calc_header_text_lengths, fantasy_string } from "./utils.js";
+import { distinct, fantasy_string } from "./utils.js";
 import { get } from "lit-translate";
 
 export class PlotOptions {
@@ -126,7 +126,6 @@ export class PlotOptions {
             x_chart_labels_width,
         };
         // comes here, because depends on this.derived...:
-        this.header_text_lengths = calc_header_text_lengths(this);
         this.derived.marginLeft = is_x ? 100 : 30;
     }
     bar() {
