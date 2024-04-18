@@ -8,11 +8,13 @@ export class AdvancedOptionsSelector extends LitElement {
         separate_headers: { type: Boolean },
         font_size: { type: String },
         show_text: { type: String },
+        axis_labels: { type: String },
     };
 
     constructor() {
         super();
         this.show_text_options = ["always", "never", "ifGE5"];
+        this.axis_labels_options = ["whole", "truncate"];
     }
 
     is_checked(id_string) {
@@ -39,6 +41,9 @@ export class AdvancedOptionsSelector extends LitElement {
     get _show_text() {
         return this.renderRoot?.querySelector("#show-text").value;
     }
+    get _axis_labels() {
+        return this.renderRoot?.querySelector("#axis-labels").value;
+    }
     _on_font_size_change() {
         const options = {
             detail: {
@@ -59,6 +64,17 @@ export class AdvancedOptionsSelector extends LitElement {
             composed: true,
         };
         this.dispatchEvent(new CustomEvent("update-show-text", options));
+    }
+    _on_axis_labels_change() {
+        this.axis_labels = this._axis_labels;
+        const options = {
+            detail: {
+                axis_labels: this.axis_labels,
+            },
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(new CustomEvent("update-axis-labels", options));
     }
 
     render() {
@@ -110,6 +126,24 @@ export class AdvancedOptionsSelector extends LitElement {
                                     .value=${col}
                                 >
                                     ${translate("showText." + col)}
+                                </option>
+                            `,
+                        )}
+                    </select>
+                </div>
+                <div>
+                    <label for="axis-labels">${translate("axisLabels.label")}</label>
+                    <select 
+                        id="axis-labels" 
+                        @change=${this._on_axis_labels_change}
+                    >
+                        ${this.axis_labels_options.map(
+                            (col) => html`
+                                <option
+                                    .selected=${this.axis_labels === col}
+                                    .value=${col}
+                                >
+                                    ${translate("axisLabels." + col)}
                                 </option>
                             `,
                         )}

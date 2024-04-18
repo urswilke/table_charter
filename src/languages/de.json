@@ -72,5 +72,10 @@
     "always": "immer",
     "never": "nie",
     "ifGE5": "wenn >= 5 % der Totallänge"
+  },
+  "axisLabels": {
+    "label": "Überlange Achsen-Label",
+    "truncate": "abschneiden (ganze Texte können durch Hovern gezeigt werden)",
+    "whole": "anzeigen (dadurch können Elemente überlappen)"
   }
 }

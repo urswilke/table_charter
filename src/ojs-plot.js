@@ -71,7 +71,12 @@ export class OJSPlot extends LitElement {
             grid_end,
             len_string,
             flex_dir,
-            write_labels;
+            write_labels,
+            word_breaker,
+            hyphenator,
+            text_overflower,
+            white_spacer,
+            overflower;
 
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
@@ -110,8 +115,34 @@ export class OJSPlot extends LitElement {
                 write_col_title2();
             };
         }
-
         this.style.setProperty("--flex-dir", flex_dir);
+
+        switch (this.plot_options.input.axis_labels) {
+            case "truncate":
+                text_overflower = "ellipsis";
+                white_spacer = "nowrap";
+                overflower = "hidden";
+                word_breaker = "break-word";
+                hyphenator = "auto";
+                break;
+            case "whole":
+                text_overflower = "not_needed";
+                white_spacer = "normal";
+                overflower = "visible";
+                break;
+            default:
+                break;
+        }
+        word_breaker =
+            is_x & (this.plot_options.input.axis_labels === "")
+                ? "break-word"
+                : "normal";
+        hyphenator = is_x ? "auto" : "none";
+        this.style.setProperty("--text-overflow-attr", text_overflower);
+        this.style.setProperty("--white-space-attr", white_spacer);
+        this.style.setProperty("--overflow-attr", overflower);
+        this.style.setProperty("--break-words-attr", word_breaker);
+        this.style.setProperty("--hyphens-attr", hyphenator);
 
         const inset = (len - margin1 - margin2) / (10 * n_cats + 1);
 
@@ -293,15 +324,21 @@ export class OJSPlot extends LitElement {
             .cat-label {
                 align-items: center;
                 justify-content: center;
-                word-break: break-word;
                 -webkit-box-shadow: inset 0px 0px 0px 1px;
                 -moz-box-shadow: inset 0px 0px 0px 1px;
                 box-shadow: inset 0px 0px 0px 1px;
                 padding: 2px;
-                /* don't show labels in multiple lines:
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden; */
+                text-overflow: var(--text-overflow-attr);
+                white-space: var(--white-space-attr);
+                overflow: var(--overflow-attr);
+                word-break: var(--break-words-attr);
+                hyphens: var(--hyphens-attr);
+                z-index: 2;
+            }
+            .cat-label:hover {
+                white-space: normal;
+                background-color: grey;
+                overflow: visible;
             }
             .gap {
                 visibility: hidden;
