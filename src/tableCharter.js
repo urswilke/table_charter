@@ -88,6 +88,7 @@ export class TableCharter extends LitElement {
     render() {
         this.plot_data &&
             (this.plot_data.params = {
+                language: this.language,
                 element_width: this.el(".ojsplot").offsetWidth,
                 element_height: this.el(".column2").offsetHeight,
             });

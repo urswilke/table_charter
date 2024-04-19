@@ -42,7 +42,8 @@ export class PlotOptions {
             marginBottom,
             axis_,
             group_,
-            x_chart_labels_width;
+            x_chart_labels_width,
+            decimal_formatter;
 
         header_table_gaps = header_table;
 
@@ -106,6 +107,7 @@ export class PlotOptions {
         axis_ = is_x ? "axisX" : "axisY";
         group_ = is_x ? "groupX" : "groupY";
         x_chart_labels_width = is_x ? 1 : 0.25;
+        decimal_formatter = Intl.NumberFormat(this.params.language).format;
         this.derived = {
             x2,
             x1,
@@ -125,13 +127,21 @@ export class PlotOptions {
             axis_,
             group_,
             x_chart_labels_width,
+            decimal_formatter,
         };
     }
     bar() {
         const derived = this.derived;
 
-        const { x1, is_x, plot_opts, row_lab_fun, color_order, n_decimals } =
-            derived;
+        const {
+            x1,
+            is_x,
+            plot_opts,
+            row_lab_fun,
+            color_order,
+            n_decimals,
+            decimal_formatter,
+        } = derived;
         let text_,
             stack_,
             bar_,
@@ -149,7 +159,7 @@ export class PlotOptions {
             fill: row_lab_fun,
             z: (x) => x.RowNo,
             order: color_order,
-            title: tooltip_fun(n_decimals),
+            title: tooltip_fun(n_decimals, decimal_formatter),
         };
         group_args2_text = {
             ...plot_opts,
@@ -160,10 +170,10 @@ export class PlotOptions {
                     x.Value < get_max_stack_value(this.plot_data) / 20)
                     ? null
                     : // if this.input.show_text === "always" the else option should also be selected...:
-                      x.Value.toFixed(n_decimals),
+                      decimal_formatter(x.Value.toFixed(n_decimals)),
             z: (x) => x.RowNo,
             order: color_order,
-            title: tooltip_fun(n_decimals),
+            title: tooltip_fun(n_decimals, decimal_formatter),
             // put halo around text:
             // https://observablehq.com/plot/marks/text#text-options
             stroke: bg_col,
@@ -173,7 +183,9 @@ export class PlotOptions {
         group_args2_text_n = {
             ...plot_opts,
             text: (x) =>
-                x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
+                x.ColMean === undefined
+                    ? null
+                    : "Ø: " + decimal_formatter(x.ColMean.toFixed(1)),
             order: color_order,
         };
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10;
@@ -238,7 +250,15 @@ export class PlotOptions {
 
     line() {
         const derived = this.derived;
-        const { plot_opts, is_x, row_lab_fun, n_decimals, x1, x2 } = derived;
+        const {
+            plot_opts,
+            is_x,
+            row_lab_fun,
+            n_decimals,
+            x1,
+            x2,
+            decimal_formatter,
+        } = derived;
         let line_opts, dot_opts, group_args1, group_args2_text_n;
         line_opts = {
             ...plot_opts,
@@ -251,7 +271,7 @@ export class PlotOptions {
             fill: row_lab_fun,
             stroke: "transparent",
             r: 7,
-            title: tooltip_fun(n_decimals),
+            title: tooltip_fun(n_decimals, decimal_formatter),
         };
         group_args1 = { [x1]: "max" };
 
@@ -260,7 +280,9 @@ export class PlotOptions {
             [x2]: "ColTitle2",
             z: "ColTitle2",
             text: (x) =>
-                x.ColMean === undefined ? null : "Ø: " + x.ColMean.toFixed(1),
+                x.ColMean === undefined
+                    ? null
+                    : "Ø: " + decimal_formatter(x.ColMean.toFixed(1)),
         };
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 15;
         is_x
@@ -311,7 +333,7 @@ export class PlotOptions {
     }
 }
 
-function tooltip_fun(n_decimals) {
+function tooltip_fun(n_decimals, decimal_formatter) {
     return (x) =>
         [
             // The tooltip texts don't get updated, when the language setting is changed
@@ -331,7 +353,7 @@ function tooltip_fun(n_decimals) {
             // it would lead to an error, for a line plot without this check:
             x.Value === undefined
                 ? null
-                : `${get("tooltips.value")}: ${x.Value.toFixed(n_decimals)}`,
+                : `${get("tooltips.value")}: ${decimal_formatter(x.Value.toFixed(n_decimals))}`,
             null,
         ].join("\n");
 }
