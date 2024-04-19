@@ -4,20 +4,12 @@ import "./tableDataSelector.js";
 import { registerTranslateConfig, use } from "lit-translate";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
-import * as de_lang from "./languages/de.json";
-import * as en_lang from "./languages/en.json";
+import { langs } from "./languages/languages.js";
 
 registerTranslateConfig({
     loader: (lang) =>
-        new Promise((resolve, reject) => {
-            switch (lang) {
-                case "de":
-                    resolve(de_lang["default"]);
-                    break;
-                case "en":
-                    resolve(en_lang["default"]);
-            }
-            reject(new Error(`The language ${lang} is not supported`));
+        new Promise((resolve) => {
+            resolve(langs[lang]);
         }),
 });
 export class TableCharter extends LitElement {
@@ -31,7 +23,7 @@ export class TableCharter extends LitElement {
     // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component)
     constructor() {
         super();
-        this.language = this.language || "en";
+        this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
@@ -49,6 +41,9 @@ export class TableCharter extends LitElement {
     }
 
     set language(val) {
+        if (!Object.keys(langs).includes(val)) {
+            val = "en";
+        }
         (async () => {
             await use(val);
         })();
