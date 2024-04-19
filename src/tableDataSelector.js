@@ -66,7 +66,7 @@ export class TableDataSelector extends LitElement {
         this.params.collapsed_view = true;
         this.choices.show_mean = true;
         this.choices.separate_headers = true;
-        this.choices.font_size = 16;
+        this.choices.font_size = is_mobile ? 12 : 20;
         this.choices.show_text = "ifGE5";
         this.choices.axis_labels = "truncate";
 
@@ -489,3 +489,9 @@ export class TableDataSelector extends LitElement {
 }
 
 window.customElements.define("table-data-selector", TableDataSelector);
+
+// from here: https://stackoverflow.com/questions/77506413/detecting-if-the-user-is-on-desktop-or-mobile-in-the-browser/77507334#77507334
+var is_mobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+    );
