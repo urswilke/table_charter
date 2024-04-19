@@ -332,7 +332,7 @@ export class PlotOptions {
         this.options.width =
             (derived.is_x ? 1 : 1 - derived.x_chart_labels_width) *
             this.params.element_width;
-        this.options.height = 0.7 * this.params.element_height;
+        this.options.height = 0.6 * this.params.element_height;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
     }
