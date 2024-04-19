@@ -319,7 +319,12 @@ export class PlotOptions {
     post_process() {
         const derived = this.derived;
         this.options.marginTop = 40;
-        this.options.marginRight = 140;
+        const col_mean_in_data = this.plot_data[0].ColMean !== undefined;
+        const space_for_mean =
+            (this.input.show_mean & col_mean_in_data & !derived.is_x) *
+            this.input.font_size *
+            2;
+        this.options.marginRight = 60 + space_for_mean;
         this.options.marginLeft = derived.marginLeft;
         this.options.marginBottom = derived.marginBottom;
         this.options[derived.x2] = derived.x2_opts;
