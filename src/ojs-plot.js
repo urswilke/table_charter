@@ -240,7 +240,7 @@ export class OJSPlot extends LitElement {
             : html`
                 <div>
                     <div id="ojs-plot-div">
-                        <div style="margin-left: 80px">
+                        <div class="headers">
                             <h2
                                 class="primary multi-line-header"
                                 data-test-id="plot-header"
@@ -285,6 +285,9 @@ export class OJSPlot extends LitElement {
     }
     static styles = [
         css`
+            .headers {
+                margin: 40px;
+            }
             .multi-line-header {
                 white-space: pre-wrap;
             }
@@ -302,11 +305,10 @@ export class OJSPlot extends LitElement {
             }
             h2 {
                 font-size: var(--big-font-size);
-                margin-right: 100px;
             }
             h4 {
                 font-size: var(--font-size);
-                margin-left: 40px;
+                margin-left: 20px;
             }
             .all-filtered {
                 border: solid red;
