@@ -146,7 +146,7 @@ export class TableCharter extends LitElement {
             .column1 {
                 flex: 0 0 25%;
                 overflow-y: auto;
-                padding: 20px;
+                padding: 10px;
                 /* TODO: add resizing! with something like:
                 resize: horizontal; */
             }
