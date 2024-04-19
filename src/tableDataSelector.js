@@ -425,6 +425,8 @@ export class TableDataSelector extends LitElement {
                                 .axis_labels=${this.choices.axis_labels}
 							>
 							</advanced-options-selector>
+            				<span class="clear"></span>
+
 							<hr></hr>
 							<colorscale-selector 	
 								id="colors"		
