@@ -26,7 +26,7 @@ export class OJSPlot extends LitElement {
         this.style.setProperty("--font-size", String(font_size) + "px");
         this.style.setProperty(
             "--big-font-size",
-            String(1.5 * font_size) + "px",
+            String(1.2 * font_size) + "px",
         );
 
         this.chartTitle =
@@ -287,6 +287,7 @@ export class OJSPlot extends LitElement {
         css`
             .headers {
                 margin: 40px;
+                margin-bottom: 0;
             }
             .multi-line-header {
                 white-space: pre-wrap;
