@@ -342,7 +342,7 @@ export class OJSPlot extends LitElement {
                 visibility: hidden;
             }
             .legend-container {
-                margin-top: 15px;
+                margin: 20px;
                 display: flex;
                 justify-content: center;
             }
