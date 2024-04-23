@@ -35,11 +35,13 @@ export class FurtherOptionsSelector extends LitElement {
 
     render() {
         return html`
-            <div class="parent">
+            <div class="parent grid">
+                <div>categorical axis</div>
                 <button @click=${this._update_xy} data-test-id="flip-xy-button">
-                    ${translate("flipXY.label")}
+                    ${this.xy}${translate("flipXY.label")}
                 </button>
 
+                <div>plot type</div>
                 <button
                     @click=${this._update_plot_type}
                     data-test-id="plot-type-button"
@@ -49,5 +51,19 @@ export class FurtherOptionsSelector extends LitElement {
             </div>
         `;
     }
+    static styles = [
+        css`
+            .grid {
+                display: grid;
+                grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+                grid-gap: 1.2em;
+                margin: 0.3em;
+            }
+            button {
+                min-width: 0;
+                overflow: hidden;
+            }
+        `,
+    ];
 }
 customElements.define("further-options-selector", FurtherOptionsSelector);

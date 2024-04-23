@@ -156,8 +156,9 @@ export class AdvancedOptionsSelector extends LitElement {
         css`
             .grid {
                 display: grid;
-                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-                grid-gap: 3px;
+                grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+                grid-gap: 1.2em;
+                margin: 0.3em;
             }
             div {
                 min-width: 0;
@@ -165,6 +166,10 @@ export class AdvancedOptionsSelector extends LitElement {
             }
             input[type="number"] {
                 width: 3em;
+            }
+            select {
+                text-align-last: center;
+                width: 100%;
             }
         `,
     ];
