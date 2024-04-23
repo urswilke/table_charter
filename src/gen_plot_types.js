@@ -456,7 +456,7 @@ function add_gaps_to_xlabels(header_table, col_titles) {
     for (let i = diff_indices.length - 1; i >= 0; i--) {
         const diff_index = diff_indices[i];
         header_table_gaps.splice(diff_index, 0, {
-            ColTilte1: gap_string,
+            ColTitle1: gap_string,
             ColTitle2: gap_string,
             selected: true,
         });

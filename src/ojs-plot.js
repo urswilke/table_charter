@@ -201,11 +201,16 @@ export class OJSPlot extends LitElement {
                 .data(arr_col_title1)
                 .enter()
                 .append("div")
-                .classed("cat-label gap", (d) => d[0] === "undefined")
+                .classed("cat-label gap", (d) =>
+                    d[0].startsWith(fantasy_string),
+                )
                 .classed("cat-label", true)
                 .style(grid_end, (d) => "span " + d[1].length)
                 .text(function (d) {
-                    return d[0].replace(RegExp("^undefined$"), "");
+                    return d[0].replace(
+                        RegExp("^" + fantasy_string + "a*$"),
+                        "",
+                    );
                 });
         }
         function write_col_title2() {
