@@ -441,7 +441,7 @@ export class TableDataSelector extends LitElement {
 								.chosen_colorscheme=${this.choices.color_scheme}>
 							</colorscale-selector>
 							<hr></hr>
-							<button @click="${save_file}">${translate("saveSettings.label")}</button>
+							<button id="save-app" @click="${save_file}">${translate("saveSettings.label")}</button>
 						</div>
 					</div>
 				</div>
@@ -485,6 +485,9 @@ export class TableDataSelector extends LitElement {
             }
             .all-filtered {
                 border: solid red;
+            }
+            #save-app {
+                width: 100%;
             }
         `,
     ];
