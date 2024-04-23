@@ -80,9 +80,11 @@ export class TableDataSelector extends LitElement {
 
     // Helper:
     sel_question_data() {
-        this.question_data = this.data.filter(
-            (x) => x.i_tab === this.i_tabs[this.i_tab],
-        );
+        this.question_data = this.data
+            .filter((x) => x.i_tab === this.i_tabs[this.i_tab])
+            .filter((x) =>
+                ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
+            );
         const colorscale_disabled = !["CAT"].includes(
             this.question_data[0].TabType,
         );
