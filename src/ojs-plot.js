@@ -152,10 +152,7 @@ export class OJSPlot extends LitElement {
 
         const header_table_gaps = this.plot_options.derived.header_table_gaps;
         const arr_col_title1 = Object.entries(
-            Object.groupBy(
-                header_table_gaps.filter((x) => x.selected),
-                (x) => x.ColTitle1,
-            ),
+            Object.groupBy(header_table_gaps, (x) => x.ColTitle1),
         );
 
         const cat_labels = cat_labels_div.selectAll("div");

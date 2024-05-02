@@ -448,7 +448,7 @@ function add_gaps_to_xlabels(header_table, col_titles) {
             diff_indices.push(index)
         );
     });
-    const header_table_gaps = [...header_table];
+    const header_table_gaps = [...header_table.filter((x) => x.selected)];
 
     // it seems as if the placeholders for the gaps need to be unique.
     // Therefore, we'll add an "a" for every new gap:
