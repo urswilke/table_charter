@@ -98,6 +98,7 @@ export class PlotOptions {
         x2_opts = {
             domain: x_order,
             axis: null,
+            round: null,
         };
         n_decimals = this.plot_data[0].RowDecimals;
         marginLeft = is_x ? 100 : 30;
