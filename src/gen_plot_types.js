@@ -94,6 +94,11 @@ export class PlotOptions {
 
         x1_opts = {
             label: null,
+            // TODO: use something like:
+            // tickFormat: d3.format(",.1f"),
+            // (in order to not put commas after each 3 digits; see here:
+            // https://observablehq.com/@observablehq/plot-cheatsheets-scales#cell-2508
+            // but only needed for non-English...)
         };
         x2_opts = {
             domain: x_order,
