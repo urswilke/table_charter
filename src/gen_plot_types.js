@@ -45,7 +45,7 @@ export class PlotOptions {
             x_chart_labels_width,
             decimal_formatter;
 
-        header_table_gaps = header_table;
+        header_table_gaps = header_table.filter((x) => x.selected);
 
         x2 = xy;
         x1 = x2 === "x" ? "y" : "x";
@@ -77,10 +77,8 @@ export class PlotOptions {
                     (x) => x.ColTitle1,
                 ),
             );
-            x_order = header_table_gaps
-                .filter((x) => x.selected)
-                .map((x) => x.ColTitle2);
         }
+        x_order = header_table_gaps.map((x) => x.ColTitle2);
 
         plot_opts = {
             [x2]: col_lab_fun,
