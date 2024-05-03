@@ -26,7 +26,7 @@
     "label": "App mit diesen Plot-Einstellungen als Datei speichern"
   },
   "flipXY": {
-    "label": "x- & y-Achse tauschen"
+    "label": "-Achse"
   },
   "plotName": {
     "line": "Linien-Diagramm",
@@ -71,6 +71,11 @@
     "label": "Werte anzeigen",
     "always": "immer",
     "never": "nie",
-    "ifGE5": "wenn Wert >= 5 % des Maximalwertes ist"
+    "ifGE5": "wenn >= 5 % der Totallänge"
+  },
+  "axisLabels": {
+    "label": "Überlange Achsen-Label",
+    "truncate": "abschneiden (ganze Texte können durch Hovern gezeigt werden)",
+    "whole": "anzeigen (dadurch können Elemente überlappen)"
   }
 }

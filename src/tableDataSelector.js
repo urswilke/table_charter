@@ -66,8 +66,10 @@ export class TableDataSelector extends LitElement {
         this.params.collapsed_view = true;
         this.choices.show_mean = true;
         this.choices.separate_headers = true;
-        this.choices.font_size = 16;
+        this.choices.font_size = is_mobile ? 12 : 20;
         this.choices.show_text = "ifGE5";
+        this.choices.axis_labels = "truncate";
+
         const saved_settings =
             document.querySelector("table-charter").dataset.savedSettings;
         this.saved =
@@ -78,9 +80,11 @@ export class TableDataSelector extends LitElement {
 
     // Helper:
     sel_question_data() {
-        this.question_data = this.data.filter(
-            (x) => x.i_tab === this.i_tabs[this.i_tab],
-        );
+        this.question_data = this.data
+            .filter((x) => x.i_tab === this.i_tabs[this.i_tab])
+            .filter((x) =>
+                ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
+            );
         const colorscale_disabled = !["CAT"].includes(
             this.question_data[0].TabType,
         );
@@ -307,6 +311,12 @@ export class TableDataSelector extends LitElement {
         });
         this._update_plot_data();
     }
+    _on_axis_labels_update(e) {
+        this.update_choices({
+            axis_labels: e.detail.axis_labels,
+        });
+        this._update_plot_data();
+    }
     _on_plot_type_update(e) {
         this.update_choices({
             plot_type: e.detail.plot_type,
@@ -409,12 +419,16 @@ export class TableDataSelector extends LitElement {
 								@update-checkboxes="${this._on_checkbox_update}"
 								@update-font-size="${this._on_font_size_update}"
 								@update-show-text="${this._on_show_text_update}"
+								@update-axis-labels="${this._on_axis_labels_update}"
 								.show_mean=${this.choices.show_mean}
 								.separate_headers=${this.choices.separate_headers}
 								.font_size=${this.choices.font_size}
                                 .show_text=${this.choices.show_text}
+                                .axis_labels=${this.choices.axis_labels}
 							>
 							</advanced-options-selector>
+            				<span class="clear"></span>
+
 							<hr></hr>
 							<colorscale-selector 	
 								id="colors"		
@@ -427,7 +441,7 @@ export class TableDataSelector extends LitElement {
 								.chosen_colorscheme=${this.choices.color_scheme}>
 							</colorscale-selector>
 							<hr></hr>
-							<button @click="${save_file}">${translate("saveSettings.label")}</button>
+							<button id="save-app" @click="${save_file}">${translate("saveSettings.label")}</button>
 						</div>
 					</div>
 				</div>
@@ -472,8 +486,17 @@ export class TableDataSelector extends LitElement {
             .all-filtered {
                 border: solid red;
             }
+            #save-app {
+                width: 100%;
+            }
         `,
     ];
 }
 
 window.customElements.define("table-data-selector", TableDataSelector);
+
+// from here: https://stackoverflow.com/questions/77506413/detecting-if-the-user-is-on-desktop-or-mobile-in-the-browser/77507334#77507334
+var is_mobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+    );

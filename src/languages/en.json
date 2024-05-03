@@ -26,7 +26,7 @@
     "label": "Save app with these plot settings to file"
   },
   "flipXY": {
-    "label": "Flip x & y axis"
+    "label": " axis"
   },
   "plotName": {
     "line": "line chart",
@@ -71,6 +71,11 @@
     "label": "Show values in labels",
     "always": "always",
     "never": "never",
-    "ifGE5": "if value >= 5 % of the maximum stacked value"
+    "ifGE5": "if value >= 5 % of total size"
+  },
+  "axisLabels": {
+    "label": "Too long axis labels",
+    "truncate": "truncate (full text is shown on hover)",
+    "whole": "show (can cause overlapping elements)"
   }
 }

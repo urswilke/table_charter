@@ -8,11 +8,13 @@ export class AdvancedOptionsSelector extends LitElement {
         separate_headers: { type: Boolean },
         font_size: { type: String },
         show_text: { type: String },
+        axis_labels: { type: String },
     };
 
     constructor() {
         super();
         this.show_text_options = ["always", "never", "ifGE5"];
+        this.axis_labels_options = ["whole", "truncate"];
     }
 
     is_checked(id_string) {
@@ -39,6 +41,9 @@ export class AdvancedOptionsSelector extends LitElement {
     get _show_text() {
         return this.renderRoot?.querySelector("#show-text").value;
     }
+    get _axis_labels() {
+        return this.renderRoot?.querySelector("#axis-labels").value;
+    }
     _on_font_size_change() {
         const options = {
             detail: {
@@ -60,13 +65,24 @@ export class AdvancedOptionsSelector extends LitElement {
         };
         this.dispatchEvent(new CustomEvent("update-show-text", options));
     }
+    _on_axis_labels_change() {
+        this.axis_labels = this._axis_labels;
+        const options = {
+            detail: {
+                axis_labels: this.axis_labels,
+            },
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(new CustomEvent("update-axis-labels", options));
+    }
 
     render() {
         return html`
         <div class="parent">
-			<form>
-				<div>
-					<label for="show-mean">${translate("showMean.label")}</label>
+			<div class="grid">
+                <div>${translate("showMean.label")}</div>
+                <div>
 					<input 
 						type="checkbox"
 						data-test-id="n-checkbox" 
@@ -74,9 +90,9 @@ export class AdvancedOptionsSelector extends LitElement {
 						.checked=${this.show_mean}
 						@click=${this._toggle_checkboxes}
 					></input>
-				</div>
-				<div>
-					<label for="separate-headers">${translate("separateHeaders.label")}</label>
+                </div>
+                <div>${translate("separateHeaders.label")}</div>
+                <div>
 					<input 
 						type="checkbox"
 						data-test-id="separate-headers-checkbox" 
@@ -84,11 +100,10 @@ export class AdvancedOptionsSelector extends LitElement {
 						.checked=${this.separate_headers}
 						@click=${this._toggle_checkboxes}
 					></input>
-				</div>
-				<div>
-
-					<label for="font-size">${translate("fontSize.label")}</label>
-					<input 
+                </div>
+                <div>${translate("fontSize.label")}</div>
+                <div>
+                    <input 
 						id="font-size" 
 						type="number"
 						.value=${this.font_size}
@@ -96,9 +111,9 @@ export class AdvancedOptionsSelector extends LitElement {
 						max="30"
 						@change=${this._on_font_size_change}
 					></input>
-				</div>
+                </div>
+                <div>${translate("showText.label")}</div>
                 <div>
-                    <label for="show-text">${translate("showText.label")}</label>
                     <select 
                         id="show-text" 
                         @change=${this._on_show_text_change}
@@ -115,31 +130,46 @@ export class AdvancedOptionsSelector extends LitElement {
                         )}
                     </select>
                 </div>
-			</form>
+                <div>${translate("axisLabels.label")}</div>
+                <div>
+                    <select 
+                        id="axis-labels" 
+                        @change=${this._on_axis_labels_change}
+                    >
+                        ${this.axis_labels_options.map(
+                            (col) => html`
+                                <option
+                                    .selected=${this.axis_labels === col}
+                                    .value=${col}
+                                >
+                                    ${translate("axisLabels." + col)}
+                                </option>
+                            `,
+                        )}
+                    </select>
+                </div>
         </div>
         `;
     }
 
     static styles = [
         css`
+            .grid {
+                display: grid;
+                grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+                grid-gap: 1.2em;
+                margin: 0.3em;
+            }
+            div {
+                min-width: 0;
+                overflow: hidden;
+            }
             input[type="number"] {
                 width: 3em;
             }
-            form {
-                display: table;
-                border-spacing: 7px;
-            }
-            form > div {
-                display: table-row;
-            }
-            label {
-                display: table-cell;
-                text-align: right;
-            }
-
-            input[type="checkbox"] {
-                vertical-align: bottom;
-                margin-left: 0;
+            select {
+                text-align-last: center;
+                width: 100%;
             }
         `,
     ];

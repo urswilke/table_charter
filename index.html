@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<!-- TODO: get lang from table book data! -->
+<html lang="de">
     <head>
         <meta charset="UTF-8" />
         <meta name="color-scheme" content="dark light" />
@@ -77,6 +78,7 @@
                 (async function () {
                     const response = await fetch(
                         "https://gitlab.com/api/v4/projects/45687298/repository/files/src%2Fexample_compressed.json/raw",
+                        // "https://gitlab.com/api/v4/projects/57193066/repository/files/example_compressed.json/raw",
                     );
                     const data = await response.text();
                     document

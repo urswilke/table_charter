@@ -46,53 +46,52 @@ export class ColorscaleSelector extends LitElement {
     render() {
         const color_schemes = all_color_schemes[this.chosen_colorscale];
         return html`
-            <div class="selector-group">
-                <div class="subselect">
-                    <label for="colorscale-selector"
-                        >${translate("color.scale")}</label
-                    >
-                    <select
-                        id="colorscale-selector"
-                        @change=${this._update_colorscale}
-                        ?disabled=${this.colorscale_disabled}
-                    >
-                        ${this.all_colorscales.map(
-                            (col) => html`
-                                <option
-                                    .selected=${this.chosen_colorscale === col}
-                                    .value=${col}
-                                >
-                                    ${translate("color." + col)}
-                                </option>
-                            `,
-                        )}
-                    </select>
-                </div>
-                <div class="subselect">
-                    <label for="colorscheme-selector"
-                        >${translate("color.scheme")}</label
-                    >
-                    <select
-                        id="colorscheme-selector"
-                        @change=${this._update_colorscheme}
-                    >
-                        ${color_schemes.map(
-                            (col) => html`
-                                <option
-                                    .selected=${this.chosen_colorscheme === col}
-                                >
-                                    ${col}
-                                </option>
-                            `,
-                        )}
-                    </select>
-                </div>
+            <div class="grid">
+                <div>${translate("color.scale")}</div>
+                <select
+                    id="colorscale-selector"
+                    @change=${this._update_colorscale}
+                    ?disabled=${this.colorscale_disabled}
+                >
+                    ${this.all_colorscales.map(
+                        (col) => html`
+                            <option
+                                .selected=${this.chosen_colorscale === col}
+                                .value=${col}
+                            >
+                                ${translate("color." + col)}
+                            </option>
+                        `,
+                    )}
+                </select>
+                <div>${translate("color.scheme")}</div>
+                <select
+                    id="colorscheme-selector"
+                    @change=${this._update_colorscheme}
+                >
+                    ${color_schemes.map(
+                        (col) => html`
+                            <option
+                                .selected=${this.chosen_colorscheme === col}
+                            >
+                                ${col}
+                            </option>
+                        `,
+                    )}
+                </select>
             </div>
         `;
     }
 
     static styles = [
         css`
+            .grid {
+                display: grid;
+                grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+                grid-gap: 1.2em;
+                margin: 0.3em;
+            }
+
             div.subselect {
                 display: inline-block;
             }

@@ -4,20 +4,12 @@ import "./tableDataSelector.js";
 import { registerTranslateConfig, use } from "lit-translate";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
-import * as de_lang from "./languages/de.json";
-import * as en_lang from "./languages/en.json";
+import { langs } from "./languages/languages.js";
 
 registerTranslateConfig({
     loader: (lang) =>
-        new Promise((resolve, reject) => {
-            switch (lang) {
-                case "de":
-                    resolve(de_lang["default"]);
-                    break;
-                case "en":
-                    resolve(en_lang["default"]);
-            }
-            reject(new Error(`The language ${lang} is not supported`));
+        new Promise((resolve) => {
+            resolve(langs[lang]);
         }),
 });
 export class TableCharter extends LitElement {
@@ -31,7 +23,7 @@ export class TableCharter extends LitElement {
     // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component)
     constructor() {
         super();
-        this.language = this.language || "en";
+        this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
@@ -49,6 +41,9 @@ export class TableCharter extends LitElement {
     }
 
     set language(val) {
+        if (!Object.keys(langs).includes(val)) {
+            val = "en";
+        }
         (async () => {
             await use(val);
         })();
@@ -93,13 +88,8 @@ export class TableCharter extends LitElement {
     render() {
         this.plot_data &&
             (this.plot_data.params = {
-                element_width: this.el(
-                    // HACK: to get the width of the plot container:
-                    // at this point I don't know how to get the height...
-                    // the value needs to be the same as in the max-width css below...
-                    // TODO: find cleaner solution (perhaps with flex layout within class .content ?)
-                    window.innerWidth < 1100 ? ".content" : ".column2",
-                ).offsetWidth,
+                language: this.language,
+                element_width: this.el(".ojsplot").offsetWidth,
                 element_height: this.el(".column2").offsetHeight,
             });
         return this.data === undefined
@@ -156,13 +146,17 @@ export class TableCharter extends LitElement {
             .column1 {
                 flex: 0 0 25%;
                 overflow-y: auto;
-                padding: 20px;
+                padding: 10px;
+                /* TODO: add resizing! with something like:
+                resize: horizontal; */
             }
             .column2 {
                 flex: 2 1 75%;
                 display: flex;
                 flex-direction: column;
                 overflow: auto;
+                /* https://stackoverflow.com/questions/46417543/is-there-a-cross-axis-counterpart-to-the-flex-grow-property-or-flex-which/70934694#70934694 */
+                align-self: stretch;
             }
             .column2,
             .column1,
