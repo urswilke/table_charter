@@ -162,8 +162,9 @@ export class OJSPlot extends LitElement {
         const cat_labels = cat_labels_div.selectAll("div");
         write_labels();
 
-        // TODO: for line plots this approach for the inset is slightly incorrect
-        const plot_width = len - margin1 - margin2 - 2 * inset + "px";
+        const padding =
+            this.plot_options.input.plot_type === "bar" ? inset : inset / 2;
+        const plot_width = len - margin1 - margin2 - 2 * padding + "px";
         const style = {
             [margin1_string]: margin1 + "px",
             [margin2_string]: margin2 + "px",
@@ -171,8 +172,8 @@ export class OJSPlot extends LitElement {
             [grid_template_string]: `repeat(${n_cats}, minmax(0, 1fr))`,
             [len_string]: plot_width,
             "grid-gap": inset + "px",
-            [padding1_string]: inset + "px",
-            [padding2_string]: inset + "px",
+            [padding1_string]: padding + "px",
+            [padding2_string]: padding + "px",
             "font-size": font_size + "px",
             ...(!is_x && {
                 "padding-left": "5%",
