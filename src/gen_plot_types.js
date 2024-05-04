@@ -162,7 +162,6 @@ export class PlotOptions {
             ...plot_opts,
             fill: row_lab_fun,
             z: (x) => x.RowNo,
-            order: color_order,
             title: tooltip_fun(n_decimals, decimal_formatter),
         };
         group_args2_text = {
@@ -176,7 +175,6 @@ export class PlotOptions {
                     : // if this.input.show_text === "always" the else option should also be selected...:
                       decimal_formatter(x.Value.toFixed(n_decimals)),
             z: (x) => x.RowNo,
-            order: color_order,
             title: tooltip_fun(n_decimals, decimal_formatter),
             // put halo around text:
             // https://observablehq.com/plot/marks/text#text-options
@@ -190,7 +188,6 @@ export class PlotOptions {
                 x.ColMean === undefined
                     ? null
                     : "Ø: " + decimal_formatter(x.ColMean.toFixed(1)),
-            order: color_order,
         };
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10;
         is_x
