@@ -38,7 +38,7 @@ row value: 1
 header: GESAMT
 column: -
 value: 30.5
- (1)</title></text></g><rect aria-label="frame" fill="none" transform="translate(0.5,0.5)" x="100" y="15" width="2" height="284.5"/></svg><div class="cat_labels_div" style="margin-left: 100px; margin-right: 60px; display: grid; grid-template-columns: repeat(1, minmax(0px, 1fr)); width: 1.63636px; gap: 0.181818px; padding-left: 0.181818px; padding-right: 0.181818px; font-size: 20px;"><div class="cat-label">-</div><div class="cat-label" style="grid-column-end: span 1;">GESAMT</div></div></figure></div>
+ (1)</title></text></g><rect aria-label="frame" fill="none" transform="translate(0.5,0.5)" x="100" y="15" width="2" height="284.5"/></svg><div class="cat_labels_div" style="margin-left: 100px; margin-right: 60px; display: grid; grid-template-columns: repeat(1, minmax(0px, 1fr)); width: 1.63636px; gap: 0.181818px; padding-left: 0.181818px; padding-right: 0.181818px; font-size: 20px;"><div class="cat-label"><span>-</span></div><div class="cat-label" style="grid-column-end: span 1;"><span>GESAMT</span></div></div></figure></div>
                         <div class="legend-container">
                             <div class="large-font-swatches large-font-swatches-wrap" style="font-size: 20px;"><style>:where(.large-font-swatches) {
   font-family: system-ui, sans-serif;

@@ -72,6 +72,7 @@ export class OJSPlot extends LitElement {
             len_string,
             flex_dir,
             write_labels,
+            content_justifier,
             word_breaker,
             hyphenator,
             text_overflower,
@@ -137,7 +138,10 @@ export class OJSPlot extends LitElement {
             is_x & (this.plot_options.input.axis_labels === "")
                 ? "break-word"
                 : "normal";
+        content_justifier = is_x ? "center" : "start";
+
         hyphenator = is_x ? "auto" : "none";
+        this.style.setProperty("--justify-content-attr", content_justifier);
         this.style.setProperty("--text-overflow-attr", text_overflower);
         this.style.setProperty("--white-space-attr", white_spacer);
         this.style.setProperty("--overflow-attr", overflower);
@@ -203,6 +207,7 @@ export class OJSPlot extends LitElement {
                 )
                 .classed("cat-label", true)
                 .style(grid_end, (d) => "span " + d[1].length)
+                .append("span")
                 .text(function (d) {
                     return d[0].replace(
                         RegExp("^" + fantasy_string + "a*$"),
@@ -217,6 +222,7 @@ export class OJSPlot extends LitElement {
                 .append("div")
                 .classed("cat-label gap", (d) => d.includes(fantasy_string))
                 .classed("cat-label", true)
+                .append("span")
                 .text(function (d) {
                     return d.replace(RegExp("^" + fantasy_string + ".*"), "");
                 });
@@ -325,23 +331,31 @@ export class OJSPlot extends LitElement {
                 flex-direction: var(--flex-dir);
             }
             .cat-label {
+                display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: var(--justify-content-attr);
                 -webkit-box-shadow: inset 0px 0px 0px 1px;
                 -moz-box-shadow: inset 0px 0px 0px 1px;
                 box-shadow: inset 0px 0px 0px 1px;
                 padding: 2px;
+                overflow: var(--overflow-attr);
+            }
+            .cat-label span {
+                overflow: var(--overflow-attr);
                 text-overflow: var(--text-overflow-attr);
                 white-space: var(--white-space-attr);
-                overflow: var(--overflow-attr);
                 word-break: var(--break-words-attr);
                 hyphens: var(--hyphens-attr);
-                z-index: 2;
+            }
+            .cat-label:hover span {
+                white-space: normal;
+                overflow: visible;
+                background-color: grey;
             }
             .cat-label:hover {
-                white-space: normal;
                 background-color: grey;
                 overflow: visible;
+                z-index: 2;
             }
             .gap {
                 visibility: hidden;
