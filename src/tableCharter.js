@@ -157,6 +157,7 @@ export class TableCharter extends LitElement {
                 overflow: auto;
                 /* https://stackoverflow.com/questions/46417543/is-there-a-cross-axis-counterpart-to-the-flex-grow-property-or-flex-which/70934694#70934694 */
                 align-self: stretch;
+                scrollbar-gutter: stable;
             }
             .column2,
             .column1,
