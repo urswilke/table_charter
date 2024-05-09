@@ -99,10 +99,10 @@ export function gen_plot_type_string(tab_sel_obj) {
 }
 
 export function prepare_data(data_obj) {
-    let data = data_obj.data;
+    let data;
     switch (data_obj.type) {
         case "compressed":
-            data = decompress(data);
+            data = decompress(data_obj.data);
             break;
         case "uncompressed":
             data = data_obj.data;
@@ -114,8 +114,6 @@ export function prepare_data(data_obj) {
 
     return data.map((x) => ({
         ...x,
-        // TODO: remove? (because it will be already done in future json data...)
-        TabType: x.TabType.toUpperCase(),
         i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo),
     }));
 }
