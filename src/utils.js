@@ -189,3 +189,8 @@ export function get_max_stack_value(array) {
     }, {});
     return Math.max(...result.map((o) => o.Value));
 }
+// from here: https://stackoverflow.com/questions/77506413/detecting-if-the-user-is-on-desktop-or-mobile-in-the-browser/77507334#77507334
+export var is_mobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+    );
