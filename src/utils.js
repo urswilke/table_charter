@@ -17,7 +17,7 @@ export function gen_header_table(data) {
     const arr = distinct(
         data,
         // TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-        ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"],
+        ["ColNo", "HeadNo", "ColTitle1", "ColTitle2", "Value"],
     );
     const first_two_titles = [...new Set(arr.map((x) => x.ColTitle1))].slice(
         0,

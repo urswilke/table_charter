@@ -97,6 +97,8 @@ export class OJSPlot extends LitElement {
             flex_dir = "column";
             write_labels = () => {
                 write_col_title2();
+                write_col_totals();
+
                 write_col_title1();
             };
         } else {
@@ -114,6 +116,7 @@ export class OJSPlot extends LitElement {
             write_labels = () => {
                 write_col_title1();
                 write_col_title2();
+                write_col_totals();
             };
         }
         this.style.setProperty("--flex-dir", flex_dir);
@@ -230,6 +233,23 @@ export class OJSPlot extends LitElement {
                     return d.replace(RegExp("^" + fantasy_string + ".*"), "");
                 });
         }
+        function write_col_totals() {
+            cat_labels
+                .data(header_table_gaps)
+                .enter()
+                .append("div")
+                .classed("cat-label gap", (d) =>
+                    d.ColTitle1.includes(fantasy_string),
+                )
+                .classed("cat-label n-div", true)
+                .attr("title", (d) => d)
+                .style("color", "grey")
+                .style("border", "none")
+                .append("span")
+                .text(function (d) {
+                    return d.Value;
+                });
+        }
     }
     // this could be an alternative way to get the positions of the plot area
     // updated() {
@@ -309,11 +329,13 @@ export class OJSPlot extends LitElement {
                 display: flex;
                 align-items: center;
                 justify-content: var(--justify-content-attr);
+                padding: 2px;
+                overflow: var(--overflow-attr);
+            }
+            .cat-label:not(.n-div) {
                 -webkit-box-shadow: inset 0px 0px 0px 1px;
                 -moz-box-shadow: inset 0px 0px 0px 1px;
                 box-shadow: inset 0px 0px 0px 1px;
-                padding: 2px;
-                overflow: var(--overflow-attr);
             }
             .cat-label span {
                 overflow: var(--overflow-attr);
@@ -322,8 +344,8 @@ export class OJSPlot extends LitElement {
                 word-break: var(--break-words-attr);
                 hyphens: var(--hyphens-attr);
             }
-            .cat-label:hover,
-            .cat-label:hover span {
+            .cat-label:hover:not(.n-div),
+            .cat-label:hover:not(.n-div) span {
                 white-space: normal;
                 overflow: visible;
                 background-color: grey;

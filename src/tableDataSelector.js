@@ -51,8 +51,6 @@ export class TableDataSelector extends LitElement {
         this.choices = {};
         this.choices.xy = "x";
 
-        this.choices.header_table = gen_header_table(this.data);
-
         this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
 
         let title_table = this.params.title_table[0];
@@ -81,11 +79,20 @@ export class TableDataSelector extends LitElement {
 
     // Helper:
     sel_question_data() {
-        this.question_data = this.data
-            .filter((x) => x.i_tab === this.i_tabs[this.i_tab])
-            .filter((x) =>
-                ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
-            );
+        this.question_raw_data = this.data.filter(
+            (x) => x.i_tab === this.i_tabs[this.i_tab],
+        );
+
+        this.update_choices({
+            header_table: gen_header_table(
+                this.question_raw_data.filter((x) => x.RowContent === "Total"),
+            ),
+        });
+
+        this.question_data = this.question_raw_data.filter((x) =>
+            ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
+        );
+
         const colorscale_disabled = !["CAT"].includes(
             this.question_data[0].TabType,
         );
