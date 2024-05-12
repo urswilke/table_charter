@@ -21,6 +21,7 @@ import "./selectors/further_options_selector.js";
 import "./selectors/advanced_options_selector.js";
 
 import { produce } from "immer";
+import { is_mobile } from "./utils.js";
 
 const inspect = false; // set to true for some console.log msgs
 
@@ -494,9 +495,3 @@ export class TableDataSelector extends LitElement {
 }
 
 window.customElements.define("table-data-selector", TableDataSelector);
-
-// from here: https://stackoverflow.com/questions/77506413/detecting-if-the-user-is-on-desktop-or-mobile-in-the-browser/77507334#77507334
-var is_mobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-    );
