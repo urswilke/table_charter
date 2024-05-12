@@ -206,6 +206,7 @@ export class OJSPlot extends LitElement {
                 .classed("cat-label gap", (d) =>
                     d[0].startsWith(fantasy_string),
                 )
+                .attr("title", (d) => d[0])
                 .classed("cat-label", true)
                 .style(grid_end, (d) => "span " + d[1].length)
                 .append("span")
@@ -223,6 +224,7 @@ export class OJSPlot extends LitElement {
                 .append("div")
                 .classed("cat-label gap", (d) => d.includes(fantasy_string))
                 .classed("cat-label", true)
+                .attr("title", (d) => d)
                 .append("span")
                 .text(function (d) {
                     return d.replace(RegExp("^" + fantasy_string + ".*"), "");
