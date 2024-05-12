@@ -4,6 +4,7 @@ import { translate } from "lit-translate";
 
 export class AdvancedOptionsSelector extends LitElement {
     static properties = {
+        n_axis: { type: Boolean },
         show_mean: { type: Boolean },
         separate_headers: { type: Boolean },
         font_size: { type: String },
@@ -27,6 +28,7 @@ export class AdvancedOptionsSelector extends LitElement {
     _toggle_checkboxes() {
         const options = {
             detail: {
+                n_axis: this.is_checked("#n-axis"),
                 show_mean: this.is_checked("#show-mean"),
                 separate_headers: this.is_checked("#separate-headers"),
             },
@@ -81,6 +83,16 @@ export class AdvancedOptionsSelector extends LitElement {
         return html`
         <div class="parent">
 			<div class="grid">
+                <div>${translate("nAxis.label")}</div>
+                <div>
+					<input 
+						type="checkbox"
+						data-test-id="n-axis" 
+						id="n-axis"
+						.checked=${this.n_axis}
+						@click=${this._toggle_checkboxes}
+					></input>
+                </div>
                 <div>${translate("showMean.label")}</div>
                 <div>
 					<input 

@@ -32,6 +32,9 @@
     "line": "line chart",
     "bar": "bar chart"
   },
+  "nAxis": {
+    "label": "Show n"
+  },
   "showMean": {
     "label": "Show mean values"
   },

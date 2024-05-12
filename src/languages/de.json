@@ -32,6 +32,9 @@
     "line": "Linien-Diagramm",
     "bar": "Balken-Diagramm"
   },
+  "nAxis": {
+    "label": "N anzeigen"
+  },
   "showMean": {
     "label": "Mittelwerte anzeigen"
   },

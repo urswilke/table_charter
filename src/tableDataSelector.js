@@ -63,6 +63,7 @@ export class TableDataSelector extends LitElement {
         this.choices.row_type = this.params.row_type[0];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = true;
+        this.choices.n_axis = true;
         this.choices.show_mean = true;
         this.choices.separate_headers = true;
         this.choices.font_size = is_mobile ? 12 : 20;
@@ -302,6 +303,7 @@ export class TableDataSelector extends LitElement {
     }
     _on_checkbox_update(e) {
         this.update_choices({
+            n_axis: e.detail.n_axis,
             show_mean: e.detail.show_mean,
             separate_headers: e.detail.separate_headers,
         });
@@ -428,6 +430,7 @@ export class TableDataSelector extends LitElement {
 								@update-font-size="${this._on_font_size_update}"
 								@update-show-text="${this._on_show_text_update}"
 								@update-axis-labels="${this._on_axis_labels_update}"
+								.n_axis=${this.choices.n_axis}
 								.show_mean=${this.choices.show_mean}
 								.separate_headers=${this.choices.separate_headers}
 								.font_size=${this.choices.font_size}

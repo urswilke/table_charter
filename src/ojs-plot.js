@@ -82,6 +82,7 @@ export class OJSPlot extends LitElement {
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
         const is_x = this.plot_options.derived.is_x;
+        const show_n = this.plot_options.input.n_axis;
 
         if (is_x) {
             len = options.width;
@@ -97,7 +98,8 @@ export class OJSPlot extends LitElement {
             flex_dir = "column";
             write_labels = () => {
                 write_col_title2();
-                write_col_totals();
+
+                show_n && write_col_totals();
 
                 write_col_title1();
             };
@@ -116,7 +118,7 @@ export class OJSPlot extends LitElement {
             write_labels = () => {
                 write_col_title1();
                 write_col_title2();
-                write_col_totals();
+                show_n && write_col_totals();
             };
         }
         this.style.setProperty("--flex-dir", flex_dir);
