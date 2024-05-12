@@ -348,14 +348,11 @@ export class OJSPlot extends LitElement {
                 word-break: var(--break-words-attr);
                 hyphens: var(--hyphens-attr);
             }
+            .cat-label:hover,
             .cat-label:hover span {
                 white-space: normal;
                 overflow: visible;
                 background-color: grey;
-            }
-            .cat-label:hover {
-                background-color: grey;
-                overflow: visible;
                 z-index: 2;
             }
             .gap {
