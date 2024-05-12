@@ -2,7 +2,1343 @@
 
 exports[`Check all questions > should reproduce the plot options 1`] = `
 [
-  null,
+  {
+    "add_n": [
+      [
+        "input",
+        {
+          "axis_labels": "truncate",
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": false,
+          "font_size": 20,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "i_tab": 0,
+          "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "RowTitle2": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "RowTitle2": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "RowTitle2": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
+          "row_type": "%",
+          "separate_headers": true,
+          "show_mean": false,
+          "show_text": "ifGE5",
+          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
+          "xy": "x",
+        },
+      ],
+      [
+        "derived",
+        {
+          "axis_": "axisX",
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "2 - 4 Beschäftigte",
+            "5 - 9 Beschäftigte",
+            "10 - 19 Beschäftigte",
+          ],
+          "decimal_formatter": {},
+          "group_": "groupX",
+          "header_table_gaps": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColTitle1": "this_label_should_never_occur_in_real_data",
+              "ColTitle2": "this_label_should_never_occur_in_real_data",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "is_x": true,
+          "marginBottom": 25,
+          "marginLeft": 100,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": {},
+            "y": "Value",
+          },
+          "row_lab_fun": {},
+          "x1": "y",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "x",
+          "x2_opts": {
+            "axis": null,
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+            "round": null,
+          },
+          "x_chart_labels_width": 1,
+          "x_order": [
+            "-",
+            "this_label_should_never_occur_in_real_data",
+            "Asien",
+            "Europa",
+            "Nordamerika",
+            "Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barY",
+          "group_args1": {
+            "text": "first",
+            "y": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "title": {},
+            "x": {},
+            "y": "Value",
+            "z": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "stroke": "#ffffff",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": {},
+            "y": "Value",
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dy": -15,
+            "lineAnchor": "bottom",
+            "text": {},
+            "x": {},
+            "y": "Value",
+          },
+          "is_x": true,
+          "stack_": "stackY",
+          "text_": "textY",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 15,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 324.5,
+          "marginBottom": 25,
+          "marginLeft": 100,
+          "marginRight": 60,
+          "marginTop": 15,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "type": "band",
+                },
+                "y1": {
+                  "scale": "y",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y2": {
+                  "scale": "y",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#ffffff",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+            {
+              "ariaLabel": "frame",
+              "facet": "auto",
+              "fill": "none",
+            },
+          ],
+          "style": {
+            "fontSize": "20px",
+          },
+          "width": 162,
+          "x": {
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
+    "flip_xy": [
+      [
+        "input",
+        {
+          "axis_labels": "truncate",
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": false,
+          "font_size": 20,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "i_tab": 0,
+          "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "RowTitle2": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "RowTitle2": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "RowTitle2": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
+          "row_type": "%",
+          "separate_headers": true,
+          "show_mean": true,
+          "show_text": "ifGE5",
+          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
+          "xy": "y",
+        },
+      ],
+      [
+        "derived",
+        {
+          "axis_": "axisY",
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "2 - 4 Beschäftigte",
+            "5 - 9 Beschäftigte",
+            "10 - 19 Beschäftigte",
+          ],
+          "decimal_formatter": {},
+          "group_": "groupY",
+          "header_table_gaps": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColTitle1": "this_label_should_never_occur_in_real_data",
+              "ColTitle2": "this_label_should_never_occur_in_real_data",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "is_x": false,
+          "marginBottom": 40,
+          "marginLeft": 30,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": "Value",
+            "y": {},
+          },
+          "row_lab_fun": {},
+          "x1": "x",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "y",
+          "x2_opts": {
+            "axis": null,
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+            "round": null,
+          },
+          "x_chart_labels_width": 0.25,
+          "x_order": [
+            "-",
+            "this_label_should_never_occur_in_real_data",
+            "Asien",
+            "Europa",
+            "Nordamerika",
+            "Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barX",
+          "group_args1": {
+            "text": "first",
+            "x": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "stroke": "#ffffff",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": "Value",
+            "y": {},
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dx": 10,
+            "text": {},
+            "textAnchor": "start",
+            "x": "Value",
+            "y": {},
+          },
+          "is_x": false,
+          "stack_": "stackX",
+          "text_": "textX",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 15,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 324.5,
+          "marginBottom": 40,
+          "marginLeft": 30,
+          "marginRight": 60,
+          "marginTop": 15,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x1": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "x2": {
+                  "scale": "x",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "type": "band",
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#ffffff",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                },
+              },
+              "dx": 10,
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "textAnchor": "start",
+            },
+            {
+              "ariaLabel": "frame",
+              "facet": "auto",
+              "fill": "none",
+            },
+          ],
+          "style": {
+            "fontSize": "20px",
+          },
+          "width": 121.5,
+          "y": {
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
+    "initial": [
+      [
+        "input",
+        {
+          "axis_labels": "truncate",
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": false,
+          "font_size": 20,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "i_tab": 0,
+          "plot_type": "bar",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "RowTitle2": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "RowTitle2": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "RowTitle2": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
+          "row_type": "%",
+          "separate_headers": true,
+          "show_mean": true,
+          "show_text": "ifGE5",
+          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
+          "xy": "x",
+        },
+      ],
+      [
+        "derived",
+        {
+          "axis_": "axisX",
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "2 - 4 Beschäftigte",
+            "5 - 9 Beschäftigte",
+            "10 - 19 Beschäftigte",
+          ],
+          "decimal_formatter": {},
+          "group_": "groupX",
+          "header_table_gaps": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColTitle1": "this_label_should_never_occur_in_real_data",
+              "ColTitle2": "this_label_should_never_occur_in_real_data",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "is_x": true,
+          "marginBottom": 25,
+          "marginLeft": 100,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": {},
+            "y": "Value",
+          },
+          "row_lab_fun": {},
+          "x1": "y",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "x",
+          "x2_opts": {
+            "axis": null,
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+            "round": null,
+          },
+          "x_chart_labels_width": 1,
+          "x_order": [
+            "-",
+            "this_label_should_never_occur_in_real_data",
+            "Asien",
+            "Europa",
+            "Nordamerika",
+            "Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "bar_": "barY",
+          "group_args1": {
+            "text": "first",
+            "y": "sum",
+          },
+          "group_args2_bar": {
+            "fill": {},
+            "title": {},
+            "x": {},
+            "y": "Value",
+            "z": {},
+          },
+          "group_args2_text": {
+            "fill": "#000000",
+            "stroke": "#ffffff",
+            "strokeWidth": 3,
+            "text": {},
+            "title": {},
+            "x": {},
+            "y": "Value",
+            "z": {},
+          },
+          "group_args2_text_n": {
+            "dy": -15,
+            "lineAnchor": "bottom",
+            "text": {},
+            "x": {},
+            "y": "Value",
+          },
+          "is_x": true,
+          "stack_": "stackY",
+          "text_": "textY",
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 15,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 324.5,
+          "marginBottom": 25,
+          "marginLeft": 100,
+          "marginRight": 60,
+          "marginTop": 15,
+          "marks": [
+            {
+              "ariaLabel": "bar",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "type": "band",
+                },
+                "y1": {
+                  "scale": "y",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+                "y2": {
+                  "scale": "y",
+                  "value": {
+                    "hint": {
+                      "length": true,
+                    },
+                    "label": "Value",
+                  },
+                },
+              },
+              "facet": "auto",
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+              },
+              "facet": "auto",
+              "fill": "#000000",
+              "frameAnchor": "middle",
+              "lineAnchor": "middle",
+              "lineHeight": 1,
+              "monospace": false,
+              "paintOrder": "stroke",
+              "stroke": "#ffffff",
+              "strokeLinejoin": "round",
+              "strokeWidth": 3,
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "value": {
+                    "label": "Value",
+                  },
+                },
+              },
+              "dy": -15,
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "lineAnchor": "bottom",
+              "lineHeight": 1,
+              "monospace": false,
+            },
+            {
+              "ariaLabel": "frame",
+              "facet": "auto",
+              "fill": "none",
+            },
+          ],
+          "style": {
+            "fontSize": "20px",
+          },
+          "width": 162,
+          "x": {
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
+    "other_type": [
+      [
+        "input",
+        {
+          "axis_labels": "truncate",
+          "color_scale": "categorical",
+          "color_scheme": "Tableau10",
+          "colorscale_disabled": false,
+          "font_size": 20,
+          "header_table": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "i_tab": 0,
+          "plot_type": "line",
+          "row_table": [
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "2 - 4 Beschäftigte",
+              "RowTitle2": "2 - 4 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "5 - 9 Beschäftigte",
+              "RowTitle2": "5 - 9 Beschäftigte",
+              "selected": true,
+            },
+            {
+              "RowContent": "Detail",
+              "RowTitle1": "10 - 19 Beschäftigte",
+              "RowTitle2": "10 - 19 Beschäftigte",
+              "selected": true,
+            },
+          ],
+          "row_type": "%",
+          "separate_headers": true,
+          "show_mean": true,
+          "show_text": "ifGE5",
+          "tab_title": "1. Wie viele Mitarbeiter beschäftigt Ihr Unternehmen?",
+          "xy": "x",
+        },
+      ],
+      [
+        "derived",
+        {
+          "axis_": "axisX",
+          "col_lab_fun": {},
+          "color_opts": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "color_order": [
+            "2 - 4 Beschäftigte",
+            "5 - 9 Beschäftigte",
+            "10 - 19 Beschäftigte",
+          ],
+          "decimal_formatter": {},
+          "group_": "groupX",
+          "header_table_gaps": [
+            {
+              "ColNo": 1,
+              "ColTitle1": "GESAMT",
+              "ColTitle2": "-",
+              "selected": true,
+            },
+            {
+              "ColTitle1": "this_label_should_never_occur_in_real_data",
+              "ColTitle2": "this_label_should_never_occur_in_real_data",
+              "selected": true,
+            },
+            {
+              "ColNo": 2,
+              "ColTitle1": "Region",
+              "ColTitle2": "Asien",
+              "selected": true,
+            },
+            {
+              "ColNo": 3,
+              "ColTitle1": "Region",
+              "ColTitle2": "Europa",
+              "selected": true,
+            },
+            {
+              "ColNo": 4,
+              "ColTitle1": "Region",
+              "ColTitle2": "Nordamerika",
+              "selected": true,
+            },
+            {
+              "ColNo": 5,
+              "ColTitle1": "Region",
+              "ColTitle2": "Pazifik",
+              "selected": true,
+            },
+          ],
+          "is_x": true,
+          "marginBottom": 25,
+          "marginLeft": 100,
+          "n_decimals": 1,
+          "plot_opts": {
+            "x": {},
+            "y": "Value",
+          },
+          "row_lab_fun": {},
+          "x1": "y",
+          "x1_opts": {
+            "label": null,
+          },
+          "x2": "x",
+          "x2_opts": {
+            "axis": null,
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+            "round": null,
+          },
+          "x_chart_labels_width": 1,
+          "x_order": [
+            "-",
+            "this_label_should_never_occur_in_real_data",
+            "Asien",
+            "Europa",
+            "Nordamerika",
+            "Pazifik",
+          ],
+        },
+      ],
+      [
+        "derived_p",
+        {
+          "dot_opts": {
+            "fill": {},
+            "r": 7,
+            "stroke": "transparent",
+            "title": {},
+            "x": {},
+            "y": "Value",
+            "z": {},
+          },
+          "group_args1": {
+            "y": "max",
+          },
+          "group_args2_text_n": {
+            "dy": -15,
+            "lineAnchor": "bottom",
+            "text": {},
+            "x": "ColTitle2",
+            "y": "Value",
+            "z": "ColTitle2",
+          },
+          "is_x": true,
+          "line_opts": {
+            "stroke": {},
+            "x": {},
+            "y": "Value",
+            "z": {},
+          },
+        },
+      ],
+      [
+        "data",
+        {
+          "n_points": 15,
+        },
+      ],
+      [
+        "options",
+        {
+          "color": {
+            "className": "large-font",
+            "domain": [
+              "2 - 4 Beschäftigte",
+              "5 - 9 Beschäftigte",
+              "10 - 19 Beschäftigte",
+            ],
+            "legend": true,
+            "scheme": "tableau10",
+            "type": "categorical",
+          },
+          "height": 324.5,
+          "marginBottom": 25,
+          "marginLeft": 100,
+          "marginRight": 60,
+          "marginTop": 15,
+          "marks": [
+            {
+              "ariaLabel": "line",
+              "channels": {
+                "stroke": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "x": {
+                  "scale": "x",
+                },
+                "y": {
+                  "scale": "y",
+                  "value": "Value",
+                },
+                "z": {
+                  "optional": true,
+                },
+              },
+              "facet": "auto",
+              "fill": "none",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "dot",
+              "channels": {
+                "fill": {
+                  "optional": true,
+                  "scale": "auto",
+                },
+                "title": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "value": "Value",
+                },
+              },
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "r": 7,
+              "stroke": "transparent",
+              "strokeWidth": 1.5,
+            },
+            {
+              "ariaLabel": "text",
+              "channels": {
+                "text": {
+                  "optional": true,
+                },
+                "x": {
+                  "optional": true,
+                  "scale": "x",
+                  "value": "ColTitle2",
+                },
+                "y": {
+                  "optional": true,
+                  "scale": "y",
+                  "value": "Value",
+                },
+              },
+              "dy": -15,
+              "facet": "auto",
+              "frameAnchor": "middle",
+              "lineAnchor": "bottom",
+              "lineHeight": 1,
+              "monospace": false,
+            },
+          ],
+          "style": {
+            "fontSize": "20px",
+          },
+          "width": 162,
+          "x": {
+            "domain": [
+              "-",
+              "this_label_should_never_occur_in_real_data",
+              "Asien",
+              "Europa",
+              "Nordamerika",
+              "Pazifik",
+            ],
+          },
+        },
+      ],
+    ],
+  },
   {
     "add_n": [
       [
