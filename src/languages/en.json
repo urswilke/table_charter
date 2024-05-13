@@ -32,6 +32,15 @@
     "line": "line chart",
     "bar": "bar chart"
   },
+  "nAxis": {
+    "label": "Show n"
+  },
+  "showSubtitles": {
+    "label": "Show subtitles"
+  },
+  "showColTitle1": {
+    "label": "Show headers in axis labels"
+  },
   "showMean": {
     "label": "Show mean values"
   },

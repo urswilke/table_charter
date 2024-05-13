@@ -13,11 +13,11 @@ const is_dark =
 export const bg_col = is_dark ? `#000000` : `#ffffff`;
 export const fg_col = !is_dark ? `#000000` : `#ffffff`;
 
-export function gen_header_table(data) {
+export function gen_header_table(data, columns) {
     const arr = distinct(
         data,
         // TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-        ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"],
+        columns,
     );
     const first_two_titles = [...new Set(arr.map((x) => x.ColTitle1))].slice(
         0,
@@ -75,7 +75,7 @@ export function filter_sel_rows(data, header_table) {
 }
 
 export function gen_plot_type_string(tab_sel_obj) {
-    let tab_type = tab_sel_obj.question_data[0].TabType;
+    let tab_type = tab_sel_obj.question_raw_data[0].TabType;
     if (
         tab_type === "CAT" ||
         // mw question that has a column TabDetails with the value "100percent" in the 1st row and percent values are selected:

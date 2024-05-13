@@ -45,7 +45,10 @@ export class OJSPlot extends LitElement {
             !!val.plot_data && val.plot_data.length > 0
                 ? val.plot_data[0].TabCaption
                 : null;
-        this.chartSubTitle = [chartHeaders, chartCaption]
+        this.chartSubTitle = [
+            this.plot_options.input.show_subtitles && chartHeaders,
+            chartCaption,
+        ]
             // remove empty:
             .filter((n) => n)
             .join(" - ");
@@ -82,6 +85,8 @@ export class OJSPlot extends LitElement {
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
         const is_x = this.plot_options.derived.is_x;
+        const show_coltitle1 = this.plot_options.input.show_coltitle1;
+        const show_n = this.plot_options.input.n_axis;
 
         if (is_x) {
             len = options.width;
@@ -97,7 +102,10 @@ export class OJSPlot extends LitElement {
             flex_dir = "column";
             write_labels = () => {
                 write_col_title2();
-                write_col_title1();
+
+                show_n && write_col_totals();
+
+                show_coltitle1 && write_col_title1();
             };
         } else {
             len = options.height;
@@ -112,7 +120,8 @@ export class OJSPlot extends LitElement {
             grid_end = "grid-row-end";
             flex_dir = "row";
             write_labels = () => {
-                write_col_title1();
+                show_coltitle1 && write_col_title1();
+                show_n && write_col_totals();
                 write_col_title2();
             };
         }
@@ -230,6 +239,23 @@ export class OJSPlot extends LitElement {
                     return d.replace(RegExp("^" + fantasy_string + ".*"), "");
                 });
         }
+        function write_col_totals() {
+            cat_labels
+                .data(header_table_gaps)
+                .enter()
+                .append("div")
+                .classed("cat-label gap", (d) =>
+                    d.ColTitle1.includes(fantasy_string),
+                )
+                .classed("cat-label n-div", true)
+                .attr("title", (d) => d)
+                .style("color", "grey")
+                .style("border", "none")
+                .append("span")
+                .text(function (d) {
+                    return d.Value;
+                });
+        }
     }
     // this could be an alternative way to get the positions of the plot area
     // updated() {
@@ -309,11 +335,13 @@ export class OJSPlot extends LitElement {
                 display: flex;
                 align-items: center;
                 justify-content: var(--justify-content-attr);
+                padding: 2px;
+                overflow: var(--overflow-attr);
+            }
+            .cat-label:not(.n-div) {
                 -webkit-box-shadow: inset 0px 0px 0px 1px;
                 -moz-box-shadow: inset 0px 0px 0px 1px;
                 box-shadow: inset 0px 0px 0px 1px;
-                padding: 2px;
-                overflow: var(--overflow-attr);
             }
             .cat-label span {
                 overflow: var(--overflow-attr);
@@ -322,8 +350,8 @@ export class OJSPlot extends LitElement {
                 word-break: var(--break-words-attr);
                 hyphens: var(--hyphens-attr);
             }
-            .cat-label:hover,
-            .cat-label:hover span {
+            .cat-label:hover:not(.n-div),
+            .cat-label:hover:not(.n-div) span {
                 white-space: normal;
                 overflow: visible;
                 background-color: grey;

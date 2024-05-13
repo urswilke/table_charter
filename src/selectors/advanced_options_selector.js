@@ -4,6 +4,9 @@ import { translate } from "lit-translate";
 
 export class AdvancedOptionsSelector extends LitElement {
     static properties = {
+        n_axis: { type: Boolean },
+        show_subtitles: { type: Boolean },
+        show_coltitle1: { type: Boolean },
         show_mean: { type: Boolean },
         separate_headers: { type: Boolean },
         font_size: { type: String },
@@ -27,6 +30,9 @@ export class AdvancedOptionsSelector extends LitElement {
     _toggle_checkboxes() {
         const options = {
             detail: {
+                n_axis: this.is_checked("#n-axis"),
+                show_subtitles: this.is_checked("#show-subtitles"),
+                show_coltitle1: this.is_checked("#show-coltitle1"),
                 show_mean: this.is_checked("#show-mean"),
                 separate_headers: this.is_checked("#separate-headers"),
             },
@@ -79,8 +85,38 @@ export class AdvancedOptionsSelector extends LitElement {
 
     render() {
         return html`
-        <div class="parent">
 			<div class="grid">
+                <div>${translate("nAxis.label")}</div>
+                <div>
+					<input 
+						type="checkbox"
+						data-test-id="n-axis" 
+						id="n-axis"
+						.checked=${this.n_axis}
+						@click=${this._toggle_checkboxes}
+					></input>
+                </div>
+                <div>${translate("showSubtitles.label")}</div>
+                <div>
+					<input 
+						type="checkbox"
+						data-test-id="n-checkbox" 
+						id="show-subtitles"
+						.checked=${this.show_subtitles}
+						@click=${this._toggle_checkboxes}
+					></input>
+                </div>
+
+                <div>${translate("showColTitle1.label")}</div>
+                <div>
+					<input 
+						type="checkbox"
+						data-test-id="n-checkbox" 
+						id="show-coltitle1"
+						.checked=${this.show_coltitle1}
+						@click=${this._toggle_checkboxes}
+					></input>
+                </div>
                 <div>${translate("showMean.label")}</div>
                 <div>
 					<input 
