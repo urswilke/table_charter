@@ -64,6 +64,8 @@ export class TableDataSelector extends LitElement {
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = true;
         this.choices.n_axis = true;
+        this.choices.show_subtitles = false;
+        this.choices.show_coltitle1 = true;
         this.choices.show_mean = true;
         this.choices.separate_headers = true;
         this.choices.font_size = is_mobile ? 12 : 20;
@@ -84,24 +86,40 @@ export class TableDataSelector extends LitElement {
             (x) => x.i_tab === this.i_tabs[this.i_tab],
         );
 
-        this.update_choices({
-            header_table: gen_header_table(
-                this.question_raw_data.filter((x) => x.RowContent === "Total"),
-            ),
-        });
-
         this.question_data = this.question_raw_data.filter((x) =>
             ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
         );
 
         const colorscale_disabled = !["CAT"].includes(
-            this.question_data[0].TabType,
+            this.question_raw_data[0].TabType,
         );
         this.update_choices({
             colorscale_disabled: colorscale_disabled,
             plot_type: gen_plot_type_string(this),
             ...this.saved[this.i_tab],
         });
+        let header_table_input, columns;
+
+        // TODO: find cleaner solution!...:
+        if (this.question_raw_data[0].TabType !== "MW") {
+            header_table_input = this.question_raw_data.filter(
+                (x) =>
+                    x.RowContent === "Total" &&
+                    // TODO: Treat weighted stuff more generally...!
+                    x.RowWeighted === "Unweighted" &&
+                    // TODO: HACK... tell Wolf I need this information to filter out "Sum of valid answers" row from data!
+                    ["GESAMT", "TOTAL"].includes(x.RowTitle1),
+            );
+            columns = ["ColNo", "HeadNo", "ColTitle1", "ColTitle2", "Value"];
+        } else {
+            header_table_input = this.question_data;
+            columns = ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"];
+        }
+        const header_table = gen_header_table(header_table_input, columns);
+        this.update_choices({
+            header_table: header_table,
+        });
+
         this.sel_header_data();
     }
     sel_header_data() {
@@ -304,6 +322,8 @@ export class TableDataSelector extends LitElement {
     _on_checkbox_update(e) {
         this.update_choices({
             n_axis: e.detail.n_axis,
+            show_subtitles: e.detail.show_subtitles,
+            show_coltitle1: e.detail.show_coltitle1,
             show_mean: e.detail.show_mean,
             separate_headers: e.detail.separate_headers,
         });
@@ -431,6 +451,8 @@ export class TableDataSelector extends LitElement {
 								@update-show-text="${this._on_show_text_update}"
 								@update-axis-labels="${this._on_axis_labels_update}"
 								.n_axis=${this.choices.n_axis}
+								.show_subtitles=${this.choices.show_subtitles}
+								.show_coltitle1=${this.choices.show_coltitle1}
 								.show_mean=${this.choices.show_mean}
 								.separate_headers=${this.choices.separate_headers}
 								.font_size=${this.choices.font_size}

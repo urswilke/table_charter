@@ -45,7 +45,10 @@ export class OJSPlot extends LitElement {
             !!val.plot_data && val.plot_data.length > 0
                 ? val.plot_data[0].TabCaption
                 : null;
-        this.chartSubTitle = [chartHeaders, chartCaption]
+        this.chartSubTitle = [
+            this.plot_options.input.show_subtitles && chartHeaders,
+            chartCaption,
+        ]
             // remove empty:
             .filter((n) => n)
             .join(" - ");
@@ -82,6 +85,7 @@ export class OJSPlot extends LitElement {
         const x_order = this.plot_options.derived.x_order;
         const n_cats = x_order.length;
         const is_x = this.plot_options.derived.is_x;
+        const show_coltitle1 = this.plot_options.input.show_coltitle1;
         const show_n = this.plot_options.input.n_axis;
 
         if (is_x) {
@@ -101,7 +105,7 @@ export class OJSPlot extends LitElement {
 
                 show_n && write_col_totals();
 
-                write_col_title1();
+                show_coltitle1 && write_col_title1();
             };
         } else {
             len = options.height;
@@ -116,9 +120,9 @@ export class OJSPlot extends LitElement {
             grid_end = "grid-row-end";
             flex_dir = "row";
             write_labels = () => {
-                write_col_title1();
-                write_col_title2();
+                show_coltitle1 && write_col_title1();
                 show_n && write_col_totals();
+                write_col_title2();
             };
         }
         this.style.setProperty("--flex-dir", flex_dir);

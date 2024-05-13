@@ -38,6 +38,12 @@
   "showMean": {
     "label": "Mittelwerte anzeigen"
   },
+  "showSubtitles": {
+    "label": "Untertitel anzeigen"
+  },
+  "showColTitle1": {
+    "label": "Kopfgruppen anzeigen"
+  },
   "separateHeaders": {
     "label": "Kopfgruppen räumlich trennen"
   },
