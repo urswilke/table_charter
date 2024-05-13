@@ -85,7 +85,6 @@ export class AdvancedOptionsSelector extends LitElement {
 
     render() {
         return html`
-        <div class="parent">
 			<div class="grid">
                 <div>${translate("nAxis.label")}</div>
                 <div>
@@ -118,9 +117,6 @@ export class AdvancedOptionsSelector extends LitElement {
 						@click=${this._toggle_checkboxes}
 					></input>
                 </div>
-
-
-
                 <div>${translate("showMean.label")}</div>
                 <div>
 					<input 
