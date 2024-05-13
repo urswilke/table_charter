@@ -248,7 +248,7 @@ export class OJSPlot extends LitElement {
                     d.ColTitle1.includes(fantasy_string),
                 )
                 .classed("cat-label n-div", true)
-                .attr("title", (d) => d)
+                .attr("title", (d) => "n = " + d.Value)
                 .style("color", "grey")
                 .style("border", "none")
                 .append("span")
