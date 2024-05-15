@@ -1,6 +1,7 @@
 import { get } from "lit-translate";
 
 export function get_walkthrough_options(tds) {
+    const el = (x) => tds.renderRoot.querySelector(x);
     return {
         dontShowAgain: true,
         dontShowAgainLabel: get("walktrough.control.dontShowAgainLabel"),
@@ -15,22 +16,22 @@ export function get_walkthrough_options(tds) {
                 intro: get("walktrough.welcome.text"),
             },
             {
-                element: tds.renderRoot.querySelector("#num-type-div"),
+                element: el("#num-type-div"),
                 title: get("numType.label"),
                 intro: get("walktrough.numTypeDiv.text"),
             },
             {
-                element: tds.renderRoot.querySelector("#question-selector"),
+                element: el("#question-selector"),
                 title: get("question.label"),
                 intro: get("walktrough.question.text"),
             },
             {
-                element: tds.renderRoot.querySelector("#header-multi-sel"),
+                element: el("#header-multi-sel"),
                 title: get("header.label"),
                 intro: get("walktrough.header.text"),
             },
             {
-                element: tds.renderRoot.querySelector("#row-multi-sel"),
+                element: el("#row-multi-sel"),
                 title: get("rows.label"),
                 intro: get("walktrough.rows.text"),
             },
