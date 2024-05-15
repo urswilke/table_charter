@@ -1,7 +1,8 @@
 import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
 import "./tableDataSelector.js";
-import { registerTranslateConfig, use } from "lit-translate";
+import { registerTranslateConfig, use, get } from "lit-translate";
+import { default as introJs } from "intro.js";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import { langs } from "./languages/languages.js";
@@ -83,6 +84,41 @@ export class TableCharter extends LitElement {
             : this.hide_menu();
         // HACK to trigger re-rendering of <ojs-plot> element:
         this.plot_data = { ...this.plot_data };
+    }
+
+    async firstUpdated() {
+        // https://stackoverflow.com/questions/58035998/run-a-function-once-all-children-element-are-actually-updated/58125954#58125954
+        const children = this.renderRoot.querySelectorAll("*");
+        console.log(children);
+        await Promise.all(Array.from(children).map((c) => c.updateComplete));
+        const tds = this.renderRoot.querySelectorAll("table-data-selector");
+
+        console.log(this.renderRoot.querySelector("table-data-selector"));
+        introJs()
+            .setOptions({
+                dontShowAgain: true,
+                dontShowAgainLabel: get(
+                    "walktrough.control.dontShowAgainLabel",
+                ),
+                // TODO: use a string with the BookNo or something...!:
+                // dontShowAgainCookie: "hjklfdahlfdassdljkhs",
+                nextLabel: get("walktrough.control.next"),
+                prevLabel: get("walktrough.control.back"),
+                doneLabel: get("walktrough.control.done"),
+                steps: [
+                    {
+                        title: get("walktrough.welcome.title"),
+                        intro: get("walktrough.welcome.text"),
+                    },
+                    // doesn't work yet, because at the moment when this code is run, the table-data-selector child element isn't fully rendered yet...:
+                    // {
+                    //     element: this.renderRoot.querySelector("#num-type-div"),
+                    //     title: "hallo",
+                    //     intro: "This step focuses on a div in the parent lit element",
+                    // },
+                ],
+            })
+            .start();
     }
 
     render() {
