@@ -103,6 +103,9 @@
     },
     "question": {
       "text": "Hier kannst Du auswählen welche Frage angezeigt werden soll."
+    },
+    "header": {
+      "text": "Hier kannst Du auswählen welche Kopfgruppe angezeigt werden soll."
     }
   }
 }

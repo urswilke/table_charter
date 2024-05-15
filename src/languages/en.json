@@ -103,6 +103,9 @@
     },
     "question": {
       "text": "Here you can select which question to show."
+    },
+    "header": {
+      "text": "Here you can select which header to show."
     }
   }
 }
