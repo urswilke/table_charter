@@ -100,6 +100,9 @@
     },
     "numTypeDiv": {
       "text": "Here you can select whether to show the absolute or percent values in the tables."
+    },
+    "question": {
+      "text": "Here you can select which question to show."
     }
   }
 }

@@ -19,6 +19,11 @@ export function get_walkthrough_options(tds) {
                 title: get("numType.label"),
                 intro: get("walktrough.numTypeDiv.text"),
             },
+            {
+                element: tds.renderRoot.querySelector("#question-selector"),
+                title: get("question.label"),
+                intro: get("walktrough.question.text"),
+            },
         ],
     };
 }
