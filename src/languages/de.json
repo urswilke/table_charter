@@ -105,7 +105,10 @@
       "text": "Hier kannst Du auswählen welche Frage angezeigt werden soll."
     },
     "header": {
-      "text": "Hier kannst Du auswählen welche Kopfgruppe angezeigt werden soll."
+      "text": "Hier kannst Du auswählen welche Kopfgruppe(n) angezeigt werden soll(en)."
+    },
+    "rows": {
+      "text": "Hier kannst Du auswählen welche Zeile(n) angezeigt werden soll(en). Es gibt folgende 3 Typen:<ul><li>Details:<br>Hierbei handelt es sich um die Standard-Werte in den Tabellen.</li><li>Summary:<br>Dies sind die zusammengefassten Werte, die manchmal unter den 'Detail'-Werten aufgeführt sind.</li><li>MStatistics:<br>Dies sind die Werte die bei Item-Batterien angezeigt werden wie z.B. in Mittelwert- oder TOP2-Übersichten.</li></ul>Alle anderen Zeilen in den Tabellen können hier nicht ausgewählt werden (wei z.B. GESAMT). Die GESAMT- oder Mittelwerte der einzelnen Spalten können aber auch angezeigt werden (siehe Hinweise in den weiteren Einstellungen weiter unten)."
     }
   }
 }

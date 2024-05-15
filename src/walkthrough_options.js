@@ -29,6 +29,11 @@ export function get_walkthrough_options(tds) {
                 title: get("header.label"),
                 intro: get("walktrough.header.text"),
             },
+            {
+                element: tds.renderRoot.querySelector("#row-multi-sel"),
+                title: get("rows.label"),
+                intro: get("walktrough.rows.text"),
+            },
         ],
     };
 }
