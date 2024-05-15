@@ -35,6 +35,12 @@ export function get_walkthrough_options(tds) {
                 title: get("rows.label"),
                 intro: get("walktrough.rows.text"),
             },
+            {
+                element: el("#show-hide"),
+                title: get("walktrough.showHide.title"),
+                intro: get("walktrough.showHide.text"),
+                hint: get("walktrough.showHide.hint"),
+            },
         ],
     };
 }
