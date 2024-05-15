@@ -26,6 +26,7 @@ export class TableCharter extends LitElement {
         super();
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
+        this.hasLoadedWalkthrough = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
             "resize",
@@ -86,14 +87,20 @@ export class TableCharter extends LitElement {
         this.plot_data = { ...this.plot_data };
     }
 
-    async firstUpdated() {
+    async updated() {
+        // HACKs: to return early, if this methods didn't run through yet, or if the html only contains one element.
+        // (that's the case when this.plot_data isn't assigned yet; see render method...)
+        if (this.hasLoadedWalkthrough) {
+            return;
+        }
         // https://stackoverflow.com/questions/58035998/run-a-function-once-all-children-element-are-actually-updated/58125954#58125954
         const children = this.renderRoot.querySelectorAll("*");
-        console.log(children);
+        if (Array.from(children).length === 1) {
+            return;
+        }
         await Promise.all(Array.from(children).map((c) => c.updateComplete));
-        const tds = this.renderRoot.querySelectorAll("table-data-selector");
+        const tds = this.renderRoot.querySelector("table-data-selector");
 
-        console.log(this.renderRoot.querySelector("table-data-selector"));
         introJs()
             .setOptions({
                 dontShowAgain: true,
@@ -110,15 +117,15 @@ export class TableCharter extends LitElement {
                         title: get("walktrough.welcome.title"),
                         intro: get("walktrough.welcome.text"),
                     },
-                    // doesn't work yet, because at the moment when this code is run, the table-data-selector child element isn't fully rendered yet...:
-                    // {
-                    //     element: this.renderRoot.querySelector("#num-type-div"),
-                    //     title: "hallo",
-                    //     intro: "This step focuses on a div in the parent lit element",
-                    // },
+                    {
+                        element: tds.renderRoot.querySelector("#num-type-div"),
+                        title: get("numType.label"),
+                        intro: get("walktrough.numTypeDiv.text"),
+                    },
                 ],
             })
             .start();
+        this.hasLoadedWalkthrough = true;
     }
 
     render() {

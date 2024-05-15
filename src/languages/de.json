@@ -97,6 +97,9 @@
     "welcome": {
       "title": "Willkommen zu table_charter",
       "text": "Diese App kann Diagramme erstellen aus den Tabellenbänden der <div style='border: solid 1px; border-radius: 3px; padding: 3px;'>DATA-Connection Gebr. Wilke GbR</div>In den folgenden Schritten werden die Funktionsweisen der Filter und Einstellungen kurz erläutert."
+    },
+    "numTypeDiv": {
+      "text": "Hier kannst Du auswählen, ob in den Plots die Absolut- oder Prozentwerte der Tabellen angezeigt werden."
     }
   }
 }
