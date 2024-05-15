@@ -1,11 +1,12 @@
 import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
 import "./tableDataSelector.js";
-import { registerTranslateConfig, use, get } from "lit-translate";
+import { registerTranslateConfig, use } from "lit-translate";
 import { default as introJs } from "intro.js";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import { langs } from "./languages/languages.js";
+import { get_walkthrough_options } from "./walkthrough_options.js";
 
 registerTranslateConfig({
     loader: (lang) =>
@@ -101,30 +102,7 @@ export class TableCharter extends LitElement {
         await Promise.all(Array.from(children).map((c) => c.updateComplete));
         const tds = this.renderRoot.querySelector("table-data-selector");
 
-        introJs()
-            .setOptions({
-                dontShowAgain: true,
-                dontShowAgainLabel: get(
-                    "walktrough.control.dontShowAgainLabel",
-                ),
-                // TODO: use a string with the BookNo or something...!:
-                // dontShowAgainCookie: "hjklfdahlfdassdljkhs",
-                nextLabel: get("walktrough.control.next"),
-                prevLabel: get("walktrough.control.back"),
-                doneLabel: get("walktrough.control.done"),
-                steps: [
-                    {
-                        title: get("walktrough.welcome.title"),
-                        intro: get("walktrough.welcome.text"),
-                    },
-                    {
-                        element: tds.renderRoot.querySelector("#num-type-div"),
-                        title: get("numType.label"),
-                        intro: get("walktrough.numTypeDiv.text"),
-                    },
-                ],
-            })
-            .start();
+        introJs().setOptions(get_walkthrough_options(tds)).start();
         this.hasLoadedWalkthrough = true;
     }
 
