@@ -105,10 +105,10 @@
       "text": "Here you can select which question to show."
     },
     "header": {
-      "text": "Here you can select which header to show."
+      "text": "Here you can select which header(s) to show."
     },
     "rows": {
-      "text": "Here you can select which types of rows to show. The following 3 types exist:<ul><li>Details:<br>These are the standard values in the tables.</li><li>Summary:<br>These are summarized values sometimes below the 'Detail' values.</li><li>MStatistics:<br>These are the values shown for item batteries, such as mean or top2.</li></ul>All other values (such as the rows with totals) can't be selected here in table_charter. However, totals & means can also be shown for each column (see the hints in the advanced options below)."
+      "text": "Here you can select which type(s) of rows to show. The following 3 types exist:<ul><li>Details:<br>These are the standard values in the tables.</li><li>Summary:<br>These are summarized values sometimes below the 'Detail' values.</li><li>MStatistics:<br>These are the values shown for item batteries, such as mean or top2.</li></ul>All other values (such as the rows with totals) can't be selected here in table_charter. However, totals & means can also be shown for each column (see the hints in the advanced options below)."
     }
   }
 }
