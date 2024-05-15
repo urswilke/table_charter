@@ -94,6 +94,13 @@ export class TableCharter extends LitElement {
         if (this.hasLoadedWalkthrough) {
             return;
         }
+        const help = await this.show_help();
+        if (help === undefined) {
+            return;
+        }
+    }
+
+    async show_help() {
         // https://stackoverflow.com/questions/58035998/run-a-function-once-all-children-element-are-actually-updated/58125954#58125954
         const children = this.renderRoot.querySelectorAll("*");
         if (Array.from(children).length === 1) {
@@ -123,6 +130,9 @@ export class TableCharter extends LitElement {
                               @click="${this.show_hide_menu}"
                           >
                               ×
+                          </button>
+                          <button class="show-help" @click="${this.show_help}">
+                              ?
                           </button>
 
                           <table-data-selector
@@ -182,12 +192,14 @@ export class TableCharter extends LitElement {
             }
             .column2,
             .column1,
+            .show-help,
             .hide-menu {
                 margin: 5px;
                 border-style: solid;
                 border-radius: 8px;
                 border-width: 2px;
             }
+            .show-help,
             .hide-menu {
                 float: right;
                 font-size: 1.2em;
