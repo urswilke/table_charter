@@ -99,6 +99,9 @@ export class ColorscaleSelector extends LitElement {
                 display: block;
                 padding-left: 7px;
             }
+            select {
+                text-align-last: center;
+            }
         `,
     ];
 }
