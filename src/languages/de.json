@@ -80,12 +80,12 @@
     "label": "Werte anzeigen",
     "always": "immer",
     "never": "nie",
-    "ifGE5": "wenn >= 5 % der Totallänge"
+    "ifGE5": "wenn >= 5 %"
   },
   "axisLabels": {
     "label": "Überlange Achsen-Label",
-    "truncate": "abschneiden (ganze Texte können durch Hovern gezeigt werden)",
-    "whole": "anzeigen (dadurch können Elemente überlappen)"
+    "truncate": "abschneiden",
+    "whole": "anzeigen"
   },
   "walktrough": {
     "control": {

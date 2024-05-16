@@ -80,7 +80,7 @@
     "label": "Show values in labels",
     "always": "always",
     "never": "never",
-    "ifGE5": "if value >= 5 % of total size"
+    "ifGE5": "if >= 5 %"
   },
   "axisLabels": {
     "label": "Too long axis labels",
