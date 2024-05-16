@@ -24,6 +24,7 @@
 
             img {
                 float: left;
+                height: 100%;
             }
 
             #lang_selector {
@@ -118,7 +119,7 @@
                         ? "data:image/png;base64, " +
                           project_data.client_logo_base64
                         : project_data.client_logo_url;
-                document.getElementById("logo").alt = logo;
+                document.getElementById("logo").src = logo;
 
                 const browser_language =
                     navigator.language.replace(/-.*/, "") || "en";
