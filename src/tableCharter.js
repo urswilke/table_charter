@@ -109,7 +109,7 @@ export class TableCharter extends LitElement {
         await Promise.all(Array.from(children).map((c) => c.updateComplete));
         const tds = this.renderRoot.querySelector("table-data-selector");
 
-        introJs().setOptions(get_walkthrough_options(tds)).start();
+        introJs().setOptions(get_walkthrough_options(this)).start();
         this.hasLoadedWalkthrough = true;
     }
 
