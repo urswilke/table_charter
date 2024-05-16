@@ -91,10 +91,7 @@ export class TableCharter extends LitElement {
     async updated() {
         // HACKs: to return early, if this methods didn't run through yet, or if the html only contains one element.
         // (that's the case when this.plot_data isn't assigned yet; see render method...)
-        if (this.hasLoadedWalkthrough) {
-            return;
-        }
-        await this.show_help();
+        !this.hasLoadedWalkthrough && (await this.show_help());
     }
 
     async show_help() {
