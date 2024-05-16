@@ -100,7 +100,7 @@ export class AdvancedOptionsSelector extends LitElement {
                 <div>
 					<input 
 						type="checkbox"
-						data-test-id="n-checkbox" 
+						data-test-id="show-subtitles" 
 						id="show-subtitles"
 						.checked=${this.show_subtitles}
 						@click=${this._toggle_checkboxes}
@@ -111,7 +111,7 @@ export class AdvancedOptionsSelector extends LitElement {
                 <div>
 					<input 
 						type="checkbox"
-						data-test-id="n-checkbox" 
+						data-test-id="show-coltitle1" 
 						id="show-coltitle1"
 						.checked=${this.show_coltitle1}
 						@click=${this._toggle_checkboxes}

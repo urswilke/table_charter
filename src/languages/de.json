@@ -80,11 +80,98 @@
     "label": "Werte anzeigen",
     "always": "immer",
     "never": "nie",
-    "ifGE5": "wenn >= 5 % der Totallänge"
+    "ifGE5": "wenn >= 5 %"
   },
   "axisLabels": {
     "label": "Überlange Achsen-Label",
-    "truncate": "abschneiden (ganze Texte können durch Hovern gezeigt werden)",
-    "whole": "anzeigen (dadurch können Elemente überlappen)"
+    "truncate": "abschneiden",
+    "whole": "anzeigen"
+  },
+  "walktrough": {
+    "control": {
+      "next": "weiter",
+      "back": "zurück",
+      "done": "fertig",
+      "dontShowAgainLabel": "nicht mehr anzeigen"
+    },
+    "welcome": {
+      "title": "Willkommen zu table_charter",
+      "text": "Diese App kann Diagramme erstellen aus den Tabellenbänden der <div style='border: solid 1px; border-radius: 3px; padding: 3px;'>DATA-Connection Gebr. Wilke GbR</div>In den folgenden Schritten werden die Funktionsweisen der Filter und Einstellungen kurz erläutert."
+    },
+    "numTypeDiv": {
+      "text": "Hier kannst Du auswählen, ob in den Plots die Absolut- oder Prozentwerte der Tabellen angezeigt werden."
+    },
+    "question": {
+      "text": "Hier kannst Du auswählen welche Frage angezeigt werden soll."
+    },
+    "header": {
+      "text": "Hier kannst Du auswählen welche Kopfgruppe(n) angezeigt werden soll(en).",
+      "advancedText": "Wenn die weiteren Einstellungen angezeigt werden, kannst Du auch einzelne Köpfe aus-/abwählen."
+    },
+    "rows": {
+      "text": "Hier kannst Du auswählen welche Zeile(n) angezeigt werden soll(en). Es gibt folgende 3 Typen:<ul><li>Details:<br>Hierbei handelt es sich um die Standard-Werte in den Tabellen.</li><li>Summary:<br>Dies sind die zusammengefassten Werte, die manchmal unter den 'Detail'-Werten aufgeführt sind.</li><li>MStatistics:<br>Dies sind die Werte die bei Item-Batterien angezeigt werden wie z.B. in Mittelwert- oder TOP2-Übersichten.</li></ul>Alle anderen Zeilen in den Tabellen können hier nicht ausgewählt werden wie z.B. GESAMT). Die GESAMT- oder Mittelwerte der einzelnen Spalten können aber auch angezeigt werden (siehe Hinweise zu den weiteren Einstellungen weiter unten).",
+      "advancedText": "Dasselbe gilt für die Zeilen. Wenn die weiteren Einstellungen angezeigt werden, kannst Du auch einzelne Zeilen aus-/abwählen."
+    },
+    "showHide": {
+      "title": "Weitere Einstellungen ein-/ausblenden",
+      "text": "Durch Klicken auf diesen Knopf werden die weiteren Einstellungen ein-/ausgeblendet."
+    },
+    "showHelp": {
+      "title": "Einführung abspielen",
+      "text": "Durch Klicken hier wird die Hilfs-Einführung abgespielt. Wenn die weiteren Einstellungen angezeigt werden (siehe vorherigen Schritt), werden diese beschrieben."
+    },
+    "hideMenu": {
+      "title": "Menu zusammenklappen/anzeigen",
+      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt/angezeigt (dadurch werden die Plots größer/kleiner)."
+    },
+    "flipXY": {
+      "title": "X- & Y-Achse vertauschen",
+      "text": "Durch Klicken kannst Du auswählen, ob die X- oder die Y-Achse die kategorischen Daten der Köpfe anzeigt."
+    },
+    "plotType": {
+      "title": "Plot-Typ auswählen",
+      "text": "Durch Klicken kannst Du auswählen, ob ein Linien- oder Balken-Diagramm erstellt wird."
+    },
+    "nAxis": {
+      "title": "Total-Werte anzeigen",
+      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die Total-Werte der Köpfe in der Achsen-Beschriftung angezeigt werden."
+    },
+    "showSubtitles": {
+      "title": "Untertitel anzeigen/entfernen",
+      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die ausgewählten Kopfgruppen im Untertitel des Plots aufgeführt werden."
+    },
+    "showColTitle1": {
+      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die ausgewählten Kopfgruppen in der Achsen-Beschriftung des Plots aufgeführt werden."
+    },
+    "showMean": {
+      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die Mittelwerte der Köpfe in der Achsen-Beschriftung angezeigt werden. Sie werden nur angezeigt, wenn sie in den Tabellen berechnet wurden."
+    },
+    "separateHeaders": {
+      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die Kopfgruppen räumlich getrennt werden im Plot (falls mehrere ausgewählt sind)."
+    },
+    "fontSize": {
+      "text": "Hier kannst Du die Schriftgröße auswählen."
+    },
+    "showText": {
+      "text1": "Hier kannst Du einstellen, ob die Werte als Text in den Plots angezeigt werden (gilt nur für Balken-Diagramme). Es gibt 3 Einstellungsmöglichkeiten:<ul><li>",
+      "textpt1": ":<br>Die Werte werden immer angezeigt.</li><li>",
+      "textpt2": ":<br>Die Werte werden nie angezeigt.</li><li>",
+      "textpt3": ":<br>Die Werte werden nur angezeigt, wenn sie mindestens 5 % der maximalen Gesamt-Länge sind (Höhe oder Breite, je nachdem ob die X- oder Y-Achse als kategorische Achse ausgewählt ist; siehe oben).</li></ul>"
+    },
+    "axisLabels": {
+      "title": "Label der Köpfe anzeigen/abschneiden",
+      "text1": "Hier kannst Du auswählen, ob die Label der Köpfe angezeigt/abgeschnitten werden, falls sie zu lang sind. Es gibt 2 Einstellungen:<ul><li>",
+      "textpt1": ":<br>Hier werden zu lange Label abgeschnitten. Der ganze Text kann durch Hovern über das Label angezeigt werden.</li><li>",
+      "textpt2": ":<br>Die ganzen Label der Köpfe werden angezeigt. Dadurch können Label von verschiedenen Köpfen überlappen, was evtl. auch durch eine kleinere Schriftgröße verhindert werden kann.</li>"
+    },
+    "colorscaleSelector": {
+      "text": "Hier kannst Du auswählen, ob eine kategorische oder ordinale Farbskala im Plot verwendet wird.<br/>In kategorischen Skalen sind die Farben von benachbarten Items stark unterschiedlich. Jede Farbe steht für ein Variablen-/Werte-Label in den Rohdaten.<br/>In ordinalen Skalen werden die Werte in den Rohdaten auf einen sich graduell veränderten Farbverlauf dargestellt. Dies kann nicht bei Mehrfachantworten oder Item-Batterien ausgewählt werden."
+    },
+    "colorschemeSelector": {
+      "text": "Hier kannst Du verschiedene Farbschemata auswählen. Die verfügbare Auswahl hängt davon ab, ob eine kategorische oder ordinale Farbskala verwendet wird (siehe vorherigen Schritt)."
+    },
+    "saveSettings": {
+      "text": "Durch Klicken hier kannst Du die App mit den aktuellen Einstellungen der Plots im Download-Ordner Deines Browsers speichern."
+    }
   }
 }

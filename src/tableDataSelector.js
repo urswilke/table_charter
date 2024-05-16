@@ -376,7 +376,7 @@ export class TableDataSelector extends LitElement {
 						</num_type-selector>
 					</div>
 				</div>
-				<div class="selector-group">
+				<div class="selector-group" id="question-selector">
 					<label>${translate("question.label")}</label>
 					<div class="content">
 						<question-selector 					

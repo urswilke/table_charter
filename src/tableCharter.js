@@ -2,9 +2,11 @@ import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
 import "./tableDataSelector.js";
 import { registerTranslateConfig, use } from "lit-translate";
+import { default as introJs } from "intro.js";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import { langs } from "./languages/languages.js";
+import { get_walkthrough_options } from "./walkthrough_options.js";
 
 registerTranslateConfig({
     loader: (lang) =>
@@ -25,6 +27,7 @@ export class TableCharter extends LitElement {
         super();
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
+        this.hasLoadedWalkthrough = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
             "resize",
@@ -85,6 +88,31 @@ export class TableCharter extends LitElement {
         this.plot_data = { ...this.plot_data };
     }
 
+    async updated() {
+        // HACKs: to return early, if this methods didn't run through yet, or if the html only contains one element.
+        // (that's the case when this.plot_data isn't assigned yet; see render method...)
+        if (this.hasLoadedWalkthrough) {
+            return;
+        }
+        const help = await this.show_help();
+        if (help === undefined) {
+            return;
+        }
+    }
+
+    async show_help() {
+        // https://stackoverflow.com/questions/58035998/run-a-function-once-all-children-element-are-actually-updated/58125954#58125954
+        const children = this.renderRoot.querySelectorAll("*");
+        if (Array.from(children).length === 1) {
+            return;
+        }
+        await Promise.all(Array.from(children).map((c) => c.updateComplete));
+        const tds = this.renderRoot.querySelector("table-data-selector");
+
+        introJs().setOptions(get_walkthrough_options(this)).start();
+        this.hasLoadedWalkthrough = true;
+    }
+
     render() {
         this.plot_data &&
             (this.plot_data.params = {
@@ -102,6 +130,9 @@ export class TableCharter extends LitElement {
                               @click="${this.show_hide_menu}"
                           >
                               ×
+                          </button>
+                          <button class="show-help" @click="${this.show_help}">
+                              ?
                           </button>
 
                           <table-data-selector
@@ -161,12 +192,14 @@ export class TableCharter extends LitElement {
             }
             .column2,
             .column1,
+            .show-help,
             .hide-menu {
                 margin: 5px;
                 border-style: solid;
                 border-radius: 8px;
                 border-width: 2px;
             }
+            .show-help,
             .hide-menu {
                 float: right;
                 font-size: 1.2em;

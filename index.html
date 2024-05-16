@@ -7,6 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>table charter</title>
         <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css"
+        />
         <script type="module" src="./src/index.js"></script>
         <style>
             body {
@@ -49,6 +53,22 @@
             }
             table-charter {
                 flex: 1;
+            }
+            /* needed for dark mode (because then, the font is white on white otherwise) */
+            .introjs-tooltip {
+                color: black;
+            }
+            .introjs-helperLayer {
+                opacity: 0.5 !important;
+            }
+            ul {
+                margin-left: 20px;
+            }
+            .introjs-dontShowAgain {
+                margin-top: 15px;
+            }
+            input#introjs-dontShowAgain {
+                margin-right: 10px;
             }
         </style>
     </head>
