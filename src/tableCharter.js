@@ -94,10 +94,7 @@ export class TableCharter extends LitElement {
         if (this.hasLoadedWalkthrough) {
             return;
         }
-        const help = await this.show_help();
-        if (help === undefined) {
-            return;
-        }
+        await this.show_help();
     }
 
     async show_help() {
