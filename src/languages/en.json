@@ -113,6 +113,14 @@
     "showHide": {
       "title": "show/hide advanced settings button",
       "text": "By clicking this button the advanced settings are shown/hidden."
+    },
+    "showHelp": {
+      "title": "show the app walkthrough",
+      "text": "By clicking this button the introduction walkthrough is shown. If the advanced settings are shown (see previous step) they are also described."
+    },
+    "hideMenu": {
+      "title": "collapse/expand menu",
+      "text": "By clicking this button the settings menu is collapsed/expanded (this increases/decreases the size of the plots)."
     }
   }
 }

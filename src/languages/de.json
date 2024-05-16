@@ -113,6 +113,14 @@
     "showHide": {
       "title": "Weitere Einstellungen ein-/ausblenden",
       "text": "Durch Klicken auf diesen Knopf werden die weiteren Einstellungen ein-/ausgeblendet."
+    },
+    "showHelp": {
+      "title": "Einführung abspielen",
+      "text": "Durch Klicken hier wird die Hilfs-Einführung abgespielt. Wenn die weiteren Einstellungen angezeigt werden (siehe vorherigen Schritt), werden diese beschrieben."
+    },
+    "hideMenu": {
+      "title": "Menu zusammenklappen/anzeigen",
+      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt/angezeigt (dadurch werden die Plots größer/kleiner)."
     }
   }
 }

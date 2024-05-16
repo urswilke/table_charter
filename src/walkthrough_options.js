@@ -51,6 +51,18 @@ export function get_walkthrough_options(tc) {
                 intro: get("walktrough.showHide.text"),
                 hint: get("walktrough.showHide.hint"),
             },
+            {
+                element: tc_el(".show-help"),
+                title: get("walktrough.showHelp.title"),
+                intro: get("walktrough.showHelp.text"),
+                hint: get("walktrough.showHelp.hint"),
+            },
+            {
+                element: tc_el(".hide-menu"),
+                title: get("walktrough.hideMenu.title"),
+                intro: get("walktrough.hideMenu.text"),
+                hint: get("walktrough.hideMenu.hint"),
+            },
         ],
     };
     if (tds.params.collapsed_view) {
