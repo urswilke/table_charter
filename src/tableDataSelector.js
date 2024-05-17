@@ -50,7 +50,7 @@ export class TableDataSelector extends LitElement {
         this.params = {};
         this.choices = {};
         this.choices.xy = "x";
-
+        this.choices.header_table = gen_header_table(this.data);
         this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
 
         let title_table = this.params.title_table[0];
@@ -98,27 +98,22 @@ export class TableDataSelector extends LitElement {
             plot_type: gen_plot_type_string(this),
             ...this.saved[this.i_tab],
         });
-        let header_table_input, columns;
-
-        // TODO: find cleaner solution!...:
-        if (this.question_raw_data[0].TabType !== "MW") {
-            header_table_input = this.question_raw_data.filter(
+        if (this.choices.n_axis && this.question_raw_data[0].TabType !== "MW") {
+            // TODO: it feels dangerous to calculate the totals in a separate array from this.choices.header_table ...
+            // -> discuss with Wolf if it's ok like this...!
+            const totals = this.question_raw_data.filter(
                 (x) =>
                     x.RowContent === "Total" &&
                     // TODO: Treat weighted stuff more generally...!
                     x.RowWeighted === "Unweighted" &&
                     // TODO: HACK... tell Wolf I need this information to filter out "Sum of valid answers" row from data!
                     ["GESAMT", "TOTAL"].includes(x.RowTitle1),
-            );
-            columns = ["ColNo", "HeadNo", "ColTitle1", "ColTitle2", "Value"];
-        } else {
-            header_table_input = this.question_data;
-            columns = ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"];
+            ).map(x => x.Value)
+            this.update_choices({
+                header_table: this.choices.header_table.map((x, i) => ({...x, Value: totals[i]})),
+            });
+        
         }
-        const header_table = gen_header_table(header_table_input, columns);
-        this.update_choices({
-            header_table: header_table,
-        });
 
         this.sel_header_data();
     }

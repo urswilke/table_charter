@@ -13,11 +13,11 @@ const is_dark =
 export const bg_col = is_dark ? `#000000` : `#ffffff`;
 export const fg_col = !is_dark ? `#000000` : `#ffffff`;
 
-export function gen_header_table(data, columns) {
+export function gen_header_table(data) {
     const arr = distinct(
         data,
         // TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-        columns,
+        ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"],
     );
     const first_two_titles = [...new Set(arr.map((x) => x.ColTitle1))].slice(
         0,
