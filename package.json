@@ -9,6 +9,10 @@
     "exports": {
         ".": "./src/index.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/urswilke/table_charter.git"
+    },
     "files": [
         "dist/**/*.js",
         "src/**/*.js",
