@@ -60,6 +60,14 @@
             /* needed for dark mode (because then, the font is white on white otherwise) */
             .introjs-tooltip {
                 color: black;
+                width: 60vw;
+            }
+            .introjs-tooltip-header {
+                display: flex;
+                flex-flow: row;
+                align-items: flex-start;
+                align-content: flex-start;
+                margin-bottom: 10px;
             }
             .introjs-helperLayer {
                 opacity: 0.5 !important;
@@ -76,9 +84,20 @@
             /* https://github.com/usablica/intro.js/issues/1202#issuecomment-1647264044 */
             .introjs-overlay {
                 pointer-events: none;
-            } 
-            .introjs-helperLayer { 
-                pointer-events: none; 
+            }
+            .introjs-helperLayer {
+                pointer-events: none;
+            }
+            .introjs-skipbutton {
+                margin-left: auto;
+                order: 2;
+                border-radius: 8px;
+                border: solid red;
+                font-size: 30px;
+            }
+            .introjs-skipbutton:hover {
+                opacity: 0.5;
+                cursor: pointer;
             }
         </style>
     </head>
