@@ -121,8 +121,8 @@
       "text": "Durch Klicken hier wird die Hilfs-Einführung abgespielt. Wenn die weiteren Einstellungen angezeigt werden (siehe vorherigen Schritt), werden diese beschrieben."
     },
     "hideMenu": {
-      "title": "Menu zusammenklappen/anzeigen",
-      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt/angezeigt (dadurch werden die Plots größer/kleiner)."
+      "title": "Menu zusammenklappen / anzeigen",
+      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt / angezeigt (dadurch werden die Plots größer / kleiner)."
     },
     "flipXY": {
       "title": "X- & Y-Achse vertauschen",
@@ -134,20 +134,20 @@
     },
     "nAxis": {
       "title": "Total-Werte anzeigen",
-      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die Total-Werte der Köpfe in der Achsen-Beschriftung angezeigt werden."
+      "text": "Durch Häkchen setzen / entfernen kannst Du auswählen, ob die Total-Werte der Köpfe in der Achsen-Beschriftung angezeigt werden."
     },
     "showSubtitles": {
-      "title": "Untertitel anzeigen/entfernen",
-      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die ausgewählten Kopfgruppen im Untertitel des Plots aufgeführt werden."
+      "title": "Untertitel anzeigen / entfernen",
+      "text": "Durch Häkchen setzen / entfernen kannst Du auswählen, ob die ausgewählten Kopfgruppen im Untertitel des Plots aufgeführt werden."
     },
     "showColTitle1": {
-      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die ausgewählten Kopfgruppen in der Achsen-Beschriftung des Plots aufgeführt werden."
+      "text": "Durch Häkchen setzen / entfernen kannst Du auswählen, ob die ausgewählten Kopfgruppen in der Achsen-Beschriftung des Plots aufgeführt werden."
     },
     "showMean": {
-      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die Mittelwerte der Köpfe in der Achsen-Beschriftung angezeigt werden. Sie werden nur angezeigt, wenn sie in den Tabellen berechnet wurden."
+      "text": "Durch Häkchen setzen / entfernen kannst Du auswählen, ob die Mittelwerte der Köpfe in der Achsen-Beschriftung angezeigt werden. Sie werden nur angezeigt, wenn sie in den Tabellen berechnet wurden."
     },
     "separateHeaders": {
-      "text": "Durch Häkchen setzen/entfernen kannst Du auswählen, ob die Kopfgruppen räumlich getrennt werden im Plot (falls mehrere ausgewählt sind)."
+      "text": "Durch Häkchen setzen / entfernen kannst Du auswählen, ob die Kopfgruppen räumlich getrennt werden im Plot (falls mehrere ausgewählt sind)."
     },
     "fontSize": {
       "text": "Hier kannst Du die Schriftgröße auswählen."
@@ -159,8 +159,8 @@
       "textpt3": ":<br>Die Werte werden nur angezeigt, wenn sie mindestens 5 % der maximalen Gesamt-Länge sind (Höhe oder Breite, je nachdem ob die X- oder Y-Achse als kategorische Achse ausgewählt ist; siehe oben).</li></ul>"
     },
     "axisLabels": {
-      "title": "Label der Köpfe anzeigen/abschneiden",
-      "text1": "Hier kannst Du auswählen, ob die Label der Köpfe angezeigt/abgeschnitten werden, falls sie zu lang sind. Es gibt 2 Einstellungen:<ul><li>",
+      "title": "Label der Köpfe anzeigen / abschneiden",
+      "text1": "Hier kannst Du auswählen, ob die Label der Köpfe angezeigt / abgeschnitten werden, falls sie zu lang sind. Es gibt 2 Einstellungen:<ul><li>",
       "textpt1": ":<br>Hier werden zu lange Label abgeschnitten. Der ganze Text kann durch Hovern über das Label angezeigt werden.</li><li>",
       "textpt2": ":<br>Die ganzen Label der Köpfe werden angezeigt. Dadurch können Label von verschiedenen Köpfen überlappen, was evtl. auch durch eine kleinere Schriftgröße verhindert werden kann.</li>"
     },
