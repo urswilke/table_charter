@@ -2,7 +2,7 @@
 
 # table_charter
 
-[![pipeline status](img/table_charter_logo.svg)](https://gitlab.com/urswilke/table_charter/-/commits/main)
+[![pipeline status](img/table_charter_logo.svg)](https://gitlab.com/urswilke/table_charter)
 
 [![pipeline status](https://gitlab.com/urswilke/table_charter/badges/main/pipeline.svg)](https://gitlab.com/urswilke/table_charter/-/commits/main)
 [![pipeline status](https://img.shields.io/npm/v/table_charter.svg)](https://npmjs.com/package/table_charter)
