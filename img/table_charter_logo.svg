@@ -1,0 +1,11 @@
+<svg class="plot-d6a7b5" fill="currentColor" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style>:where(.plot-d6a7b5) {
+  --plot-background: white;
+  display: block;
+  height: auto;
+  height: intrinsic;
+  max-width: 100%;
+}
+:where(.plot-d6a7b5 text),
+:where(.plot-d6a7b5 tspan) {
+  white-space: pre;
+}</style><g aria-label="bar" stroke-width="3"><rect x="0.9" width="111.77142857142856" y="6.9" height="44.2" fill="#4269d0"/><rect x="0.9" width="157.2" y="57.9" height="44.2" fill="#efb118"/><rect x="0.9" width="83.37857142857142" y="108.9" height="44.2" fill="#ff725c"/></g><g aria-label="text" fill="none" stroke="white" stroke-width="3" stroke-linejoin="round" text-anchor="start" font-size="28" transform="translate(0.5,23.5)"><text y="0.32em" transform="translate(11.35714285714286,6)">t  a  b  l</text><text y="0.32em" transform="translate(11.35714285714286,57)">e _ c  h  a  r</text><text y="0.32em" transform="translate(11.35714285714286,108)">t  e  r</text></g></svg>
