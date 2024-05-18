@@ -6,7 +6,12 @@
         <meta name="color-scheme" content="dark light" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>table charter</title>
-        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <!-- define favicon here:-->
+        <link
+            rel="icon"
+            type="image/svg"
+            href="img/table_charter_favicon.svg"
+        />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css"
@@ -23,13 +28,15 @@
             }
 
             img {
-                float: left;
-                height: 100%;
+                height: 72%;
+                margin-left: 7px;
+                border: white solid 1px;
+                border-radius: 4px;
+            }
+            #lang_selector {
+                margin-right: 15px;
             }
 
-            #lang_selector {
-                float: right;
-            }
             /* see 2nd example here: https://stackoverflow.com/questions/25098042/fill-remaining-vertical-space-with-css-using-displayflex/25098486#25098486 */
             section {
                 display: flex;
@@ -37,13 +44,16 @@
                 height: 100%;
             }
             header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 text-align: center;
                 background: #5e677b;
                 color: white;
                 margin: 0px;
-                padding: 10px;
                 font-size: 20px;
-                height: 30px;
+                height: 50px;
             }
             footer {
                 min-height: 20px;
@@ -103,15 +113,15 @@
         <section>
             <header>
                 <img id="logo" />
+                <div>
+                    <p id="project-name"></p>
+                </div>
                 <div id="lang_selector">
                     <span>🌍</span>
                     <select id="lang-selector-select">
                         <option>en</option>
                         <option>de</option>
                     </select>
-                </div>
-                <div>
-                    <p id="project-name"></p>
                 </div>
             </header>
             <table-charter></table-charter>
@@ -141,11 +151,10 @@
                 })();
 
                 const project_data = {
-                    client_name: "your company name",
                     client_logo_base64: "",
-                    client_logo_url: "your company logo url",
-                    project_name: "your project name",
-                    date: "2024-03-19",
+                    client_logo_url: "img/logo_small.svg",
+                    project_name: "Dashboard demo of example table book",
+                    date: "2024-5-18",
                 };
                 const logo =
                     project_data.client_logo_base64 !== ""
