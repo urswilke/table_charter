@@ -14,58 +14,58 @@ export function get_walkthrough_options(tc) {
     const cos_el = sel(cos);
     const default_elements = {
         dontShowAgain: true,
-        dontShowAgainLabel: get("walktrough.control.dontShowAgainLabel"),
+        dontShowAgainLabel: get("walkthrough.control.dontShowAgainLabel"),
         // TODO: use a string with the BookNo or something...!:
         // dontShowAgainCookie: "hjklfdahlfdassdljkhs",
-        nextLabel: get("walktrough.control.next"),
-        prevLabel: get("walktrough.control.back"),
-        doneLabel: get("walktrough.control.done"),
+        nextLabel: get("walkthrough.control.next"),
+        prevLabel: get("walkthrough.control.back"),
+        doneLabel: get("walkthrough.control.done"),
         steps: [
             {
-                title: get("walktrough.welcome.title"),
-                intro: get("walktrough.welcome.text"),
+                title: get("walkthrough.welcome.title"),
+                intro: get("walkthrough.welcome.text"),
             },
             {
-                title: get("walktrough.general.title"),
-                intro: get("walktrough.general.text"),
+                title: get("walkthrough.general.title"),
+                intro: get("walkthrough.general.text"),
             },
             {
                 element: tds_el("#num-type-div"),
                 title: get("numType.label"),
-                intro: get("walktrough.numTypeDiv.text"),
+                intro: get("walkthrough.numTypeDiv.text"),
             },
             {
                 element: tds_el("#question-selector"),
                 title: get("question.label"),
-                intro: get("walktrough.question.text"),
+                intro: get("walkthrough.question.text"),
             },
             {
                 element: tds_el("#header-multi-sel"),
                 title: get("header.label"),
-                intro: get("walktrough.header.text"),
+                intro: get("walkthrough.header.text"),
             },
             {
                 element: tds_el("#row-multi-sel"),
                 title: get("rows.label"),
-                intro: get("walktrough.rows.text"),
+                intro: get("walkthrough.rows.text"),
             },
             {
                 element: tds_el("#show-hide"),
-                title: get("walktrough.showHide.title"),
-                intro: get("walktrough.showHide.text"),
-                hint: get("walktrough.showHide.hint"),
+                title: get("walkthrough.showHide.title"),
+                intro: get("walkthrough.showHide.text"),
+                hint: get("walkthrough.showHide.hint"),
             },
             {
                 element: tc_el(".show-help"),
-                title: get("walktrough.showHelp.title"),
-                intro: get("walktrough.showHelp.text"),
-                hint: get("walktrough.showHelp.hint"),
+                title: get("walkthrough.showHelp.title"),
+                intro: get("walkthrough.showHelp.text"),
+                hint: get("walkthrough.showHelp.hint"),
             },
             {
                 element: tc_el(".hide-menu"),
-                title: get("walktrough.hideMenu.title"),
-                intro: get("walktrough.hideMenu.text"),
-                hint: get("walktrough.hideMenu.hint"),
+                title: get("walkthrough.hideMenu.title"),
+                intro: get("walkthrough.hideMenu.text"),
+                hint: get("walkthrough.hideMenu.hint"),
             },
         ],
     };
@@ -77,90 +77,90 @@ export function get_walkthrough_options(tc) {
             {
                 element: tds_el("#header-multi-sel"),
                 title: get("header.label"),
-                intro: get("walktrough.header.advancedText"),
+                intro: get("walkthrough.header.advancedText"),
             },
             {
                 element: tds_el("#row-multi-sel"),
                 title: get("rows.label"),
-                intro: get("walktrough.rows.advancedText"),
+                intro: get("walkthrough.rows.advancedText"),
             },
             {
                 element: fos_el("#flip-xy-button"),
-                title: get("walktrough.flipXY.title"),
-                intro: get("walktrough.flipXY.text"),
+                title: get("walkthrough.flipXY.title"),
+                intro: get("walkthrough.flipXY.text"),
             },
             {
                 element: fos_el("#plot-type-button"),
-                title: get("walktrough.plotType.title"),
-                intro: get("walktrough.plotType.text"),
+                title: get("walkthrough.plotType.title"),
+                intro: get("walkthrough.plotType.text"),
             },
             {
                 element: aos_el("#n-axis"),
-                title: get("walktrough.nAxis.title"),
-                intro: get("walktrough.nAxis.text"),
+                title: get("walkthrough.nAxis.title"),
+                intro: get("walkthrough.nAxis.text"),
             },
             {
                 element: aos_el("#show-subtitles"),
-                title: get("walktrough.showSubtitles.title"),
-                intro: get("walktrough.showSubtitles.text"),
+                title: get("walkthrough.showSubtitles.title"),
+                intro: get("walkthrough.showSubtitles.text"),
             },
             {
                 element: aos_el("#show-coltitle1"),
                 title: get("showColTitle1.label"),
-                intro: get("walktrough.showColTitle1.text"),
+                intro: get("walkthrough.showColTitle1.text"),
             },
             {
                 element: aos_el("#show-mean"),
                 title: get("showMean.label"),
-                intro: get("walktrough.showMean.text"),
+                intro: get("walkthrough.showMean.text"),
             },
             {
                 element: aos_el("#separate-headers"),
                 title: get("separateHeaders.label"),
-                intro: get("walktrough.separateHeaders.text"),
+                intro: get("walkthrough.separateHeaders.text"),
             },
             {
                 element: aos_el("#font-size"),
                 title: get("fontSize.label"),
-                intro: get("walktrough.fontSize.text"),
+                intro: get("walkthrough.fontSize.text"),
             },
 
             {
                 element: aos_el("#show-text"),
                 title: get("showText.label"),
                 intro:
-                    get("walktrough.showText.text1") +
+                    get("walkthrough.showText.text1") +
                     get("showText.always") +
-                    get("walktrough.showText.textpt1") +
+                    get("walkthrough.showText.textpt1") +
                     get("showText.never") +
-                    get("walktrough.showText.textpt2") +
+                    get("walkthrough.showText.textpt2") +
                     get("showText.ifGE5") +
-                    get("walktrough.showText.textpt3"),
+                    get("walkthrough.showText.textpt3"),
             },
             {
                 element: aos_el("#axis-labels"),
-                title: get("walktrough.axisLabels.title"),
+                title: get("walkthrough.axisLabels.title"),
                 intro:
-                    get("walktrough.axisLabels.text1") +
+                    get("walkthrough.axisLabels.text1") +
                     get("axisLabels.truncate") +
-                    get("walktrough.axisLabels.textpt1") +
+                    get("walkthrough.axisLabels.textpt1") +
                     get("axisLabels.whole") +
-                    get("walktrough.axisLabels.textpt2"),
+                    get("walkthrough.axisLabels.textpt2"),
             },
             {
                 element: cos_el("#colorscale-selector"),
                 title: get("color.scale"),
-                intro: get("walktrough.colorscaleSelector.text"),
+                intro: get("walkthrough.colorscaleSelector.text"),
             },
             {
                 element: cos_el("#colorscheme-selector"),
                 title: get("color.scheme"),
-                intro: get("walktrough.colorschemeSelector.text"),
+                intro: get("walkthrough.colorschemeSelector.text"),
             },
             {
                 element: tds_el("#save-app"),
                 title: get("saveSettings.label"),
-                intro: get("walktrough.saveSettings.text"),
+                intro: get("walkthrough.saveSettings.text"),
             },
         ],
     };
