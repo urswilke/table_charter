@@ -106,7 +106,9 @@ export function prepare_data(data_obj) {
             break;
         case "uncompressed":
             data = data_obj.data;
-    }
+        case "table-object":
+            data = merge_table_parts(data_obj.data);
+}
 
     const unique_combis = distinct(data, ["QuestNo", "TabNo"]).map(
         (x) => x.QuestNo + "-" + x.TabNo,
@@ -194,3 +196,34 @@ export var is_mobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent,
     );
+
+// from here: https://gist.github.com/thesofakillers/bcf39eaed428304ddc126ca8f12336f7
+function obj_arrays_to_array_objs(object_arrays){
+    let final_array = object_arrays[Object.keys(object_arrays)[0]].map(
+        // el is unused, but needs to be defined for map to give access to index i
+        (_el, i) => {
+            let internal_object = {};
+            Object.keys(object_arrays).forEach(
+                key => (internal_object[key] = object_arrays[key][i])
+            );
+            return internal_object;
+        }
+    );
+        return final_array;
+}
+
+// https://stackoverflow.com/questions/17500312/is-there-some-way-i-can-join-the-contents-of-two-javascript-arrays-much-like-i/59105862#59105862
+const left_join = (arr1, arr2, fun) => {
+    return arr1.map(q => ({ ...arr2.find( u => fun(q) === fun(u) ), ...q }));
+}
+
+function merge_table_parts(obj) {
+    // https://stackoverflow.com/questions/14810506/map-function-for-objects-instead-of-arrays/38829074#38829074
+    obj = Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, obj_arrays_to_array_objs(v)]))
+    var res;
+    res = left_join(obj.Row, obj.Tab, x => x.QuestNo + x.TabNo)
+    res = left_join(obj.Val, res, x => x.QuestNo + x.RowNo)
+    res = left_join(res, obj.Col, x => x.ColNo)
+    // res = left_join(res, obj.Head, x => x.HeadNo)
+    return res.sort((a, b) => a.QuestLine > b.QuestLine);
+}

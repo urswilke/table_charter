@@ -360,7 +360,7 @@ function tooltip_fun(n_decimals, decimal_formatter) {
                 : `${get("tooltips.column")}: ${x.ColTitle2}`,
             // if an MW value is not defined,
             // it would lead to an error, for a line plot without this check:
-            x.Value === undefined
+            x.Value === null
                 ? null
                 : `${get("tooltips.value")}: ${decimal_formatter(x.Value.toFixed(n_decimals))}`,
             null,
