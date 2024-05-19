@@ -26,9 +26,11 @@
     "label": "App mit diesen Plot-Einstellungen als Datei speichern"
   },
   "flipXY": {
-    "label": "-Achse"
+    "label1": "Kategorische Achse",
+    "label2": "-Achse"
   },
   "plotName": {
+    "label": "Plot-Typ",
     "line": "Linien-Diagramm",
     "bar": "Balken-Diagramm"
   },

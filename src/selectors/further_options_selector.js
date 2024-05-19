@@ -36,16 +36,16 @@ export class FurtherOptionsSelector extends LitElement {
     render() {
         return html`
             <div class="parent grid">
-                <div>categorical axis</div>
+                <div>${translate("flipXY.label1")}</div>
                 <button
                     @click=${this._update_xy}
                     id="flip-xy-button"
                     data-test-id="flip-xy-button"
                 >
-                    ${this.xy}${translate("flipXY.label")}
+                    ${this.xy}${translate("flipXY.label2")}
                 </button>
 
-                <div>plot type</div>
+                <div>${translate("plotName.label")}</div>
                 <button
                     @click=${this._update_plot_type}
                     id="plot-type-button"

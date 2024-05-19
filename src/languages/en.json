@@ -26,9 +26,11 @@
     "label": "Save app with these plot settings to file"
   },
   "flipXY": {
-    "label": " axis"
+    "label1": "categorical axis",
+    "label2": " axis"
   },
   "plotName": {
+    "label": "plot type",
     "line": "line chart",
     "bar": "bar chart"
   },
