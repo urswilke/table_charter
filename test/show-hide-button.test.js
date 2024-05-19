@@ -1,15 +1,13 @@
 import { html, render } from "lit";
 import { $, expect } from "@wdio/globals";
-import { prepare_data } from "../src/utils.js";
-import data_compressed from "../src/example_compressed.json";
 
 import "../src/tableCharter.js";
-const data = prepare_data(data_compressed).filter((x) => [0].includes(x.i_tab));
-const data_obj = {
-    type: "uncompressed",
-    data,
-};
-render(html`<table-charter .data=${data_obj}></table-charter>`, document.body);
+import data from "../src/example_tablebook_sample.json";
+
+render(
+    html`<table-charter .data=${data} walkthrough="hide"></table-charter>`,
+    document.body,
+);
 
 const table_charter_el = await $("table-charter");
 const adv_settings_button = await table_charter_el.$(

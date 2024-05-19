@@ -1,16 +1,7 @@
 import { html, render } from "lit";
 import { $, expect } from "@wdio/globals";
 
-import { prepare_data } from "../src/utils.js";
-import data_compressed from "../src/example_compressed.json";
-
-const data = prepare_data(data_compressed).filter((x) =>
-    [0, 1, 2, 29].includes(x.i_tab),
-);
-const data_obj = {
-    type: "uncompressed",
-    data,
-};
+import data from "../src/example_tablebook_sample.json";
 
 import "../src/tableCharter.js";
 import {
@@ -19,7 +10,10 @@ import {
     replace_field_strings,
 } from "./test_utils.js";
 
-render(html`<table-charter .data=${data_obj}></table-charter>`, document.body);
+render(
+    html`<table-charter .data=${data} walkthrough="hide"></table-charter>`,
+    document.body,
+);
 
 const table_charter_el = await $("table-charter");
 const table_data_selector_el = await $(">>>table-data-selector");
