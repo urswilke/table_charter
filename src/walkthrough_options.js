@@ -26,6 +26,10 @@ export function get_walkthrough_options(tc) {
                 intro: get("walktrough.welcome.text"),
             },
             {
+                title: get("walktrough.general.title"),
+                intro: get("walktrough.general.text"),
+            },
+            {
                 element: tds_el("#num-type-div"),
                 title: get("numType.label"),
                 intro: get("walktrough.numTypeDiv.text"),
