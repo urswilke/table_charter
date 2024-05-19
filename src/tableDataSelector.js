@@ -41,7 +41,9 @@ export class TableDataSelector extends LitElement {
     // Initialization:
     init_tablebook_data() {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-        this.data = add_spaces(prepare_data(this.html_data));
+        this.data = add_spaces(prepare_data(this.html_data))
+            // TODO: Also treat weighted tables
+            .filter(x => x.RowWeighted === "Unweighted");
         this.init_params();
         this._update_plot_data();
     }
