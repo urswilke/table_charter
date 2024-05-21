@@ -162,6 +162,9 @@ export class TableCharter extends LitElement {
             .content {
                 display: flex;
                 height: 100vh;
+                gap: 5px;
+                margin-top: 5px;
+                margin-bottom: 5px;
             }
 
             @media (max-aspect-ratio: 1) {
@@ -181,7 +184,6 @@ export class TableCharter extends LitElement {
 
             .column2,
             .column1 {
-                margin: 5px;
                 border-style: solid;
                 border-radius: 5px;
                 border-width: 1px;
