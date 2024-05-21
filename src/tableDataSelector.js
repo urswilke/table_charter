@@ -406,7 +406,6 @@ export class TableDataSelector extends LitElement {
                         </div>
                     </div>
                     <!-- https://stackoverflow.com/a/2062264 -->
-                    <span class="clear"></span>
                     <div class="selector-group" id="row-multi-sel">
                         <label for="rows">${translate("rows.label")}</label>
                         <div class="content">
@@ -423,14 +422,12 @@ export class TableDataSelector extends LitElement {
                             </multi-selector>
                         </div>
                     </div>
-                    <span class="clear"></span>
                     <button
                         id="show-hide"
                         data-test-id="show-hide-button"
                         @click="${this._on_expand}">
                         ${this.params.collapsed_view ? translate("showHide.show") : translate("showHide.hide")}
                     </button>
-                    <span class="clear"></span>
                     <div 
                         id="settings"
                         data-test-id="settings-div"
@@ -462,7 +459,6 @@ export class TableDataSelector extends LitElement {
                                     .axis_labels=${this.choices.axis_labels}
                                 >
                                 </advanced-options-selector>
-                                <span class="clear"></span>
 
                                 <hr></hr>
                                 <colorscale-selector 	
@@ -486,10 +482,6 @@ export class TableDataSelector extends LitElement {
 
     static styles = [
         css`
-            span.clear {
-                clear: left;
-                display: block;
-            }
             option:checked {
                 background: red linear-gradient(#333, #333);
             }
