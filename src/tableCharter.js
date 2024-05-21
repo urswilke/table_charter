@@ -222,13 +222,6 @@ export class TableCharter extends LitElement {
                 padding-left: 5px;
                 padding-right: 5px;
             }
-            table-data-selector {
-                display: flex;
-                flex-direction: column;
-                margin-top: 5px;
-                margin-bottom: 5px;
-                gap: 5px;
-            }
         `,
     ];
 }
