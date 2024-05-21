@@ -132,12 +132,18 @@ export class MultiSelector extends LitElement {
             }
             select {
                 width: 100%;
+                border: solid grey 1px;
+                border-radius: 5px;
             }
             option {
                 text-overflow: ellipsis;
                 margin: 1px;
+                /* for firefox this would be needed to have the same margins 
+                on top as left and right. on chrome not...: */
+                /* margin-top: 0; */
                 overflow: hidden;
                 white-space: nowrap;
+                border-radius: 4px;
             }
             label {
                 padding-left: 7px;

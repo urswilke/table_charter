@@ -67,19 +67,18 @@ export class TableCharter extends LitElement {
 
     hide_menu() {
         this.el(".hide-menu").innerText = "☰";
-        this.el("table-data-selector").style.visibility = "hidden";
-        this.el(".column1").style.flexBasis = "1%";
-        this.el(".column1").style.minWidth = "0";
+        // this.el(".settings").style.visibility = "hidden";
+        this.el("table-data-selector").style.display = "none";
+        this.el(".column1").style.flexBasis = "0";
+        this.el(".column2").style.flexBasis = "100%";
+        this.el(".column1").style.flex = "1 0 content";
         this.el(".column1").style.overflowY = "hidden";
-        this.el(".column2").style.flexBasis = "75%";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
-        this.el("table-data-selector").style.visibility = "visible";
-        this.el(".column1").style.overflowY = "auto";
+        this.el("table-data-selector").style.display = "block";
         this.el(".column1").style.flexBasis = "25%";
-        this.el(".column1").style.minWidth = "150px";
-        this.el(".column2").style.flexBasis = "95%";
+        this.el(".column2").style.flexBasis = "75%";
     }
     show_hide_menu() {
         this.el(".hide-menu").innerText === "☰"
@@ -122,20 +121,27 @@ export class TableCharter extends LitElement {
             : html`
                   <div class="content">
                       <div class="column1">
-                          <button
-                              class="hide-menu"
-                              @click="${this.show_hide_menu}"
-                          >
-                              ×
-                          </button>
-                          <button class="show-help" @click="${this.show_help}">
-                              ?
-                          </button>
+                          <div id="top-navbar">
+                              <button
+                                  class="hide-menu"
+                                  @click="${this.show_hide_menu}"
+                              >
+                                  ×
+                              </button>
+                              <button
+                                  class="show-help"
+                                  @click="${this.show_help}"
+                              >
+                                  ?
+                              </button>
+                          </div>
 
-                          <table-data-selector
-                              .html_data=${this.data}
-                              @update-data="${this.update_plot_data}"
-                          ></table-data-selector>
+                          <div class="settings">
+                              <table-data-selector
+                                  .html_data=${this.data}
+                                  @update-data="${this.update_plot_data}"
+                              ></table-data-selector>
+                          </div>
                       </div>
                       <div class="column2">
                           <ojs-plot
@@ -171,36 +177,55 @@ export class TableCharter extends LitElement {
                 }
             }
 
+            .column2,
             .column1 {
-                flex: 0 0 25%;
+                margin: 5px;
+                border-style: solid;
+                border-radius: 5px;
+                border-width: 1px;
+            }
+            .column1 {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 25%;
                 overflow-y: auto;
-                padding: 10px;
+                align-self: stretch;
                 /* TODO: add resizing! with something like:
                 resize: horizontal; */
             }
             .column2 {
-                flex: 2 1 75%;
+                flex: 1 1 75%;
                 display: flex;
                 flex-direction: column;
                 overflow: auto;
                 /* https://stackoverflow.com/questions/46417543/is-there-a-cross-axis-counterpart-to-the-flex-grow-property-or-flex-which/70934694#70934694 */
                 align-self: stretch;
                 scrollbar-gutter: stable;
-            }
-            .column2,
-            .column1,
-            .show-help,
-            .hide-menu {
-                margin: 5px;
-                border-style: solid;
-                border-radius: 8px;
-                border-width: 2px;
+                margin-left: 0;
             }
             .show-help,
             .hide-menu {
-                float: right;
-                font-size: 1.2em;
-                margin: 0px;
+                margin: 1px;
+            }
+            #top-navbar {
+                background: #5e677b;
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
+                padding-left: 5px;
+                padding-right: 5px;
+                border-bottom: 1px solid;
+            }
+            .settings {
+                overflow-y: auto;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            table-data-selector {
+                display: flex;
+                flex-direction: column;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                gap: 5px;
             }
         `,
     ];

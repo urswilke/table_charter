@@ -89,7 +89,6 @@ export class ColorscaleSelector extends LitElement {
                 display: grid;
                 grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
                 grid-gap: 1.2em;
-                margin: 0.3em;
             }
 
             div.subselect {

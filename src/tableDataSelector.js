@@ -43,7 +43,7 @@ export class TableDataSelector extends LitElement {
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
         this.data = add_spaces(prepare_data(this.html_data))
             // TODO: Also treat weighted tables
-            .filter(x => x.RowWeighted === "Unweighted");
+            .filter((x) => x.RowWeighted === "Unweighted");
         this.init_params();
         this._update_plot_data();
     }
@@ -103,18 +103,22 @@ export class TableDataSelector extends LitElement {
         if (this.choices.n_axis && this.question_raw_data[0].TabType !== "MW") {
             // TODO: it feels dangerous to calculate the totals in a separate array from this.choices.header_table ...
             // -> discuss with Wolf if it's ok like this...!
-            const totals = this.question_raw_data.filter(
-                (x) =>
-                    x.RowContent === "Total" &&
-                    // TODO: Treat weighted stuff more generally...!
-                    x.RowWeighted === "Unweighted" &&
-                    // TODO: HACK... tell Wolf I need this information to filter out "Sum of valid answers" row from data!
-                    ["GESAMT", "TOTAL"].includes(x.RowTitle1),
-            ).map(x => x.Value)
+            const totals = this.question_raw_data
+                .filter(
+                    (x) =>
+                        x.RowContent === "Total" &&
+                        // TODO: Treat weighted stuff more generally...!
+                        x.RowWeighted === "Unweighted" &&
+                        // TODO: HACK... tell Wolf I need this information to filter out "Sum of valid answers" row from data!
+                        ["GESAMT", "TOTAL"].includes(x.RowTitle1),
+                )
+                .map((x) => x.Value);
             this.update_choices({
-                header_table: this.choices.header_table.map((x, i) => ({...x, Value: totals[i]})),
+                header_table: this.choices.header_table.map((x, i) => ({
+                    ...x,
+                    Value: totals[i],
+                })),
             });
-        
         }
 
         this.sel_header_data();
@@ -491,18 +495,16 @@ export class TableDataSelector extends LitElement {
                 background: #5e677b;
                 color: white;
                 display: block;
-                border-top-right-radius: 6px;
-                border-top-left-radius: 6px;
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
                 padding: 5px;
                 padding-left: 15px;
             }
             div.selector-group,
             #show-hide {
-                margin-top: 5px;
-                margin-bottom: 5px;
                 border-style: solid;
-                border-radius: 8px;
-                border-width: 2px;
+                border-radius: 5px;
+                border-width: 1px;
             }
             div.content {
                 padding: 3px;
@@ -518,6 +520,11 @@ export class TableDataSelector extends LitElement {
             }
             #save-app {
                 width: 100%;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background-color: light-dark(black, white);
             }
         `,
     ];
