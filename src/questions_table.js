@@ -7,15 +7,27 @@ export class QuestionsTable extends LitElement {
         questions_table_data: { type: Array },
     };
     firstUpdated() {
+        // TODO: don't overwrite this information...:
+        let table_data = this.questions_table_data.map((x) => ({
+            ...x,
+            show: true,
+        }));
         this.questions_table = new Tabulator(
             this.renderRoot?.querySelector("#questions-table"),
             {
                 height: 130, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
-                data: this.questions_table_data,
+                data: table_data,
                 // layout: "fitColumns", //fit columns to width of table (optional)
                 columns: [
                     //Define Table Columns
-                    { title: "i", field: "i_tab" },
+                    { title: "i", field: "i_tab", width: 30 },
+                    {
+                        title: "show",
+                        field: "show",
+                        width: 30,
+                        editor: true,
+                        formatter: "tickCross",
+                    },
                     { title: "Question", field: "TabTitle" },
                 ],
             },
