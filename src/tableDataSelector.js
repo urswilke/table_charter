@@ -19,6 +19,7 @@ import "./selectors/num_type_selector.js";
 import "./selectors/colorscale_selector.js";
 import "./selectors/further_options_selector.js";
 import "./selectors/advanced_options_selector.js";
+import "./questions_table.js";
 
 import { produce } from "immer";
 import { is_mobile } from "./utils.js";
@@ -31,6 +32,7 @@ export class TableDataSelector extends LitElement {
         plot_data: { type: Array },
         params: { type: Object },
         choices: { type: Object },
+        show_questions_table: { type: Boolean },
     };
 
     connectedCallback() {
@@ -49,6 +51,7 @@ export class TableDataSelector extends LitElement {
     }
 
     init_params() {
+        this.show_questions_table = false;
         this.params = {};
         this.choices = {};
         this.choices.xy = "x";
@@ -240,6 +243,9 @@ export class TableDataSelector extends LitElement {
             html_el?.classList.remove("all-filtered");
         }
     }
+    show_hide_questions_table() {
+        this.show_questions_table = !this.show_questions_table;
+    }
 
     // Talk to parent:
     _update_plot_data() {
@@ -380,14 +386,17 @@ export class TableDataSelector extends LitElement {
                     </div>
                     <div class="selector-group" id="question-selector">
                         <label>${translate("question.label")}</label>
-                        <div class="content">
+                        <div class="content questions-div">
                             <question-selector 					
                                 data-test-id="question-selector"	
                                 @update-question="${this._on_question_update}" 		
                                 .chosen_tab_no=${this.i_tabs[this.choices.i_tab]} 
                                 .all_questions=${this.params.title_table}>
                             </question-selector>
+                            <button @click=${this.show_hide_questions_table}>🔠</button>
+
                         </div>
+                        <questions-table .questions_table_data=${this.params.title_table}  ?hidden=${!this.show_questions_table}></questions-table>
                     </div>
                     <div class="selector-group" id="header-multi-sel">
                         <label for="headers">${translate("header.label")}</label>
@@ -526,6 +535,10 @@ export class TableDataSelector extends LitElement {
                 margin-top: 5px;
                 margin-bottom: 5px;
                 gap: 5px;
+            }
+            .questions-div {
+                display: flex;
+                flex-direction: row;
             }
         `,
     ];
