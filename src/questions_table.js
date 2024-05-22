@@ -7,17 +7,41 @@ export class QuestionsTable extends LitElement {
         questions_table_data: { type: Array },
     };
     firstUpdated() {
-        // TODO: don't overwrite this information...:
-        let table_data = this.questions_table_data.map((x) => ({
+        this.gen_table();
+    }
+    gen_table() {
+        var table_data = this.questions_table_data.map((x, i) => ({
             ...x,
+            // TODO: don't overwrite this information...:
             show: true,
+            id: x.i_tab,
+            clone: "♲",
         }));
-        this.questions_table = new Tabulator(
+        function duplicate_row(e, cell) {
+            const row = cell.getRow();
+            var i = table.getRowPosition(row) - 1;
+            const data = table.getData().map((x) => ({
+                ...x,
+                id_index: Number(String(x.id).split("_")[1] || "0"),
+            }));
+            // array of indices of all questions with this i_tab:
+            const all_indices = data
+                .filter((x) => x.i_tab === data[i].i_tab)
+                .map((x) => x.id_index);
+            const new_subindex = Math.max(...all_indices) + 1;
+            let this_row = cell.getData();
+            this_row = { ...this_row, id: this_row.i_tab + "_" + new_subindex };
+            // https://github.com/olifolkerd/tabulator/issues/4034#issuecomment-1326211853
+            table.addData([this_row], false, row.getData().id);
+        }
+
+        const table = new Tabulator(
             this.renderRoot?.querySelector("#questions-table"),
             {
                 height: 130, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
                 data: table_data,
-                // layout: "fitColumns", //fit columns to width of table (optional)
+                // reactiveData: true, //turn on data reactivity
+                layout: "fitColumns", //fit columns to width of table (optional)
                 columns: [
                     //Define Table Columns
                     { title: "i", field: "i_tab", width: 30 },
@@ -29,9 +53,16 @@ export class QuestionsTable extends LitElement {
                         formatter: "tickCross",
                     },
                     { title: "Question", field: "TabTitle" },
+                    {
+                        title: "Clone",
+                        field: "clone",
+                        width: 20,
+                        cellClick: duplicate_row,
+                    },
                 ],
             },
         );
+        this.questions_table = table;
     }
 
     render() {
