@@ -25,6 +25,9 @@
   "saveSettings": {
     "label": "App mit diesen Plot-Einstellungen als Datei speichern"
   },
+  "resetPlots": {
+    "label": "Einstellungen aller Plots zurücksetzen"
+  },
   "flipXY": {
     "label1": "Kategorische Achse",
     "label2": "-Achse"
@@ -175,6 +178,9 @@
     },
     "colorschemeSelector": {
       "text": "Hier kannst Du verschiedene Farbschemata auswählen. Die verfügbare Auswahl hängt davon ab, ob eine kategorische oder ordinale Farbskala verwendet wird (siehe vorherigen Schritt)."
+    },
+    "resetPlots": {
+      "text": "Durch Klicken hier kannst Du bei allen Plots die Einstellungen zurücksetzen."
     },
     "saveSettings": {
       "text": "Durch Klicken hier kannst Du die App mit den aktuellen Einstellungen der Plots im Download-Ordner Deines Browsers speichern."

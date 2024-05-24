@@ -22,6 +22,9 @@
   "settings": {
     "label": "Settings"
   },
+  "resetPlots": {
+    "label": "Reset all plots' settings"
+  },
   "saveSettings": {
     "label": "Save app with these plot settings to file"
   },
@@ -175,6 +178,9 @@
     },
     "colorschemeSelector": {
       "text": "Here you can choose between various color schemes. The available choices depend on whether a categorical or ordinal color scale is used (see previous step)."
+    },
+    "resetPlots": {
+      "text": "Clicking this button resets the settings of all plots."
     },
     "saveSettings": {
       "text": "Clicking this button saves the app in your browser's download folder with all the current settings chosen in the different plots."
