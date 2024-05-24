@@ -74,6 +74,10 @@ export class TableDataSelector extends LitElement {
         this.choices.show_text = "ifGE5";
         this.choices.axis_labels = "truncate";
 
+        // TODO: this will take the first table-charter element in the html,
+        // if there are multiple...
+        // --> find a way to refer to the lit element,
+        // instead of using document.querySelector()...!
         const saved_settings =
             document.querySelector("table-charter").dataset.savedSettings;
         this.saved =
