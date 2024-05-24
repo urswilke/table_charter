@@ -32,7 +32,6 @@ export class TableDataSelector extends LitElement {
         plot_data: { type: Array },
         params: { type: Object },
         choices: { type: Object },
-        show_questions_table: { type: Boolean },
     };
 
     connectedCallback() {
@@ -51,8 +50,8 @@ export class TableDataSelector extends LitElement {
     }
 
     init_params() {
-        this.show_questions_table = false;
         this.params = {};
+        this.params.show_questions_table = false;
         this.choices = {};
         this.choices.xy = "x";
         this.choices.header_table = gen_header_table(this.data);
@@ -244,7 +243,9 @@ export class TableDataSelector extends LitElement {
         }
     }
     show_hide_questions_table() {
-        this.show_questions_table = !this.show_questions_table;
+        this.update_params({
+            show_questions_table: !this.params.show_questions_table,
+        });
     }
 
     // Talk to parent:
@@ -396,7 +397,7 @@ export class TableDataSelector extends LitElement {
                             <button @click=${this.show_hide_questions_table}>🔠</button>
 
                         </div>
-                        <questions-table .questions_table_data=${this.params.title_table}  ?hidden=${!this.show_questions_table}></questions-table>
+                        <questions-table .questions_table_data=${this.params.title_table}  ?hidden=${!this.params.show_questions_table}></questions-table>
                     </div>
                     <div class="selector-group" id="header-multi-sel">
                         <label for="headers">${translate("header.label")}</label>
