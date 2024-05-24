@@ -42,6 +42,18 @@ export class QuestionsTable extends LitElement {
                 data: table_data,
                 // reactiveData: true, //turn on data reactivity
                 layout: "fitColumns", //fit columns to width of table (optional)
+                selectableRange: 1,
+                selectableRangeColumns: true,
+                headerSortClickElement: "icon",
+                selectableRangeRows: true,
+                clipboard: true,
+                clipboardCopyRowRange: "range",
+                clipboardPasteParser: "range",
+                clipboardPasteAction: "range",
+                clipboardCopyConfig: {
+                    rowHeaders: false,
+                    columnHeaders: false,
+                },
                 columns: [
                     //Define Table Columns
                     { title: "i", field: "i_tab", width: 30 },
