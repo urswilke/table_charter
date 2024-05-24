@@ -308,6 +308,7 @@ export class OJSPlot extends LitElement {
             .large-font-swatches,
             .large-font-ramp {
                 font-size: var(--font-size);
+                justify-content: center;
             }
             .plot-div,
             .save-svg-button {
