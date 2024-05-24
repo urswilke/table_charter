@@ -57,12 +57,18 @@ export class QuestionsTable extends LitElement {
                 },
                 columns: [
                     //Define Table Columns
-                    { title: "i", field: "i_tab", width: 30 },
+                    {
+                        title: "i",
+                        field: "i_tab",
+                        width: 30,
+                        hozAlign: "right",
+                    },
                     {
                         title: "show",
                         field: "show",
                         width: 30,
                         editor: true,
+                        hozAlign: "center",
                         formatter: "tickCross",
                     },
                     {
@@ -77,6 +83,7 @@ export class QuestionsTable extends LitElement {
                         title: "Clone",
                         field: "clone",
                         width: 20,
+                        hozAlign: "center",
                         cellClick: duplicate_row,
                     },
                 ],
