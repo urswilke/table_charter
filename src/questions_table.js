@@ -52,7 +52,14 @@ export class QuestionsTable extends LitElement {
                         editor: true,
                         formatter: "tickCross",
                     },
-                    { title: "Question", field: "TabTitle" },
+                    {
+                        title: "Question",
+                        field: "TabTitle",
+                        editor: "textarea",
+                        editorParams: {
+                            shiftEnterSubmit: true,
+                        },
+                    },
                     {
                         title: "Clone",
                         field: "clone",
