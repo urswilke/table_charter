@@ -43,6 +43,7 @@ export class QuestionsTable extends LitElement {
                 // reactiveData: true, //turn on data reactivity
                 layout: "fitColumns", //fit columns to width of table (optional)
                 selectableRange: 1,
+                history: true,
                 selectableRangeColumns: true,
                 headerSortClickElement: "icon",
                 selectableRangeRows: true,
