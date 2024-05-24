@@ -70,13 +70,16 @@ export class TableCharter extends LitElement {
         // this.el(".settings").style.visibility = "hidden";
         this.el("table-data-selector").style.display = "none";
         this.el(".show-help").style.display = "none";
-        this.el(".column1").style.flexBasis = "content";
+        this.el(".column1").style.flex = "0 1 content";
+        this.el(".column1").style.minWidth = "0";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
         this.el("table-data-selector").style.display = "block";
         this.el(".show-help").style.display = "inline-block";
         this.el(".column1").style.flexBasis = "25%";
+        this.el(".column1").style.flex = null;
+        this.el(".column1").style.minWidth = "180px";
     }
     show_hide_menu() {
         this.el(".hide-menu").innerText === "☰"
@@ -162,11 +165,25 @@ export class TableCharter extends LitElement {
                 margin-top: 5px;
                 margin-bottom: 5px;
             }
+            @media (min-aspect-ratio: 1) {
+                .column1 {
+                    min-width: 180px;
+                    max-width: 70%;
+                    width: 25%;
+                    height: 100vh;
+                    resize: horizontal;
+                }
+            }
 
             @media (max-aspect-ratio: 1) {
                 .content {
                     flex-direction: column;
                     align-items: center;
+                }
+                .column1 {
+                    height: 25%;
+                    width: 100vw;
+                    resize: vertical;
                 }
             }
 
@@ -175,6 +192,11 @@ export class TableCharter extends LitElement {
                 .content {
                     flex-direction: column;
                     align-items: center;
+                }
+                .column1 {
+                    height: 25%;
+                    width: 100vw;
+                    resize: vertical;
                 }
             }
 
@@ -187,11 +209,10 @@ export class TableCharter extends LitElement {
             .column1 {
                 display: flex;
                 flex-direction: column;
-                flex: 0 1 25%;
-                overflow-y: auto;
+                /* it's important that there is not flex grow/shrink when you want to resize */
+                /* flex: 0 1 25%; */
+                overflow-y: scroll;
                 align-self: stretch;
-                /* TODO: add resizing! with something like:
-                resize: horizontal; */
             }
             .column2 {
                 flex: 1 1;
@@ -216,7 +237,7 @@ export class TableCharter extends LitElement {
                 border-bottom: 1px solid;
             }
             .settings {
-                overflow-y: auto;
+                /* overflow-y: auto; */
                 padding-left: 5px;
                 padding-right: 5px;
             }
