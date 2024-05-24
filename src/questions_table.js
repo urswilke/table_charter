@@ -100,6 +100,11 @@ export class QuestionsTable extends LitElement {
         css`
             ${unsafeCSS(style)}
         `,
+        css`
+            #questions-table {
+                border-radius: 5px;
+            }
+        `,
     ];
 }
 customElements.define("questions-table", QuestionsTable);
