@@ -33,7 +33,9 @@ export class QuestionSelector extends LitElement {
                 >
                     ${this.all_questions.map(
                         (x) => html`
-                            <option value="${x.i_tab}">${x.TabTitle}</option>
+                            <option value="${x.i_tab_dyn}">
+                                ${x.TabTitle}
+                            </option>
                         `,
                     )}
                 </select>

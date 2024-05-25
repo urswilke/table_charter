@@ -111,9 +111,8 @@ export class TableDataSelector extends LitElement {
 
     // Helper:
     sel_question_data() {
-        this.question_raw_data = this.data.filter(
-            (x) => x.i_tab === this.i_tab,
-        );
+        const i_tab = this.params.title_table[this.i_tab].i_tab;
+        this.question_raw_data = this.data.filter((x) => x.i_tab === i_tab);
 
         this.question_data = this.question_raw_data.filter((x) =>
             ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
@@ -417,12 +416,11 @@ export class TableDataSelector extends LitElement {
         });
     }
     _on_table_update(e) {
+        const old_id = this.params.title_table[this.i_tab].id;
         this.update_params({
             title_table: e.detail.table,
         });
-        if (e.detail.i < this.i_tab) {
-            this.i_tab += 1;
-        }
+        this.i_tab = this.params.title_table.findIndex((x) => x.id === old_id);
         this.sel_question_data();
         this._update_plot_data();
     }

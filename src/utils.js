@@ -99,9 +99,18 @@ export function gen_plot_type_string(tab_sel_obj) {
 
 export function prepare_data(data_obj) {
     data_obj.Tab = data_obj.Tab.map((x, i) => ({
+        // ascending index 0, 1, 2, ... for every question in the data (pair of QuestNo & TabNo)
         i_tab: i,
         ...x,
+        // when plots are added via duplicating rows in questions-table,
+        // this will re-build this index, which will generate a new
+        // ascending index 0, 1, 2, ... every time a row gets duplicated:
         i_tab_dyn: i,
+        // this is used for indexing with tabulator in questions-table:
+        // every time a row is added, i_tab is taken and the suffix "_" + 1, 2, 3, ... is added:
+        // i.e. for instance: 0, 0_1, 0_2, 1, 2, ...
+        // (could also be replaced by i_tab_dyn...)
+        id: i,
     }));
     return merge_table_parts(data_obj);
 }
