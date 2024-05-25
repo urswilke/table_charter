@@ -56,7 +56,7 @@ export class TableDataSelector extends LitElement {
             .filter((x) => x.RowWeighted === "Unweighted");
         this.init_params();
         this.i_tab = 0;
-        this.init_choices();
+        this.init_plot_settings();
     }
 
     init_params() {
@@ -68,6 +68,18 @@ export class TableDataSelector extends LitElement {
             ...x,
             show: true,
         }));
+    }
+    init_plot_settings() {
+        // TODO: this will take the first table-charter element in the html,
+        // if there are multiple...
+        // --> find a way to refer to the lit element,
+        // instead of using document.querySelector()...!
+        const saved_settings =
+            document.querySelector("table-charter").dataset.savedSettings;
+        this.saved =
+            (saved_settings && JSON.parse(saved_settings)) ||
+            new Array(this.params.title_table.length).fill({});
+        this.init_choices();
     }
     init_choices() {
         this.choices = {};
@@ -89,16 +101,6 @@ export class TableDataSelector extends LitElement {
             show_text: "ifGE5",
             axis_labels: "truncate",
         });
-
-        // TODO: this will take the first table-charter element in the html,
-        // if there are multiple...
-        // --> find a way to refer to the lit element,
-        // instead of using document.querySelector()...!
-        const saved_settings =
-            document.querySelector("table-charter").dataset.savedSettings;
-        this.saved =
-            (saved_settings && JSON.parse(saved_settings)) ||
-            new Array(this.params.title_table.length).fill({});
         this.sel_question_data();
         this._update_plot_data();
     }
@@ -524,7 +526,7 @@ export class TableDataSelector extends LitElement {
                                     .chosen_colorscheme=${this.choices.color_scheme}>
                                 </colorscale-selector>
                                 <hr></hr>
-                                <button id="reset-plots" @click="${this.init_choices}">${translate("resetPlots.label")}</button>
+                                <button id="reset-plots" @click="${this.init_plot_settings}">${translate("resetPlots.label")}</button>
                                 <button id="save-app" @click="${save_file}">${translate("saveSettings.label")}</button>
                             </div>
                         </div>
