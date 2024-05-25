@@ -74,6 +74,7 @@ export class OJSPlot extends LitElement {
             grid_end,
             len_string,
             flex_dir,
+            cross_dir,
             write_labels,
             content_justifier,
             word_breaker,
@@ -100,6 +101,7 @@ export class OJSPlot extends LitElement {
             padding2_string = "padding-right";
             grid_end = "grid-column-end";
             flex_dir = "column";
+            cross_dir = "row";
             write_labels = () => {
                 write_col_title2();
 
@@ -119,6 +121,7 @@ export class OJSPlot extends LitElement {
             padding2_string = "padding-top";
             grid_end = "grid-row-end";
             flex_dir = "row";
+            cross_dir = "column";
             write_labels = () => {
                 show_coltitle1 && write_col_title1();
                 show_n && write_col_totals();
@@ -180,7 +183,8 @@ export class OJSPlot extends LitElement {
             display: "grid",
             [grid_template_string]: `repeat(${n_cats}, minmax(0, 1fr))`,
             [len_string]: plot_width,
-            "grid-gap": inset + "px",
+            [flex_dir + "-gap"]: inset + "px",
+            [cross_dir + "-gap"]: "5px",
             [padding1_string]: padding + "px",
             [padding2_string]: padding + "px",
             "font-size": font_size + "px",
@@ -304,6 +308,7 @@ export class OJSPlot extends LitElement {
             .large-font-swatches,
             .large-font-ramp {
                 font-size: var(--font-size);
+                justify-content: center;
             }
             .plot-div,
             .save-svg-button {

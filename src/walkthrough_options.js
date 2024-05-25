@@ -158,6 +158,11 @@ export function get_walkthrough_options(tc) {
                 intro: get("walkthrough.colorschemeSelector.text"),
             },
             {
+                element: tds_el("#reset-plots"),
+                title: get("resetPlots.label"),
+                intro: get("walkthrough.resetPlots.text"),
+            },
+            {
                 element: tds_el("#save-app"),
                 title: get("saveSettings.label"),
                 intro: get("walkthrough.saveSettings.text"),

@@ -70,17 +70,13 @@ export class TableCharter extends LitElement {
         // this.el(".settings").style.visibility = "hidden";
         this.el("table-data-selector").style.display = "none";
         this.el(".show-help").style.display = "none";
-        this.el(".column1").style.flexBasis = "0";
-        this.el(".column2").style.flexBasis = "100%";
-        this.el(".column1").style.flex = "1 0 content";
-        this.el(".column1").style.overflowY = "hidden";
+        this.el(".column1").style.flexBasis = "content";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
         this.el("table-data-selector").style.display = "block";
         this.el(".show-help").style.display = "inline-block";
         this.el(".column1").style.flexBasis = "25%";
-        this.el(".column2").style.flexBasis = "75%";
     }
     show_hide_menu() {
         this.el(".hide-menu").innerText === "☰"
@@ -191,14 +187,14 @@ export class TableCharter extends LitElement {
             .column1 {
                 display: flex;
                 flex-direction: column;
-                flex: 1 1 25%;
+                flex: 0 1 25%;
                 overflow-y: auto;
                 align-self: stretch;
                 /* TODO: add resizing! with something like:
                 resize: horizontal; */
             }
             .column2 {
-                flex: 1 1 75%;
+                flex: 1 1;
                 display: flex;
                 flex-direction: column;
                 overflow: auto;

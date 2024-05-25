@@ -11,6 +11,7 @@ import {
     prepare_data,
     save_file,
     add_spaces,
+    left_join,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -46,42 +47,49 @@ export class TableDataSelector extends LitElement {
             // TODO: Also treat weighted tables
             .filter((x) => x.RowWeighted === "Unweighted");
         this.init_params();
-        this._update_plot_data();
+        this.i_tab = 0;
+        this.init_choices();
     }
 
     init_params() {
         this.params = {};
-        this.params.show_questions_table = false;
-        this.choices = {};
-        this.choices.xy = "x";
-        this.choices.header_table = gen_header_table(this.data);
-        this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
-
-        let title_table = this.params.title_table[0];
-        this.choices.i_tab = title_table.i_tab;
-        this.i_tab = title_table.i_tab;
-        // TODO: talk with Wolf how exactly to deal with the numbering of tables and clean up the mess of i_tab, i_tabs & TabNo
-        this.i_tabs = this.params.title_table.map((x) => x.i_tab);
-        this.choices.tab_title = title_table.TabTitle;
         this.params.row_type = ["%", "n"];
-        this.choices.row_type = this.params.row_type[0];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = true;
-        this.choices.n_axis = true;
-        this.choices.show_subtitles = false;
-        this.choices.show_coltitle1 = true;
-        this.choices.show_mean = true;
-        this.choices.separate_headers = true;
-        this.choices.font_size = is_mobile ? 12 : 20;
-        this.choices.show_text = "ifGE5";
-        this.choices.axis_labels = "truncate";
+        this.params.title_table = distinct(this.data, ["i_tab", "TabTitle"]);
+    }
+    init_choices() {
+        this.choices = {};
+        let title_table = this.params.title_table[this.i_tab];
+        // TODO: talk with Wolf how exactly to deal with the numbering of tables and clean up the mess of i_tab, i_tabs & TabNo
+        this.i_tabs = this.params.title_table.map((x) => x.i_tab);
+        this.update_choices({
+            i_tab: this.i_tab,
+            xy: "x",
+            header_table: gen_header_table(this.data),
+            tab_title: title_table.TabTitle,
+            row_type: this.params.row_type[0],
+            n_axis: true,
+            show_subtitles: false,
+            show_coltitle1: true,
+            show_mean: true,
+            separate_headers: true,
+            font_size: is_mobile ? 12 : 20,
+            show_text: "ifGE5",
+            axis_labels: "truncate",
+        });
 
+        // TODO: this will take the first table-charter element in the html,
+        // if there are multiple...
+        // --> find a way to refer to the lit element,
+        // instead of using document.querySelector()...!
         const saved_settings =
             document.querySelector("table-charter").dataset.savedSettings;
         this.saved =
             (saved_settings && JSON.parse(saved_settings)) ||
             new Array(this.params.title_table.length).fill({});
         this.sel_question_data();
+        this._update_plot_data();
     }
 
     // Helper:
@@ -102,6 +110,7 @@ export class TableDataSelector extends LitElement {
             plot_type: gen_plot_type_string(this),
             ...this.saved[this.i_tab],
         });
+        // For column totals in plot:
         if (this.choices.n_axis && this.question_raw_data[0].TabType !== "MW") {
             // TODO: it feels dangerous to calculate the totals in a separate array from this.choices.header_table ...
             // -> discuss with Wolf if it's ok like this...!
@@ -121,6 +130,28 @@ export class TableDataSelector extends LitElement {
                     Value: totals[i],
                 })),
             });
+        }
+        // For column means in plot:
+        if (
+            this.choices.show_mean &&
+            this.question_raw_data[0].TabType === "CAT"
+        ) {
+            const means = this.question_raw_data
+                .filter(
+                    (x) =>
+                        x.RowContent === "Statistics" &&
+                        // TODO: Treat weighted stuff more generally...!
+                        // (not sure if it's needed here; copy-pasted it from the code for the totals...)
+                        x.RowWeighted === "Unweighted" &&
+                        // TODO: HACK... tell Wolf I need this information to filter out other statistics row from data!
+                        ["Mittelwert", "Mean"].includes(x.RowTitle1),
+                )
+                .map((x) => ({ ColNo: x.ColNo, ColMean: x.Value }));
+            this.question_data = left_join(
+                this.question_data,
+                means,
+                (x) => x.ColNo,
+            );
         }
 
         this.sel_header_data();
@@ -482,6 +513,7 @@ export class TableDataSelector extends LitElement {
                                     .chosen_colorscheme=${this.choices.color_scheme}>
                                 </colorscale-selector>
                                 <hr></hr>
+                                <button id="reset-plots" @click="${this.init_choices}">${translate("resetPlots.label")}</button>
                                 <button id="save-app" @click="${save_file}">${translate("saveSettings.label")}</button>
                             </div>
                         </div>
@@ -516,14 +548,14 @@ export class TableDataSelector extends LitElement {
             .hide {
                 display: none;
             }
-            #show-hide {
-                width: 100%;
-            }
             .all-filtered {
                 border: solid red;
             }
-            #save-app {
+            button {
                 width: 100%;
+            }
+            #reset-plots {
+                margin-bottom: 5px;
             }
             hr {
                 border: none;
