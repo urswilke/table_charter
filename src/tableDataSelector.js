@@ -90,8 +90,6 @@ export class TableDataSelector extends LitElement {
     init_choices() {
         this.choices = {};
         let title_table = this.params.title_table[this.i_tab];
-        // TODO: talk with Wolf how exactly to deal with the numbering of tables and clean up the mess of i_tab, i_tabs & TabNo
-        this.i_tabs = this.params.title_table.map((x) => x.i_tab);
         this.update_choices({
             i_tab: this.i_tab,
             xy: "x",
@@ -114,7 +112,7 @@ export class TableDataSelector extends LitElement {
     // Helper:
     sel_question_data() {
         this.question_raw_data = this.data.filter(
-            (x) => x.i_tab === this.i_tabs[this.i_tab],
+            (x) => x.i_tab === this.i_tab,
         );
 
         this.question_data = this.question_raw_data.filter((x) =>
@@ -331,9 +329,9 @@ export class TableDataSelector extends LitElement {
     }
     _on_question_update(e) {
         let title_table = this.params.title_table.find(
-            (x) => x.i_tab === Number(e.detail.chosen_tab_no),
+            (x) => x.i_tab_dyn === Number(e.detail.chosen_tab_no),
         );
-        this.i_tab = this.i_tabs.indexOf(Number(title_table.i_tab));
+        this.i_tab = title_table.i_tab_dyn;
         this.update_choices({
             i_tab: this.i_tab,
             tab_title: title_table.TabTitle,
@@ -453,7 +451,7 @@ export class TableDataSelector extends LitElement {
                             <question-selector 					
                                 data-test-id="question-selector"	
                                 @update-question="${this._on_question_update}" 		
-                                .chosen_tab_no=${this.i_tabs[this.choices.i_tab]} 
+                                .chosen_tab_no=${this.i_tab} 
                                 .all_questions=${this.params.title_table}>
                             </question-selector>
                             <button @click=${this.show_hide_questions_table}>🔠</button>

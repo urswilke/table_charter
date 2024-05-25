@@ -98,7 +98,11 @@ export function gen_plot_type_string(tab_sel_obj) {
 }
 
 export function prepare_data(data_obj) {
-    data_obj.Tab = data_obj.Tab.map((x, i) => ({ i_tab: i, ...x }));
+    data_obj.Tab = data_obj.Tab.map((x, i) => ({
+        i_tab: i,
+        ...x,
+        i_tab_dyn: i,
+    }));
     return merge_table_parts(data_obj);
 }
 
