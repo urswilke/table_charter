@@ -98,7 +98,7 @@ export function gen_plot_type_string(tab_sel_obj) {
 }
 
 export function prepare_data(data_obj) {
-    let data = merge_table_parts(data_obj.data);
+    let data = merge_table_parts(data_obj);
 
     const unique_combis = distinct(data, ["QuestNo", "TabNo"]).map(
         (x) => x.QuestNo + "-" + x.TabNo,
@@ -188,7 +188,7 @@ export var is_mobile =
     );
 
 // from here: https://gist.github.com/thesofakillers/bcf39eaed428304ddc126ca8f12336f7
-function obj_arrays_to_array_objs(object_arrays) {
+export function obj_arrays_to_array_objs(object_arrays) {
     let final_array = object_arrays[Object.keys(object_arrays)[0]].map(
         // el is unused, but needs to be defined for map to give access to index i
         (_el, i) => {
@@ -208,10 +208,6 @@ export const left_join = (arr1, arr2, fun) => {
 };
 
 function merge_table_parts(obj) {
-    // https://stackoverflow.com/questions/14810506/map-function-for-objects-instead-of-arrays/38829074#38829074
-    obj = Object.fromEntries(
-        Object.entries(obj).map(([k, v]) => [k, obj_arrays_to_array_objs(v)]),
-    );
     var res;
     res = left_join(obj.Row, obj.Tab, (x) => x.QuestNo + x.TabNo);
     res = left_join(obj.Val, res, (x) => x.QuestNo + x.RowNo);

@@ -12,6 +12,7 @@ import {
     save_file,
     add_spaces,
     left_join,
+    obj_arrays_to_array_objs,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -42,8 +43,15 @@ export class TableDataSelector extends LitElement {
 
     // Initialization:
     init_tablebook_data() {
+        // https://stackoverflow.com/questions/14810506/map-function-for-objects-instead-of-arrays/38829074#38829074
+        this.table_parts = Object.fromEntries(
+            Object.entries(this.html_data.data).map(([k, v]) => [
+                k,
+                obj_arrays_to_array_objs(v),
+            ]),
+        );
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
-        this.data = add_spaces(prepare_data(this.html_data))
+        this.data = add_spaces(prepare_data(this.table_parts))
             // TODO: Also treat weighted tables
             .filter((x) => x.RowWeighted === "Unweighted");
         this.init_params();
