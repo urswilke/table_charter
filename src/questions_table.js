@@ -12,8 +12,6 @@ export class QuestionsTable extends LitElement {
     gen_table() {
         var table_data = this.questions_table_data.map((x, i) => ({
             ...x,
-            // TODO: don't overwrite this information...:
-            show: true,
             id: x.i_tab,
             clone: "♲",
         }));

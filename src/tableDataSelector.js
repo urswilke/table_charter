@@ -64,7 +64,10 @@ export class TableDataSelector extends LitElement {
         this.params.row_type = ["%", "n"];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = true;
-        this.params.title_table = this.table_parts.Tab;
+        this.params.title_table = this.table_parts.Tab.map((x) => ({
+            ...x,
+            show: true,
+        }));
     }
     init_choices() {
         this.choices = {};
