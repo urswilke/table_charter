@@ -11,6 +11,7 @@ import {
     prepare_data,
     save_file,
     add_spaces,
+    left_join,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -108,6 +109,7 @@ export class TableDataSelector extends LitElement {
             plot_type: gen_plot_type_string(this),
             ...this.saved[this.i_tab],
         });
+        // For column totals in plot:
         if (this.choices.n_axis && this.question_raw_data[0].TabType !== "MW") {
             // TODO: it feels dangerous to calculate the totals in a separate array from this.choices.header_table ...
             // -> discuss with Wolf if it's ok like this...!
@@ -127,6 +129,28 @@ export class TableDataSelector extends LitElement {
                     Value: totals[i],
                 })),
             });
+        }
+        // For column means in plot:
+        if (
+            this.choices.show_mean &&
+            this.question_raw_data[0].TabType === "CAT"
+        ) {
+            const means = this.question_raw_data
+                .filter(
+                    (x) =>
+                        x.RowContent === "Statistics" &&
+                        // TODO: Treat weighted stuff more generally...!
+                        // (not sure if it's needed here; copy-pasted it from the code for the totals...)
+                        x.RowWeighted === "Unweighted" &&
+                        // TODO: HACK... tell Wolf I need this information to filter out other statistics row from data!
+                        ["Mittelwert", "Mean"].includes(x.RowTitle1),
+                )
+                .map((x) => ({ ColNo: x.ColNo, ColMean: x.Value }));
+            this.question_data = left_join(
+                this.question_data,
+                means,
+                (x) => x.ColNo,
+            );
         }
 
         this.sel_header_data();
