@@ -418,6 +418,16 @@ export class TableDataSelector extends LitElement {
             collapsed_view: !this.params.collapsed_view,
         });
     }
+    _on_table_update(e) {
+        this.update_params({
+            title_table: e.detail.table,
+        });
+        if (e.detail.i < this.i_tab) {
+            this.i_tab += 1;
+        }
+        this.sel_question_data();
+        this._update_plot_data();
+    }
 
     render() {
         inspect && console.log("rendering table-book-data");
@@ -437,7 +447,7 @@ export class TableDataSelector extends LitElement {
                             </num_type-selector>
                         </div>
                     </div>
-                    <div class="selector-group" id="question-selector">
+                    <div class="selector-group" id="question-selector" @table-update=${this._on_table_update}>
                         <label>${translate("question.label")}</label>
                         <div class="content questions-div">
                             <question-selector 					

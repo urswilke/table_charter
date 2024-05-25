@@ -29,8 +29,10 @@ export class QuestionsTable extends LitElement {
             const new_subindex = Math.max(...all_indices) + 1;
             let this_row = cell.getData();
             this_row = { ...this_row, id: this_row.i_tab + "_" + new_subindex };
+            const id = row.getData().id;
+            this.current_id = id;
             // https://github.com/olifolkerd/tabulator/issues/4034#issuecomment-1326211853
-            table.addData([this_row], false, row.getData().id);
+            table.addData([this_row], false, id);
         }
 
         const table = new Tabulator(
@@ -82,11 +84,25 @@ export class QuestionsTable extends LitElement {
                         field: "clone",
                         width: 20,
                         hozAlign: "center",
-                        cellClick: duplicate_row,
+                        cellClick: duplicate_row.bind(this),
                     },
                 ],
             },
         );
+        function send_table_data_change() {
+            const options = {
+                detail: {
+                    table: table
+                        .getData()
+                        .map((x, i) => ({ ...x, i_tab_dyn: i })),
+                    id: this.current_id,
+                },
+                bubbles: true,
+                composed: true,
+            };
+            this.dispatchEvent(new CustomEvent("table-update", options));
+        }
+        table.on("dataChanged", send_table_data_change.bind(this));
         this.questions_table = table;
     }
 
