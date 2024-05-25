@@ -98,16 +98,8 @@ export function gen_plot_type_string(tab_sel_obj) {
 }
 
 export function prepare_data(data_obj) {
-    let data = merge_table_parts(data_obj);
-
-    const unique_combis = distinct(data, ["QuestNo", "TabNo"]).map(
-        (x) => x.QuestNo + "-" + x.TabNo,
-    );
-
-    return data.map((x) => ({
-        ...x,
-        i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo),
-    }));
+    data_obj.Tab = data_obj.Tab.map((x, i) => ({ i_tab: i, ...x }));
+    return merge_table_parts(data_obj);
 }
 
 export function save_file() {
