@@ -1,5 +1,4 @@
 import { chain, pick, uniqWith, isEqual } from "lodash";
-import { decompress } from "compress-json";
 
 export function distinct(arr, X) {
     return chain(arr.map((o) => pick(o, X)))
@@ -99,16 +98,7 @@ export function gen_plot_type_string(tab_sel_obj) {
 }
 
 export function prepare_data(data_obj) {
-    let data;
-    switch (data_obj.type) {
-        case "compressed":
-            data = decompress(data_obj.data);
-            break;
-        case "uncompressed":
-            data = data_obj.data;
-        case "table-object":
-            data = merge_table_parts(data_obj.data);
-    }
+    let data = merge_table_parts(data_obj.data);
 
     const unique_combis = distinct(data, ["QuestNo", "TabNo"]).map(
         (x) => x.QuestNo + "-" + x.TabNo,
