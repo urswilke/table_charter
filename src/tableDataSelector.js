@@ -76,9 +76,15 @@ export class TableDataSelector extends LitElement {
         // instead of using document.querySelector()...!
         const saved_settings =
             document.querySelector("table-charter").dataset.savedSettings;
-        this.saved =
+        const saved =
             (saved_settings && JSON.parse(saved_settings)) ||
             new Array(this.params.title_table.length).fill({});
+        this.update_params({
+            title_table: this.params.title_table.map((x, i) => ({
+                ...x,
+                saved: saved[i],
+            })),
+        });
         this.init_choices();
     }
     init_choices() {
@@ -121,7 +127,7 @@ export class TableDataSelector extends LitElement {
         this.update_choices({
             colorscale_disabled: colorscale_disabled,
             plot_type: gen_plot_type_string(this),
-            ...this.saved[this.i_tab],
+            ...this.params.title_table[this.i_tab].saved,
         });
         // For column totals in plot:
         if (this.choices.n_axis && this.question_raw_data[0].TabType !== "MW") {
@@ -197,7 +203,7 @@ export class TableDataSelector extends LitElement {
 
         this.update_choices(
             { row_table: gen_row_table(this.num_type_data) },
-            !this.saved[this.i_tab].row_table,
+            !this.params.title_table[this.i_tab].saved.row_table,
         );
 
         this.sel_rows_data();
@@ -216,7 +222,7 @@ export class TableDataSelector extends LitElement {
         // TODO: find cleaner solution!...:
         if (
             // only when object is empty:
-            Object.keys(this.saved[this.i_tab]).length === 0
+            Object.keys(this.params.title_table[this.i_tab].saved).length === 0
         ) {
             this.set_color_scale();
             this.init_color_scheme();
@@ -294,16 +300,18 @@ export class TableDataSelector extends LitElement {
 
     // Talk to parent:
     _update_plot_data() {
-        // this.saved[this.i_tab] = {...this.saved[this.i_tab], ...this.choices}
-        this.saved[this.i_tab] = produce(this.saved[this.i_tab], (draft) => ({
-            ...draft,
-            ...this.choices,
-        }));
+        // this.params.title_table[this.i_tab].saved = {...this.params.title_table[this.i_tab].saved, ...this.choices}
+        this.params = produce(this.params, (draft) => {
+            draft.title_table[this.i_tab].saved = {
+                ...draft.title_table[this.i_tab].saved,
+                ...this.choices,
+            };
+        });
         const options = {
             detail: {
                 data: {
                     plot_data: this.plot_data,
-                    choices: this.saved[this.i_tab],
+                    choices: this.params.title_table[this.i_tab].saved,
                 },
             },
             bubbles: true,
