@@ -135,8 +135,6 @@ export class TableDataSelector extends LitElement {
                     (x) =>
                         x.RowContent === "Total" &&
                         // TODO: Treat weighted stuff more generally...!
-                        x.RowWeighted === "Unweighted" &&
-                        // TODO: HACK... tell Wolf I need this information to filter out "Sum of valid answers" row from data!
                         ["GESAMT", "TOTAL"].includes(x.RowTitle1),
                 )
                 .map((x) => x.Value);
@@ -156,9 +154,6 @@ export class TableDataSelector extends LitElement {
                 .filter(
                     (x) =>
                         x.RowContent === "Statistics" &&
-                        // TODO: Treat weighted stuff more generally...!
-                        // (not sure if it's needed here; copy-pasted it from the code for the totals...)
-                        x.RowWeighted === "Unweighted" &&
                         // TODO: HACK... tell Wolf I need this information to filter out other statistics row from data!
                         ["Mittelwert", "Mean"].includes(x.RowTitle1),
                 )
