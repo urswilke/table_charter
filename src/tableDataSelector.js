@@ -76,15 +76,16 @@ export class TableDataSelector extends LitElement {
         // instead of using document.querySelector()...!
         const saved_settings =
             document.querySelector("table-charter").dataset.savedSettings;
-        const saved =
-            (saved_settings && JSON.parse(saved_settings)) ||
-            new Array(this.params.title_table.length).fill({});
-        this.update_params({
-            title_table: this.params.title_table.map((x, i) => ({
+
+        if (saved_settings) {
+            this.params.title_table = JSON.parse(saved_settings);
+        } else {
+            let saved = new Array(this.params.title_table.length).fill({});
+            this.params.title_table = this.params.title_table.map((x, i) => ({
                 ...x,
                 saved: saved[i],
-            })),
-        });
+            }));
+        }
         this.init_choices();
     }
     init_choices() {
