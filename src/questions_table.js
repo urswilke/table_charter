@@ -85,6 +85,7 @@ export class QuestionsTable extends LitElement {
                         width: 20,
                         hozAlign: "center",
                         cellClick: duplicate_row.bind(this),
+                        cellTap: duplicate_row.bind(this),
                     },
                 ],
             },
