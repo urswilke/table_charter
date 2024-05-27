@@ -30,73 +30,70 @@ export class QuestionsTable extends LitElement {
             let this_row = cell.getData();
             this_row = { ...this_row, id: this_row.i_tab + "_" + new_subindex };
             const id = row.getData().id;
-            this.current_id = id;
             // https://github.com/olifolkerd/tabulator/issues/4034#issuecomment-1326211853
             table.addData([this_row], false, id);
-        }
-
-        const table = new Tabulator(
-            this.renderRoot?.querySelector("#questions-table"),
-            {
-                height: 130, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
-                data: table_data,
-                // reactiveData: true, //turn on data reactivity
-                layout: "fitColumns", //fit columns to width of table (optional)
-                selectableRange: 1,
-                history: true,
-                selectableRangeColumns: true,
-                headerSortClickElement: "icon",
-                selectableRangeRows: true,
-                clipboard: true,
-                clipboardCopyRowRange: "range",
-                clipboardPasteParser: "range",
-                clipboardPasteAction: "range",
-                clipboardCopyConfig: {
-                    rowHeaders: false,
-                    columnHeaders: false,
-                },
-                columns: [
-                    //Define Table Columns
-                    {
-                        title: "i",
-                        field: "i_tab",
-                        width: 30,
-                        hozAlign: "right",
-                    },
-                    {
-                        title: "👁️",
-                        field: "show",
-                        width: 30,
-                        editor: true,
-                        hozAlign: "center",
-                        formatter: "tickCross",
-                    },
-                    {
-                        title: "Question",
-                        field: "TabTitle",
-                        editor: "textarea",
-                        editorParams: {
-                            shiftEnterSubmit: true,
-                        },
-                    },
-                    {
-                        title: "Clone",
-                        field: "clone",
-                        width: 20,
-                        hozAlign: "center",
-                        cellClick: duplicate_row.bind(this),
-                        cellTap: duplicate_row.bind(this),
-                    },
-                ],
-            },
-        );
-        function send_table_data_change() {
-            this.dispatch_table_edit_event("table-update", {
+            this.dispatch_table_edit_event("clone-question", {
                 table: table.getData().map((x, i) => ({ ...x, i_tab_dyn: i })),
-                id: this.current_id,
+                id,
             });
         }
-        table.on("dataChanged", send_table_data_change.bind(this));
+
+        const table_def = {
+            height: 130, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+            data: table_data,
+            // reactiveData: true, //turn on data reactivity
+            layout: "fitColumns", //fit columns to width of table (optional)
+            selectableRange: 1,
+            history: true,
+            selectableRangeColumns: true,
+            headerSortClickElement: "icon",
+            selectableRangeRows: true,
+            clipboard: true,
+            clipboardCopyRowRange: "range",
+            clipboardPasteParser: "range",
+            clipboardPasteAction: "range",
+            clipboardCopyConfig: {
+                rowHeaders: false,
+                columnHeaders: false,
+            },
+            columns: [
+                //Define Table Columns
+                {
+                    title: "i",
+                    field: "i_tab",
+                    width: 30,
+                    hozAlign: "right",
+                },
+                {
+                    title: "👁️",
+                    field: "show",
+                    width: 30,
+                    editor: true,
+                    hozAlign: "center",
+                    formatter: "tickCross",
+                },
+                {
+                    title: "Question",
+                    field: "TabTitle",
+                    editor: "textarea",
+                    editorParams: {
+                        shiftEnterSubmit: true,
+                    },
+                },
+                {
+                    title: "Clone",
+                    field: "clone",
+                    width: 20,
+                    hozAlign: "center",
+                    cellClick: duplicate_row.bind(this),
+                    cellTap: duplicate_row.bind(this),
+                },
+            ],
+        };
+        const table = new Tabulator(
+            this.renderRoot?.querySelector("#questions-table"),
+            table_def,
+        );
         this.questions_table = table;
     }
     dispatch_table_edit_event(event_name, detail) {

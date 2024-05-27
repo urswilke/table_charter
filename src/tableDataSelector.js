@@ -410,7 +410,7 @@ export class TableDataSelector extends LitElement {
             collapsed_view: !this.params.collapsed_view,
         });
     }
-    _on_table_update(e) {
+    _on_question_clone(e) {
         const old_id = this.params.title_table[this.i_tab].id;
         this.update_params({
             title_table: e.detail.table,
@@ -438,7 +438,11 @@ export class TableDataSelector extends LitElement {
                             </num_type-selector>
                         </div>
                     </div>
-                    <div class="selector-group" id="question-selector" @table-update=${this._on_table_update}>
+                    <div 
+                        class="selector-group" 
+                        id="question-selector" 
+                        @clone-question=${this._on_question_clone}
+                    >
                         <label>${translate("question.label")}</label>
                         <div class="content questions-div">
                             <question-selector 					
