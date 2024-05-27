@@ -62,6 +62,13 @@ export class QuestionsTable extends LitElement {
             });
         }
 
+        function edit_text(cell) {
+            this.dispatch_table_edit_event("edit-text", {
+                text: cell.getValue(),
+                id: cell.getData().i_tab_dyn,
+            });
+        }
+
         const table_def = {
             height: 130, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
             data: table_data,
@@ -104,6 +111,7 @@ export class QuestionsTable extends LitElement {
                     editorParams: {
                         shiftEnterSubmit: true,
                     },
+                    cellEdited: edit_text.bind(this),
                 },
                 {
                     title: "Clone",

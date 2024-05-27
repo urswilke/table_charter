@@ -124,6 +124,7 @@ export class TableDataSelector extends LitElement {
         this.update_choices({
             colorscale_disabled: colorscale_disabled,
             plot_type: gen_plot_type_string(this),
+            tab_title: this.params.title_table[this.i_tab].TabTitle,
             ...this.params.title_table[this.i_tab].saved,
         });
         // For column totals in plot:
@@ -436,6 +437,17 @@ export class TableDataSelector extends LitElement {
         this.sel_question_data();
         this._update_plot_data();
     }
+    _on_text_edit(e) {
+        this.params = produce(this.params, (draft) => {
+            draft.title_table[e.detail.id].TabTitle = e.detail.text;
+        });
+        if (e.detail.id === this.i_tab) {
+            this.update_choices({
+                tab_title: e.detail.text,
+            });
+            this._update_plot_data();
+        }
+    }
 
     render() {
         inspect && console.log("rendering table-book-data");
@@ -460,6 +472,7 @@ export class TableDataSelector extends LitElement {
                         id="question-selector" 
                         @clone-question=${this._on_question_clone}
                         @show-hide-question=${this._on_show_hide_question}
+                        @edit-text=${this._on_text_edit}
                     >
                         <label>${translate("question.label")}</label>
                         <div class="content questions-div">
