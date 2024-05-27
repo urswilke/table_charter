@@ -419,6 +419,23 @@ export class TableDataSelector extends LitElement {
         this.sel_question_data();
         this._update_plot_data();
     }
+    _on_show_hide_question(e) {
+        this.update_params({
+            title_table: e.detail.table,
+        });
+        const show_booleans = this.params.title_table.map((x) => x.show);
+        if (!show_booleans[this.i_tab]) {
+            // the current plot is hidden:
+            this.i_tab = show_booleans.indexOf(true, this.i_tab);
+            if (this.i_tab === -1) {
+                // there is no ungidden plot until the end...
+                // search from the start:
+                this.i_tab = show_booleans.indexOf(true);
+            }
+        }
+        this.sel_question_data();
+        this._update_plot_data();
+    }
 
     render() {
         inspect && console.log("rendering table-book-data");
@@ -442,6 +459,7 @@ export class TableDataSelector extends LitElement {
                         class="selector-group" 
                         id="question-selector" 
                         @clone-question=${this._on_question_clone}
+                        @show-hide-question=${this._on_show_hide_question}
                     >
                         <label>${translate("question.label")}</label>
                         <div class="content questions-div">

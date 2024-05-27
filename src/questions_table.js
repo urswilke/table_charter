@@ -37,6 +37,24 @@ export class QuestionsTable extends LitElement {
                 id,
             });
         }
+        function show_hide_question(e, cell) {
+            cell.setValue(!cell.getValue());
+            // avoid that all questions are hidden:
+            if (
+                cell
+                    .getTable()
+                    .getData()
+                    .map((x) => x.show)
+                    .every((x) => !x)
+            ) {
+                cell.setValue(true);
+                return;
+            }
+            this.dispatch_table_edit_event("show-hide-question", {
+                table: table.getData(),
+                id: cell.getData().id,
+            });
+        }
 
         const table_def = {
             height: 130, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
@@ -68,9 +86,10 @@ export class QuestionsTable extends LitElement {
                     title: "👁️",
                     field: "show",
                     width: 30,
-                    editor: true,
                     hozAlign: "center",
                     formatter: "tickCross",
+                    cellClick: show_hide_question.bind(this),
+                    cellTap: show_hide_question.bind(this),
                 },
                 {
                     title: "Question",

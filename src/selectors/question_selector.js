@@ -3,7 +3,7 @@ import { LitElement, html, css } from "lit";
 export class QuestionSelector extends LitElement {
     static properties = {
         all_questions: { type: Array },
-        chosen_tab_no: { type: String },
+        chosen_tab_no: { type: Number },
     };
 
     get _chosen_tab_no() {
@@ -33,7 +33,7 @@ export class QuestionSelector extends LitElement {
                 >
                     ${this.all_questions.map(
                         (x) => html`
-                            <option value="${x.i_tab_dyn}">
+                            <option value=${x.i_tab_dyn} .disabled=${!x.show}>
                                 ${x.TabTitle}
                             </option>
                         `,
