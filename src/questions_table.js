@@ -91,20 +91,21 @@ export class QuestionsTable extends LitElement {
             },
         );
         function send_table_data_change() {
-            const options = {
-                detail: {
-                    table: table
-                        .getData()
-                        .map((x, i) => ({ ...x, i_tab_dyn: i })),
-                    id: this.current_id,
-                },
-                bubbles: true,
-                composed: true,
-            };
-            this.dispatchEvent(new CustomEvent("table-update", options));
+            this.dispatch_table_edit_event("table-update", {
+                table: table.getData().map((x, i) => ({ ...x, i_tab_dyn: i })),
+                id: this.current_id,
+            });
         }
         table.on("dataChanged", send_table_data_change.bind(this));
         this.questions_table = table;
+    }
+    dispatch_table_edit_event(event_name, detail) {
+        const options = {
+            detail,
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(new CustomEvent(event_name, options));
     }
 
     render() {
