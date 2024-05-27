@@ -447,7 +447,10 @@ export class TableDataSelector extends LitElement {
                                 .chosen_tab_no=${this.i_tab} 
                                 .all_questions=${this.params.title_table}>
                             </question-selector>
-                            <button @click=${this.show_hide_questions_table}>🔠</button>
+                            <button 
+                                id="show-hide-questions-table"
+                                @click=${this.show_hide_questions_table}
+                            >🔠</button>
 
                         </div>
                         <questions-table .questions_table_data=${this.params.title_table}  ?hidden=${!this.params.show_questions_table}></questions-table>
@@ -594,6 +597,9 @@ export class TableDataSelector extends LitElement {
             .questions-div {
                 display: flex;
                 flex-direction: row;
+            }
+            #show-hide-questions-table {
+                width: 2em;
             }
         `,
     ];
