@@ -64,7 +64,7 @@ export class QuestionsTable extends LitElement {
                         hozAlign: "right",
                     },
                     {
-                        title: "show",
+                        title: "👁️",
                         field: "show",
                         width: 30,
                         editor: true,
