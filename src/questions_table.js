@@ -32,8 +32,12 @@ export class QuestionsTable extends LitElement {
             const id = row.getData().id;
             // https://github.com/olifolkerd/tabulator/issues/4034#issuecomment-1326211853
             table.addData([this_row], false, id);
+            var new_data = table
+                .getData()
+                .map((x, i) => ({ ...x, i_tab_dyn: i }));
+            table.updateData(new_data);
             this.dispatch_table_edit_event("clone-question", {
-                table: table.getData().map((x, i) => ({ ...x, i_tab_dyn: i })),
+                table: new_data,
                 id,
             });
         }
@@ -50,8 +54,10 @@ export class QuestionsTable extends LitElement {
                 cell.setValue(true);
                 return;
             }
+            var new_data = table.getData();
+            table.updateData(new_data);
             this.dispatch_table_edit_event("show-hide-question", {
-                table: table.getData(),
+                table: new_data,
                 id: cell.getData().id,
             });
         }
