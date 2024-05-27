@@ -117,7 +117,7 @@ export function prepare_data(data_obj) {
 
 export function save_file() {
     document.querySelector("table-charter").dataset.savedSettings =
-        JSON.stringify(this.params.title_table);
+        JSON.stringify(this.params.tab_table);
     var text = document.querySelector("html").innerHTML;
     var element = document.createElement("a");
     element.setAttribute(

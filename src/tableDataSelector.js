@@ -64,7 +64,7 @@ export class TableDataSelector extends LitElement {
         this.params.row_type = ["%", "n"];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = true;
-        this.params.title_table = this.table_parts.Tab.map((x) => ({
+        this.params.tab_table = this.table_parts.Tab.map((x) => ({
             ...x,
             show: true,
         }));
@@ -78,10 +78,10 @@ export class TableDataSelector extends LitElement {
             document.querySelector("table-charter").dataset.savedSettings;
 
         if (saved_settings) {
-            this.params.title_table = JSON.parse(saved_settings);
+            this.params.tab_table = JSON.parse(saved_settings);
         } else {
-            let saved = new Array(this.params.title_table.length).fill({});
-            this.params.title_table = this.params.title_table.map((x, i) => ({
+            let saved = new Array(this.params.tab_table.length).fill({});
+            this.params.tab_table = this.params.tab_table.map((x, i) => ({
                 ...x,
                 saved: saved[i],
             }));
@@ -90,12 +90,12 @@ export class TableDataSelector extends LitElement {
     }
     init_choices() {
         this.choices = {};
-        let title_table = this.params.title_table[this.i_tab];
+        let tab_table = this.params.tab_table[this.i_tab];
         this.update_choices({
             i_tab: this.i_tab,
             xy: "x",
             header_table: gen_header_table(this.data),
-            tab_title: title_table.TabTitle,
+            tab_title: tab_table.TabTitle,
             row_type: this.params.row_type[0],
             n_axis: true,
             show_subtitles: false,
@@ -112,7 +112,7 @@ export class TableDataSelector extends LitElement {
 
     // Helper:
     sel_question_data() {
-        const i_tab = this.params.title_table[this.i_tab].i_tab;
+        const i_tab = this.params.tab_table[this.i_tab].i_tab;
         this.question_raw_data = this.data.filter((x) => x.i_tab === i_tab);
 
         this.question_data = this.question_raw_data.filter((x) =>
@@ -125,8 +125,8 @@ export class TableDataSelector extends LitElement {
         this.update_choices({
             colorscale_disabled: colorscale_disabled,
             plot_type: gen_plot_type_string(this),
-            tab_title: this.params.title_table[this.i_tab].TabTitle,
-            ...this.params.title_table[this.i_tab].saved,
+            tab_title: this.params.tab_table[this.i_tab].TabTitle,
+            ...this.params.tab_table[this.i_tab].saved,
         });
         // For column totals in plot:
         if (this.choices.n_axis && this.question_raw_data[0].TabType !== "MW") {
@@ -197,7 +197,7 @@ export class TableDataSelector extends LitElement {
 
         this.update_choices(
             { row_table: gen_row_table(this.num_type_data) },
-            !this.params.title_table[this.i_tab].saved.row_table,
+            !this.params.tab_table[this.i_tab].saved.row_table,
         );
 
         this.sel_rows_data();
@@ -216,7 +216,7 @@ export class TableDataSelector extends LitElement {
         // TODO: find cleaner solution!...:
         if (
             // only when object is empty:
-            Object.keys(this.params.title_table[this.i_tab].saved).length === 0
+            Object.keys(this.params.tab_table[this.i_tab].saved).length === 0
         ) {
             this.set_color_scale();
             this.init_color_scheme();
@@ -294,10 +294,10 @@ export class TableDataSelector extends LitElement {
 
     // Talk to parent:
     _update_plot_data() {
-        // this.params.title_table[this.i_tab].saved = {...this.params.title_table[this.i_tab].saved, ...this.choices}
+        // this.params.tab_table[this.i_tab].saved = {...this.params.tab_table[this.i_tab].saved, ...this.choices}
         this.params = produce(this.params, (draft) => {
-            draft.title_table[this.i_tab].saved = {
-                ...draft.title_table[this.i_tab].saved,
+            draft.tab_table[this.i_tab].saved = {
+                ...draft.tab_table[this.i_tab].saved,
                 ...this.choices,
             };
         });
@@ -305,7 +305,7 @@ export class TableDataSelector extends LitElement {
             detail: {
                 data: {
                     plot_data: this.plot_data,
-                    choices: this.params.title_table[this.i_tab].saved,
+                    choices: this.params.tab_table[this.i_tab].saved,
                 },
             },
             bubbles: true,
@@ -324,13 +324,13 @@ export class TableDataSelector extends LitElement {
         this._update_plot_data();
     }
     _on_question_update(e) {
-        let title_table = this.params.title_table.find(
+        let tab_table = this.params.tab_table.find(
             (x) => x.i_tab_dyn === Number(e.detail.chosen_tab_no),
         );
-        this.i_tab = title_table.i_tab_dyn;
+        this.i_tab = tab_table.i_tab_dyn;
         this.update_choices({
             i_tab: this.i_tab,
-            tab_title: title_table.TabTitle,
+            tab_title: tab_table.TabTitle,
         });
         this.sel_question_data();
         this._update_plot_data();
@@ -413,19 +413,19 @@ export class TableDataSelector extends LitElement {
         });
     }
     _on_question_clone(e) {
-        const old_id = this.params.title_table[this.i_tab].id;
+        const old_id = this.params.tab_table[this.i_tab].id;
         this.update_params({
-            title_table: e.detail.table,
+            tab_table: e.detail.table,
         });
-        this.i_tab = this.params.title_table.findIndex((x) => x.id === old_id);
+        this.i_tab = this.params.tab_table.findIndex((x) => x.id === old_id);
         this.sel_question_data();
         this._update_plot_data();
     }
     _on_show_hide_question(e) {
         this.update_params({
-            title_table: e.detail.table,
+            tab_table: e.detail.table,
         });
-        const show_booleans = this.params.title_table.map((x) => x.show);
+        const show_booleans = this.params.tab_table.map((x) => x.show);
         if (!show_booleans[this.i_tab]) {
             // the current plot is hidden:
             this.i_tab = show_booleans.indexOf(true, this.i_tab);
@@ -440,7 +440,7 @@ export class TableDataSelector extends LitElement {
     }
     _on_text_edit(e) {
         this.params = produce(this.params, (draft) => {
-            draft.title_table[e.detail.id].TabTitle = e.detail.text;
+            draft.tab_table[e.detail.id].TabTitle = e.detail.text;
         });
         if (e.detail.id === this.i_tab) {
             this.update_choices({
@@ -481,7 +481,7 @@ export class TableDataSelector extends LitElement {
                                 data-test-id="question-selector"	
                                 @update-question="${this._on_question_update}" 		
                                 .chosen_tab_no=${this.i_tab} 
-                                .all_questions=${this.params.title_table}>
+                                .all_questions=${this.params.tab_table}>
                             </question-selector>
                             <button 
                                 id="show-hide-questions-table"
@@ -489,7 +489,7 @@ export class TableDataSelector extends LitElement {
                             >🔠</button>
 
                         </div>
-                        <questions-table .questions_table_data=${this.params.title_table}  ?hidden=${!this.params.show_questions_table}></questions-table>
+                        <questions-table .questions_table_data=${this.params.tab_table}  ?hidden=${!this.params.show_questions_table}></questions-table>
                     </div>
                     <div class="selector-group" id="header-multi-sel">
                         <label for="headers">${translate("header.label")}</label>
