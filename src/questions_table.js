@@ -75,6 +75,7 @@ export class QuestionsTable extends LitElement {
             // reactiveData: true, //turn on data reactivity
             layout: "fitColumns", //fit columns to width of table (optional)
             selectableRange: 1,
+            // TODO: needs sth like a table.on("dataChanged"...) event to update plot correctly!
             history: true,
             selectableRangeColumns: true,
             headerSortClickElement: "icon",
