@@ -126,10 +126,12 @@ export class TableDataSelector extends LitElement {
             this.question_raw_data[0].TabType,
         );
         this.update_choices({
-            colorscale_disabled: colorscale_disabled,
             plot_type: gen_plot_type_string(this),
             tab_title: this.params.tab_table[this.i_tab].TabTitle,
             ...this.params.tab_table[this.i_tab].saved,
+        });
+        this.update_params({
+            colorscale_disabled: colorscale_disabled,
         });
         // For column totals in plot:
         if (this.choices.n_axis && this.question_raw_data[0].TabType !== "MW") {
@@ -573,7 +575,7 @@ export class TableDataSelector extends LitElement {
                                     @update-colorscheme="${this._on_colorscheme_update}" 	
                                     .all_colorscales=${this.params.color_scale}	
                                     .chosen_colorscale=${this.choices.color_scale}  
-                                    .colorscale_disabled=${this.choices.colorscale_disabled}
+                                    .colorscale_disabled=${this.params.colorscale_disabled}
                                     .chosen_colorscheme=${this.choices.color_scheme}>
                                 </colorscale-selector>
                                 <hr></hr>
