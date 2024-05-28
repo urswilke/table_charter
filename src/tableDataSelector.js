@@ -77,10 +77,13 @@ export class TableDataSelector extends LitElement {
         const saved_settings =
             document.querySelector("table-charter").dataset.savedSettings;
 
+        let saved;
         if (saved_settings) {
-            this.params.tab_table = JSON.parse(saved_settings);
+            saved = JSON.parse(saved_settings);
+            this.i_tab = saved.i_tab_dyn;
+            this.params.tab_table = saved.tab_table;
         } else {
-            let saved = new Array(this.params.tab_table.length).fill({});
+            saved = new Array(this.params.tab_table.length).fill({});
             this.params.tab_table = this.params.tab_table.map((x, i) => ({
                 ...x,
                 saved: saved[i],

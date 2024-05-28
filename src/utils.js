@@ -116,8 +116,12 @@ export function prepare_data(data_obj) {
 }
 
 export function save_file() {
+    const saved_settings = {
+        i_tab_dyn: this.i_tab,
+        tab_table: this.params.tab_table,
+    };
     document.querySelector("table-charter").dataset.savedSettings =
-        JSON.stringify(this.params.tab_table);
+        JSON.stringify(saved_settings);
     var text = document.querySelector("html").innerHTML;
     var element = document.createElement("a");
     element.setAttribute(
