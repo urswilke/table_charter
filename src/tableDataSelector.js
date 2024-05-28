@@ -98,7 +98,7 @@ export class TableDataSelector extends LitElement {
             i_tab: this.i_tab,
             xy: "x",
             header_table: gen_header_table(this.data),
-            tab_title: tab_table.TabTitle,
+            TabTitle: tab_table.TabTitle,
             row_type: "%",
             n_axis: true,
             show_subtitles: false,
@@ -127,7 +127,7 @@ export class TableDataSelector extends LitElement {
         );
         this.update_choices({
             plot_type: gen_plot_type_string(this),
-            tab_title: this.params.tab_table[this.i_tab].TabTitle,
+            TabTitle: this.params.tab_table[this.i_tab].TabTitle,
             ...this.params.tab_table[this.i_tab].saved,
         });
         this.update_params({
@@ -335,7 +335,7 @@ export class TableDataSelector extends LitElement {
         this.i_tab = tab_table.i_tab_dyn;
         this.update_choices({
             i_tab: this.i_tab,
-            tab_title: tab_table.TabTitle,
+            TabTitle: tab_table.TabTitle,
         });
         this.sel_question_data();
         this._update_plot_data();
@@ -447,7 +447,7 @@ export class TableDataSelector extends LitElement {
         });
         if (e.detail.id === this.i_tab) {
             this.update_choices({
-                tab_title: e.detail.text,
+                TabTitle: e.detail.text,
             });
             this._update_plot_data();
         }

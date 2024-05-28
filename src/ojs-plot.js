@@ -29,7 +29,7 @@ export class OJSPlot extends LitElement {
             String(1.2 * font_size) + "px",
         );
 
-        this.chartTitle = this.plot_options.input.tab_title;
+        this.chartTitle = this.plot_options.input.TabTitle;
         const chartHeaders =
             !!val.plot_data && val.plot_data.length > 0
                 ? get("plotTitle.subtitle_beginning") +
