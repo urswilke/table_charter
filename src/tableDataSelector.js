@@ -423,8 +423,6 @@ export class TableDataSelector extends LitElement {
             tab_table: e.detail.table,
         });
         this.i_tab = this.params.tab_table.findIndex((x) => x.id === old_id);
-        this.sel_question_data();
-        this._update_plot_data();
     }
     _on_show_hide_question(e) {
         this.update_params({
