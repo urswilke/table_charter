@@ -99,7 +99,7 @@ export class TableDataSelector extends LitElement {
             xy: "x",
             header_table: gen_header_table(this.data),
             tab_title: tab_table.TabTitle,
-            row_type: this.params.row_type[0],
+            row_type: "%",
             n_axis: true,
             show_subtitles: false,
             show_coltitle1: true,
