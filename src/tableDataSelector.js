@@ -435,13 +435,13 @@ export class TableDataSelector extends LitElement {
             // the current plot is hidden:
             this.i_tab = show_booleans.indexOf(true, this.i_tab);
             if (this.i_tab === -1) {
-                // there is no ungidden plot until the end...
+                // there is no unhidden plot until the end...
                 // search from the start:
                 this.i_tab = show_booleans.indexOf(true);
             }
+            this.sel_question_data();
+            this._update_plot_data();
         }
-        this.sel_question_data();
-        this._update_plot_data();
     }
     _on_text_edit(e) {
         this.params = produce(this.params, (draft) => {
