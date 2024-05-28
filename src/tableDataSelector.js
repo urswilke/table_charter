@@ -127,8 +127,8 @@ export class TableDataSelector extends LitElement {
         );
         this.update_choices({
             plot_type: gen_plot_type_string(this),
-            TabTitle: this.params.tab_table[this.i_tab].TabTitle,
             ...this.params.tab_table[this.i_tab].saved,
+            TabTitle: this.params.tab_table[this.i_tab].TabTitle,
         });
         this.update_params({
             colorscale_disabled: colorscale_disabled,
