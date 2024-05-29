@@ -400,15 +400,11 @@ export class TableDataSelector extends LitElement {
     }
     _on_question_clone(e) {
         const old_id = this.tab_table[this.i_tab].id;
-        this.tab_table = produce(this.tab_table, (draft) => {
-            draft = e.detail.table;
-        });
+        this.tab_table = e.detail.table;
         this.i_tab = this.tab_table.findIndex((x) => x.id === old_id);
     }
     _on_show_hide_question(e) {
-        this.tab_table = produce(this.tab_table, (draft) => {
-            draft = e.detail.table;
-        });
+        this.tab_table = e.detail.table;
         const show_booleans = this.tab_table.map((x) => x.show);
         if (!show_booleans[this.i_tab]) {
             // the current plot is hidden:
@@ -423,9 +419,7 @@ export class TableDataSelector extends LitElement {
         }
     }
     _on_text_edit(e) {
-        this.tab_table = produce(this.tab_table, (draft) => {
-            draft[e.detail.id].TabTitle = e.detail.text;
-        });
+        this.tab_table = e.detail.table;
         if (e.detail.id === this.i_tab) {
             this.update_choices({
                 TabTitle: e.detail.text,
