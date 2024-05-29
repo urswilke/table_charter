@@ -36,7 +36,7 @@ export class QuestionsTable extends LitElement {
                 .getData()
                 .map((x, i) => ({ ...x, i_tab_dyn: i }));
             table.updateData(new_data);
-            this.dispatch_table_edit_event("clone-question", {
+            dispatch_event(cell, "clone-question", {
                 table: new_data,
                 id,
             });
@@ -56,17 +56,27 @@ export class QuestionsTable extends LitElement {
             }
             var new_data = table.getData();
             table.updateData(new_data);
-            this.dispatch_table_edit_event("show-hide-question", {
+            dispatch_event(cell, "show-hide-question", {
                 table: new_data,
                 id: cell.getData().id,
             });
         }
 
         function edit_text(cell) {
-            this.dispatch_table_edit_event("edit-text", {
+            dispatch_event(cell, "edit-text", {
                 text: cell.getValue(),
                 id: cell.getData().i_tab_dyn,
             });
+        }
+        function dispatch_event(cell, event_name, detail) {
+            const options = {
+                detail,
+                bubbles: true,
+                composed: true,
+            };
+            cell.getElement().dispatchEvent(
+                new CustomEvent(event_name, options),
+            );
         }
 
         const table_def = {
@@ -91,8 +101,8 @@ export class QuestionsTable extends LitElement {
                     width: 30,
                     hozAlign: "center",
                     formatter: "tickCross",
-                    cellClick: show_hide_question.bind(this),
-                    cellTap: show_hide_question.bind(this),
+                    cellClick: show_hide_question,
+                    cellTap: show_hide_question,
                 },
                 {
                     title: "Question",
@@ -101,15 +111,15 @@ export class QuestionsTable extends LitElement {
                     editorParams: {
                         shiftEnterSubmit: true,
                     },
-                    cellEdited: edit_text.bind(this),
+                    cellEdited: edit_text,
                 },
                 {
                     title: "Clone",
                     field: "clone",
                     width: 20,
                     hozAlign: "center",
-                    cellClick: duplicate_row.bind(this),
-                    cellTap: duplicate_row.bind(this),
+                    cellClick: duplicate_row,
+                    cellTap: duplicate_row,
                 },
             ],
         };
@@ -118,14 +128,6 @@ export class QuestionsTable extends LitElement {
             table_def,
         );
         this.questions_table = table;
-    }
-    dispatch_table_edit_event(event_name, detail) {
-        const options = {
-            detail,
-            bubbles: true,
-            composed: true,
-        };
-        this.dispatchEvent(new CustomEvent(event_name, options));
     }
 
     render() {
