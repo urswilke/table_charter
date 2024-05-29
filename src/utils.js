@@ -224,3 +224,30 @@ function merge_table_parts(obj) {
     // res = left_join(res, obj.Head, x => x.HeadNo)
     return res.sort((a, b) => a.QuestLine > b.QuestLine);
 }
+
+export function load_saved_settings(tab_table) {
+    // TODO: this will take the first table-charter element in the html,
+    // if there are multiple...
+    // --> find a way to refer to the lit element,
+    // instead of using document.querySelector()...!
+    const saved_settings =
+        document.querySelector("table-charter").dataset.savedSettings;
+
+    let saved;
+    if (saved_settings) {
+        saved = JSON.parse(saved_settings);
+    } else {
+        saved = {
+            i_tab: 0,
+            tab_table: tab_table.map((x, i) => ({
+                ...x,
+                i_tab: i,
+                i_tab_dyn: i,
+                id: i,
+                saved: {},
+                show: true,
+            })),
+        };
+    }
+    return saved;
+}
