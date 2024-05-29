@@ -31,6 +31,7 @@ const inspect = false; // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
     static properties = {
+        tab_table: { type: Array },
         html_data: { type: Array },
         plot_data: { type: Array },
         params: { type: Object },
@@ -281,12 +282,10 @@ export class TableDataSelector extends LitElement {
 
     // Talk to parent:
     _update_plot_data() {
-        this.tab_table = produce(this.tab_table, (draft) => {
-            draft[this.i_tab].saved = {
-                ...draft[this.i_tab].saved,
-                ...this.choices,
-            };
-        });
+        this.tab_table[this.i_tab].saved = {
+            ...this.tab_table[this.i_tab].saved,
+            ...this.choices,
+        };
         const options = {
             detail: {
                 data: {
