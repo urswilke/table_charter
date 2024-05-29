@@ -117,7 +117,7 @@ export function prepare_data(data_obj) {
 
 export function save_file() {
     const saved_settings = {
-        i_tab_dyn: this.i_tab,
+        i_tab: this.i_tab,
         tab_table: this.tab_table,
     };
     document.querySelector("table-charter").dataset.savedSettings =
