@@ -80,7 +80,6 @@ export class QuestionsTable extends LitElement {
         }
 
         const table_def = {
-            height: 130, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
             data: table_data,
             // reactiveData: true, //turn on data reactivity
             layout: "fitColumns", //fit columns to width of table (optional)
@@ -131,7 +130,9 @@ export class QuestionsTable extends LitElement {
     }
 
     render() {
-        return html` <div id="questions-table"></div> `;
+        return html`
+            <div class="wrapper"><div id="questions-table"></div></div>
+        `;
     }
 
     static styles = [
@@ -141,6 +142,15 @@ export class QuestionsTable extends LitElement {
         css`
             #questions-table {
                 border-radius: 5px;
+                overflow: scroll;
+                resize: both;
+                /* height: 90vh; */
+            }
+            .wrapper {
+                width: 90%;
+                /* height: 90vh; */
+                position: fixed;
+                /* top: 5vh; */
             }
         `,
     ];
