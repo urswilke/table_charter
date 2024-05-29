@@ -470,7 +470,7 @@ export class TableDataSelector extends LitElement {
                             <button 
                                 id="show-hide-questions-table"
                                 @click=${this.show_hide_questions_table}
-                            >🔠</button>
+                            >✎</button>
 
                         </div>
                         <questions-table .questions_table_data=${this.tab_table}  ?hidden=${!this.params.show_questions_table}></questions-table>
