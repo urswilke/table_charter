@@ -74,12 +74,11 @@ export class TableDataSelector extends LitElement {
     }
     init_choices() {
         this.choices = {};
-        let tab_table = this.tab_table[this.i_tab];
         this.update_choices({
             i_tab: this.i_tab,
             xy: "x",
             header_table: gen_header_table(this.long_data),
-            TabTitle: tab_table.TabTitle,
+            TabTitle: this.tab_table[this.i_tab].TabTitle,
             row_type: "%",
             n_axis: true,
             show_subtitles: false,
