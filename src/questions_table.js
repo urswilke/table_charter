@@ -56,6 +56,7 @@ export class QuestionsTable extends LitElement {
 customElements.define("questions-table", QuestionsTable);
 
 function duplicate_row(e, cell) {
+    const table = cell.getTable();
     const row = cell.getRow();
     var i = table.getRowPosition(row) - 1;
     const data = table.getData().map((x) => ({
@@ -92,6 +93,7 @@ function show_hide_question(e, cell) {
         cell.setValue(true);
         return;
     }
+    const table = cell.getTable();
     var new_data = table.getData();
     table.updateData(new_data);
     dispatch_event(cell, "show-hide-question", {
