@@ -11,7 +11,9 @@ export class QuestionSelector extends LitElement {
     }
 
     _update_question() {
-        this.chosen_tab_no = this._chosen_tab_no.value;
+        this.chosen_tab_no = [...this._chosen_tab_no.options]
+            .map((x) => x.selected)
+            .indexOf(true);
 
         const options = {
             detail: {
@@ -24,16 +26,16 @@ export class QuestionSelector extends LitElement {
     }
 
     render() {
+        const initial_value = this.all_questions[this.chosen_tab_no].TabTitle;
         return html`
             <div class="parent">
-                <select
-                    id="question-selector"
-                    @change=${this._update_question}
-                    .value="${this.chosen_tab_no}"
-                >
+                <select id="question-selector" @change=${this._update_question}>
                     ${this.all_questions.map(
                         (x) => html`
-                            <option value=${x.i_tab_dyn} .disabled=${!x.show}>
+                            <option
+                                .selected=${initial_value === x.TabTitle}
+                                .disabled=${!x.show}
+                            >
                                 ${x.TabTitle}
                             </option>
                         `,
