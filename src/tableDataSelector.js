@@ -67,9 +67,9 @@ export class TableDataSelector extends LitElement {
         this.params.row_type = ["%", "n"];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = true;
-        this.tab_table = this.saved_settings.tab_table;
     }
     init_plot_settings() {
+        this.tab_table = structuredClone(this.saved_settings.tab_table);
         this.init_choices();
     }
     init_choices() {
