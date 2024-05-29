@@ -10,16 +10,14 @@ export class QuestionsTable extends LitElement {
         this.gen_table();
     }
     gen_table() {
-        var table_data = this.questions_table_data.map((x, i) => ({
+        var table_data = this.questions_table_data.map((x) => ({
             ...x,
-            // id: x.i_tab,
             clone: "♲",
         }));
 
         const table_def = {
             data: table_data,
-            // reactiveData: true, //turn on data reactivity
-            layout: "fitColumns", //fit columns to width of table (optional)
+            layout: "fitColumns",
             // TODO: needs sth like a table.on("dataChanged"...) event to update plot correctly!
             history: true,
             headerSortClickElement: "icon",
@@ -47,13 +45,10 @@ export class QuestionsTable extends LitElement {
                 border-radius: 5px;
                 overflow: scroll;
                 resize: both;
-                /* height: 90vh; */
             }
             .wrapper {
                 width: 90%;
-                /* height: 90vh; */
                 position: fixed;
-                /* top: 5vh; */
             }
         `,
     ];
@@ -121,7 +116,6 @@ function dispatch_event(cell, event_name, detail) {
 }
 
 const columns = [
-    //Define Table Columns
     {
         title: "i",
         field: "i_tab",
