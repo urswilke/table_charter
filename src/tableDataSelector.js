@@ -419,10 +419,11 @@ export class TableDataSelector extends LitElement {
         }
     }
     _on_text_edit(e) {
-        this.tab_table = e.detail.table;
+        const d = e.detail;
+        this.tab_table[d.id].TabTitle = d.text;
         if (e.detail.id === this.i_tab) {
             this.update_choices({
-                TabTitle: e.detail.text,
+                TabTitle: d.text,
             });
             this._update_plot_data();
         }
