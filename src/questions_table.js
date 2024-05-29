@@ -12,7 +12,7 @@ export class QuestionsTable extends LitElement {
     gen_table() {
         var table_data = this.questions_table_data.map((x, i) => ({
             ...x,
-            id: x.i_tab,
+            // id: x.i_tab,
             clone: "♲",
         }));
         function duplicate_row(e, cell) {
