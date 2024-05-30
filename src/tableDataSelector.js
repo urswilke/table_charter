@@ -467,7 +467,10 @@ export class TableDataSelector extends LitElement {
                             >✎</button>
 
                         </div>
-                        <questions-table .questions_table_data=${this.tab_table}  ?hidden=${!this.params.show_questions_table}></questions-table>
+                        <questions-table 
+                            .questions_table_data=${this.tab_table}  
+                            ?hidden=${!this.params.show_questions_table}>
+                        </questions-table>
                     </div>
                     <div class="selector-group" id="header-multi-sel">
                         <label for="headers">${translate("header.label")}</label>
@@ -552,8 +555,18 @@ export class TableDataSelector extends LitElement {
                                     .chosen_colorscheme=${this.choices.color_scheme}>
                                 </colorscale-selector>
                                 <hr></hr>
-                                <button id="reset-plots" @click="${this.init_plot_settings}">${translate("resetPlots.label")}</button>
-                                <button id="save-app" @click="${save_file}">${translate("saveSettings.label")}</button>
+                                <button 
+                                    id="reset-plots"
+                                    @click="${this.init_plot_settings}"
+                                >
+                                    ${translate("resetPlots.label")}
+                                </button>
+                                <button 
+                                    id="save-app" 
+                                    @click="${save_file}"
+                                >
+                                    ${translate("saveSettings.label")}
+                                </button>
                             </div>
                         </div>
                     </div>
