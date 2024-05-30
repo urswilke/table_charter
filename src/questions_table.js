@@ -88,7 +88,7 @@ export class QuestionsTable extends LitElement {
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 border: solid light-dark(black, white) 1px;
-                color: light-dark(white, black);
+                color: white;
                 width: fit-content;
             }
         `,
