@@ -7,9 +7,10 @@ import { get, translate } from "lit-translate";
 export class QuestionsTable extends LitElement {
     static properties = {
         questions_table_data: { type: Array },
+        update_tab_table: { type: Boolean },
     };
-    firstUpdated() {
-        this.gen_table();
+    updated() {
+        this.update_tab_table && this.gen_table();
     }
     gen_table() {
         var table_data = this.questions_table_data.map((x) => ({
@@ -30,11 +31,14 @@ export class QuestionsTable extends LitElement {
             headerSortClickElement: "icon",
             columns,
         };
+        // without, I received this error when rebuilding the table: "Event Target Lookup Error - The row this cell is attached to cannot be found, has the table been reinitialized without being destroyed first?"
+        this.questions_table && this.questions_table.destroy();
         const table = new Tabulator(
             this.renderRoot?.querySelector("#questions-table"),
             table_def,
         );
         this.questions_table = table;
+        this._send_table_updated_event();
     }
 
     render() {
@@ -63,6 +67,13 @@ export class QuestionsTable extends LitElement {
                 composed: true,
             }),
         );
+    }
+    _send_table_updated_event() {
+        const options = {
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(new CustomEvent("tab_table-updated", options));
     }
 
     static styles = [

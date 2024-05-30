@@ -70,6 +70,7 @@ export class TableDataSelector extends LitElement {
     }
     init_plot_settings() {
         this.tab_table = structuredClone(this.saved_settings.tab_table);
+        this.update_tab_table = true;
         this.init_choices();
     }
     init_choices() {
@@ -430,6 +431,9 @@ export class TableDataSelector extends LitElement {
             this._update_plot_data();
         }
     }
+    set_tab_table_updated() {
+        this.update_tab_table = false;
+    }
 
     render() {
         inspect && console.log("rendering table-book-data");
@@ -456,6 +460,7 @@ export class TableDataSelector extends LitElement {
                         @show-hide-question=${this._on_show_hide_question}
                         @edit-text=${this._on_text_edit}
                         @close-questions-table=${this.show_hide_questions_table}
+                        @tab_table-updated=${this.set_tab_table_updated}
                     >
                         <label>${translate("question.label")}</label>
                         <div class="content questions-div">
@@ -473,6 +478,7 @@ export class TableDataSelector extends LitElement {
                         </div>
                         <questions-table 
                             .questions_table_data=${this.tab_table}  
+                            .update_tab_table=${this.update_tab_table}
                             ?hidden=${!this.params.show_questions_table}>
                         </questions-table>
                     </div>
