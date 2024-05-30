@@ -281,10 +281,12 @@ export class TableDataSelector extends LitElement {
 
     // Talk to parent:
     _update_plot_data() {
-        this.tab_table[this.i_tab].saved = {
-            ...this.tab_table[this.i_tab].saved,
-            ...this.choices,
-        };
+        this.tab_table = produce(this.tab_table, (draft) => {
+            draft[this.i_tab].saved = {
+                ...draft[this.i_tab].saved,
+                ...this.choices,
+            };
+        });
         const options = {
             detail: {
                 data: {
@@ -398,11 +400,11 @@ export class TableDataSelector extends LitElement {
     }
     _on_question_clone(e) {
         const old_id = this.tab_table[this.i_tab].id;
-        this.tab_table = e.detail.table;
+        this.tab_table = produce(this.tab_table, (draft) => e.detail.table);
         this.i_tab = this.tab_table.findIndex((x) => x.id === old_id);
     }
     _on_show_hide_question(e) {
-        this.tab_table = e.detail.table;
+        this.tab_table = produce(this.tab_table, (draft) => e.detail.table);
         const show_booleans = this.tab_table.map((x) => x.show);
         if (!show_booleans[this.i_tab]) {
             // the current plot is hidden:
@@ -418,7 +420,9 @@ export class TableDataSelector extends LitElement {
     }
     _on_text_edit(e) {
         const d = e.detail;
-        this.tab_table[d.id].TabTitle = d.text;
+        this.tab_table = produce(this.tab_table, (draft) => {
+            draft[d.id].TabTitle = d.text;
+        });
         if (e.detail.id === this.i_tab) {
             this.update_choices({
                 TabTitle: d.text,
