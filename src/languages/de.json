@@ -189,6 +189,33 @@
     },
     "saveSettings": {
       "text": "Durch Klicken hier kannst Du die App mit den aktuellen Einstellungen der Plots im Download-Ordner Deines Browsers speichern."
+    },
+    "questionsTable": {
+      "intro": {
+        "title": "Fragen-Manager",
+        "text": "Mit dem Fragen-Manager kannst Du die angezeigten Fragen anpassen. Z. B. kannst Du Fragen ausblenden (sie können nicht mehr ausgewählt werden im Fragen-Auswahl-Menü), die Titel ändern, oder sie mehrmals anzeigen (um verschiedene Einstellungen vorzunehmen).<br/><br/>Unten rechts kannst Du mit drag-and-drop die Größe anpassen."
+      },
+      "show": {
+        "title": "Frage ein- / ausblenden",
+        "text": "Durch Klicken auf eine Zelle in dieser Spalte kannst Du den entsprechenden Plot ausblenden."
+      },
+      "question": {
+        "title": "Fragetext anpassen",
+        "text": "Durch Klicken auf eine Zelle in dieser Spalte kannst Du den Titel des Plots anpassen. Durch Shift+Enter wird der angepasste Text übernommen."
+      },
+      "clone": {
+        "title": "Frage vervielfältigen",
+        "text": "Durch Klicken auf eine Zelle in dieser Spalte kannst Du eine Frage vervielfältigen, um sie darauf mehrmals mit verschiedenen Einstellungen anzeigen zu können."
+      },
+      "close": {
+        "title": "Schließen",
+        "text": "Hier kannst Du den Fragen-Manager schließen."
+      },
+      "open": {
+        "title": "Öffnen des Fragen-Managers",
+        "text1": "Durch Klicken hier kannst Du den Fragen-Manager öffnen. Nachdem Du ihn geöffnet hast, kannst Du durch Klicken des Hilfe-Knopfes (Fragezeichen '?' oben links), eine Einführung dafür starten.",
+        "text2": "Hier kannst Du den Fragen-Manager wieder öffnen."
+      }
     }
   }
 }

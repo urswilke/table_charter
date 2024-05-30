@@ -12,6 +12,47 @@ export function get_walkthrough_options(tc) {
     const aos_el = sel(aos);
     const cos = tds_el("colorscale-selector");
     const cos_el = sel(cos);
+    const qt = tds_el("questions-table");
+    const qt_el = sel(qt);
+
+    const questions_table_elements = {
+        steps: [
+            {
+                element: qt_el(".wrapper"),
+                title: get("walkthrough.questionsTable.intro.title"),
+                intro: get("walkthrough.questionsTable.intro.text"),
+            },
+            {
+                element: qt_el(".tabulator-col[tabulator-field='show']"),
+                title: get("walkthrough.questionsTable.show.title"),
+                intro: get("walkthrough.questionsTable.show.text"),
+            },
+            {
+                element: qt_el(".tabulator-col[tabulator-field='TabTitle']"),
+                title: get("walkthrough.questionsTable.question.title"),
+                intro: get("walkthrough.questionsTable.question.text"),
+            },
+            {
+                element: qt_el(".tabulator-col[tabulator-field='clone']"),
+                title: get("walkthrough.questionsTable.clone.title"),
+                intro: get("walkthrough.questionsTable.clone.text"),
+            },
+            {
+                element: qt_el("#close"),
+                title: get("walkthrough.questionsTable.close.title"),
+                intro: get("walkthrough.questionsTable.close.text"),
+            },
+            {
+                element: tds_el("#show-hide-questions-table"),
+                title: get("walkthrough.questionsTable.open.title"),
+                intro: get("walkthrough.questionsTable.open.text2"),
+            },
+        ],
+    };
+    if (tds.params.show_questions_table) {
+        return questions_table_elements;
+    }
+
     const default_elements = {
         dontShowAgain: true,
         dontShowAgainLabel: get("walkthrough.control.dontShowAgainLabel"),
@@ -38,6 +79,11 @@ export function get_walkthrough_options(tc) {
                 element: tds_el("#question-selector"),
                 title: get("question.label"),
                 intro: get("walkthrough.question.text"),
+            },
+            {
+                element: tds_el("#show-hide-questions-table"),
+                title: get("walkthrough.questionsTable.open.title"),
+                intro: get("walkthrough.questionsTable.open.text1"),
             },
             {
                 element: tds_el("#header-multi-sel"),
