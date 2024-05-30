@@ -107,6 +107,9 @@ export class MultiSelector extends LitElement {
                             (x) => html`
                                 <option
                                     .selected=${x.selected}
+                                    ${
+                                        /* TODO: put children_fun in data preparation code */ ""
+                                    }
                                     title=${this.children_fun(x)}
                                 >
                                     ${this.children_fun(x)}
