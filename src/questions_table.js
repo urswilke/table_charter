@@ -1,6 +1,7 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
-import style from "tabulator-tables/dist/css/tabulator.min.css";
+import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css";
+import style_light from "tabulator-tables/dist/css/tabulator.min.css";
 import { get, translate } from "lit-translate";
 
 export class QuestionsTable extends LitElement {
@@ -66,7 +67,12 @@ export class QuestionsTable extends LitElement {
 
     static styles = [
         css`
-            ${unsafeCSS(style)}
+            @media (prefers-color-scheme: light) {
+                ${unsafeCSS(style_light)}
+            }
+            @media (prefers-color-scheme: dark) {
+                ${unsafeCSS(style_dark)}
+            }
         `,
         css`
             #questions-table {
