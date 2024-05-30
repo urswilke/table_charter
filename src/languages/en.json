@@ -5,6 +5,9 @@
   "question": {
     "label": "Question"
   },
+  "questionsTable": {
+    "title": "Questions manager"
+  },
   "header": {
     "label": "Headers",
     "mainsel": "header(s)",

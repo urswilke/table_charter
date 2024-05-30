@@ -451,6 +451,7 @@ export class TableDataSelector extends LitElement {
                         @clone-question=${this._on_question_clone}
                         @show-hide-question=${this._on_show_hide_question}
                         @edit-text=${this._on_text_edit}
+                        @close-questions-table=${this.show_hide_questions_table}
                     >
                         <label>${translate("question.label")}</label>
                         <div class="content questions-div">

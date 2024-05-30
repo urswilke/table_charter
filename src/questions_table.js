@@ -1,6 +1,7 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
 import style from "tabulator-tables/dist/css/tabulator.min.css";
+import { translate } from "lit-translate";
 
 export class QuestionsTable extends LitElement {
     static properties = {
@@ -32,8 +33,30 @@ export class QuestionsTable extends LitElement {
 
     render() {
         return html`
-            <div class="wrapper"><div id="questions-table"></div></div>
+            <div class="wrapper">
+                <div id="questions-table-titlebar">
+                    <button
+                        id="close"
+                        type="button"
+                        @click=${this._close_questions_table}
+                    >
+                        ×
+                    </button>
+                    ${translate("questionsTable.title")}
+                </div>
+
+                <div id="questions-table"></div>
+            </div>
         `;
+    }
+    _close_questions_table() {
+        this.dispatchEvent(
+            new CustomEvent("close-questions-table", {
+                detail: {},
+                bubbles: true,
+                composed: true,
+            }),
+        );
     }
 
     static styles = [
@@ -42,13 +65,19 @@ export class QuestionsTable extends LitElement {
         `,
         css`
             #questions-table {
-                border-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
                 overflow: scroll;
                 resize: both;
             }
             .wrapper {
                 width: 90%;
                 position: fixed;
+            }
+            #questions-table-titlebar {
+                background-color: #5e677b;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
             }
         `,
     ];
