@@ -6,7 +6,9 @@
     "label": "Frage"
   },
   "questionsTable": {
-    "title": "Fragen-Manager"
+    "title": "Fragen-Manager",
+    "questionColumn": "Frage",
+    "cloneColumn": "Klonen"
   },
   "header": {
     "label": "Köpfe",

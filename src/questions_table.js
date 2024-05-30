@@ -1,7 +1,7 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
 import style from "tabulator-tables/dist/css/tabulator.min.css";
-import { translate } from "lit-translate";
+import { get, translate } from "lit-translate";
 
 export class QuestionsTable extends LitElement {
     static properties = {
@@ -15,6 +15,11 @@ export class QuestionsTable extends LitElement {
             ...x,
             clone: "♲",
         }));
+
+        // HACK: somehow the localization only works here and not in the columns definition...:
+        // it doesn't update on language change
+        columns[2].title = get("questionsTable.questionColumn");
+        columns[3].title = get("questionsTable.cloneColumn");
 
         const table_def = {
             data: table_data,
@@ -170,7 +175,6 @@ const columns = [
         cellTap: show_hide_question,
     },
     {
-        title: "Question",
         field: "TabTitle",
         editor: "textarea",
         editorParams: {
@@ -179,7 +183,6 @@ const columns = [
         cellEdited: edit_text,
     },
     {
-        title: "Clone",
         field: "clone",
         width: 20,
         hozAlign: "center",

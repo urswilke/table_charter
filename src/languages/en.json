@@ -6,7 +6,9 @@
     "label": "Question"
   },
   "questionsTable": {
-    "title": "Questions manager"
+    "title": "Questions manager",
+    "questionColumn": "Question",
+    "cloneColumn": "Clone"
   },
   "header": {
     "label": "Headers",
