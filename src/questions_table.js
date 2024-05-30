@@ -66,18 +66,25 @@ export class QuestionsTable extends LitElement {
         css`
             #questions-table {
                 border-bottom-left-radius: 5px;
+                border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px;
                 overflow: scroll;
                 resize: both;
+                border: solid light-dark(black, white) 1px;
             }
             .wrapper {
-                width: 90%;
+                width: 25%;
                 position: fixed;
+                border-radius: 5px;
             }
             #questions-table-titlebar {
+                padding: 3px;
                 background-color: #5e677b;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
+                border: solid light-dark(black, white) 1px;
+                color: light-dark(white, black);
+                width: fit-content;
             }
         `,
     ];
