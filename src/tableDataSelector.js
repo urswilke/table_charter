@@ -58,7 +58,6 @@ export class TableDataSelector extends LitElement {
             // TODO: Also treat weighted tables
             .filter((x) => x.RowWeighted === "Unweighted");
         this.init_params();
-        this.i_tab = this.saved_settings.i_tab;
         this.init_plot_settings();
     }
 
@@ -69,6 +68,7 @@ export class TableDataSelector extends LitElement {
         this.params.collapsed_view = true;
     }
     init_plot_settings() {
+        this.i_tab = this.saved_settings.i_tab;
         this.tab_table = structuredClone(this.saved_settings.tab_table);
         this.update_tab_table = true;
         this.init_choices();
