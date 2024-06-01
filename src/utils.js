@@ -242,6 +242,7 @@ export function load_saved_settings(tab_table) {
             tab_table: tab_table.map((x, i) => ({
                 ...x,
                 i_tab: i,
+                i_i_tab: 0,
                 i_tab_dyn: i,
                 id: i,
                 saved: {},

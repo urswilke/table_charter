@@ -117,28 +117,30 @@ customElements.define("questions-table", QuestionsTable);
 function duplicate_row(e, cell) {
     const table = cell.getTable();
     const row = cell.getRow();
-    var i = table.getRowPosition(row) - 1;
-    const data = table.getData().map((x) => ({
-        ...x,
-        id_index: Number(String(x.id).split("_")[1] || "0"),
-    }));
+    const data = table.getData();
     // array of indices of all questions with this i_tab:
     const all_indices = data
-        .filter((x) => x.i_tab === data[i].i_tab)
-        .map((x) => x.id_index);
+        .filter((x) => x.i_tab === row.getData().i_tab)
+        .map((x) => x.i_i_tab);
     const new_subindex = Math.max(...all_indices) + 1;
-    let this_row = cell.getData();
-    this_row = { ...this_row, id: this_row.i_tab + "_" + new_subindex };
-    const id = row.getData().id;
+    let new_row = { ...row.getData() };
+    new_row.i_i_tab += 1;
+    let old_id = new_row.id;
+    const id = new_row.i_tab + "_" + new_subindex;
+    new_row.id = id;
     // https://github.com/olifolkerd/tabulator/issues/4034#issuecomment-1326211853
-    table.addData([this_row], false, id);
-    var new_data = table.getData().map((x, i) => ({ ...x, i_tab_dyn: i }));
+    table.addData([new_row], false, old_id);
+    var new_data = set_index(table.getData());
     table.updateData(new_data);
     dispatch_event(cell, "clone-question", {
         table: new_data,
         id,
     });
 }
+function set_index(array) {
+    return array.map((x, i) => ({ ...x, i_tab_dyn: i }));
+}
+
 function show_hide_question(e, cell) {
     cell.setValue(!cell.getValue());
     // avoid that all questions are hidden:
