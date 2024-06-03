@@ -30,7 +30,12 @@ export function gen_header_table(data) {
 }
 
 export function gen_row_table(data) {
-    const arr = distinct(data, ["RowContent", "RowTitle1", "RowTitle2"]);
+    const arr = distinct(data, [
+        "RowNo",
+        "RowContent",
+        "RowTitle1",
+        "RowTitle2",
+    ]);
     const row_contents = [...new Set(arr.map((x) => x.RowContent))];
     var types_to_take;
     if (row_contents.includes("Detail")) {

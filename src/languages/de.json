@@ -10,6 +10,9 @@
     "questionColumn": "Frage",
     "cloneColumn": "Klonen"
   },
+  "crosstabTable": {
+    "title": "Kreuztabelle"
+  },
   "header": {
     "label": "Köpfe",
     "mainsel": "Kopfgruppe(n)",

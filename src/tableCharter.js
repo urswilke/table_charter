@@ -137,6 +137,7 @@ export class TableCharter extends LitElement {
                           <div class="settings">
                               <table-data-selector
                                   .html_data=${this.data}
+                                  .language=${this.language}
                                   @update-data="${this.update_plot_data}"
                               ></table-data-selector>
                           </div>
