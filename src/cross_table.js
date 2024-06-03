@@ -3,16 +3,110 @@ import { TabulatorFull as Tabulator } from "tabulator-tables";
 import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css";
 import style_light from "tabulator-tables/dist/css/tabulator.min.css";
 import { get, translate } from "lit-translate";
+import { group } from "d3";
 
 export class CrossTable extends LitElement {
     static properties = {
-        crosstabs: { type: Object },
         language: { type: String },
+        plot_data: { type: Array },
+        row_table: { type: Array },
+        header_table: { type: Array },
         // update_tab_table: { type: Boolean },
     };
     updated() {
+        this.prepare_crosstab();
         this.gen_table();
     }
+    prepare_crosstab() {
+        const row_table = this.row_table.filter((x) => x.selected);
+
+        // code redundant with gen_plot_types
+        // TODO: better move execution of gen_plot_types in this class ??
+        const decimal_formatter = Intl.NumberFormat(this.language).format;
+
+        const data_formatted = this.plot_data.map((x) => ({
+            ...x,
+            Value: decimal_formatter(
+                x.Value.toFixed(this.plot_data[0].RowDecimals),
+            ),
+        }));
+
+        this.crosstabs = {};
+        this.crosstabs.data = Array.from(
+            group(data_formatted, (d) => d.RowNo),
+            ([RowNo, group]) =>
+                Object.fromEntries(
+                    [["RowNo", RowNo]].concat(
+                        group.map((d) => [d.ColNo, d.Value]),
+                    ),
+                ),
+        )
+            // don't write repeated row titles:
+            .map((x, i) => ({
+                RowTitle1:
+                    row_table[i].RowTitle1 !== row_table[i - 1]?.RowTitle1
+                        ? row_table[i].RowTitle1
+                        : "",
+                RowTitle2:
+                    row_table[i].RowTitle2 === row_table[i].RowTitle1
+                        ? ""
+                        : row_table[i].RowTitle2,
+                ...x,
+            }));
+        const chosen_headers = this.header_table
+            .filter((x) => x.selected)
+            .map(({ ColNo, ColTitle1, ColTitle2, HeadNo }) => ({
+                HeadNo,
+                ColNo,
+                ColTitle1,
+                ColTitle2,
+            }));
+
+        const grouped_headers = Object.groupBy(chosen_headers, (x) => x.HeadNo);
+        this.crosstabs.columns = Object.entries(grouped_headers).map((x) => ({
+            title: x[1][0].ColTitle1,
+            headerHozAlign: "center",
+            columns: x[1].map((x) => ({
+                title: x.ColTitle2,
+                field: String(x.ColNo),
+                hozAlign: "center",
+                headerHozAlign: "center",
+            })),
+        }));
+        // TODO: add information to Col table whether column is total...
+
+        if (["TOTAL", "GESAMT"].includes(this.crosstabs.columns[0].title)) {
+            this.crosstabs.columns[0].frozen = true;
+        }
+
+        const all_labels = [
+            ...new Set(this.crosstabs.data.map((x) => x.RowTitle2)),
+        ];
+        const all_rowtitle2_redundant =
+            all_labels.length === 1 && all_labels[0] === "";
+        let width1, width2;
+        if (all_rowtitle2_redundant) {
+            width1 = 160;
+        } else {
+            width1 = 80;
+            width2 = 80;
+        }
+
+        !all_rowtitle2_redundant &&
+            this.crosstabs.columns.unshift({
+                title: "",
+                field: "RowTitle2",
+                frozen: true,
+                width: width2,
+            });
+        this.crosstabs.columns.unshift({
+            title: "",
+            field: "RowTitle1",
+            frozen: true,
+            width: width1,
+        });
+    }
+
     gen_table() {
         var table_data = this.crosstabs.data.map((x, id) => ({ id, ...x }));
 

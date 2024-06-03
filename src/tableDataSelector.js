@@ -1,6 +1,5 @@
 import { LitElement, css, html } from "lit";
 import { translate } from "lit-translate";
-import { group } from "d3";
 
 import {
     distinct,
@@ -34,7 +33,6 @@ const inspect = false; // set to true for some console.log msgs
 export class TableDataSelector extends LitElement {
     static properties = {
         language: { type: String },
-        crosstabs: { type: Object },
         tab_table: { type: Array },
         html_data: { type: Array },
         plot_data: { type: Array },
@@ -286,8 +284,6 @@ export class TableDataSelector extends LitElement {
 
     // Talk to parent:
     _update_plot_data() {
-        this.prepare_crosstabs();
-
         this.tab_table = produce(this.tab_table, (draft) => {
             draft[this.i_tab].saved = {
                 ...draft[this.i_tab].saved,
@@ -306,96 +302,6 @@ export class TableDataSelector extends LitElement {
         };
 
         this.dispatchEvent(new CustomEvent("update-data", options));
-    }
-
-    prepare_crosstabs() {
-        const row_table = this.choices.row_table.filter((x) => x.selected);
-
-        // code redundant with gen_plot_types
-        // TODO: better move execution of gen_plot_types in this class ??
-        const decimal_formatter = Intl.NumberFormat(this.language).format;
-
-        const data_formatted = this.plot_data.map((x) => ({
-            ...x,
-            Value: decimal_formatter(
-                x.Value.toFixed(this.plot_data[0].RowDecimals),
-            ),
-        }));
-
-        this.crosstabs = {};
-        this.crosstabs.data = Array.from(
-            group(data_formatted, (d) => d.RowNo),
-            ([RowNo, group]) =>
-                Object.fromEntries(
-                    [["RowNo", RowNo]].concat(
-                        group.map((d) => [d.ColNo, d.Value]),
-                    ),
-                ),
-        )
-            // don't write repeated row titles:
-            .map((x, i) => ({
-                RowTitle1:
-                    row_table[i].RowTitle1 !== row_table[i - 1]?.RowTitle1
-                        ? row_table[i].RowTitle1
-                        : "",
-                RowTitle2:
-                    row_table[i].RowTitle2 === row_table[i].RowTitle1
-                        ? ""
-                        : row_table[i].RowTitle2,
-                ...x,
-            }));
-        const chosen_headers = this.choices.header_table
-            .filter((x) => x.selected)
-            .map(({ ColNo, ColTitle1, ColTitle2, HeadNo }) => ({
-                HeadNo,
-                ColNo,
-                ColTitle1,
-                ColTitle2,
-            }));
-
-        const grouped_headers = Object.groupBy(chosen_headers, (x) => x.HeadNo);
-        this.crosstabs.columns = Object.entries(grouped_headers).map((x) => ({
-            title: x[1][0].ColTitle1,
-            headerHozAlign: "center",
-            columns: x[1].map((x) => ({
-                title: x.ColTitle2,
-                field: String(x.ColNo),
-                hozAlign: "center",
-                headerHozAlign: "center",
-            })),
-        }));
-        // TODO: add information to Col table whether column is total...
-
-        if (["TOTAL", "GESAMT"].includes(this.crosstabs.columns[0].title)) {
-            this.crosstabs.columns[0].frozen = true;
-        }
-
-        const all_labels = [
-            ...new Set(this.crosstabs.data.map((x) => x.RowTitle2)),
-        ];
-        const all_rowtitle2_redundant =
-            all_labels.length === 1 && all_labels[0] === "";
-        let width1, width2;
-        if (all_rowtitle2_redundant) {
-            width1 = 160;
-        } else {
-            width1 = 80;
-            width2 = 80;
-        }
-
-        !all_rowtitle2_redundant &&
-            this.crosstabs.columns.unshift({
-                title: "",
-                field: "RowTitle2",
-                frozen: true,
-                width: width2,
-            });
-        this.crosstabs.columns.unshift({
-            title: "",
-            field: "RowTitle1",
-            frozen: true,
-            width: width1,
-        });
     }
 
     // Listen to children:
@@ -678,7 +584,9 @@ export class TableDataSelector extends LitElement {
                     </div>
                     <div class="selector-group">
                         <cross-table
-                        .crosstabs=${this.crosstabs}
+                        .header_table=${this.choices.header_table}
+                        .row_table=${this.choices.row_table}
+                        .plot_data=${this.plot_data}
                         .language=${this.language}
                         ></cross-table>
                     </div>
