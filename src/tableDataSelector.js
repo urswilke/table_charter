@@ -24,6 +24,7 @@ import "./selectors/further_options_selector.js";
 import "./selectors/advanced_options_selector.js";
 import "./questions_table.js";
 import "./cross_table.js";
+import "./collapsible_div.js";
 
 import { produce } from "immer";
 import { is_mobile } from "./utils.js";
@@ -582,14 +583,18 @@ export class TableDataSelector extends LitElement {
                             </div>
                         </div>
                     </div>
-                    <div class="selector-group">
+                    <div-c 
+                        class="selector-group"
+                        .title=${translate("crosstabTable.title")}
+                        .is_collapsed=${this.params.collapsed_view}
+                    >
                         <cross-table
                         .header_table=${this.choices.header_table}
                         .row_table=${this.choices.row_table}
                         .plot_data=${this.plot_data}
                         .language=${this.language}
                         ></cross-table>
-                    </div>
+                    </div-c>
                 </div>
             `;
     }
