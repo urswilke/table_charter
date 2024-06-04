@@ -44,6 +44,7 @@ export class CollapsibleDiv extends LitElement {
                 border: solid light-dark(black, white) 1px;
                 color: white;
                 border-radius: 5px;
+                overflow: hidden;
             }
             #titlebar {
                 padding: 3px;
