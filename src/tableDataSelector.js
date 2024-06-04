@@ -277,11 +277,6 @@ export class TableDataSelector extends LitElement {
             html_el?.classList.remove("all-filtered");
         }
     }
-    show_hide_questions_table() {
-        this.update_params({
-            show_questions_table: !this.params.show_questions_table,
-        });
-    }
 
     // Talk to parent:
     _update_plot_data() {
@@ -460,38 +455,21 @@ export class TableDataSelector extends LitElement {
                             </num_type-selector>
                         </div>
                     </div-c>
-                    <div 
+                    <div-c 
                         class="selector-group" 
                         id="question-selector" 
-                        @clone-question=${this._on_question_clone}
-                        @show-hide-question=${this._on_show_hide_question}
-                        @edit-text=${this._on_text_edit}
-                        @close-questions-table=${this.show_hide_questions_table}
-                        @tab_table-updated=${this.set_tab_table_updated}
+                        .title=${translate("question.label")}
+                        .is_collapsed=${false}
                     >
-                        <div-c 
-                            class="content questions-div"
-                            .title=${translate("question.label")}
-                            .is_collapsed=${false}
-                        >
+                        <div class="content">
                             <question-selector 					
                                 data-test-id="question-selector"	
                                 @update-question="${this._on_question_update}" 		
                                 .chosen_tab_no=${this.i_tab} 
                                 .all_questions=${this.tab_table}>
                             </question-selector>
-                            <button 
-                                id="show-hide-questions-table"
-                                @click=${this.show_hide_questions_table}
-                            >✎</button>
-
-                        </div-c>
-                        <questions-table 
-                            .questions_table_data=${this.tab_table}  
-                            .update_tab_table=${this.update_tab_table}
-                            ?hidden=${!this.params.show_questions_table}>
-                        </questions-table>
-                    </div>
+                        </div>
+                    </div-c>
                     <div-c 
                         class="selector-group" 
                         id="header-multi-sel"
@@ -610,6 +588,22 @@ export class TableDataSelector extends LitElement {
                         .language=${this.language}
                         ></cross-table>
                     </div-c>
+                    <div-c 
+                        class="content"
+                        .title=${translate("questionsTable.title")}
+                        .is_collapsed=${this.params.collapsed_view}
+                        @clone-question=${this._on_question_clone}
+                        @show-hide-question=${this._on_show_hide_question}
+                        @edit-text=${this._on_text_edit}
+                        @close-questions-table=${this.show_hide_questions_table}
+                        @tab_table-updated=${this.set_tab_table_updated}
+                    >
+                        <questions-table 
+                            .questions_table_data=${this.tab_table}  
+                            .update_tab_table=${this.update_tab_table}
+                        >
+                        </questions-table>
+                    </div-c>
                 </div>
             `;
     }
@@ -650,13 +644,6 @@ export class TableDataSelector extends LitElement {
                 margin-top: 5px;
                 margin-bottom: 5px;
                 gap: 5px;
-            }
-            .questions-div {
-                display: flex;
-                flex-direction: row;
-            }
-            #show-hide-questions-table {
-                width: 2em;
             }
         `,
     ];

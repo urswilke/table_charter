@@ -42,31 +42,7 @@ export class QuestionsTable extends LitElement {
     }
 
     render() {
-        return html`
-            <div class="wrapper">
-                <div id="questions-table-titlebar">
-                    <button
-                        id="close"
-                        type="button"
-                        @click=${this._close_questions_table}
-                    >
-                        ×
-                    </button>
-                    ${translate("questionsTable.title")}
-                </div>
-
-                <div id="questions-table"></div>
-            </div>
-        `;
-    }
-    _close_questions_table() {
-        this.dispatchEvent(
-            new CustomEvent("close-questions-table", {
-                detail: {},
-                bubbles: true,
-                composed: true,
-            }),
-        );
+        return html` <div id="questions-table"></div> `;
     }
     _send_table_updated_event() {
         const options = {
@@ -94,20 +70,6 @@ export class QuestionsTable extends LitElement {
                 resize: both;
                 height: 300px;
                 border: solid light-dark(black, white) 1px;
-            }
-            .wrapper {
-                width: 25%;
-                position: fixed;
-                border-radius: 5px;
-            }
-            #questions-table-titlebar {
-                padding: 3px;
-                background-color: #5e677b;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                border: solid light-dark(black, white) 1px;
-                color: white;
-                width: fit-content;
             }
         `,
     ];
