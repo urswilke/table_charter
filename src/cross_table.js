@@ -140,7 +140,6 @@ export class CrossTable extends LitElement {
                 overflow: scroll;
                 resize: both;
                 height: 300px;
-                border: solid light-dark(black, white) 1px;
             }
         `,
     ];

@@ -446,8 +446,12 @@ export class TableDataSelector extends LitElement {
             ? html`<div></div>`
             : html`
                 <div id="parent">
-                    <div class="selector-group" id="num-type-div">
-                        <label>${translate("numType.label")}</label>
+                    <div-c 
+                        class="selector-group" 
+                        id="num-type-div"
+                        .title=${translate("numType.label")}
+                        .is_collapsed=${false}
+                    >
                         <div class="content">
                             <num_type-selector
                                 @update-num_type="${this._on_num_type_update}"
@@ -455,7 +459,7 @@ export class TableDataSelector extends LitElement {
                                 .chosen_num_type=${this.choices.row_type}>
                             </num_type-selector>
                         </div>
-                    </div>
+                    </div-c>
                     <div 
                         class="selector-group" 
                         id="question-selector" 
@@ -465,8 +469,11 @@ export class TableDataSelector extends LitElement {
                         @close-questions-table=${this.show_hide_questions_table}
                         @tab_table-updated=${this.set_tab_table_updated}
                     >
-                        <label>${translate("question.label")}</label>
-                        <div class="content questions-div">
+                        <div-c 
+                            class="content questions-div"
+                            .title=${translate("question.label")}
+                            .is_collapsed=${false}
+                        >
                             <question-selector 					
                                 data-test-id="question-selector"	
                                 @update-question="${this._on_question_update}" 		
@@ -478,15 +485,19 @@ export class TableDataSelector extends LitElement {
                                 @click=${this.show_hide_questions_table}
                             >✎</button>
 
-                        </div>
+                        </div-c>
                         <questions-table 
                             .questions_table_data=${this.tab_table}  
                             .update_tab_table=${this.update_tab_table}
                             ?hidden=${!this.params.show_questions_table}>
                         </questions-table>
                     </div>
-                    <div class="selector-group" id="header-multi-sel">
-                        <label for="headers">${translate("header.label")}</label>
+                    <div-c 
+                        class="selector-group" 
+                        id="header-multi-sel"
+                        .title=${translate("header.label")}
+                        .is_collapsed=${false}
+                    >
                         <div class="content">
                             <multi-selector
                                 id="headers" 		
@@ -500,10 +511,14 @@ export class TableDataSelector extends LitElement {
                                 .prop_table=${this.choices.header_table}>
                             </multi-selector>
                         </div>
-                    </div>
+                    </div-c>
                     <!-- https://stackoverflow.com/a/2062264 -->
-                    <div class="selector-group" id="row-multi-sel">
-                        <label for="rows">${translate("rows.label")}</label>
+                    <div-c 
+                        class="selector-group" 
+                        id="row-multi-sel"
+                        .title=${translate("rows.label")}
+                        .is_collapsed=${false}
+                    >
                         <div class="content">
                             <multi-selector 
                                 id="rows"		
@@ -517,20 +532,20 @@ export class TableDataSelector extends LitElement {
                                 .prop_table=${this.choices.row_table}>	   																
                             </multi-selector>
                         </div>
-                    </div>
+                    </div-c>
                     <button
                         id="show-hide"
                         data-test-id="show-hide-button"
                         @click="${this._on_expand}">
                         ${this.params.collapsed_view ? translate("showHide.show") : translate("showHide.hide")}
                     </button>
-                    <div 
+                    <div-c 
                         id="settings"
                         data-test-id="settings-div"
-                        class=${!this.params.collapsed_view ? "" : "hide"}
+                        .title=${translate("settings.label")}
+                        .is_collapsed=${this.params.collapsed_view}
                     >
                         <div class="selector-group">
-                            <label for="settings">${translate("settings.label")}</label>
                             <div class="content">
                                 <further-options-selector
                                     @update-xy="${this._on_xy_update}"
@@ -582,7 +597,7 @@ export class TableDataSelector extends LitElement {
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div-c>
                     <div-c 
                         class="selector-group"
                         .title=${translate("crosstabTable.title")}
@@ -604,16 +619,6 @@ export class TableDataSelector extends LitElement {
             option:checked {
                 background: red linear-gradient(#333, #333);
             }
-            label {
-                background: #5e677b;
-                color: white;
-                display: block;
-                border-top-right-radius: 4px;
-                border-top-left-radius: 4px;
-                padding: 5px;
-                padding-left: 15px;
-            }
-            div.selector-group,
             #show-hide {
                 border-style: solid;
                 border-radius: 5px;

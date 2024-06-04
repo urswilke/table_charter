@@ -8,12 +8,10 @@ export class CollapsibleDiv extends LitElement {
 
     set is_collapsed(val) {
         this._is_collapsed = val;
-        if (this.renderRoot) {
-            this.renderRoot.querySelector("#child").style.display = this
-                .is_collapsed
-                ? "none"
-                : "block";
-        }
+        this.style.setProperty(
+            "--show-content",
+            this.is_collapsed ? "none" : "block",
+        );
     }
     get is_collapsed() {
         return this._is_collapsed;
@@ -49,11 +47,9 @@ export class CollapsibleDiv extends LitElement {
             #titlebar {
                 padding: 3px;
                 background: #5e677b;
-                /* border-bottom: solid light-dark(black, white) 1px; */
             }
             #child {
-                padding: 3px;
-                display: none;
+                display: var(--show-content);
             }
         `,
     ];
