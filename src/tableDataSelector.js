@@ -483,6 +483,11 @@ export class TableDataSelector extends LitElement {
         if (!this_el.is_collapsed) {
             this_el.style.position = "absolute";
             this_el.style.outline = "5px solid light-dark(white, black)";
+            if (el.startsWith("#tabulator-")) {
+                // HACK to set the table width to half the screen
+                this_el.childNodes[1].shadowRoot.childNodes[2].style.width =
+                    window.innerWidth / 2 + "px";
+            }
         }
     }
 
@@ -630,6 +635,7 @@ export class TableDataSelector extends LitElement {
                         </div>
                     </div-c>
                     <div-c 
+                        id="tabulator-crosstab"
                         class="selector-group"
                         .title=${this.is_minimized ? "CT" : translate("crosstabTable.title")}
                         .is_collapsed=${this.params.collapsed_view.minimal}
@@ -642,6 +648,7 @@ export class TableDataSelector extends LitElement {
                         ></cross-table>
                     </div-c>
                     <div-c 
+                        id="tabulator-questions-manager"
                         class="content"
                         .title=${this.is_minimized ? "QM" : translate("questionsTable.title")}
                         .is_collapsed=${this.params.collapsed_view.minimal}
