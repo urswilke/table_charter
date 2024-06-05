@@ -54,7 +54,7 @@ export class CollapsibleDiv extends LitElement {
             }
             #titlebar:hover {
                 opacity: 80%;
-                cursor: pointer;
+                cursor: nesw-resize;
             }
             #child {
                 color: light-dark(black, white);
