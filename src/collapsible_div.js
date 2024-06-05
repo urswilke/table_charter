@@ -20,10 +20,8 @@ export class CollapsibleDiv extends LitElement {
     render() {
         return html`
             <div id="main">
-                <div id="titlebar">
-                    <button @click=${this.toggle_collapsed}>
-                        ${this.title}
-                    </button>
+                <div id="titlebar" @click=${this.toggle_collapsed}>
+                    ${this.title}
                 </div>
                 <div id="child">
                     ${this.is_collapsed ? html`` : html`<slot></slot>`}
@@ -44,6 +42,7 @@ export class CollapsibleDiv extends LitElement {
     static styles = [
         css`
             #main {
+                background-color: light-dark(white, black);
                 border: solid light-dark(black, white) 1px;
                 color: white;
                 border-radius: 5px;
@@ -53,8 +52,11 @@ export class CollapsibleDiv extends LitElement {
                 padding: 3px;
                 background: #5e677b;
             }
+            #titlebar:hover {
+                opacity: 50%;
+                cursor: pointer;
+            }
             #child {
-                background-color: light-dark(white, black);
                 color: light-dark(black, white);
                 display: var(--show-content);
             }
