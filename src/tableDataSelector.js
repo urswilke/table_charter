@@ -51,6 +51,9 @@ export class TableDataSelector extends LitElement {
         if (!this.params) {
             return;
         }
+        if (val === false) {
+            this.collapse_all_elements();
+        }
         const aspect_ratio = window.innerWidth / window.innerHeight;
         const this_style = this.renderRoot.querySelector("#parent").style;
         if (this.is_minimized & (aspect_ratio <= 1)) {
