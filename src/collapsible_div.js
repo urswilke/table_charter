@@ -22,9 +22,8 @@ export class CollapsibleDiv extends LitElement {
             <div id="main">
                 <div id="titlebar">
                     <button @click=${this.toggle_collapsed}>
-                        ${this.is_collapsed ? "☰" : "×"}
+                        ${this.title}
                     </button>
-                    ${this.title}
                 </div>
                 <div id="child">
                     ${this.is_collapsed ? html`` : html`<slot></slot>`}
