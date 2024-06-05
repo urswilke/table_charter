@@ -21,7 +21,7 @@ export class CollapsibleDiv extends LitElement {
         return html`
             <div id="main">
                 <div id="titlebar">
-                    <button @click=${this.toggle_collapse}>
+                    <button @click=${this.toggle_collapsed}>
                         ${this.is_collapsed ? "☰" : "×"}
                     </button>
                     ${this.title}
@@ -32,8 +32,14 @@ export class CollapsibleDiv extends LitElement {
             </div>
         `;
     }
-    toggle_collapse() {
+    toggle_collapsed() {
         this.is_collapsed = !this.is_collapsed;
+        this.dispatchEvent(
+            new CustomEvent("toggle-collapsed", {
+                bubbles: true,
+                composed: true,
+            }),
+        );
     }
 
     static styles = [

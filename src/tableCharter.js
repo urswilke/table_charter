@@ -16,6 +16,7 @@ registerTranslateConfig({
 });
 export class TableCharter extends LitElement {
     static properties = {
+        is_minimized: { type: Boolean },
         language: { type: String },
         walkthrough: { type: String },
         data: { type: Object },
@@ -26,6 +27,7 @@ export class TableCharter extends LitElement {
     // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component)
     constructor() {
         super();
+        this.is_minimized = false;
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
         this.hasLoadedWalkthrough = false;
@@ -67,18 +69,14 @@ export class TableCharter extends LitElement {
 
     hide_menu() {
         this.el(".hide-menu").innerText = "☰";
-        // this.el(".settings").style.visibility = "hidden";
-        this.el("table-data-selector").style.display = "none";
-        this.el(".show-help").style.display = "none";
         this.el(".column1").style.flexBasis = "content";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
-        this.el("table-data-selector").style.display = "block";
-        this.el(".show-help").style.display = "inline-block";
         this.el(".column1").style.flexBasis = "25%";
     }
     show_hide_menu() {
+        this.is_minimized = !this.is_minimized;
         this.el(".hide-menu").innerText === "☰"
             ? this.show_menu()
             : this.hide_menu();
@@ -136,6 +134,7 @@ export class TableCharter extends LitElement {
 
                           <div class="settings">
                               <table-data-selector
+                                  .is_minimized=${this.is_minimized}
                                   .html_data=${this.data}
                                   .language=${this.language}
                                   @update-data="${this.update_plot_data}"
