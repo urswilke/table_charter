@@ -425,8 +425,8 @@ export class TableDataSelector extends LitElement {
     _on_expand() {
         this.update_params({
             collapsed_view: {
-                minimal: false,
-                initial: !this.params.collapsed_view.initial,
+                minimal: !this.params.collapsed_view.minimal,
+                initial: false,
             },
         });
     }
