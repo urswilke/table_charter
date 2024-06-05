@@ -31,7 +31,13 @@ export class CollapsibleDiv extends LitElement {
         this.style.setProperty("--text-alignment", text_align_str);
         return html`
             <div id="main">
-                <div id="titlebar" @click=${this.toggle_collapsed}>${text}</div>
+                <div
+                    id="titlebar"
+                    @click=${this.toggle_collapsed}
+                    title=${this.title}
+                >
+                    ${text}
+                </div>
                 <div id="child">
                     ${this.is_collapsed ? html`` : html`<slot></slot>`}
                 </div>
