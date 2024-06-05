@@ -469,11 +469,13 @@ export class TableDataSelector extends LitElement {
         for (var i = 0; i < all_div_cs.length; i++) {
             var currentEl = all_div_cs[i];
             currentEl.style.position = "static";
+            currentEl.style.outline = "0px";
             this.is_collapsed = true;
         }
         const this_el = this.renderRoot.querySelector(el);
         if (!this_el.is_collapsed) {
             this_el.style.position = "absolute";
+            this_el.style.outline = "5px solid light-dark(white, black)";
         }
     }
 
@@ -689,6 +691,9 @@ export class TableDataSelector extends LitElement {
                 margin-top: 5px;
                 margin-bottom: 5px;
                 gap: 5px;
+            }
+            div-c {
+                border-radius: 5px;
             }
         `,
     ];
