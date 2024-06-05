@@ -106,12 +106,6 @@ export class TableCharter extends LitElement {
     }
 
     render() {
-        this.plot_data &&
-            (this.plot_data.params = {
-                language: this.language,
-                element_width: this.el(".ojsplot").offsetWidth,
-                element_height: this.el(".column2").offsetHeight,
-            });
         return this.data === undefined
             ? html`<div>no data loaded</div>`
             : html`
@@ -202,6 +196,10 @@ export class TableCharter extends LitElement {
                 align-self: stretch;
                 scrollbar-gutter: stable;
                 margin-left: 0;
+            }
+            ojs-plot {
+                height: 100%;
+                width: 100%;
             }
             .show-help,
             .hide-menu {

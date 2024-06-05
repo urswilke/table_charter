@@ -17,10 +17,36 @@ export class OJSPlot extends LitElement {
         file_name: { type: String },
     };
 
+    connectedCallback() {
+        super.connectedCallback();
+        this.resizeObserver = new ResizeObserver(this.onResize.bind(this));
+        this.resizeObserver.observe(this, { box: "border-box" });
+        this.set_dimensions();
+    }
+    onResize(entries) {
+        window.requestAnimationFrame(() => {
+            if (!Array.isArray(entries) || !entries.length) return;
+            this.set_dimensions();
+        });
+    }
+    set_dimensions() {
+        this.width = this.offsetWidth;
+        this.height = this.offsetHeight;
+        this.plot_data && (this.plot_data = { ...this.plot_data });
+    }
+
+    get plot_data() {
+        return this._plot_data;
+    }
     set plot_data(val) {
         if (!val || val.length === 0) {
             return this;
         }
+        val.params = {
+            element_height: this.height,
+            element_width: this.width,
+        };
+        this._plot_data = val;
         this.plot_options = new PlotOptions(val);
         const font_size = this.plot_options.input.font_size;
         this.style.setProperty("--font-size", String(font_size) + "px");
