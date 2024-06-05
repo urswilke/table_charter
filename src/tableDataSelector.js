@@ -425,7 +425,7 @@ export class TableDataSelector extends LitElement {
     _on_expand() {
         this.update_params({
             collapsed_view: {
-                minimal: true,
+                minimal: false,
                 initial: !this.params.collapsed_view.initial,
             },
         });
@@ -568,7 +568,7 @@ export class TableDataSelector extends LitElement {
                         id="show-hide"
                         data-test-id="show-hide-button"
                         @click="${this._on_expand}">
-                        ${this.params.collapsed_view.initial ? translate("showHide.show") : translate("showHide.hide")}
+                        ${this.params.collapsed_view.minimal ? translate("showHide.show") : translate("showHide.hide")}
                     </button>
                     <div-c 
                         id="settings"
