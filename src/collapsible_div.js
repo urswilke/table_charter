@@ -55,6 +55,7 @@ export class CollapsibleDiv extends LitElement {
                 background: #5e677b;
             }
             #child {
+                background-color: light-dark(white, black);
                 display: var(--show-content);
             }
         `,
