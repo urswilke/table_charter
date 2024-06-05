@@ -472,14 +472,10 @@ export class TableDataSelector extends LitElement {
         }
 
         const el = "#" + e.srcElement.id;
-        const all_div_cs = this.renderRoot.querySelectorAll("div-c");
-        for (var i = 0; i < all_div_cs.length; i++) {
-            var currentEl = all_div_cs[i];
-            currentEl.style.position = "static";
-            currentEl.style.outline = "0px";
-            this.is_collapsed = true;
-        }
         const this_el = this.renderRoot.querySelector(el);
+        let collapsed_bool = this_el.is_collapsed;
+        this.collapse_all_elements();
+        this_el.is_collapsed = collapsed_bool;
         if (!this_el.is_collapsed) {
             this_el.style.position = "absolute";
             this_el.style.outline = "5px solid light-dark(white, black)";
@@ -488,6 +484,16 @@ export class TableDataSelector extends LitElement {
                 this_el.childNodes[1].shadowRoot.childNodes[2].style.width =
                     window.innerWidth / 2 + "px";
             }
+        }
+    }
+
+    collapse_all_elements() {
+        const all_div_cs = this.renderRoot.querySelectorAll("div-c");
+        for (var i = 0; i < all_div_cs.length; i++) {
+            var currentEl = all_div_cs[i];
+            currentEl.style.position = "static";
+            currentEl.style.outline = "0px";
+            currentEl.setAttribute("is_collapsed", true);
         }
     }
 
