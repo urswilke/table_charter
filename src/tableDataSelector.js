@@ -502,8 +502,10 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         class="selector-group" 
                         id="num-type-div"
-                        .title=${this.is_minimized ? "%/n" : translate("numType.label")}
+                        .title=${translate("numType.label")}
+                        .short_title=${"%/n"}
                         .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <num_type-selector
@@ -516,8 +518,10 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         class="selector-group" 
                         id="question-selector" 
-                        .title=${this.is_minimized ? "Q" : translate("question.label")}
+                        .title=${translate("question.label")}
+                        .short_title=${"Q"}
                         .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <question-selector 					
@@ -531,8 +535,10 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         class="selector-group" 
                         id="header-multi-sel"
-                        .title=${this.is_minimized ? "H" : translate("header.label")}
+                        .title=${translate("header.label")}
+                        .short_title=${"H"}
                         .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <multi-selector
@@ -552,8 +558,10 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         class="selector-group" 
                         id="row-multi-sel"
-                        .title=${this.is_minimized ? "R" : translate("rows.label")}
+                        .title=${translate("rows.label")}
+                        .short_title=${"R"}
                         .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <multi-selector 
@@ -578,8 +586,10 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         id="settings"
                         data-test-id="settings-div"
-                        .title=${this.is_minimized ? "⚙" : translate("settings.label")}
+                        .title=${translate("settings.label")}
+                        .short_title=${"⚙"}
                         .is_collapsed=${this.params.collapsed_view.minimal}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="selector-group">
                             <div class="content">
@@ -637,21 +647,26 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         id="tabulator-crosstab"
                         class="selector-group"
-                        .title=${this.is_minimized ? "CT" : translate("crosstabTable.title")}
+                        .title=${translate("crosstabTable.title")}
+                        .short_title=${"CT"}
                         .is_collapsed=${this.params.collapsed_view.minimal}
+                        .is_minimized=${this.is_minimized}
                     >
                         <cross-table
-                        .header_table=${this.choices.header_table}
-                        .row_table=${this.choices.row_table}
-                        .plot_data=${this.plot_data}
-                        .language=${this.language}
+                            .header_table=${this.choices.header_table}
+                            .row_table=${this.choices.row_table}
+                            .plot_data=${this.plot_data}
+                            .language=${this.language}
+                            .is_minimized=${this.is_minimized}
                         ></cross-table>
                     </div-c>
                     <div-c 
                         id="tabulator-questions-manager"
                         class="content"
-                        .title=${this.is_minimized ? "QM" : translate("questionsTable.title")}
+                        .title=${translate("questionsTable.title")}
+                        .short_title=${"QM"}
                         .is_collapsed=${this.params.collapsed_view.minimal}
+                        .is_minimized=${this.is_minimized}
                         @clone-question=${this._on_question_clone}
                         @show-hide-question=${this._on_show_hide_question}
                         @edit-text=${this._on_text_edit}
