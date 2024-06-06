@@ -1,9 +1,15 @@
-import { chain, pick, uniqWith, isEqual } from "lodash";
+// https://stackoverflow.com/questions/54907549/keep-only-selected-keys-in-every-object-from-array/66471710#66471710
+function select(arr, X) {
+    return arr.map((o) => Object.fromEntries(X.map((k) => [k, o[k]])));
+}
 
+// https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects/56757215#56757215
 export function distinct(arr, X) {
-    return chain(arr.map((o) => pick(o, X)))
-        .uniqWith(isEqual)
-        .value();
+    return select(arr, X).filter(
+        (obj1, i, a) =>
+            a.findIndex((obj2) => X.every((key) => obj2[key] === obj1[key])) ===
+            i,
+    );
 }
 
 const is_dark =

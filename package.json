@@ -36,7 +36,6 @@
         "immer": "^10.0.3",
         "intro.js": "^7.2.0",
         "lit-translate": "^2.0.1",
-        "lodash": "^4.17.21",
         "tabulator-tables": "^6.2.1"
     },
     "devDependencies": {
