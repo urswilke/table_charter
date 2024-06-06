@@ -59,7 +59,7 @@ export class MultiSelector extends LitElement {
     }
 
     render() {
-        const arr = distinct(this.prop_table, [this.parent_string, "selected"]);
+        const arr = distinct(this.prop_table, this.parent_string, "selected");
         const obj = Object.groupBy(arr, this.parent_fun);
         const arr_selected = Object.keys(obj).map((i) => ({
             // https://stackoverflow.com/a/40699412

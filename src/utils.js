@@ -1,11 +1,11 @@
 // https://stackoverflow.com/questions/54907549/keep-only-selected-keys-in-every-object-from-array/66471710#66471710
-function select(arr, X) {
+function select(arr, ...X) {
     return arr.map((o) => Object.fromEntries(X.map((k) => [k, o[k]])));
 }
 
 // https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects/56757215#56757215
-export function distinct(arr, X) {
-    return select(arr, X).filter(
+export function distinct(arr, ...X) {
+    return select(arr, ...X).filter(
         (obj1, i, a) =>
             a.findIndex((obj2) => X.every((key) => obj2[key] === obj1[key])) ===
             i,
@@ -22,7 +22,10 @@ export function gen_header_table(data) {
     const arr = distinct(
         data,
         // TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-        ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"],
+        "ColNo",
+        "HeadNo",
+        "ColTitle1",
+        "ColTitle2",
     );
     const first_two_titles = [...new Set(arr.map((x) => x.ColTitle1))].slice(
         0,
@@ -36,12 +39,7 @@ export function gen_header_table(data) {
 }
 
 export function gen_row_table(data) {
-    const arr = distinct(data, [
-        "RowNo",
-        "RowContent",
-        "RowTitle1",
-        "RowTitle2",
-    ]);
+    const arr = distinct(data, "RowNo", "RowContent", "RowTitle1", "RowTitle2");
     const row_contents = [...new Set(arr.map((x) => x.RowContent))];
     var types_to_take;
     if (row_contents.includes("Detail")) {
@@ -162,7 +160,7 @@ export function save_file() {
 // add varying number of spaces to duplicated `ColTitle2`s
 // (that every ColNo has a unique ColTitle2):
 export function add_spaces(data) {
-    var coltitle_array = distinct(data, ["ColNo", "ColTitle2"]);
+    var coltitle_array = distinct(data, "ColNo", "ColTitle2");
     var counts = {};
     for (let i = 0; i < coltitle_array.length; i++) {
         const e = coltitle_array[i];

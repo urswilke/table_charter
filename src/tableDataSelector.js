@@ -247,11 +247,12 @@ export class TableDataSelector extends LitElement {
         this.plot_data = this.rows_data;
     }
     set_color_scale() {
-        const df_row_tit_val = distinct(this.rows_data, [
+        const df_row_tit_val = distinct(
+            this.rows_data,
             "RowTitle1",
             "RowTitle2",
             "RowValue",
-        ]);
+        );
         const n_numeric_rowtitles = df_row_tit_val.reduce(
             (sum, x) =>
                 sum +
