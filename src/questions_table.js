@@ -154,7 +154,6 @@ const columns = [
         hozAlign: "center",
         formatter: "tickCross",
         cellClick: show_hide_question,
-        cellTap: show_hide_question,
     },
     {
         field: "TabTitle",
@@ -169,6 +168,5 @@ const columns = [
         width: 20,
         hozAlign: "center",
         cellClick: duplicate_row,
-        cellTap: duplicate_row,
     },
 ];
