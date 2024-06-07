@@ -67,6 +67,8 @@ export class CrossTable extends LitElement {
             columns: x[1].map((x) => ({
                 title: x.ColTitle2,
                 field: String(x.ColNo),
+                // This avoids an infinitely growing width of the table
+                width: "5em",
                 hozAlign: "center",
                 headerHozAlign: "center",
             })),
