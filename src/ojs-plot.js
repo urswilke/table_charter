@@ -15,6 +15,7 @@ export class OJSPlot extends LitElement {
         chartTitle: { type: String },
         plot_options: { type: PlotOptions },
         file_name: { type: String },
+        language: { type: String },
     };
 
     connectedCallback() {
@@ -45,6 +46,8 @@ export class OJSPlot extends LitElement {
         val.params = {
             element_height: this.height,
             element_width: this.width,
+            // TODO: language (decimal separator in plot) isn't updated until the next plot is generated...:
+            language: this.language,
         };
         this._plot_data = val;
         this.plot_options = new PlotOptions(val);

@@ -140,6 +140,7 @@ export class TableCharter extends LitElement {
                               class="ojsplot"
                               data-test-id="ojs-plot"
                               .plot_data=${this.plot_data}
+                              .language=${this.language}
                           >
                           </ojs-plot>
                       </div>
