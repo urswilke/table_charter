@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 
 export class CollapsibleDiv extends LitElement {
     static properties = {
-        is_collapsed: { type: Boolean },
+        is_collapsed: { type: Boolean, reflect: true },
         is_minimized: { type: Boolean },
         title: { type: String },
         short_title: { type: String },
@@ -70,7 +70,12 @@ export class CollapsibleDiv extends LitElement {
             }
             #titlebar:hover {
                 opacity: 80%;
-                cursor: nesw-resize;
+            }
+            #titlebar:hover {
+                cursor: zoom-out;
+            }
+            :host([is_collapsed]) #titlebar:hover {
+                cursor: context-menu;
             }
             #child {
                 color: light-dark(black, white);
