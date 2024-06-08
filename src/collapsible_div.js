@@ -19,6 +19,14 @@ export class CollapsibleDiv extends LitElement {
         return this._is_collapsed;
     }
 
+    reattach() {
+        this.dispatchEvent(
+            new CustomEvent("re-attach", {
+                bubbles: true,
+                composed: true,
+            }),
+        );
+    }
     render() {
         let text, text_align_str;
         if (this.is_minimized & this.is_collapsed) {
@@ -38,19 +46,7 @@ export class CollapsibleDiv extends LitElement {
                 >
                     ${text}
                     ${!this.is_collapsed & this.is_minimized
-                        ? html`
-                              <button
-                                  @click=${() =>
-                                      this.dispatchEvent(
-                                          new CustomEvent("re-attach", {
-                                              bubbles: true,
-                                              composed: true,
-                                          }),
-                                      )}
-                              >
-                                  ↖️
-                              </button>
-                          `
+                        ? html` <button @click=${this.reattach}>↖️</button> `
                         : html``}
                 </div>
                 <div id="child">
