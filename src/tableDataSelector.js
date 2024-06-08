@@ -737,6 +737,9 @@ export class TableDataSelector extends LitElement {
             div-c {
                 border-radius: 5px;
             }
+            *:focus {
+                outline: 1px solid blue;
+            }
         `,
     ];
 }
