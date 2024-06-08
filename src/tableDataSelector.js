@@ -33,7 +33,7 @@ const inspect = false; // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
     static properties = {
-        is_minimized: { type: Boolean },
+        is_minimized: { type: Boolean, reflect: true },
         language: { type: String },
         tab_table: { type: Array },
         html_data: { type: Array },
@@ -52,13 +52,7 @@ export class TableDataSelector extends LitElement {
             return;
         }
         this.collapse_all_elements();
-        const aspect_ratio = window.innerWidth / window.innerHeight;
         const this_style = this.renderRoot.querySelector("#parent").style;
-        if (this.is_minimized & (aspect_ratio <= 1)) {
-            this_style.flexDirection = "row";
-        } else {
-            this_style.flexDirection = "column";
-        }
         if (val) {
             this.update_params({
                 collapsed_view: { minimal: true, initial: true },
@@ -729,6 +723,17 @@ export class TableDataSelector extends LitElement {
                 margin-bottom: 5px;
                 gap: 5px;
             }
+            @media (max-aspect-ratio: 1) {
+                :host([is_minimized]) #parent {
+                    flex-direction: row;
+                }
+            }
+            @media (aspect-ratio: 1) {
+                :host([is_minimized]) #parent {
+                    flex-direction: row;
+                }
+            }
+
             div-c {
                 border-radius: 5px;
             }
