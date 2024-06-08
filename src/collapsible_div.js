@@ -37,6 +37,21 @@ export class CollapsibleDiv extends LitElement {
                     title=${this.title}
                 >
                     ${text}
+                    ${!this.is_collapsed & this.is_minimized
+                        ? html`
+                              <button
+                                  @click=${() =>
+                                      this.dispatchEvent(
+                                          new CustomEvent("re-attach", {
+                                              bubbles: true,
+                                              composed: true,
+                                          }),
+                                      )}
+                              >
+                                  ↖️
+                              </button>
+                          `
+                        : html``}
                 </div>
                 <div id="child">
                     ${this.is_collapsed ? html`` : html`<slot></slot>`}
@@ -65,6 +80,8 @@ export class CollapsibleDiv extends LitElement {
                 overflow: hidden;
             }
             #titlebar {
+                display: flex;
+                justify-content: space-between;
                 padding: 3px;
                 background: #5e677b;
                 text-align: var(--text-alignment);

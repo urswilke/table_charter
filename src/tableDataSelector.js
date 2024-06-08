@@ -16,6 +16,8 @@ import {
     load_saved_settings,
     is_mobile,
     drag,
+    move_in_flex,
+    collapse_element,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -54,9 +56,11 @@ export class TableDataSelector extends LitElement {
         //  Alternatively we could add:
         //  $pointerdown=${drag}
         // to each of the div-c elements
-        this.renderRoot
-            .querySelectorAll("div-c")
-            .forEach((box) => box.addEventListener("pointerdown", drag));
+        const div_cs = this.renderRoot.querySelectorAll("div-c");
+        div_cs.forEach((box) => box.addEventListener("pointerdown", drag));
+        div_cs.forEach((box) =>
+            box.addEventListener("re-attach", move_in_flex),
+        );
     }
     set is_minimized(val) {
         this._is_minimized = val;
@@ -64,7 +68,6 @@ export class TableDataSelector extends LitElement {
             return;
         }
         this.collapse_all_elements();
-        const this_style = this.renderRoot.querySelector("#parent").style;
         if (val) {
             this.update_params({
                 collapsed_view: { minimal: true, initial: true },
@@ -495,10 +498,7 @@ export class TableDataSelector extends LitElement {
     collapse_all_elements() {
         const all_div_cs = this.renderRoot.querySelectorAll("div-c");
         for (var i = 0; i < all_div_cs.length; i++) {
-            var currentEl = all_div_cs[i];
-            currentEl.style.position = "static";
-            currentEl.style.outline = "0px";
-            currentEl.setAttribute("is_collapsed", true);
+            collapse_element(all_div_cs[i]);
         }
     }
 
