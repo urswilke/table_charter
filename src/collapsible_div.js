@@ -46,12 +46,13 @@ export class CollapsibleDiv extends LitElement {
     }
     toggle_collapsed() {
         this.is_collapsed = !this.is_collapsed;
-        this.dispatchEvent(
-            new CustomEvent("toggle-collapsed", {
-                bubbles: true,
-                composed: true,
-            }),
-        );
+        !this.is_collapsed &&
+            this.dispatchEvent(
+                new CustomEvent("toggle-collapsed", {
+                    bubbles: true,
+                    composed: true,
+                }),
+            );
     }
 
     static styles = [

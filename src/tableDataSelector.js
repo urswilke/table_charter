@@ -14,6 +14,7 @@ import {
     left_join,
     obj_arrays_to_array_objs,
     load_saved_settings,
+    drag,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -45,6 +46,17 @@ export class TableDataSelector extends LitElement {
     connectedCallback() {
         super.connectedCallback();
         this.init_tablebook_data();
+    }
+    updated() {
+        // HACK: I don't know when exactly the list of all div-c can be queried.
+        // could it also be done like this in the definition of CollapsibleDiv?
+        // Like this it's always there....
+        //  Alternatively we could add:
+        //  $pointerdown=${drag}
+        // to each of the div-c elements
+        this.renderRoot
+            .querySelectorAll("div-c")
+            .forEach((box) => box.addEventListener("pointerdown", drag));
     }
     set is_minimized(val) {
         this._is_minimized = val;
@@ -470,7 +482,6 @@ export class TableDataSelector extends LitElement {
         const el = "#" + e.srcElement.id;
         const this_el = this.renderRoot.querySelector(el);
         let collapsed_bool = this_el.is_collapsed;
-        this.collapse_all_elements();
         this_el.is_collapsed = collapsed_bool;
         if (!this_el.is_collapsed) {
             this_el.style.position = "absolute";

@@ -261,3 +261,20 @@ export function load_saved_settings(tab_table) {
     }
     return saved;
 }
+export const drag = (evt) => {
+    const el = evt.currentTarget;
+    el.style.touchAction = "none";
+
+    const move = (evt) => {
+        el.style.left = `${el.offsetLeft + evt.movementX}px`;
+        el.style.top = `${el.offsetTop + evt.movementY}px`;
+    };
+
+    const up = () => {
+        removeEventListener("pointermove", move);
+        removeEventListener("pointerup", up);
+    };
+
+    addEventListener("pointermove", move);
+    addEventListener("pointerup", up);
+};
