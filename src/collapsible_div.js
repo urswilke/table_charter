@@ -84,12 +84,13 @@ export class CollapsibleDiv extends LitElement {
             }
             #titlebar:hover {
                 opacity: 80%;
+                cursor: grab;
             }
-            #titlebar:hover {
-                cursor: zoom-out;
+            #titlebar:active {
+                cursor: grabbing;
             }
             :host([is_collapsed]) #titlebar:hover {
-                cursor: context-menu;
+                cursor: pointer;
             }
             #child {
                 color: light-dark(black, white);
