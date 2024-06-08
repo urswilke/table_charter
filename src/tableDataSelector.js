@@ -14,6 +14,7 @@ import {
     left_join,
     obj_arrays_to_array_objs,
     load_saved_settings,
+    is_mobile,
     drag,
 } from "./utils.js";
 
@@ -28,7 +29,6 @@ import "./cross_table.js";
 import "./collapsible_div.js";
 
 import { produce } from "immer";
-import { is_mobile } from "./utils.js";
 
 const inspect = false; // set to true for some console.log msgs
 
@@ -481,8 +481,6 @@ export class TableDataSelector extends LitElement {
 
         const el = "#" + e.srcElement.id;
         const this_el = this.renderRoot.querySelector(el);
-        let collapsed_bool = this_el.is_collapsed;
-        this_el.is_collapsed = collapsed_bool;
         if (!this_el.is_collapsed) {
             this_el.style.position = "absolute";
             this_el.style.outline = "5px solid light-dark(white, black)";
