@@ -84,7 +84,8 @@ export class TableDataSelector extends LitElement {
         if (val) {
             this.update_params({ collapsed: all_collapsed });
         } else {
-            this.update_params({ collapsed: initial_collapsed });
+            // this.update_params({ collapsed: initial_collapsed });
+            this.init_collapsed();
         }
         this.style.setProperty(
             "--show-button",
