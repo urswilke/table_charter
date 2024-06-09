@@ -16,13 +16,11 @@ export class CollapsibleDiv extends LitElement {
         );
     }
     render() {
-        let text, text_align_str;
+        let text;
         if (this.is_minimized & this.is_collapsed) {
             text = this.short_title;
-            text_align_str = "center";
         } else {
             text = this.title;
-            text_align_str = "start";
         }
         return html`
             <div id="main">
@@ -104,7 +102,6 @@ export class CollapsibleDiv extends LitElement {
                 display: none;
             }
             :host([is_collapsed]) #child {
-                color: light-dark(black, white);
                 display: none;
             }
         `,

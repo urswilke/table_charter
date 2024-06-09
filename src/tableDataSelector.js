@@ -70,9 +70,8 @@ export class TableDataSelector extends LitElement {
 
     re_attach = (evt) => {
         const el = evt.currentTarget;
-        const old_show = this.params.collapsed_view2[el.id].show;
         this.params = produce(this.params, (draft) => {
-            draft.collapsed_view2[el.id].show = !old_show;
+            draft.collapsed_view2[el.id].show = false;
         });
         move_in_flex(el);
     };
@@ -520,8 +519,7 @@ export class TableDataSelector extends LitElement {
         });
 
         if (el.is_minimized) {
-            el.style.position = "static";
-            el.style.outline = "0px";
+            move_in_flex(el);
         }
     }
 
