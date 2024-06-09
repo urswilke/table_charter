@@ -1,23 +1,11 @@
 import { LitElement, html, css } from "lit";
-
 export class CollapsibleDiv extends LitElement {
     static properties = {
         is_collapsed: { type: Boolean, reflect: true },
-        is_minimized: { type: Boolean },
+        is_minimized: { type: Boolean, reflect: true },
         title: { type: String },
         short_title: { type: String },
     };
-
-    set is_collapsed(val) {
-        this._is_collapsed = val;
-        this.style.setProperty(
-            "--show-content",
-            this.is_collapsed ? "none" : "block",
-        );
-    }
-    get is_collapsed() {
-        return this._is_collapsed;
-    }
 
     reattach() {
         this.dispatchEvent(
@@ -28,26 +16,26 @@ export class CollapsibleDiv extends LitElement {
         );
     }
     render() {
-        let text, text_align_str;
+        let text;
         if (this.is_minimized & this.is_collapsed) {
             text = this.short_title;
-            text_align_str = "center";
         } else {
             text = this.title;
-            text_align_str = "start";
         }
-        this.style.setProperty("--text-alignment", text_align_str);
         return html`
             <div id="main">
-                <div
-                    id="titlebar"
-                    @click=${this.toggle_collapsed}
-                    title=${this.title}
-                >
-                    ${text}
-                    ${!this.is_collapsed & this.is_minimized
-                        ? html` <button @click=${this.reattach}>↖️</button> `
-                        : html``}
+                <div id="titlebar" title=${this.title}>
+                    <div
+                        class="title-text"
+                        @click=${this.is_collapsed | !this.is_minimized
+                            ? this.toggle_collapsed
+                            : null}
+                    >
+                        ${text}
+                    </div>
+                    <div class="buttons">
+                        <button @click=${this.reattach}>↖️</button>
+                    </div>
                 </div>
                 <div id="child">
                     ${this.is_collapsed ? html`` : html`<slot></slot>`}
@@ -56,14 +44,15 @@ export class CollapsibleDiv extends LitElement {
         `;
     }
     toggle_collapsed() {
-        this.is_collapsed = !this.is_collapsed;
-        !this.is_collapsed &&
-            this.dispatchEvent(
-                new CustomEvent("toggle-collapsed", {
-                    bubbles: true,
-                    composed: true,
-                }),
-            );
+        this.dispatchEvent(
+            new CustomEvent("toggle-collapsed", {
+                details: {
+                    id: this.id,
+                },
+                bubbles: true,
+                composed: true,
+            }),
+        );
     }
 
     static styles = [
@@ -80,21 +69,46 @@ export class CollapsibleDiv extends LitElement {
                 justify-content: space-between;
                 padding: 3px;
                 background: #5e677b;
-                text-align: var(--text-alignment);
             }
-            #titlebar:hover {
+            :host([is_minimized]) .title-text {
+                text-align: center;
+            }
+            .title-text {
+                flex-grow: 1;
+            }
+            .title-text:hover {
+                cursor: pointer;
                 opacity: 80%;
+            }
+            :host([is_minimized]) .title-text:hover {
                 cursor: grab;
             }
-            #titlebar:active {
+            :host([is_minimized]) .title-text:active {
                 cursor: grabbing;
             }
-            :host([is_collapsed]) #titlebar:hover {
+            :host([is_collapsed]) .title-text:hover {
                 cursor: pointer;
             }
-            #child {
-                color: light-dark(black, white);
-                display: var(--show-content);
+            .buttons {
+                display: none;
+            }
+            :host([is_minimized]) .buttons {
+                display: block;
+            }
+            :host([is_collapsed]) .buttons {
+                display: none;
+            }
+            :host([is_collapsed]) #child {
+                display: none;
+            }
+            #main {
+                resize: none;
+            }
+            :host([is_minimized]) #main {
+                resize: both;
+            }
+            :host([is_collapsed]) #main {
+                resize: none;
             }
         `,
     ];

@@ -264,10 +264,11 @@ export function load_saved_settings(tab_table) {
 export const drag = (evt) => {
     const el = evt.currentTarget;
     el.style.touchAction = "none";
+    const parent = el.getRootNode().host;
 
     const move = (evt) => {
-        el.style.left = `${el.offsetLeft + evt.movementX}px`;
-        el.style.top = `${el.offsetTop + evt.movementY}px`;
+        parent.style.left = `${parent.offsetLeft + evt.movementX}px`;
+        parent.style.top = `${parent.offsetTop + evt.movementY}px`;
     };
 
     const up = () => {
@@ -278,14 +279,36 @@ export const drag = (evt) => {
     addEventListener("pointermove", move);
     addEventListener("pointerup", up);
 };
-export const move_in_flex = (evt) => {
-    const el = evt.currentTarget;
-    // el.is_minimized = !el.is_minimized
-    collapse_element(el);
-};
-
-export function collapse_element(el) {
+export const move_in_flex = (el) => {
     el.style.position = "static";
     el.style.outline = "0px";
-    el.setAttribute("is_minimized", true);
+    el.style.left = "";
+    el.style.top = "";
+    el.renderRoot.querySelector("#main").style.width = "";
+    el.renderRoot.querySelector("#main").style.height = "";
+};
+
+export const initial_collapsed = {
+    "num-type-div": { show: true },
+    "question-selector": { show: true },
+    "header-multi-sel": { show: true, sub: false },
+    "row-multi-sel": { show: true, sub: false },
+    settings: { show: false },
+    "tabulator-crosstab": { show: false },
+    "tabulator-questions-manager": { show: false },
+};
+
+function do_all(initial_collapsed, new_show_val, new_expand_val) {
+    const arr = structuredClone(Object.entries(initial_collapsed));
+
+    for (let i = 0; i < arr.length; i++) {
+        const el = arr[i];
+        el[1].show = new_show_val;
+        el[1].sub = new_expand_val;
+    }
+
+    return Object.fromEntries(arr);
 }
+
+export const all_expanded = do_all(initial_collapsed, true, true);
+export const all_collapsed = do_all(initial_collapsed, false, true);

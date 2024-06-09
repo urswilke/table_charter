@@ -63,11 +63,7 @@ export class QuestionsTable extends LitElement {
         `,
         css`
             #questions-table {
-                border-bottom-left-radius: 5px;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
                 overflow: scroll;
-                resize: both;
                 height: 300px;
                 border: solid light-dark(black, white) 1px;
             }
