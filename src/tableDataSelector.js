@@ -72,15 +72,10 @@ export class TableDataSelector extends LitElement {
 
     re_attach = (evt) => {
         const el = evt.currentTarget;
-        // if element was resized...:
-        el.style.left = "";
-        el.style.top = "";
-        el.renderRoot.querySelector("#main").style.width = "";
-        el.renderRoot.querySelector("#main").style.height = "";
-
         this.params = produce(this.params, (draft) => {
             draft.collapsed_view2[el.id].show = false;
         });
+        // if element was resized...:
         move_in_flex(el);
     };
 

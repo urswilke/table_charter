@@ -282,6 +282,10 @@ export const drag = (evt) => {
 export const move_in_flex = (el) => {
     el.style.position = "static";
     el.style.outline = "0px";
+    el.style.left = "";
+    el.style.top = "";
+    el.renderRoot.querySelector("#main").style.width = "";
+    el.renderRoot.querySelector("#main").style.height = "";
 };
 
 export function collapse_element(el) {
