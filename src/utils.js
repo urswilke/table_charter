@@ -278,10 +278,13 @@ export const drag = (evt) => {
     addEventListener("pointermove", move);
     addEventListener("pointerup", up);
 };
-
-export function collapse_element(el) {
+export const move_in_flex = (el) => {
     el.style.position = "static";
     el.style.outline = "0px";
+};
+
+export function collapse_element(el) {
+    move_in_flex(el);
     // el.style.setProperty("--show-content", "none")
     el.setAttribute("is_collapse", true);
     el.setAttribute("is_minimized", true);

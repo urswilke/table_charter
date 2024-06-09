@@ -20,6 +20,7 @@ import {
     initial_collapsed,
     all_expanded,
     all_collapsed,
+    move_in_flex,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -73,26 +74,16 @@ export class TableDataSelector extends LitElement {
         this.params = produce(this.params, (draft) => {
             draft.collapsed_view2[el.id].show = !old_show;
         });
-        el.style.position = "static";
-        el.style.outline = "0px";
-        console.log(this.params.collapsed_view2[el.id].show);
+        move_in_flex(el);
     };
 
     set is_minimized(val) {
         this._is_minimized = val;
-        if (!this.params) {
-            return;
-        }
-        this.collapse_all_elements();
         if (val) {
             this.update_params({ collapsed_view2: all_collapsed });
-
-            // this.update_params({
-            //     collapsed_view: { minimal: true, initial: true },
-            // });
         } else {
             this.update_params({ collapsed_view2: initial_collapsed });
-            // this.init_collapsed();
+            this.div_cs()?.forEach((x) => move_in_flex(x));
         }
         this.style.setProperty(
             "--show-button",
@@ -511,8 +502,7 @@ export class TableDataSelector extends LitElement {
             el.style.position = "absolute";
             el.style.outline = "5px solid light-dark(white, black)";
         } else {
-            el.style.position = "static";
-            el.style.outline = "0px";
+            move_in_flex(el);
         }
 
         // this_el;
@@ -532,14 +522,6 @@ export class TableDataSelector extends LitElement {
         if (el.is_minimized) {
             el.style.position = "static";
             el.style.outline = "0px";
-        }
-    }
-
-    collapse_all_elements() {
-        const all_div_cs = this.renderRoot.querySelectorAll("div-c");
-        for (var i = 0; i < all_div_cs.length; i++) {
-            const el = all_div_cs[i];
-            el.is_collapsed = true;
         }
     }
 
