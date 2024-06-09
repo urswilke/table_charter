@@ -45,8 +45,6 @@ export class CollapsibleDiv extends LitElement {
         `;
     }
     toggle_collapsed() {
-        const new_state = !this.is_collapsed;
-        this.is_collapsed = new_state;
         this.dispatchEvent(
             new CustomEvent("toggle-collapsed", {
                 details: {
