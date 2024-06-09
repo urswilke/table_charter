@@ -16,7 +16,6 @@ import {
     load_saved_settings,
     is_mobile,
     drag,
-    move_in_flex,
     collapse_element,
     initial_collapsed,
     all_expanded,
@@ -64,23 +63,19 @@ export class TableDataSelector extends LitElement {
             box.addEventListener("pointerdown", drag),
         );
         this.div_cs().forEach((box) =>
-            box.addEventListener("re-attach", this.move_in_flex),
+            box.addEventListener("re-attach", this.re_attach),
         );
     }
 
-    move_in_flex = (evt) => {
+    re_attach = (evt) => {
         const el = evt.currentTarget;
-        // const parentNode = el.parentNode;
-        // this.update_params({ collapsed_view2: all_collapsed });
         const old_show = this.params.collapsed_view2[el.id].show;
-        console.log(this.params.collapsed_view2[el.id].show);
         this.params = produce(this.params, (draft) => {
             draft.collapsed_view2[el.id].show = !old_show;
         });
+        el.style.position = "static";
+        el.style.outline = "0px";
         console.log(this.params.collapsed_view2[el.id].show);
-        // this.update_params({...this.params.collapsed_view2, [el.id]: {"show": !old_show}})
-        // el.is_minimized = !el.is_minimized
-        // collapse_element(el);
     };
 
     set is_minimized(val) {
@@ -561,7 +556,6 @@ export class TableDataSelector extends LitElement {
                 <div 
                     id="parent" 
                     @toggle-collapsed=${this._on_toggle_collapsed}
-                    @re-attach=${this._on_re_attach}
                 >
                     <div-c 
                         class="selector-group" 
