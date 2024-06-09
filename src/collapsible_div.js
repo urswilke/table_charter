@@ -35,7 +35,6 @@ export class CollapsibleDiv extends LitElement {
                     </div>
                     <div class="buttons">
                         <button @click=${this.reattach}>↖️</button>
-                        <button @click=${this.toggle_collapsed}>×</button>
                     </div>
                 </div>
                 <div id="child">
