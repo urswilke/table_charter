@@ -16,7 +16,6 @@ import {
     load_saved_settings,
     is_mobile,
     drag,
-    collapse_element,
     initial_collapsed,
     all_expanded,
     all_collapsed,

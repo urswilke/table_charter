@@ -288,15 +288,6 @@ export const move_in_flex = (el) => {
     el.renderRoot.querySelector("#main").style.height = "";
 };
 
-export function collapse_element(el) {
-    move_in_flex(el);
-    // el.style.setProperty("--show-content", "none")
-    el.setAttribute("is_collapse", true);
-    el.setAttribute("is_minimized", true);
-    el.requestUpdate();
-    // el.setAttribute("is_collapse", true);
-}
-
 export const initial_collapsed = {
     "num-type-div": { show: true },
     "question-selector": { show: true },
