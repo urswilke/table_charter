@@ -64,7 +64,6 @@ export class QuestionsTable extends LitElement {
         css`
             #questions-table {
                 overflow: scroll;
-                resize: both;
                 height: 300px;
                 border: solid light-dark(black, white) 1px;
             }
