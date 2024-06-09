@@ -499,24 +499,6 @@ export class TableDataSelector extends LitElement {
         } else {
             move_in_flex(el);
         }
-
-        // this_el;
-    }
-    _on_re_attach(e) {
-        if (this.is_minimized === false) {
-            // this.is_minimized = true
-            return;
-        }
-
-        const el = e.srcElement;
-        const old_show = this.params.collapsed_view2[el.id].show;
-        this.params = produce(this.params, (draft) => {
-            draft.collapsed_view2[el.id].show = !old_show;
-        });
-
-        if (el.is_minimized) {
-            move_in_flex(el);
-        }
     }
 
     render() {
