@@ -7,22 +7,6 @@ export class CollapsibleDiv extends LitElement {
         short_title: { type: String },
     };
 
-    // connectedCallback() {
-    //     // super()
-    //     this.is_collapsed = this.is_collapsed
-    // }
-
-    // set is_collapsed(val) {
-    //     this._is_collapsed = val;
-    //     this.style.setProperty(
-    //         "--show-content",
-    //         this.is_collapsed ? "none" : "block",
-    //     );
-    // }
-    // get is_collapsed() {
-    //     return this._is_collapsed;
-    // }
-
     reattach() {
         this.dispatchEvent(
             new CustomEvent("re-attach", {
@@ -40,10 +24,6 @@ export class CollapsibleDiv extends LitElement {
             text = this.title;
             text_align_str = "start";
         }
-        // this.style.setProperty(
-        //     "--show-content",
-        //     this.is_collapsed ? "none" : "block",
-        // );
         this.style.setProperty("--text-alignment", text_align_str);
         return html`
             <div id="main">
@@ -66,16 +46,6 @@ export class CollapsibleDiv extends LitElement {
                 </div>
             </div>
         `;
-        // ${!this.is_collapsed & this.is_minimized
-        //     ? html`
-        //           <div>
-        //               <button @click=${this.reattach}>↖️</button>
-        //               <button @click=${this.toggle_collapsed}>
-        //                   ×
-        //               </button>
-        //           </div>
-        //       `
-        //     : html``}
     }
     toggle_collapsed() {
         const new_state = !this.is_collapsed;
