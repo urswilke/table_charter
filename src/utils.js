@@ -280,6 +280,9 @@ export const drag = (evt) => {
 };
 export const move_in_flex = (evt) => {
     const el = evt.currentTarget;
+
+    this.up;
+    el.id;
     // el.is_minimized = !el.is_minimized
     collapse_element(el);
 };
@@ -287,5 +290,37 @@ export const move_in_flex = (evt) => {
 export function collapse_element(el) {
     el.style.position = "static";
     el.style.outline = "0px";
+    // el.style.setProperty("--show-content", "none")
+    el.setAttribute("is_collapse", true);
     el.setAttribute("is_minimized", true);
+    el.requestUpdate();
+    // el.setAttribute("is_collapse", true);
 }
+
+export const initial_collapsed = {
+    "num-type-div": { show: true },
+    "question-selector": { show: true, sub: false },
+    "header-multi-sel": { show: true, sub: false },
+    "row-multi-sel": { show: true },
+    settings: { show: false },
+    "tabulator-crosstab": { show: false },
+    "tabulator-questions-manager": { show: false },
+};
+// export const all_expanded = initial_collapsed.map((x) => ({
+//     ...x,
+//     show: true,
+// }));
+
+function do_all(initial_collapsed, new_val) {
+    const arr = structuredClone(Object.entries(initial_collapsed));
+
+    for (let i = 0; i < arr.length; i++) {
+        const el = arr[i];
+        el[1].show = new_val;
+    }
+
+    return Object.fromEntries(arr);
+}
+
+export const all_expanded = do_all(initial_collapsed, true);
+export const all_collapsed = do_all(initial_collapsed, false);

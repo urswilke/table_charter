@@ -1,5 +1,4 @@
 import { LitElement, html, css } from "lit";
-
 export class CollapsibleDiv extends LitElement {
     static properties = {
         is_collapsed: { type: Boolean, reflect: true },
@@ -8,16 +7,21 @@ export class CollapsibleDiv extends LitElement {
         short_title: { type: String },
     };
 
-    set is_collapsed(val) {
-        this._is_collapsed = val;
-        this.style.setProperty(
-            "--show-content",
-            this.is_collapsed ? "none" : "block",
-        );
-    }
-    get is_collapsed() {
-        return this._is_collapsed;
-    }
+    // connectedCallback() {
+    //     // super()
+    //     this.is_collapsed = this.is_collapsed
+    // }
+
+    // set is_collapsed(val) {
+    //     this._is_collapsed = val;
+    //     this.style.setProperty(
+    //         "--show-content",
+    //         this.is_collapsed ? "none" : "block",
+    //     );
+    // }
+    // get is_collapsed() {
+    //     return this._is_collapsed;
+    // }
 
     reattach() {
         this.dispatchEvent(
@@ -36,34 +40,54 @@ export class CollapsibleDiv extends LitElement {
             text = this.title;
             text_align_str = "start";
         }
+        // this.style.setProperty(
+        //     "--show-content",
+        //     this.is_collapsed ? "none" : "block",
+        // );
         this.style.setProperty("--text-alignment", text_align_str);
         return html`
             <div id="main">
                 <div
                     id="titlebar"
-                    @click=${this.toggle_collapsed}
+                    @click=${this.is_collapsed | !this.is_minimized
+                        ? this.toggle_collapsed
+                        : null}
                     title=${this.title}
                 >
                     ${text}
-                    ${!this.is_collapsed & this.is_minimized
-                        ? html` <button @click=${this.reattach}>↖️</button> `
-                        : html``}
+                    <div class="buttons">
+                        <button @click=${this.reattach}>↖️</button>
+                        <button @click=${this.toggle_collapsed}>×</button>
+                    </div>
                 </div>
                 <div id="child">
                     ${this.is_collapsed ? html`` : html`<slot></slot>`}
                 </div>
             </div>
         `;
+        // ${!this.is_collapsed & this.is_minimized
+        //     ? html`
+        //           <div>
+        //               <button @click=${this.reattach}>↖️</button>
+        //               <button @click=${this.toggle_collapsed}>
+        //                   ×
+        //               </button>
+        //           </div>
+        //       `
+        //     : html``}
     }
     toggle_collapsed() {
-        this.is_collapsed = !this.is_collapsed;
-        !this.is_collapsed &&
-            this.dispatchEvent(
-                new CustomEvent("toggle-collapsed", {
-                    bubbles: true,
-                    composed: true,
-                }),
-            );
+        const new_state = !this.is_collapsed;
+        this.is_collapsed = new_state;
+        this.dispatchEvent(
+            new CustomEvent("toggle-collapsed", {
+                details: {
+                    id: this.id,
+                },
+                bubbles: true,
+                composed: true,
+            }),
+        );
     }
 
     static styles = [
@@ -92,9 +116,15 @@ export class CollapsibleDiv extends LitElement {
             :host([is_collapsed]) #titlebar:hover {
                 cursor: pointer;
             }
-            #child {
+            :host([is_minimized]) .buttons {
+                display: none;
+            }
+            :host([is_collapsed]) .buttons {
+                display: none;
+            }
+            :host([is_collapsed]) #child {
                 color: light-dark(black, white);
-                display: var(--show-content);
+                display: none;
             }
         `,
     ];

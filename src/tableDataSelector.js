@@ -18,6 +18,9 @@ import {
     drag,
     move_in_flex,
     collapse_element,
+    initial_collapsed,
+    all_expanded,
+    all_collapsed,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -49,6 +52,7 @@ export class TableDataSelector extends LitElement {
         super.connectedCallback();
         this.init_tablebook_data();
     }
+    div_cs = () => this.renderRoot?.querySelectorAll("div-c");
     updated() {
         // HACK: I don't know when exactly the list of all div-c can be queried.
         // could it also be done like this in the definition of CollapsibleDiv?
@@ -56,12 +60,29 @@ export class TableDataSelector extends LitElement {
         //  Alternatively we could add:
         //  $pointerdown=${drag}
         // to each of the div-c elements
-        const div_cs = this.renderRoot.querySelectorAll("div-c");
-        div_cs.forEach((box) => box.addEventListener("pointerdown", drag));
-        div_cs.forEach((box) =>
-            box.addEventListener("re-attach", move_in_flex),
+        this.div_cs().forEach((box) =>
+            box.addEventListener("pointerdown", drag),
+        );
+        this.div_cs().forEach((box) =>
+            box.addEventListener("re-attach", this.move_in_flex),
         );
     }
+
+    move_in_flex = (evt) => {
+        const el = evt.currentTarget;
+        // const parentNode = el.parentNode;
+        // this.update_params({ collapsed_view2: all_collapsed });
+        const old_show = this.params.collapsed_view2[el.id].show;
+        console.log(this.params.collapsed_view2[el.id].show);
+        this.params = produce(this.params, (draft) => {
+            draft.collapsed_view2[el.id].show = !old_show;
+        });
+        console.log(this.params.collapsed_view2[el.id].show);
+        // this.update_params({...this.params.collapsed_view2, [el.id]: {"show": !old_show}})
+        // el.is_minimized = !el.is_minimized
+        // collapse_element(el);
+    };
+
     set is_minimized(val) {
         this._is_minimized = val;
         if (!this.params) {
@@ -69,13 +90,14 @@ export class TableDataSelector extends LitElement {
         }
         this.collapse_all_elements();
         if (val) {
-            this.update_params({
-                collapsed_view: { minimal: true, initial: true },
-            });
+            this.update_params({ collapsed_view2: all_collapsed });
+
+            // this.update_params({
+            //     collapsed_view: { minimal: true, initial: true },
+            // });
         } else {
-            this.update_params({
-                collapsed_view: { minimal: true, initial: false },
-            });
+            this.update_params({ collapsed_view2: initial_collapsed });
+            // this.init_collapsed();
         }
         this.style.setProperty(
             "--show-button",
@@ -109,7 +131,12 @@ export class TableDataSelector extends LitElement {
         this.params.row_type = ["%", "n"];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = { minimal: true, initial: false };
+        this.init_collapsed();
     }
+    init_collapsed() {
+        this.update_params({ collapsed_view2: initial_collapsed });
+    }
+
     init_plot_settings() {
         this.i_tab = this.saved_settings.i_tab;
         this.tab_table = structuredClone(this.saved_settings.tab_table);
@@ -435,10 +462,7 @@ export class TableDataSelector extends LitElement {
     }
     _on_expand() {
         this.update_params({
-            collapsed_view: {
-                minimal: !this.params.collapsed_view.minimal,
-                initial: false,
-            },
+            collapsed_view2: all_expanded,
         });
     }
     _on_question_clone(e) {
@@ -482,23 +506,45 @@ export class TableDataSelector extends LitElement {
             return;
         }
 
-        const el = "#" + e.srcElement.id;
-        const this_el = this.renderRoot.querySelector(el);
-        if (!this_el.is_collapsed) {
-            this_el.style.position = "absolute";
-            this_el.style.outline = "5px solid light-dark(white, black)";
-            if (el.startsWith("#tabulator-")) {
-                // HACK to set the table width to half the screen
-                this_el.childNodes[1].shadowRoot.childNodes[2].style.width =
-                    window.innerWidth / 2 + "px";
-            }
+        const el = e.srcElement;
+        const old_show = this.params.collapsed_view2[el.id].show;
+        this.params = produce(this.params, (draft) => {
+            draft.collapsed_view2[el.id].show = !old_show;
+        });
+
+        if (el.is_minimized) {
+            el.style.position = "absolute";
+            el.style.outline = "5px solid light-dark(white, black)";
+        } else {
+            el.style.position = "static";
+            el.style.outline = "0px";
+        }
+
+        // this_el;
+    }
+    _on_re_attach(e) {
+        if (this.is_minimized === false) {
+            // this.is_minimized = true
+            return;
+        }
+
+        const el = e.srcElement;
+        const old_show = this.params.collapsed_view2[el.id].show;
+        this.params = produce(this.params, (draft) => {
+            draft.collapsed_view2[el.id].show = !old_show;
+        });
+
+        if (el.is_minimized) {
+            el.style.position = "static";
+            el.style.outline = "0px";
         }
     }
 
     collapse_all_elements() {
         const all_div_cs = this.renderRoot.querySelectorAll("div-c");
         for (var i = 0; i < all_div_cs.length; i++) {
-            collapse_element(all_div_cs[i]);
+            const el = all_div_cs[i];
+            el.is_collapsed = true;
         }
     }
 
@@ -506,16 +552,23 @@ export class TableDataSelector extends LitElement {
         inspect && console.log("rendering table-book-data");
         inspect && console.log(this);
 
+        const cv = new Map(Object.entries(this["params"]["collapsed_view2"]));
+        cv.get("num-type-div");
+
         return this.choices === undefined
             ? html`<div></div>`
             : html`
-                <div id="parent" @toggle-collapsed=${this._on_toggle_collapsed}>
+                <div 
+                    id="parent" 
+                    @toggle-collapsed=${this._on_toggle_collapsed}
+                    @re-attach=${this._on_re_attach}
+                >
                     <div-c 
                         class="selector-group" 
                         id="num-type-div"
                         .title=${translate("numType.label")}
                         .short_title=${"%/n"}
-                        .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_collapsed=${!this.params.collapsed_view2["num-type-div"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -531,7 +584,7 @@ export class TableDataSelector extends LitElement {
                         id="question-selector" 
                         .title=${translate("question.label")}
                         .short_title=${"Q"}
-                        .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_collapsed=${!this.params.collapsed_view2["question-selector"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -548,7 +601,7 @@ export class TableDataSelector extends LitElement {
                         id="header-multi-sel"
                         .title=${translate("header.label")}
                         .short_title=${"H"}
-                        .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_collapsed=${!this.params.collapsed_view2["header-multi-sel"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -571,7 +624,7 @@ export class TableDataSelector extends LitElement {
                         id="row-multi-sel"
                         .title=${translate("rows.label")}
                         .short_title=${"R"}
-                        .is_collapsed=${this.params.collapsed_view.initial}
+                        .is_collapsed=${!this.params.collapsed_view2["row-multi-sel"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -599,7 +652,7 @@ export class TableDataSelector extends LitElement {
                         data-test-id="settings-div"
                         .title=${translate("settings.label")}
                         .short_title=${"⚙"}
-                        .is_collapsed=${this.params.collapsed_view.minimal}
+                        .is_collapsed=${!this.params.collapsed_view2["settings"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="selector-group">
@@ -660,7 +713,7 @@ export class TableDataSelector extends LitElement {
                         class="selector-group"
                         .title=${translate("crosstabTable.title")}
                         .short_title=${"CT"}
-                        .is_collapsed=${this.params.collapsed_view.minimal}
+                        .is_collapsed=${!this.params.collapsed_view2["tabulator-crosstab"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <cross-table
@@ -676,7 +729,7 @@ export class TableDataSelector extends LitElement {
                         class="content"
                         .title=${translate("questionsTable.title")}
                         .short_title=${"QM"}
-                        .is_collapsed=${this.params.collapsed_view.minimal}
+                        .is_collapsed=${!this.params.collapsed_view2["tabulator-questions-manager"].show}
                         .is_minimized=${this.is_minimized}
                         @clone-question=${this._on_question_clone}
                         @show-hide-question=${this._on_show_hide_question}
@@ -748,6 +801,7 @@ export class TableDataSelector extends LitElement {
             }
             *:focus {
                 outline: 1px solid blue;
+                z-index: 999;
             }
         `,
     ];
