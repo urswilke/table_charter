@@ -24,7 +24,6 @@ export class CollapsibleDiv extends LitElement {
             text = this.title;
             text_align_str = "start";
         }
-        this.style.setProperty("--text-alignment", text_align_str);
         return html`
             <div id="main">
                 <div id="titlebar" title=${this.title}>
@@ -75,7 +74,12 @@ export class CollapsibleDiv extends LitElement {
                 justify-content: space-between;
                 padding: 3px;
                 background: #5e677b;
-                text-align: var(--text-alignment);
+            }
+            :host([is_minimized]) .title-text {
+                text-align: center;
+            }
+            .title-text {
+                flex-grow: 1;
             }
             .title-text:hover {
                 cursor: pointer;
