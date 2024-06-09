@@ -294,28 +294,25 @@ export function collapse_element(el) {
 
 export const initial_collapsed = {
     "num-type-div": { show: true },
-    "question-selector": { show: true, sub: false },
+    "question-selector": { show: true },
     "header-multi-sel": { show: true, sub: false },
-    "row-multi-sel": { show: true },
+    "row-multi-sel": { show: true, sub: false },
     settings: { show: false },
     "tabulator-crosstab": { show: false },
     "tabulator-questions-manager": { show: false },
 };
-// export const all_expanded = initial_collapsed.map((x) => ({
-//     ...x,
-//     show: true,
-// }));
 
-function do_all(initial_collapsed, new_val) {
+function do_all(initial_collapsed, new_show_val, new_expand_val) {
     const arr = structuredClone(Object.entries(initial_collapsed));
 
     for (let i = 0; i < arr.length; i++) {
         const el = arr[i];
-        el[1].show = new_val;
+        el[1].show = new_show_val;
+        el[1].sub = new_expand_val;
     }
 
     return Object.fromEntries(arr);
 }
 
-export const all_expanded = do_all(initial_collapsed, true);
-export const all_collapsed = do_all(initial_collapsed, false);
+export const all_expanded = do_all(initial_collapsed, true, true);
+export const all_collapsed = do_all(initial_collapsed, false, false);

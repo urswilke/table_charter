@@ -583,7 +583,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"ColTitle1"}
                                 .children_fun = ${(x) => (x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1)}
                                 @update-multi-select="${this._on_header_update}"
-                                .collapsed_view = "${this.params.collapsed_view.minimal}"		
+                                .collapsed_view = ${!this.params.collapsed_view2["header-multi-sel"].sub}
                                 .prop_table=${this.choices.header_table}>
                             </multi-selector>
                         </div>
@@ -606,7 +606,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"RowContent"}
                                 .children_fun = ${(x) => x.RowTitle2}
                                 @update-multi-select="${this._on_rows_update}" 		
-                                .collapsed_view = "${this.params.collapsed_view.minimal}"		
+                                .collapsed_view = ${!this.params.collapsed_view2["row-multi-sel"].sub}
                                 .prop_table=${this.choices.row_table}>	   																
                             </multi-selector>
                         </div>
