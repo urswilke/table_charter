@@ -72,7 +72,7 @@ export class TableDataSelector extends LitElement {
     re_attach = (evt) => {
         const el = evt.currentTarget;
         this.params = produce(this.params, (draft) => {
-            draft.collapsed_view2[el.id].show = false;
+            draft.collapsed[el.id].show = false;
         });
         // if element was resized...:
         move_in_flex(el);
@@ -82,9 +82,9 @@ export class TableDataSelector extends LitElement {
         this._is_minimized = val;
         this.div_cs()?.forEach((x) => move_in_flex(x));
         if (val) {
-            this.update_params({ collapsed_view2: all_collapsed });
+            this.update_params({ collapsed: all_collapsed });
         } else {
-            this.update_params({ collapsed_view2: initial_collapsed });
+            this.update_params({ collapsed: initial_collapsed });
         }
         this.style.setProperty(
             "--show-button",
@@ -121,7 +121,7 @@ export class TableDataSelector extends LitElement {
         this.init_collapsed();
     }
     init_collapsed() {
-        this.update_params({ collapsed_view2: initial_collapsed });
+        this.update_params({ collapsed: initial_collapsed });
     }
 
     init_plot_settings() {
@@ -449,7 +449,7 @@ export class TableDataSelector extends LitElement {
     }
     _on_expand() {
         this.update_params({
-            collapsed_view2: all_expanded,
+            collapsed: all_expanded,
         });
     }
     _on_question_clone(e) {
@@ -490,9 +490,9 @@ export class TableDataSelector extends LitElement {
 
     _on_toggle_collapsed(e) {
         const el = e.srcElement;
-        const old_show = this.params.collapsed_view2[el.id].show;
+        const old_show = this.params.collapsed[el.id].show;
         this.params = produce(this.params, (draft) => {
-            draft.collapsed_view2[el.id].show = !old_show;
+            draft.collapsed[el.id].show = !old_show;
         });
 
         if (el.is_minimized) {
@@ -507,7 +507,7 @@ export class TableDataSelector extends LitElement {
         inspect && console.log("rendering table-book-data");
         inspect && console.log(this);
 
-        const cv = new Map(Object.entries(this["params"]["collapsed_view2"]));
+        const cv = new Map(Object.entries(this["params"]["collapsed"]));
         cv.get("num-type-div");
 
         return this.choices === undefined
@@ -522,7 +522,7 @@ export class TableDataSelector extends LitElement {
                         id="num-type-div"
                         .title=${translate("numType.label")}
                         .short_title=${"%/n"}
-                        .is_collapsed=${!this.params.collapsed_view2["num-type-div"].show}
+                        .is_collapsed=${!this.params.collapsed["num-type-div"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -538,7 +538,7 @@ export class TableDataSelector extends LitElement {
                         id="question-selector" 
                         .title=${translate("question.label")}
                         .short_title=${"Q"}
-                        .is_collapsed=${!this.params.collapsed_view2["question-selector"].show}
+                        .is_collapsed=${!this.params.collapsed["question-selector"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -555,7 +555,7 @@ export class TableDataSelector extends LitElement {
                         id="header-multi-sel"
                         .title=${translate("header.label")}
                         .short_title=${"H"}
-                        .is_collapsed=${!this.params.collapsed_view2["header-multi-sel"].show}
+                        .is_collapsed=${!this.params.collapsed["header-multi-sel"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -567,7 +567,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"ColTitle1"}
                                 .children_fun = ${(x) => (x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1)}
                                 @update-multi-select="${this._on_header_update}"
-                                .collapsed_view = ${!this.params.collapsed_view2["header-multi-sel"].sub}
+                                .collapsed_view = ${!this.params.collapsed["header-multi-sel"].sub}
                                 .prop_table=${this.choices.header_table}>
                             </multi-selector>
                         </div>
@@ -578,7 +578,7 @@ export class TableDataSelector extends LitElement {
                         id="row-multi-sel"
                         .title=${translate("rows.label")}
                         .short_title=${"R"}
-                        .is_collapsed=${!this.params.collapsed_view2["row-multi-sel"].show}
+                        .is_collapsed=${!this.params.collapsed["row-multi-sel"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -590,7 +590,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"RowContent"}
                                 .children_fun = ${(x) => x.RowTitle2}
                                 @update-multi-select="${this._on_rows_update}" 		
-                                .collapsed_view = ${!this.params.collapsed_view2["row-multi-sel"].sub}
+                                .collapsed_view = ${!this.params.collapsed["row-multi-sel"].sub}
                                 .prop_table=${this.choices.row_table}>	   																
                             </multi-selector>
                         </div>
@@ -606,7 +606,7 @@ export class TableDataSelector extends LitElement {
                         data-test-id="settings-div"
                         .title=${translate("settings.label")}
                         .short_title=${"⚙"}
-                        .is_collapsed=${!this.params.collapsed_view2["settings"].show}
+                        .is_collapsed=${!this.params.collapsed["settings"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="selector-group">
@@ -667,7 +667,7 @@ export class TableDataSelector extends LitElement {
                         class="selector-group"
                         .title=${translate("crosstabTable.title")}
                         .short_title=${"CT"}
-                        .is_collapsed=${!this.params.collapsed_view2["tabulator-crosstab"].show}
+                        .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <cross-table
@@ -683,7 +683,7 @@ export class TableDataSelector extends LitElement {
                         class="content"
                         .title=${translate("questionsTable.title")}
                         .short_title=${"QM"}
-                        .is_collapsed=${!this.params.collapsed_view2["tabulator-questions-manager"].show}
+                        .is_collapsed=${!this.params.collapsed["tabulator-questions-manager"].show}
                         .is_minimized=${this.is_minimized}
                         @clone-question=${this._on_question_clone}
                         @show-hide-question=${this._on_show_hide_question}
