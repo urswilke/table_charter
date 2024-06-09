@@ -61,7 +61,9 @@ export class TableDataSelector extends LitElement {
         //  $pointerdown=${drag}
         // to each of the div-c elements
         this.div_cs().forEach((box) =>
-            box.addEventListener("pointerdown", drag),
+            box.renderRoot
+                ?.querySelector(".title-text")
+                ?.addEventListener("pointerdown", drag),
         );
         this.div_cs().forEach((box) =>
             box.addEventListener("re-attach", this.re_attach),
