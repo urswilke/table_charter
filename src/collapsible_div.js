@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 export class CollapsibleDiv extends LitElement {
     static properties = {
         is_collapsed: { type: Boolean, reflect: true },
-        is_minimized: { type: Boolean },
+        is_minimized: { type: Boolean, reflect: true },
         title: { type: String },
         short_title: { type: String },
     };
@@ -47,14 +47,15 @@ export class CollapsibleDiv extends LitElement {
         this.style.setProperty("--text-alignment", text_align_str);
         return html`
             <div id="main">
-                <div
-                    id="titlebar"
-                    @click=${this.is_collapsed | !this.is_minimized
-                        ? this.toggle_collapsed
-                        : null}
-                    title=${this.title}
-                >
-                    ${text}
+                <div id="titlebar" title=${this.title}>
+                    <div
+                        class="title-text"
+                        @click=${this.is_collapsed | !this.is_minimized
+                            ? this.toggle_collapsed
+                            : null}
+                    >
+                        ${text}
+                    </div>
                     <div class="buttons">
                         <button @click=${this.reattach}>↖️</button>
                         <button @click=${this.toggle_collapsed}>×</button>
@@ -116,8 +117,11 @@ export class CollapsibleDiv extends LitElement {
             :host([is_collapsed]) #titlebar:hover {
                 cursor: pointer;
             }
-            :host([is_minimized]) .buttons {
+            .buttons {
                 display: none;
+            }
+            :host([is_minimized]) .buttons {
+                display: block;
             }
             :host([is_collapsed]) .buttons {
                 display: none;
