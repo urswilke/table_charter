@@ -487,10 +487,6 @@ export class TableDataSelector extends LitElement {
     }
 
     _on_toggle_collapsed(e) {
-        if (this.is_minimized === false) {
-            return;
-        }
-
         const el = e.srcElement;
         const old_show = this.params.collapsed_view2[el.id].show;
         this.params = produce(this.params, (draft) => {
