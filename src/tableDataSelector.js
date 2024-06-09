@@ -79,11 +79,11 @@ export class TableDataSelector extends LitElement {
 
     set is_minimized(val) {
         this._is_minimized = val;
+        this.div_cs()?.forEach((x) => move_in_flex(x));
         if (val) {
             this.update_params({ collapsed_view2: all_collapsed });
         } else {
             this.update_params({ collapsed_view2: initial_collapsed });
-            this.div_cs()?.forEach((x) => move_in_flex(x));
         }
         this.style.setProperty(
             "--show-button",
