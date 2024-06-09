@@ -315,4 +315,4 @@ function do_all(initial_collapsed, new_show_val, new_expand_val) {
 }
 
 export const all_expanded = do_all(initial_collapsed, true, true);
-export const all_collapsed = do_all(initial_collapsed, false, false);
+export const all_collapsed = do_all(initial_collapsed, false, true);
