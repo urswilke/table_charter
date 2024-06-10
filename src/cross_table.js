@@ -10,8 +10,12 @@ export class CrossTable extends LitElement {
         plot_data: { type: Array },
         row_table: { type: Array },
         header_table: { type: Array },
+        is_collapsed: { type: Boolean },
     };
     updated() {
+        if (this.is_collapsed) {
+            return;
+        }
         this.prepare_crosstab();
         this.gen_table();
     }

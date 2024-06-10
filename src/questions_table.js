@@ -7,10 +7,10 @@ import { get, translate } from "lit-translate";
 export class QuestionsTable extends LitElement {
     static properties = {
         questions_table_data: { type: Array },
-        update_tab_table: { type: Boolean },
+        is_collapsed: { type: Boolean },
     };
     updated() {
-        this.update_tab_table && this.gen_table();
+        !this.is_collapsed && this.questions_table_data && this.gen_table();
     }
     gen_table() {
         var table_data = this.questions_table_data.map((x) => ({

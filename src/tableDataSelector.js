@@ -128,7 +128,6 @@ export class TableDataSelector extends LitElement {
     init_plot_settings() {
         this.i_tab = this.saved_settings.i_tab;
         this.tab_table = structuredClone(this.saved_settings.tab_table);
-        this.update_tab_table = true;
         this.init_choices();
     }
     init_choices() {
@@ -485,10 +484,6 @@ export class TableDataSelector extends LitElement {
             this._update_plot_data();
         }
     }
-    set_tab_table_updated() {
-        this.update_tab_table = false;
-    }
-
     _on_toggle_collapsed(e) {
         const el = e.srcElement;
         const old_show = this.params.collapsed[el.id].show;
@@ -677,6 +672,7 @@ export class TableDataSelector extends LitElement {
                             .plot_data=${this.plot_data}
                             .language=${this.language}
                             .is_minimized=${this.is_minimized}
+                            .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
                         ></cross-table>
                     </div-c>
                     <div-c 
@@ -690,11 +686,10 @@ export class TableDataSelector extends LitElement {
                         @show-hide-question=${this._on_show_hide_question}
                         @edit-text=${this._on_text_edit}
                         @close-questions-table=${this.show_hide_questions_table}
-                        @tab_table-updated=${this.set_tab_table_updated}
                     >
                         <questions-table 
                             .questions_table_data=${this.tab_table}  
-                            .update_tab_table=${this.update_tab_table}
+                            .is_collapsed=${!this.params.collapsed["tabulator-questions-manager"].show}
                         >
                         </questions-table>
                     </div-c>
