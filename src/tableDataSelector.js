@@ -152,9 +152,7 @@ export class TableDataSelector extends LitElement {
             (x) => x.i_tab === i_tab,
         );
 
-        this.question_data = this.question_raw_data.filter((x) =>
-            ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
-        );
+        this.question_data = this.question_raw_data;
 
         const colorscale_disabled = !["CAT"].includes(
             this.question_raw_data[0].TabType,
@@ -223,11 +221,15 @@ export class TableDataSelector extends LitElement {
     }
     sel_num_type_data() {
         const row_type = this.choices.row_type;
-        this.num_type_data = this.header_data.filter((x) =>
-            row_type === "n"
-                ? x.RowAbsPercent == "Abs"
-                : x.RowAbsPercent != "Abs",
-        );
+        this.num_type_data = this.header_data
+            .filter((x) =>
+                ["Detail", "MStatistics", "Summary"].includes(x.RowContent),
+            )
+            .filter((x) =>
+                row_type === "n"
+                    ? x.RowAbsPercent == "Abs"
+                    : x.RowAbsPercent != "Abs",
+            );
         this.check_if_all_filtered(
             "#num-type-div",
             this.header_data,
