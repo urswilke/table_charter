@@ -63,12 +63,16 @@ export function get_walkthrough_options(tc) {
         },
     ];
     const further_default_steps = [
-        {
-            element: tc_el("#show-hide"),
-            title: get("walkthrough.showHide.title"),
-            intro: get("walkthrough.showHide.text"),
-            hint: get("walkthrough.showHide.hint"),
-        },
+        ...(!tds.is_minimized
+            ? [
+                  {
+                      element: tc_el("#show-hide"),
+                      title: get("walkthrough.showHide.title"),
+                      intro: get("walkthrough.showHide.text"),
+                      hint: get("walkthrough.showHide.hint"),
+                  },
+              ]
+            : []),
         {
             element: tc_el(".show-help"),
             title: get("walkthrough.showHelp.title"),
