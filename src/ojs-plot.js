@@ -40,6 +40,7 @@ export class OJSPlot extends LitElement {
         return this._plot_data;
     }
     set plot_data(val) {
+        // TODO: when resizing, this method gets called twice => try to refactor code to only call it once...
         if (!val || val.length === 0) {
             return this;
         }

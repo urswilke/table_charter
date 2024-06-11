@@ -69,7 +69,7 @@ export class TableCharter extends LitElement {
 
     hide_menu() {
         this.el(".hide-menu").innerText = "☰";
-        this.el(".column1").style.flexBasis = "content";
+        this.el(".column1").style.flexBasis = "4em";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
