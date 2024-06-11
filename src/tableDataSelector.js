@@ -78,13 +78,15 @@ export class TableDataSelector extends LitElement {
             // this.update_params({ collapsed: initial_collapsed });
             this.init_collapsed();
         }
-        this.style.setProperty(
-            "--show-button",
-            this.is_minimized ? "none" : "block",
-        );
     }
     get is_minimized() {
         return this._is_minimized;
+    }
+    set show_advanced(val) {
+        const new_settings = val ? all_expanded : initial_collapsed;
+        this.update_params({
+            collapsed: new_settings,
+        });
     }
 
     // Initialization:
@@ -439,11 +441,6 @@ export class TableDataSelector extends LitElement {
         });
         this._update_plot_data();
     }
-    _on_expand() {
-        this.update_params({
-            collapsed: all_expanded,
-        });
-    }
     _on_question_clone(e) {
         const old_id = this.tab_table[this.i_tab].id;
         this.tab_table = produce(this.tab_table, (draft) => e.detail.table);
@@ -591,12 +588,6 @@ export class TableDataSelector extends LitElement {
                             </multi-selector>
                         </div>
                     </div-c>
-                    <button
-                        id="show-hide"
-                        data-test-id="show-hide-button"
-                        @click="${this._on_expand}">
-                        ${this.params.collapsed_view.minimal ? translate("showHide.show") : translate("showHide.hide")}
-                    </button>
                     <div-c 
                         id="settings"
                         data-test-id="settings-div"
@@ -704,12 +695,6 @@ export class TableDataSelector extends LitElement {
         css`
             option:checked {
                 background: red linear-gradient(#333, #333);
-            }
-            #show-hide {
-                border-style: solid;
-                border-radius: 5px;
-                border-width: 1px;
-                display: var(--show-button);
             }
             div.content {
                 padding: 3px;

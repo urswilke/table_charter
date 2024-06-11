@@ -3,6 +3,7 @@ import "./ojs-plot.js";
 import "./tableDataSelector.js";
 import { registerTranslateConfig, use } from "lit-translate";
 import { default as introJs } from "intro.js";
+import { translate } from "lit-translate";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import { langs } from "./languages/languages.js";
@@ -16,7 +17,8 @@ registerTranslateConfig({
 });
 export class TableCharter extends LitElement {
     static properties = {
-        is_minimized: { type: Boolean },
+        is_minimized: { type: Boolean, reflect: true },
+        show_advanced: { type: Boolean },
         language: { type: String },
         walkthrough: { type: String },
         data: { type: Object },
@@ -31,6 +33,7 @@ export class TableCharter extends LitElement {
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
         this.hasLoadedWalkthrough = false;
+        this.show_advanced = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
             "resize",
@@ -102,6 +105,9 @@ export class TableCharter extends LitElement {
         introJs().setOptions(get_walkthrough_options(this)).start();
         this.hasLoadedWalkthrough = true;
     }
+    _on_expand() {
+        this.show_advanced = !this.show_advanced;
+    }
 
     render() {
         return this.data === undefined
@@ -122,6 +128,16 @@ export class TableCharter extends LitElement {
                               >
                                   ?
                               </button>
+                              <button
+                                  id="show-hide"
+                                  data-test-id="show-hide-button"
+                                  @click="${this._on_expand}"
+                                  title=${!this.show_advanced
+                                      ? translate("showHide.show")
+                                      : translate("showHide.hide")}
+                              >
+                                  ${!this.show_advanced ? "🎛️" : "🧹"}
+                              </button>
                           </div>
 
                           <div class="settings">
@@ -130,6 +146,7 @@ export class TableCharter extends LitElement {
                                   .html_data=${this.data}
                                   .language=${this.language}
                                   @update-data="${this.update_plot_data}"
+                                  .show_advanced=${this.show_advanced}
                               ></table-data-selector>
                           </div>
                       </div>
@@ -216,6 +233,9 @@ export class TableCharter extends LitElement {
                 overflow-y: auto;
                 padding-left: 5px;
                 padding-right: 5px;
+            }
+            :host([is_minimized]) #show-hide {
+                display: none;
             }
         `,
     ];
