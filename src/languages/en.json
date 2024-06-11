@@ -199,7 +199,7 @@
     "questionsTable": {
       "intro": {
         "title": "Questions manager",
-        "text": "The questions manager allows you to modify the questions shown in this app. For instance, you can hide questions (disallowing to choose them in the question select element), edit their titles, or duplicate questions (in order to show them with different plot settings).<br/><br/>In the bottom right you can change its size using drag and drop."
+        "text": "The questions manager allows you to modify the questions shown in this app. For instance, you can hide questions (disallowing to choose them in the question select element), edit their titles, or duplicate questions (in order to show them with different plot settings)."
       },
       "show": {
         "title": "Show / hide question",
@@ -212,15 +212,6 @@
       "clone": {
         "title": "Duplicate a question",
         "text": "By clicking on a cell in this column, you can duplicate the corresponding plot, in order to show it with changed settings."
-      },
-      "close": {
-        "title": "Close",
-        "text": "Close the questions manager by clicking here."
-      },
-      "open": {
-        "title": "Open the questions manager",
-        "text1": "Open the questions manager by clicking here. After opening it, you can start a walkthrough introduction, by clicking on the help button (question mark '?' in the upper left of this app).",
-        "text2": "Re-open the questions manager by clicking here."
       }
     }
   }

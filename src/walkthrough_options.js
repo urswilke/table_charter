@@ -37,19 +37,9 @@ export function get_walkthrough_options(tc) {
                 title: get("walkthrough.questionsTable.clone.title"),
                 intro: get("walkthrough.questionsTable.clone.text"),
             },
-            {
-                element: qt_el("#close"),
-                title: get("walkthrough.questionsTable.close.title"),
-                intro: get("walkthrough.questionsTable.close.text"),
-            },
-            {
-                element: tds_el("#show-hide-questions-table"),
-                title: get("walkthrough.questionsTable.open.title"),
-                intro: get("walkthrough.questionsTable.open.text2"),
-            },
         ],
     };
-    if (tds.params.show_questions_table) {
+    if (tds.params.collapsed["tabulator-questions-manager"].show) {
         return questions_table_elements;
     }
 
@@ -81,11 +71,6 @@ export function get_walkthrough_options(tc) {
                 intro: get("walkthrough.question.text"),
             },
             {
-                element: tds_el("#show-hide-questions-table"),
-                title: get("walkthrough.questionsTable.open.title"),
-                intro: get("walkthrough.questionsTable.open.text1"),
-            },
-            {
                 element: tds_el("#header-multi-sel"),
                 title: get("header.label"),
                 intro: get("walkthrough.header.text"),
@@ -96,7 +81,7 @@ export function get_walkthrough_options(tc) {
                 intro: get("walkthrough.rows.text"),
             },
             {
-                element: tds_el("#show-hide"),
+                element: tc_el("#show-hide"),
                 title: get("walkthrough.showHide.title"),
                 intro: get("walkthrough.showHide.text"),
                 hint: get("walkthrough.showHide.hint"),
@@ -115,7 +100,7 @@ export function get_walkthrough_options(tc) {
             },
         ],
     };
-    if (tds.params.collapsed_view) {
+    if (!tc.show_advanced) {
         return default_elements;
     }
     const advanced_elements = {
