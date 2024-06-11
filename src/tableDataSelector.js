@@ -506,9 +506,6 @@ export class TableDataSelector extends LitElement {
         inspect && console.log("rendering table-book-data");
         inspect && console.log(this);
 
-        const cv = new Map(Object.entries(this["params"]["collapsed"]));
-        cv.get("num-type-div");
-
         return this.choices === undefined
             ? html`<div></div>`
             : html`
