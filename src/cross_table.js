@@ -3,7 +3,7 @@ import { TabulatorFull as Tabulator } from "tabulator-tables";
 import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css";
 import style_light from "tabulator-tables/dist/css/tabulator.min.css";
 import { group } from "d3";
-import { gen_row_table } from "./utils.js";
+import { distinct } from "./utils.js";
 import { translate } from "lit-translate";
 
 export class CrossTable extends LitElement {
@@ -24,21 +24,22 @@ export class CrossTable extends LitElement {
         this.gen_table();
     }
     prepare_crosstab() {
-        // TODO: for header_data gen_row_table() still needs to be executed;
-        // for plot_data row_table was called in TableDataSelector...
-        // => only call it in one place (?)
-        const row_table =
-            this.crosstab_type === "selectOptionAll"
-                ? gen_row_table(this.header_data)
-                : this.row_table.filter((x) => x.selected);
+        const show_all = this.crosstab_type === "selectOptionAll";
+        const row_table = show_all
+            ? distinct(
+                  this.header_data,
+                  "RowNo",
+                  "RowContent",
+                  "RowTitle1",
+                  "RowTitle2",
+                  "RowTitle3",
+              )
+            : this.row_table.filter((x) => x.selected);
         // code redundant with gen_plot_types
         // TODO: better move execution of gen_plot_types in this class ??
         const decimal_formatter = Intl.NumberFormat(this.language).format;
 
-        const input_data =
-            this.crosstab_type === "selectOptionAll"
-                ? this.header_data
-                : this.plot_data;
+        const input_data = show_all ? this.header_data : this.plot_data;
         const data_formatted = input_data.map((x) => ({
             ...x,
             Value: decimal_formatter(x.Value.toFixed(x.RowDecimals)),
@@ -64,6 +65,7 @@ export class CrossTable extends LitElement {
                     row_table[i].RowTitle2 === row_table[i].RowTitle1
                         ? ""
                         : row_table[i].RowTitle2,
+                ...(show_all && { RowTitle3: row_table[i].RowTitle3 }),
                 ...x,
             }));
         const chosen_headers = this.header_table
@@ -107,6 +109,13 @@ export class CrossTable extends LitElement {
             width2 = 80;
         }
 
+        show_all &&
+            this.crosstabs.columns.unshift({
+                title: "",
+                field: "RowTitle3",
+                frozen: true,
+                width: 20,
+            });
         !all_rowtitle2_redundant &&
             this.crosstabs.columns.unshift({
                 title: "",
