@@ -65,11 +65,11 @@ export class TableDataSelector extends LitElement {
                 ?.addEventListener("pointerdown", drag),
         );
         this.div_cs().forEach((box) =>
-            box.addEventListener("re-attach", this.re_attach),
+            box.addEventListener("re-attach", this._on_re_attach),
         );
     }
 
-    re_attach = (evt) => {
+    _on_re_attach = (evt) => {
         const el = evt.currentTarget;
         this.params = produce(this.params, (draft) => {
             draft.collapsed[el.id].show = false;
