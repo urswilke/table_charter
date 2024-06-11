@@ -15,6 +15,18 @@ export class CollapsibleDiv extends LitElement {
             }),
         );
     }
+    toggle_collapsed() {
+        this.dispatchEvent(
+            new CustomEvent("toggle-collapsed", {
+                details: {
+                    id: this.id,
+                },
+                bubbles: true,
+                composed: true,
+            }),
+        );
+    }
+
     render() {
         let text;
         if (this.is_minimized & this.is_collapsed) {
@@ -42,17 +54,6 @@ export class CollapsibleDiv extends LitElement {
                 </div>
             </div>
         `;
-    }
-    toggle_collapsed() {
-        this.dispatchEvent(
-            new CustomEvent("toggle-collapsed", {
-                details: {
-                    id: this.id,
-                },
-                bubbles: true,
-                composed: true,
-            }),
-        );
     }
 
     static styles = [
