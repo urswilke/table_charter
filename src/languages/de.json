@@ -11,7 +11,10 @@
     "cloneColumn": "Klonen"
   },
   "crosstabTable": {
-    "title": "Kreuztabelle"
+    "title": "Kreuztabelle",
+    "selectText": "Tabellierte Werte",
+    "selectOptionAll": "Alle",
+    "selectOptionPlottedValues": "Werte im Plot"
   },
   "header": {
     "label": "Köpfe",

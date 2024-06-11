@@ -3,11 +3,15 @@ import { TabulatorFull as Tabulator } from "tabulator-tables";
 import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css";
 import style_light from "tabulator-tables/dist/css/tabulator.min.css";
 import { group } from "d3";
+import { gen_row_table } from "./utils.js";
+import { translate } from "lit-translate";
 
 export class CrossTable extends LitElement {
     static properties = {
         language: { type: String },
+        crosstab_type: { type: String },
         plot_data: { type: Array },
+        header_data: { type: Array },
         row_table: { type: Array },
         header_table: { type: Array },
         is_collapsed: { type: Boolean },
@@ -20,17 +24,22 @@ export class CrossTable extends LitElement {
         this.gen_table();
     }
     prepare_crosstab() {
-        const row_table = this.row_table.filter((x) => x.selected);
-
+        // TODO: for header_data gen_row_table() still needs to be executed;
+        // for plot_data row_table was called in TableDataSelector...
+        // => only call it in one place (?)
+        const row_table =
+            this.crosstab_type === "all"
+                ? gen_row_table(this.header_data)
+                : this.row_table.filter((x) => x.selected);
         // code redundant with gen_plot_types
         // TODO: better move execution of gen_plot_types in this class ??
         const decimal_formatter = Intl.NumberFormat(this.language).format;
 
-        const data_formatted = this.plot_data.map((x) => ({
+        const input_data =
+            this.crosstab_type === "all" ? this.header_data : this.plot_data;
+        const data_formatted = input_data.map((x) => ({
             ...x,
-            Value: decimal_formatter(
-                x.Value.toFixed(this.plot_data[0].RowDecimals),
-            ),
+            Value: decimal_formatter(x.Value.toFixed(x.RowDecimals)),
         }));
 
         this.crosstabs = {};
@@ -126,9 +135,45 @@ export class CrossTable extends LitElement {
             table_def,
         );
     }
+    get _crosstab_type() {
+        return this.renderRoot?.querySelector(".select-tab-type") ?? null;
+    }
+
+    _update_crosstab_type() {
+        this.crosstab_type = this._crosstab_type.value;
+
+        const options = {
+            detail: {
+                crosstab_type: this.crosstab_type,
+            },
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(new CustomEvent("update-crosstab-type", options));
+    }
 
     render() {
-        return html` <div id="cross-table"></div> `;
+        const table_options = [
+            "selectOptionAll",
+            "selectOptionPlottedValues",
+        ].map((x) => translate("crosstabTable." + x));
+        return html`
+            <a>${translate("crosstabTable.selectText")}: </a>
+            <select
+                @change=${this._update_crosstab_type}
+                class="select-tab-type"
+                value="all"
+            >
+                ${table_options.map(
+                    (x) => html`
+                        <option .selected=${this.crosstab_type === x}>
+                            ${x}
+                        </option>
+                    `,
+                )}
+            </select>
+            <div id="cross-table"></div>
+        `;
     }
 
     static styles = [

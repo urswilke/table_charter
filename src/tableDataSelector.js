@@ -119,6 +119,7 @@ export class TableDataSelector extends LitElement {
         this.params.row_type = ["%", "n"];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = { minimal: true, initial: false };
+        this.params.crosstab_type = "all";
         this.init_collapsed();
     }
     init_collapsed() {
@@ -498,6 +499,9 @@ export class TableDataSelector extends LitElement {
             move_in_flex(el);
         }
     }
+    _on_crosstab_type_update(e) {
+        this.update_params({ crosstab_type: e.detail.crosstab_type });
+    }
 
     render() {
         inspect && console.log("rendering table-book-data");
@@ -665,15 +669,18 @@ export class TableDataSelector extends LitElement {
                         .short_title=${"CT"}
                         .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
                         .is_minimized=${this.is_minimized}
+                        @update-crosstab-type=${this._on_crosstab_type_update}
                     >
                         <cross-table
                             .header_table=${this.choices.header_table}
                             .row_table=${this.choices.row_table}
                             .plot_data=${this.plot_data}
+                            .header_data=${this.header_data}
                             .language=${this.language}
                             .is_minimized=${this.is_minimized}
                             .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
-                        ></cross-table>
+                            .crosstab_type=${this.params.crosstab_type}
+                            ></cross-table>
                     </div-c>
                     <div-c 
                         id="tabulator-questions-manager"
