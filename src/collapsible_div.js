@@ -63,6 +63,8 @@ export class CollapsibleDiv extends LitElement {
                 color: white;
                 border-radius: 5px;
                 overflow: hidden;
+                display: flex;
+                flex-direction: column;
             }
             #titlebar {
                 display: flex;
@@ -72,6 +74,14 @@ export class CollapsibleDiv extends LitElement {
             }
             :host([is_minimized]) .title-text {
                 text-align: center;
+            }
+            #child {
+                overflow: hidden;
+            }
+            ::slotted(*) {
+                overflow: scroll;
+                height: 100%;
+                width: 100%;
             }
             .title-text {
                 flex-grow: 1;
