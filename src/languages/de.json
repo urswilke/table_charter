@@ -133,12 +133,12 @@
       "advancedText": "Dasselbe gilt für die Zeilen. Wenn die weiteren Einstellungen angezeigt werden, kannst Du auch einzelne Zeilen aus-/abwählen."
     },
     "showHide": {
-      "title": "Weitere Einstellungen ein-/ausblenden",
-      "text": "Durch Klicken auf diesen Knopf werden die weiteren Einstellungen ein-/ausgeblendet."
+      "title": "Weitere / Anfangs-Einstellungen anzeigen",
+      "text": "Durch Klicken auf diesen Knopf werden die weiteren / Anfangs-Einstellungen angezeigt."
     },
     "showHelp": {
       "title": "Einführung abspielen",
-      "text": "Durch Klicken hier wird die Hilfs-Einführung abgespielt. Wenn die weiteren Einstellungen angezeigt werden (siehe vorherigen Schritt), werden diese beschrieben."
+      "text": "Durch Klicken hier wird die Hilfs-Einführung abgespielt für alle ausgeklappten Elemente."
     },
     "hideMenu": {
       "title": "Menu zusammenklappen / anzeigen",
