@@ -11,7 +11,10 @@
     "cloneColumn": "Clone"
   },
   "crosstabTable": {
-    "title": "Crosstab"
+    "title": "Crosstab",
+    "selectText": "Tabulated values",
+    "selectOptionAll": "All",
+    "selectOptionPlottedValues": "Plotted values"
   },
   "header": {
     "label": "Headers",

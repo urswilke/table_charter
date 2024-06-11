@@ -7,10 +7,10 @@ import { get, translate } from "lit-translate";
 export class QuestionsTable extends LitElement {
     static properties = {
         questions_table_data: { type: Array },
-        update_tab_table: { type: Boolean },
+        is_collapsed: { type: Boolean },
     };
     updated() {
-        this.update_tab_table && this.gen_table();
+        !this.is_collapsed && this.questions_table_data && this.gen_table();
     }
     gen_table() {
         var table_data = this.questions_table_data.map((x) => ({
@@ -63,11 +63,7 @@ export class QuestionsTable extends LitElement {
         `,
         css`
             #questions-table {
-                border-bottom-left-radius: 5px;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
                 overflow: scroll;
-                resize: both;
                 height: 300px;
                 border: solid light-dark(black, white) 1px;
             }
@@ -154,7 +150,6 @@ const columns = [
         hozAlign: "center",
         formatter: "tickCross",
         cellClick: show_hide_question,
-        cellTap: show_hide_question,
     },
     {
         field: "TabTitle",
@@ -169,6 +164,5 @@ const columns = [
         width: 20,
         hozAlign: "center",
         cellClick: duplicate_row,
-        cellTap: duplicate_row,
     },
 ];

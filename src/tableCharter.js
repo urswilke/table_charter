@@ -16,6 +16,7 @@ registerTranslateConfig({
 });
 export class TableCharter extends LitElement {
     static properties = {
+        is_minimized: { type: Boolean },
         language: { type: String },
         walkthrough: { type: String },
         data: { type: Object },
@@ -26,6 +27,7 @@ export class TableCharter extends LitElement {
     // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component)
     constructor() {
         super();
+        this.is_minimized = false;
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
         this.hasLoadedWalkthrough = false;
@@ -67,21 +69,15 @@ export class TableCharter extends LitElement {
 
     hide_menu() {
         this.el(".hide-menu").innerText = "☰";
-        // this.el(".settings").style.visibility = "hidden";
-        this.el("table-data-selector").style.display = "none";
-        this.el(".show-help").style.display = "none";
-        this.el(".column1").style.flexBasis = "content";
+        this.el(".column1").style.flexBasis = "4em";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
-        this.el("table-data-selector").style.display = "block";
-        this.el(".show-help").style.display = "inline-block";
         this.el(".column1").style.flexBasis = "25%";
     }
     show_hide_menu() {
-        this.el(".hide-menu").innerText === "☰"
-            ? this.show_menu()
-            : this.hide_menu();
+        this.is_minimized ? this.show_menu() : this.hide_menu();
+        this.is_minimized = !this.is_minimized;
         // HACK to trigger re-rendering of <ojs-plot> element:
         this.plot_data = { ...this.plot_data };
     }
@@ -108,12 +104,6 @@ export class TableCharter extends LitElement {
     }
 
     render() {
-        this.plot_data &&
-            (this.plot_data.params = {
-                language: this.language,
-                element_width: this.el(".ojsplot").offsetWidth,
-                element_height: this.el(".column2").offsetHeight,
-            });
         return this.data === undefined
             ? html`<div>no data loaded</div>`
             : html`
@@ -136,6 +126,7 @@ export class TableCharter extends LitElement {
 
                           <div class="settings">
                               <table-data-selector
+                                  .is_minimized=${this.is_minimized}
                                   .html_data=${this.data}
                                   .language=${this.language}
                                   @update-data="${this.update_plot_data}"
@@ -147,6 +138,7 @@ export class TableCharter extends LitElement {
                               class="ojsplot"
                               data-test-id="ojs-plot"
                               .plot_data=${this.plot_data}
+                              .language=${this.language}
                           >
                           </ojs-plot>
                       </div>
@@ -203,6 +195,10 @@ export class TableCharter extends LitElement {
                 align-self: stretch;
                 scrollbar-gutter: stable;
                 margin-left: 0;
+            }
+            ojs-plot {
+                height: 100%;
+                width: 100%;
             }
             .show-help,
             .hide-menu {

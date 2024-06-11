@@ -15,12 +15,42 @@ export class OJSPlot extends LitElement {
         chartTitle: { type: String },
         plot_options: { type: PlotOptions },
         file_name: { type: String },
+        language: { type: String },
     };
 
+    connectedCallback() {
+        super.connectedCallback();
+        this.resizeObserver = new ResizeObserver(this.onResize.bind(this));
+        this.resizeObserver.observe(this, { box: "border-box" });
+        this.set_dimensions();
+    }
+    onResize(entries) {
+        window.requestAnimationFrame(() => {
+            if (!Array.isArray(entries) || !entries.length) return;
+            this.set_dimensions();
+        });
+    }
+    set_dimensions() {
+        this.width = this.offsetWidth;
+        this.height = this.offsetHeight;
+        this.plot_data && (this.plot_data = { ...this.plot_data });
+    }
+
+    get plot_data() {
+        return this._plot_data;
+    }
     set plot_data(val) {
+        // TODO: when resizing, this method gets called twice => try to refactor code to only call it once...
         if (!val || val.length === 0) {
             return this;
         }
+        val.params = {
+            element_height: this.height,
+            element_width: this.width,
+            // TODO: language (decimal separator in plot) isn't updated until the next plot is generated...:
+            language: this.language,
+        };
+        this._plot_data = val;
         this.plot_options = new PlotOptions(val);
         const font_size = this.plot_options.input.font_size;
         this.style.setProperty("--font-size", String(font_size) + "px");

@@ -73,7 +73,7 @@ export class PlotOptions {
         if (separate_headers) {
             header_table_gaps = add_gaps_to_xlabels(
                 header_table,
-                distinct(this.plot_data, ["ColTitle1", "ColNo"]).map(
+                distinct(this.plot_data, "ColTitle1", "ColNo").map(
                     (x) => x.ColTitle1,
                 ),
             );

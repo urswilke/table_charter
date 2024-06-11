@@ -14,6 +14,12 @@ import {
     left_join,
     obj_arrays_to_array_objs,
     load_saved_settings,
+    is_mobile,
+    drag,
+    initial_collapsed,
+    all_expanded,
+    all_collapsed,
+    move_in_flex,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -27,12 +33,12 @@ import "./cross_table.js";
 import "./collapsible_div.js";
 
 import { produce } from "immer";
-import { is_mobile } from "./utils.js";
 
 const inspect = false; // set to true for some console.log msgs
 
 export class TableDataSelector extends LitElement {
     static properties = {
+        is_minimized: { type: Boolean, reflect: true },
         language: { type: String },
         tab_table: { type: Array },
         html_data: { type: Array },
@@ -44,6 +50,41 @@ export class TableDataSelector extends LitElement {
     connectedCallback() {
         super.connectedCallback();
         this.init_tablebook_data();
+    }
+    div_cs = () => this.renderRoot?.querySelectorAll("div-c");
+    updated() {
+        // HACK: I don't know when exactly the list of all div-c can be queried.
+        // could it also be done like this in the definition of CollapsibleDiv?
+        // Like this it's always there....
+        //  Alternatively we could add:
+        //  $pointerdown=${drag}
+        // to each of the div-c elements
+        this.div_cs().forEach((box) =>
+            box.renderRoot
+                ?.querySelector(".title-text")
+                ?.addEventListener("pointerdown", drag),
+        );
+        this.div_cs().forEach((box) =>
+            box.addEventListener("re-attach", this._on_re_attach),
+        );
+    }
+
+    set is_minimized(val) {
+        this._is_minimized = val;
+        this.div_cs()?.forEach((x) => move_in_flex(x));
+        if (val) {
+            this.update_params({ collapsed: all_collapsed });
+        } else {
+            // this.update_params({ collapsed: initial_collapsed });
+            this.init_collapsed();
+        }
+        this.style.setProperty(
+            "--show-button",
+            this.is_minimized ? "none" : "block",
+        );
+    }
+    get is_minimized() {
+        return this._is_minimized;
     }
 
     // Initialization:
@@ -68,12 +109,17 @@ export class TableDataSelector extends LitElement {
         this.params = {};
         this.params.row_type = ["%", "n"];
         this.params.color_scale = ["categorical", "ordinal"];
-        this.params.collapsed_view = true;
+        this.params.collapsed_view = { minimal: true, initial: false };
+        this.params.crosstab_type = "all";
+        this.init_collapsed();
     }
+    init_collapsed() {
+        this.update_params({ collapsed: initial_collapsed });
+    }
+
     init_plot_settings() {
         this.i_tab = this.saved_settings.i_tab;
         this.tab_table = structuredClone(this.saved_settings.tab_table);
-        this.update_tab_table = true;
         this.init_choices();
     }
     init_choices() {
@@ -216,11 +262,12 @@ export class TableDataSelector extends LitElement {
         this.plot_data = this.rows_data;
     }
     set_color_scale() {
-        const df_row_tit_val = distinct(this.rows_data, [
+        const df_row_tit_val = distinct(
+            this.rows_data,
             "RowTitle1",
             "RowTitle2",
             "RowValue",
-        ]);
+        );
         const n_numeric_rowtitles = df_row_tit_val.reduce(
             (sum, x) =>
                 sum +
@@ -394,7 +441,7 @@ export class TableDataSelector extends LitElement {
     }
     _on_expand() {
         this.update_params({
-            collapsed_view: !this.params.collapsed_view,
+            collapsed: all_expanded,
         });
     }
     _on_question_clone(e) {
@@ -429,9 +476,31 @@ export class TableDataSelector extends LitElement {
             this._update_plot_data();
         }
     }
-    set_tab_table_updated() {
-        this.update_tab_table = false;
+    _on_crosstab_type_update(e) {
+        this.update_params({ crosstab_type: e.detail.crosstab_type });
     }
+    _on_toggle_collapsed(e) {
+        const el = e.srcElement;
+        const old_show = this.params.collapsed[el.id].show;
+        this.params = produce(this.params, (draft) => {
+            draft.collapsed[el.id].show = !old_show;
+        });
+
+        if (el.is_minimized) {
+            el.style.position = "absolute";
+            el.style.outline = "5px solid light-dark(white, black)";
+        } else {
+            move_in_flex(el);
+        }
+    }
+    _on_re_attach = (evt) => {
+        const el = evt.currentTarget;
+        this.params = produce(this.params, (draft) => {
+            draft.collapsed[el.id].show = false;
+        });
+        // if element was resized...:
+        move_in_flex(el);
+    };
 
     render() {
         inspect && console.log("rendering table-book-data");
@@ -440,12 +509,17 @@ export class TableDataSelector extends LitElement {
         return this.choices === undefined
             ? html`<div></div>`
             : html`
-                <div id="parent">
+                <div 
+                    id="parent" 
+                    @toggle-collapsed=${this._on_toggle_collapsed}
+                >
                     <div-c 
                         class="selector-group" 
                         id="num-type-div"
                         .title=${translate("numType.label")}
-                        .is_collapsed=${false}
+                        .short_title=${"%/n"}
+                        .is_collapsed=${!this.params.collapsed["num-type-div"].show}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <num_type-selector
@@ -459,7 +533,9 @@ export class TableDataSelector extends LitElement {
                         class="selector-group" 
                         id="question-selector" 
                         .title=${translate("question.label")}
-                        .is_collapsed=${false}
+                        .short_title=${"Q"}
+                        .is_collapsed=${!this.params.collapsed["question-selector"].show}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <question-selector 					
@@ -474,7 +550,9 @@ export class TableDataSelector extends LitElement {
                         class="selector-group" 
                         id="header-multi-sel"
                         .title=${translate("header.label")}
-                        .is_collapsed=${false}
+                        .short_title=${"H"}
+                        .is_collapsed=${!this.params.collapsed["header-multi-sel"].show}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <multi-selector
@@ -485,7 +563,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"ColTitle1"}
                                 .children_fun = ${(x) => (x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1)}
                                 @update-multi-select="${this._on_header_update}"
-                                .collapsed_view = "${this.params.collapsed_view}"		
+                                .collapsed_view = ${!this.params.collapsed["header-multi-sel"].sub}
                                 .prop_table=${this.choices.header_table}>
                             </multi-selector>
                         </div>
@@ -495,7 +573,9 @@ export class TableDataSelector extends LitElement {
                         class="selector-group" 
                         id="row-multi-sel"
                         .title=${translate("rows.label")}
-                        .is_collapsed=${false}
+                        .short_title=${"R"}
+                        .is_collapsed=${!this.params.collapsed["row-multi-sel"].show}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
                             <multi-selector 
@@ -506,7 +586,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"RowContent"}
                                 .children_fun = ${(x) => x.RowTitle2}
                                 @update-multi-select="${this._on_rows_update}" 		
-                                .collapsed_view = "${this.params.collapsed_view}"		
+                                .collapsed_view = ${!this.params.collapsed["row-multi-sel"].sub}
                                 .prop_table=${this.choices.row_table}>	   																
                             </multi-selector>
                         </div>
@@ -515,13 +595,15 @@ export class TableDataSelector extends LitElement {
                         id="show-hide"
                         data-test-id="show-hide-button"
                         @click="${this._on_expand}">
-                        ${this.params.collapsed_view ? translate("showHide.show") : translate("showHide.hide")}
+                        ${this.params.collapsed_view.minimal ? translate("showHide.show") : translate("showHide.hide")}
                     </button>
                     <div-c 
                         id="settings"
                         data-test-id="settings-div"
                         .title=${translate("settings.label")}
-                        .is_collapsed=${this.params.collapsed_view}
+                        .short_title=${"⚙"}
+                        .is_collapsed=${!this.params.collapsed["settings"].show}
+                        .is_minimized=${this.is_minimized}
                     >
                         <div class="selector-group">
                             <div class="content">
@@ -577,30 +659,40 @@ export class TableDataSelector extends LitElement {
                         </div>
                     </div-c>
                     <div-c 
+                        id="tabulator-crosstab"
                         class="selector-group"
                         .title=${translate("crosstabTable.title")}
-                        .is_collapsed=${this.params.collapsed_view}
+                        .short_title=${"CT"}
+                        .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
+                        .is_minimized=${this.is_minimized}
+                        @update-crosstab-type=${this._on_crosstab_type_update}
                     >
                         <cross-table
-                        .header_table=${this.choices.header_table}
-                        .row_table=${this.choices.row_table}
-                        .plot_data=${this.plot_data}
-                        .language=${this.language}
-                        ></cross-table>
+                            .header_table=${this.choices.header_table}
+                            .row_table=${this.choices.row_table}
+                            .plot_data=${this.plot_data}
+                            .header_data=${this.header_data}
+                            .language=${this.language}
+                            .is_minimized=${this.is_minimized}
+                            .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
+                            .crosstab_type=${this.params.crosstab_type}
+                            ></cross-table>
                     </div-c>
                     <div-c 
+                        id="tabulator-questions-manager"
                         class="content"
                         .title=${translate("questionsTable.title")}
-                        .is_collapsed=${this.params.collapsed_view}
+                        .short_title=${"QM"}
+                        .is_collapsed=${!this.params.collapsed["tabulator-questions-manager"].show}
+                        .is_minimized=${this.is_minimized}
                         @clone-question=${this._on_question_clone}
                         @show-hide-question=${this._on_show_hide_question}
                         @edit-text=${this._on_text_edit}
                         @close-questions-table=${this.show_hide_questions_table}
-                        @tab_table-updated=${this.set_tab_table_updated}
                     >
                         <questions-table 
                             .questions_table_data=${this.tab_table}  
-                            .update_tab_table=${this.update_tab_table}
+                            .is_collapsed=${!this.params.collapsed["tabulator-questions-manager"].show}
                         >
                         </questions-table>
                     </div-c>
@@ -617,6 +709,7 @@ export class TableDataSelector extends LitElement {
                 border-style: solid;
                 border-radius: 5px;
                 border-width: 1px;
+                display: var(--show-button);
             }
             div.content {
                 padding: 3px;
@@ -644,6 +737,24 @@ export class TableDataSelector extends LitElement {
                 margin-top: 5px;
                 margin-bottom: 5px;
                 gap: 5px;
+            }
+            @media (max-aspect-ratio: 1) {
+                :host([is_minimized]) #parent {
+                    flex-direction: row;
+                }
+            }
+            @media (aspect-ratio: 1) {
+                :host([is_minimized]) #parent {
+                    flex-direction: row;
+                }
+            }
+
+            div-c {
+                border-radius: 5px;
+            }
+            *:focus {
+                outline: 1px solid blue;
+                z-index: 999;
             }
         `,
     ];

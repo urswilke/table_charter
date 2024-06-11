@@ -1,9 +1,15 @@
-import { chain, pick, uniqWith, isEqual } from "lodash";
+// https://stackoverflow.com/questions/54907549/keep-only-selected-keys-in-every-object-from-array/66471710#66471710
+function select(arr, ...X) {
+    return arr.map((o) => Object.fromEntries(X.map((k) => [k, o[k]])));
+}
 
-export function distinct(arr, X) {
-    return chain(arr.map((o) => pick(o, X)))
-        .uniqWith(isEqual)
-        .value();
+// https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects/56757215#56757215
+export function distinct(arr, ...X) {
+    return select(arr, ...X).filter(
+        (obj1, i, a) =>
+            a.findIndex((obj2) => X.every((key) => obj2[key] === obj1[key])) ===
+            i,
+    );
 }
 
 const is_dark =
@@ -16,7 +22,10 @@ export function gen_header_table(data) {
     const arr = distinct(
         data,
         // TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-        ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"],
+        "ColNo",
+        "HeadNo",
+        "ColTitle1",
+        "ColTitle2",
     );
     const first_two_titles = [...new Set(arr.map((x) => x.ColTitle1))].slice(
         0,
@@ -30,12 +39,7 @@ export function gen_header_table(data) {
 }
 
 export function gen_row_table(data) {
-    const arr = distinct(data, [
-        "RowNo",
-        "RowContent",
-        "RowTitle1",
-        "RowTitle2",
-    ]);
+    const arr = distinct(data, "RowNo", "RowContent", "RowTitle1", "RowTitle2");
     const row_contents = [...new Set(arr.map((x) => x.RowContent))];
     var types_to_take;
     if (row_contents.includes("Detail")) {
@@ -156,7 +160,7 @@ export function save_file() {
 // add varying number of spaces to duplicated `ColTitle2`s
 // (that every ColNo has a unique ColTitle2):
 export function add_spaces(data) {
-    var coltitle_array = distinct(data, ["ColNo", "ColTitle2"]);
+    var coltitle_array = distinct(data, "ColNo", "ColTitle2");
     var counts = {};
     for (let i = 0; i < coltitle_array.length; i++) {
         const e = coltitle_array[i];
@@ -257,3 +261,54 @@ export function load_saved_settings(tab_table) {
     }
     return saved;
 }
+export const drag = (evt) => {
+    const el = evt.currentTarget;
+    el.style.touchAction = "none";
+    const parent = el.getRootNode().host;
+
+    const move = (evt) => {
+        parent.style.left = `${parent.offsetLeft + evt.movementX}px`;
+        parent.style.top = `${parent.offsetTop + evt.movementY}px`;
+    };
+
+    const up = () => {
+        removeEventListener("pointermove", move);
+        removeEventListener("pointerup", up);
+    };
+
+    addEventListener("pointermove", move);
+    addEventListener("pointerup", up);
+};
+export const move_in_flex = (el) => {
+    el.style.position = "static";
+    el.style.outline = "0px";
+    el.style.left = "";
+    el.style.top = "";
+    el.renderRoot.querySelector("#main").style.width = "";
+    el.renderRoot.querySelector("#main").style.height = "";
+};
+
+export const initial_collapsed = {
+    "num-type-div": { show: true },
+    "question-selector": { show: true },
+    "header-multi-sel": { show: true, sub: false },
+    "row-multi-sel": { show: true, sub: false },
+    settings: { show: false },
+    "tabulator-crosstab": { show: false },
+    "tabulator-questions-manager": { show: false },
+};
+
+function do_all(initial_collapsed, new_show_val, new_expand_val) {
+    const arr = structuredClone(Object.entries(initial_collapsed));
+
+    for (let i = 0; i < arr.length; i++) {
+        const el = arr[i];
+        el[1].show = new_show_val;
+        el[1].sub = new_expand_val;
+    }
+
+    return Object.fromEntries(arr);
+}
+
+export const all_expanded = do_all(initial_collapsed, true, true);
+export const all_collapsed = do_all(initial_collapsed, false, true);
