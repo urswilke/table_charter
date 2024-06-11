@@ -15,34 +15,6 @@ export function get_walkthrough_options(tc) {
     const qt = tds_el("questions-table");
     const qt_el = sel(qt);
 
-    const questions_table_elements = {
-        steps: [
-            {
-                element: qt_el(".wrapper"),
-                title: get("walkthrough.questionsTable.intro.title"),
-                intro: get("walkthrough.questionsTable.intro.text"),
-            },
-            {
-                element: qt_el(".tabulator-col[tabulator-field='show']"),
-                title: get("walkthrough.questionsTable.show.title"),
-                intro: get("walkthrough.questionsTable.show.text"),
-            },
-            {
-                element: qt_el(".tabulator-col[tabulator-field='TabTitle']"),
-                title: get("walkthrough.questionsTable.question.title"),
-                intro: get("walkthrough.questionsTable.question.text"),
-            },
-            {
-                element: qt_el(".tabulator-col[tabulator-field='clone']"),
-                title: get("walkthrough.questionsTable.clone.title"),
-                intro: get("walkthrough.questionsTable.clone.text"),
-            },
-        ],
-    };
-    if (tds.params.collapsed["tabulator-questions-manager"].show) {
-        return questions_table_elements;
-    }
-
     const default_elements = {
         dontShowAgain: true,
         dontShowAgainLabel: get("walkthrough.control.dontShowAgainLabel"),
@@ -103,7 +75,7 @@ export function get_walkthrough_options(tc) {
     if (!tc.show_advanced) {
         return default_elements;
     }
-    const advanced_elements = {
+    let advanced_elements = {
         steps: [
             {
                 element: tds_el("#header-multi-sel"),
@@ -200,5 +172,36 @@ export function get_walkthrough_options(tc) {
             },
         ],
     };
+    const questions_table_elements = {
+        steps: [
+            {
+                element: tds_el("#tabulator-questions-manager"),
+                title: get("walkthrough.questionsTable.intro.title"),
+                intro: get("walkthrough.questionsTable.intro.text"),
+            },
+            {
+                element: qt_el(".tabulator-col[tabulator-field='show']"),
+                title: get("walkthrough.questionsTable.show.title"),
+                intro: get("walkthrough.questionsTable.show.text"),
+            },
+            {
+                element: qt_el(".tabulator-col[tabulator-field='TabTitle']"),
+                title: get("walkthrough.questionsTable.question.title"),
+                intro: get("walkthrough.questionsTable.question.text"),
+            },
+            {
+                element: qt_el(".tabulator-col[tabulator-field='clone']"),
+                title: get("walkthrough.questionsTable.clone.title"),
+                intro: get("walkthrough.questionsTable.clone.text"),
+            },
+        ],
+    };
+    if (tds.params.collapsed["tabulator-questions-manager"].show) {
+        advanced_elements.steps = [
+            ...advanced_elements.steps,
+            ...questions_table_elements.steps,
+        ];
+    }
+
     return advanced_elements;
 }
