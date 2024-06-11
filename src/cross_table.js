@@ -28,7 +28,7 @@ export class CrossTable extends LitElement {
         // for plot_data row_table was called in TableDataSelector...
         // => only call it in one place (?)
         const row_table =
-            this.crosstab_type === "all"
+            this.crosstab_type === "selectOptionAll"
                 ? gen_row_table(this.header_data)
                 : this.row_table.filter((x) => x.selected);
         // code redundant with gen_plot_types
@@ -36,7 +36,9 @@ export class CrossTable extends LitElement {
         const decimal_formatter = Intl.NumberFormat(this.language).format;
 
         const input_data =
-            this.crosstab_type === "all" ? this.header_data : this.plot_data;
+            this.crosstab_type === "selectOptionAll"
+                ? this.header_data
+                : this.plot_data;
         const data_formatted = input_data.map((x) => ({
             ...x,
             Value: decimal_formatter(x.Value.toFixed(x.RowDecimals)),
@@ -153,21 +155,20 @@ export class CrossTable extends LitElement {
     }
 
     render() {
-        const table_options = [
-            "selectOptionAll",
-            "selectOptionPlottedValues",
-        ].map((x) => translate("crosstabTable." + x));
+        const table_options = ["selectOptionAll", "selectOptionPlottedValues"];
         return html`
             <a>${translate("crosstabTable.selectText")}: </a>
             <select
                 @change=${this._update_crosstab_type}
                 class="select-tab-type"
-                value="all"
             >
                 ${table_options.map(
                     (x) => html`
-                        <option .selected=${this.crosstab_type === x}>
-                            ${x}
+                        <option
+                            .value=${x}
+                            .selected=${this.crosstab_type === x}
+                        >
+                            ${translate("crosstabTable." + x)}
                         </option>
                     `,
                 )}

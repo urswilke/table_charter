@@ -112,7 +112,7 @@ export class TableDataSelector extends LitElement {
         this.params.row_type = ["%", "n"];
         this.params.color_scale = ["categorical", "ordinal"];
         this.params.collapsed_view = { minimal: true, initial: false };
-        this.params.crosstab_type = "all";
+        this.params.crosstab_type = "selectOptionAll";
         this.init_collapsed();
     }
     init_collapsed() {
