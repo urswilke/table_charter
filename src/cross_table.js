@@ -157,22 +157,24 @@ export class CrossTable extends LitElement {
     render() {
         const table_options = ["selectOptionAll", "selectOptionPlottedValues"];
         return html`
-            <a>${translate("crosstabTable.selectText")}: </a>
-            <select
-                @change=${this._update_crosstab_type}
-                class="select-tab-type"
-            >
-                ${table_options.map(
-                    (x) => html`
-                        <option
-                            .value=${x}
-                            .selected=${this.crosstab_type === x}
-                        >
-                            ${translate("crosstabTable." + x)}
-                        </option>
-                    `,
-                )}
-            </select>
+            <div class="select-crosstab-type">
+                <a>${translate("crosstabTable.selectText")}: </a>
+                <select
+                    @change=${this._update_crosstab_type}
+                    class="select-tab-type"
+                >
+                    ${table_options.map(
+                        (x) => html`
+                            <option
+                                .value=${x}
+                                .selected=${this.crosstab_type === x}
+                            >
+                                ${translate("crosstabTable." + x)}
+                            </option>
+                        `,
+                    )}
+                </select>
+            </div>
             <div id="cross-table"></div>
         `;
     }
@@ -187,6 +189,9 @@ export class CrossTable extends LitElement {
             }
         `,
         css`
+            .select-crosstab-type {
+                margin: 3px;
+            }
             #cross-table {
                 border-radius: 5px;
                 overflow: scroll;
