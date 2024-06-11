@@ -76,10 +76,8 @@ export class TableCharter extends LitElement {
         this.el(".column1").style.flexBasis = "25%";
     }
     show_hide_menu() {
+        this.is_minimized ? this.show_menu() : this.hide_menu();
         this.is_minimized = !this.is_minimized;
-        this.el(".hide-menu").innerText === "☰"
-            ? this.show_menu()
-            : this.hide_menu();
         // HACK to trigger re-rendering of <ojs-plot> element:
         this.plot_data = { ...this.plot_data };
     }
