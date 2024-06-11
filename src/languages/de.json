@@ -116,7 +116,7 @@
     },
     "general": {
       "title": "Allgemeine Tipps",
-      "text": "<ul><li>Esc Drücken oder auf das 'x' Klicken beendet die Einführung. </li><li>Mit den Pfeiltasten der Tastatur oder Klicken der Knöpfe unten kannst Du Dich zu den nächsten / vorherigen Tipps bewegen. </li><li>Alle Elemente der App lassen sich auch mit der Maus und dem Keyboard bedienen. </li><li>Wenn Du mit der Maus über die Elemente in den Charts hoverst, erscheint nach einem kurzen Moment ein Tooltip.</li></ul>"
+      "text": "<ul><li>Esc Drücken oder auf das 'x' Klicken beendet die Einführung. </li><li>Mit den Pfeiltasten der Tastatur oder Klicken der Knöpfe unten kannst Du Dich zu den nächsten / vorherigen Tipps bewegen. </li><li>Alle Elemente der App lassen sich auch mit der Maus und dem Keyboard bedienen. </li><li>Wenn Du mit der Maus über die Elemente in den Charts hoverst, erscheint nach einem kurzen Moment ein Tooltip.</li><li>Du kannst die Elemente in den Einstellungen durch Klicken auf sie öffnen. Wenn sie geöffnet sind, kannst Du sie durch Klicken auf die Titelzeile wieder schließen.</li></ul>"
     },
     "numTypeDiv": {
       "text": "Hier kannst Du auswählen, ob in den Plots die Absolut- oder Prozentwerte der Tabellen angezeigt werden."
@@ -142,7 +142,7 @@
     },
     "hideMenu": {
       "title": "Menu zusammenklappen / anzeigen",
-      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt / angezeigt (dadurch werden die Plots größer / kleiner)."
+      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt / angezeigt (dadurch werden die Plots größer / kleiner). <ul><li>In der zusammengeklappten Ansicht kannst Du die einzelnen Elemente durch Klicken als Popup anzeigen.</li><li>Durch drag-and-drop auf der Titlezeile kannst Du die Elemente bewegen, und unten rechts ihre Größe anpassen.</li><li>Durch Klicken oben rechts kannst Du die Elemente wieder zurück in die Leiste minimieren.</li></ul>"
     },
     "flipXY": {
       "title": "X- & Y-Achse vertauschen",

@@ -116,7 +116,7 @@
     },
     "general": {
       "title": "General hints",
-      "text": "<ul><li>Pressing Esc or clicking on the 'x' leaves the walkthrough.</li><li>You can move through with the arrow keys of your keyboard or clicking on the buttons below.</li><li>All the app's elements can also be controlled by keyboard and by mouse.</li><li>When you hover over the elements in the charts, a tooltip will appear after a small moment.</li></ul>"
+      "text": "<ul><li>Pressing Esc or clicking on the 'x' leaves the walkthrough.</li><li>You can move through with the arrow keys of your keyboard or clicking on the buttons below.</li><li>All the app's elements can also be controlled by keyboard and by mouse.</li><li>When you hover over the elements in the charts, a tooltip will appear after a small moment.</li><li>You can open the elements in the settings by clicking on them. When they are opened you can close them again by clicking on the title bar.</li></ul>"
     },
     "numTypeDiv": {
       "text": "Here you can select whether to show the absolute or percent values in the tables."
@@ -142,7 +142,7 @@
     },
     "hideMenu": {
       "title": "collapse / expand menu",
-      "text": "By clicking this button the settings menu is collapsed / expanded (this increases / decreases the size of the plots)."
+      "text": "By clicking this button the settings menu is collapsed / expanded (this increases / decreases the size of the plots). <ul><li>In the minimized view you can open the elements by clicking on them.</li><li>By drag-and-drop on the title bar you can move the elements, and change their size in the bottom right corner.</li><li>By clicking on the top right button you can move them back to the navbar in the minimized view.</li></ul>"
     },
     "flipXY": {
       "title": "flip x & y axis",
