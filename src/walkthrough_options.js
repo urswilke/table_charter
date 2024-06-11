@@ -218,10 +218,12 @@ export function get_walkthrough_options(tc) {
             : []),
         ...(tds.params.collapsed["header-multi-sel"].show ? header_steps : []),
         ...(tds.params.collapsed["row-multi-sel"].show ? rows_steps : []),
-        ...(tds.params.collapsed["header-multi-sel"].sub
+        ...(tds.params.collapsed["header-multi-sel"].show &
+        tds.params.collapsed["header-multi-sel"].sub
             ? header_elements_steps
             : []),
-        ...(tds.params.collapsed["row-multi-sel"].sub
+        ...(tds.params.collapsed["row-multi-sel"].show &
+        tds.params.collapsed["row-multi-sel"].sub
             ? rows_elements_steps
             : []),
         ...(tds.params.collapsed["settings"].show
