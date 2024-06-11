@@ -69,15 +69,6 @@ export class TableDataSelector extends LitElement {
         );
     }
 
-    _on_re_attach = (evt) => {
-        const el = evt.currentTarget;
-        this.params = produce(this.params, (draft) => {
-            draft.collapsed[el.id].show = false;
-        });
-        // if element was resized...:
-        move_in_flex(el);
-    };
-
     set is_minimized(val) {
         this._is_minimized = val;
         this.div_cs()?.forEach((x) => move_in_flex(x));
@@ -485,6 +476,9 @@ export class TableDataSelector extends LitElement {
             this._update_plot_data();
         }
     }
+    _on_crosstab_type_update(e) {
+        this.update_params({ crosstab_type: e.detail.crosstab_type });
+    }
     _on_toggle_collapsed(e) {
         const el = e.srcElement;
         const old_show = this.params.collapsed[el.id].show;
@@ -499,9 +493,14 @@ export class TableDataSelector extends LitElement {
             move_in_flex(el);
         }
     }
-    _on_crosstab_type_update(e) {
-        this.update_params({ crosstab_type: e.detail.crosstab_type });
-    }
+    _on_re_attach = (evt) => {
+        const el = evt.currentTarget;
+        this.params = produce(this.params, (draft) => {
+            draft.collapsed[el.id].show = false;
+        });
+        // if element was resized...:
+        move_in_flex(el);
+    };
 
     render() {
         inspect && console.log("rendering table-book-data");
