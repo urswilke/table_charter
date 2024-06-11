@@ -32,7 +32,7 @@ export class TableCharter extends LitElement {
         this.is_minimized = false;
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
-        this.hasLoadedWalkthrough = false;
+        this.show_intro = true;
         this.show_advanced = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
@@ -86,11 +86,7 @@ export class TableCharter extends LitElement {
     }
 
     async updated() {
-        // HACKs: to return early, if this methods didn't run through yet, or if the html only contains one element.
-        // (that's the case when this.plot_data isn't assigned yet; see render method...)
-        this.walkthrough !== "hide" &&
-            !this.hasLoadedWalkthrough &&
-            (await this.show_help());
+        this.show_intro && (await this.show_help());
     }
 
     async show_help() {
@@ -100,10 +96,11 @@ export class TableCharter extends LitElement {
             return;
         }
         await Promise.all(Array.from(children).map((c) => c.updateComplete));
-        const tds = this.renderRoot.querySelector("table-data-selector");
 
-        introJs().setOptions(get_walkthrough_options(this)).start();
-        this.hasLoadedWalkthrough = true;
+        introJs()
+            .setOptions(get_walkthrough_options(this))
+            .onexit(() => (this.show_intro = false))
+            .start();
     }
     _on_expand() {
         this.show_advanced = !this.show_advanced;
