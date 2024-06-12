@@ -99,9 +99,7 @@ export class MultiSelector extends LitElement {
                         )}
                     </select>
                 </div>
-                <button @click=${this.toggle_collapsed}>
-                    ${this.collapsed_view ? html`>` : html`<`}
-                </button>
+                <button @click=${this.toggle_collapsed}>></button>
 
                 <div
                     class=${"subselect" + (!this.collapsed_view ? "" : " hide")}
