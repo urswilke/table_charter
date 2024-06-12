@@ -61,13 +61,13 @@ export class CollapsibleDiv extends LitElement {
             #main {
                 background-color: light-dark(white, black);
                 border: solid light-dark(black, white) 1px;
-                color: white;
                 border-radius: 5px;
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
             }
             #titlebar {
+                color: white;
                 display: flex;
                 justify-content: space-between;
                 padding: 3px;
