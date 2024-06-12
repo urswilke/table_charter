@@ -200,6 +200,8 @@ export class AdvancedOptionsSelector extends LitElement {
                 overflow: hidden;
             }
             input[type="number"] {
+                border-radius: 4px;
+                border: solid grey 1px;
                 width: 3em;
             }
             select {
