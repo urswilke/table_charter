@@ -112,9 +112,6 @@ export class CollapsibleDiv extends LitElement {
             :host([is_collapsed]) #child {
                 display: none;
             }
-            #main {
-                resize: none;
-            }
             :host([is_minimized]) #main {
                 resize: both;
             }
