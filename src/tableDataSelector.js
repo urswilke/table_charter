@@ -598,7 +598,7 @@ export class TableDataSelector extends LitElement {
                         .is_collapsed=${!this.params.collapsed["settings"].show}
                         .is_minimized=${this.is_minimized}
                     >
-                        <div class="selector-group">
+                        <div class="selector-group" id="settings-div">
                             <div class="content">
                                 <further-options-selector
                                     @update-xy="${this._on_xy_update}"
@@ -698,8 +698,9 @@ export class TableDataSelector extends LitElement {
             option:checked {
                 background: red linear-gradient(#333, #333);
             }
-            div.content {
-                padding: 3px;
+            #settings-div {
+                margin: 3px;
+                width: calc(100% - 6px);
             }
             .hide {
                 display: none;
