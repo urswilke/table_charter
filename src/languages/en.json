@@ -40,11 +40,11 @@
     "label": "Save app with these plot settings to file"
   },
   "flipXY": {
-    "label1": "categorical axis",
+    "label1": "Categorical axis",
     "label2": " axis"
   },
   "plotName": {
-    "label": "plot type",
+    "label": "Plot type",
     "line": "line chart",
     "bar": "bar chart"
   },
@@ -67,8 +67,8 @@
     "label": "Font size"
   },
   "color": {
-    "scale": "color scale",
-    "scheme": "color scheme",
+    "scale": "Color scale",
+    "scheme": "Color scheme",
     "categorical": "categorical",
     "ordinal": "ordinal"
   },
