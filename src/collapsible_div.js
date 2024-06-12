@@ -86,6 +86,9 @@ export class CollapsibleDiv extends LitElement {
             }
             .title-text {
                 flex-grow: 1;
+                text-overflow: ellipsis;
+                margin: 1px;
+                overflow: hidden;
             }
             .title-text:hover {
                 cursor: pointer;
