@@ -17,14 +17,12 @@
     "selectOptionPlottedValues": "Plotted values"
   },
   "header": {
-    "label": "Headers",
-    "mainsel": "header(s)",
-    "subsel": "sub-header(s)"
+    "mainsel": "Headers",
+    "subsel": "Columns"
   },
   "rows": {
-    "label": "Rows",
-    "mainsel": "type(s)",
-    "subsel": "row(s)"
+    "mainsel": "Row types",
+    "subsel": "Rows"
   },
   "showHide": {
     "show": "Show advanced settings",

@@ -17,14 +17,12 @@
     "selectOptionPlottedValues": "Werte im Plot"
   },
   "header": {
-    "label": "Köpfe",
-    "mainsel": "Kopfgruppe(n)",
-    "subsel": "Köpfe"
+    "mainsel": "Köpfe",
+    "subsel": "Spalten"
   },
   "rows": {
-    "label": "Zeilen",
-    "mainsel": "Typ(en)",
-    "subsel": "Zeile(n)"
+    "mainsel": "Zeilen-Typen",
+    "subsel": "Zeilen"
   },
   "showHide": {
     "show": "Weitere Einstellungen anzeigen",

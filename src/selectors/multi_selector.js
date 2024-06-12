@@ -57,6 +57,18 @@ export class MultiSelector extends LitElement {
         };
         this.dispatchEvent(new CustomEvent("update-multi-select", options));
     }
+    toggle_collapsed() {
+        const options = {
+            detail: {
+                type: this.type,
+            },
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(
+            new CustomEvent("toggle-collapsed-multiselect", options),
+        );
+    }
 
     render() {
         const arr = distinct(this.prop_table, this.parent_string, "selected");
@@ -69,12 +81,6 @@ export class MultiSelector extends LitElement {
         return html`
             <div class="parent">
                 <div class="subselect">
-                    <label
-                        for="mainsel"
-                        class=${!this.collapsed_view ? "" : " hide"}
-                    >
-                        ${this.mainsel_text}
-                    </label>
                     <select
                         id="parents-selector"
                         class="mainsel"
@@ -93,10 +99,11 @@ export class MultiSelector extends LitElement {
                         )}
                     </select>
                 </div>
+                <button @click=${this.toggle_collapsed}>></button>
+
                 <div
                     class=${"subselect" + (!this.collapsed_view ? "" : " hide")}
                 >
-                    <label for="subsel">${this.subsel_text}</label>
                     <select
                         id="children-selector"
                         class="subsel"
@@ -125,6 +132,10 @@ export class MultiSelector extends LitElement {
     static styles = [
         // TODO: use different color if only part of the parents are checked...!
         css`
+            button {
+                font-size: 0.7em;
+                margin: 2px;
+            }
             div.parent {
                 display: flex;
             }
@@ -147,12 +158,6 @@ export class MultiSelector extends LitElement {
                 overflow: hidden;
                 white-space: nowrap;
                 border-radius: 4px;
-            }
-            label {
-                padding-left: 7px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
             }
             .hide {
                 display: none;

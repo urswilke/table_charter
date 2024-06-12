@@ -51,14 +51,14 @@ export function get_walkthrough_options(tc) {
     const header_steps = [
         {
             element: tds_el("#header-multi-sel"),
-            title: get("header.label"),
+            title: get("header.mainsel"),
             intro: get("walkthrough.header.text"),
         },
     ];
     const rows_steps = [
         {
             element: tds_el("#row-multi-sel"),
-            title: get("rows.label"),
+            title: get("rows.mainsel"),
             intro: get("walkthrough.rows.text"),
         },
     ];
@@ -89,14 +89,14 @@ export function get_walkthrough_options(tc) {
     const header_elements_steps = [
         {
             element: tds_el("#header-multi-sel"),
-            title: get("header.label"),
+            title: get("header.mainsel"),
             intro: get("walkthrough.header.advancedText"),
         },
     ];
     const rows_elements_steps = [
         {
             element: tds_el("#row-multi-sel"),
-            title: get("rows.label"),
+            title: get("rows.mainsel"),
             intro: get("walkthrough.rows.advancedText"),
         },
     ];
