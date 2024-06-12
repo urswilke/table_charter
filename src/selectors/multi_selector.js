@@ -57,6 +57,18 @@ export class MultiSelector extends LitElement {
         };
         this.dispatchEvent(new CustomEvent("update-multi-select", options));
     }
+    toggle_collapsed() {
+        const options = {
+            detail: {
+                type: this.type,
+            },
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(
+            new CustomEvent("toggle-collapsed-multiselect", options),
+        );
+    }
 
     render() {
         const arr = distinct(this.prop_table, this.parent_string, "selected");
@@ -87,6 +99,10 @@ export class MultiSelector extends LitElement {
                         )}
                     </select>
                 </div>
+                <button @click=${this.toggle_collapsed}>
+                    ${this.collapsed_view ? html`>` : html`<`}
+                </button>
+
                 <div
                     class=${"subselect" + (!this.collapsed_view ? "" : " hide")}
                 >
@@ -118,6 +134,10 @@ export class MultiSelector extends LitElement {
     static styles = [
         // TODO: use different color if only part of the parents are checked...!
         css`
+            button {
+                font-size: 0.7em;
+                margin: 2px;
+            }
             div.parent {
                 display: flex;
             }

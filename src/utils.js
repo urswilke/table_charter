@@ -316,10 +316,13 @@ export const all_collapsed = do_all(initial_collapsed, false, true);
 
 export function gen_multi_select_title(show_sub, main_label, sub_label) {
     return html`
-        <div style="display: grid; grid-template-columns: 1fr 1fr;">
-            <div style="flex: 1;">${main_label}</div>
+        <div style="display: grid; grid-template-columns: 1fr 1em 1fr;">
+            <div style="overflow: hidden; white-space: nowrap;">
+                ${main_label}
+            </div>
+            <div></div>
             ${show_sub
-                ? html`<div style="flex: 1; overflow: hidden;">
+                ? html`<div style="overflow: hidden; white-space: nowrap;">
                       ${sub_label}
                   </div>`
                 : html``}

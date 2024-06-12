@@ -493,6 +493,12 @@ export class TableDataSelector extends LitElement {
             move_in_flex(el);
         }
     }
+    _on_toggle_collapsed_multiselect(e) {
+        this.params = produce(this.params, (draft) => {
+            draft.collapsed[e.detail.type].sub =
+                !this.params.collapsed[e.detail.type].sub;
+        });
+    }
     _on_re_attach = (evt) => {
         const el = evt.currentTarget;
         this.params = produce(this.params, (draft) => {
@@ -512,6 +518,7 @@ export class TableDataSelector extends LitElement {
                 <div 
                     id="parent" 
                     @toggle-collapsed=${this._on_toggle_collapsed}
+                    @toggle-collapsed-multiselect=${this._on_toggle_collapsed_multiselect}	
                 >
                     <div-c 
                         class="selector-group" 
@@ -562,7 +569,8 @@ export class TableDataSelector extends LitElement {
                         <div class="content">
                             <multi-selector
                                 id="headers" 		
-                                data-test-id="header-selector"	
+                                data-test-id="header-selector"
+                                .type=${"header-multi-sel"}
                                 .mainsel_text = ${translate("header.mainsel")}
                                 .subsel_text = ${translate("header.subsel")}
                                 .parent_string = ${"ColTitle1"}
@@ -591,11 +599,12 @@ export class TableDataSelector extends LitElement {
                             <multi-selector 
                                 id="rows"		
                                 data-test-id="row-selector"	
+                                .type=${"row-multi-sel"}
                                 .mainsel_text = ${translate("rows.mainsel")}
                                 .subsel_text = ${translate("rows.subsel")}
                                 .parent_string = ${"RowContent"}
                                 .children_fun = ${(x) => x.RowTitle2}
-                                @update-multi-select="${this._on_rows_update}" 		
+                                @update-multi-select="${this._on_rows_update}"
                                 .collapsed_view = ${!this.params.collapsed["row-multi-sel"].sub}
                                 .prop_table=${this.choices.row_table}>	   																
                             </multi-selector>
