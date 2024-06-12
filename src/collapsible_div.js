@@ -50,7 +50,7 @@ export class CollapsibleDiv extends LitElement {
                     </div>
                 </div>
                 <div id="child">
-                    ${this.is_collapsed ? html`` : html`<slot></slot>`}
+                    <slot></slot>
                 </div>
             </div>
         `;
