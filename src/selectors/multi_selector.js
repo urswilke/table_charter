@@ -69,12 +69,6 @@ export class MultiSelector extends LitElement {
         return html`
             <div class="parent">
                 <div class="subselect">
-                    <label
-                        for="mainsel"
-                        class=${!this.collapsed_view ? "" : " hide"}
-                    >
-                        ${this.mainsel_text}
-                    </label>
                     <select
                         id="parents-selector"
                         class="mainsel"
@@ -96,7 +90,6 @@ export class MultiSelector extends LitElement {
                 <div
                     class=${"subselect" + (!this.collapsed_view ? "" : " hide")}
                 >
-                    <label for="subsel">${this.subsel_text}</label>
                     <select
                         id="children-selector"
                         class="subsel"
@@ -147,12 +140,6 @@ export class MultiSelector extends LitElement {
                 overflow: hidden;
                 white-space: nowrap;
                 border-radius: 4px;
-            }
-            label {
-                padding-left: 7px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
             }
             .hide {
                 display: none;

@@ -20,6 +20,7 @@ import {
     all_expanded,
     all_collapsed,
     move_in_flex,
+    gen_multi_select_title,
 } from "./utils.js";
 
 import "./selectors/question_selector.js";
@@ -548,7 +549,12 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         class="selector-group" 
                         id="header-multi-sel"
-                        .title=${translate("header.label")}
+                        .title=${gen_multi_select_title(
+                            this.params.collapsed["header-multi-sel"].sub &
+                                this.params.collapsed["header-multi-sel"].show,
+                            translate("header.mainsel"),
+                            translate("header.subsel"),
+                        )}
                         .short_title=${"H"}
                         .is_collapsed=${!this.params.collapsed["header-multi-sel"].show}
                         .is_minimized=${this.is_minimized}
@@ -571,7 +577,12 @@ export class TableDataSelector extends LitElement {
                     <div-c 
                         class="selector-group" 
                         id="row-multi-sel"
-                        .title=${translate("rows.label")}
+                        .title=${gen_multi_select_title(
+                            this.params.collapsed["row-multi-sel"].sub &
+                                this.params.collapsed["row-multi-sel"].show,
+                            translate("rows.mainsel"),
+                            translate("rows.subsel"),
+                        )}
                         .short_title=${"R"}
                         .is_collapsed=${!this.params.collapsed["row-multi-sel"].show}
                         .is_minimized=${this.is_minimized}

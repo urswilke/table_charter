@@ -1,3 +1,4 @@
+import { html } from "lit";
 // https://stackoverflow.com/questions/54907549/keep-only-selected-keys-in-every-object-from-array/66471710#66471710
 function select(arr, ...X) {
     return arr.map((o) => Object.fromEntries(X.map((k) => [k, o[k]])));
@@ -312,3 +313,16 @@ function do_all(initial_collapsed, new_show_val, new_expand_val) {
 
 export const all_expanded = do_all(initial_collapsed, true, true);
 export const all_collapsed = do_all(initial_collapsed, false, true);
+
+export function gen_multi_select_title(show_sub, main_label, sub_label) {
+    return html`
+        <div style="display: grid; grid-template-columns: 1fr 1fr;">
+            <div style="flex: 1;">${main_label}</div>
+            ${show_sub
+                ? html`<div style="flex: 1; overflow: hidden;">
+                      ${sub_label}
+                  </div>`
+                : html``}
+        </div>
+    `;
+}
