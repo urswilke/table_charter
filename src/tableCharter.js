@@ -58,7 +58,7 @@ export class TableCharter extends LitElement {
         return this._language;
     }
 
-    update_plot_data(e) {
+    _on_update_plot_data(e) {
         this.plot_data = e.detail.data;
     }
 
@@ -74,7 +74,7 @@ export class TableCharter extends LitElement {
         this.el(".hide-menu").innerText = "×";
         this.el(".column1").style.flexBasis = "25%";
     }
-    show_hide_menu() {
+    _on_show_hide_menu() {
         this.is_minimized ? this.show_menu() : this.hide_menu();
         this.is_minimized = !this.is_minimized;
         // HACK to trigger re-rendering of <ojs-plot> element:
@@ -94,7 +94,7 @@ export class TableCharter extends LitElement {
                           <div id="top-navbar">
                               <button
                                   class="hide-menu"
-                                  @click="${this.show_hide_menu}"
+                                  @click="${this._on_show_hide_menu}"
                               >
                                   ×
                               </button>
@@ -116,7 +116,7 @@ export class TableCharter extends LitElement {
                                   .is_minimized=${this.is_minimized}
                                   .html_data=${this.data}
                                   .language=${this.language}
-                                  @update-data="${this.update_plot_data}"
+                                  @update-data="${this._on_update_plot_data}"
                                   .show_advanced=${this.show_advanced}
                                   .savedSettings=${this.dataset.savedSettings}
                               ></table-data-selector>
