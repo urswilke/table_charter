@@ -14,6 +14,10 @@ export function get_walkthrough_options(tc) {
     const cos_el = sel(cos);
     const qt = tds_el("questions-table");
     const qt_el = sel(qt);
+    const hs = tds_el("#headers");
+    const hss_el = sel(hs);
+    const rs = tds_el("#rows");
+    const rss_el = sel(rs);
 
     const default_options = {
         dontShowAgain: true,
@@ -54,12 +58,22 @@ export function get_walkthrough_options(tc) {
             title: get("header.mainsel"),
             intro: get("walkthrough.header.text"),
         },
+        {
+            element: hss_el("button"),
+            title: get("walkthrough.header.buttonTitle"),
+            intro: get("walkthrough.header.buttonText"),
+        },
     ];
     const rows_steps = [
         {
             element: tds_el("#row-multi-sel"),
             title: get("rows.mainsel"),
             intro: get("walkthrough.rows.text"),
+        },
+        {
+            element: rss_el("button"),
+            title: get("walkthrough.rows.buttonTitle"),
+            intro: get("walkthrough.rows.buttonText"),
         },
     ];
     const further_default_steps = [
@@ -88,15 +102,15 @@ export function get_walkthrough_options(tc) {
     ];
     const header_elements_steps = [
         {
-            element: tds_el("#header-multi-sel"),
-            title: get("header.mainsel"),
+            element: hss_el(".subsel"),
+            title: get("header.subsel"),
             intro: get("walkthrough.header.advancedText"),
         },
     ];
     const rows_elements_steps = [
         {
-            element: tds_el("#row-multi-sel"),
-            title: get("rows.mainsel"),
+            element: rss_el(".subsel"),
+            title: get("rows.subsel"),
             intro: get("walkthrough.rows.advancedText"),
         },
     ];

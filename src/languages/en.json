@@ -124,11 +124,15 @@
     },
     "header": {
       "text": "Here you can select which header(s) to show. By pressing ctrl or shift, or drag and drop you can select multiple elements.",
-      "advancedText": "When the advanced settings are shown, you can also (un-)select individual sub-headers on the right-hand side."
+      "buttonTitle": "Expand / collapse column select field.",
+      "buttonText": "By clicking this button the individual columns of the headers can also be selected.",
+      "advancedText": "Here you can select individual columns."
     },
     "rows": {
       "text": "Here you can select which type(s) of rows to show. The following 3 types exist:<ul><li>Detail:<br>These are the standard values in the tables.</li><li>Summary:<br>These are summarized values sometimes below the 'Detail' values.</li><li>MStatistics:<br>These are the values shown for item batteries, such as mean or top2.</li></ul>All other values (such as the rows with totals) can't be selected here in table_charter. However, totals & means can also be shown for each column (see the hints in the advanced options below).",
-      "advancedText": "The same goes for the rows. When the advanced settings are shown, you can also (un-)select individual rows on the right-hand side."
+      "buttonTitle": "Expand / collapse row select field.",
+      "buttonText": "By clicking this button the individual rows of the crosstabs can also be selected.",
+      "advancedText": "Here you can select individual rows."
     },
     "showHide": {
       "title": "Show advanced / initial settings",
