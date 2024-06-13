@@ -144,6 +144,7 @@ export class TableCharter extends LitElement {
                                   .language=${this.language}
                                   @update-data="${this.update_plot_data}"
                                   .show_advanced=${this.show_advanced}
+                                  .savedSettings=${this.dataset.savedSettings}
                               ></table-data-selector>
                           </div>
                       </div>

@@ -13,7 +13,7 @@ import {
     add_spaces,
     left_join,
     obj_arrays_to_array_objs,
-    load_saved_settings,
+    setup_saved_settings,
     is_mobile,
     drag,
     initial_collapsed,
@@ -99,7 +99,10 @@ export class TableDataSelector extends LitElement {
                 obj_arrays_to_array_objs(v),
             ]),
         );
-        this.saved_settings = load_saved_settings(this.table_parts.Tab);
+        this.saved_settings = setup_saved_settings(
+            this.table_parts.Tab,
+            this.savedSettings,
+        );
         // hack to append spaces (ColNo times to the end of ColTitle2, in order to make them unique as a function of ColNo):
         this.long_data = add_spaces(prepare_data(this.table_parts))
             // TODO: Also treat weighted tables

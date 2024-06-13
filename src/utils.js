@@ -235,14 +235,7 @@ function merge_table_parts(obj) {
     return res.sort((a, b) => a.QuestLine > b.QuestLine);
 }
 
-export function load_saved_settings(tab_table) {
-    // TODO: this will take the first table-charter element in the html,
-    // if there are multiple...
-    // --> find a way to refer to the lit element,
-    // instead of using document.querySelector()...!
-    const saved_settings =
-        document.querySelector("table-charter").dataset.savedSettings;
-
+export function setup_saved_settings(tab_table, saved_settings) {
     let saved;
     if (saved_settings) {
         saved = JSON.parse(saved_settings);
