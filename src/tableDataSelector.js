@@ -514,6 +514,7 @@ export class TableDataSelector extends LitElement {
     render() {
         inspect && console.log("rendering table-book-data");
         inspect && console.log(this);
+        const collapsed = this.params.collapsed;
 
         return this.choices === undefined
             ? html`<div></div>`
@@ -528,7 +529,7 @@ export class TableDataSelector extends LitElement {
                         id="num-type-div"
                         .title=${translate("numType.label")}
                         .short_title=${"%/n"}
-                        .is_collapsed=${!this.params.collapsed["num-type-div"].show}
+                        .is_collapsed=${!collapsed["num-type-div"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -544,7 +545,7 @@ export class TableDataSelector extends LitElement {
                         id="question-selector" 
                         .title=${translate("question.label")}
                         .short_title=${"Q"}
-                        .is_collapsed=${!this.params.collapsed["question-selector"].show}
+                        .is_collapsed=${!collapsed["question-selector"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -560,13 +561,13 @@ export class TableDataSelector extends LitElement {
                         class="selector-group" 
                         id="header-multi-sel"
                         .title=${gen_multi_select_title(
-                            this.params.collapsed["header-multi-sel"].sub &
-                                this.params.collapsed["header-multi-sel"].show,
+                            collapsed["header-multi-sel"].sub &
+                                collapsed["header-multi-sel"].show,
                             translate("header.mainsel"),
                             translate("header.subsel"),
                         )}
                         .short_title=${"H"}
-                        .is_collapsed=${!this.params.collapsed["header-multi-sel"].show}
+                        .is_collapsed=${!collapsed["header-multi-sel"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -579,7 +580,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"ColTitle1"}
                                 .children_fun = ${(x) => (x.ColTitle2 != " " ? x.ColTitle2 : x.ColTitle1)}
                                 @update-multi-select="${this._on_header_update}"
-                                .collapsed_view = ${!this.params.collapsed["header-multi-sel"].sub}
+                                .collapsed_view = ${!collapsed["header-multi-sel"].sub}
                                 .prop_table=${this.choices.header_table}>
                             </multi-selector>
                         </div>
@@ -589,13 +590,13 @@ export class TableDataSelector extends LitElement {
                         class="selector-group" 
                         id="row-multi-sel"
                         .title=${gen_multi_select_title(
-                            this.params.collapsed["row-multi-sel"].sub &
-                                this.params.collapsed["row-multi-sel"].show,
+                            collapsed["row-multi-sel"].sub &
+                                collapsed["row-multi-sel"].show,
                             translate("rows.mainsel"),
                             translate("rows.subsel"),
                         )}
                         .short_title=${"R"}
-                        .is_collapsed=${!this.params.collapsed["row-multi-sel"].show}
+                        .is_collapsed=${!collapsed["row-multi-sel"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
@@ -608,7 +609,7 @@ export class TableDataSelector extends LitElement {
                                 .parent_string = ${"RowContent"}
                                 .children_fun = ${(x) => x.RowTitle2}
                                 @update-multi-select="${this._on_rows_update}"
-                                .collapsed_view = ${!this.params.collapsed["row-multi-sel"].sub}
+                                .collapsed_view = ${!collapsed["row-multi-sel"].sub}
                                 .prop_table=${this.choices.row_table}>	   																
                             </multi-selector>
                         </div>
@@ -618,7 +619,7 @@ export class TableDataSelector extends LitElement {
                         data-test-id="settings-div"
                         .title=${translate("settings.label")}
                         .short_title=${"⚙"}
-                        .is_collapsed=${!this.params.collapsed["settings"].show}
+                        .is_collapsed=${!collapsed["settings"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="selector-group" id="settings-div">
@@ -679,7 +680,7 @@ export class TableDataSelector extends LitElement {
                         class="selector-group"
                         .title=${translate("crosstabTable.title")}
                         .short_title=${"CT"}
-                        .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
+                        .is_collapsed=${!collapsed["tabulator-crosstab"].show}
                         .is_minimized=${this.is_minimized}
                         @update-crosstab-type=${this._on_crosstab_type_update}
                     >
@@ -690,7 +691,7 @@ export class TableDataSelector extends LitElement {
                             .header_data=${this.header_data}
                             .language=${this.language}
                             .is_minimized=${this.is_minimized}
-                            .is_collapsed=${!this.params.collapsed["tabulator-crosstab"].show}
+                            .is_collapsed=${!collapsed["tabulator-crosstab"].show}
                             .crosstab_type=${this.params.crosstab_type}
                             ></cross-table>
                     </div-c>
@@ -699,7 +700,7 @@ export class TableDataSelector extends LitElement {
                         class="content"
                         .title=${translate("questionsTable.title")}
                         .short_title=${"QM"}
-                        .is_collapsed=${!this.params.collapsed["tabulator-questions-manager"].show}
+                        .is_collapsed=${!collapsed["tabulator-questions-manager"].show}
                         .is_minimized=${this.is_minimized}
                         @clone-question=${this._on_question_clone}
                         @show-hide-question=${this._on_show_hide_question}
