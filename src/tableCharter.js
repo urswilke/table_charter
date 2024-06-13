@@ -2,12 +2,10 @@ import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
 import "./tableDataSelector.js";
 import { registerTranslateConfig, use } from "lit-translate";
-import { default as introJs } from "intro.js";
 import { translate } from "lit-translate";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import { langs } from "./languages/languages.js";
-import { get_walkthrough_options } from "./walkthrough_options.js";
 
 registerTranslateConfig({
     loader: (lang) =>
@@ -20,7 +18,6 @@ export class TableCharter extends LitElement {
         is_minimized: { type: Boolean, reflect: true },
         show_advanced: { type: Boolean },
         language: { type: String },
-        walkthrough: { type: String },
         data: { type: Object },
         plot_data: { type: Array },
     };
@@ -32,7 +29,6 @@ export class TableCharter extends LitElement {
         this.is_minimized = false;
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
-        this.show_intro = true;
         this.show_advanced = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
@@ -85,23 +81,6 @@ export class TableCharter extends LitElement {
         this.plot_data = { ...this.plot_data };
     }
 
-    async updated() {
-        this.show_intro && (await this.show_help());
-    }
-
-    async show_help() {
-        // https://stackoverflow.com/questions/58035998/run-a-function-once-all-children-element-are-actually-updated/58125954#58125954
-        const children = this.renderRoot.querySelectorAll("*");
-        if (Array.from(children).length === 1) {
-            return;
-        }
-        await Promise.all(Array.from(children).map((c) => c.updateComplete));
-
-        introJs()
-            .setOptions(get_walkthrough_options(this))
-            .onexit(() => (this.show_intro = false))
-            .start();
-    }
     _on_toggle_advanced_menu() {
         this.show_advanced = !this.show_advanced;
     }
@@ -119,12 +98,7 @@ export class TableCharter extends LitElement {
                               >
                                   ×
                               </button>
-                              <button
-                                  class="show-help"
-                                  @click="${this.show_help}"
-                              >
-                                  ?
-                              </button>
+                              ${this.help_button?.()}
                               <button
                                   id="toggle-advanced-menu"
                                   data-test-id="toggle-advanced-menu-button"
@@ -215,14 +189,11 @@ export class TableCharter extends LitElement {
                 height: 100%;
                 width: 100%;
             }
-            .show-help,
-            .hide-menu {
-                margin: 1px;
-            }
             #top-navbar {
                 background: #5e677b;
                 border-top-right-radius: 4px;
                 border-top-left-radius: 4px;
+                padding: 2px;
                 padding-left: 5px;
                 padding-right: 5px;
                 border-bottom: 1px solid;

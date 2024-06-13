@@ -10,10 +10,7 @@ import {
     replace_field_strings,
 } from "./test_utils.js";
 
-render(
-    html`<table-charter .data=${data} walkthrough="hide"></table-charter>`,
-    document.body,
-);
+render(html`<table-charter .data=${data}></table-charter>`, document.body);
 
 const table_charter_el = await $("table-charter");
 const table_data_selector_el = await $(">>>table-data-selector");

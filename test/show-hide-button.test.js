@@ -4,10 +4,7 @@ import { $, expect } from "@wdio/globals";
 import "../src/tableCharter.js";
 import data from "../src/example_tablebook_sample.json";
 
-render(
-    html`<table-charter .data=${data} walkthrough="hide"></table-charter>`,
-    document.body,
-);
+render(html`<table-charter .data=${data}></table-charter>`, document.body);
 
 const table_charter_el = await $("table-charter");
 const advanced_menu_button = await table_charter_el.$(
