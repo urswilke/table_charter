@@ -35,8 +35,6 @@ import "./collapsible_div.js";
 
 import { produce } from "immer";
 
-const inspect = false; // set to true for some console.log msgs
-
 export class TableDataSelector extends LitElement {
     static properties = {
         is_minimized: { type: Boolean, reflect: true },
@@ -512,8 +510,6 @@ export class TableDataSelector extends LitElement {
     };
 
     render() {
-        inspect && console.log("rendering table-book-data");
-        inspect && console.log(this);
         const collapsed = this.params.collapsed;
 
         return this.choices === undefined
