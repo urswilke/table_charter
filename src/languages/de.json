@@ -24,7 +24,7 @@
     "mainsel": "Zeilen-Typen",
     "subsel": "Zeilen"
   },
-  "showHide": {
+  "toggleAdvancedMenu": {
     "show": "Weitere Einstellungen anzeigen",
     "hide": "Weitere Einstellungen ausblenden"
   },
@@ -134,7 +134,7 @@
       "buttonText": "Durch Klicken auf diesen Knopf kannst Du ein Auswahl-Feld ausklappen, wo Du die einzelnen Zeilen der Kreuztabellen auswählen kannst.",
       "advancedText": "Hier kannst Du einzelne Zeilen aus-/abwählen."
     },
-    "showHide": {
+    "toggleAdvancedMenu": {
       "title": "Alle / Anfangs-Einstellungen anzeigen",
       "text": "Durch Klicken auf diesen Knopf werden die weiteren / Anfangs-Einstellungen angezeigt."
     },

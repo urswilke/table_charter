@@ -20,7 +20,7 @@
 
 // const table_charter_el = await $("table-charter");
 // const adv_settings_button = await table_charter_el.$(
-//     '>>>button[data-test-id="show-hide-button"]',
+//     '>>>button[data-test-id="toggle-advanced-menu-button"]',
 // );
 // const ojs_plot_el = table_charter_el.$('>>>ojs-plot[data-test-id="ojs-plot"]');
 // const save_svg_button = await ojs_plot_el.$(

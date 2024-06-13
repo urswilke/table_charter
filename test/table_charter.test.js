@@ -18,7 +18,7 @@ render(
 const table_charter_el = await $("table-charter");
 const table_data_selector_el = await $(">>>table-data-selector");
 const adv_settings_button = await table_charter_el.$(
-    '>>>button[data-test-id="show-hide-button"]',
+    '>>>button[data-test-id="toggle-advanced-menu-button"]',
 );
 const question_selector_el = await table_charter_el.$(
     '>>>question-selector[data-test-id="question-selector"]',

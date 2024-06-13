@@ -24,7 +24,7 @@
     "mainsel": "Row types",
     "subsel": "Rows"
   },
-  "showHide": {
+  "toggleAdvancedMenu": {
     "show": "Show advanced settings",
     "hide": "Hide advanced settings"
   },
@@ -134,7 +134,7 @@
       "buttonText": "By clicking this button the individual rows of the crosstabs can also be selected.",
       "advancedText": "Here you can select individual rows."
     },
-    "showHide": {
+    "toggleAdvancedMenu": {
       "title": "Show advanced / initial settings",
       "text": "By clicking this button the advanced / initial settings are shown."
     },

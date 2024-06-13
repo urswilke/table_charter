@@ -102,7 +102,7 @@ export class TableCharter extends LitElement {
             .onexit(() => (this.show_intro = false))
             .start();
     }
-    _on_expand() {
+    _on_toggle_advanced_menu() {
         this.show_advanced = !this.show_advanced;
     }
 
@@ -126,12 +126,12 @@ export class TableCharter extends LitElement {
                                   ?
                               </button>
                               <button
-                                  id="show-hide"
-                                  data-test-id="show-hide-button"
-                                  @click="${this._on_expand}"
+                                  id="toggle-advanced-menu"
+                                  data-test-id="toggle-advanced-menu-button"
+                                  @click="${this._on_toggle_advanced_menu}"
                                   title=${!this.show_advanced
-                                      ? translate("showHide.show")
-                                      : translate("showHide.hide")}
+                                      ? translate("toggleAdvancedMenu.show")
+                                      : translate("toggleAdvancedMenu.hide")}
                               >
                                   ${!this.show_advanced ? "🎛️" : "🧹"}
                               </button>
@@ -231,7 +231,7 @@ export class TableCharter extends LitElement {
                 padding-left: 5px;
                 padding-right: 5px;
             }
-            :host([is_minimized]) #show-hide {
+            :host([is_minimized]) #toggle-advanced-menu {
                 display: none;
             }
         `,
