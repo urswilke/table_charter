@@ -110,7 +110,7 @@
     },
     "welcome": {
       "title": "Willkommen zu table_charter",
-      "text": "Diese App kann Diagramme erstellen aus den Daten im Tabellenband. In den folgenden Schritten wird die Funktionsweise der Bedienelemente kurz erläutert."
+      "text": "Diese App kann Diagramme erstellen aus den Kreuztabellen im Tabellenband. In den folgenden Schritten wird die Funktionsweise der Bedienelemente kurz erläutert."
     },
     "general": {
       "title": "Allgemeine Tipps",
@@ -135,7 +135,7 @@
       "advancedText": "Hier kannst Du einzelne Zeilen aus-/abwählen."
     },
     "showHide": {
-      "title": "Weitere / Anfangs-Einstellungen anzeigen",
+      "title": "Alle / Anfangs-Einstellungen anzeigen",
       "text": "Durch Klicken auf diesen Knopf werden die weiteren / Anfangs-Einstellungen angezeigt."
     },
     "showHelp": {
@@ -144,7 +144,7 @@
     },
     "hideMenu": {
       "title": "Menu zusammenklappen / anzeigen",
-      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt / angezeigt (dadurch werden die Plots größer / kleiner). <ul><li>In der zusammengeklappten Ansicht kannst Du die einzelnen Elemente durch Klicken als Popup anzeigen.</li><li>Durch drag-and-drop auf der Titlezeile kannst Du die Elemente bewegen, und unten rechts ihre Größe anpassen.</li><li>Durch Klicken oben rechts kannst Du die Elemente wieder zurück in die Leiste minimieren.</li></ul>"
+      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt / angezeigt (dadurch werden die Plots größer / kleiner). <ul><li>In der zusammengeklappten Ansicht kannst Du die einzelnen Elemente durch Klicken als Popup anzeigen.</li><li>Durch drag-and-drop auf der Titelzeile der Popups kannst Du die Elemente bewegen, und unten rechts ihre Größe anpassen.</li><li>Durch Klicken oben rechts kannst Du die Elemente wieder zurück in die Leiste minimieren.</li></ul>"
     },
     "flipXY": {
       "title": "X- & Y-Achse vertauschen",

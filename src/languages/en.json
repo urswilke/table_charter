@@ -110,7 +110,7 @@
     },
     "welcome": {
       "title": "Welcome to table_charter",
-      "text": "This app can be used to generate plots of the table book data. In the following steps, we'll briefly walk through how the controll settings work."
+      "text": "This app can be used to generate plots of the crosstabs in the table books. In the following steps, we'll briefly walk through how the controll settings work."
     },
     "general": {
       "title": "General hints",
@@ -144,7 +144,7 @@
     },
     "hideMenu": {
       "title": "Collapse / expand menu",
-      "text": "By clicking this button the settings menu is collapsed / expanded (this increases / decreases the size of the plots). <ul><li>In the minimized view you can open the elements by clicking on them.</li><li>By drag-and-drop on the title bar you can move the elements, and change their size in the bottom right corner.</li><li>By clicking on the top right button you can move them back to the navbar in the minimized view.</li></ul>"
+      "text": "By clicking this button the settings menu is collapsed / expanded (this increases / decreases the size of the plots). <ul><li>In the minimized view you can open the elements by clicking on them.</li><li>By drag-and-drop on the title bar of the popups you can move the elements, and change their size in the bottom right corner.</li><li>By clicking on the top right button you can move them back to the navbar in the minimized view.</li></ul>"
     },
     "flipXY": {
       "title": "Flip x & y axis",
