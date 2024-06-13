@@ -198,6 +198,16 @@
     "saveSettings": {
       "text": "Durch Klicken hier kannst Du die App mit den aktuellen Einstellungen der Plots im Download-Ordner Deines Browsers speichern."
     },
+    "crosstab": {
+      "intro": {
+          "title": "Kreuztabelle",
+          "text": "Dieses Element zeigt die Kreuztabelle aus der die Daten des Plots stammen."
+      },
+      "selectType": {
+          "title": "Angezeigte Werte der Kreuztabelle auswählen",
+          "text": "Hier kannst Du auswählen, ob alle Werte der Kreuztabelle angezeigt werden, oder nur die die sich im Plot befinden."
+      }
+    },
     "questionsTable": {
       "intro": {
         "title": "Fragen-Manager",

@@ -18,6 +18,8 @@ export function get_walkthrough_options(tc) {
     const hss_el = sel(hs);
     const rs = tds_el("#rows");
     const rss_el = sel(rs);
+    const ct = tds_el("cross-table");
+    const ct_el = sel(ct);
 
     const default_options = {
         dontShowAgain: true,
@@ -221,6 +223,18 @@ export function get_walkthrough_options(tc) {
             intro: get("walkthrough.questionsTable.clone.text"),
         },
     ];
+    const crosstab_elements_steps = [
+        {
+            element: tds_el("#tabulator-crosstab"),
+            title: get("walkthrough.crosstab.intro.title"),
+            intro: get("walkthrough.crosstab.intro.text"),
+        },
+        {
+            element: ct_el(".select-crosstab-type"),
+            title: get("walkthrough.crosstab.selectType.title"),
+            intro: get("walkthrough.crosstab.selectType.text"),
+        },
+    ];
 
     const res = default_options;
 
@@ -242,6 +256,9 @@ export function get_walkthrough_options(tc) {
             : []),
         ...(tds.params.collapsed["settings"].show
             ? settings_elements_steps
+            : []),
+        ...(tds.params.collapsed["tabulator-crosstab"].show
+            ? crosstab_elements_steps
             : []),
         ...(tds.params.collapsed["tabulator-questions-manager"].show
             ? questions_table_elements_steps

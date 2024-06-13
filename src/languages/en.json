@@ -198,6 +198,16 @@
     "saveSettings": {
       "text": "Clicking this button saves the app in your browser's download folder with all the current settings chosen in the different plots."
     },
+    "crosstab": {
+      "intro": {
+          "title": "Crosstab",
+          "text": "This element shows the crosstab that is currently plotted."
+      },
+      "selectType": {
+          "title": "Choose shown values of the crosstab",
+          "text": "Here you can select whether all values of the crosstab are shown, or only those that are currently plotted."
+      }
+    },
     "questionsTable": {
       "intro": {
         "title": "Questions manager",
