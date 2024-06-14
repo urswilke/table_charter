@@ -2,7 +2,9 @@
 import fs from "fs-extra";
 import * as path from "path";
 const debug = process.env.DEBUG;
-const timeout = debug ? 1e8 : 60000;
+const defaultTimeoutInterval = 10000;
+
+const timeout = debug ? 24 * 60 * 60 * 1000 : defaultTimeoutInterval;
 const downloadDir = path.resolve("src/test/output");
 
 const chrome_capabilities = {
@@ -74,7 +76,7 @@ switch (true) {
 
 export const config = {
     // Urs config:
-    // execArgv: debug ? ['--inspect'] : [],
+    execArgv: debug ? ["--inspect"] : [],
     onPrepare: function (config, capabilities) {
         // make sure download directory exists
         if (fs.existsSync(downloadDir)) {
