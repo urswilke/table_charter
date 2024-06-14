@@ -134,7 +134,6 @@ export class MultiSelector extends LitElement {
         css`
             button {
                 font-size: 0.7em;
-                margin: 2px;
             }
             div.parent {
                 display: flex;
