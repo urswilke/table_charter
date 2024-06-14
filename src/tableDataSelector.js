@@ -763,6 +763,7 @@ export class TableDataSelector extends LitElement {
             *:focus {
                 outline: 1px solid blue;
             }
+            div-c > * > * > *:focus,
             div-c > * > *:focus {
                 outline: none;
             }
