@@ -763,6 +763,9 @@ export class TableDataSelector extends LitElement {
             *:focus {
                 outline: 1px solid blue;
             }
+            div-c > * > *:focus {
+                outline: none;
+            }
             :focus-within {
                 z-index: 999;
             }
