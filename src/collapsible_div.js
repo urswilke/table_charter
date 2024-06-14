@@ -80,6 +80,7 @@ export class CollapsibleDiv extends LitElement {
                 overflow: hidden;
             }
             ::slotted(*) {
+                padding: 1px;
                 overflow: scroll;
                 height: 100%;
                 width: 100%;
