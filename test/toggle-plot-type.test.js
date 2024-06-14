@@ -17,8 +17,8 @@ await advanced_menu_button.click();
 
 const plot_type_button = await $('>>>button[data-test-id="plot-type-button"]');
 
-describe('Button "Show/hide advanced settings" testing', () => {
-    it("should change text on click and show hidden", async () => {
+describe("Toggle plot type", () => {
+    it("works", async () => {
         // await browser.debug();
         let bar_plot_rects_g;
         let n_bars;
