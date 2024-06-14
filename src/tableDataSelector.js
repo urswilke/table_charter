@@ -718,10 +718,6 @@ export class TableDataSelector extends LitElement {
             option:checked {
                 background: red linear-gradient(#333, #333);
             }
-            #settings-div {
-                margin: 3px;
-                width: calc(100% - 6px);
-            }
             .hide {
                 display: none;
             }

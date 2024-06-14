@@ -82,8 +82,6 @@ export class CollapsibleDiv extends LitElement {
             ::slotted(*) {
                 padding: 1px;
                 overflow: scroll;
-                height: 100%;
-                width: 100%;
             }
             .title-text {
                 flex-grow: 1;
