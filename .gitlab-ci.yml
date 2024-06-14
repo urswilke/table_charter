@@ -2,16 +2,20 @@
 cache:
   paths:
     - node_modules/
-
-run_test_firefox:
-  image: atools/firefox-headless:java17-nodelts-latest
-  script:
-    - apt-get update
-    - apt-get -y install libasound2
-    - firefox --version
-    - node -v
-    - npm install
-    - npm run test -- --firefox
+# TODO: find new docker image!
+# (deprecated: https://registry.hub.docker.com/r/atools/firefox-headless)
+# I assume we need a new one with a newer firefox version (locally with version 126.0 it works)
+# and on gitlab ci also 2 of 3 tests succeed
+# (cf. https://gitlab.com/urswilke/table_charter/-/jobs/7105218645)
+# run_test_firefox:
+#   image: atools/firefox-headless:java17-nodelts-latest
+#   script:
+#     - apt-get update
+#     - apt-get -y install libasound2
+#     - firefox --version
+#     - node -v
+#     - npm install
+#     - npm run test -- --firefox
   # rules:
   #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
