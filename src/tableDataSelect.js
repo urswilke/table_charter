@@ -23,19 +23,19 @@ import {
     gen_multi_select_title,
 } from "./utils.js";
 
-import "./selectors/question_selector.js";
-import "./selectors/multi_selector.js";
-import "./selectors/num_type_selector.js";
-import "./selectors/colorscale_selector.js";
-import "./selectors/further_options_selector.js";
-import "./selectors/advanced_options_selector.js";
+import "./select-components/question_select.js";
+import "./select-components/multi_select.js";
+import "./select-components/num_type_select.js";
+import "./select-components/colorscale_select.js";
+import "./select-components/further_options_select.js";
+import "./select-components/advanced_options_select.js";
 import "./questions_table.js";
 import "./cross_table.js";
 import "./collapsible_div.js";
 
 import { produce } from "immer";
 
-export class TableDataSelector extends LitElement {
+export class TableDataSelect extends LitElement {
     static properties = {
         is_minimized: { type: Boolean, reflect: true },
         language: { type: String },
@@ -521,7 +521,7 @@ export class TableDataSelector extends LitElement {
                     @toggle-collapsed-multiselect=${this._on_toggle_collapsed_multiselect}	
                 >
                     <div-c 
-                        class="selector-group" 
+                        class="select-group" 
                         id="num-type-div"
                         .title=${translate("numType.label")}
                         .short_title=${"%/n"}
@@ -529,32 +529,32 @@ export class TableDataSelector extends LitElement {
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
-                            <num_type-selector
+                            <num_type-select
                                 @update-num_type="${this._on_num_type_update}"
                                 .all_num_types=${this.params.row_type}
                                 .chosen_num_type=${this.choices.row_type}>
-                            </num_type-selector>
+                            </num_type-select>
                         </div>
                     </div-c>
                     <div-c 
-                        class="selector-group" 
-                        id="question-selector" 
+                        class="select-group" 
+                        id="question-select" 
                         .title=${translate("question.label")}
                         .short_title=${"Q"}
-                        .is_collapsed=${!collapsed["question-selector"].show}
+                        .is_collapsed=${!collapsed["question-select"].show}
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
-                            <question-selector 					
-                                data-test-id="question-selector"	
+                            <question-select 					
+                                data-test-id="question-select"	
                                 @update-question="${this._on_question_update}" 		
                                 .chosen_tab_no=${this.i_tab} 
                                 .all_questions=${this.tab_table}>
-                            </question-selector>
+                            </question-select>
                         </div>
                     </div-c>
                     <div-c 
-                        class="selector-group" 
+                        class="select-group" 
                         id="header-multi-sel"
                         .title=${gen_multi_select_title(
                             collapsed["header-multi-sel"].sub &
@@ -567,9 +567,9 @@ export class TableDataSelector extends LitElement {
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
-                            <multi-selector
+                            <multi-select
                                 id="headers" 		
-                                data-test-id="header-selector"
+                                data-test-id="header-select"
                                 .type=${"header-multi-sel"}
                                 .mainsel_text = ${translate("header.mainsel")}
                                 .subsel_text = ${translate("header.subsel")}
@@ -578,12 +578,12 @@ export class TableDataSelector extends LitElement {
                                 @update-multi-select="${this._on_header_update}"
                                 .collapsed_view = ${!collapsed["header-multi-sel"].sub}
                                 .prop_table=${this.choices.header_table}>
-                            </multi-selector>
+                            </multi-select>
                         </div>
                     </div-c>
                     <!-- https://stackoverflow.com/a/2062264 -->
                     <div-c 
-                        class="selector-group" 
+                        class="select-group" 
                         id="row-multi-sel"
                         .title=${gen_multi_select_title(
                             collapsed["row-multi-sel"].sub &
@@ -596,9 +596,9 @@ export class TableDataSelector extends LitElement {
                         .is_minimized=${this.is_minimized}
                     >
                         <div class="content">
-                            <multi-selector 
+                            <multi-select 
                                 id="rows"		
-                                data-test-id="row-selector"	
+                                data-test-id="row-select"	
                                 .type=${"row-multi-sel"}
                                 .mainsel_text = ${translate("rows.mainsel")}
                                 .subsel_text = ${translate("rows.subsel")}
@@ -607,7 +607,7 @@ export class TableDataSelector extends LitElement {
                                 @update-multi-select="${this._on_rows_update}"
                                 .collapsed_view = ${!collapsed["row-multi-sel"].sub}
                                 .prop_table=${this.choices.row_table}>	   																
-                            </multi-selector>
+                            </multi-select>
                         </div>
                     </div-c>
                     <div-c 
@@ -618,17 +618,17 @@ export class TableDataSelector extends LitElement {
                         .is_collapsed=${!collapsed["settings"].show}
                         .is_minimized=${this.is_minimized}
                     >
-                        <div class="selector-group" id="settings-div">
+                        <div class="select-group" id="settings-div">
                             <div class="content">
-                                <further-options-selector
+                                <further-options-select
                                     @update-xy="${this._on_xy_update}"
                                     @update-plot_type="${this._on_plot_type_update}"
                                     .xy=${this.choices.xy}
                                     .plot_type=${this.choices.plot_type}
                                 >
-                                </further-options-selector>
+                                </further-options-select>
                                 <hr></hr>
-                                <advanced-options-selector
+                                <advanced-options-select
                                     @update-checkboxes="${this._on_checkbox_update}"
                                     @update-font-size="${this._on_font_size_update}"
                                     @update-show-text="${this._on_show_text_update}"
@@ -642,19 +642,19 @@ export class TableDataSelector extends LitElement {
                                     .show_text=${this.choices.show_text}
                                     .axis_labels=${this.choices.axis_labels}
                                 >
-                                </advanced-options-selector>
+                                </advanced-options-select>
 
                                 <hr></hr>
-                                <colorscale-selector 	
+                                <colorscale-select 	
                                     id="colors"		
-                                    data-test-id="color-scale-selector"	
+                                    data-test-id="color-scale-select"	
                                     @update-colorscale="${this._on_colorscale_update}" 	
                                     @update-colorscheme="${this._on_colorscheme_update}" 	
                                     .all_colorscales=${this.params.color_scale}	
                                     .chosen_colorscale=${this.choices.color_scale}  
                                     .colorscale_disabled=${this.params.colorscale_disabled}
                                     .chosen_colorscheme=${this.choices.color_scheme}>
-                                </colorscale-selector>
+                                </colorscale-select>
                                 <hr></hr>
                                 <button 
                                     id="reset-plots"
@@ -673,7 +673,7 @@ export class TableDataSelector extends LitElement {
                     </div-c>
                     <div-c 
                         id="tabulator-crosstab"
-                        class="selector-group"
+                        class="select-group"
                         .title=${translate("crosstabTable.title")}
                         .short_title=${"CT"}
                         .is_collapsed=${!collapsed["tabulator-crosstab"].show}
@@ -770,4 +770,4 @@ export class TableDataSelector extends LitElement {
     ];
 }
 
-window.customElements.define("table-data-selector", TableDataSelector);
+window.customElements.define("table-data-select", TableDataSelect);

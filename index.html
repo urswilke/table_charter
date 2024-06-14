@@ -33,7 +33,7 @@
                 border: white solid 1px;
                 border-radius: 4px;
             }
-            #lang_selector {
+            #lang_select {
                 margin-right: 15px;
                 display: flex;
                 gap: 5px;
@@ -138,9 +138,9 @@
             <header>
                 <img id="logo" />
                 <div id="title-text"></div>
-                <div id="lang_selector">
+                <div id="lang_select">
                     <span>🌍</span>
-                    <select id="lang-selector-select">
+                    <select id="lang-select-select">
                         <option>en</option>
                         <option>de</option>
                     </select>
@@ -201,11 +201,11 @@
                 }
                 update_title(browser_language);
 
-                let element = document.getElementById("lang-selector-select");
+                let element = document.getElementById("lang-select-select");
                 element.value = browser_language;
 
                 var selected_language = document.getElementById(
-                    "lang-selector-select",
+                    "lang-select-select",
                 );
                 selected_language.addEventListener(
                     "change",

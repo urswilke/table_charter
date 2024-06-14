@@ -1,13 +1,13 @@
 import { LitElement, html, css } from "lit";
 
-export class QuestionSelector extends LitElement {
+export class QuestionSelect extends LitElement {
     static properties = {
         all_questions: { type: Array },
         chosen_tab_no: { type: Number },
     };
 
     get _chosen_tab_no() {
-        return this.renderRoot?.querySelector("#question-selector") ?? null;
+        return this.renderRoot?.querySelector("#question-select") ?? null;
     }
 
     _update_question() {
@@ -29,7 +29,7 @@ export class QuestionSelector extends LitElement {
         const initial_value = this.all_questions[this.chosen_tab_no].TabTitle;
         return html`
             <div class="parent">
-                <select id="question-selector" @change=${this._update_question}>
+                <select id="question-select" @change=${this._update_question}>
                     ${this.all_questions.map(
                         (x) => html`
                             <option
@@ -55,4 +55,4 @@ export class QuestionSelector extends LitElement {
         `,
     ];
 }
-customElements.define("question-selector", QuestionSelector);
+customElements.define("question-select", QuestionSelect);

@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
-import "./tableDataSelector.js";
+import "./tableDataSelect.js";
 import { registerTranslateConfig, use } from "lit-translate";
 import { translate } from "lit-translate";
 
@@ -62,8 +62,8 @@ export class TableCharter extends LitElement {
         this.plot_data = e.detail.data;
     }
 
-    el(selector) {
-        return this.renderRoot.querySelector(selector);
+    el(select) {
+        return this.renderRoot.querySelector(select);
     }
 
     hide_menu() {
@@ -112,14 +112,14 @@ export class TableCharter extends LitElement {
                           </div>
 
                           <div class="settings">
-                              <table-data-selector
+                              <table-data-select
                                   .is_minimized=${this.is_minimized}
                                   .html_data=${this.data}
                                   .language=${this.language}
                                   @update-data="${this._on_update_plot_data}"
                                   .show_advanced=${this.show_advanced}
                                   .savedSettings=${this.dataset.savedSettings}
-                              ></table-data-selector>
+                              ></table-data-select>
                           </div>
                       </div>
                       <div class="column2">

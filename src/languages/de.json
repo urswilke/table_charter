@@ -186,10 +186,10 @@
       "textpt1": ":<br>Hier werden zu lange Label abgeschnitten. Der ganze Text kann durch Hovern über das Label angezeigt werden.</li><li>",
       "textpt2": ":<br>Die ganzen Label der Köpfe werden angezeigt. Dadurch können Label von verschiedenen Köpfen überlappen, was evtl. auch durch eine kleinere Schriftgröße verhindert werden kann.</li>"
     },
-    "colorscaleSelector": {
+    "colorscaleSelect": {
       "text": "Hier kannst Du auswählen, ob eine kategorische oder ordinale Farbskala im Plot verwendet wird.<br/>In kategorischen Skalen sind die Farben von benachbarten Items stark unterschiedlich. Jede Farbe steht für ein Variablen-/Werte-Label in den Rohdaten.<br/>In ordinalen Skalen werden die Werte in den Rohdaten auf einen sich graduell veränderten Farbverlauf dargestellt. Dies kann nicht bei Mehrfachantworten oder Item-Batterien ausgewählt werden."
     },
-    "colorschemeSelector": {
+    "colorschemeSelect": {
       "text": "Hier kannst Du verschiedene Farbschemata auswählen. Die verfügbare Auswahl hängt davon ab, ob eine kategorische oder ordinale Farbskala verwendet wird (siehe vorherigen Schritt)."
     },
     "resetPlots": {

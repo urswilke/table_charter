@@ -186,10 +186,10 @@
       "textpt1": ":<br>This setting truncates the axis labels, if they are too long. Their full text is shown on hover.</li><li>",
       "textpt2": ":<br>The header axis labels are fully shown. This can lead to overlapping labels, which you also might avoid by reducing the font size.</li>"
     },
-    "colorscaleSelector": {
+    "colorscaleSelect": {
       "text": "Here you can select if a categorical or ordinal color scale is used.<br/>In categorical scales, the colors of neighboring items are very distinct. Each color represents a value / variable label in the raw data.<br/>In ordinal scales a color ramp is used, where values change gradually. In this case the values in the raw data are plotted. This can't be selected for multiple-choice questions or item batteries."
     },
-    "colorschemeSelector": {
+    "colorschemeSelect": {
       "text": "Here you can choose between various color schemes. The available choices depend on whether a categorical or ordinal color scale is used (see previous step)."
     },
     "resetPlots": {

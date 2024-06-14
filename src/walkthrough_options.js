@@ -4,13 +4,13 @@ export function get_walkthrough_options(tc) {
     const sel = (el) => (x) => el.renderRoot.querySelector(x);
 
     const tc_el = sel(tc);
-    const tds = tc_el("table-data-selector");
+    const tds = tc_el("table-data-select");
     const tds_el = sel(tds);
-    const fos = tds_el("further-options-selector");
+    const fos = tds_el("further-options-select");
     const fos_el = sel(fos);
-    const aos = tds_el("advanced-options-selector");
+    const aos = tds_el("advanced-options-select");
     const aos_el = sel(aos);
-    const cos = tds_el("colorscale-selector");
+    const cos = tds_el("colorscale-select");
     const cos_el = sel(cos);
     const qt = tds_el("questions-table");
     const qt_el = sel(qt);
@@ -49,7 +49,7 @@ export function get_walkthrough_options(tc) {
     ];
     const question_steps = [
         {
-            element: tds_el("#question-selector"),
+            element: tds_el("#question-select"),
             title: get("question.label"),
             intro: get("walkthrough.question.text"),
         },
@@ -181,14 +181,14 @@ export function get_walkthrough_options(tc) {
                 get("walkthrough.axisLabels.textpt2"),
         },
         {
-            element: cos_el("#colorscale-selector"),
+            element: cos_el("#colorscale-select"),
             title: get("color.scale"),
-            intro: get("walkthrough.colorscaleSelector.text"),
+            intro: get("walkthrough.colorscaleSelect.text"),
         },
         {
-            element: cos_el("#colorscheme-selector"),
+            element: cos_el("#colorscheme-select"),
             title: get("color.scheme"),
-            intro: get("walkthrough.colorschemeSelector.text"),
+            intro: get("walkthrough.colorschemeSelect.text"),
         },
         {
             element: tds_el("#reset-plots"),
@@ -241,9 +241,7 @@ export function get_walkthrough_options(tc) {
     res.steps = [
         ...welcome_steps,
         ...(tds.params.collapsed["num-type-div"].show ? num_type_steps : []),
-        ...(tds.params.collapsed["question-selector"].show
-            ? question_steps
-            : []),
+        ...(tds.params.collapsed["question-select"].show ? question_steps : []),
         ...(tds.params.collapsed["header-multi-sel"].show ? header_steps : []),
         ...(tds.params.collapsed["row-multi-sel"].show ? rows_steps : []),
         ...(tds.params.collapsed["header-multi-sel"].show &

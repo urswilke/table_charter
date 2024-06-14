@@ -284,7 +284,7 @@ export const move_in_flex = (el) => {
 
 export const initial_collapsed = {
     "num-type-div": { show: true },
-    "question-selector": { show: true },
+    "question-select": { show: true },
     "header-multi-sel": { show: true, sub: false },
     "row-multi-sel": { show: true, sub: false },
     settings: { show: false },

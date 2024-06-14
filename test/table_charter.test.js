@@ -13,18 +13,18 @@ import {
 render(html`<table-charter .data=${data}></table-charter>`, document.body);
 
 const table_charter_el = await $("table-charter");
-const table_data_selector_el = await $(">>>table-data-selector");
+const table_data_select_el = await $(">>>table-data-select");
 const adv_settings_button = await table_charter_el.$(
     '>>>button[data-test-id="toggle-advanced-menu-button"]',
 );
-const question_selector_el = await table_charter_el.$(
-    '>>>question-selector[data-test-id="question-selector"]',
+const question_select_el = await table_charter_el.$(
+    '>>>question-select[data-test-id="question-select"]',
 );
-const all_questions = await question_selector_el
+const all_questions = await question_select_el
     .$$(">>>option")
     .map((x) => x.getText());
-await question_selector_el.moveTo();
-const question_select_el = await question_selector_el.$(">>>select");
+await question_select_el.moveTo();
+const question_select = await question_select_el.$(">>>select");
 const flip_xy_button = await table_charter_el.$(
     '>>>button[data-test-id="flip-xy-button"]',
 );
@@ -35,7 +35,7 @@ const n_checkbox = await table_charter_el.$(
     '>>>input[data-test-id="n-checkbox"]',
 );
 const num_type_el = await table_charter_el.$(
-    '>>>select[data-test-id="num_type-selector"]',
+    '>>>select[data-test-id="num_type-select"]',
 );
 
 const ojs_plot_el = table_charter_el.$('>>>ojs-plot[data-test-id="ojs-plot"]');
@@ -57,8 +57,8 @@ describe("Check all questions", () => {
         it(
             "question: " + question_text.substring(0, 40) + "../src.",
             async () => {
-                await question_select_el.moveTo();
-                await question_select_el.selectByVisibleText(question_text);
+                await question_select.moveTo();
+                await question_select.selectByVisibleText(question_text);
                 await fig_el.isExisting();
                 const fig_header = await ojs_plot_el
                     .$('>>>h2[data-test-id="plot-header"]')
@@ -82,7 +82,7 @@ describe("Check all questions", () => {
                 await expect(res["initial"]).toEqual(
                     await get_options(ojs_plot_el),
                 );
-                await table_data_selector_el.scrollIntoView({
+                await table_data_select_el.scrollIntoView({
                     block: "end",
                     inline: "nearest",
                 });

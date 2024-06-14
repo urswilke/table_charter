@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 
 import { distinct } from "../utils.js";
 
-export class MultiSelector extends LitElement {
+export class MultiSelect extends LitElement {
     static properties = {
         prop_table: { type: Array },
         collapsed_view: { type: Boolean },
@@ -16,10 +16,10 @@ export class MultiSelector extends LitElement {
     }
 
     get _chosen_parents() {
-        return this.renderRoot?.querySelector("#parents-selector") ?? null;
+        return this.renderRoot?.querySelector("#parents-select") ?? null;
     }
     get _chosen_children() {
-        return this.renderRoot?.querySelector("#children-selector") ?? null;
+        return this.renderRoot?.querySelector("#children-select") ?? null;
     }
 
     _update_parents() {
@@ -82,7 +82,7 @@ export class MultiSelector extends LitElement {
             <div class="parent">
                 <div class="subselect">
                     <select
-                        id="parents-selector"
+                        id="parents-select"
                         class="mainsel"
                         multiple
                         @change=${this._update_parents}
@@ -105,7 +105,7 @@ export class MultiSelector extends LitElement {
                     class=${"subselect" + (!this.collapsed_view ? "" : " hide")}
                 >
                     <select
-                        id="children-selector"
+                        id="children-select"
                         class="subsel"
                         multiple
                         @change=${this._update_children}
@@ -170,4 +170,4 @@ export class MultiSelector extends LitElement {
         `,
     ];
 }
-customElements.define("multi-selector", MultiSelector);
+customElements.define("multi-select", MultiSelect);

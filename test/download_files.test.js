@@ -26,24 +26,24 @@
 // const save_svg_button = await ojs_plot_el.$(
 //     '>>>button[data-test-id="save-svg-button"]',
 // );
-// const question_selector_el = await table_charter_el.$(
-//     '>>>question-selector[data-test-id="question-selector"]',
+// const question_select_el = await table_charter_el.$(
+//     '>>>question-select[data-test-id="question-select"]',
 // );
-// const header_selector_el = await table_charter_el
-//     .$('>>>multi-selector[data-test-id="header-selector"]')
+// const header_select_el = await table_charter_el
+//     .$('>>>multi-select[data-test-id="header-select"]')
 //     .$(">>>.mainsel");
-// const row_selector_el = await table_charter_el
-//     .$('>>>multi-selector[data-test-id="row-selector"]')
+// const row_select_el = await table_charter_el
+//     .$('>>>multi-select[data-test-id="row-select"]')
 //     .$(">>>.subsel");
-// const all_questions = await question_selector_el
+// const all_questions = await question_select_el
 //     .$$(">>>option")
 //     .map((x) => x.getText());
-// const question_select_el = await question_selector_el.$(">>>select");
+// const question_select_el = await question_select_el.$(">>>select");
 // const fig_el = await ojs_plot_el.$(">>>figure");
 // await ojs_plot_el.scrollIntoView({ block: "end", inline: "nearest" });
 // await adv_settings_button.moveTo();
 // await adv_settings_button.click();
-// await header_selector_el.selectByIndex(1);
+// await header_select_el.selectByIndex(1);
 
 // describe("Check all questions", () => {
 //     for (const question_text of all_questions) {
@@ -51,7 +51,7 @@
 //             "question: " + question_text.substring(0, 40) + "../src.",
 //             async () => {
 //                 await question_select_el.selectByVisibleText(question_text);
-//                 const options = await row_selector_el.$$(">>>option");
+//                 const options = await row_select_el.$$(">>>option");
 //                 if (options.length > 1) {
 //                     await options[0].click();
 //                     // select first 2 options (if second exists):
