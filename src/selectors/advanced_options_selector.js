@@ -1,3 +1,5 @@
+// TODO: merge with into one component
+// together with FurtherOptionsSelector & ColorscaleSelector
 import { LitElement, html, css } from "lit";
 
 import { translate } from "lit-translate";
