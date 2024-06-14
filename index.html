@@ -35,17 +35,20 @@
             }
             #lang_selector {
                 margin-right: 15px;
+                display: flex;
+                gap: 5px;
             }
 
             /* see 2nd example here: https://stackoverflow.com/questions/25098042/fill-remaining-vertical-space-with-css-using-displayflex/25098486#25098486 */
             section {
                 display: flex;
                 flex-flow: column;
-                height: 100%;
+                height: 100vh;
             }
             header {
                 display: flex;
                 flex-direction: row;
+                justify-self: flex-start;
                 justify-content: space-between;
                 align-items: center;
                 text-align: center;
@@ -53,17 +56,35 @@
                 color: white;
                 margin: 0px;
                 font-size: 20px;
-                height: 50px;
+                width: 100%;
+                height: 5%;
+                min-height: 1.2em;
+                max-height: 70px;
+            }
+            #title-text {
+                flex: 1 1;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
             }
             footer {
-                min-height: 20px;
-                padding: 10px;
-                text-align: center;
+                justify-self: flex-start;
+                display: flex;
+                align-items: center;
+                height: 3%;
+                min-height: 1.2em;
+                max-height: 70px;
+                justify-content: center;
                 background: #2d3036;
                 color: white;
             }
+            .pre {
+                white-space: pre;
+            }
             table-charter-intro {
-                flex: 1;
+                flex: 1 1;
+                overflow: auto;
+                margin: 5px;
             }
             /* needed for dark mode (because then, the font is white on white otherwise) */
             .introjs-tooltip {
@@ -116,9 +137,7 @@
         <section>
             <header>
                 <img id="logo" />
-                <div>
-                    <p id="project-name"></p>
-                </div>
+                <div id="title-text"></div>
                 <div id="lang_selector">
                     <span>🌍</span>
                     <select id="lang-selector-select">
@@ -129,7 +148,7 @@
             </header>
             <table-charter-intro></table-charter-intro>
             <footer>
-                Made with
+                <a class="pre">Made with </a>
                 <a
                     href="https://gitlab.com/urswilke/table_charter"
                     title="Code repository"
@@ -155,7 +174,8 @@
 
                 const project_data = {
                     client_logo_base64: "",
-                    client_logo_url: "https://gitlab.com/urswilke/table_charter/-/raw/main/img/logo_small.svg",
+                    client_logo_url:
+                        "https://gitlab.com/urswilke/table_charter/-/raw/main/img/logo_small.svg",
                     project_name: "Dashboard demo of example table book",
                     date: "2024-5-18",
                 };
@@ -176,7 +196,7 @@
                         month: "short",
                         day: "numeric",
                     }).format(new Date(project_data.date));
-                    document.getElementById("project-name").innerHTML =
+                    document.getElementById("title-text").innerHTML =
                         project_data.project_name + " - " + date;
                 }
                 update_title(browser_language);

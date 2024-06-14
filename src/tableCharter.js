@@ -138,11 +138,10 @@ export class TableCharter extends LitElement {
     static styles = [
         css`
             .content {
+                height: 100%;
+                flex: 1 1;
                 display: flex;
-                height: 100vh;
                 gap: 5px;
-                margin-top: 5px;
-                margin-bottom: 5px;
             }
 
             @media (max-aspect-ratio: 1) {
