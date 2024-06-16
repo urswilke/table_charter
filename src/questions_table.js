@@ -1,7 +1,7 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
-import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css";
-import style_light from "tabulator-tables/dist/css/tabulator.min.css";
+import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css?inline";
+import style_light from "tabulator-tables/dist/css/tabulator.min.css?inline";
 import { get, translate } from "lit-translate";
 
 export class QuestionsTable extends LitElement {
