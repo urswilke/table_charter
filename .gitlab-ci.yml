@@ -10,16 +10,7 @@ cache:
 run_test_firefox:
   image: 
     name: selenium/node-firefox
-    # see here:
-    # https://stackoverflow.com/questions/56579468/list-directory-var-lib-apt-lists-partial-is-missing-acquire-20-not-a-direc/57930100#57930100
-    # https://forum.gitlab.com/t/gitlab-ci-yaml-use-image-with-a-specific-user/72854/5
-    docker:
-      user: root
   script:
-    - apt-get update
-    - apt-get -y install libasound2
-    # - firefox --version
-    - node -v
     - npm install
     - npm run test -- --firefox
   # rules:
