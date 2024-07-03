@@ -5,17 +5,26 @@
   "question": {
     "label": "Frage"
   },
+  "questionsTable": {
+    "title": "Fragen-Manager",
+    "questionColumn": "Frage",
+    "cloneColumn": "Klonen"
+  },
+  "crosstabTable": {
+    "title": "Kreuztabelle",
+    "selectText": "Tabellierte Werte",
+    "selectOptionAll": "Alle",
+    "selectOptionPlottedValues": "Werte im Plot"
+  },
   "header": {
-    "label": "Köpfe",
-    "mainsel": "Kopfgruppe(n)",
-    "subsel": "Köpfe"
+    "mainsel": "Köpfe",
+    "subsel": "Spalten"
   },
   "rows": {
-    "label": "Zeilen",
-    "mainsel": "Typ(en)",
-    "subsel": "Zeile(n)"
+    "mainsel": "Zeilen-Typen",
+    "subsel": "Zeilen"
   },
-  "showHide": {
+  "toggleAdvancedMenu": {
     "show": "Weitere Einstellungen anzeigen",
     "hide": "Weitere Einstellungen ausblenden"
   },
@@ -101,11 +110,11 @@
     },
     "welcome": {
       "title": "Willkommen zu table_charter",
-      "text": "Diese App kann Diagramme erstellen aus den Daten im Tabellenband. In den folgenden Schritten wird die Funktionsweise der Bedienelemente kurz erläutert."
+      "text": "Diese App kann Diagramme erstellen aus den Kreuztabellen im Tabellenband. In den folgenden Schritten wird die Funktionsweise der Bedienelemente kurz erläutert."
     },
     "general": {
       "title": "Allgemeine Tipps",
-      "text": "<ul><li>Esc Drücken oder auf das 'x' Klicken beendet die Einführung. </li><li>Mit den Pfeiltasten der Tastatur oder Klicken der Knöpfe unten kannst Du Dich zu den nächsten / vorherigen Tipps bewegen. </li><li>Alle Elemente der App lassen sich auch mit der Maus und dem Keyboard bedienen. </li><li>Wenn Du mit der Maus über die Elemente in den Charts hoverst, erscheint nach einem kurzen Moment ein Tooltip.</li></ul>"
+      "text": "<ul><li>Esc Drücken oder auf das 'x' Klicken beendet die Einführung. </li><li>Mit den Pfeiltasten der Tastatur oder Klicken der Knöpfe unten kannst Du Dich zu den nächsten / vorherigen Tipps bewegen. </li><li>Alle Elemente der App lassen sich auch mit der Maus und dem Keyboard bedienen. </li><li>Wenn Du mit der Maus über die Elemente in den Charts hoverst, erscheint nach einem kurzen Moment ein Tooltip.</li><li>Du kannst die Elemente in den Einstellungen durch Klicken auf sie öffnen. Wenn sie geöffnet sind, kannst Du sie durch Klicken auf die Titelzeile wieder schließen.</li></ul>"
     },
     "numTypeDiv": {
       "text": "Hier kannst Du auswählen, ob in den Plots die Absolut- oder Prozentwerte der Tabellen angezeigt werden."
@@ -115,23 +124,27 @@
     },
     "header": {
       "text": "Hier kannst Du auswählen welche Kopfgruppe(n) angezeigt werden soll(en). Durch Halten von Strg bzw. Shift. oder Drag and drop kannst Du mehrere Elemente auswählen.",
-      "advancedText": "Wenn die weiteren Einstellungen angezeigt werden, kannst Du auch einzelne Köpfe aus-/abwählen."
+      "buttonTitle": "Spalten einzeln auswählen.",
+      "buttonText": "Durch Klicken auf diesen Knopf kannst Du ein Auswahl-Feld ausklappen, wo Du die einzelnen Spalten der Kreuztabellen auswählen kannst.",
+      "advancedText": "Hier kannst Du einzelne Köpfe aus-/abwählen."
     },
     "rows": {
-      "text": "Hier kannst Du auswählen welche Zeile(n) angezeigt werden soll(en). Es gibt folgende 3 Typen:<ul><li>Detail:<br>Hierbei handelt es sich um die Standard-Werte in den Tabellen.</li><li>Summary:<br>Dies sind die zusammengefassten Werte, die manchmal unter den 'Detail'-Werten aufgeführt sind.</li><li>MStatistics:<br>Dies sind die Werte die bei Item-Batterien angezeigt werden wie z.B. in Mittelwert- oder TOP2-Übersichten.</li></ul>Alle anderen Zeilen in den Tabellen können hier nicht ausgewählt werden (wie z.B. GESAMT). Die GESAMT- oder Mittelwerte der einzelnen Spalten können aber auch angezeigt werden (siehe Hinweise zu den weiteren Einstellungen weiter unten).",
-      "advancedText": "Dasselbe gilt für die Zeilen. Wenn die weiteren Einstellungen angezeigt werden, kannst Du auch einzelne Zeilen aus-/abwählen."
+      "text": "Hier kannst Du auswählen welche Zeile(n) angezeigt werden soll(en). Es gibt folgende 3 Typen:<ul><li>Detail:<br>Hierbei handelt es sich um die Standard-Werte in den Tabellen.</li><li>Summary:<br>Dies sind die zusammengefassten Werte, die manchmal unter den 'Detail'-Werten aufgeführt sind.</li><li>MStatistics:<br>Dies sind die Werte die bei Item-Batterien angezeigt werden wie z. B. in Mittelwert- oder TOP2-Übersichten.</li></ul>Alle anderen Zeilen in den Tabellen können hier nicht ausgewählt werden (wie z. B. GESAMT). Die GESAMT- oder Mittelwerte der einzelnen Spalten können aber auch angezeigt werden (siehe Hinweise zu den weiteren Einstellungen weiter unten).",
+      "buttonTitle": "Zeilen einzeln auswählen.",
+      "buttonText": "Durch Klicken auf diesen Knopf kannst Du ein Auswahl-Feld ausklappen, wo Du die einzelnen Zeilen der Kreuztabellen auswählen kannst.",
+      "advancedText": "Hier kannst Du einzelne Zeilen aus-/abwählen."
     },
-    "showHide": {
-      "title": "Weitere Einstellungen ein-/ausblenden",
-      "text": "Durch Klicken auf diesen Knopf werden die weiteren Einstellungen ein-/ausgeblendet."
+    "toggleAdvancedMenu": {
+      "title": "Alle / Anfangs-Einstellungen anzeigen",
+      "text": "Durch Klicken auf diesen Knopf werden die weiteren / Anfangs-Einstellungen angezeigt."
     },
     "showHelp": {
       "title": "Einführung abspielen",
-      "text": "Durch Klicken hier wird die Hilfs-Einführung abgespielt. Wenn die weiteren Einstellungen angezeigt werden (siehe vorherigen Schritt), werden diese beschrieben."
+      "text": "Durch Klicken hier wird die Hilfs-Einführung abgespielt für alle ausgeklappten Elemente."
     },
     "hideMenu": {
       "title": "Menu zusammenklappen / anzeigen",
-      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt / angezeigt (dadurch werden die Plots größer / kleiner)."
+      "text": "Durch Klicken wird das Einstellungs-Menu zusammengeklappt / angezeigt (dadurch werden die Plots größer / kleiner). <ul><li>In der zusammengeklappten Ansicht kannst Du die einzelnen Elemente durch Klicken als Popup anzeigen.</li><li>Durch drag-and-drop auf der Titelzeile der Popups kannst Du die Elemente bewegen, und unten rechts ihre Größe anpassen.</li><li>Durch Klicken oben rechts kannst Du die Elemente wieder zurück in die Leiste minimieren.</li></ul>"
     },
     "flipXY": {
       "title": "X- & Y-Achse vertauschen",
@@ -173,10 +186,10 @@
       "textpt1": ":<br>Hier werden zu lange Label abgeschnitten. Der ganze Text kann durch Hovern über das Label angezeigt werden.</li><li>",
       "textpt2": ":<br>Die ganzen Label der Köpfe werden angezeigt. Dadurch können Label von verschiedenen Köpfen überlappen, was evtl. auch durch eine kleinere Schriftgröße verhindert werden kann.</li>"
     },
-    "colorscaleSelector": {
+    "colorscaleSelect": {
       "text": "Hier kannst Du auswählen, ob eine kategorische oder ordinale Farbskala im Plot verwendet wird.<br/>In kategorischen Skalen sind die Farben von benachbarten Items stark unterschiedlich. Jede Farbe steht für ein Variablen-/Werte-Label in den Rohdaten.<br/>In ordinalen Skalen werden die Werte in den Rohdaten auf einen sich graduell veränderten Farbverlauf dargestellt. Dies kann nicht bei Mehrfachantworten oder Item-Batterien ausgewählt werden."
     },
-    "colorschemeSelector": {
+    "colorschemeSelect": {
       "text": "Hier kannst Du verschiedene Farbschemata auswählen. Die verfügbare Auswahl hängt davon ab, ob eine kategorische oder ordinale Farbskala verwendet wird (siehe vorherigen Schritt)."
     },
     "resetPlots": {
@@ -184,6 +197,34 @@
     },
     "saveSettings": {
       "text": "Durch Klicken hier kannst Du die App mit den aktuellen Einstellungen der Plots im Download-Ordner Deines Browsers speichern."
+    },
+    "crosstab": {
+      "intro": {
+          "title": "Kreuztabelle",
+          "text": "Dieses Element zeigt die Kreuztabelle aus der die Daten des Plots stammen."
+      },
+      "selectType": {
+          "title": "Angezeigte Werte der Kreuztabelle auswählen",
+          "text": "Hier kannst Du auswählen, ob alle Werte der Kreuztabelle angezeigt werden, oder nur die die sich im Plot befinden."
+      }
+    },
+    "questionsTable": {
+      "intro": {
+        "title": "Fragen-Manager",
+        "text": "Mit dem Fragen-Manager kannst Du die angezeigten Fragen anpassen. Z. B. kannst Du Fragen ausblenden (sie können nicht mehr ausgewählt werden im Fragen-Auswahl-Menü), die Titel ändern, oder sie mehrmals anzeigen (um verschiedene Einstellungen vorzunehmen)."
+      },
+      "show": {
+        "title": "Frage ein- / ausblenden",
+        "text": "Durch Klicken auf eine Zelle in dieser Spalte kannst Du den entsprechenden Plot ausblenden."
+      },
+      "question": {
+        "title": "Fragetext anpassen",
+        "text": "Durch Klicken auf eine Zelle in dieser Spalte kannst Du den Titel des Plots anpassen. Durch Shift+Enter wird der angepasste Text übernommen."
+      },
+      "clone": {
+        "title": "Frage vervielfältigen",
+        "text": "Durch Klicken auf eine Zelle in dieser Spalte kannst Du eine Frage vervielfältigen, um sie darauf mehrmals mit verschiedenen Einstellungen anzeigen zu können."
+      }
     }
   }
 }

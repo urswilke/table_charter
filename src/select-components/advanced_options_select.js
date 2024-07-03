@@ -1,8 +1,10 @@
+// TODO: merge with into one component
+// together with FurtherOptionsSelect & ColorscaleSelect
 import { LitElement, html, css } from "lit";
 
 import { translate } from "lit-translate";
 
-export class AdvancedOptionsSelector extends LitElement {
+export class AdvancedOptionsSelect extends LitElement {
     static properties = {
         n_axis: { type: Boolean },
         show_subtitles: { type: Boolean },
@@ -200,6 +202,8 @@ export class AdvancedOptionsSelector extends LitElement {
                 overflow: hidden;
             }
             input[type="number"] {
+                border-radius: 4px;
+                border: solid grey 1px;
                 width: 3em;
             }
             select {
@@ -209,4 +213,4 @@ export class AdvancedOptionsSelector extends LitElement {
         `,
     ];
 }
-customElements.define("advanced-options-selector", AdvancedOptionsSelector);
+customElements.define("advanced-options-select", AdvancedOptionsSelect);

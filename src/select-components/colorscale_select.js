@@ -3,7 +3,7 @@ import { LitElement, html, css } from "lit";
 import { translate } from "lit-translate";
 import { all_color_schemes } from "../gen_plot_types.js";
 
-export class ColorscaleSelector extends LitElement {
+export class ColorscaleSelect extends LitElement {
     static properties = {
         chosen_colorscheme: { type: String },
         chosen_colorscale: { type: String },
@@ -11,10 +11,10 @@ export class ColorscaleSelector extends LitElement {
     };
 
     get _chosen_colorscale() {
-        return this.renderRoot?.querySelector("#colorscale-selector") ?? null;
+        return this.renderRoot?.querySelector("#colorscale-select") ?? null;
     }
     get _chosen_colorscheme() {
-        return this.renderRoot?.querySelector("#colorscheme-selector") ?? null;
+        return this.renderRoot?.querySelector("#colorscheme-select") ?? null;
     }
 
     _update_colorscale() {
@@ -49,7 +49,7 @@ export class ColorscaleSelector extends LitElement {
             <div class="grid">
                 <div>${translate("color.scale")}</div>
                 <select
-                    id="colorscale-selector"
+                    id="colorscale-select"
                     @change=${this._update_colorscale}
                     ?disabled=${this.colorscale_disabled}
                 >
@@ -66,7 +66,7 @@ export class ColorscaleSelector extends LitElement {
                 </select>
                 <div>${translate("color.scheme")}</div>
                 <select
-                    id="colorscheme-selector"
+                    id="colorscheme-select"
                     @change=${this._update_colorscheme}
                 >
                     ${color_schemes.map(
@@ -104,4 +104,4 @@ export class ColorscaleSelector extends LitElement {
         `,
     ];
 }
-customElements.define("colorscale-selector", ColorscaleSelector);
+customElements.define("colorscale-select", ColorscaleSelect);

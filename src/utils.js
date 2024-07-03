@@ -1,10 +1,16 @@
-import { chain, pick, uniqWith, isEqual } from "lodash";
-import { decompress } from "compress-json";
+import { html } from "lit";
+// https://stackoverflow.com/questions/54907549/keep-only-selected-keys-in-every-object-from-array/66471710#66471710
+function select(arr, ...X) {
+    return arr.map((o) => Object.fromEntries(X.map((k) => [k, o[k]])));
+}
 
-export function distinct(arr, X) {
-    return chain(arr.map((o) => pick(o, X)))
-        .uniqWith(isEqual)
-        .value();
+// https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects/56757215#56757215
+export function distinct(arr, ...X) {
+    return select(arr, ...X).filter(
+        (obj1, i, a) =>
+            a.findIndex((obj2) => X.every((key) => obj2[key] === obj1[key])) ===
+            i,
+    );
 }
 
 const is_dark =
@@ -17,7 +23,10 @@ export function gen_header_table(data) {
     const arr = distinct(
         data,
         // TODO: HeadNo is 2 for first 2 Heads => correct in crosstabser!
-        ["ColNo", "HeadNo", "ColTitle1", "ColTitle2"],
+        "ColNo",
+        "HeadNo",
+        "ColTitle1",
+        "ColTitle2",
     );
     const first_two_titles = [...new Set(arr.map((x) => x.ColTitle1))].slice(
         0,
@@ -31,7 +40,7 @@ export function gen_header_table(data) {
 }
 
 export function gen_row_table(data) {
-    const arr = distinct(data, ["RowContent", "RowTitle1", "RowTitle2"]);
+    const arr = distinct(data, "RowNo", "RowContent", "RowTitle1", "RowTitle2");
     const row_contents = [...new Set(arr.map((x) => x.RowContent))];
     var types_to_take;
     if (row_contents.includes("Detail")) {
@@ -99,30 +108,30 @@ export function gen_plot_type_string(tab_sel_obj) {
 }
 
 export function prepare_data(data_obj) {
-    let data;
-    switch (data_obj.type) {
-        case "compressed":
-            data = decompress(data_obj.data);
-            break;
-        case "uncompressed":
-            data = data_obj.data;
-        case "table-object":
-            data = merge_table_parts(data_obj.data);
-    }
-
-    const unique_combis = distinct(data, ["QuestNo", "TabNo"]).map(
-        (x) => x.QuestNo + "-" + x.TabNo,
-    );
-
-    return data.map((x) => ({
+    data_obj.Tab = data_obj.Tab.map((x, i) => ({
+        // ascending index 0, 1, 2, ... for every question in the data (pair of QuestNo & TabNo)
+        i_tab: i,
         ...x,
-        i_tab: unique_combis.indexOf(x.QuestNo + "-" + x.TabNo),
+        // when plots are added via duplicating rows in questions-table,
+        // this will re-build this index, which will generate a new
+        // ascending index 0, 1, 2, ... every time a row gets duplicated:
+        i_tab_dyn: i,
+        // this is used for indexing with tabulator in questions-table:
+        // every time a row is added, i_tab is taken and the suffix "_" + 1, 2, 3, ... is added:
+        // i.e. for instance: 0, 0_1, 0_2, 1, 2, ...
+        // (could also be replaced by i_tab_dyn...)
+        id: i,
     }));
+    return merge_table_parts(data_obj);
 }
 
 export function save_file() {
+    const saved_settings = {
+        i_tab: this.i_tab,
+        tab_table: this.tab_table,
+    };
     document.querySelector("table-charter").dataset.savedSettings =
-        JSON.stringify(this.saved);
+        JSON.stringify(saved_settings);
     var text = document.querySelector("html").innerHTML;
     var element = document.createElement("a");
     element.setAttribute(
@@ -152,7 +161,7 @@ export function save_file() {
 // add varying number of spaces to duplicated `ColTitle2`s
 // (that every ColNo has a unique ColTitle2):
 export function add_spaces(data) {
-    var coltitle_array = distinct(data, ["ColNo", "ColTitle2"]);
+    var coltitle_array = distinct(data, "ColNo", "ColTitle2");
     var counts = {};
     for (let i = 0; i < coltitle_array.length; i++) {
         const e = coltitle_array[i];
@@ -198,7 +207,7 @@ export var is_mobile =
     );
 
 // from here: https://gist.github.com/thesofakillers/bcf39eaed428304ddc126ca8f12336f7
-function obj_arrays_to_array_objs(object_arrays) {
+export function obj_arrays_to_array_objs(object_arrays) {
     let final_array = object_arrays[Object.keys(object_arrays)[0]].map(
         // el is unused, but needs to be defined for map to give access to index i
         (_el, i) => {
@@ -218,14 +227,99 @@ export const left_join = (arr1, arr2, fun) => {
 };
 
 function merge_table_parts(obj) {
-    // https://stackoverflow.com/questions/14810506/map-function-for-objects-instead-of-arrays/38829074#38829074
-    obj = Object.fromEntries(
-        Object.entries(obj).map(([k, v]) => [k, obj_arrays_to_array_objs(v)]),
-    );
     var res;
     res = left_join(obj.Row, obj.Tab, (x) => x.QuestNo + x.TabNo);
     res = left_join(obj.Val, res, (x) => x.QuestNo + x.RowNo);
     res = left_join(res, obj.Col, (x) => x.ColNo);
     // res = left_join(res, obj.Head, x => x.HeadNo)
     return res.sort((a, b) => a.QuestLine > b.QuestLine);
+}
+
+export function setup_saved_settings(tab_table, saved_settings) {
+    let saved;
+    if (saved_settings) {
+        saved = JSON.parse(saved_settings);
+    } else {
+        saved = {
+            i_tab: 0,
+            tab_table: tab_table.map((x, i) => ({
+                ...x,
+                i_tab: i,
+                i_i_tab: 0,
+                i_tab_dyn: i,
+                id: i,
+                saved: {},
+                show: true,
+            })),
+        };
+    }
+    return saved;
+}
+export const drag = (evt) => {
+    const el = evt.currentTarget;
+    el.style.touchAction = "none";
+    const parent = el.getRootNode().host;
+
+    const move = (evt) => {
+        parent.style.left = `${parent.offsetLeft + evt.movementX}px`;
+        parent.style.top = `${parent.offsetTop + evt.movementY}px`;
+    };
+
+    const up = () => {
+        removeEventListener("pointermove", move);
+        removeEventListener("pointerup", up);
+    };
+
+    addEventListener("pointermove", move);
+    addEventListener("pointerup", up);
+};
+export const move_in_flex = (el) => {
+    el.style.position = "static";
+    el.style.outline = "0px";
+    el.style.left = "";
+    el.style.top = "";
+    el.renderRoot.querySelector("#main").style.width = "";
+    el.renderRoot.querySelector("#main").style.height = "";
+};
+
+export const initial_collapsed = {
+    "num-type-div": { show: true },
+    "question-select": { show: true },
+    "header-multi-sel": { show: true, sub: false },
+    "row-multi-sel": { show: true, sub: false },
+    settings: { show: false },
+    "tabulator-crosstab": { show: false },
+    "tabulator-questions-manager": { show: false },
+};
+
+function do_all(initial_collapsed, new_show_val, new_expand_val) {
+    const arr = structuredClone(Object.entries(initial_collapsed));
+
+    for (let i = 0; i < arr.length; i++) {
+        const el = arr[i];
+        el[1].show = new_show_val;
+        el[1].sub = new_expand_val;
+    }
+
+    return Object.fromEntries(arr);
+}
+
+export const all_expanded = do_all(initial_collapsed, true, true);
+export const all_collapsed = do_all(initial_collapsed, false, true);
+
+// TODO: find cleaner solution...:
+export function gen_multi_select_title(show_sub, main_label, sub_label) {
+    return html`
+        <div style="display: grid; grid-template-columns: 1fr 1em 1fr;">
+            <div style="overflow: hidden; white-space: nowrap;">
+                ${main_label}
+            </div>
+            <div></div>
+            ${show_sub
+                ? html`<div style="overflow: hidden; white-space: nowrap;">
+                      ${sub_label}
+                  </div>`
+                : html``}
+        </div>
+    `;
 }

@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 
 import { translate } from "lit-translate";
 
-export class FurtherOptionsSelector extends LitElement {
+export class FurtherOptionsSelect extends LitElement {
     static properties = {
         xy: { type: String },
         plot_type: { type: String },
@@ -70,4 +70,4 @@ export class FurtherOptionsSelector extends LitElement {
         `,
     ];
 }
-customElements.define("further-options-selector", FurtherOptionsSelector);
+customElements.define("further-options-select", FurtherOptionsSelect);

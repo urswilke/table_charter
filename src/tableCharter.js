@@ -1,12 +1,11 @@
 import { LitElement, css, html } from "lit";
 import "./ojs-plot.js";
-import "./tableDataSelector.js";
+import "./tableDataSelect.js";
 import { registerTranslateConfig, use } from "lit-translate";
-import { default as introJs } from "intro.js";
+import { translate } from "lit-translate";
 
 // approach from here: https://github.com/andreasbm/lit-translate/issues/29#issuecomment-863270983
 import { langs } from "./languages/languages.js";
-import { get_walkthrough_options } from "./walkthrough_options.js";
 
 registerTranslateConfig({
     loader: (lang) =>
@@ -16,8 +15,9 @@ registerTranslateConfig({
 });
 export class TableCharter extends LitElement {
     static properties = {
+        is_minimized: { type: Boolean, reflect: true },
+        show_advanced: { type: Boolean },
         language: { type: String },
-        walkthrough: { type: String },
         data: { type: Object },
         plot_data: { type: Array },
     };
@@ -26,9 +26,10 @@ export class TableCharter extends LitElement {
     // (see: https://github.com/andreasbm/lit-translate/blob/8f313900f4cea95aa8eca7e7409dcf8815d58df2/README.md#-wait-for-strings-to-be-loaded-before-displaying-the-component)
     constructor() {
         super();
+        this.is_minimized = false;
         this.language = this.language || navigator.language.substring(0, 2);
         this.hasLoadedStrings = false;
-        this.hasLoadedWalkthrough = false;
+        this.show_advanced = false;
         // HACK to regenerate plot on window resize...:
         window.addEventListener(
             "resize",
@@ -57,63 +58,34 @@ export class TableCharter extends LitElement {
         return this._language;
     }
 
-    update_plot_data(e) {
+    _on_update_plot_data(e) {
         this.plot_data = e.detail.data;
     }
 
-    el(selector) {
-        return this.renderRoot.querySelector(selector);
+    el(select) {
+        return this.renderRoot.querySelector(select);
     }
 
     hide_menu() {
         this.el(".hide-menu").innerText = "☰";
-        // this.el(".settings").style.visibility = "hidden";
-        this.el("table-data-selector").style.display = "none";
-        this.el(".show-help").style.display = "none";
-        this.el(".column1").style.flexBasis = "content";
+        this.el(".column1").style.flexBasis = "4em";
     }
     show_menu() {
         this.el(".hide-menu").innerText = "×";
-        this.el("table-data-selector").style.display = "block";
-        this.el(".show-help").style.display = "inline-block";
         this.el(".column1").style.flexBasis = "25%";
     }
-    show_hide_menu() {
-        this.el(".hide-menu").innerText === "☰"
-            ? this.show_menu()
-            : this.hide_menu();
+    _on_show_hide_menu() {
+        this.is_minimized ? this.show_menu() : this.hide_menu();
+        this.is_minimized = !this.is_minimized;
         // HACK to trigger re-rendering of <ojs-plot> element:
         this.plot_data = { ...this.plot_data };
     }
 
-    async updated() {
-        // HACKs: to return early, if this methods didn't run through yet, or if the html only contains one element.
-        // (that's the case when this.plot_data isn't assigned yet; see render method...)
-        this.walkthrough !== "hide" &&
-            !this.hasLoadedWalkthrough &&
-            (await this.show_help());
-    }
-
-    async show_help() {
-        // https://stackoverflow.com/questions/58035998/run-a-function-once-all-children-element-are-actually-updated/58125954#58125954
-        const children = this.renderRoot.querySelectorAll("*");
-        if (Array.from(children).length === 1) {
-            return;
-        }
-        await Promise.all(Array.from(children).map((c) => c.updateComplete));
-        const tds = this.renderRoot.querySelector("table-data-selector");
-
-        introJs().setOptions(get_walkthrough_options(this)).start();
-        this.hasLoadedWalkthrough = true;
+    _on_toggle_advanced_menu() {
+        this.show_advanced = !this.show_advanced;
     }
 
     render() {
-        this.plot_data &&
-            (this.plot_data.params = {
-                language: this.language,
-                element_width: this.el(".ojsplot").offsetWidth,
-                element_height: this.el(".column2").offsetHeight,
-            });
         return this.data === undefined
             ? html`<div>no data loaded</div>`
             : html`
@@ -122,23 +94,32 @@ export class TableCharter extends LitElement {
                           <div id="top-navbar">
                               <button
                                   class="hide-menu"
-                                  @click="${this.show_hide_menu}"
+                                  @click="${this._on_show_hide_menu}"
                               >
                                   ×
                               </button>
+                              ${this.help_button?.()}
                               <button
-                                  class="show-help"
-                                  @click="${this.show_help}"
+                                  id="toggle-advanced-menu"
+                                  data-test-id="toggle-advanced-menu-button"
+                                  @click="${this._on_toggle_advanced_menu}"
+                                  title=${!this.show_advanced
+                                      ? translate("toggleAdvancedMenu.show")
+                                      : translate("toggleAdvancedMenu.hide")}
                               >
-                                  ?
+                                  ${!this.show_advanced ? "🎛️" : "🧹"}
                               </button>
                           </div>
 
                           <div class="settings">
-                              <table-data-selector
+                              <table-data-select
+                                  .is_minimized=${this.is_minimized}
                                   .html_data=${this.data}
-                                  @update-data="${this.update_plot_data}"
-                              ></table-data-selector>
+                                  .language=${this.language}
+                                  @update-data="${this._on_update_plot_data}"
+                                  .show_advanced=${this.show_advanced}
+                                  .savedSettings=${this.dataset.savedSettings}
+                              ></table-data-select>
                           </div>
                       </div>
                       <div class="column2">
@@ -146,6 +127,7 @@ export class TableCharter extends LitElement {
                               class="ojsplot"
                               data-test-id="ojs-plot"
                               .plot_data=${this.plot_data}
+                              .language=${this.language}
                           >
                           </ojs-plot>
                       </div>
@@ -156,11 +138,10 @@ export class TableCharter extends LitElement {
     static styles = [
         css`
             .content {
+                height: 100%;
+                flex: 1 1;
                 display: flex;
-                height: 100vh;
                 gap: 5px;
-                margin-top: 5px;
-                margin-bottom: 5px;
             }
 
             @media (max-aspect-ratio: 1) {
@@ -203,14 +184,15 @@ export class TableCharter extends LitElement {
                 scrollbar-gutter: stable;
                 margin-left: 0;
             }
-            .show-help,
-            .hide-menu {
-                margin: 1px;
+            ojs-plot {
+                height: 100%;
+                width: 100%;
             }
             #top-navbar {
                 background: #5e677b;
                 border-top-right-radius: 4px;
                 border-top-left-radius: 4px;
+                padding: 2px;
                 padding-left: 5px;
                 padding-right: 5px;
                 border-bottom: 1px solid;
@@ -219,6 +201,9 @@ export class TableCharter extends LitElement {
                 overflow-y: auto;
                 padding-left: 5px;
                 padding-right: 5px;
+            }
+            :host([is_minimized]) #toggle-advanced-menu {
+                display: none;
             }
         `,
     ];

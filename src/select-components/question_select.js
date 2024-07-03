@@ -1,17 +1,19 @@
 import { LitElement, html, css } from "lit";
 
-export class QuestionSelector extends LitElement {
+export class QuestionSelect extends LitElement {
     static properties = {
         all_questions: { type: Array },
-        chosen_tab_no: { type: String },
+        chosen_tab_no: { type: Number },
     };
 
     get _chosen_tab_no() {
-        return this.renderRoot?.querySelector("#question-selector") ?? null;
+        return this.renderRoot?.querySelector("#question-select") ?? null;
     }
 
     _update_question() {
-        this.chosen_tab_no = this._chosen_tab_no.value;
+        this.chosen_tab_no = [...this._chosen_tab_no.options]
+            .map((x) => x.selected)
+            .indexOf(true);
 
         const options = {
             detail: {
@@ -24,16 +26,18 @@ export class QuestionSelector extends LitElement {
     }
 
     render() {
+        const initial_value = this.all_questions[this.chosen_tab_no].TabTitle;
         return html`
             <div class="parent">
-                <select
-                    id="question-selector"
-                    @change=${this._update_question}
-                    .value="${this.chosen_tab_no}"
-                >
+                <select id="question-select" @change=${this._update_question}>
                     ${this.all_questions.map(
                         (x) => html`
-                            <option value="${x.i_tab}">${x.TabTitle}</option>
+                            <option
+                                .selected=${initial_value === x.TabTitle}
+                                .disabled=${!x.show}
+                            >
+                                ${x.TabTitle}
+                            </option>
                         `,
                     )}
                 </select>
@@ -51,4 +55,4 @@ export class QuestionSelector extends LitElement {
         `,
     ];
 }
-customElements.define("question-selector", QuestionSelector);
+customElements.define("question-select", QuestionSelect);

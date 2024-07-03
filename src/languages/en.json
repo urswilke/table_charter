@@ -5,17 +5,26 @@
   "question": {
     "label": "Question"
   },
+  "questionsTable": {
+    "title": "Questions manager",
+    "questionColumn": "Question",
+    "cloneColumn": "Clone"
+  },
+  "crosstabTable": {
+    "title": "Crosstab",
+    "selectText": "Tabulated values",
+    "selectOptionAll": "All",
+    "selectOptionPlottedValues": "Plotted values"
+  },
   "header": {
-    "label": "Headers",
-    "mainsel": "header(s)",
-    "subsel": "sub-header(s)"
+    "mainsel": "Headers",
+    "subsel": "Columns"
   },
   "rows": {
-    "label": "Rows",
-    "mainsel": "type(s)",
-    "subsel": "row(s)"
+    "mainsel": "Row types",
+    "subsel": "Rows"
   },
-  "showHide": {
+  "toggleAdvancedMenu": {
     "show": "Show advanced settings",
     "hide": "Hide advanced settings"
   },
@@ -29,11 +38,11 @@
     "label": "Save app with these plot settings to file"
   },
   "flipXY": {
-    "label1": "categorical axis",
+    "label1": "Categorical axis",
     "label2": " axis"
   },
   "plotName": {
-    "label": "plot type",
+    "label": "Plot type",
     "line": "line chart",
     "bar": "bar chart"
   },
@@ -56,8 +65,8 @@
     "label": "Font size"
   },
   "color": {
-    "scale": "color scale",
-    "scheme": "color scheme",
+    "scale": "Color scale",
+    "scheme": "Color scheme",
     "categorical": "categorical",
     "ordinal": "ordinal"
   },
@@ -101,11 +110,11 @@
     },
     "welcome": {
       "title": "Welcome to table_charter",
-      "text": "This app can be used to generate plots of the table book data. In the following steps, we'll briefly walk through how the controll settings work."
+      "text": "This app can be used to generate plots of the crosstabs in the table books. In the following steps, we'll briefly walk through how the controll settings work."
     },
     "general": {
       "title": "General hints",
-      "text": "<ul><li>Pressing Esc or clicking on the 'x' leaves the walkthrough.</li><li>You can move through with the arrow keys of your keyboard or clicking on the buttons below.</li><li>All the app's elements can also be controlled by keyboard and by mouse.</li><li>When you hover over the elements in the charts, a tooltip will appear after a small moment.</li></ul>"
+      "text": "<ul><li>Pressing Esc or clicking on the 'x' leaves the walkthrough.</li><li>You can move through with the arrow keys of your keyboard or clicking on the buttons below.</li><li>All the app's elements can also be controlled by keyboard and by mouse.</li><li>When you hover over the elements in the charts, a tooltip will appear after a small moment.</li><li>You can open the elements in the settings by clicking on them. When they are opened you can close them again by clicking on the title bar.</li></ul>"
     },
     "numTypeDiv": {
       "text": "Here you can select whether to show the absolute or percent values in the tables."
@@ -115,26 +124,30 @@
     },
     "header": {
       "text": "Here you can select which header(s) to show. By pressing ctrl or shift, or drag and drop you can select multiple elements.",
-      "advancedText": "When the advanced settings are shown, you can also (un-)select individual sub-headers on the right-hand side."
+      "buttonTitle": "Expand / collapse column select field.",
+      "buttonText": "By clicking this button the individual columns of the headers can also be selected.",
+      "advancedText": "Here you can select individual columns."
     },
     "rows": {
       "text": "Here you can select which type(s) of rows to show. The following 3 types exist:<ul><li>Detail:<br>These are the standard values in the tables.</li><li>Summary:<br>These are summarized values sometimes below the 'Detail' values.</li><li>MStatistics:<br>These are the values shown for item batteries, such as mean or top2.</li></ul>All other values (such as the rows with totals) can't be selected here in table_charter. However, totals & means can also be shown for each column (see the hints in the advanced options below).",
-      "advancedText": "The same goes for the rows. When the advanced settings are shown, you can also (un-)select individual rows on the right-hand side."
+      "buttonTitle": "Expand / collapse row select field.",
+      "buttonText": "By clicking this button the individual rows of the crosstabs can also be selected.",
+      "advancedText": "Here you can select individual rows."
     },
-    "showHide": {
-      "title": "show / hide advanced settings button",
-      "text": "By clicking this button the advanced settings are shown / hidden."
+    "toggleAdvancedMenu": {
+      "title": "Show advanced / initial settings",
+      "text": "By clicking this button the advanced / initial settings are shown."
     },
     "showHelp": {
-      "title": "show the app walkthrough",
-      "text": "By clicking this button the introduction walkthrough is shown. If the advanced settings are shown (see previous step) they are also described."
+      "title": "Show the app walkthrough",
+      "text": "By clicking this button the introduction walkthrough is shown for all expanded elements."
     },
     "hideMenu": {
-      "title": "collapse / expand menu",
-      "text": "By clicking this button the settings menu is collapsed / expanded (this increases / decreases the size of the plots)."
+      "title": "Collapse / expand menu",
+      "text": "By clicking this button the settings menu is collapsed / expanded (this increases / decreases the size of the plots). <ul><li>In the minimized view you can open the elements by clicking on them.</li><li>By drag-and-drop on the title bar of the popups you can move the elements, and change their size in the bottom right corner.</li><li>By clicking on the top right button you can move them back to the navbar in the minimized view.</li></ul>"
     },
     "flipXY": {
-      "title": "flip x & y axis",
+      "title": "Flip x & y axis",
       "text": "By clicking this button you can choose if the x or the y axis should be the categorical axis."
     },
     "plotType": {
@@ -173,10 +186,10 @@
       "textpt1": ":<br>This setting truncates the axis labels, if they are too long. Their full text is shown on hover.</li><li>",
       "textpt2": ":<br>The header axis labels are fully shown. This can lead to overlapping labels, which you also might avoid by reducing the font size.</li>"
     },
-    "colorscaleSelector": {
+    "colorscaleSelect": {
       "text": "Here you can select if a categorical or ordinal color scale is used.<br/>In categorical scales, the colors of neighboring items are very distinct. Each color represents a value / variable label in the raw data.<br/>In ordinal scales a color ramp is used, where values change gradually. In this case the values in the raw data are plotted. This can't be selected for multiple-choice questions or item batteries."
     },
-    "colorschemeSelector": {
+    "colorschemeSelect": {
       "text": "Here you can choose between various color schemes. The available choices depend on whether a categorical or ordinal color scale is used (see previous step)."
     },
     "resetPlots": {
@@ -184,6 +197,34 @@
     },
     "saveSettings": {
       "text": "Clicking this button saves the app in your browser's download folder with all the current settings chosen in the different plots."
+    },
+    "crosstab": {
+      "intro": {
+          "title": "Crosstab",
+          "text": "This element shows the crosstab that is currently plotted."
+      },
+      "selectType": {
+          "title": "Choose shown values of the crosstab",
+          "text": "Here you can select whether all values of the crosstab are shown, or only those that are currently plotted."
+      }
+    },
+    "questionsTable": {
+      "intro": {
+        "title": "Questions manager",
+        "text": "The questions manager allows you to modify the questions shown in this app. For instance, you can hide questions (disallowing to choose them in the question select element), edit their titles, or duplicate questions (in order to show them with different plot settings)."
+      },
+      "show": {
+        "title": "Show / hide question",
+        "text": "By clicking on a cell in this column, you can show/hide the corresponding plot."
+      },
+      "question": {
+        "title": "Edit question text",
+        "text": "By clicking on a cell in this column, you can edit the title of the corresponding plot. Submit your edited text by pressing Shift+Enter."
+      },
+      "clone": {
+        "title": "Duplicate a question",
+        "text": "By clicking on a cell in this column, you can duplicate the corresponding plot, in order to show it with changed settings."
+      }
     }
   }
 }

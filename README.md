@@ -97,4 +97,4 @@ The versatility of the lit element with charts from observable plot and the tidy
 
 ## License
 
-Please take not that the source code of this repo is published under the [AGPLv3 license](LICENSE).
+Please take note that the source code of this repo is published under the [AGPLv3 license](LICENSE).

@@ -1,13 +1,13 @@
 import { LitElement, html, css } from "lit";
 
-export class RowtypeSelector extends LitElement {
+export class RowtypeSelect extends LitElement {
     static properties = {
         all_num_types: { type: Array },
         chosen_num_type: { type: Array },
     };
 
     get _chosen_num_type() {
-        return this.renderRoot?.querySelector("#num_type-selector") ?? null;
+        return this.renderRoot?.querySelector("#num_type-select") ?? null;
     }
 
     _update_num_type() {
@@ -28,10 +28,10 @@ export class RowtypeSelector extends LitElement {
         return html`
             <div>
                 <select
-                    id="num_type-selector"
+                    id="num_type-select"
                     @change=${this._update_num_type}
                     .value=${this.chosen_num_type}
-                    data-test-id="num_type-selector"
+                    data-test-id="num_type-select"
                 >
                     ${this.all_num_types.map(
                         (col) => html` <option title=${col}>${col}</option> `,
@@ -50,4 +50,4 @@ export class RowtypeSelector extends LitElement {
         `,
     ];
 }
-customElements.define("num_type-selector", RowtypeSelector);
+customElements.define("num_type-select", RowtypeSelect);

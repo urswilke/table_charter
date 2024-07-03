@@ -2,16 +2,15 @@
 cache:
   paths:
     - node_modules/
-
 run_test_firefox:
-  image: atools/firefox-headless:java17-nodelts-latest
+  image: timbru31/node-alpine-firefox
   script:
-    - apt-get update
-    - apt-get -y install libasound2
     - firefox --version
     - node -v
     - npm install
     - npm run test -- --firefox
+  # rules:
+  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 run_test_chrome:
   image: atools/chrome-headless:java17-nodelts-latest
@@ -20,6 +19,8 @@ run_test_chrome:
     - node -v
     - npm install
     - npm run test -- --chrome
+  # rules:
+  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 pages:
   image: node:20.11.0
