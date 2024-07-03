@@ -8,12 +8,13 @@ cache:
 # and on gitlab ci also 2 of 3 tests succeed
 # (cf. https://gitlab.com/urswilke/table_charter/-/jobs/7105218645)
 run_test_firefox:
-  image: selenium/node-firefox
-  # see here:
-  # https://stackoverflow.com/questions/56579468/list-directory-var-lib-apt-lists-partial-is-missing-acquire-20-not-a-direc/57930100#57930100
-  # https://forum.gitlab.com/t/gitlab-ci-yaml-use-image-with-a-specific-user/72854/5
-  docker:
-    user: root
+  image: 
+    name: selenium/node-firefox
+    # see here:
+    # https://stackoverflow.com/questions/56579468/list-directory-var-lib-apt-lists-partial-is-missing-acquire-20-not-a-direc/57930100#57930100
+    # https://forum.gitlab.com/t/gitlab-ci-yaml-use-image-with-a-specific-user/72854/5
+    docker:
+      user: root
   script:
     - apt-get update
     - apt-get -y install libasound2
