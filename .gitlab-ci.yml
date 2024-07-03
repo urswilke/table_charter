@@ -2,14 +2,8 @@
 cache:
   paths:
     - node_modules/
-# TODO: find new docker image!
-# (deprecated: https://registry.hub.docker.com/r/atools/firefox-headless)
-# I assume we need a new one with a newer firefox version (locally with version 126.0 it works)
-# and on gitlab ci also 2 of 3 tests succeed
-# (cf. https://gitlab.com/urswilke/table_charter/-/jobs/7105218645)
 run_test_firefox:
-  image: 
-    name: timbru31/node-alpine-firefox
+  image: timbru31/node-alpine-firefox
   script:
     - npm install
     - npm run test -- --firefox
