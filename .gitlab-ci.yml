@@ -18,7 +18,7 @@ run_test_firefox:
   script:
     - apt-get update
     - apt-get -y install libasound2
-    - firefox --version
+    # - firefox --version
     - node -v
     - npm install
     - npm run test -- --firefox
