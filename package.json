@@ -27,8 +27,6 @@
         "deploy": "node build/deploy.js",
         "standalone-build": "vite build -- --standalone",
         "standalone-preview": "vite build -- --standalone && firefox ./dist/index.html",
-        "copy-build": "node -e \"require('fs').copyFileSync('./dist/index.html', '$(grep PRODUCTION_PATH .env.local | cut -d '=' -f2)');\"",
-        "standalone-update": "npm run standalone-build && npm run copy-build",
         "wdio": "wdio run ./wdio.conf.js",
         "prepublishOnly": "rollup -c"
     },
