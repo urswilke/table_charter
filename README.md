@@ -42,6 +42,7 @@ In [example_dashboard.html](example_dashboard.html) we added a header (with the 
 
 -   You can run the app by downloading a stand-alone html file and open it locally in your browser.
 -   Another way is to install the package on your machine (see below) and then generate a stand-alone file with the current state of all the needed javascript code included (in contrast to providing a download link to the unpkg cdn) with `npm run standalone-build`.
+-   When you run `npm run standalone-update` the generated html file is additionally copied to the file specified in the `PRODUCTION_PATH` env variable specified in the `.env.local` file with `PRODUCTION_PATH=/filepath/on/your/machine.html`
 
 ### Installation
 
