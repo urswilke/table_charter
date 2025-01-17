@@ -1,7 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
-// import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css?inline";
-// import style_light from "tabulator-tables/dist/css/tabulator.min.css?inline";
 import { get, translate } from "lit-translate";
 
 export class QuestionsTable extends LitElement {
@@ -42,7 +40,14 @@ export class QuestionsTable extends LitElement {
     }
 
     render() {
-        return html` <div id="questions-table"></div> `;
+        // https://stackoverflow.com/questions/69613048/how-to-load-external-css-file-with-lit/75973380#75973380
+        return html`
+            <link
+                rel="stylesheet"
+                href="https://unpkg.com/tabulator-tables/dist/css/tabulator_midnight.min.css"
+            />
+            <div id="questions-table"></div>
+        `;
     }
     _send_table_updated_event() {
         const options = {
@@ -53,14 +58,6 @@ export class QuestionsTable extends LitElement {
     }
 
     static styles = [
-        // css`
-        //     @media (prefers-color-scheme: light) {
-        //         ${unsafeCSS(style_light)}
-        //     }
-        //     @media (prefers-color-scheme: dark) {
-        //         ${unsafeCSS(style_dark)}
-        //     }
-        // `,
         css`
             #questions-table {
                 overflow: scroll;
