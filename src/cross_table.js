@@ -1,7 +1,7 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
-import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css?inline";
-import style_light from "tabulator-tables/dist/css/tabulator.min.css?inline";
+// import style_dark from "tabulator-tables/dist/css/tabulator_midnight.min.css?inline";
+// import style_light from "tabulator-tables/dist/css/tabulator.min.css?inline";
 import { group } from "d3";
 import { distinct } from "./utils.js";
 import { translate } from "lit-translate";
@@ -189,14 +189,14 @@ export class CrossTable extends LitElement {
     }
 
     static styles = [
-        css`
-            @media (prefers-color-scheme: light) {
-                ${unsafeCSS(style_light)}
-            }
-            @media (prefers-color-scheme: dark) {
-                ${unsafeCSS(style_dark)}
-            }
-        `,
+        // css`
+        //     @media (prefers-color-scheme: light) {
+        //         ${unsafeCSS(style_light)}
+        //     }
+        //     @media (prefers-color-scheme: dark) {
+        //         ${unsafeCSS(style_dark)}
+        //     }
+        // `,
         css`
             .select-crosstab-type {
                 margin: 3px;
