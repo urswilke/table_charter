@@ -7,26 +7,13 @@
 [![pipeline status](https://gitlab.com/urswilke/table_charter/badges/main/pipeline.svg)](https://gitlab.com/urswilke/table_charter/-/commits/main)
 [![pipeline status](https://img.shields.io/npm/v/table_charter.svg)](https://npmjs.com/package/table_charter)
 
-WIP!
+WIP
 
 ## Introduction
 
-This javascript package provides a web component `<table-charter>` (using [lit](https://github.com/lit/lit)) that allows to interactively generate charts of the crosstabs in table books (see below). Please open the [demo](https://urswilke.gitlab.io/table_charter/) to see it live.
+This javascript package provides a web component `<table-charter>` that hosts an app (using [lit](https://github.com/lit/lit)) which allows to interactively choose the plot type and its settings of the crosstabs generated with the [crosstabser](https://gitlab.com/urswilke/crosstabser) package (for instance, by calling the [`Tabula$save_html_app()`](https://urswilke.gitlab.io/crosstabser/reference/Tabula.html#method-Tabula-save_html_app)). Please open the [demo](https://urswilke.gitlab.io/table_charter/) to see it live.
 
-## Table books
-
-Table books are Excel VBA files to [interactively](....linkToDescrInHomepage_TBD.......) select and show subsets of the contained crosstabs with various survey statistics, produced by DATA-Connection Gebr. Wilke GbR, a small company of my brother and me. The answers to the questions are in the rows and the total and a breakdown of various sub-populations in columns (headers) of the crosstabs.
-
--   _We generate the table books with 2 R packages which we will also soon 🤞 put open source._
--   _Please contact [us](........linkToOurWebseite_TBD.....) if you're interested in these table books for one of your projects_.
-
-### Example table book
-
-Perhaps it's easiest to dive right into it. For demonstration purposes we have an [example table book](...bsp_tb_TBD.xlsx) (non-interactive, stripped off of all VBA) of a made-up survey (see raw SPSS data of the survey [here](..........bsp_raw_data_TBD.sav)).
-
-## table_charter
-
-When calculating the data in the crosstabs from the raw data, we also translate it to a long format. Each value occupies one row, as needed by [observable plot](https://github.com/observablehq/plot), which is used to generate the charts. Some modifications are then added with [d3](https://github.com/d3/d3). In a nut shell, table_charter loads the long table book data into an app, where you can then also interactively choose the settings of the plots you're interested in.
+For an interactive demo how table_charter depends on datadaptor & crosstabser see [here](https://urswilke.github.io/datadaptor-crosstabser-table_charter-demo/). See [here](https://urswilke.gitlab.io/crosstabser/articles/data-format.html) for a description of the data format needed by table_charter.
 
 ## Usage
 
@@ -34,7 +21,7 @@ In order to use table_charter you need to load the underlying code into your htm
 
 ### Embedding in html
 
-To understand how you can embed table_charter in html documents, have a look at the [`minimal_example.html`](minimal_example.html) stand-alone html file. When the source code is loaded, it provides the `TableCharter` web component that contains the app which you can embed with the `<table-charter>` tag in your html.
+To understand how you can embed table_charter in html documents, have a look at the [minimal_example.html](minimal_example.html) stand-alone html file. When the source code is loaded, it provides the `TableCharter` web component that contains the app which you can embed with the `<table-charter>` tag in your html.
 
 In [example_dashboard.html](example_dashboard.html) we added a header (with the option to change the language of the app; only German and English for now) and a footer and some styling.
 
@@ -89,7 +76,6 @@ The versatility of the lit element with charts from observable plot and the tidy
 
 -   add further options to controll the charts' features & appearance,
 -   connect the dashboard to a data base,
--   also allow to generate interactive html versions of the tables in our table books,
 -   easily expand the generated plot types, such as
 -   plotting the data of multiple questions in different columns, or
 -   assembling the survey data of different years
