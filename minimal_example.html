@@ -13,11 +13,22 @@
             body {
                 font-family: system-ui, sans-serif;
             }
+            section {
+                display: flex;
+                flex-flow: column;
+                height: 95vh;
+            }
+            table-charter {
+                flex: 1 1;
+                overflow: auto;
+                margin: 5px;
+            }
         </style>
     </head>
     <body>
-        <table-charter></table-charter>
-        <script>
+        <section>
+            <table-charter></table-charter>
+        </section>
             // The following sets the attribute data in the table-charter element to the content of the file
             // https://gitlab.com/urswilke/table_charter/-/blob/main/src/example_compressed.json
             // instead, you could also write:
