@@ -11,9 +11,19 @@ WIP
 
 ## Introduction
 
-This javascript package provides a web component `<table-charter>` that hosts an app (using [lit](https://github.com/lit/lit)) which allows to interactively choose the plot type and its settings of the crosstabs generated with the [crosstabser](https://gitlab.com/urswilke/crosstabser) package (for instance, by calling the [`Tabula$save_html_app()`](https://urswilke.gitlab.io/crosstabser/reference/Tabula.html#method-Tabula-save_html_app)). Please open the [demo](https://urswilke.gitlab.io/table_charter/) to see it live.
+This javascript package provides a web component `<table-charter>` that hosts an app (using [lit](https://github.com/lit/lit)) which allows to interactively choose the plot type and its settings of the crosstabs generated with the [crosstabser](https://gitlab.com/urswilke/crosstabser) package (for instance, by calling the [`Tabula$save_html_app()`](https://urswilke.gitlab.io/crosstabser/reference/Tabula.html#method-Tabula-save_html_app)). Please open the [demo](https://urswilke.gitlab.io/table_charter/) for an interactive walkthrough and to see it live.
 
 For an interactive demo how table_charter depends on datadaptor & crosstabser see [here](https://urswilke.github.io/datadaptor-crosstabser-table_charter-demo/). See [here](https://urswilke.gitlab.io/crosstabser/articles/data-format.html) for a description of the data format needed by table_charter.
+
+## Installation
+
+If you also want to experiment with the code inside the table_charter web component, install it on your machine with (needs git & npm):
+
+```
+git clone https://gitlab.com/urswilke/table_charter
+cd table_charter
+npm i
+```
 
 ## Usage
 
@@ -28,16 +38,10 @@ In [example_dashboard.html](example_dashboard.html) we added a header (with the 
 ### Stand-alone html files
 
 -   You can run the app by downloading a stand-alone html file and open it locally in your browser.
--   Another way is to install the package on your machine (see below) and then generate a stand-alone file with the current state of all the needed javascript code included (in contrast to providing a download link to the unpkg cdn) with `npm run standalone-build`.
-
-### Installation
-
-If you also want to experiment with the code inside the table_charter web component, install it on your machine with (needs git & npm):
+-   Another way is to install the package on your machine (see above) and then generate a stand-alone file with the current state of all the needed javascript code included (in contrast to providing a download link to the unpkg cdn) running:
 
 ```
-git clone https://gitlab.com/urswilke/table_charter
-cd table_charter
-npm i
+npm run standalone-build
 ```
 
 ### Dev server
@@ -54,7 +58,15 @@ This will run the app in `index.html` and all the related source code on a local
 
 Our [demo](https://urswilke.gitlab.io/table_charter/) is the result of deploying the production version of the table_charter html element automatically each time code is pushed into this repo (with the `pages` part in the [gitlab ci](.gitlab-ci.yml)). By forking this repo and adapting the data used, you can deploy dashboards with your own data to the web.
 
-### Tests
+### Using quarto
+
+You can embed the app in a quarto document as it's done [here](https://github.com/urswilke/datadaptor-crosstabser-table_charter-demo/blob/main/datadaptor-crosstabser-table_charter-demo.qmd) (the qmd document that creates this [interactive demo](https://urswilke.github.io/datadaptor-crosstabser-table_charter-demo/)) and allows to use [datadaptor](https://gitlab.com/urswilke/datadaptor) and [crosstabser](https://gitlab.com/urswilke/crosstabser) in the same file.
+
+### Embedding in observable notebooks
+
+An example how you can embed table-charter in an observable notebook is shown [here](https://observablehq.com/@urswilke/table-charter).
+
+## Tests
 
 The tests are made with [webdriverio](https://github.com/webdriverio/webdriverio/) and can be run on firefox with
 
