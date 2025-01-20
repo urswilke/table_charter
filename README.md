@@ -33,12 +33,12 @@ In order to use table_charter you need to load the underlying code into your htm
 
 To understand how you can embed table_charter in html documents, have a look at the [minimal_example.html](minimal_example.html) stand-alone html file. When the source code is loaded, it provides the `TableCharter` web component that contains the app which you can embed with the `<table-charter>` tag in your html.
 
-In [example_dashboard.html](example_dashboard.html) we added a header (with the option to change the language of the app; only German and English for now) and a footer and some styling.
+In [example_dashboard.html](example_dashboard.html) we added a header (with the option to change the language of the app; only English and German for now, but other languages can be easily added with an according json file in [src/languages](src/languages) and adapting [languages.js](src/languages/languages.js)) and a footer and some styling.
 
 ### Stand-alone html files
 
--   You can run the app by downloading a stand-alone html file and open it locally in your browser.
--   Another way is to install the package on your machine (see above) and then generate a stand-alone file with the current state of all the needed javascript code included (in contrast to providing a download link to the unpkg cdn) running:
+- You can run the app by downloading a stand-alone html file and open it locally in your browser.
+- Another way is to install the package on your machine (see above) and then generate a stand-alone file with the current state of all the needed javascript code included (in contrast to providing a download link to the unpkg cdn) running:
 
 ```
 npm run standalone-build
@@ -46,13 +46,13 @@ npm run standalone-build
 
 ### Dev server
 
-You can then run the app on a dev server on your computer with [vite](https://github.com/vitejs/vite) by entering the following commands in your cli:
+You can run the app on a dev server on your computer with [vite](https://github.com/vitejs/vite) by entering the following in your console:
 
 ```
 npm run dev
 ```
 
-This will run the app in `index.html` and all the related source code on a local dev server (`example_dashboard.html` is a stand-alone verion of `index.html`).
+This will run the app in `index.html` and all the related source code on a local dev server (`example_dashboard.html` is a stand-alone version of `index.html`).
 
 ### Deploying it in the web
 
@@ -86,12 +86,12 @@ They are also run on push with the gitlab ci.
 
 The versatility of the lit element with charts from observable plot and the tidy data structure allow to easily
 
--   add further options to controll the charts' features & appearance,
--   connect the dashboard to a data base,
--   easily expand the generated plot types, such as
--   plotting the data of multiple questions in different columns, or
--   assembling the survey data of different years
--   etc. ...
+- add further options to controll the charts' features & appearance,
+- connect the dashboard to a data base,
+- easily expand the generated plot types, such as
+- plotting the data of multiple questions in different columns, or
+- assembling the survey data of different years
+- etc. ...
 
 ## License
 
