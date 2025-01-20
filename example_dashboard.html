@@ -173,20 +173,21 @@
                         .setAttribute("data", data);
                 })();
             </script>
-            <script>
-
+            <script id="project-data">
                 const project_data = {
-                    client_logo_base64: "",
-                    client_logo_url:
+                    logo_base64: "",
+                    logo_url:
                         "https://gitlab.com/urswilke/table_charter/-/raw/main/img/logo_small.svg",
-                    project_name: "Dashboard demo of example table book",
+                    title: "Dashboard demo of example table book",
                     date: "2024-5-18",
                 };
+            </script>
+            <script>
                 const logo =
-                    project_data.client_logo_base64 !== ""
+                    project_data.logo_base64 !== ""
                         ? "data:image/png;base64, " +
-                          project_data.client_logo_base64
-                        : project_data.client_logo_url;
+                          project_data.logo_base64
+                        : project_data.logo_url;
                 document.getElementById("logo").src = logo;
 
                 const browser_language =
@@ -200,7 +201,7 @@
                         day: "numeric",
                     }).format(new Date(project_data.date));
                     document.getElementById("title-text").innerHTML =
-                        project_data.project_name + " - " + date;
+                        project_data.title + " - " + date;
                 }
                 update_title(browser_language);
 
