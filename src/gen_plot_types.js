@@ -339,6 +339,12 @@ export class PlotOptions {
         this.options.height = 0.55 * this.params.element_height;
         this.options.style = { fontSize: this.input.font_size + "px" };
         this.options.color.className = "large-font";
+        let axis_ = derived.is_x ? Plot.axisY : Plot.axisX;
+        let axis_lang_formatter = {
+            tickFormat: (d) => d.toLocaleString(this.params.language),
+        };
+        let both_axes_formatted = [axis_(axis_lang_formatter)];
+        this.options.marks.push(...both_axes_formatted);
     }
 }
 
