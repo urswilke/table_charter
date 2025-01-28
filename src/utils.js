@@ -229,7 +229,7 @@ export const left_join = (arr1, arr2, fun) => {
 function merge_table_parts(obj) {
     var res;
     res = left_join(obj.Row, obj.Tab, (x) => x.QuestNo + x.TabNo);
-    res = left_join(obj.Val, res, (x) => x.QuestNo + x.RowNo);
+    res = left_join(obj.Val, res, (x) => x.QuestNo + x.TabNo + x.RowNo);
     res = left_join(res, obj.Col, (x) => x.ColNo);
     // res = left_join(res, obj.Head, x => x.HeadNo)
     return res.sort((a, b) => a.QuestLine > b.QuestLine);
