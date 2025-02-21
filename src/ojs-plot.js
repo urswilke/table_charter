@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { translate, get } from "lit-translate";
-import { fantasy_string } from "./utils.js";
+import { bg_col, fg_col, fantasy_string } from "./utils.js";
 
 import { PlotOptions } from "./gen_plot_types.js";
 import * as Plot from "@observablehq/plot";
@@ -188,6 +188,27 @@ export class OJSPlot extends LitElement {
         this.style.setProperty("--hyphens-attr", hyphenator);
 
         const inset = (len - margin1 - margin2) / (10 * n_cats + 1);
+
+        // https://stackoverflow.com/questions/35075693/d3-add-filter-as-background-to-svg-element/35076784#35076784
+        var svg = select(this.renderedPlot).select("svg");
+        var filterDef = svg.append("defs");
+        var filter = filterDef
+            .append("filter")
+            .attr("id", "textBackground")
+            .attr("x", "-20%")
+            .attr("y", "-10%")
+            .attr("width", "140%")
+            .attr("height", "120%");
+        filter
+            .append("feFlood")
+            .attr("flood-color", bg_col)
+            .attr("result", "txtBackground");
+        var filterMerge = filter.append("feMerge");
+        filterMerge.append("feMergeNode").attr("in", "txtBackground");
+        filterMerge.append("feMergeNode").attr("in", "SourceGraphic");
+        select(this.renderedPlot)
+            .selectAll("g[aria-label='text'] > text")
+            .style("filter", "url(#textBackground)");
 
         var cat_labels_div = select(this.renderedPlot)
             .append("div")
