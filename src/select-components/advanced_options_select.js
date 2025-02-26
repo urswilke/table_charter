@@ -20,7 +20,7 @@ export class AdvancedOptionsSelect extends LitElement {
     constructor() {
         super();
         this.show_text_options = ["always", "never", "ifGE5"];
-        this.show_box_options = ["box", "halo", "none"];
+        this.show_box_options = ["halo", "box", "none"];
         this.axis_labels_options = ["whole", "truncate"];
     }
 
