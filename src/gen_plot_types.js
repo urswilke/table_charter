@@ -111,7 +111,11 @@ export class PlotOptions {
         axis_ = is_x ? "axisX" : "axisY";
         group_ = is_x ? "groupX" : "groupY";
         x_chart_labels_width = is_x ? 1 : 0.25;
-        decimal_formatter = Intl.NumberFormat(this.params.language).format;
+        decimal_formatter = (x, n_decimals) =>
+            x.toLocaleString(this.params.language, {
+                minimumFractionDigits: n_decimals,
+                maximumFractionDigits: n_decimals,
+            });
         this.derived = {
             x2,
             x1,
@@ -173,7 +177,7 @@ export class PlotOptions {
                     x.Value < get_max_stack_value(this.plot_data) / 20)
                     ? null
                     : // if this.input.show_text === "always" the else option should also be selected...:
-                      decimal_formatter(x.Value.toFixed(n_decimals)),
+                      decimal_formatter(x.Value, n_decimals),
             z: (x) => x.RowNo,
             title: tooltip_fun(n_decimals, decimal_formatter),
             // put halo around text:
@@ -188,7 +192,7 @@ export class PlotOptions {
             text: (x) =>
                 x.ColMean === undefined
                     ? null
-                    : "Ø: " + decimal_formatter(x.ColMean.toFixed(1)),
+                    : "Ø: " + decimal_formatter(x.ColMean, 1),
         };
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 10;
         is_x
@@ -284,7 +288,7 @@ export class PlotOptions {
             text: (x) =>
                 x.ColMean === undefined
                     ? null
-                    : "Ø: " + decimal_formatter(x.ColMean.toFixed(1)),
+                    : "Ø: " + decimal_formatter(x.ColMean, 1),
         };
         group_args2_text_n[is_x ? "dy" : "dx"] = is_x ? -15 : 15;
         is_x
@@ -369,7 +373,7 @@ function tooltip_fun(n_decimals, decimal_formatter) {
             // it would lead to an error, for a line plot without this check:
             x.Value === null
                 ? null
-                : `${get("tooltips.value")}: ${decimal_formatter(x.Value.toFixed(n_decimals))}`,
+                : `${get("tooltips.value")}: ${decimal_formatter(x.Value, n_decimals)}`,
             null,
         ].join("\n");
 }
