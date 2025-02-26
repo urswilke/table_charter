@@ -157,7 +157,6 @@ export function get_walkthrough_options(tc) {
             title: get("fontSize.label"),
             intro: get("walkthrough.fontSize.text"),
         },
-
         {
             element: aos_el("#show-text"),
             title: get("showText.label"),
@@ -169,6 +168,18 @@ export function get_walkthrough_options(tc) {
                 get("walkthrough.showText.textpt2") +
                 get("showText.ifGE5") +
                 get("walkthrough.showText.textpt3"),
+        },
+        {
+            element: aos_el("#show-box"),
+            title: get("showBox.label"),
+            intro:
+                get("walkthrough.showBox.text1") +
+                get("showBox.box") +
+                get("walkthrough.showBox.box") +
+                get("showBox.halo") +
+                get("walkthrough.showBox.halo") +
+                get("showBox.none") +
+                get("walkthrough.showBox.none"),
         },
         {
             element: aos_el("#axis-labels"),

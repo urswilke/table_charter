@@ -13,12 +13,14 @@ export class AdvancedOptionsSelect extends LitElement {
         separate_headers: { type: Boolean },
         font_size: { type: String },
         show_text: { type: String },
+        show_box: { type: String },
         axis_labels: { type: String },
     };
 
     constructor() {
         super();
         this.show_text_options = ["always", "never", "ifGE5"];
+        this.show_box_options = ["box", "halo", "none"];
         this.axis_labels_options = ["whole", "truncate"];
     }
 
@@ -49,6 +51,9 @@ export class AdvancedOptionsSelect extends LitElement {
     get _show_text() {
         return this.renderRoot?.querySelector("#show-text").value;
     }
+    get _show_box() {
+        return this.renderRoot?.querySelector("#show-box").value;
+    }
     get _axis_labels() {
         return this.renderRoot?.querySelector("#axis-labels").value;
     }
@@ -72,6 +77,17 @@ export class AdvancedOptionsSelect extends LitElement {
             composed: true,
         };
         this.dispatchEvent(new CustomEvent("update-show-text", options));
+    }
+    _on_show_box_change() {
+        this.show_box = this._show_box;
+        const options = {
+            detail: {
+                show_box: this.show_box,
+            },
+            bubbles: true,
+            composed: true,
+        };
+        this.dispatchEvent(new CustomEvent("update-show-box", options));
     }
     _on_axis_labels_change() {
         this.axis_labels = this._axis_labels;
@@ -163,6 +179,25 @@ export class AdvancedOptionsSelect extends LitElement {
                                     .value=${col}
                                 >
                                     ${translate("showText." + col)}
+                                </option>
+                            `,
+                        )}
+                    </select>
+                </div>
+                <div>${translate("showBox.label")}</div>
+                <div>
+                    <select 
+                        .disabled=${this.show_text === "never"}
+                        id="show-box" 
+                        @change=${this._on_show_box_change}
+                    >
+                        ${this.show_box_options.map(
+                            (col) => html`
+                                <option
+                                    .selected=${this.show_box === col}
+                                    .value=${col}
+                                >
+                                    ${translate("showBox." + col)}
                                 </option>
                             `,
                         )}

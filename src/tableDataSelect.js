@@ -141,6 +141,7 @@ export class TableDataSelect extends LitElement {
             separate_headers: true,
             font_size: is_mobile ? 12 : 20,
             show_text: "ifGE5",
+            show_box: "halo",
             axis_labels: "truncate",
         });
         this.sel_question_data();
@@ -433,6 +434,12 @@ export class TableDataSelect extends LitElement {
         });
         this._update_plot_data();
     }
+    _on_show_box_update(e) {
+        this.update_choices({
+            show_box: e.detail.show_box,
+        });
+        this._update_plot_data();
+    }
     _on_axis_labels_update(e) {
         this.update_choices({
             axis_labels: e.detail.axis_labels,
@@ -632,6 +639,7 @@ export class TableDataSelect extends LitElement {
                                     @update-checkboxes="${this._on_checkbox_update}"
                                     @update-font-size="${this._on_font_size_update}"
                                     @update-show-text="${this._on_show_text_update}"
+                                    @update-show-box="${this._on_show_box_update}"
                                     @update-axis-labels="${this._on_axis_labels_update}"
                                     .n_axis=${this.choices.n_axis}
                                     .show_subtitles=${this.choices.show_subtitles}
@@ -640,6 +648,7 @@ export class TableDataSelect extends LitElement {
                                     .separate_headers=${this.choices.separate_headers}
                                     .font_size=${this.choices.font_size}
                                     .show_text=${this.choices.show_text}
+                                    .show_box=${this.choices.show_box}
                                     .axis_labels=${this.choices.axis_labels}
                                 >
                                 </advanced-options-select>

@@ -189,7 +189,7 @@ export class OJSPlot extends LitElement {
 
         const inset = (len - margin1 - margin2) / (10 * n_cats + 1);
 
-        this.add_box_around_text();
+        val.choices.show_box === "box" && this.add_box_around_text();
 
         var cat_labels_div = select(this.renderedPlot)
             .append("div")

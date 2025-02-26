@@ -96,6 +96,12 @@
     "never": "never",
     "ifGE5": "if >= 5 %"
   },
+  "showBox": {
+    "label": "Text background",
+    "box": "Box",
+    "halo": "Halo",
+    "none": "None"
+  },
   "axisLabels": {
     "label": "Too long axis labels",
     "truncate": "truncate",
@@ -179,6 +185,12 @@
       "textpt1": ":<br>The values are always shown.</li><li>",
       "textpt2": ":<br>The values are never shown.</li><li>",
       "textpt3": ":<br>The default; the values are only shown if their size is at least 5 % of the maximum stacked size (height or width, depending on the categorical axis).</li></ul>"
+    },
+    "showBox": {
+      "text1": "Here you can choose the background of the text values in the plots (only applies for bar plots). There are 3 settings:<ul><li>",
+      "box": ":<br>The values are shown in a box.</li><li>",
+      "halo": ":<br>The values are shown with a halo.</li><li>",
+      "none": ":<br>Without an additional background.</li></ul>"
     },
     "axisLabels": {
       "title": "Truncate / show full header labels in axis",

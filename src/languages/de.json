@@ -96,6 +96,12 @@
     "never": "nie",
     "ifGE5": "wenn >= 5 %"
   },
+  "showBox": {
+    "label": "Text-Hintergrund",
+    "box": "Box",
+    "halo": "Umrandung",
+    "none": "Keiner"
+  },
   "axisLabels": {
     "label": "Überlange Achsen-Label",
     "truncate": "abschneiden",
@@ -179,6 +185,12 @@
       "textpt1": ":<br>Die Werte werden immer angezeigt.</li><li>",
       "textpt2": ":<br>Die Werte werden nie angezeigt.</li><li>",
       "textpt3": ":<br>Die Werte werden nur angezeigt, wenn sie mindestens 5 % der maximalen Gesamt-Länge sind (Höhe oder Breite, je nachdem ob die X- oder Y-Achse als kategorische Achse ausgewählt ist; siehe oben).</li></ul>"
+    },
+    "showBox": {
+      "text1": "Hier kannst Du den Hintergrund der Text-Werte in den Plots einstellen:<ul><li>",
+      "box": ":<br>Die Werte werden in einer Box angezeigt.</li><li>",
+      "halo": ":<br>Die Werte werden mit einer Umrandung angezeigt.</li><li>",
+      "none": ":<br>Ohne Hintergrund (bei manchen Farben schlecht erkennbar).</li></ul>"
     },
     "axisLabels": {
       "title": "Label der Köpfe anzeigen / abschneiden",

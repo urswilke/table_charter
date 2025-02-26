@@ -178,8 +178,9 @@ export class PlotOptions {
             title: tooltip_fun(n_decimals, decimal_formatter),
             // put halo around text:
             // https://observablehq.com/plot/marks/text#text-options
-            stroke: bg_col,
-            strokeWidth: 3,
+            ...(this.input.show_box === "halo"
+                ? { stroke: bg_col, strokeWidth: 3 }
+                : {}),
             fill: fg_col,
         };
         group_args2_text_n = {
