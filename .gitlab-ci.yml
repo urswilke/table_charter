@@ -13,7 +13,7 @@ cache:
 #   #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 run_test_chrome:
-  image: selenium/node-chrome
+  image: timbru31/node-chrome
   script:
     - google-chrome --version
     - node -v
