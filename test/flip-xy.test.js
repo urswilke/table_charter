@@ -31,7 +31,7 @@ describe("Flip xy button", () => {
         await expect(derived_p.text_).toEqual("textY");
 
         // shows barX plot after clicking button
-        flip_xy_button.click();
+        await flip_xy_button.click();
         plot_options = await ojs_plot_el.getProperty("plot_options");
         derived_p = plot_options.derived_p;
         await expect(derived_p.bar_).toEqual("barX");
@@ -40,7 +40,7 @@ describe("Flip xy button", () => {
         await expect(derived_p.text_).toEqual("textX");
 
         // again shows barY plot after clicking again:
-        flip_xy_button.click();
+        await flip_xy_button.click();
         plot_options = await ojs_plot_el.getProperty("plot_options");
         derived_p = plot_options.derived_p;
         await expect(derived_p.bar_).toEqual("barY");
