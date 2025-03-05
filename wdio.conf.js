@@ -99,7 +99,7 @@ export const config = {
     exclude: [],
     maxInstances: 10,
     capabilities: [capabilities],
-    logLevel: "error",
+    logLevel: "info",
     bail: 0,
     baseUrl: "",
     waitforTimeout: 10000,
