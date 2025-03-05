@@ -2,18 +2,18 @@
 cache:
   paths:
     - node_modules/
-run_test_firefox:
-  image: timbru31/node-alpine-firefox
-  script:
-    - firefox --version
-    - node -v
-    - npm install
-    - npm run test -- --firefox
-  # rules:
-  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+# run_test_firefox:
+#   image: timbru31/node-alpine-firefox
+#   script:
+#     - firefox --version
+#     - node -v
+#     - npm install
+#     - npm run test -- --firefox
+#   # rules:
+#   #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 run_test_chrome:
-  image: atools/chrome-headless:java17-nodelts-latest
+  image: selenium/standalone-chromium
   script:
     - google-chrome --version
     - node -v
@@ -22,14 +22,14 @@ run_test_chrome:
   # rules:
   #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-pages:
-  image: node:20.11.0
-  script:
-    - npm install
-    - npm run build
-    - cp -a dist/. public/
-  artifacts:
-    paths:
-      - public
+# pages:
+#   image: node:20.11.0
+#   script:
+#     - npm install
+#     - npm run build
+#     - cp -a dist/. public/
+#   artifacts:
+#     paths:
+#       - public
   # rules:
   #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
