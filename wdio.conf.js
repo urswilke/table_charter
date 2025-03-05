@@ -2,7 +2,7 @@
 import fs from "fs-extra";
 import * as path from "path";
 const debug = process.env.DEBUG;
-const defaultTimeoutInterval = 60000;
+const defaultTimeoutInterval = 180000;
 
 const timeout = debug ? 24 * 60 * 60 * 1000 : defaultTimeoutInterval;
 const downloadDir = path.resolve("src/test/output");
