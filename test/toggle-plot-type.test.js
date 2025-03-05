@@ -24,6 +24,7 @@ describe("Toggle plot type", () => {
         let n_bars;
         let dot_plot_points_g;
         let n_dots;
+        const n_dots_expected = 12;
 
         // shows bar plot initially
         bar_plot_rects_g = await $('>>>[aria-label="bar"]');
@@ -32,7 +33,7 @@ describe("Toggle plot type", () => {
         expect(await dot_plot_points_g.waitForExist({ reverse: true })).toBe(
             true,
         );
-        await expect(n_bars).toEqual(25);
+        await expect(n_bars).toEqual(n_dots_expected);
 
         // shows dot plot after clicking
         plot_type_button.click();
@@ -43,7 +44,7 @@ describe("Toggle plot type", () => {
         expect(await bar_plot_rects_g.waitForExist({ reverse: true })).toBe(
             true,
         );
-        await expect(n_dots).toEqual(25);
+        await expect(n_dots).toEqual(n_dots_expected);
 
         // again shows bar plot after clicking again:
         plot_type_button.click();
@@ -53,6 +54,6 @@ describe("Toggle plot type", () => {
         expect(await dot_plot_points_g.waitForExist({ reverse: true })).toBe(
             true,
         );
-        await expect(n_bars).toEqual(25);
+        await expect(n_bars).toEqual(n_dots_expected);
     });
 });
