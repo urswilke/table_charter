@@ -11,6 +11,7 @@ const chrome_capabilities = {
     browserName: "chrome",
     "goog:chromeOptions": {
         args: [
+            "--window-size=1920,1080",
             "--headless",
             "--no-sandbox",
             "--disable-gpu",
@@ -48,7 +49,7 @@ const chrome_capabilities = {
 const firefox_capabilities = {
     browserName: "firefox",
     "moz:firefoxOptions": {
-        args: ["-headless"],
+        args: ["--width=1920", "--height=1080", "-headless"],
         prefs: {
             "browser.download.dir": downloadDir,
             "browser.download.folderList": 2,
