@@ -9,7 +9,7 @@ const downloadDir = path.resolve("src/test/output");
 
 const chrome_capabilities = {
     browserName: "chrome",
-    "wdio:enforceWebDriverClassic": true,
+    // "wdio:enforceWebDriverClassic": true,
     "goog:chromeOptions": {
         args: [
             "--window-size=1920,1080",
