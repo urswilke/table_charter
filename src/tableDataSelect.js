@@ -650,6 +650,7 @@ export class TableDataSelect extends LitElement {
                                     .show_text=${this.choices.show_text}
                                     .show_box=${this.choices.show_box}
                                     .axis_labels=${this.choices.axis_labels}
+                                    .plot_type=${this.choices.plot_type}
                                 >
                                 </advanced-options-select>
 

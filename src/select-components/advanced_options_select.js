@@ -15,6 +15,7 @@ export class AdvancedOptionsSelect extends LitElement {
         show_text: { type: String },
         show_box: { type: String },
         axis_labels: { type: String },
+        plot_type: { type: String },
     };
 
     constructor() {
@@ -169,6 +170,7 @@ export class AdvancedOptionsSelect extends LitElement {
                 <div>${translate("showText.label")}</div>
                 <div>
                     <select 
+                        .disabled=${this.plot_type === "line"}
                         id="show-text" 
                         @change=${this._on_show_text_change}
                     >
@@ -187,7 +189,7 @@ export class AdvancedOptionsSelect extends LitElement {
                 <div>${translate("showBox.label")}</div>
                 <div>
                     <select 
-                        .disabled=${this.show_text === "never"}
+                        .disabled=${this.plot_type === "line" || this.show_text === "never"}
                         id="show-box" 
                         @change=${this._on_show_box_change}
                     >
