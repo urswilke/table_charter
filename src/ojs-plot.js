@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { translate, get } from "lit-translate";
-import { bg_col, fg_col, fantasy_string } from "./utils.js";
+import { bg_col, fantasy_string } from "./utils.js";
 
 import { PlotOptions } from "./gen_plot_types.js";
 import * as Plot from "@observablehq/plot";
@@ -186,6 +186,7 @@ export class OJSPlot extends LitElement {
         this.style.setProperty("--overflow-attr", overflower);
         this.style.setProperty("--break-words-attr", word_breaker);
         this.style.setProperty("--hyphens-attr", hyphenator);
+        this.style.setProperty("--background_col", bg_col());
 
         const inset = (len - margin1 - margin2) / (10 * n_cats + 1);
 
@@ -308,7 +309,7 @@ export class OJSPlot extends LitElement {
             .attr("height", "120%");
         filter
             .append("feFlood")
-            .attr("flood-color", bg_col)
+            .attr("flood-color", bg_col())
             .attr("result", "txtBackground");
         var filterMerge = filter.append("feMerge");
         filterMerge.append("feMergeNode").attr("in", "txtBackground");
@@ -410,7 +411,7 @@ export class OJSPlot extends LitElement {
             .cat-label:hover:not(.n-div) span {
                 white-space: normal;
                 overflow: visible;
-                background-color: grey;
+                background-color: var(--background_col);
                 z-index: 2;
             }
             .gap {
