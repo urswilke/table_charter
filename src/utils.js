@@ -130,9 +130,7 @@ export function save_file() {
         i_tab: this.i_tab,
         tab_table: this.tab_table,
     };
-    const el =
-        document.querySelector("table-charter") ||
-        document.querySelector("table-charter-intro");
+    const el = document.querySelector("table-charter, table-charter-intro");
     el.dataset.savedSettings = JSON.stringify(saved_settings);
     var text = document.querySelector("html").innerHTML;
     var element = document.createElement("a");
