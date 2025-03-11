@@ -13,15 +13,15 @@ run_test_firefox:
   #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 # TODO: fix...:
-# run_test_chrome:
-#   image: timbru31/node-chrome
-#   script:
-#     - google-chrome --version
-#     - node -v
-#     - npm install
-#     - npm run test -- --chrome
-#   # rules:
-#   #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+run_test_chrome:
+  image: timbru31/node-chrome
+  script:
+    - google-chrome --version
+    - node -v
+    - npm install
+    - npm run test -- --chrome
+  # rules:
+  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 pages:
   image: node:20.11.0
