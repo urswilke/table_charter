@@ -31,6 +31,7 @@
         "prepublishOnly": "rollup -c"
     },
     "dependencies": {
+        "lit": "^3.2.1",
         "@observablehq/plot": "^0.6.17",
         "d3": "^7.9.0",
         "immer": "^10.1.1",
@@ -52,7 +53,6 @@
         "geckodriver": "^5.0.0",
         "husky": "^9.1.7",
         "lint-staged": "^15.4.3",
-        "lit": "^3.2.1",
         "nyc": "^17.1.0",
         "prettier": "^3.5.3",
         "rollup": "^4.35.0",
