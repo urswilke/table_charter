@@ -1,4 +1,4 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
+import { LitElement, html, css } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
 import { group } from "d3";
 import { distinct } from "./utils.js";

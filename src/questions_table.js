@@ -1,6 +1,6 @@
-import { LitElement, html, css, unsafeCSS } from "lit";
+import { LitElement, html, css } from "lit";
 import { TabulatorFull as Tabulator } from "tabulator-tables";
-import { get, translate } from "lit-translate";
+import { get } from "lit-translate";
 
 export class QuestionsTable extends LitElement {
     static properties = {
