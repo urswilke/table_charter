@@ -9,14 +9,14 @@ render(html`<table-charter .data=${data}></table-charter>`, document.body);
 
 // TODO: add general settings element where (among other stuff...):
 // the advanced settings can be set to be shown from the beginning instead of:
-const advanced_menu_button = await $(
+const advanced_menu_button = $(
     '>>>button[data-test-id="toggle-advanced-menu-button"]',
 );
 await advanced_menu_button.moveTo();
 await advanced_menu_button.click();
 
-const flip_xy_button = await $('>>>button[data-test-id="flip-xy-button"]');
-const ojs_plot_el = await $('>>>ojs-plot[data-test-id="ojs-plot"]');
+const flip_xy_button = $('>>>button[data-test-id="flip-xy-button"]');
+const ojs_plot_el = $('>>>ojs-plot[data-test-id="ojs-plot"]');
 
 describe("Flip xy button", () => {
     it("works", async () => {
