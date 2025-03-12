@@ -1,6 +1,6 @@
 {
     "name": "table_charter",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "license": "AGPL-3.0-or-later",
     "type": "module",
     "main": "./src/index.js",
@@ -31,11 +31,11 @@
         "prepublishOnly": "rollup -c"
     },
     "dependencies": {
-        "lit": "^3.2.1",
         "@observablehq/plot": "^0.6.17",
         "d3": "^7.9.0",
         "immer": "^10.1.1",
         "intro.js": "^7.2.0",
+        "lit": "^3.2.1",
         "lit-translate": "^2.0.1",
         "tabulator-tables": "^6.3.1"
     },
