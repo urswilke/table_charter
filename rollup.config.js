@@ -15,9 +15,14 @@ const pkgs = [
     "tabulator-tables",
     "lit",
 ];
+
 const pkg_paths = {};
 for (const name of pkgs) {
-    pkg_paths[name] = `https://cdn.jsdelivr.net/npm/lit@${name}/+esm`;
+    let pkg = JSON.parse(
+        fs.readFileSync(`./node_modules/${name}/package.json`, "utf-8"),
+    );
+    pkg_paths[name] =
+        `https://cdn.jsdelivr.net/npm/${name}@${pkg.version}/+esm`;
 }
 
 const config = {
