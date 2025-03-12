@@ -6,7 +6,15 @@ import commonjs from "@rollup/plugin-commonjs";
 
 export default {
     input: "src/index.js",
-    // external: ["@observablehq/plot", "compress-json", "d3", "immer", "lodash"],
+    external: [
+        "@observablehq/plot",
+        "d3",
+        "immer",
+        "intro.js",
+        "lit-translate",
+        "tabulator-tables",
+        "lit",
+    ],
     output: {
         name: "table_charter",
         file: "dist/main.es.js",
