@@ -7,7 +7,7 @@
     "module": "./src/index.js",
     "unpkg": "dist/main.es.js",
     "exports": {
-        ".": "./src/index.js"
+        ".": "./dist/main.es.js"
     },
     "repository": {
         "type": "git",
