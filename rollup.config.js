@@ -1,28 +1,39 @@
+import fs from "fs";
 import replace from "@rollup/plugin-replace";
 import json from "@rollup/plugin-json";
-import node from "@rollup/plugin-node-resolve";
+import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 // import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import terser from "@rollup/plugin-terser";
 
-export default {
+const pkgs = [
+    "@observablehq/plot",
+    "d3",
+    "immer",
+    "intro.js",
+    "lit-translate",
+    "tabulator-tables",
+    "lit",
+];
+const pkg_paths = {};
+for (const name of pkgs) {
+    pkg_paths[name] = `https://cdn.jsdelivr.net/npm/lit@${name}/+esm`;
+}
+
+const config = {
     input: "src/index.js",
-    // external: [
-    //     "@observablehq/plot",
-    //     "d3",
-    //     "immer",
-    //     "intro.js",
-    //     "lit-translate",
-    //     "tabulator-tables",
-    //     "lit",
-    // ],
+    external: pkgs,
     output: {
         name: "table_charter",
         file: "dist/main.es.js",
         format: "es",
+        extend: true,
+        paths: pkg_paths,
+        globals: { d3: "d3" },
     },
     plugins: [
         // peerDepsExternal(),
-        node(),
+        nodeResolve(),
         commonjs(),
         replace({
             preventAssignment: true,
@@ -31,3 +42,28 @@ export default {
         json(),
     ],
 };
+
+export default [
+    {
+        ...config,
+        output: {
+            ...config.output,
+            file: `dist/main.es.js`,
+        },
+    },
+    {
+        ...config,
+        output: {
+            ...config.output,
+            file: `dist/main.es.min.js`,
+        },
+        plugins: [
+            ...config.plugins,
+            terser({
+                output: {
+                    preamble: config.output.banner,
+                },
+            }),
+        ],
+    },
+];
