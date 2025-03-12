@@ -28,7 +28,7 @@
         "standalone-build": "vite build -- --standalone",
         "standalone-preview": "vite build -- --standalone && firefox ./dist/index.html",
         "wdio": "wdio run ./wdio.conf.js",
-        "prepublishOnly": "rollup -c"
+        "prepublishOnly": "rm -rf dist && rollup -c"
     },
     "dependencies": {
         "@observablehq/plot": "^0.6.17",
