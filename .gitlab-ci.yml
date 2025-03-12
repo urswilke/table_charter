@@ -5,6 +5,7 @@ cache:
 run_test_firefox:
   image: timbru31/node-alpine-firefox
   script:
+    - apk add firefox
     - firefox --version
     - node -v
     - npm install
