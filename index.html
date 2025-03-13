@@ -14,7 +14,7 @@
         />
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/introjs.css"
         />
         <script type="module" src="./src/index.js"></script>
         <style>
@@ -89,17 +89,6 @@
             /* needed for dark mode (because then, the font is white on white otherwise) */
             .introjs-tooltip {
                 color: black;
-                width: 60vw;
-            }
-            .introjs-tooltip-header {
-                display: flex;
-                flex-flow: row;
-                align-items: flex-start;
-                align-content: flex-start;
-                margin-bottom: 10px;
-            }
-            .introjs-helperLayer {
-                opacity: 0.5 !important;
             }
             ul {
                 margin-left: 20px;
@@ -108,10 +97,8 @@
                 margin-top: 25px;
             }
             label[for="introjs-dontShowAgain"] {
+                display: inline;
                 color: grey;
-            }
-            input#introjs-dontShowAgain {
-                margin-right: 10px;
             }
             /* https://github.com/usablica/intro.js/issues/1202#issuecomment-1647264044 */
             .introjs-overlay {
@@ -124,12 +111,10 @@
                 margin-left: auto;
                 order: 2;
                 border-radius: 8px;
-                border: solid red;
                 font-size: 30px;
             }
             .introjs-skipbutton:hover {
                 opacity: 0.5;
-                cursor: pointer;
             }
         </style>
     </head>
