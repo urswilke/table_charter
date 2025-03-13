@@ -16,6 +16,7 @@
     "files": [
         "dist/**/*.js",
         "src/**/*.js",
+        "dist/*.css",
         "src/**/*.json"
     ],
     "scripts": {
