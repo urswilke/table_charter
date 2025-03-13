@@ -13,7 +13,7 @@
         />
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/introjs.css"
+            href="https://unpkg.com/table_charter/dist/table-charter-intro.css"
         />
 
         <script type="module">
@@ -87,36 +87,6 @@
                 flex: 1 1;
                 overflow: auto;
                 margin: 5px;
-            }
-            /* needed for dark mode (because then, the font is white on white otherwise) */
-            .introjs-tooltip {
-                color: black;
-            }
-            ul {
-                margin-left: 20px;
-            }
-            .introjs-dontShowAgain {
-                margin-top: 25px;
-            }
-            label[for="introjs-dontShowAgain"] {
-                display: inline;
-                color: grey;
-            }
-            /* https://github.com/usablica/intro.js/issues/1202#issuecomment-1647264044 */
-            .introjs-overlay {
-                pointer-events: none;
-            }
-            .introjs-helperLayer {
-                pointer-events: none;
-            }
-            .introjs-skipbutton {
-                margin-left: auto;
-                order: 2;
-                border-radius: 8px;
-                font-size: 30px;
-            }
-            .introjs-skipbutton:hover {
-                opacity: 0.5;
             }
         </style>
     </head>
