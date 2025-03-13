@@ -5,6 +5,8 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 // import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import terser from "@rollup/plugin-terser";
+import postcss from "rollup-plugin-postcss";
+import path from "path";
 
 const pkgs = [
     "@observablehq/plot",
@@ -37,6 +39,10 @@ const config = {
         globals: { d3: "d3" },
     },
     plugins: [
+        postcss({
+            include: "src/table-charter-intro.css",
+            extract: path.resolve("dist/table-charter-intro.css"),
+        }),
         // peerDepsExternal(),
         nodeResolve(),
         commonjs(),

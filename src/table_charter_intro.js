@@ -2,6 +2,8 @@ import { get_walkthrough_options } from "./walkthrough_options.js";
 import { TableCharter } from "./tableCharter.js";
 import { default as introJs } from "intro.js";
 import { html } from "lit";
+// only needed, that rollup also bundles this file:
+import "./table-charter-intro.css";
 
 export class TableCharterIntro extends TableCharter {
     constructor() {
