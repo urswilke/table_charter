@@ -15,9 +15,7 @@
     },
     "files": [
         "dist/**/*.js",
-        "src/**/*.js",
-        "dist/*.css",
-        "src/**/*.json"
+        "dist/**/*.css"
     ],
     "scripts": {
         "dev": "vite --port 4000",
