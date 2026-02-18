@@ -191,6 +191,7 @@ variables:
         - pwd
         - ls ..
         - ls $${WOODPECKER_TMP}/
+        - ls $${WOODPECKER_TMP}/pages
         - ls $${WOODPECKER_TMP}/deploy
         # - cp -r $${WOODPECKER_TMP}/deploy/* .
 
