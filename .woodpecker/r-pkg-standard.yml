@@ -15,6 +15,15 @@ variables:
   site_config: &site_config
     - export WOODPECKER_TMP=/woodpecker/tmp
 
+  step_test_firefox: &test_firefox
+    - name: test_firefox
+      image: timbru31/node-alpine-firefox
+      commands:
+        - firefox --version
+        - node -v
+        - npm install
+        - npm run test -- --firefox
+
   step_setup: &setup
     - name: setup
       image: ${IMAGE}
@@ -43,7 +52,6 @@ variables:
 
 steps:
   - <<: *setup
-  # - <<: *check
-  # - <<: *test
+  - <<: *test_firefox
   - <<: *build
   - <<: *deploy
