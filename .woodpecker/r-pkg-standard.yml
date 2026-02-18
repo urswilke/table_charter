@@ -145,7 +145,7 @@ variables:
       commands:
         # - <<: *r_site_config
         - npm i
-        - npm run build -- build.outDir=
+        - npm run build -- build.outDir=$${WOODPECKER_TMP}/pages
         - pwd
         - mkdir $${WOODPECKER_TMP}/pages
         - ls -lt dist
