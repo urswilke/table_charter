@@ -1,9 +1,9 @@
-# this workflow maintained at https://codeberg.org/r-codeberg/woodpecker-ci
+# this workflow was derived from https://codeberg.org/r-codeberg/woodpecker-ci
 # please file bug reports and feature requests to help it improve!
 
 matrix:
   IMAGE: 
-    - rocker/verse
+    - node:latest
 
 when:
   - branch: "${CI_REPO_DEFAULT_BRANCH}"
@@ -65,94 +65,89 @@ variables:
       })
       END
 
-  step_setup: &setup
-    - name: setup
-      image: ${IMAGE}
-      pull: true
-      environment:
-        <<: *r_envvars
-      commands:
-        - <<: *r_site_config
-        - |
-          R -q -s --no-save << "END"
-          pak_repo <- sprintf(
-            "https://r-lib.github.io/p/pak/stable/%s/%s/%s",
-            .Platform$pkgType,
-            R.Version()$os,
-            R.Version()$arch
-          )
+  # step_setup: &setup
+  #   - name: setup
+  #     image: ${IMAGE}
+  #     pull: true
+  #     environment:
+  #       <<: *r_envvars
+  #     commands:
+  #       - <<: *r_site_config
+  #       - |
+  #         R -q -s --no-save << "END"
+  #         pak_repo <- sprintf(
+  #           "https://r-lib.github.io/p/pak/stable/%s/%s/%s",
+  #           .Platform$pkgType,
+  #           R.Version()$os,
+  #           R.Version()$arch
+  #         )
 
-          install.packages("pak", repos = pak_repo)
-          pak::local_install_dev_deps()
-          END
+  #         install.packages("pak", repos = pak_repo)
+  #         pak::local_install_dev_deps()
+  #         END
 
-  step_check: &check
-    - name: check
-      image: ${IMAGE}
-      depends_on: [setup]
-      pull: true
-      environment:
-        <<: *r_envvars
-      commands:
-        - <<: *r_site_config
-        - |
-          R -q -s --no-save << "END"
-          pak::local_install_dev_deps()
-          pak::pkg_install("rcmdcheck")
-          rcmdcheck::rcmdcheck(
-            args = c("--no-manual", "--as-cran", "--no-tests", "--timings"),
-            build_args = c("--no-manual"),
-            check_dir = "check"
-          )
-          END
+  # step_check: &check
+  #   - name: check
+  #     image: ${IMAGE}
+  #     depends_on: [setup]
+  #     pull: true
+  #     environment:
+  #       <<: *r_envvars
+  #     commands:
+  #       - <<: *r_site_config
+  #       - |
+  #         R -q -s --no-save << "END"
+  #         pak::local_install_dev_deps()
+  #         pak::pkg_install("rcmdcheck")
+  #         rcmdcheck::rcmdcheck(
+  #           args = c("--no-manual", "--as-cran", "--no-tests", "--timings"),
+  #           build_args = c("--no-manual"),
+  #           check_dir = "check"
+  #         )
+  #         END
 
-  step_test: &test
-    - name: test
-      image: ${IMAGE}
-      depends_on: [setup]
-      pull: true
-      environment:
-        <<: *r_envvars
-      commands:
-        - <<: *r_site_config
-        - |
-          R -q -s --no-save << "END"
-          pak::local_install_dev_deps()
-          pak::pkg_install(c("covr", "xml2"))
+  # step_test: &test
+  #   - name: test
+  #     image: ${IMAGE}
+  #     depends_on: [setup]
+  #     pull: true
+  #     environment:
+  #       <<: *r_envvars
+  #     commands:
+  #       - <<: *r_site_config
+  #       - |
+  #         R -q -s --no-save << "END"
+  #         pak::local_install_dev_deps()
+  #         pak::pkg_install(c("covr", "xml2"))
 
-          woodpecker_tmp <- normalizePath(Sys.getenv("WOODPECKER_TMP"), winslash = "/")
-          woodpecker_package <- file.path(woodpecker_tmp, "package")
+  #         woodpecker_tmp <- normalizePath(Sys.getenv("WOODPECKER_TMP"), winslash = "/")
+  #         woodpecker_package <- file.path(woodpecker_tmp, "package")
 
-          cov <- covr::package_coverage(
-            quiet = FALSE,
-            clean = FALSE,
-            install_path = woodpecker_package
-          )
+  #         cov <- covr::package_coverage(
+  #           quiet = FALSE,
+  #           clean = FALSE,
+  #           install_path = woodpecker_package
+  #         )
 
-          woodpecker_cobertura_xml <- file.path(woodpecker_tmp, "cobertura.xml")
-          covr::to_cobertura(cov, filename = woodpecker_cobertura_xml)
-          END
-        - |
-          echo '─ test results ────────────────────────────────────────────────────────────────'
-          find '/woodpecker/tmp/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+  #         woodpecker_cobertura_xml <- file.path(woodpecker_tmp, "cobertura.xml")
+  #         covr::to_cobertura(cov, filename = woodpecker_cobertura_xml)
+  #         END
+  #       - |
+  #         echo '─ test results ────────────────────────────────────────────────────────────────'
+  #         find '/woodpecker/tmp/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
 
   step_pkgdown: &pkgdown
     - name: pkgdown
       image: ${IMAGE}
-      depends_on: [setup]
+      # depends_on: [setup]
       environment:
         <<: *r_envvars
       commands:
         - <<: *r_site_config
         - |
-          R -q -s --no-save << "END"
-          pak::local_install_dev_deps()
-          pak::pkg_install(".")
-          pak::pkg_install("pkgdown")
-          woodpecker_tmp <- normalizePath(Sys.getenv("WOODPECKER_TMP"), winslash = "/")
-          woodpecker_pages <- file.path(woodpecker_tmp, "pages")
-          pkg <- pkgdown::as_pkgdown(".", override = list(destination = woodpecker_pages))
-          pkgdown::build_site(pkg, new_process = FALSE, install = FALSE)
+          npm i
+          npm run build
+          cp -r dist WOODPECKER_TMP
           END
 
   step_deploy: &deploy
@@ -201,9 +196,9 @@ variables:
         - git push origin pages
         
 steps:
-  - <<: *setup
-  - <<: *check
-  - <<: *test
+  # - <<: *setup
+  # - <<: *check
+  # - <<: *test
   - <<: *pkgdown
   - <<: *deploy
 
