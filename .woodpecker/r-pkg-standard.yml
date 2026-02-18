@@ -15,31 +15,35 @@ variables:
   site_config: &site_config
     - export WOODPECKER_TMP=/woodpecker/tmp
 
-  step_pkgdown: &pkgdown
-    - name: pkgdown
+  step_setup: &setup
+    - name: setup
       image: ${IMAGE}
-      # depends_on: [setup]
+      pull: true
       commands:
         - npm i
+
+  step_build: &build
+    - name: build
+      image: ${IMAGE}
+      depends_on: [setup]
+      commands:
         - npm run build
-        - pwd
         - mkdir ${WOODPECKER_TMP}/pages
-        - ls -lt dist
         - cp -r dist/* $${WOODPECKER_TMP}/pages
         - ls $${WOODPECKER_TMP}/pages
 
   step_deploy: &deploy
     - name: deploy
       image: codeberg.org/sugar700/plugin-codeberg-pages-deploy:latest
-      depends_on: [pkgdown]
+      depends_on: [build]
       settings:
         folder: dist
         ssh_key:
           from_secret: deploy_ssh_key
 
 steps:
-  # - <<: *setup
+  - <<: *setup
   # - <<: *check
   # - <<: *test
-  - <<: *pkgdown
+  - <<: *build
   - <<: *deploy
