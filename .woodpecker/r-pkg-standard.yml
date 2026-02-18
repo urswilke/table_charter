@@ -156,9 +156,10 @@ variables:
     - name: deploy0
       image: codeberg.org/sugar700/plugin-codeberg-pages-deploy:latest
       depends_on: [pkgdown]
-      folder: dist
-      ssh_key:
-        from_secret: deploy_ssh_key
+      settings:
+        folder: dist
+        ssh_key:
+          from_secret: deploy_ssh_key
 
   step_deploy: &deploy
     - name: deploy
