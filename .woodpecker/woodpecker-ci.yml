@@ -24,14 +24,15 @@ variables:
         - npm install
         - npm run test -- --firefox
 
-  step_test_chrome: &test_chrome
-    - name: test_chrome
-      image: timbru31/node-chrome
-      commands:
-        - google-chrome --version
-        - node -v
-        - npm install
-        - npm run test -- --chrome
+# not resolved; cf. https://github.com/webdriverio/webdriverio/issues/14255#issuecomment-2715007094 
+  # step_test_chrome: &test_chrome
+  #   - name: test_chrome
+  #     image: timbru31/node-chrome
+  #     commands:
+  #       - google-chrome --version
+  #       - node -v
+  #       - npm install
+  #       - npm run test -- --chrome
 
   step_setup: &setup
     - name: setup
@@ -62,6 +63,6 @@ variables:
 steps:
   - <<: *setup
   - <<: *test_firefox
-  - <<: *test_chrome
+  # - <<: *test_chrome
   - <<: *build
   - <<: *deploy
