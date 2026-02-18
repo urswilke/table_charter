@@ -140,28 +140,12 @@ variables:
     - name: pkgdown
       image: ${IMAGE}
       # depends_on: [setup]
-      # environment:
-      #   <<: *r_envvars
-      commands:
-        # - <<: *r_site_config
-        - npm i
-        - npm run build
-        - pwd
-        - mkdir ${WOODPECKER_TMP}/pages
-        - ls -lt dist
-        - cp -r dist/* $${WOODPECKER_TMP}/pages
-        - ls $${WOODPECKER_TMP}/pages
-
-  step_deploy: &deploy
-    - name: deploy
-      image: ${IMAGE}
-      depends_on: [pkgdown]
       when:
         - branch: "${CI_REPO_DEFAULT_BRANCH}"
           evaluate: "DEPLOY_SSH_KEY != nil"
           event: push
       environment:
-        # <<: *r_envvars
+      #   <<: *r_envvars
         DEPLOY_SSH_KEY:
           # expects woodpecker ci ssh access
           #   - generated with `ssh-keygen -t ed25519 -f /tmp/key`
@@ -171,6 +155,14 @@ variables:
           #     settings, granting write access to repository
           from_secret: deploy_ssh_key
       commands:
+        # - <<: *r_site_config
+        - npm i
+        - npm run build
+        - pwd
+        - mkdir ${WOODPECKER_TMP}/pages
+        - ls -lt dist
+        - cp -r dist/* $${WOODPECKER_TMP}/pages
+        - ls $${WOODPECKER_TMP}/pages
         - <<: *site_config
         # copy author details of last commit
         - export GIT_USER_NAME=$$(git log -1 --pretty=format:'%an')
@@ -208,5 +200,5 @@ steps:
   # - <<: *check
   # - <<: *test
   - <<: *pkgdown
-  - <<: *deploy
+  # - <<: *deploy
 
