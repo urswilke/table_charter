@@ -195,6 +195,7 @@ variables:
         # - cp -r $${WOODPECKER_TMP}/deploy/* .
 
         # commit new pages contents & deploy
+        - git status
         - git add -A
         - git config --global user.name $${GIT_USER_NAME}
         - git config --global user.email $${GIT_USER_EMAIL}
