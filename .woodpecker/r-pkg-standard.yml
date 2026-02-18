@@ -145,9 +145,9 @@ variables:
       commands:
         # - <<: *r_site_config
         - npm i
-        - npm run build
+        - npm run build -- build.outDir=
         - pwd
-        - mkdir ${WOODPECKER_TMP}/pages
+        - mkdir $${WOODPECKER_TMP}/pages
         - ls -lt dist
         - cp -r dist/* $${WOODPECKER_TMP}/pages
         - ls $${WOODPECKER_TMP}/pages
@@ -157,7 +157,7 @@ variables:
       image: codeberg.org/sugar700/plugin-codeberg-pages-deploy:latest
       depends_on: [pkgdown]
       settings:
-        folder: $${WOODPECKER_TMP}/deploy
+        folder: ${WOODPECKER_TMP}/deploy
         ssh_key:
           from_secret: deploy_ssh_key
 
