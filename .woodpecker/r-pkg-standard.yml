@@ -198,10 +198,10 @@ variables:
         - git pull origin pages || echo "pages branch not found, creating ..."
         - git rm --cached --ignore-unmatch -r .
         - pwd
-        - ls ..
-        - ls $${WOODPECKER_TMP}/
-        - ls $${WOODPECKER_TMP}/deploy
-        - ls $${WOODPECKER_TMP}/deploy
+        - ls -R /
+        # - ls $${WOODPECKER_TMP}/
+        # - ls $${WOODPECKER_TMP}/deploy
+        # - ls $${WOODPECKER_TMP}/deploy
         # - cp -r $${WOODPECKER_TMP}/deploy/* .
 
         # commit new pages contents & deploy
