@@ -157,7 +157,7 @@ variables:
       image: codeberg.org/sugar700/plugin-codeberg-pages-deploy:latest
       depends_on: [pkgdown]
       settings:
-        folder: dist
+        folder: $${WOODPECKER_TMP}/deploy
         ssh_key:
           from_secret: deploy_ssh_key
 
@@ -198,9 +198,9 @@ variables:
         - git pull origin pages || echo "pages branch not found, creating ..."
         - git rm --cached --ignore-unmatch -r .
         - pwd
-        - ls -R /
+        # - ls -R /
         # - ls $${WOODPECKER_TMP}/
-        # - ls $${WOODPECKER_TMP}/deploy
+        - ls $${WOODPECKER_TMP}/deploy
         # - ls $${WOODPECKER_TMP}/deploy
         # - cp -r $${WOODPECKER_TMP}/deploy/* .
 
