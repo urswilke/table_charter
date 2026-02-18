@@ -140,20 +140,8 @@ variables:
     - name: pkgdown
       image: ${IMAGE}
       # depends_on: [setup]
-      when:
-        - branch: "${CI_REPO_DEFAULT_BRANCH}"
-          evaluate: "DEPLOY_SSH_KEY != nil"
-          event: push
-      environment:
+      # environment:
       #   <<: *r_envvars
-        DEPLOY_SSH_KEY:
-          # expects woodpecker ci ssh access
-          #   - generated with `ssh-keygen -t ed25519 -f /tmp/key`
-          #   - private key: store as woodpecker ci secret `deploy_ssh_key`,
-          #     optionally set only accessible in `alpine/git` image
-          #   - public key: provide as a Deploy Key in codeberg repository
-          #     settings, granting write access to repository
-          from_secret: deploy_ssh_key
       commands:
         # - <<: *r_site_config
         - npm i
@@ -163,6 +151,34 @@ variables:
         - ls -lt dist
         - cp -r dist/* $${WOODPECKER_TMP}/pages
         - ls $${WOODPECKER_TMP}/pages
+
+  step_deploy0: &deploy0
+    - name: deploy0
+      image: codeberg.org/sugar700/plugin-codeberg-pages-deploy:latest
+      depends_on: [pkgdown]
+      folder: dist
+      ssh_key:
+        from_secret: deploy_ssh_key
+
+  step_deploy: &deploy
+    - name: deploy
+      image: ${IMAGE}
+      depends_on: [pkgdown]
+      when:
+        - branch: "${CI_REPO_DEFAULT_BRANCH}"
+          evaluate: "DEPLOY_SSH_KEY != nil"
+          event: push
+      environment:
+        # <<: *r_envvars
+        DEPLOY_SSH_KEY:
+          # expects woodpecker ci ssh access
+          #   - generated with `ssh-keygen -t ed25519 -f /tmp/key`
+          #   - private key: store as woodpecker ci secret `deploy_ssh_key`,
+          #     optionally set only accessible in `alpine/git` image
+          #   - public key: provide as a Deploy Key in codeberg repository
+          #     settings, granting write access to repository
+          from_secret: deploy_ssh_key
+      commands:
         - <<: *site_config
         # copy author details of last commit
         - export GIT_USER_NAME=$$(git log -1 --pretty=format:'%an')
@@ -183,7 +199,7 @@ variables:
         - pwd
         - ls ..
         - ls $${WOODPECKER_TMP}/
-        - ls $${WOODPECKER_TMP}/pages
+        - ls $${WOODPECKER_TMP}/deploy
         - ls $${WOODPECKER_TMP}/deploy
         # - cp -r $${WOODPECKER_TMP}/deploy/* .
 
@@ -200,5 +216,6 @@ steps:
   # - <<: *check
   # - <<: *test
   - <<: *pkgdown
-  # - <<: *deploy
+  - <<: *deploy0
+  - <<: *deploy
 
