@@ -159,7 +159,7 @@ variables:
           evaluate: "DEPLOY_SSH_KEY != nil"
           event: push
       environment:
-        <<: *r_envvars
+        # <<: *r_envvars
         DEPLOY_SSH_KEY:
           # expects woodpecker ci ssh access
           #   - generated with `ssh-keygen -t ed25519 -f /tmp/key`
