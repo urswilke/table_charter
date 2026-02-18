@@ -144,11 +144,9 @@ variables:
       #   <<: *r_envvars
       commands:
         # - <<: *r_site_config
-        - |
-          npm i
-          npm run build
-          cp -r dist WOODPECKER_TMP
-          END
+        - npm i
+        - npm run build
+        - cp -r dist WOODPECKER_TMP
 
   step_deploy: &deploy
     - name: deploy
