@@ -21,7 +21,7 @@ variables:
       # depends_on: [setup]
       commands:
         - npm i
-        - npm run build -- build.outDir=$${WOODPECKER_TMP}/pages
+        - npm run build
         - pwd
         - mkdir $${WOODPECKER_TMP}/pages
         - ls -lt dist
