@@ -147,7 +147,9 @@ variables:
         - npm i
         - npm run build
         - pwd
-        - cp -r dist WOODPECKER_TMP
+        - mkdir ${WOODPECKER_TMP}/pages
+        - ls $${WOODPECKER_TMP}/pages
+        - cp -r dist/* $${WOODPECKER_TMP}/pages
 
   step_deploy: &deploy
     - name: deploy
