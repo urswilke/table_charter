@@ -188,7 +188,9 @@ variables:
         - git pull origin pages || echo "pages branch not found, creating ..."
         - git rm --cached --ignore-unmatch -r .
         - pwd
-        - cp -r $${WOODPECKER_TMP}/pages/* .
+        - ls
+        - ls $${WOODPECKER_TMP}/
+        - cp -r $${WOODPECKER_TMP}/pages/* 
 
         # commit new pages contents & deploy
         - git add -A
