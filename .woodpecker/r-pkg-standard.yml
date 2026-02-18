@@ -146,6 +146,7 @@ variables:
         # - <<: *r_site_config
         - npm i
         - npm run build
+        - pwd
         - cp -r dist WOODPECKER_TMP
 
   step_deploy: &deploy
@@ -184,6 +185,7 @@ variables:
         - git switch --orphan pages
         - git pull origin pages || echo "pages branch not found, creating ..."
         - git rm --cached --ignore-unmatch -r .
+        - pwd
         - cp -r $${WOODPECKER_TMP}/pages/* .
 
         # commit new pages contents & deploy
