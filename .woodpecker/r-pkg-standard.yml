@@ -143,12 +143,12 @@ variables:
       # environment:
       #   <<: *r_envvars
       commands:
-        # - <<: *r_site_config
+        - <<: *r_site_config
         - npm i
         - npm run build
         - pwd
         - mkdir ${WOODPECKER_TMP}/pages
-        - ls $${WOODPECKER_TMP}/pages
+        - ls -lt dist
         - cp -r dist/* $${WOODPECKER_TMP}/pages
         - ls $${WOODPECKER_TMP}/pages
 
