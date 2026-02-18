@@ -45,6 +45,7 @@
         "@rollup/plugin-terser": "^0.4.4",
         "@testing-library/webdriverio": "^3.2.1",
         "@wdio/browser-runner": "^9.24.0",
+        "@wdio/cli": "^9.24.0",
         "@wdio/mocha-framework": "^9.24.0",
         "@wdio/spec-reporter": "^9.24.0",
         "@wdio/visual-service": "^9.1.4",
