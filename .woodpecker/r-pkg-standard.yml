@@ -15,55 +15,55 @@ variables:
   site_config: &site_config
     - export WOODPECKER_TMP=/woodpecker/tmp
 
-  r_envvars: &r_envvars
-    R_NCPU: 1
-    RCMDCHECK_ERROR_ON: "note"
+  # r_envvars: &r_envvars
+  #   R_NCPU: 1
+  #   RCMDCHECK_ERROR_ON: "note"
 
-    _R_CHECK_FORCE_SUGGESTS_: "false"
-    _R_CHECK_CRAN_INCOMING_: "false"
-    _R_CHECK_SYSTEM_CLOCK_: "false"
+  #   _R_CHECK_FORCE_SUGGESTS_: "false"
+  #   _R_CHECK_CRAN_INCOMING_: "false"
+  #   _R_CHECK_SYSTEM_CLOCK_: "false"
 
-    # CRAN OMP thread limit (https://stackoverflow.com/a/77323812)
-    # Resolves issue with R CMD check for CPU time exceeding elapsed time
-    OMP_THREAD_LIMIT: 2
+  #   # CRAN OMP thread limit (https://stackoverflow.com/a/77323812)
+  #   # Resolves issue with R CMD check for CPU time exceeding elapsed time
+  #   OMP_THREAD_LIMIT: 2
     
-  r_site_config: &r_site_config
-    # These environment variables used to help find appropriate binaries in PPM
-    - cat /etc/os-release >> "$(R RHOME)/etc/Renviron.site"
+  # r_site_config: &r_site_config
+  #   # These environment variables used to help find appropriate binaries in PPM
+  #   - cat /etc/os-release >> "$(R RHOME)/etc/Renviron.site"
 
-    # Store our temporary directory, accessible across workflow steps
-    - echo "WOODPECKER_TMP=/woodpecker/tmp" >> "$(R RHOME)/etc/Renviron.site"
+  #   # Store our temporary directory, accessible across workflow steps
+  #   - echo "WOODPECKER_TMP=/woodpecker/tmp" >> "$(R RHOME)/etc/Renviron.site"
 
-    # Configure R profile to use during ci
-    # - sets options used throughout workflow
-    # - configures a package library that will be re-used by each step
-    - |
-      cat << END >> $(R RHOME)/etc/Rprofile.site
-      options(
-        Ncpus = Sys.getenv("R_NCPU", unset = getOption("Ncpus", 1L)),
-        repos = c(
-          "p3m.dev" = sprintf(
-            "https://p3m.dev/cran/__linux__/%s/latest",
-            if (nchar(envvar <- Sys.getenv("VERSION_CODENAME"))) envvar
-          ),
-          CRAN = "https://cloud.r-project.org"
-        ),
-        pak.sysreqs = TRUE,
+  #   # Configure R profile to use during ci
+  #   # - sets options used throughout workflow
+  #   # - configures a package library that will be re-used by each step
+  #   - |
+  #     cat << END >> $(R RHOME)/etc/Rprofile.site
+  #     options(
+  #       Ncpus = Sys.getenv("R_NCPU", unset = getOption("Ncpus", 1L)),
+  #       repos = c(
+  #         "p3m.dev" = sprintf(
+  #           "https://p3m.dev/cran/__linux__/%s/latest",
+  #           if (nchar(envvar <- Sys.getenv("VERSION_CODENAME"))) envvar
+  #         ),
+  #         CRAN = "https://cloud.r-project.org"
+  #       ),
+  #       pak.sysreqs = TRUE,
 
-        # these settings used to provide prettier ci log output
-        cli.dynamic = FALSE,
-        cli.default_num_colors = 256,
-        crayon.enabled = TRUE
-      )
+  #       # these settings used to provide prettier ci log output
+  #       cli.dynamic = FALSE,
+  #       cli.default_num_colors = 256,
+  #       crayon.enabled = TRUE
+  #     )
 
-      local({
-        tmp <- Sys.getenv("WOODPECKER_TMP")
-        if (!dir.exists(tmp)) dir.create(tmp, recursive = TRUE)
-        lib <- file.path("", "woodpecker", "lib")
-        if (!dir.exists(lib)) dir.create(lib, recursive = TRUE)
-        .libPaths(c(lib, .libPaths()))
-      })
-      END
+  #     local({
+  #       tmp <- Sys.getenv("WOODPECKER_TMP")
+  #       if (!dir.exists(tmp)) dir.create(tmp, recursive = TRUE)
+  #       lib <- file.path("", "woodpecker", "lib")
+  #       if (!dir.exists(lib)) dir.create(lib, recursive = TRUE)
+  #       .libPaths(c(lib, .libPaths()))
+  #     })
+  #     END
 
   # step_setup: &setup
   #   - name: setup
@@ -140,10 +140,10 @@ variables:
     - name: pkgdown
       image: ${IMAGE}
       # depends_on: [setup]
-      environment:
-        <<: *r_envvars
+      # environment:
+      #   <<: *r_envvars
       commands:
-        - <<: *r_site_config
+        # - <<: *r_site_config
         - |
           npm i
           npm run build
