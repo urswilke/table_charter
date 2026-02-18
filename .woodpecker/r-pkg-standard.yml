@@ -143,7 +143,7 @@ variables:
       # environment:
       #   <<: *r_envvars
       commands:
-        - <<: *r_site_config
+        # - <<: *r_site_config
         - npm i
         - npm run build
         - pwd
