@@ -192,7 +192,7 @@ variables:
         - ls ..
         - ls $${WOODPECKER_TMP}/
         - ls $${WOODPECKER_TMP}/deploy
-        - cp -r $${WOODPECKER_TMP}/deploy/* .
+        # - cp -r $${WOODPECKER_TMP}/deploy/* .
 
         # commit new pages contents & deploy
         - git add -A
