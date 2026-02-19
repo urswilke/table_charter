@@ -11,16 +11,16 @@ WIP
 
 ## Introduction
 
-This javascript package provides a web component `<table-charter>` that hosts an app (using [lit](https://github.com/lit/lit)) which allows to interactively choose the plot type and its settings of the crosstabs generated with the [crosstabser](https://gitlab.com/urswilke/crosstabser) package (for instance, by calling the [`Tabula$save_html_app()`](https://urswilke.gitlab.io/crosstabser/reference/Tabula.html#method-Tabula-save_html_app)). Please open the [demo](https://urswilke.gitlab.io/table_charter/) for an interactive walkthrough and to see it live.
+This javascript package provides a web component `<table-charter>` that hosts an app (using [lit](https://github.com/lit/lit)) which allows to interactively choose the plot type and its settings of the crosstabs generated with the [crosstabser](https://codeberg.org/urswilke/crosstabser) package (for instance, by calling the [`Tabula$save_html_app()`](https://urswilke.codeberg.page/crosstabser/reference/Tabula.html#method-Tabula-save_html_app)). Please open the [demo](https://urswilke.codeberg.page/table_charter/) for an interactive walkthrough and to see it live.
 
-For an interactive demo how table_charter depends on datadaptor & crosstabser see [here](https://urswilke.github.io/datadaptor-crosstabser-table_charter-demo/). See [here](https://urswilke.gitlab.io/crosstabser/articles/data-format.html) for a description of the data format needed by table_charter.
+For an interactive demo how table_charter depends on datadaptor & crosstabser see [here](https://urswilke.github.io/datadaptor-crosstabser-table_charter-demo/). See [here](https://urswilke.codeberg.page/crosstabser/articles/data-format.html) for a description of the data format needed by table_charter.
 
 ## Installation
 
 If you also want to experiment with the code inside the table_charter web component, install it on your machine with (needs git & npm):
 
 ```
-git clone https://gitlab.com/urswilke/table_charter
+git clone https://codeberg.org/urswilke/table_charter
 cd table_charter
 npm i
 ```
@@ -56,11 +56,11 @@ This will run the app in `index.html` and all the related source code on a local
 
 ### Deploying it in the web
 
-Our [demo](https://urswilke.gitlab.io/table_charter/) is the result of deploying the production version of the table_charter html element automatically each time code is pushed into this repo (with the `pages` part in the [gitlab ci](.gitlab-ci.yml)). By forking this repo and adapting the data used, you can deploy dashboards with your own data to the web.
+Our [demo](https://urswilke.codeberg.page/table_charter/) is the result of deploying the production version of the table_charter html element automatically each time code is pushed into this repo (with the `pages` part in the [woodpecker ci](.woodpecker/woodpecker-ci.yml)). By forking this repo and adapting the data used, you can deploy dashboards with your own data to the web.
 
 ### Using quarto
 
-You can embed the app in a quarto document as it's done [here](https://github.com/urswilke/datadaptor-crosstabser-table_charter-demo/blob/main/datadaptor-crosstabser-table_charter-demo.qmd) (the qmd document that creates this [interactive demo](https://urswilke.github.io/datadaptor-crosstabser-table_charter-demo/)) and allows to use [datadaptor](https://gitlab.com/urswilke/datadaptor) and [crosstabser](https://gitlab.com/urswilke/crosstabser) in the same file.
+You can embed the app in a quarto document as it's done [here](https://github.com/urswilke/datadaptor-crosstabser-table_charter-demo/blob/main/datadaptor-crosstabser-table_charter-demo.qmd) (the qmd document that creates this [interactive demo](https://urswilke.github.io/datadaptor-crosstabser-table_charter-demo/)) and allows to use [datadaptor](https://codeberg.org/urswilke/datadaptor) and [crosstabser](https://codeberg.org/urswilke/crosstabser) in the same file.
 
 ### Embedding in observable notebooks
 
@@ -80,7 +80,7 @@ and on chrome with
 npm run test -- --chrome
 ```
 
-They are also run on push with the gitlab ci.
+They are also run on push with the woodpecker ci.
 
 ## Outlook
 
