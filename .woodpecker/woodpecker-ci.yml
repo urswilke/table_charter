@@ -6,12 +6,13 @@ matrix:
     - node:latest
 
 when:
-  - branch: "${CI_REPO_DEFAULT_BRANCH}"
-    event: push
+  - event: push
+    branch: "${CI_REPO_DEFAULT_BRANCH}"
     path:
-      exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
-      ignore_message: '[WP-CHILL]'
-      on_empty: true
+      - 
+        exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
+        ignore_message: '[WP-CHILL]'
+        on_empty: true
   - event: pull_request
   - event: tag
 
