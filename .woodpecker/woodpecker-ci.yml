@@ -8,12 +8,12 @@ matrix:
 when:
   - branch: "${CI_REPO_DEFAULT_BRANCH}"
     event: push
+    path:
+      exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
+      ignore_message: '[WP-CHILL]'
+      on_empty: true
   - event: pull_request
   - event: tag
-  # - path:
-    # - exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
-    # - ignore_message: '[WP-CHILL]'
-    # - on_empty: true
 
 variables:
   site_config: &site_config
