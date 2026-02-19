@@ -9,6 +9,8 @@
 
 WIP
 
+The home of this repository is at [codeberg](https://codeberg.org/urswilke/table_charter). This is our preferred place to file issues. However, there are also mirrors at [github](https://github.com/urswilke/table_charter) and [gitlab](https://gitlab.com/urswilke/table_charter), if you don't have a codeberg account.
+
 ## Introduction
 
 This javascript package provides a web component `<table-charter>` that hosts an app (using [lit](https://github.com/lit/lit)) which allows to interactively choose the plot type and its settings of the crosstabs generated with the [crosstabser](https://codeberg.org/urswilke/crosstabser) package (for instance, by calling the [`Tabula$save_html_app()`](https://urswilke.codeberg.page/crosstabser/reference/Tabula.html#method-Tabula-save_html_app)). Please open the [demo](https://urswilke.codeberg.page/table_charter/) for an interactive walkthrough and to see it live.
