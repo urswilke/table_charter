@@ -11,11 +11,9 @@ when:
   - event: pull_request
   - event: tag
   - path:
-    -
-      include: ['.woodpecker/*.yml']
-      exclude: ['*.github/**', '.gitlab-ci.yml']
-      ignore_message: '[WP-CHILL]'
-      on_empty: true
+    - exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
+    - ignore_message: '[WP-CHILL]'
+    - on_empty: true
 
 variables:
   site_config: &site_config
