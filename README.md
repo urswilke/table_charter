@@ -58,7 +58,7 @@ This will run the app in `index.html` and all the related source code on a local
 
 ### Deploying it in the web
 
-Our [demo](https://urswilke.codeberg.page/table_charter/) is the result of deploying the production version of the table_charter html element automatically each time code is pushed into this repo (with the `pages` part in the [woodpecker ci](.woodpecker/woodpecker-ci.yml)). By forking this repo and adapting the data used, you can deploy dashboards with your own data to the web.
+Our [demo](https://urswilke.codeberg.page/table_charter/) is the result of deploying the production version of the table_charter html element automatically each time code is pushed into this repo (with the `pages` part in the [woodpecker ci](.woodpecker/woodpecker-ci.yml)). By forking this repo and adapting the data used, you can deploy dashboards with your own data to the web. The repo also includes workflow files for [github](https://github.com/urswilke/table_charter/tree/main/.github/workflows) and [gitlab](https://gitlab.com/urswilke/table_charter/-/blob/main/.gitlab-ci.yml) to deploy on these pages.
 
 ### Using quarto
 
@@ -82,7 +82,7 @@ and on chrome with
 npm run test -- --chrome
 ```
 
-They are also run on push with the woodpecker ci.
+They are also run on push with the woodpecker ci. The repo also includes workflow files for [github](https://github.com/urswilke/table_charter/tree/main/.github/workflows) and [gitlab](https://gitlab.com/urswilke/table_charter/-/blob/main/.gitlab-ci.yml) to test on these frameworks.
 
 ## Outlook
 
