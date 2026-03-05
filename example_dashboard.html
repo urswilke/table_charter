@@ -9,7 +9,7 @@
         <link
             rel="icon"
             type="image/svg"
-            href="https://gitlab.com/urswilke/table_charter/-/raw/main/img/table_charter_favicon.svg"
+            href="https://codeberg.org/urswilke/table_charter/raw/branch/main/img/table_charter_favicon.svg"
         />
         <link
             rel="stylesheet"
@@ -107,20 +107,20 @@
             <footer>
                 <a class="pre">Made with </a>
                 <a
-                    href="https://gitlab.com/urswilke/table_charter"
+                    href="https://codeberg.org/urswilke/table_charter"
                     title="Code repository"
                     >table_charter</a
                 >
             </footer>
             <script id="load-example-data">
                 // The following sets the attribute data in the table-charter-intro element to the content of the file
-                // https://gitlab.com/urswilke/table_charter/-/blob/main/src/example_tablebook_sample.json
+                // https://codeberg.org/urswilke/table_charter/src/branch/main/src/example_tablebook_sample.json
                 // instead, you could also write:
                 // <table-charter-intro data='--put-the-data-here--' />
                 // instead of the above definition of the <table-charter-intro> element...:
                 (async function () {
                     const response = await fetch(
-                        "https://gitlab.com/api/v4/projects/45687298/repository/files/src%2Fexample_tablebook_sample.json/raw",
+                        "https://raw.githubusercontent.com/urswilke/table_charter/refs/heads/main/src/example_tablebook_sample.json",
                     );
                     const data = await response.text();
                     document
@@ -132,7 +132,7 @@
                 const project_data = {
                     logo_base64: "",
                     logo_url:
-                        "https://gitlab.com/urswilke/table_charter/-/raw/main/img/logo_small.svg",
+                        "https://codeberg.org/urswilke/table_charter/raw/branch/main/img/logo_small.svg",
                     title: "Dashboard demo of example table book",
                     date: "2024-5-18",
                 };
