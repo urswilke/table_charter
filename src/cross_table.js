@@ -134,7 +134,7 @@ export class CrossTable extends LitElement {
 
         const table_def = {
             data: table_data,
-            layout: "fitColumns",
+            layout: "fitDataFill",
             history: true,
             headerSortClickElement: "icon",
             columns: this.crosstabs.columns,
