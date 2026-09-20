@@ -7,7 +7,7 @@ matrix:
 
 when:
   - event: push
-    branch: "${CI_REPO_DEFAULT_BRANCH}"
+    # branch: "${CI_REPO_DEFAULT_BRANCH}"
     path:
       exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
       ignore_message: '[WP-CHILL]'
