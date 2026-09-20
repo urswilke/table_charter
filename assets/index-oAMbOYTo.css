@@ -1,0 +1,1 @@
+@import "https://unpkg.com/intro.js/introjs.css";.introjs-tooltip{color:#000}ul{margin-left:20px}.introjs-dontShowAgain{margin-top:25px}label[for=introjs-dontShowAgain]{color:gray;display:inline}.introjs-overlay,.introjs-helperLayer{pointer-events:none}.introjs-skipbutton{border-radius:8px;order:2;margin-left:auto;font-size:30px}.introjs-skipbutton:hover{opacity:.5}
