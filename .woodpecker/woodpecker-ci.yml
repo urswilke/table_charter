@@ -30,7 +30,7 @@ variables:
 
   step_codecov: &codecov
     - name: codecov
-      depends_on: [step_test_firefox]
+      depends_on: [test_firefox]
       image: woodpeckerci/plugin-codecov
       settings:
         files:
