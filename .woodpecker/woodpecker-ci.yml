@@ -28,6 +28,17 @@ variables:
         - npm install
         - npm run test -- --firefox
 
+  step_codecov: &step_codecov
+    - name: codecov
+      image: woodpeckerci/plugin-codecov
+      settings:
+        files:
+          - my-coverage-report-output.out
+          - another-coverage-report.json
+        token:
+          from_secret: CODECOV_TOKEN
+
+
 # not resolved; cf. https://github.com/webdriverio/webdriverio/issues/14255#issuecomment-2715007094 
   # step_test_chrome: &test_chrome
   #   - name: test_chrome
