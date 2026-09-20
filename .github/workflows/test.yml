@@ -23,3 +23,9 @@ jobs:
           with:
             name: logs
             path: logs
+
+        - name: Upload results to Codecov
+          uses: codecov/codecov-action@v5
+          with:
+            token: ${{ secrets.CODECOV_TOKEN }}
+            slug: urswilke/table_charter
