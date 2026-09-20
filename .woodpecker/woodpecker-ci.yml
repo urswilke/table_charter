@@ -34,7 +34,7 @@ variables:
       image: woodpeckerci/plugin-codecov
       settings:
         files:
-          - coverage/coverage-summary.json
+          - coverage/lcov.info
         token:
           from_secret: CODECOV_TOKEN
 
