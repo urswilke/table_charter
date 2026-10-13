@@ -40,14 +40,14 @@ variables:
 
 
 # not resolved; cf. https://github.com/webdriverio/webdriverio/issues/14255#issuecomment-2715007094 
-  # step_test_chrome: &test_chrome
-  #   - name: test_chrome
-  #     image: timbru31/node-chrome
-  #     commands:
-  #       - google-chrome --version
-  #       - node -v
-  #       - npm install
-  #       - npm run test -- --chrome
+  step_test_chrome: &test_chrome
+    - name: test_chrome
+      image: timbru31/node-chrome
+      commands:
+        - google-chrome --version
+        - node -v
+        - npm install
+        - npm run test -- --chrome
 
   step_setup: &setup
     - name: setup
@@ -79,6 +79,6 @@ steps:
   - <<: *setup
   - <<: *test_firefox
   - <<: *codecov
-  # - <<: *test_chrome
+  - <<: *test_chrome
   - <<: *build
   - <<: *deploy
