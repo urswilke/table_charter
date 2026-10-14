@@ -20,9 +20,3 @@ jobs:
         - name: 🧪 Test on chrome
           run: npm run test -- --chrome
 
-        - name: 📦 Upload Logs
-          uses: actions/upload-artifact@v4
-          if: failure()
-          with:
-            name: logs
-            path: logs
