@@ -34,7 +34,6 @@
         "d3": "^7.9.0",
         "immer": "^11.1.8",
         "intro.js": "^8.3.2",
-        "latest": "^0.2.0",
         "lit-translate": "^2.0.1",
         "tabulator-tables": "^6.4.0"
     },
