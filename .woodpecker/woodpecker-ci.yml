@@ -13,7 +13,6 @@ when:
       ignore_message: '[WP-CHILL]'
       on_empty: true
   - event: pull_request
-  - event: tag
 
 variables:
   site_config: &site_config
@@ -37,6 +36,9 @@ variables:
           - coverage/lcov.info
         token:
           from_secret: CODECOV_TOKEN
+      when:
+        - event: push
+          branch: "${CI_REPO_DEFAULT_BRANCH}"
 
 
 # not resolved; cf. https://github.com/webdriverio/webdriverio/issues/14255#issuecomment-2715007094 

@@ -2,10 +2,17 @@
 
 # table_charter
 
-[![pipeline status](img/table_charter_logo.svg)](https://gitlab.com/urswilke/table_charter)
+<!-- badges: start -->
 
-[![pipeline status](https://gitlab.com/urswilke/table_charter/badges/main/pipeline.svg)](https://gitlab.com/urswilke/table_charter/-/commits/main)
+[![ci](https://ci.codeberg.org/api/badges/16375/status.svg)](https://ci.codeberg.org/repos/16375)  
+[![Codecov](https://badgen.net/codecov/github/urswilke/table_charter?icon=codecov&label)](https://app.codecov.io/github/urswilke/table_charter)
+[![Codeberg stars](https://badgen.net/codeberg/stars/urswilke/table_charter/yellow?icon=sourcegraph)](https://codeberg.org/urswilke/table_charter/stars)
+[![Codeberg issues](https://badgen.net/codeberg/issues/urswilke/table_charter/yellow?icon=bitcoin-lightning)](https://codeberg.org/urswilke/table_charter/issues)
+[![Pull requests](https://badgen.net/codeberg/prs/urswilke/table_charter)](https://codeberg.org/urswilke/table_charter/pulls)
+[![Pull requests](https://badgen.net/codeberg/commits/urswilke/table_charter)](https://codeberg.org/urswilke/table_charter/commits/branch/master)
+[![Pull requests](https://badgen.net/codeberg/last-commit/urswilke/table_charter)](https://codeberg.org/urswilke/table_charter/commits/branch/master)
 [![pipeline status](https://img.shields.io/npm/v/table_charter.svg)](https://npmjs.com/package/table_charter)
+<!-- badges: end -->
 
 WIP
 
