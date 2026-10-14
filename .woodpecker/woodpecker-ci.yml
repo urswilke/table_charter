@@ -1,0 +1,84 @@
+# this workflow was derived from https://codeberg.org/r-codeberg/woodpecker-ci
+# please file bug reports and feature requests to help it improve!
+
+matrix:
+  IMAGE: 
+    - node:latest
+
+when:
+  - event: push
+    # branch: "${CI_REPO_DEFAULT_BRANCH}"
+    path:
+      exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
+      ignore_message: '[WP-CHILL]'
+      on_empty: true
+  - event: pull_request
+  - event: tag
+
+variables:
+  site_config: &site_config
+    - export WOODPECKER_TMP=/woodpecker/tmp
+
+  step_test_firefox: &test_firefox
+    - name: test_firefox
+      image: timbru31/node-alpine-firefox
+      commands:
+        - firefox --version
+        - node -v
+        - npm install
+        - npm run test -- --firefox
+
+  step_codecov: &codecov
+    - name: codecov
+      depends_on: [test_firefox]
+      image: woodpeckerci/plugin-codecov
+      settings:
+        files:
+          - coverage/lcov.info
+        token:
+          from_secret: CODECOV_TOKEN
+
+
+# not resolved; cf. https://github.com/webdriverio/webdriverio/issues/14255#issuecomment-2715007094 
+  step_test_chrome: &test_chrome
+    - name: test_chrome
+      image: timbru31/node-chrome
+      commands:
+        - google-chrome --version
+        - node -v
+        - npm install
+        - npm run test -- --chrome
+
+  step_setup: &setup
+    - name: setup
+      image: ${IMAGE}
+      pull: true
+      commands:
+        - npm i
+
+  step_build: &build
+    - name: build
+      image: ${IMAGE}
+      depends_on: [setup]
+      commands:
+        - npm run build
+        - mkdir ${WOODPECKER_TMP}/pages
+        - cp -r dist/* $${WOODPECKER_TMP}/pages
+        - ls $${WOODPECKER_TMP}/pages
+
+  step_deploy: &deploy
+    - name: deploy
+      image: codeberg.org/sugar700/plugin-codeberg-pages-deploy:latest
+      depends_on: [build]
+      settings:
+        folder: dist
+        ssh_key:
+          from_secret: deploy_ssh_key
+
+steps:
+  - <<: *setup
+  - <<: *test_firefox
+  - <<: *codecov
+  - <<: *test_chrome
+  - <<: *build
+  - <<: *deploy
