@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://gitlab.com/urswilke/table_charter.git"
+        "url": "https://codeberg.org/urswilke/table_charter.git"
     },
     "files": [
         "dist/**/*.js",
