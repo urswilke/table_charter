@@ -15,12 +15,12 @@ describe('Button "Show/hide advanced settings" testing', () => {
     it("should change text on click and show hidden", async () => {
         await advanced_menu_button.moveTo();
         await advanced_menu_button.click();
-        await expect(settings_el).not.toHaveAttr("is_collapsed");
+        await expect(settings_el).not.toHaveAttribute("is_collapsed");
         await expect(advanced_menu_button).toHaveText("🧹");
 
         await advanced_menu_button.moveTo();
         await advanced_menu_button.click();
-        await expect(settings_el).toHaveAttr("is_collapsed");
+        await expect(settings_el).toHaveAttribute("is_collapsed");
         await expect(advanced_menu_button).toHaveText("🎛️");
     });
 });

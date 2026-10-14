@@ -93,6 +93,7 @@ export const config = {
             preset: process.env.WDIO_PRESET,
             coverage: {
                 enabled: true,
+                reporter: ["text", "lcov"],
             },
         },
     ],

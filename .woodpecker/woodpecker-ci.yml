@@ -7,7 +7,7 @@ matrix:
 
 when:
   - event: push
-    branch: "${CI_REPO_DEFAULT_BRANCH}"
+    # branch: "${CI_REPO_DEFAULT_BRANCH}"
     path:
       exclude: ['.github/**', '.gitlab-ci.yml', 'README.md']
       ignore_message: '[WP-CHILL]'
@@ -28,15 +28,26 @@ variables:
         - npm install
         - npm run test -- --firefox
 
+  step_codecov: &codecov
+    - name: codecov
+      depends_on: [test_firefox]
+      image: woodpeckerci/plugin-codecov
+      settings:
+        files:
+          - coverage/lcov.info
+        token:
+          from_secret: CODECOV_TOKEN
+
+
 # not resolved; cf. https://github.com/webdriverio/webdriverio/issues/14255#issuecomment-2715007094 
-  # step_test_chrome: &test_chrome
-  #   - name: test_chrome
-  #     image: timbru31/node-chrome
-  #     commands:
-  #       - google-chrome --version
-  #       - node -v
-  #       - npm install
-  #       - npm run test -- --chrome
+  step_test_chrome: &test_chrome
+    - name: test_chrome
+      image: timbru31/node-chrome
+      commands:
+        - google-chrome --version
+        - node -v
+        - npm install
+        - npm run test -- --chrome
 
   step_setup: &setup
     - name: setup
@@ -67,6 +78,7 @@ variables:
 steps:
   - <<: *setup
   - <<: *test_firefox
-  # - <<: *test_chrome
+  - <<: *codecov
+  - <<: *test_chrome
   - <<: *build
   - <<: *deploy
