@@ -1,6 +1,4 @@
-<!-- # table_charter <a href='https://gitlab.com/urswilke/table_charter'><img src='table_charter_logo.svg' align="right" height="160" /></a> -->
-
-# table_charter
+# table_charter <a href='https://gitlab.com/urswilke/table_charter'><img src='img/table_charter_logo.svg' align="right" height="160" /></a>
 
 <!-- badges: start -->
 
